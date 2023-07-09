@@ -1,0 +1,7 @@
+# my man s_t_
+
+in: $1=tag || undefine
+
+fliow: grep tag in ${PATH_MAIN_REPO_FN_DIR} || choice tag in all tag -> grep tag in ${PATH_MAIN_REPO_FN_DIR}
+
+out: arr_name_fn

@@ -1,0 +1,235 @@
+### UP
+[openat](##openat)
+[MAIN](##MAIN)
+[MAIN_ru](##MAIN_ru)
+[ANCORS](##ANCORS)
+[ISU](##ISU)
+[H_FILE](##H_FILE)
+[p_SYNOPSIS](##p_SYNOPSIS)
+[p_RETURN](##p_RETURN)
+[p_RETURN_ru](##p_RETURN_ru)
+[p_DESCRIPTION_ru](##p_DESCRIPTION)
+[p_DESCRIPTION](##p_DESCRIPTION_ru)
+[p_EXAMPLES](##p_EXAMPLES)
+[p_ERRORS](##p_ERRORS)
+[p_BOOKS](##p_BOOKS)
+[p_BOOKS_ru](##p_BOOKS_ru)
+[p_CONTENT](##p_CONTENT)
+
+[cat_hfiles](../../cat_hfiles.md)
+[cat_utils](../../cat_utils.md)
+[cat_structs](../../cat_structs.md)
+[cat_param](../../cat_params.md)
+[cat_macros](../../cat_macross.md)
+[cat_const](../../cat_consts.md)
+[cat_type](../../cat_types.md)
+
+
+[UP](###UP)
+## MAIN
+:openat:
+[next](##MAIN_ru)
+
+<<MAIN>>
+[MAIN](../../fills/openat/MAIN)
+
+
+
+[UP](###UP)
+## MAIN_ru
+:openat:
+[next](##ANCORS)
+
+<<MAIN_ru>>
+[MAIN_ru](../../fills/openat/MAIN_ru)
+
+[UP](###UP)
+## ANCORS
+:openat:
+[next](##ISU)
+
+<<ANCORS>>
+[ANCORS](../../fills/openat/ANCORS)
+
+[UP](###UP)
+## ISU
+:openat:
+[next](##H_FILE)
+
+----------------------------------------------------- 
+-------------------------------------- 
+file://${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_c_/_c_/_man/nbase/_Head_sis_libs_posix/6_fcntl_h/4_openat/openat_new_cpjs/openat_c.isu
+file://${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_c_/_c_/_man/nbase/_Head_sis_libs_posix/6_fcntl_h/4_openat/openat_new_cpjs/use/openat_c.isu
+-------------------------------------- 
+----------------------------------------------------- 
+----------------------------------------------------- 
+-------------------------------------- 
+file://${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_c_/_c_/_man/nbase/_Head_sis_libs_posix/6_fcntl_h/4_openat/openat_new_cpjs/openat.isu
+file://${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_c_/_c_/_man/nbase/_Head_sis_libs_posix/6_fcntl_h/4_openat/openat_new_cpjs/use/openat.isu
+-------------------------------------- 
+----------------------------------------------------- 
+<<ISU>>
+only read
+[ISU](../../contents)
+
+[manpages.org](https://www.google.ru/search?q=openat+site%3Ahttps%3A%2F%2Fmanpages.org)
+[pubs.opengroup.org](https://www.google.com/search?q=openat+https%3A%2F%2Fpubs.opengroup.org)
+[www.opennet.ru](http://www.opennet.ru/man.shtml?category=2&topic=openat)
+[man7.org](https://www.google.ru/search?q=openat+site%3Ahttps%3A%2F%2Fman7.org%2Flinux%2Fman-pages)
+[en.cppreference.com](https://www.google.com/search?q=openat+en.cppreference.com)
+[www.mankier.com](https://www.mankier.com/?q=openat)
+
+books
+[cpp.com.ru](https://yandex.ru/search/?text=openat+site%3Ahttps%3A%2F%2Fcpp.com.ru)
+[linuxhint.com](https://www.google.ru/search?q=openat+site%3Ahttps%3A%2F%2Flinuxhint.com)
+[gnu.org](https://www.google.ru/search?q=openat+site%3Ahttps%3A%2F%2Fwww.gnu.org%2Fsoftware%2Flibc%2Fmanual)
+
+examples
+[cpp.hotexamples.com](https://cpp.hotexamples.com/examples/-/-/openat/cpp-openat-function-examples.html)
+
+classic
+[bogatyrev_c_unix](https://www.google.com/search?q=openat+site%3Ahttps%3A%2F%2Fcpp.com.ru%2Fbogatyrev_c_unix)
+[kr_cbook](https://www.google.com/search?q=openat+site%3Ahttps%3A%2F%2Fcpp.com.ru%2Fkr_cbook)
+
+eners
+[pubs.opengroup.org](https://pubs.opengroup.org/onlinepubs/9699919799/idx/head.html)
+
+
+
+
+[UP](###UP)
+## H_FILE 
+[sys_msg_h.md](../../hfiles/sys_msg_h.md)
+
+[UP](###UP)
+## p_SYNOPSIS
+:openat:
+[next](##p_DESCRIPTION_ru)
+
+----------------------------------------------------- 
+-------------------------------------- 
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+int open(const char *pathname, int flags);
+int open(const char *pathname, int flags, mode_t mode);
+int creat(const char *pathname, mode_t mode);
+int openat(int dirfd, const char *pathname, int flags);
+int openat(int dirfd, const char *pathname, int flags, mode_t mode);
+-------------------------------------- 
+----------------------------------------------------- 
+<<SYNOPSIS>>
+[SYNOPSIS](../../fills/openat/SYNOPSIS)
+
+[UP](###UP)
+## p_RETURN_ru
+:openat:
+[next](##p_RETURN)
+
+<<RETURN>>
+[RETURN_ru](../../fills/openat/RETURN_ru)
+
+[UP](###UP)
+## p_RETURN
+:openat:
+[next](##p_DESCRIPTION_ru)
+
+<<RETURN_ru>>
+[RETURN](../../fills/openat/RETURN)
+
+[UP](###UP)
+## p_DESCRIPTION_ru
+:openat:
+[next](##p_DESCRIPTION)
+
+----------------------------------------------------- 
+-------------------------------------- 
+Получив в pathname имя файла, open() возвращает файловый дескриптор --- небольшое, неотрицательное значение --- для использования в последующих системных вызовах (read(2), write(2), lseek(2), fcntl(2) и т.д.). Файловый дескриптор, возвращаемый при успешном выполнении вызова, будет самым маленьким числом из файловых дескрипторов, которые ещё не открыты процессом.
+-------------------------------------- 
+----------------------------------------------------- 
+<<DESCRIPTION_ru>>
+[DESCRIPTION_ru](../../fills/openat/DESCRIPTION_ru)
+
+
+[UP](###UP)
+## p_DESCRIPTION
+:openat:
+[next](##p_EXAMPLES)
+
+<<DESCRIPTION>>
+[DESCRIPTION](../../fills/openat/DESCRIPTION)
+
+
+
+[UP](###UP)
+## p_EXAMPLES
+:openat:
+[next](##p_BOOKS)
+
+----------------------------------------------------- 
+-------------------------------------- 
+'''
+#define _SVID_SOURCE
+/* печатает файлы текущего каталога в обратном порядке */
+#include <dirent.h>
+int
+main(void)
+{
+struct dirent **namelist;
+int n;
+n = scandir(".", &namelist, NULL, alphasort);
+if (n < 0)
+perror("scandir");
+else {
+while (n--) {
+printf("%s
+", namelist[n]->d_name);
+free(namelist[n]);
+}
+free(namelist);
+}
+}
+'''
+-------------------------------------- 
+----------------------------------------------------- 
+<<EXAMPLES>>
+[EXAMPLES](../../fills/openat/EXAMPLES)
+
+
+[UP](###UP)
+## p_ERRORS
+:openat:
+[next](##p_BOOKS)
+
+----------------------------------------------------- 
+-------------------------------------- 
+Вызовы open(), openat() и creat() возвращают новый дескриптор файла или -1 в случае ошибки (в этом случае errno устанавливается в соответствующее значение).
+-------------------------------------- 
+----------------------------------------------------- 
+<<ERRORS>>
+[ERRORS](../../fills/openat/ERRORS)
+
+
+[UP](###UP)
+## p_BOOKS
+:openat:
+[next](##p_BOOKS_ru)
+
+<<BOOKS>>
+[BOOKS](../../fills/openat/BOOKS)
+
+[UP](###UP)
+## p_BOOKS_ru
+:openat:
+[next](##p_CONTENT)
+
+<<BOOKS_ru>>
+[BOOKS_ru](../../fills/openat/BOOKS_ru)
+
+[UP](###UP)
+## p_CONTENT
+:openat:
+[openat.cnt](../../contents/openat.cnt)
+[next](##UP)
+
+[UP](###UP)

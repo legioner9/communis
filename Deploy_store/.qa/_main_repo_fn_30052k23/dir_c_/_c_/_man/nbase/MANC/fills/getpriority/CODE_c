@@ -1,0 +1,24 @@
+https://code.woboq.org/userspace/glibc/sysdeps/unix/sysv/linux/getpriority.c.html
+
+#include <errno.h>
+#include <sys/resource.h>
+#include <sysdep.h>
+#include <sys/syscall.h>
+/* The return value of getpriority syscall is biased by this value
+   to avoid returning negative values.  */
+#define PZERO 20
+/* Return the highest priority of any process specified by WHICH and WHO
+   (see above); if WHO is zero, the current process, process group, or user
+   (as specified by WHO) is used.  A lower priority number means higher
+   priority.  Priorities range from PRIO_MIN to PRIO_MAX.  */
+int
+__getpriority (enum __priority_which which, id_t who)
+{
+  int res;
+  res = INLINE_SYSCALL (getpriority, 2, (int) which, who);
+  if (res >= 0)
+    res = PZERO - res;
+  return res;
+}
+libc_hidden_def (__getpriority)
+weak_alias (__getpriority, getpriority)

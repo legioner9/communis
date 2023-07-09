@@ -1,0 +1,156 @@
+https://users.cs.cf.ac.uk/Dave.Marshall/C/node25.html
+
+message_send.c - создание и отправка в простую очередь сообщений
+message_rec.c - получение вышеупомянутого сообщения
+msgget.c: простая программа для иллюстрации msget()
+Пример программы msgctl.cдля иллюстрации msgctl()
+msgop.c: пример программы для иллюстрации msgsnd() и msgrcv()
+
+message_send.c
+-- Создает очередь сообщений и отправляет одно сообщение в очередь.
+message_rec.c
+-- Считывает сообщение из очереди.
+
+Полный список кода для message_send.c выглядит следующим образом:
+
+#include <sys/types.h>
+#include <sys/ipc.h>
+#include <sys/msg.h>
+#include <stdio.h>
+#include <string.h>
+
+#define MSGSZ     128
+
+
+/*
+ * Declare the message structure.
+ */
+
+typedef struct msgbuf {
+         long    mtype;
+         char    mtext[MSGSZ];
+         } message_buf;
+
+main()
+{
+    int msqid;
+    int msgflg = IPC_CREAT | 0666;
+    key_t key;
+    message_buf sbuf;
+    size_t buf_length;
+
+    /*
+     * Get the message queue id for the
+     * "name" 1234, which was created by
+     * the server.
+     */
+    key = 1234;
+
+(void) fprintf(stderr, "\nmsgget: Calling msgget(%#lx,\
+%#o)\n",
+key, msgflg);
+
+    if ((msqid = msgget(key, msgflg )) < 0) {
+        perror("msgget");
+        exit(1);
+    }
+    else 
+     (void) fprintf(stderr,"msgget: msgget succeeded: msqid = %d\n", msqid);
+
+
+    /*
+     * We'll send message type 1
+     */
+     
+    sbuf.mtype = 1;
+    
+    (void) fprintf(stderr,"msgget: msgget succeeded: msqid = %d\n", msqid);
+    
+    (void) strcpy(sbuf.mtext, "Did you get this?");
+    
+    (void) fprintf(stderr,"msgget: msgget succeeded: msqid = %d\n", msqid);
+    
+    buf_length = strlen(sbuf.mtext) + 1 ;
+    
+    
+
+    /*
+     * Send a message.
+     */
+    if (msgsnd(msqid, &sbuf, buf_length, IPC_NOWAIT) < 0) {
+       printf ("%d, %d, %s, %d\n", msqid, sbuf.mtype, sbuf.mtext, buf_length);
+        perror("msgsnd");
+        exit(1);
+    }
+
+   else 
+      printf("Message: \"%s\" Sent\n", sbuf.mtext);
+      
+    exit(0);
+}
+
+Очередь сообщений создается с помощью базового ключа и флага сообщения msgflg = IPC_CREAT | 0666 -- создать очередь и сделать ее доступной для чтения и добавления всеми.
+В очередь отправляется сообщение типа (sbuf.mtype) 1 с сообщением Вы получили это?
+
+Полный список кода для сопутствующего процесса message_send.c, message_rec.c, выглядит следующим образом:
+
+#include <sys/types.h>
+#include <sys/ipc.h>
+#include <sys/msg.h>
+#include <stdio.h>
+
+#define MSGSZ     128
+
+
+/*
+ * Declare the message structure.
+ */
+
+typedef struct msgbuf {
+    long    mtype;
+    char    mtext[MSGSZ];
+} message_buf;
+
+
+main()
+{
+    int msqid;
+    key_t key;
+    message_buf  rbuf;
+
+    /*
+     * Get the message queue id for the
+     * "name" 1234, which was created by
+     * the server.
+     */
+    key = 1234;
+
+    if ((msqid = msgget(key, 0666)) < 0) {
+        perror("msgget");
+        exit(1);
+    }
+
+    
+    /*
+     * Receive an answer of message type 1.
+     */
+    if (msgrcv(msqid, &rbuf, MSGSZ, 1, 0) < 0) {
+        perror("msgrcv");
+        exit(1);
+    }
+
+    /*
+     * Print the answer.
+     */
+    printf("%s\n", rbuf.mtext);
+    exit(0);
+}
+
+Здесь следует отметить следующие важные моменты:
+
+Очередь сообщений открывается с помощью msgget (флаг сообщения 0666) и того же ключа, что и message_send.c.
+Из очереди получено сообщение того же типа 1 с сообщением Вы получили это?хранится в файле rbuf.mtext.
+
+... 
+...
+... 

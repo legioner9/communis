@@ -1,0 +1,27 @@
+# symbols NOT allowed in cr_f_ as --vr0 [symbol]
+
+    ~
+    weqwe^
+    &
+    *
+    (
+    )
+    -
+    [
+    ;
+    "
+    '
+    \
+    |
+    <
+    >
+    ?
+    ;
+    `
+
+# NOT allowed wraps
+
+    [dqd]
+    <cascsd>
+    ;cascsd;
+    &cascsd&

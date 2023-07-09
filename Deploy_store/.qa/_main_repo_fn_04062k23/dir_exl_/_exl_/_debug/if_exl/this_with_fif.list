@@ -1,0 +1,12 @@
+# ${PATH_MAIN_REPO_FN_DIR}/dir_iff_/_iff_/_debug/in_exl/this.exl
+
+ante_cntlif_
+ante_cntlif_ -develop1
+
+iff_ _p1 echo
+# eval _p1=0
+ante_cntlif_ --ptr_if _p1 -develop1
+fif_ _p1
+
+ante_cntlif_ --ptr_if _p1 -develop1
+ante_cntlif_ -develop1

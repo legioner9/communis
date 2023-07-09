@@ -1,0 +1,3 @@
+## Header guards и #pragma once
+
+@@time

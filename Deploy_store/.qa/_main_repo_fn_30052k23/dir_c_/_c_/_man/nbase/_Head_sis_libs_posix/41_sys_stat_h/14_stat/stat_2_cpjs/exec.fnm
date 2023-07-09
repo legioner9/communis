@@ -1,0 +1,1 @@
+    int res_stat = stat_с("a.file", &st_struct, __FILE__, __LINE__, STMO_PRN, STIF_ONE, STRE_EXI);  /*#*/

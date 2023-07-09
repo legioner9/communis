@@ -1,0 +1,7 @@
+a.file
+cbres -> a.file
+a.file
+cberr_a -> dir_a_ is wrong path!!!
+failed in file main.c at line # 98
+from cstl_1_ls dir_path = dir_a_, errno = 2
+exit(errno) with: No such file or directory

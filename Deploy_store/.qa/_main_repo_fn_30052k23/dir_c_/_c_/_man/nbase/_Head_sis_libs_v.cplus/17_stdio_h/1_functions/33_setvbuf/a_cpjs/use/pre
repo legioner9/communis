@@ -1,0 +1,14 @@
+str = , sizeof(str) = 100
+
+info:1, ftell(stream) = 11
+
+info:2, ftell(stream) = 0
+str = qwer
+
+info:3, ftell(stream) = 4
+str = t123
+
+info:3, ftell(stream) = 8
+str = 456
+
+info:3, ftell(stream) = 11

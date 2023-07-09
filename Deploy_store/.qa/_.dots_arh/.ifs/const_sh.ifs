@@ -1,0 +1,15 @@
+main:
+exec:
+
+using global:
+    QQ_EXIT 
+        0 default, qq_exit_ return: stdout message, (exit 1|^C)
+        1 qq_exit_ return: stderr message
+            DEMAND_AFTER exec qq_exit_: return 1 
+    MODE_TST
+        0 default, mode fefault exec fns
+        1 mode which invarianted exec fns for tst_
+            etc. without fn_stack in errors
+parsing params:
+arg: 
+flow_chars: 

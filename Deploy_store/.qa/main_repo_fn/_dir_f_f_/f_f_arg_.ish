@@ -1,0 +1,40 @@
+    #! $1 ===> ${name_fn_}
+    #! ${FONSH_PATH}/actio ===> ${dir_fns_}
+
+    if typeset -F | grep -w ${name_fn_}; then
+        plt_exit "${name_fn_} not unique"
+        return 1
+    fi
+
+    local file_path
+    local body
+    local fn_body
+
+    c_up "$ORIGO_DIR/_f_f_/_sh"
+
+    # if ! [ $# -eq 1 ]; then
+    #     qq_exit " $# num arg != 1" "$filename" "$LINENO"
+    # fi
+
+    # amount_arg $# 3 10
+    #! hardcord ${"${PATH_MAIN_REPO_FN_DIR}"}
+    # cd_h "${PATH_MAIN_REPO_FN_DIR}"
+    wrp2_ cd --_xxd ${dir_fns_}
+
+    # if [ ${flow_} -eq 1 ]; then
+    #     tml_dir=${PATH_TML_DIR}/f_f_
+    #     insert_dir=${PATH_INSERT_DIR}/f_f_
+    #     exl_file=${PATH_EXL_DIR}/f_f_/1.exl
+    #     sh_file=${PATH_EXL_DIR}/f_f_/1.sh
+    #     # exl_file=${PATH_EXL_DIR}/f_f_/1_self_test_deb.exl
+    # fi
+    #! tml_dir
+    # exl_ --list ${PATH_EXL_DIR}/f_f_/${flow_}_flow_env.exl
+    # exl_ --list ${PATH_EXL_DIR}/f_f_/${flow_}/flow_env.exl
+
+    exl_ --list ${PATH_EXL_DIR}/f_f_/env/flow_env.exl
+
+    plt_pause "(${name_fn_}) create flow=${flow_} !!! in ($PWD/dir_${name_fn_}/) file (${name_fn_}.sh) dir (_${name_fn_}) ?"
+
+    # exl_ --list "${exl_file}"
+    echo | . ${sh_file}

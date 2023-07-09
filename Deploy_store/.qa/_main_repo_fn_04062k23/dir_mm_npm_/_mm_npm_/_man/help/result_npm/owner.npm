@@ -1,0 +1,15 @@
+# npm owner in /home/st/REPOBARE/_repo/plt/actio/dir_mm_npm_/_mm_npm_/_man/help
+
+npm ERR! npm owner add <user> [<@scope>/]<pkg>
+npm ERR! npm owner rm <user> [<@scope>/]<pkg>
+npm ERR! npm owner ls [<@scope>/]<pkg>
+npm ERR! 
+npm ERR! alias: author
+
+# npm owner -h in /home/st/REPOBARE/_repo/plt/actio/dir_mm_npm_/_mm_npm_/_man/help
+
+npm owner add <user> [<@scope>/]<pkg>
+npm owner rm <user> [<@scope>/]<pkg>
+npm owner ls [<@scope>/]<pkg>
+
+alias: author

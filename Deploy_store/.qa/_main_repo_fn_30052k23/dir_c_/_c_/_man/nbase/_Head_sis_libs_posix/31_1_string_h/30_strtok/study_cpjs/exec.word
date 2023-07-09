@@ -1,0 +1,2 @@
+from> [demo] strtok -> do not work with char *str = "qwe" but work with char str[10] = 
+see https://manpages.org/strtok

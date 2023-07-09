@@ -1,0 +1,6 @@
+# npm outdated in ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_mm_npm_/_mm_npm_/_man/help
+
+
+# npm outdated -h in ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_mm_npm_/_mm_npm_/_man/help
+
+npm outdated [[<@scope>/]<pkg> ...]

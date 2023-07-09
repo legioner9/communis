@@ -1,0 +1,497 @@
+.content .page-header {
+	margin-top: 0px;
+}
+
+.content .page-header h1 {
+	margin-top: 10px;
+}
+
+.label {
+	background-color: #999999;
+}
+
+th, th:hover {
+	background: #0081C2 !important;
+}
+
+img.alignleft {
+	margin-right: 10px;
+	float: left;
+}
+
+.img-polaroid {
+	padding: 4px;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.breadcrumb {
+	margin-bottom: 0 !important;
+}
+
+.breadcrumb .active,
+.breadcrumb .current_item {
+	color: #999;
+}
+
+.forum blockquote,
+.forum blockquote p {
+	font-size: 14px !important;
+	color: gray;
+	font-weight: normal !important;
+}
+
+.forum .pagination {
+	margin: 0;
+}
+
+.topic-count {
+	margin: 6px 0 0 0;
+}
+
+.sub-forum {
+	padding-left: 20px;
+}
+
+.forum-category td,
+.forum-category td:hover {
+	background-color: #E0E0E0 !important;
+}
+
+.forum .reply td {
+	padding: 0;
+}
+
+.reply-header {
+	background-color: #e1e1e8;
+	padding: 0 8px;
+}
+
+.reply-body {
+	padding: 8px;
+}
+
+.reply-body img {
+	max-width: 200px;
+}
+
+.reply .content .reply-body {
+	max-width: 950px;
+}
+
+.reply .author-name,
+.reply .author-avatar,
+.reply .author-role {
+	text-align: center;
+}
+
+.reply .author-name {
+	font-size: 20px;
+}
+
+.reply .author-ip {
+	text-align: center;
+}
+
+textarea#bbp_reply_content,
+textarea#bbp_topic_content,
+textarea#bbp_forum_content {
+	width: 100%;
+}
+
+.wp-switch-editor {
+	height: auto !important;
+}
+
+.mceButton {
+	height: auto !important;
+	width: auto !important;
+}
+
+.user-page h2 {
+	margin-top: 0;
+}
+
+.user-page .form-table th,
+.user-page .form-table th:hover {
+	background-color: #fff !important;
+}
+
+.user-page .form-table th {
+	padding: 8px;
+}
+
+.user-page .form-table tr:nth-child(2) {
+	display: none;
+}
+
+.vertical-center {
+	vertical-align: middle !important;
+}
+
+.syntaxhighlighter .container {
+	max-width: none;
+}
+
+.media-list .comment,
+.media-list .trackback {
+	background-color: #F9F9F9;
+	padding: 8px;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+}
+
+.media-list li {
+	border: 1px solid #ddd !important;
+}
+
+code {
+	background-color: #ececf0 !important;
+}
+
+.yarpp-related {
+	margin-bottom: 15px;
+}
+
+.yarpp-related .alert {
+	margin-bottom: 0;
+}
+
+.hero-unit {
+	min-height: 200px;
+}
+
+.search-form {
+	margin-top: 15px;
+}
+
+.code_window {
+	color: white;
+	padding: 30px 2px 2px 2px;
+	background: url('/wp-content/images/window_toolbar_white.png') no-repeat left top, url('/wp-content/images/window_toolbar_right_white.png') no-repeat right top, url('/wp-content/images/window_top.png') repeat-x center top, url('/wp-content/images/window_bottom.png') repeat-x center bottom, url('/wp-content/images/window_left.png') repeat-y center left, url('/wp-content/images/window_right.png') repeat-y center right;
+	background-color: black;
+	margin: 0 0 15px 0;
+}
+
+.code_window_title {
+	position: absolute;
+	margin-top: -27px;
+	margin-left: 75px;
+	font-family: verdana;
+	font-size: 14pt;
+	color: whiteSmoke;
+}
+
+.code_window_content {
+	font-family: monospace;
+	font-size: 10pt;
+}
+
+.code_window_content pre {
+	background: none;
+	color: white;
+	padding: 0;
+	margin: 0;
+	border: none;
+}
+
+.main img {
+	max-width: 850px;
+}
+
+.additional-panel {
+	color: #777;
+	border: 1px #DDD solid !important;
+	background: #F9F9F9;
+	padding: 5px;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	margin: 0 !important;
+	font-size: 13px;
+}
+
+.additional-panel .glyphicon {
+	color: #000000;
+}
+
+#wp-link .submitbox {
+	height: auto !important;
+}
+
+#ide-tabs .nav > li > a {
+	padding: 3px 5px;
+	font-size: 11px;
+}
+
+/*		social buttons		*/
+.share42init {
+	display: inline-block;
+	height: 16px;
+	position: relative;
+}
+
+.share42init a {
+	position: absolute;
+	top: 3px;
+}
+
+.share42-item {
+	margin-left: 16px !important;
+}
+
+#share42 .share42-item {
+	margin-bottom: 0 !important;
+}
+
+/*		footer		*/
+footer {
+	margin: 40px 0 0 0;
+	padding: 20px 0 20px 0;
+	border-top: 1px solid #e5e5e5;
+	background-color: #f5f5f5;
+}
+
+footer p {
+	color: #777;
+}
+
+.forum a {
+	word-wrap: break-word;
+}
+
+/*		for gd-bbPress Attachments plugin		 */
+.bbp-attachments ol > li > a:first-child {
+	display: block;
+}
+
+.content .bbp-attachments ol.with-icons > li.d4p-bbp-attachment {
+	margin-right: 20px !important;
+}
+
+/*		google+ authorship		*/
+#authorship img {
+	width: 88px;
+	height: 31px;
+}
+
+#authorship {
+	text-decoration: none !important;
+}
+
+/*		post ratings		*/
+.post-ratings {
+	top: 70px;
+	right: 15px;
+	width: auto;
+	text-align: right;
+}
+
+.main .page-header {
+	margin-bottom: 0px;
+}
+
+.post-ratings-loading {
+	display: none !important;
+}
+
+#rating-post {
+	margin-bottom: 10px;
+}
+
+/*		posts		*/
+.post-title {
+	border-bottom: 1px solid #eee;
+}
+
+.main .thumbnail {
+	float: left;
+	margin-right: 10px;
+}
+
+.main .thumbnail>img {
+	display: inline;
+}
+
+.post-description {
+	float: left;
+}
+
+.post-description p {
+	text-align: justify;
+}
+
+.clear {
+	clear: both;
+}
+
+.entry-meta {
+	margin-bottom: 10px;
+	position: relative;
+	color: #999;;
+}
+
+.entry-meta time {
+	margin-right: 20px;
+}
+
+.entry-meta .author {
+	margin-right: 20px;
+}
+
+.entry-meta .meta-rating {
+	position: absolute;
+	right: 0;
+}
+
+article.post {
+	margin-bottom: 40px;
+}
+
+table th p {
+	margin-bottom: 0;
+}
+
+table.table td:last-child {
+	text-align: justify;
+}
+
+/*		tasks panel-list for display tasks in a post		*/
+#tasks .panel-heading {
+	position: relative;
+}
+
+#tasks .panel-heading:hover {
+	cursor: pointer;
+}
+
+#tasks .panel-heading span {
+	position: absolute;
+	right: 10px;
+	top: 13px;
+}
+
+#tasks p {
+	position: relative;
+	border-radius: 4px;
+	padding: 0 10px 0 10px;
+}
+
+#tasks p:hover {
+	background: #eee;
+	cursor: pointer;
+}
+
+#tasks p > span:last-child {
+	margin-left: 10px;
+	position: absolute;
+	right: 10px;
+}
+
+#tasks p > a:hover {
+	text-decoration: none;
+}
+
+#tasks p.no-tasks:hover {
+	background: none;
+	cursor: inherit;
+}
+
+#tasks .panel-body {
+	display: none;
+}
+
+#tasks  span.glyphicon-hand-right {
+	margin-right: 10px;
+	color: #818181;
+}
+#tasks p {
+	margin-bottom: 5px;
+}
+
+.adsbygoogle {
+	margin-left: -5px;
+}
+
+/*		customization pagination on the subcategories for textbooks page		*/
+.pagination li span.current,
+.pagination li span.current:hover{
+	color: #fff;
+	cursor: default;
+	background-color: #428bca;
+	border-color: #428bca;
+}
+
+/*		for tasks pages			*/
+.entry-content {
+	text-align: justify	;
+}
+
+.task-level {
+	display: inline-flex;
+}
+
+.main table.tasks-table td:first-child {
+	vertical-align: middle;
+}
+
+td.link {
+	cursor: pointer;
+}
+
+td.link a:hover {
+	text-decoration: none;
+}
+
+.red {
+	color: #ff0000;
+}
+
+.green {
+	color: #008000;
+}
+
+.center {
+	text-align: center !important;
+}
+
+.gray {
+	color: #818181;
+}
+
+#level {
+	float: left;
+}
+
+.alert-error {
+	color: #b94a48;
+	background-color: #f2dede;
+	border-color: #eed3d7;
+}
+
+#nolix_add {
+	width: 263px !important;
+}
+
+#nolix {
+	margin-bottom: 10px;
+}
+
+footer .container section {
+    width: 265px;
+    float: left;
+    margin-right: 20px;
+}
+
+#rotaban_218060 a {
+    width: 265px;
+}
+
+#rotaban_218060 img {
+    width: 265px;
+}

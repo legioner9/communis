@@ -1,0 +1,24 @@
+# BGP
+https://www.youtube.com/playlist?list=PLto9y93q2lqhlJgg-7nrsqjNG2CqnEdP3
+# VMware_NSX
+https://www.youtube.com/playlist?list=PLto9y93q2lqipFbjpODuIk7kgwYxpZd9z
+# VMware_vSphere_on_Intel_NUC
+https://www.youtube.com/playlist?list=PLto9y93q2lqghpi5El1dPIftg67-bTojG
+# Ansible
+https://www.youtube.com/playlist?list=PLto9y93q2lqhY5lOjYp1Jlmk-P325fNz1
+# SDN
+https://www.youtube.com/playlist?list=PLto9y93q2lqgYo9dSsWgxcikdwer88iuk
+# Cisco_ACI
+https://www.youtube.com/playlist?list=PLto9y93q2lqgMgb6gI4YrCaY9bGanzg3o
+# Security
+https://www.youtube.com/playlist?list=PLto9y93q2lqgYfaUAAA7dU77fEDuY-n2-
+# SDN_ДЛЯ_НИЩЕБРОДОВ
+https://www.youtube.com/playlist?list=PLto9y93q2lqg2Na6yBojUEPtq2AuO0vM3
+# ТЫЖПРОГРАММИСТ_Python
+https://www.youtube.com/playlist?list=PLto9y93q2lqjn3r0skYzmTT2XV4mYN4gw
+# RegExp
+https://www.youtube.com/playlist?list=PLto9y93q2lqhBg1_xtCxqiJTZs8jvTZVu
+# CCIE_Routing_and_Switching
+https://www.youtube.com/playlist?list=PLto9y93q2lqh03-DTbe3hym3257tbg2FT
+# CCNA_Routing_&_Switching
+https://www.youtube.com/playlist?list=PLto9y93q2lqgI4SkL-UcNkNGCb7h2nXCC

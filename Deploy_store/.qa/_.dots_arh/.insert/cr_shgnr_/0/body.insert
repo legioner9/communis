@@ -1,0 +1,21 @@
+[ -z "$1" ] && {
+    plt_exit "\$1 empty first arg mast be name dir (like namefn_extst_num) in ${rdir}"
+    return 1
+}
+
+plt_pause "do that? create $1 (like namefn_extst_num) cr_tst_sys_ in ${rdir}"
+
+wrp2_ rm --_cxf ${rdir}/${gname}.tmp.exl
+
+echo -e "
+wrp2_ cd --_xxd ${rdir}
+
+# wrp2_ mkdir --_xnd ${rdir}/"$1"
+
+# wrp2_ cd --_xxd ${rdir}/"$1"
+
+echo \\\"be start exl_ --list ${rdir}/${gname}.exl\\\"" > ${rdir}/${gname}.tmp.exl
+
+exl_ --list ${rdir}/${gname}.tmp.exl
+
+wrp2_ rm -v --_cxf ${rdir}/${gname}.tmp.exl

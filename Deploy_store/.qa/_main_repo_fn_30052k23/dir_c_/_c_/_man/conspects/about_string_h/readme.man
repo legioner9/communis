@@ -1,0 +1,423 @@
+## memchr
+ 
+`INTRF`    void * memchr ( void * ptr, int value, size_t num );
+
+ 
+`FLOW` Searches within the first num bytes of the block of memory pointed by ptr for the first occurrence of value (interpreted as an unsigned char), and returns a pointer to it.
+
+Ищет в первых байтах num блока памяти, на который указывает ptr, первое вхождение value (интерпретируемое как unsigned char) и возвращает указатель на него.
+
+
+`RET` first ptr 
+
+`DO` occurrence `value` after `ptr` in rage `num` bytes
+
+## memcmp 
+ 
+ `INTRF`   int memcmp ( const void * ptr1, const void * ptr2, size_t num )
+
+
+`FLOW` Compares the first num bytes of the block of memory pointed by ptr1 to the first num bytes pointed by ptr2, returning zero if they all match or a value different from zero representing which is greater if they do not.
+
+Сравнивает первые num-байты блока памяти, на который указывает ptr1, с первыми num-байтами, на которые указывает ptr2, возвращая ноль, если все они совпадают, или значение, отличное от нуля, представляющее, что больше, если это не так.
+
+
+`RET` int=<0> 
+
+`DO` compare first to first diff `num` bytes after `ptr1` cmp with `ptr2`
+## memcpy
+
+`INTRF`     void * memcpy ( void * destination, const void * source, size_t num )
+
+`FLOW` Copies the values of `num` bytes from the location pointed to by `source` directly to the memory block pointed to by `destination`.
+The underlying type of the objects pointed to by both the source and destination pointers are irrelevant for this function; The result is a binary copy of the data.
+
+The function does not check for any terminating null character in source - it always copies exactly num bytes.
+
+To avoid overflows, the size of the arrays pointed to by both the destination and source parameters, shall be at least num bytes, and should not overlap (for overlapping memory blocks, memmove is a safer approach).
+
+Копирует значения число байтов из местоположения, на которое указывает Источник непосредственно на блок памяти, на который указывает назначение.
+
+Базовый тип объектов, на которые указывают оба Источник и назначение указатели не имеют значения для этой функции; Результатом является двоичная копия данных.
+
+Функция не проверяет наличие завершающего нулевого символа в Источник - он всегда точно копирует num байты.
+
+Чтобы избежать переполнения, размер массивов, на которые указывают оба назначение и Источник параметры должны быть не менее num байты и не должны перекрываться (для перекрывающихся блоков памяти, memmove это более безопасный подход).
+
+`NOT` overlap `destination` and  `source`
+
+`RET` ptr `destination` 
+
+`DO` Copy `num` bytes from ptr `source` to ptr `destination` 
+
+## memmove
+
+`INTRF`  void * memmove ( void * destination, const void * source, size_t num )
+
+
+`FLOW` Copies the values of `num` bytes from the location pointed by `source` to the memory block pointed by `destination`. Copying takes place as if an intermediate buffer were used, allowing the `destination` and `source` to overlap.The underlying type of the objects pointed by both the source and destination pointers are irrelevant for this function; The result is a binary copy of the data.
+
+The function does not check for any terminating null character in source - it always copies exactly num bytes.
+
+To avoid overflows, the size of the arrays pointed by both the destination and source parameters, shall be at least num bytes.
+
+Копирует значения байтов num из местоположения, указанного источником, в блок памяти, указанный получателем. Копирование происходит так, как если бы использовался промежуточный буфер, что позволяет месту назначения и источнику перекрываться.
+
+Базовый тип объектов, на которые указывают указатели источника и назначения, не имеет значения для этой функции; Результатом является двоичная копия данных.
+
+Функция не проверяет наличие завершающего нулевого символа в исходном коде - она всегда копирует ровно num байтов.
+
+Чтобы избежать переполнения, размер массивов указывает как конечный, так и исходный параметры должны быть не менее num байтов.
+
+
+`ALLOW` overlap `destination` and  `source`
+
+`RET` ptr `destination`
+
+`DO` copy `num` bytes from ptr `source` to `destination`
+
+## memset
+`INTRF`  void * memset ( void * ptr, int value, size_t num )
+
+`FLOW` Sets the first num bytes of the block of memory pointed by ptr to the specified value (interpreted as an unsigned char).
+
+Устанавливает первые num-байты блока памяти, на который указывает ptr, в указанное значение (интерпретируется как символ без знака).
+
+
+`ALLOW` `NOT`
+
+`RET` void * ptr
+
+`DO` fill from `ptr` `num` bytes as `value`
+
+## strcat
+`INTRF` char * strcat ( char * destination, const char * source )
+
+`FLOW` Appends a copy of the `source` string to the `destination` string. The terminating null character in `destination` is overwritten by the first character of source, and a null-character is included at the end of the new string formed by the concatenation of both in `destination`
+
+Добавляет копию исходной строки в строку назначения. Завершающий нулевой символ в destination перезаписывается первым символом source, а нулевой символ включается в конец новой строки, образованной конкатенацией обоих в destination.
+
+
+ `NOT` `destination` and  `source`
+
+`RET` ptr  `destination` 
+
+`DO` add `source` to `destination`
+## strchr
+`INTRF` const char * strchr ( const char * str, int character );
+
+`FLOW` Returns a pointer to the first occurrence of character in the C string str.
+
+The terminating null-character is considered part of the C string. Therefore, it can also be located in order to retrieve a pointer to the end of a string.
+
+Возвращает указатель на первое вхождение символа в строке C str.
+
+Завершающий нулевой символ считается частью строки C. Поэтому он также может быть расположен для получения указателя на конец строки.
+
+
+`ALLOW` `NOT`
+
+`RET` ptr to first `character` 
+
+`DO` search first ptr `character` in `str` 
+## strcmp
+
+`INTRF`  int strcmp ( const char * str1, const char * str2 )
+
+
+
+`FLOW` Compares the C string `str1` to the C string `str2`.This function starts comparing the first character of each string. If they are equal to each other, it continues with the following pairs until the characters differ or until a terminating null-character is reached.
+
+This function performs a binary comparison of the characters. For a function that takes into account locale-specific rules, see strcoll.
+
+Сравнивает строку C str1 со строкой C str2.
+
+Эта функция начинает сравнивать первый символ каждой строки. Если они равны друг другу, он продолжается со следующими парами до тех пор, пока символы не будут отличаться или пока не будет достигнут завершающий нулевой символ.
+
+Эта функция выполняет двоичное сравнение символов. Для функции, которая учитывает правила локали, см. strcoll.
+
+`RET` int= `ptr1`<0>`ptr2`
+`DO` if exsit diff in ALL before `\0` : `ptr1` cmp with `ptr2`
+
+## strcoll
+`INTRF` int strcoll ( const char * str1, const char * str2 )
+
+`FLOW` Compares the C string `str1` to the C string `str2`, both interpreted appropriately according to the LC_COLLATE category of the C locale currently selected.This function starts comparing the first character of each string. If they are equal to each other continues with the following pair until the characters differ or until a null-character signaling the end of a string is reached.
+
+The behavior of this function depends on the LC_COLLATE category of the selected C locale.
+
+Сравнивает строку C str1 со строкой C str2, которые интерпретируются соответствующим образом в соответствии с категорией LC_COLLATE выбранной в данный момент локали C.
+
+Эта функция начинает сравнивать первый символ каждой строки. Если они равны друг другу, продолжайте работу со следующей парой до тех пор, пока символы не будут отличаться или пока не будет достигнут нулевой символ, сигнализирующий о конце строки.
+
+Поведение этой функции зависит от категории LC_COLLATE выбранного языка Си.
+
+
+`ALLOW` `NOT`
+
+`RET` int= `ptr1`<0>`ptr2`
+`DO` if exsit diff in ALL before `\0` : `ptr1` cmp with `ptr2` according LC_COLLATE
+
+## strcpy
+`INTRF` char * strcpy ( char * array_dist, const char * source_str )
+
+`FLOW` Copies the C string pointed by `source_str` into the array pointed by `array_dist`, including the terminating null character (and stopping at that point).
+
+To avoid overflows, the size of the array pointed by destination shall be long enough to contain the same C string as source (including the terminating null character), and should not overlap in memory with `source_str`.
+
+Копирует строку C, указанную источником, в массив, указанный получателем, включая завершающий нулевой символ (и остановку в этой точке).
+
+Чтобы избежать переполнения, размер массива, указанного получателем, должен быть достаточно длинным, чтобы содержать ту же строку C, что и источник (включая завершающий нулевой символ), и не должен перекрываться в памяти с источником.
+
+
+`NOT` overlap 
+
+`RET` ptr to `array_dist` 
+
+`DO` cpy `source_str` with `\0` to `array_dist`
+
+## strcspn
+`INTRF` size_t strcspn ( const char * str_study, const char * str_keys )
+
+`FLOW` Scans `str_study` for the first occurrence of any of the characters that are part of `str_keys`, returning the number of characters of `str_study` read before this first occurrence.
+
+The search includes the terminating null-characters. Therefore, the function will return the length of str_study if none of the characters of str_keys are found in `str_study`.
+
+Сканирует `str_study` на наличие первого вхождения любого из символов, входящих в str_keys, возвращая количество символов `str_study`, прочитанных до этого первого вхождения.
+
+Поиск включает в себя завершающие нулевые символы. Поэтому функция вернет длину `str_study`, если ни один из символов `str_keys` не будет найден в `str_study`.
+
+`ALLOW` `NOT`
+
+`RET` L int value from first enetes
+
+`DO` search first enetes for ANY `str_keys` in `str_study`
+## strerror
+`INTRF` char * strerror ( int errnum )
+
+`FLOW` Interprets the value of errnum, generating a string with a message that describes the error condition as if set to errno by a function of the library.
+
+The returned pointer points to a statically allocated string, which shall not be modified by the program. Further calls to this function may overwrite its content (particular library implementations are not required to avoid data races).
+
+The error strings produced by strerror may be specific to each system and library implementation.
+
+Интерпретирует значение errnum, генерируя строку с сообщением, описывающим условие ошибки, как если бы оно было установлено в errno функцией библиотеки.
+
+Возвращаемый указатель указывает на статически выделенную строку, которая не должна быть изменена программой. Дальнейшие вызовы этой функции могут перезаписать ее содержимое (конкретные реализации библиотеки не требуются, чтобы избежать гонок данных).
+
+Строки ошибок, создаваемые strerror, могут быть специфичными для каждой реализации системы и библиотеки.
+
+
+`ALLOW` `NOT`
+
+`RET` str interpret `errnum`
+
+`DO` interpret `errnum`
+## strlen
+`INTRF` size_t strlen ( const char * str )
+
+`FLOW` Returns the length of the C string str.
+
+The length of a C string is determined by the terminating null-character: A C string is as long as the number of characters between the beginning of the string and the terminating null character (without including the terminating null character itself).
+
+This should not be confused with the size of the array that holds the string. For example:
+
+char mystr[100]="test string";
+
+defines an array of characters with a size of 100 chars, but the C string with which mystr has been initialized has a length of only 11 characters. Therefore, while sizeof(mystr) evaluates to 100, strlen(mystr) returns 11.
+
+Возвращает длину строки C str.
+
+Длина строки C определяется конечным нулевым символом: Строка C равно количеству символов между началом строки и завершающим нулевым символом (без включения самого завершающего нулевого символа).
+
+Это не следует путать с размером массива, содержащего строку. Например:
+
+char mystr[100]="test string";
+
+определяет массив символов размером 100 chars, но строка C, с которой инициализированный mystr имеет длину всего 11 символов. Поэтому, пока sizeof(mystr) оценивает до 100, strlen (mystr) ВОЗВРАТ 11.
+
+
+`ALLOW` `NOT`
+
+`RET` length `str`
+
+`DO` count before `\0` 
+## strncat
+`INTRF` char * strncat ( char * destination, const char * source, size_t num )
+
+`FLOW` Appends the first num characters of source to destination, plus a terminating null-character.
+
+If the length of the C string in source is less than num, only the content up to the terminating null-character is copied.
+
+Добавляет первые num-символы источника в пункт назначенияплюс завершающий null-символ.
+
+Если длина строки C в источнике меньше num, копируется только содержимое до завершающего null-символа.
+
+
+`ALLOW` `NOT`
+
+`RET` ptr `destination` ater cat
+
+`DO` add `num` chars from `source` to `destination`
+## strncmp
+`INTRF` int strncmp ( const char * str1, const char * str2, size_t num )
+
+`FLOW` Compares up to num characters of the C string str1 to those of the C string str2.
+This function starts comparing the first character of each string. If they are equal to each other, it continues with the following pairs until the characters differ, until a terminating null-character is reached, or until num characters match in both strings, whichever happens first.
+
+Сравнивает до num символов строки C str1 с символами строки C str2.
+Эта функция начинает сравнение первого символа каждой строки. Если они равны друг другу, он продолжается со следующими парами до тех пор, пока символы не будут отличаться, пока не будет достигнут завершающий нулевой символ или пока символы num не совпадут в обеих строках, в зависимости от того, что произойдет раньше.
+
+
+`ALLOW` `NOT`
+
+`RET` int= `str1` no more `num`<0>`str2`
+
+`DO` if exsit diff in ALL before `\0` : `str1` cmp with `str2`
+## strncpy
+`INTRF` char * strncpy ( char * destination, const char * source, size_t num )
+
+`FLOW` Copies the first num characters of source to destination. If the end of the source C string (which is signaled by a null-character) is found before num characters have been copied, destination is padded with zeros until a total of num characters have been written to it.
+
+No null-character is implicitly appended at the end of destination if source is longer than num. Thus, in this case, destination shall not be considered a null terminated C string (reading it as such would overflow).
+
+destination and source shall not overlap (see memmove for a safer alternative when overlapping).
+
+Копирует первые символы num источника в пункт назначения. Если конец исходной строки C (который сигнализируется нулевым символом) найден до копирования символов num, пункт назначения дополняется нулями до тех пор, пока в него не будет записано всего символов num.
+
+Ни один нулевой символ не будет неявно добавлен в конец пункта назначения, если источник длиннеечем num. Таким образом, в этом случае destination не будет считаться нулевой завершенной строкой C (чтение ее как таковой приведет к переполнению).
+
+назначение и источник не должны перекрываться (см. memmove для более безопасной альтернативы при перекрытии).
+
+
+`NOT` overlap 
+
+`RET`
+
+`DO`
+
+## strpbrk
+`INTRF` const char * strpbrk ( const char * str1, const char * str2 )
+
+`FLOW` Returns a pointer to the first occurrence in str1 of any of the characters that are part of str2, or a null pointer if there are no matches.
+
+The search does not include the terminating null-characters of either strings, but ends there.
+
+Возвращает указатель на первое вхождение в str1 любого из символов, входящих в str2, или нулевой указатель, если совпадений нет.
+
+Поиск не включает в себя завершающие нулевые символы ни одной из строк, но заканчивается на этом.
+
+
+
+`ALLOW` `NOT`
+
+`RET`
+
+`DO`
+## strrchr
+`INTRF` const char * strrchr ( const char * str, int character )
+
+`FLOW` Returns a pointer to the last occurrence of character in the C string str.
+
+The terminating null-character is considered part of the C string. Therefore, it can also be located to retrieve a pointer to the end of a string.
+
+Возвращает указатель на последнее вхождение символа в строке C str.
+
+Завершающий нулевой символ считается частью строки C. Поэтому он также может быть расположен для извлечения указателя на конец строки.
+
+
+`ALLOW` `NOT`
+
+`RET`
+
+`DO`
+## strspn
+`INTRF` size_t strspn ( const char * str1, const char * str2 )
+
+`FLOW` Returns the length of the initial portion of str1 which consists only of characters that are part of str2.
+
+The search does not include the terminating null-characters of either strings, but ends there.
+
+Возвращает длину начальной части str1, которая состоит только из символов, входящих в str2.
+
+Поиск не включает в себя завершающие нулевые символы ни одной из строк, но заканчивается на этом.
+
+
+`ALLOW` `NOT`
+
+`RET`
+
+`DO`
+## strstr
+`INTRF` const char * strstr ( const char * str1, const char * str2 )
+
+`FLOW` Returns a pointer to the first occurrence of str2 in str1, or a null pointer if str2 is not part of str1.
+
+The matching process does not include the terminating null-characters, but it stops there.
+
+Возвращает указатель на первое вхождение str2 в str1или нулевой указатель, если str2 не является частью str1.
+
+Процесс сопоставления не включает в себя завершающие нулевые символы, но на этом он заканчивается.
+
+
+`ALLOW` `NOT`
+
+`RET`
+
+`DO`
+## strtok
+`INTRF` char * strtok ( char * str, const char * delimiters )
+
+`FLOW` A sequence of calls to this function split str into tokens, which are sequences of contiguous characters separated by any of the characters that are part of delimiters.
+
+On a first call, the function expects a C string as argument for str, whose first character is used as the starting location to scan for tokens. In subsequent calls, the function expects a null pointer and uses the position right after the end of the last token as the new starting location for scanning.
+
+To determine the beginning and the end of a token, the function first scans from the starting location for the first character not contained in delimiters (which becomes the beginning of the token). And then scans starting from this beginning of the token for the first character contained in delimiters, which becomes the end of the token. The scan also stops if the terminating null character is found.
+
+This end of the token is automatically replaced by a null-character, and the beginning of the token is returned by the function.
+
+Once the terminating null character of str is found in a call to strtok, all subsequent calls to this function (with a null pointer as the first argument) return a null pointer.
+
+The point where the last token was found is kept internally by the function to be used on the next call (particular library implementations are not required to avoid data races).
+
+Последовательность вызовов этой функции разбивает str на токены, которые представляют собой последовательности непрерывных символов, разделенных любым из символов, являющихся частью разделителей.
+
+При первом вызове функция ожидает строку C в качестве аргумента для str, первый символ которой используется в качестве начального местоположения для сканирования токенов. В последующих вызовах функция ожидает нулевой указатель и использует позицию сразу после окончания последнего маркера в качестве нового начального местоположения для сканирования.
+
+Чтобы определить начало и конец токена, функция сначала сканирует из начального местоположения первый символ, не содержащийся в разделителях (который становится началом токена). А затем сканирует, начиная с этого начала токена, первый символ, содержащийся в разделителях, который становится концом токена. Сканирование также останавливается, если найден завершающий нулевой символ.
+
+Этот конец маркера автоматически заменяется нулевым символом, а начало маркера возвращается функцией.
+
+Как только завершающий нулевой символ str найден в вызове strtok, все последующие вызовы этой функции (с нулевым указателем в качестве первого аргумента) возвращают нулевой указатель.
+
+Точка, в которой был найден последний токен, хранится внутри функции, которая будет использоваться при следующем вызове (конкретные реализации библиотеки не требуются, чтобы избежать гонок данных).
+
+
+`ALLOW` `NOT`
+
+`RET`
+
+`DO`
+## strxfrm
+`INTRF` size_t strxfrm ( char * arr_dist, const char * str_src, size_t num )
+
+`FLOW` Transforms the C string pointed by `str_src` according to the current locale and copies the first num characters of the transformed string to `arr_dist`, returning its length.
+Alternativelly, the function can be used to only retrieve the length, by specifying a null pointer for `arr_dist` and zero for `num`.
+
+destination and source shall not overlap.
+
+The behavior of this function depends on the LC_COLLATE category of the selected C locale.
+
+Преобразует строку C, указанную источником, в соответствии с текущей локализацией и копирует первые символы num преобразованной строки в пункт назначения, возвращая ее длину.
+Кроме того, функцию можно использовать только для извлечения длины, указав нулевой указатель для назначения и ноль для num.
+
+назначение и источник не должны перекрываться.
+
+
+`NOT` overlap `arr_dist` & `str_src`
+
+`RET` strlen  `arr_dist`
+
+`DO` copy transforming `str_src` to `arr_dist`
+
+

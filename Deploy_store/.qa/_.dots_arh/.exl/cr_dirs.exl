@@ -1,0 +1,16 @@
+eval QQ_EXIT=1
+
+eval wrp_fifs1_ mkdir -v ${PATH_COMMUNIS}/up_to_toshiba_ext -cnd1 -qq_exit
+eval wrp_fifs1_ mkdir -v ${PATH_COMMUNIS}/up_from_toshiba_ext -cnd1 -qq_exit
+
+eval wrp_fifs1_ mkdir -v ${PATH_TOSHIBA_EXT}/up_to_communis -cnd1 -qq_exit
+eval wrp_fifs1_ mkdir -v ${PATH_TOSHIBA_EXT}/up_from_communis -cnd1 -qq_exit
+
+eval wrp_fifs1_ mkdir -v ${PATH_TOSHIBA_EXT}/up_to_home -cnd1 -qq_exit
+eval wrp_fifs1_ mkdir -v ${PATH_TOSHIBA_EXT}/up_from_home -cnd1 -qq_exit
+
+eval wrp_fifs1_ mkdir -v ${HOME}/up_to_toshiba_ext -cnd1 -qq_exit
+eval wrp_fifs1_ mkdir -v ${HOME}/up_from_toshiba_ext -cnd1 -qq_exitt
+
+eval wrp_fifs1_ touch -v ${HOME}/.fonsh_path -cnf1
+eval wrp_fifs1_ touch -v ${HOME}/.plt_path -cnf1

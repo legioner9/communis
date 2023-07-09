@@ -1,0 +1,11 @@
+p@cfgetispeed
+p@cfgetospeed
+p@cfsetispeed
+p@cfsetospeed
+p@tcdrain
+p@tcflow
+p@tcflush
+p@tcgetattr
+p@tcgetsid
+p@tcsendbreak
+p@tcsetattr

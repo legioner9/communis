@@ -1,0 +1,19 @@
+[0;34m--- cntl_c_cpjs | dr2e_ ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_dr2e_/dr2e_tst/_v1 ---[0m
+${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_dr2e_/dr2e_tst/_v1/d1/f2
+${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_dr2e_/dr2e_tst/_v1/d1/f2.a
+${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_dr2e_/dr2e_tst/_v1/d1/f2.b
+${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_dr2e_/dr2e_tst/_v1/f
+${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_dr2e_/dr2e_tst/_v1/f.a
+${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_dr2e_/dr2e_tst/_v1/f.b
+${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_dr2e_/dr2e_tst/_v1/start_1.sh
+[0;34m--- cntl_c_cpjs | dr2e_ ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_dr2e_/dr2e_tst/_v1 a ---[0m
+${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_dr2e_/dr2e_tst/_v1/d1/f2.a
+${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_dr2e_/dr2e_tst/_v1/f.a
+[0;34m--- cntl_c_cpjs | dr2e_ ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_dr2e_/dr2e_tst/_v1 b ---[0m
+${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_dr2e_/dr2e_tst/_v1/d1/f2.b
+${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_dr2e_/dr2e_tst/_v1/f.b
+[0;34m--- cntl_c_cpjs | dr2e_ ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_dr2e_/dr2e_tst/_v1 c ---[0m
+[0;34m--- cntl_c_cpjs | dr2e_ ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_dr2e_/dr2e_tst/_v1/not_exist a ---[0m
+[0;31m---message: arg 1: ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_dr2e_/dr2e_tst/_v1/not_exist is not dir ---[0m
+[0;31m---file:  ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_dr2e_/dr2e_tst/_flow_tst.sh dr2e_---[0m
+[0;31m---line: 89---[0m

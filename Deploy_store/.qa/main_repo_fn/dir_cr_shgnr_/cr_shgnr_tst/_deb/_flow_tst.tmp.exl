@@ -1,0 +1,15 @@
+
+wrp2_ cd --_xxd ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_cr_shgnr_/cr_shgnr_tst/_deb/res
+
+rm -rf ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_cr_shgnr_/cr_shgnr_tst/_deb/res/*
+
+cr_shgnr_ 1 dir_xxx1
+
+cr_shgnr_ 2 sys_xxx2
+
+wrp2_ cd --_xxd ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_cr_shgnr_/cr_shgnr_tst/_deb
+
+wrp2_ . --_xxf ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_cr_shgnr_/cr_shgnr_tst/_deb/res/_gnr_dir_xxx1.sh aaa
+
+wrp2_ . --_xxf ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_cr_shgnr_/cr_shgnr_tst/_deb/res/_gnr_sys_xxx2.sh aaa
+

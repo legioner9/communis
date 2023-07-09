@@ -1,0 +1,71 @@
+[0;36m--- ret2e() wrp2_ file --_xxd /tmp ---[0m
+0
+[1mexec: file /tmp :end exec[0m
+/tmp: sticky, directory
+[0;36m--- ret2e() wrp2_ file --_xnd /tmp ---[0m
+1
+fail: is_est_ /tmp -d
+[0;36m--- ret2e() wrp2_ file --_cxd /tmp ---[0m
+0
+[1mexec: file /tmp :end exec[0m
+/tmp: sticky, directory
+[0;36m--- ret2e() wrp2_ file --_cnd /tmp ---[0m
+0
+start with --xxf ^/bin
+[0;36m--- ret2e() wrp2_ file --_xxd /tmp --_xxd ^/bin ---[0m
+0
+[1mexec: file /tmp :end exec[0m
+/tmp: sticky, directory
+[0;36m--- ret2e() wrp2_ file --_xnd /tmp --_xxd ^/bin ---[0m
+1
+fail: is_est_ /tmp -d
+[0;36m--- ret2e() wrp2_ file --_cxd /tmp --_xxd ^/bin ---[0m
+0
+[1mexec: file /tmp :end exec[0m
+/tmp: sticky, directory
+[0;36m--- ret2e() wrp2_ file --_cnd /tmp --_xxd ^/bin ---[0m
+0
+end with --xxf ^/bin
+[0;36m--- ret2e() wrp2_ file --_xxd /tmpx ---[0m
+1
+[0;31m---  $arg_path: "/tmpx" /tmpx: /tmpx :: not dir :: $errmes_est: fn: is_est_, with_args: /tmpx -d , filename: ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_is_est_/is_est_.sh, line: 28 ---[0m
+fail: is_est_ /tmpx -d
+[0;36m--- ret2e() wrp2_ file --_xnd /tmpx ---[0m
+0
+[1mexec: file /tmpx :end exec[0m
+/tmpx: cannot open `/tmpx' (No such file or directory)
+[0;36m--- ret2e() wrp2_ file --_cxd /tmpx ---[0m
+0
+[0;36m--- ret2e() wrp2_ file --_cnd /tmpx ---[0m
+0
+[1mexec: file /tmpx :end exec[0m
+/tmpx: cannot open `/tmpx' (No such file or directory)
+[0;36m--- ret2e() wrp2_ file --_xxf /home/st/.bashrc ---[0m
+0
+[1mexec: file /home/st/.bashrc :end exec[0m
+/home/st/.bashrc: Bourne-Again shell script, Unicode text, UTF-8 text executable
+[0;36m--- ret2e() wrp2_ file --_xnf /home/st/.bashrc ---[0m
+1
+fail: is_est_ /home/st/.bashrc -f
+[0;36m--- ret2e() wrp2_ file --_cxf /home/st/.bashrc ---[0m
+0
+[1mexec: file /home/st/.bashrc :end exec[0m
+/home/st/.bashrc: Bourne-Again shell script, Unicode text, UTF-8 text executable
+[0;36m--- ret2e() wrp2_ file --_cxf /home/st/.bashrc ---[0m
+0
+[1mexec: file /home/st/.bashrc :end exec[0m
+/home/st/.bashrc: Bourne-Again shell script, Unicode text, UTF-8 text executable
+[0;36m--- ret2e() wrp2_ file --_xxf /home/st/.bashrcx ---[0m
+1
+[0;31m---  $arg_path: "/home/st/.bashrcx" /home/st/.bashrcx: /home/st/.bashrcx :: not simple file :: $errmes_est: fn: is_est_, with_args: /home/st/.bashrcx -f , filename: ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_is_est_/is_est_.sh, line: 28 ---[0m
+fail: is_est_ /home/st/.bashrcx -f
+[0;36m--- ret2e() wrp2_ file --_xnf /home/st/.bashrcx ---[0m
+0
+[1mexec: file /home/st/.bashrcx :end exec[0m
+/home/st/.bashrcx: cannot open `/home/st/.bashrcx' (No such file or directory)
+[0;36m--- ret2e() wrp2_ file --_cxf /home/st/.bashrcx ---[0m
+0
+[0;36m--- ret2e() wrp2_ file --_cnf /home/st/.bashrcx ---[0m
+0
+[1mexec: file /home/st/.bashrcx :end exec[0m
+/home/st/.bashrcx: cannot open `/home/st/.bashrcx' (No such file or directory)

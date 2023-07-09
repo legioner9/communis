@@ -1,0 +1,5 @@
+#>warg
+# not for production
+# ${ARG} argument for function_condition
+
+d<>"eval [ -d ${ARG} ]"

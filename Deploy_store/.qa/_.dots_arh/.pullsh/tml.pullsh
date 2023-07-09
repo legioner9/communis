@@ -1,0 +1,16 @@
+
+name_repo
+dir_contaner
+dir_repo
+dir_bare
+
+clone_net
+clone_local
+
+pull_net
+pull_local
+
+push_net_strong
+push_local_strong
+push_to_net
+push_to_local

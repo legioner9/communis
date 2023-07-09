@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<!-- saved from url=(0031)https://ru.manpages.org/readv/2 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com/">
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+  <link rel="dns-prefetch" href="https://www.google-analytics.com/">
+  <title>man readv (2): чтение или запись данных в несколько</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="description" content="man readv (2): Системный вызов readv() считывает iovcnt буферов из файла, связанного с файловым дескриптором fd, в буферы, описываемые iov («разнесённый ввод»). Системный вызов writev() записывает iovcnt буферов, описанных iov, в файл, связанный с файловым дескриптором ">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <link href="./man readv (2)_ чтение или запись данных в несколько_files/css" rel="stylesheet" type="text/css">
+  <link href="./man readv (2)_ чтение или запись данных в несколько_files/css(1)" rel="stylesheet" type="text/css">
+  <link href="./man readv (2)_ чтение или запись данных в несколько_files/css(2)" rel="stylesheet" type="text/css">
+  <link data-turbolinks-track="true" href="./man readv (2)_ чтение или запись данных в несколько_files/application-f7897fbdd67c6822d0a0ff57b3ffc02f.css" media="all" rel="stylesheet">
+  <script async="" src="./man readv (2)_ чтение или запись данных в несколько_files/analytics.js"></script><script async="async" data-turbolinks-track="true" src="./man readv (2)_ чтение или запись данных в несколько_files/application-b47bf462822a1e5557c375def5c1aa58.js"></script>
+
+  <!--[if IE]>
+        
+    <![endif]-->
+<script type="text/javascript">
+//<![CDATA[
+      var LANG = 'ru';
+//]]>
+</script>
+  
+  <meta content="authenticity_token" name="csrf-param">
+<meta content="eR+ecn3USp1Yn8F04UQ7cH2qmsxrQBr8A58efSt8hg8=" name="csrf-token">
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-56225390-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<body>
+  <div class="header-container">
+    <header class="clearfix">
+      <div class="logo"><a href="https://ru.manpages.org/"><img src="./man readv (2)_ чтение или запись данных в несколько_files/logo-01e8ca9d4868e2e64bed82dde5c62d60.png" alt="logo"></a></div>
+       <!--
+        <nav>
+    <ul>
+        <li class="ОБЗОР selected"><a title="" href="#">ОБЗОР</a></li>
+        <li class="ОПИСАНИЕ"><a title="" href="#">ОПИСАНИЕ</a></li>
+        <li class="ВОЗВРАЩАЕМОЕ ЗНАЧЕНИЕ"><a title="" href="#">ВОЗВРАЩАЕМОЕ ЗНАЧЕНИЕ</a></li>
+        <li class="ОШИБКИ"><a title="" href="#">ОШИБКИ</a></li>
+        <li class="ПРИМЕР"><a title="" href="#">ПРИМЕР</a></li>
+    </ul>
+  </nav>
+  -->
+      <div class="search">
+        <form accept-charset="UTF-8" action="https://ru.manpages.org/pagenames/autocomplete_page_name_name" method="post"><div style="display:none"><input name="utf8" type="hidden" value="✓" class="ui-autocomplete-input" autocomplete="off"><input name="authenticity_token" type="hidden" value="eR+ecn3USp1Yn8F04UQ7cH2qmsxrQBr8A58efSt8hg8=" class="ui-autocomplete-input" autocomplete="off"></div>
+            <input data-autocomplete="/pagenames/autocomplete_page_name_name" id="page_name_name" name="page_name[name]" placeholder="Поиск в MAN файлах..." type="text" class="ui-autocomplete-input" autocomplete="off">
+            <button type="submit" onclick="return false">
+              <img src="./man readv (2)_ чтение или запись данных в несколько_files/search_-5f10690007ebc2fbfce6cf9b1f687474.svg">
+            </button>
+</form>      </div>
+      <a class="mcat"><img src="./man readv (2)_ чтение или запись данных в несколько_files/menu-533ee2b7609b0e242c51d7f42ca18b7f.png"></a>
+    </header>
+  </div>
+  <div id="core">
+    <div class="main-wrapper">
+      <link rel="stylesheet" href="./man readv (2)_ чтение или запись данных в несколько_files/default.min.css">
+<script src="./man readv (2)_ чтение или запись данных в несколько_files/highlight.min.js"></script>
+
+<div class="manpages-show">
+
+
+<div class="main-container">
+  <main>
+
+    <div class="article-container">
+        <div class="article_table">
+            <span>readv<i>(2)</i></span>
+            <span>чтение или запись данных в несколько</span>
+        </div>
+      <article>
+        <div class="alias">
+          <p><span class="translation_missing" title="translation missing: ru.Other_Alias">Other Alias</span></p>
+          <span>writev, preadv, pwritev</span>
+        </div>
+        <a name=""></a><div class="section">
+<h2>ОБЗОР</h2>
+
+<p></p><p><b>#include &lt;sys/uio.h&gt;</b><br></p><hr><b>ssize_t readv(int </b><i>fd</i><b>, const struct iovec *</b><i>iov</i><b>, int </b><i>iovcnt</i><b>);</b><br><hr><b>ssize_t writev(int </b><i>fd</i><b>, const struct iovec *</b><i>iov</i><b>, int </b><i>iovcnt</i><b>);</b><br><hr><b>ssize_t preadv(int </b><i>fd</i><b>, const struct iovec *</b><i>iov</i><b>, int </b><i>iovcnt</i><b>,</b><br><b>               off_t </b><i>offset</i><b>);</b><br><hr><b>ssize_t pwritev(int </b><i>fd</i><b>, const struct iovec *</b><i>iov</i><b>, int </b><i>iovcnt</i><b>,</b><br><b>                off_t </b><i>offset</i><b>);</b><p></p>
+
+<p>
+Требования макроса тестирования свойств для glibc
+(см. <b><a class="man" category="7" href="https://ru.manpages.org/feature_test_macros/7">feature_test_macros</a></b>(7)):
+</p><p>
+<b>preadv</b>(), <b>pwritev</b>(): _BSD_SOURCE
+</p></div>
+<a name=""></a><div class="section">
+<h2>ОПИСАНИЕ</h2>
+Системный вызов <b>readv</b>() считывает <i>iovcnt</i> буферов из файла, связанного
+с файловым дескриптором <i>fd</i>, в буферы, описываемые <i>iov</i> («разнесённый
+ввод»).
+<p>
+Системный вызов <b>writev</b>() записывает <i>iovcnt</i> буферов, описанных <i>iov</i>,
+в файл, связанный с файловым дескриптором <i>fd</i> («сборный вывод»).
+</p><p>
+Указатель <i>iov</i> указывает на массив структур <i>iovec</i> (определён в
+<i>&lt;sys/uio.h&gt;</i>:
+</p><p>
+
+<br>
+
+
+</p><pre>struct iovec {
+    void  *iov_base;    /* начальный адрес */
+    size_t iov_len;     /* количество передаваемых байт */
+};
+</pre>
+
+
+<p>
+Системный вызов <b>readv</b>() работает также как <b><a class="man" category="2" href="https://ru.manpages.org/read/2">read</a></b>(2), но считывает
+несколько буферов.
+</p><p>
+Системный вызов <b>writev</b>() работает также как <b><a class="man" category="2" href="https://ru.manpages.org/write/2">write</a></b>(2), но записывает
+несколько буферов.
+</p><p>
+Буферы выбираются в порядке, в каком они указаны в массиве. Это означает,
+что <b>readv</b>() сначала полностью заполнит <i>iov</i>[0], и только потом перейдёт
+к <i>iov</i>[1], и так далее. (Если данных недостаточно, то могут быть заполнены
+не все буферы, на которые указывает <i>iov</i>.) Подобным образом <b>writev</b>()
+запишет сначала всё содержимое <i>iov</i>[0], затем <i>iov</i>[1], и так далее.
+</p><p>
+Выполняемые вызовами <b>readv</b>() и <b>writev</b>() пересылки данных атомарны:
+данные записываются <b>writev</b>() единичным блоком, который не перемешивается
+с выводом других процессов (см. исключения в <b><a class="man" category="7" href="https://ru.manpages.org/pipe/7">pipe</a></b>(7)); аналогично,
+<b>readv</b>() гарантированно считывает непрерывный блок данных из файла,
+независимо от операций чтения из других нитей или процессов, которые имеют
+файловые дескрипторы, ссылающиеся на это же открытое файловое описание
+(см. <b><a class="man" category="2" href="https://ru.manpages.org/open/2">open</a></b>(2)).
+</p></div>
+<div class="section">
+<h2>preadv() и pwritev()</h2>
+В системном вызове <b>preadv</b>() объединены возможности <b>readv</b>() и
+<b><a class="man" category="2" href="https://ru.manpages.org/pread/2">pread</a></b>(2). Он выполняет ту же задачу что и <b>readv</b>(), но имеет четвёртый
+аргумент <i>offset</i>, задающий файловое смещение, по которому нужно выполнить
+операцию чтения.
+<p>
+В системном вызове <b>pwritev</b>() объединены возможности <b>readv</b>() и
+<b><a class="man" category="2" href="https://ru.manpages.org/pwrite/2">pwrite</a></b>(2). Он выполняет ту же задачу что и <b>writev</b>(), но имеет
+четвёртый аргумент <i>offset</i>, задающий файловое смещение, по которому нужно
+выполнить операцию записи.
+</p><p>
+Файловое смещение не изменяется данными вызовами. Файл, заданный в <i>fd</i>,
+должен позволять изменение смещения.
+</p></div>
+<a name=""></a><div class="section">
+<h2>ВОЗВРАЩАЕМОЕ ЗНАЧЕНИЕ</h2>
+При успешном выполнении <b>readv</b>() и <b>preadv</b>() возвращается количество
+считанных байт; вызовы <b>writev</b>() и <b>pwritev</b>() возвращают количество
+записанных байт.
+<p>
+Заметим, что для успешного выполнения не считается ошибкой передача меньшего
+количества байт чем запрошено (смотрите <b><a class="man" category="2" href="https://ru.manpages.org/read/2">read</a></b>(2) и <b><a class="man" category="2" href="https://ru.manpages.org/write/2">write</a></b>(2)).
+</p><p>
+В случае ошибки возвращается -1 и значение <i>errno</i> устанавливается
+соответствующим образом.
+</p></div>
+<a name=""></a><div class="section errors">
+<h2>ОШИБКИ</h2>
+Вызовы могут возвращать те же ошибки что и <b><a class="man" category="2" href="https://ru.manpages.org/read/2">read</a></b>(2) и <b><a class="man" category="2" href="https://ru.manpages.org/write/2">write</a></b>(2). Кроме
+этого, <b>preadv</b>() и <b>pwritev</b>() также могут завершаться с ошибками как
+<b><a class="man" category="2" href="https://ru.manpages.org/lseek/2">lseek</a></b>(2). Дополнительно, определены следующие ошибки:
+<dl compact="compact">
+<dt><b>EINVAL</b></dt><dd>
+Сумма значений <i>iov_len</i> превышает значение <i>ssize_t</i>.
+</dd><dt><b>EINVAL</b></dt><dd>
+Количество векторов <i>iovcnt</i> меньше нуля или больше разрешённого максимума.
+</dd></dl>
+
+</div>
+<div class="section">
+<h2>ВЕРСИИ</h2>
+Вызовы <b>preadv</b>() и <b>pwritev</b>() впервые появились в Linux 2.6.30;
+поддержка в библиотеке добавлена в glibc 2.10.
+</div>
+<div class="section">
+<h2>СООТВЕТСТВИЕ СТАНДАРТАМ</h2>
+
+
+
+
+
+<b>readv</b>(), <b>writev</b>(): POSIX.1-2001, POSIX.1-2008, 4.4BSD (данные
+системные вызовы впервые появились в 4.2BSD).
+<p>
+<b>preadv</b>(), <b>pwritev</b>(): нет в стандарте, но есть в современных BSD.
+</p></div>
+<div class="section">
+<h2>ЗАМЕЧАНИЯ</h2>
+Согласно POSIX1, в реализации можно устанавливать ограничение на количество
+элементов, которые можно передать в <i>iov</i>. Реализация может объявить это
+ограничение в <b>IOV_MAX</b> (в файле <i>&lt;limits.h&gt;</i>) или во время
+выполнения в виде возвращаемого значения <i>sysconf(_SC_IOV_MAX)</i>. В
+современных Linux данное ограничение равно 1024. В времена Linux 2.0 оно
+было равно 16.
+<p>
+</p><p>
+
+
+
+</p></div>
+<div class="section">
+<h2>Отличия между библиотекой C и ядром</h2>
+Объявления системных вызовов <b>preadv</b>() и <b>pwritev</b>() немного отличаются
+от им соответствующих обёрточных функций библиотеки GNU C; они показаны в
+ОБЗОРЕ. Последний аргумент, <i>offset</i>, раскладывается обёрточными функциями
+на два для системных вызовов:
+<p>
+<b> unsigned long </b><i>pos_l</i><b>, unsigned long </b><i>pos</i>
+</p><p>
+В этих аргументах содержатся старшая и младшая 32-битная часть <i>offset</i>,
+соответственно.
+</p></div>
+<div class="section">
+<h2>Исторические отличия между библиотекой C и ядром</h2>
+Для учёта того, что значение <b>IOV_MAX</b> было мало в старых версиях Linux,
+обёрточные функции glibc <b>readv</b>() и <b>writev</b>() выполняют дополнительные
+действия, если обнаруживается, что используемый системный вызов ядра
+завершился неудачно из-за превышения этого ограничения. В случае <b>readv</b>(),
+обёрточная функция выделяет временный буфер, достаточный для всех элементов,
+указанных в <i>iov</i>, передаёт этот буфер в вызов <b><a class="man" category="2" href="https://ru.manpages.org/read/2">read</a></b>(2), копирует данные
+из буфера в места, указанные в полях <i>iov_base</i> элемента <i>iov</i>, а затем
+освобождает буфер. Обёрточная функция <b>writev</b>() выполняет аналогичную
+задачу с помощью временного буфера и вызова <b><a class="man" category="2" href="https://ru.manpages.org/write/2">write</a></b>(2).
+<p>
+Потребность в дополнительных действиях в обёрточных функциях glibc пропала в
+Linux 2.2 и новее. Однако glibc продолжала так работать до версии
+2.10. начиная с glibc 2.9, обёрточные функции так работают только, если
+библиотека обнаруживает, что система работает с ядром Linux меньше 2.6.18
+(произвольно выбранная версия ядра). И начиная с glibc 2.20 (для которой
+требуется минимальная версия ядра Linux 2.6.32) обёрточные функции glibc
+всегда просто вызывают системные вызовы.
+</p><p>
+Неразумно смешивать вызовы <b>readv</b>() или <b>writev</b>(), работающих с
+дескрипторами файлов, вместе с функциями из библиотеки stdio; результат
+непредсказуем и точно не тот, которого вы ожидаете.
+</p></div>
+<a name=""></a><div class="section">
+<h2>ПРИМЕР</h2>
+Следующий пример кода демонстрирует использование <b>writev</b>():
+<p>
+
+</p><pre>char *str0 = "hello ";
+char *str1 = "world\n";
+struct iovec iov[2];
+ssize_t nwritten;
+iov[0].iov_base = str0;
+iov[0].iov_len = strlen(str0);
+iov[1].iov_base = str1;
+iov[1].iov_len = strlen(str1);
+nwritten = writev(STDOUT_FILENO, iov, 2);
+</pre>
+
+
+
+</div>
+
+      </article>
+    </div>
+
+
+  </main>
+</div>
+<div class="nav-container">
+<div class="nav" style="height:526px">
+<div class="inner">
+  <nav class="box">
+    <h4>содержание</h4>
+    <ul>
+        <li class="ОБЗОР selected"><a title="" href="https://ru.manpages.org/readv/2#">ОБЗОР</a></li>
+        <li class="ОПИСАНИЕ"><a title="" href="https://ru.manpages.org/readv/2#">ОПИСАНИЕ</a></li>
+        <li class="ВОЗВРАЩАЕМОЕ ЗНАЧЕНИЕ"><a title="" href="https://ru.manpages.org/readv/2#">ВОЗВРАЩАЕМОЕ ЗНАЧЕНИЕ</a></li>
+        <li class="ОШИБКИ"><a title="" href="https://ru.manpages.org/readv/2#">ОШИБКИ</a></li>
+        <li class="ПРИМЕР"><a title="" href="https://ru.manpages.org/readv/2#">ПРИМЕР</a></li>
+    </ul>
+  </nav>
+
+  <div class="box lang">
+    <h4>ПЕРЕВОДЫ</h4>
+    <ul>
+        <li class="en"><a class="c2" href="https://manpages.org/readv/2"><i></i>АНГЛИЙСКИЙ</a></li>
+        <li class="en"><a class="c2" href="https://manpages.org/readv/2"><i></i>АНГЛИЙСКИЙ</a></li>
+        <li class="fr"><a class="c2" href="https://fr.manpages.org/readv/2"><i></i>ФРАНЦУЗСКИЙ</a></li>
+        <li class="ja"><a class="c2" href="https://ja.manpages.org/readv/2"><i></i>ЯПОНСКИЙ</a></li>
+        <li class="it"><a class="c2" href="https://it.manpages.org/readv/2"><i></i>ИТАЛЬЯНСКИЙ</a></li>
+        <li class="es"><a class="c2" href="https://es.manpages.org/readv/2"><i></i>ИСПАНСКИЙ</a></li>
+        <li class="pl"><a class="c2" href="https://pl.manpages.org/readv/2"><i></i>ПОЛЬСКИЙ</a></li>
+    </ul>
+  </div>
+  
+
+<!--
+    <div class="ads">
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <ins class="adsbygoogle"
+           style="display:inline-block;width:300px;height:250px"
+           data-ad-client="ca-pub-2811344342425918"
+           data-ad-slot="5277441578"></ins>
+      <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+-->
+    <div class="box see-also">
+      <h4>СМОТРИТЕ ТАКЖЕ</h4>
+      <ul class="clearfix">
+            <li><a href="https://ru.manpages.org/pread/2" class="c2">pread <span>(2)</span></a></li>
+            <li><a href="https://ru.manpages.org/read/2" class="c2">read <span>(2)</span></a></li>
+            <li><a href="https://ru.manpages.org/write/2" class="c2">write <span>(2)</span></a></li>
+      </ul>
+    </div>
+
+        <div class="box last-searched">
+          <h4>ПОСЛЕДНИЕ ЗАПРОСЫ</h4>
+          <ul class="clearfix">
+                <li><a href="https://es.manpages.org/localepo4atexinfo/3" class="c3">Locale::Po4a::TeXinfo <span>(3)</span></a></li>
+                <li><a href="https://manpages.org/textxslatemanualfaq/3" class="c3">Text::Xslate::Manual::FAQ <span>(3)</span></a></li>
+                <li><a href="https://fr.manpages.org/df" class="c1">df <span>(1)</span></a></li>
+                <li><a href="https://manpages.org/xrayabsorptionnone/3" class="c3">Xray::Absorption::None <span>(3)</span></a></li>
+                <li><a href="https://manpages.org/im_histnorm/3" class="c3">im_histnorm <span>(3)</span></a></li>
+                <li><a href="https://manpages.org/zypper/8" class="c8">zypper <span>(8)</span></a></li>
+                <li><a href="https://manpages.org/srp_daemon" class="c1">srp_daemon <span>(1)</span></a></li>
+                <li><a href="https://manpages.org/datetimelocalequ/3" class="c3">DateTime::Locale::qu <span>(3)</span></a></li>
+                <li><a href="https://manpages.org/pgdesigner" class="c1">pgdesigner <span>(1)</span></a></li>
+                <li><a href="https://manpages.org/ck_ring_dequeue_spmc/3" class="c3">ck_ring_dequeue_spmc <span>(3)</span></a></li>
+                <li><a href="https://manpages.org/kernacc/9" class="c9">kernacc <span>(9)</span></a></li>
+          </ul>
+        </div>
+</div>
+  </div>
+  </div>
+
+</div>
+<script>
+$(document).ready(function() {
+    $('pre, code').each(function(i, block) {
+    hljs.highlightBlock(block);
+    });
+});
+</script>
+
+    </div>
+  </div>
+  <div class="overlay"></div>
+  <div class="overlay_"></div>
+
+
+<ul class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content" id="ui-id-1" tabindex="0" style="display: none;"></ul><span role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></span><ul class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content" id="ui-id-2" tabindex="0" style="display: none;"></ul><span role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></span><ul class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content" id="ui-id-3" tabindex="0" style="display: none;"></ul><span role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></span><div class="overlay"></div></body><style id="stylus-1" type="text/css" class="stylus">body {
+    font-family: 'pragmata pro mono regular';
+}</style></html>

@@ -1,0 +1,8 @@
+from> extexa chabit::cfn_r -> (as readdir_r)
+
+do> 
+^1^ chabit::cfor_r (loop for cfn_r) 
+^2^ ittrerate result[i]
+^3^ FIRST using look itfs::mode3 arguments
+
+to> -> readdir_r look done mode3

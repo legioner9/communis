@@ -1,0 +1,56 @@
+#include <stdio.h>
+#include <stdbool.h>
+#include <inttypes.h>
+#include <iso646.h>
+#include <stdlib.h>
+#include <time.h>
+
+//
+
+#include "lib/lc_0.h"
+//  void fill_rand_lc_0_MxV_Ac_Ar(int max_value, int argc, int arr[])
+//  void pr_int_arr_lc_0_Ac_Ar(int argc, int arr[])
+//  int is_prime_lc_0_Chint(int a)
+//  void insert_sort_up_lc_0_AcMxV_Ar(int N, int A[])
+//  void insert_sort_down_lc_0_AcMxV_Ar(int N, int A[])
+
+#define MAX_NUM 10
+#define SIZE_ARR 20
+
+int count_sort(int max_num, int size_arr, int arr[])
+{
+}
+
+int main(int argc, char const *argv[])
+{
+    int array[SIZE_ARR] = {};
+    fill_rand_lc_0_MxV_Ac_Ar(MAX_NUM, SIZE_ARR, array);
+    pr_int_arr_lc_0_Ac_Ar(SIZE_ARR, array);
+
+    int counters[MAX_NUM] = {0};
+    int x = 0;
+    int v = 0;
+
+    while (x < SIZE_ARR)
+    {
+        v = array[x];
+        counters[v]++;
+        x++;
+    }
+
+    // pr_int_arr_lc_0_Ac_Ar(MAX_NUM, counters);
+
+    int k = 0;
+
+    for (size_t i = 0; i < MAX_NUM; i++)
+
+        for (size_t j = 0; j < counters[i]; j++)
+        {
+            // printf("%4d", i);
+            array[k] = i;
+            k++;
+        }
+
+    pr_int_arr_lc_0_Ac_Ar(SIZE_ARR, array);
+    return 0;
+}

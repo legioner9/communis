@@ -1,0 +1,101 @@
+#include <assert.h>
+#include <ctype.h>
+#include <errno.h>
+#include <fenv.h>
+#include <float.h>
+#include <inttypes.h>
+#include <iso646.h>
+#include <limits.h>
+#include <locale.h>
+#include <math.h>
+#include <setjmp.h>
+#include <signal.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <tgmath.h>
+#include <time.h>
+#include <uchar.h>
+#include <wchar.h>
+#include <wctype.h>
+
+// LIB FROM ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_c_/_c_/_lib
+#include "lib/lc_0.h"
+#include "lib/lc_1.h"
+#include "lib/l3p_1.h"
+#include "lib/io_1.h"
+#include "lib/lib_1.h"
+#include "lib/uni_1.h"
+#include "lib/fcntl_1.h"
+#include "lib/dirent_1.h"
+#include "lib/socket_1.h"
+#include "lib/sys_stat_1.h"
+#include "lib/st_mode_1.h"
+
+#define N 6
+
+#include <sys/stat.h>
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <sys/un.h>
+
+#include <unistd.h>
+#include <fcntl.h>
+#include <dirent.h>
+#include <wordexp.h>
+
+#include "connection.h"
+int main(int argc, char *argv[])
+{
+    struct sockaddr_un name;
+    int i;
+    int ret;
+    int data_socket;
+    char buffer[BUFFER_SIZE];
+
+    /* Создание локального сокета. */
+    data_socket = socket_с(AF_UNIX, SOCK_SEQPACKET, 0, __FILE__, __LINE__, STMO_PRN, STIF_ONE, STRE_EXI); //Сокет последовательных пакетов - обеспечивает двухсторонний, последовательный, надежный обмен датаграммами фиксированной максимальной длины.
+
+    /*
+     * Для переносимости очищаем всю структуру, так как в некоторых
+     * реализациях имеются дополнительные (нестандартные) поля.
+     */
+    memset(&name, 0, sizeof(struct sockaddr_un));
+
+    /* Соединяем сокет с именем сокета. */
+    name.sun_family = AF_UNIX;
+    strncpy(name.sun_path, SOCKET_NAME, sizeof(name.sun_path) - 1);
+
+    ret = connect_с(data_socket, (const struct sockaddr *)&name,
+                    sizeof(struct sockaddr_un), __FILE__, __LINE__, 0, STIF_ONE, STRE_MNS);
+    if (ret == -1)
+    {
+        fprintf(stderr, "Сервер выключен.\n");
+        exit(EXIT_FAILURE);
+    }
+
+    /* Посылаем аргументы. */
+    for (i = 1; i < argc; ++i)
+    {
+        write_с(data_socket, argv[i], strlen(argv[i]) + 1, __FILE__, __LINE__, STMO_PRN, STIF_ONE, STRE_EXI);
+    }
+
+    /* Отправка результата. */
+    strcpy(buffer, "END");
+    write_с(data_socket, buffer, strlen(buffer) + 1, __FILE__, __LINE__, STMO_PRN, STIF_ONE, STRE_EXI);
+
+    /* Получение результата. */
+    read_с(data_socket, buffer, BUFFER_SIZE, __FILE__, __LINE__, STMO_PRN, STIF_ONE, STRE_EXI);
+
+    /* Проверяем, что буфер завершается 0. */
+    buffer[BUFFER_SIZE - 1] = 0;
+    printf("Result = %s\n", buffer);
+
+    /* Закрытие сокета. */
+    close(data_socket);
+    exit(EXIT_SUCCESS);
+}

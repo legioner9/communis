@@ -1,0 +1,6 @@
+p@ prototype
+t@ type
+s@ struct
+c@ symbolic constants
+d@ compile parametr
+m@ macros

@@ -1,0 +1,3 @@
+## [cpio.h - cpio archive values](https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/cpio.h.html#tag_13_06)
+
+https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/cpio.h.html#:~:text=the%20following%20table%3A-,Name,0140000,-The%20%3Ccpio.h

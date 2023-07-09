@@ -1,0 +1,4 @@
+eval tml_dir=${PATH_TML_DIR}/f_f_/${flow_}
+eval insert_dir=${PATH_INSERT_DIR}/f_f_/${flow_}
+eval exl_file=${PATH_EXL_DIR}/f_f_/${flow_}/cr.exl
+eval sh_file=${PATH_EXL_DIR}/f_f_/${flow_}/cr.sh

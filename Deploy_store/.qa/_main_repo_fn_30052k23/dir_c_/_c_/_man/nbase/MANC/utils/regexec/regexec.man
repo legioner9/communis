@@ -1,0 +1,304 @@
+### UP
+[regexec](##regexec)
+[MAIN](##MAIN)
+[MAIN_ru](##MAIN_ru)
+[ANCORS](##ANCORS)
+[ISU](##ISU)
+[inet](##A_inet)
+[inet](##books_inet)
+[inet](##examples_inet)
+[inet](##classic_inet)
+[inet](##enters_inet)
+[inet](##issue_code_inet)
+[H_FILE](##H_FILE)
+[p_SYNOPSIS](##p_SYNOPSIS)
+[p_RETURN](##p_RETURN)
+[p_RETURN_ru](##p_RETURN_ru)
+[p_BUGS](##p_BUGS)
+[p_DESCRIPTION_ru](##p_DESCRIPTION_ru)
+[p_DESCRIPTION](##p_DESCRIPTION)
+[p_MIRRORS](##p_MIRRORS)
+[p_EXAMPLES](##p_EXAMPLES)
+[p_CODE_h](##p_CODE_h)
+[p_CODE_c](##p_CODE_c)
+[p_CODE_m](##p_CODE_m)
+[p_ERRORS](##p_ERRORS)
+[p_BOOKS](##p_BOOKS)
+[p_BOOKS_ru](##p_BOOKS_ru)
+[p_CONTENT](##p_CONTENT)
+
+[cat_hfiles](../../cat_hfiles.md)
+[cat_utils](../../cat_utils.md)
+[cat_structs](../../cat_structs.md)
+[cat_param](../../cat_params.md)
+[cat_macros](../../cat_macross.md)
+[cat_const](../../cat_consts.md)
+[cat_type](../../cat_types.md)
+[cat_any](../cat_anys.md)
+
+
+[UP](###UP)
+## MAIN
+:regexec:
+[next](##MAIN_ru)
+
+<<MAIN>>
+[MAIN](../../fills/regexec/MAIN)
+
+
+
+[UP](###UP)
+## MAIN_ru
+:regexec:
+[next](##ANCORS)
+
+----------------------------------------------------- 
+-------------------------------------- 
+функции регулярных выражений POSIX
+-------------------------------------- 
+----------------------------------------------------- 
+<<MAIN_ru>>
+[MAIN_ru](../../fills/regexec/MAIN_ru)
+
+[UP](###UP)
+## ANCORS
+:regexec:
+[next](##ISU)
+
+<<ANCORS>>
+[ANCORS](../../fills/regexec/ANCORS)
+
+[UP](###UP)
+## ISU
+:regexec:
+[next](##H_FILE)
+
+----------------------------------------------------- 
+-------------------------------------- 
+file://${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_c_/_c_/_man/nbase/_Head_sis_libs_posix/26_regex_h/example/study_cpjs/regexec.isu
+-------------------------------------- 
+----------------------------------------------------- 
+<<ISU>>
+only read
+:regexec:
+[ISU](../../contents)
+[next](##inet)
+
+
+[UP](###UP)
+## inet
+:regexec:
+[next](##H_FILE)
+
+
+[UP](###UP)
+## A_inet
+[manpages.org](https://www.google.ru/search?q=regexec+site%3Ahttps%3A%2F%2Fmanpages.org)
+[reposcope.com_ru](https://www.google.ru/search?q=regexec+site%3Ahttps%3A%2F%2Freposcope.com%2Fmanpages%2Fru)
+[pubs.opengroup.org](https://www.google.com/search?q=regexec+https%3A%2F%2Fpubs.opengroup.org)
+[manpages.debian.org](https://yandex.ru/search/?text=regexec+site%3Ahttps%3A%2F%2Fmanpages.debian.org%2F)
+[www.opennet.ru](http://www.opennet.ru/man.shtml?category=2&topic=regexec)
+[man7.org](https://www.google.ru/search?q=regexec+site%3Ahttps%3A%2F%2Fman7.org%2Flinux%2Fman-pages)
+[en.cppreference.com](https://www.google.com/search?q=regexec+en.cppreference.com)
+[www.mankier.com](https://www.mankier.com/?q=regexec)
+[www.codecogs.com](https://www.google.ru/search?q=regexec+https%3A%2F%2Fwww.codecogs.com%2Flibrary%2Fcomputing%2F)
+[digitalmars.com](https://www.google.ru/search?q=regexec+https%3A%2F%2Fdigitalmars.com%2Frtl%2F)
+
+
+[UP](###UP)
+## books_inet
+[cpp.com.ru](https://yandex.ru/search/?text=regexec+site%3Ahttps%3A%2F%2Fcpp.com.ru)
+[linuxhint.com](https://www.google.ru/search?q=regexec+site%3Ahttps%3A%2F%2Flinuxhint.com)
+[gnu.org](https://www.google.ru/search?q=regexec+site%3Ahttps%3A%2F%2Fwww.gnu.org%2Fsoftware%2Flibc%2Fmanual)
+
+[UP](###UP)
+## examples_inet
+[yandex:examples](https://yandex.ru/search/?text=regexec+example+in+c)
+[docs.oracle.com](https://www.google.com/search?q=regexec+https%3A%2F%2Fdocs.oracle.com)
+[manpages.debian.org](https://yandex.ru/search/?text=regexec+site%3Ahttps%3A%2F%2Fmanpages.debian.org%2F)
+[osr507doc.xinuos.com](https://www.google.com/search?q=regexec+http%3A%2F%2Fosr507doc.xinuos.com%2Fen%2Fman)
+[cpp.hotexamples.com](https://cpp.hotexamples.com/examples/-/-/regexec/cpp-regexec-function-examples.html)
+[all-ht.ru](https://yandex.ru/search/?text=regexec+site%3Ahttp%3A%2F%2Fall-ht.ru%2Finf%2Fprog%2Fc%2F)
+[cppreference.com](https://yandex.ru/search/?text=regexec+site%3Ahttps%3A%2F%2Fen.cppreference.com%2Fw%2Fc%2F)
+
+[UP](###UP)
+## classic_inet
+[bogatyrev_c_unix](https://www.google.com/search?q=regexec+site%3Ahttps%3A%2F%2Fcpp.com.ru%2Fbogatyrev_c_unix)
+[kr_cbook](https://www.google.com/search?q=regexec+site%3Ahttps%3A%2F%2Fcpp.com.ru%2Fkr_cbook)
+
+[UP](###UP)
+## enters_inet
+[pubs.opengroup.org](https://pubs.opengroup.org/onlinepubs/9699919799/idx/head.html)
+
+[UP](###UP)
+## issue_code_inet
+[code.woboq.org](https://www.google.com/search?h=&sitesearch=https%3A%2F%2Fcode.woboq.org%2Fuserspace%2Fglibc%2F&q=regexec)
+
+
+[UP](###UP)
+## H_FILE 
+[regex_h.md](../../hfiles/regex_h.md)
+
+
+[UP](###UP)
+## p_SYNOPSIS
+:regexec:
+[next](##p_RETURN_ru)
+
+----------------------------------------------------- 
+-------------------------------------- 
+#include <sys/types.h>
+#include <regex.h>
+int regcomp(regex_t *preg, const char *regex, int cflags);
+int regexec(const regex_t *preg, const char *string, size_t nmatch,
+regmatch_t pmatch[], int eflags);
+size_t regerror(int errcode, const regex_t *preg, char *errbuf,
+size_t errbuf_size);
+void regfree(regex_t *preg);
+-------------------------------------- 
+----------------------------------------------------- 
+<<SYNOPSIS>>
+[SYNOPSIS](../../fills/regexec/SYNOPSIS)
+
+
+[UP](###UP)
+## p_RETURN_ru
+:regexec:
+[next](##p_RETURN)
+
+<<RETURN>>
+[RETURN_ru](../../fills/regexec/RETURN)
+
+
+[UP](###UP)
+## p_RETURN
+:regexec:
+[next](##p_DESCRIPTION_ru)
+
+<<RETURN_ru>>
+[RETURN](../../fills/regexec/RETURN_ru)
+
+
+[UP](###UP)
+## p_DESCRIPTION_ru
+:regexec:
+[next](##p_DESCRIPTION)
+
+----------------------------------------------------- 
+-------------------------------------- 
+Функция regcomp() используется для компиляции регулярного выражения в формат, который подходит для последующих поисков с помощью regexec().
+regcomp() передаётся указатель на область хранения буферного шаблона preg, указатель на заканчивающуюся null строку regex и флаги cflags, используемые для определения типа компиляции.
+Все поиски регулярных выражений должны выполняться с помощью скомпилированного буферного шаблона, поэтому regexec() должна всегда вызываться с адресом буферного шаблона, инициализированного функцией regcomp().
+Функция regexec() используется для сравнения строки, завершающейся null, с предварительно обработанным буферным шаблоном preg. Аргументы nmatch и pmatch используются для предоставления информации о местонахождении любых совпадений. Значение eflags может быть поразрядным ИЛИ одного или обоих значений REG_NOTBOL и REG_NOTEOL. Данные значения определяют поведение процесса сравнения так, как описано ниже.
+Функция regfree() освобождает память, отведённую буферному шаблону preg во время процесса компиляции с помощью regcomp().
+Функция regerror используется для преобразования кодов ошибок, которые могут быть получены от regcomp() и regexec(), в строки сообщений об ошибках.
+В regerror передаются: код ошибки errcode, буферный шаблон preg, указатель на символьный буфер строки errbuf и размер буфера строки errbuf_size. Функция возвращает размер errbuf, который требуется для сохранения сообщения об ошибке в виде строки, оканчивающейся null. Если и errbuf, и errbuf_size не равны нулю, то errbuf заполняется первыми errbuf_size - 1 символами сообщения об ошибке и завершается байтом null ('0').
+-------------------------------------- 
+----------------------------------------------------- 
+<<DESCRIPTION_ru>>
+[DESCRIPTION_ru](../../fills/regexec/DESCRIPTION_ru)
+
+
+[UP](###UP)
+## p_DESCRIPTION
+:regexec:
+[next](##p_BUGS)
+
+<<DESCRIPTION>>
+[DESCRIPTION](../../fills/regexec/DESCRIPTION)
+
+
+[UP](###UP)
+## p_MIRRORS
+:regexec:
+[next](##p_BUGS)
+
+<<MIRRORS>>
+[MIRRORS](../../fills/regexec/MIRRORS)
+
+
+[UP](###UP)
+## p_BUGS
+:regexec:
+[next](##p_EXAMPLES)
+
+<<BUGS>>
+[BUGS](../../fills/regexec/BUGS)
+
+
+[UP](###UP)
+## p_EXAMPLES
+:regexec:
+[next](##p_CODE)
+
+<<EXAMPLES>>
+[EXAMPLES](../../fills/regexec/EXAMPLES)
+
+
+[UP](###UP)
+## p_CODE_h
+:regexec:
+[next](##p_CODE_c)
+
+<<CODE_h>>
+[CODE_h](../../fills/regexec/CODE_h)
+
+
+[UP](###UP)
+## p_CODE_c
+:regexec:
+[next](##p_CODE_m)
+
+----------------------------------------------------- 
+-------------------------------------- 
+https://code.woboq.org/userspace/glibc/posix/regexec.c.html
+-------------------------------------- 
+----------------------------------------------------- 
+<<CODE_c>>
+[CODE_c](../../fills/regexec/CODE_c)
+
+
+[UP](###UP)
+## p_CODE_m
+:regexec:
+[next](##p_ERRORS)
+
+<<CODE_m>>
+[CODE_m](../../fills/regexec/CODE_m)
+
+
+[UP](###UP)
+## p_ERRORS
+:regexec:
+[next](##p_BOOKS)
+
+<<ERRORS>>
+[ERRORS](../../fills/regexec/ERRORS)
+
+
+[UP](###UP)
+## p_BOOKS
+:regexec:
+[next](##p_BOOKS_ru)
+
+<<BOOKS>>
+[BOOKS](../../fills/regexec/BOOKS)
+
+
+[UP](###UP)
+## p_BOOKS_ru
+:regexec:
+[next](##p_CONTENT)
+
+
+<<BOOKS_ru>>
+[BOOKS_ru](../../fills/regexec/BOOKS_ru)
+
+
+[UP](###UP)
+## p_CONTENT
+:regexec:
+[regexec.cnt](../../contents/regexec.cnt)
+[next](##UP)
+
+[UP](###UP)

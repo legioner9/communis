@@ -1,0 +1,11 @@
+# npm run in ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_mm_npm_/_mm_npm_/_man/help
+
+Lifecycle scripts included in help:
+  test
+    echo "Error: no test specified" && exit 1
+
+# npm run -h in ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_mm_npm_/_mm_npm_/_man/help
+
+npm run-script <command> [-- <args>...]
+
+aliases: run, rum, urn

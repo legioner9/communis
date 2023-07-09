@@ -1,0 +1,88 @@
+### UP
+[SETALL](##SETALL)
+[H_FILE](##H_FILE)
+[C_SYNOPSIS](##C_SYNOPSIS)
+[C_DESCRIPTION_ru](##C_DESCRIPTION)
+[C_DESCRIPTION](##C_DESCRIPTION_ru)
+[C_EXAMPLES](##C_EXAMPLES)
+[C_EXAMPLES_ru](##C_EXAMPLES_ru)
+[C_ERRORS](##C_ERRORS)
+[C_BOOKS](##C_BOOKS)
+[C_BOOKS_ru](##C_BOOKS_ru)
+
+[cat_hfiles](../../cat_hfiles.md)
+[cat_utils](../../cat_utils.md)
+[cat_structs](../../cat_structs.md)
+[cat_param](../../cat_params.md)
+[cat_macros](../../cat_macross.md)
+[cat_const](../../cat_consts.md)
+[cat_type](../../cat_types.md)
+
+
+[UP](###UP)
+# SETALL
+MAIN :SETALL:
+[ru.manpages.org](https://www.google.ru/search?q=SETALL+site%3Ahttps%3A%2F%2Fru.manpages.org)
+
+
+
+[UP](###UP)
+## H_FILE 
+[sys_sem_h.md](../../hfiles/sys_sem_h.md)
+## C_SYNOPSIS
+:SETALL:
+
+
+
+[UP](###UP)
+## C_DESCRIPTION_ru
+:SETALL:
+[ru.manpages.org](https://www.google.ru/search?q=SETALL+site%3Ahttps%3A%2F%2Fru.manpages.org)
+[man7.org](https://www.google.ru/search?q=SETALL+site%3Ahttps%3A%2F%2Fman7.org%2Flinux%2Fman-pages)
+[next](##C_DESCRIPTION)
+
+
+
+[UP](###UP)
+## C_DESCRIPTION
+:SETALL:
+[ru.manpages.org](https://www.google.ru/search?q=SETALL+site%3Ahttps%3A%2F%2Fru.manpages.org)
+[cplusplus.com](https://www.cplusplus.com/reference/)
+[next](##C_EXAMPLES)
+
+
+
+[UP](###UP)
+## C_EXAMPLES
+:SETALL:
+[cpp.hotexamples.com](https://cpp.hotexamples.com/examples/-/-/SETALL/cpp-close-function-examples.html)
+[linuxhint.com](https://www.google.ru/search?q=SETALL+site%3Ahttps%3A%2F%2Flinuxhint.com)
+[next](##C_EXAMPLES_ru)
+
+
+
+[UP](###UP)
+## C_EXAMPLES_ru
+:SETALL:
+[next](##C_ERRORS)
+
+
+
+[UP](###UP)
+## C_BOOKS
+:SETALL:
+[linuxhint.com](https://www.google.ru/search?q=SETALL+site%3Ahttps%3A%2F%2Flinuxhint.com)
+[gnu.org](https://www.google.ru/search?q=SETALL+site%3Ahttps%3A%2F%2Fwww.gnu.org%2Fsoftware%2Flibc%2Fmanual)
+[next](##C_BOOKS_ru)
+
+
+
+[UP](###UP)
+## C_BOOKS_ru
+:SETALL:
+[cpp.com.ru](https://www.google.ru/search?q=SETALL+site%3Ahttps%3A%2F%2Fcpp.com.ru)
+[next](##STRUCTS)
+
+
+
+[UP](###UP)

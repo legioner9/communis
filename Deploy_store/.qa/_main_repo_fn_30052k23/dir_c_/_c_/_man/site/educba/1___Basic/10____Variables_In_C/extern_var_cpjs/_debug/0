@@ -1,0 +1,12 @@
+int x, y;                 extern int x, y;
+char ch;                  extern char ch;
+
+int main(void)            void func22(void)
+{                         {
+  /* ... */                 x = y / 10;
+}                         }
+
+void func1(void)          void func23(void)
+{                         {
+  x = 123;                  y = 10;
+}

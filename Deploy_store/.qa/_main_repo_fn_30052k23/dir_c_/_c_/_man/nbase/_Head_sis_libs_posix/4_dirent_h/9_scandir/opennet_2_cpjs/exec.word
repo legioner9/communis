@@ -1,0 +1,8 @@
+from> extexa scandir(dirp, namelist, select, compare) -> learn
+
+do> 
+^1^ select as ls iterator (printf)
+^2^ select as filter (.) and (soft_link)
+^3^ compare as strcmp
+
+to> -> scandir_c look done mode3

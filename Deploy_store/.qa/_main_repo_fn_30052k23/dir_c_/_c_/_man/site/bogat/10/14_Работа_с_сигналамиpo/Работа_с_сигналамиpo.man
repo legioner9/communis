@@ -1,0 +1,115 @@
+## Работа с сигналами.
+
+Пример 14
+```cpp
+/* Демонстрация работы с longjmp/setjmp и сигналами */
+/* По мотивам книги М.Дансмура и Г.Дейвиса.         */
+#include <stdio.h>
+#include <fcntl.h>
+#include <signal.h>
+#include <setjmp.h>
+/*#define IGN*/         /* потом откомментируйте эту строку */
+
+jmp_buf cs_stack;       /* control point */
+int in_cs;              /* флаг, что мы в критической секции */
+int sig_recd;           /* флаг signal received */
+
+/* активная задержка */
+Delay(){
+	int i; for( i=0; i < 10000; i++ ){ i += 200; i -= 200; }
+}
+
+interrupt( code ){
+	fprintf( stderr, "\n\n***\n" );
+	fprintf( stderr, "*** Обрабатываем сигнал (%s)\n",
+			      code == 1 ? "разрешенный" : "отложенный" );
+	fprintf( stderr, "***\n\n" );
+}
+
+/* аргумент реакции на сигнал - номер сигнала (подставляется системой) */
+void mexit( nsig ){
+  fprintf( stderr, "\nУбили сигналом #%d...\n\n", nsig ); exit(0);
+}
+
+void main(){
+    extern void sig_vec(); int code; int killable = 1;
+
+    signal( SIGINT,  mexit );
+    signal( SIGQUIT, mexit );
+ fprintf( stderr, "Данная программа перезапускается по сигналу INTR\n" );
+ fprintf( stderr, "Выход из программы по сигналу QUIT\n\n\n" );
+ fprintf( stderr, "Сейчас вы еще можете успеть убить эту программу...\n\n" );
+    Delay(); Delay(); Delay();
+
+    for(;;){
+	if( code = setjmp( cs_stack )){
+		/* Возвращает не 0, если возврат в эту точку произошел
+		 * по longjmp( cs_stack, code ); где code != 0
+		 */
+		interrupt( code );    /* пришло прерывание */
+	} /* else setjmp() возвращает 0,
+	   * если это УСТАНОВКА контрольной точки (то есть
+	   * сохранение регистров SP, PC и других в буфер cs_stack),
+	   * а не прыжок на нее.
+	   */
+	signal( SIGINT, sig_vec ); /* вызывать по прерыванию */
+	if( killable ){
+	  killable = 0;
+	  fprintf( stderr,
+"\7Теперь сигналы INTR обрабатываются особым образом\n\n\n" );
+	}
+	body();                 /* основная программа */
+    }
+}
+
+body(){
+	static int n = 0; int i;
+
+	fprintf( stderr, "\tВошли в тело %d-ый раз\n", ++n );
+	ecs();
+	for( i=0; i < 10 ; i++ ){
+		fprintf( stderr, "- %d\n",i); Delay();
+	}
+	lcs();
+	for( i=0; i < 10 ; i++ ){
+		fprintf( stderr, "+ %d\n",i); Delay();
+	}
+}
+
+/* запоминание полученных сигналов */
+void sig_vec(nsig){
+      if( in_cs ){    /* we're in critical section */
+#ifdef IGN
+	signal( SIGINT, SIG_IGN );      /* игнорировать */
+	fprintf( stderr, "Дальнейшие прерывания будут игнорироваться\n" );
+#else
+	signal( SIGINT, sig_vec );
+	fprintf( stderr, "Дальнейшие прерывания будут подсчитываться\n" );
+#endif
+	fprintf( stderr, "Получен сигнал и отложен\n" );
+	sig_recd++  ;  /* signal received */
+		       /* пометить, что сигнал пришел */
+      }else{
+	signal( SIGINT, sig_vec );
+	fprintf( stderr, "Получен разрешенный сигнал: прыгаем на рестарт\n" );
+	longjmp( cs_stack, 1);
+      }
+}
+
+ecs(){  /* enter critical section */
+	fprintf( stderr, "Откладываем прерывания\n" );
+	sig_recd = 0;    in_cs = 1;
+}
+
+lcs(){  /* leave critical section */
+    fprintf( stderr, "Разрешаем прерывания\n" );
+    in_cs = 0;
+    if( sig_recd ){
+	fprintf( stderr,
+	    "Прыгаем на рестарт, т.к. есть отложенный сигнал (%d раз)\n",
+	    sig_recd );
+	sig_recd = 0;
+	signal( SIGINT, sig_vec );
+	longjmp( cs_stack, 2);
+    }
+}

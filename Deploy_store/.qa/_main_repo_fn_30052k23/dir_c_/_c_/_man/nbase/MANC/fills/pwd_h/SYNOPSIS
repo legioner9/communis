@@ -1,0 +1,24 @@
+#include <pwd.h>
+
+struct passwd *getpwnam(const char *name);
+int getpwnam_r(const char *name, struct passwd *pwd, char *buffer,
+      size_t bufsize, struct passwd **result);
+struct passwd *getpwent(void);
+struct passwd *getpwent_r(struct passwd *pwd, char *buffer,
+     int buflen);
+struct passwd *getpwuid(uid_t uid);
+int getpwuid_r(uid_t uid, struct passwd *pwd, char *buffer,
+    size_t bufsize, struct passwd **result);
+void setpwent(void);
+void endpwent(void);
+struct passwd *fgetpwent(FILE *f);
+struct passwd *fgetpwent_r(FILE *f, struct passwd *pwd,
+     char *buffer, int buflen);
+POSIX.1c Draft 6
+    cc [ flag...] file... –D__USE_DRAFT6_PROTOTYPES__ [ library... ]
+
+struct passwd *getpwnam_r(const char *name, struct passwd *pwd,
+    char *buffer, int buflen);
+ 
+struct passwd *getpwuid_r(uid_t uid, struct passwd *pwd,
+    char *buffer, int buflen);

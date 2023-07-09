@@ -1,0 +1,7 @@
+# npm explore in ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_mm_npm_/_mm_npm_/_man/help
+
+npm ERR! npm explore <pkg> [ -- <command>]
+
+# npm explore -h in ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_mm_npm_/_mm_npm_/_man/help
+
+npm explore <pkg> [ -- <command>]

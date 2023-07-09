@@ -1,0 +1,1051 @@
+## UNIX commander - простой визуальный Шелл. Головной модуль проекта uxcom.
+
+Пример 23 - simple visual shell.
+```cpp
+#       UNIX commander
+#########################################################################
+# Это файл Makefile для проекта uxcom - простого меню-ориентированного
+# экранного интерфейса для переходов по файловой системе.
+# Ключ -Iкаталог указывает из какого каталога должны браться
+# include-файлы, подключаемые по #include "имяФайла".
+# Проект состоит из нескольких файлов:
+# Пример 17, Пример 18, Пример 19, Пример 21, Пример 23 и других.
+#
+#  +  Left    Right   _Commands    Tools    Sorttype      +
+#  |           /usr/a+---------------------008/013-+      |
+#  +-----------------|        Главное меню         |---+--+
+#  |      ..         +--------------------------+--+   |  |
+#  |      .BAD       |  Current directory       |  |   |  |
+#  |      .contents.m|  Root directory          |  |   |##|
+#  |      DUMP       |  Menus                   |  |   |  |
+#  |      Makefile   +--------------------------+  |   |  |
+#  |      PLAN       |  Help                    |  |   |  |
+#  |     _points     |  Unimplemented           |  |   |  |
+#  |      table      |  Change sorttype         |##|   |  |
+#  |     #unbold     | _Look directory history  |  |   |  |
+#  |     #uxcom      +--------------------------+  |   |  |
+#  |      x.++       |  Quit                    |  |   |  |
+#  |      00         +--------------------------+  |   |  |
+#  |      11         |  Redraw screen           |  |   |  |
+#  |      LOOP_p     +--------------------------+--+   |  |
+#  |      LOOP_q      .c     |       etc               |  |
+#  |      LOOP_strt   .c     |       install           |  |
+#  +-------------------------+-------------------------+  |
+#  | points      165 -r--r-- | .cshrc  2509 -rw-r--r-- |  |
+#  +-------------------------+-------------------------+  |
+#  |  История путешествий                              |  |
+#  +---------------------------------------------------+--+
+#
+SHELL=/bin/sh
+SRCS = glob.c w.c menu.c pull.c match.c pwd.c hist.c line.c table.c \
+       main.c treemk.c
+OBJS = glob.o w.o menu.o pull.o match.o pwd.o hist.o line.o table.o \
+       main.o treemk.o
+# INCLUDE = /usr/include
+# LIB     = -lncurses
+INCLUDE   = -I../../src/curses
+LIB       = ../../src/curses/libncurses.a
+DEFINES   = -DUSG -DTERMIOS
+CC        = cc  -O            # стандартный C-compiler + оптимизация
+#CC       = gcc -O            # GNU C-compiler
+
+uxcom: $(OBJS)
+	$(CC) $(OBJS) -o $@ $(LIB)
+	sync; ls -l $@; size $@
+glob.o: glob.c glob.h   # это файл "Пример 18"
+	$(CC) -c glob.c
+w.o: w.c w.h            # это файл "Пример 17"
+	$(CC) -c $(INCLUDE) $(DEFINES) w.c
+menu.o: menu.c glob.h w.h menu.h   # это файл "Пример 19"
+	$(CC) -c $(INCLUDE) $(DEFINES) menu.c
+pull.o: pull.c glob.h w.h menu.h pull.h # это файл "Пример 20"
+	$(CC) -c $(INCLUDE) $(DEFINES) pull.c
+match.o: match.c
+	$(CC) -c -DMATCHONLY \
+	      -DMATCH_ERR="TblMatchErr()" match.c
+pwd.o: pwd.c
+	$(CC) -c -DU42 -DCWDONLY pwd.c
+treemk.o: treemk.c
+	$(CC) -c $(DEFINES) \
+	      -DERR_CANT_READ=tree_err_cant_read     \
+	      -DERR_NAME_TOO_LONG=tree_name_too_long \
+	      -DTREEONLY -DU42 treemk.c
+hist.o: hist.c hist.h glob.h menu.h w.h  # это файл "Пример 21"
+	$(CC) -c $(INCLUDE) $(DEFINES) hist.c
+line.o: line.c w.h glob.h menu.h hist.h line.h  # "Пример 21"
+	$(CC) -c $(INCLUDE) $(DEFINES) line.c
+table.o: table.c w.h glob.h menu.h table.h      # "Пример 22"
+	$(CC) -c $(INCLUDE) $(DEFINES) table.c
+main.o: main.c glob.h w.h menu.h hist.h line.h pull.h table.h
+	$(CC) -c $(INCLUDE) $(DEFINES) main.c
+w.h:    wcur.h
+	touch w.h
+
+/* _______________________ файл main.c __________________________ */
+/* Ниже предполагается, что вы раскрасили в /etc/termcap          *
+ * выделения A_STANDOUT и A_REVERSE в РАЗНЫЕ цвета !              */
+#include "w.h"
+#include "glob.h"
+#include "menu.h"
+#include "hist.h"
+#include "line.h"
+#include "table.h"
+#include "pull.h"
+#include <signal.h>
+#include <ustat.h>
+#include <locale.h>
+
+void t_enter(), t_leave();
+LineEdit    edit;                     /* редактор строки           */
+Hist        hcwd, hedit, hpat;        /* истории:                  */
+/* посещенные каталоги, набранные команды, шаблоны имен            */
+Menu        mwrk, msort;              /* должны иметь класс static */
+PullMenu    pull;
+
+typedef enum { SEL_WRK=0, SEL_PANE1, SEL_PANE2, SEL_PULL, SEL_HELP } Sel;
+Sel current_menu;       /* текущее активное меню                   */
+Sel previous_menu;      /* предыдущее активное меню                */
+#define SEL_PANE (current_menu == SEL_PANE1 || current_menu == SEL_PANE2)
+typedef struct {
+	Table t;        /* таблица с именами файлов                */
+	DirContents d;  /* содержимое каталогов                    */
+} FileWidget;
+FileWidget tpane1, tpane2;    /* левая и правая панели             */
+FileWidget *A_pane = &tpane1; /* активная панель                   */
+FileWidget *B_pane = &tpane2; /* противоположная панель            */
+#define A_tbl   (&A_pane->t)
+#define A_dir   (&A_pane->d)
+#define B_tbl   (&B_pane->t)
+#define B_dir   (&B_pane->d)
+#define TblFW(tbl) ((tbl) == A_tbl ? A_pane : B_pane)
+void ExchangePanes(){  /* Обменять указатели на панели */
+     FileWidget *tmp = A_pane; A_pane = B_pane; B_pane = tmp;
+     current_menu = (current_menu == SEL_PANE1 ? SEL_PANE2 : SEL_PANE1);
+}
+#define Other_pane(p)  ((p) == A_pane ? B_pane : A_pane)
+#define Other_tbl(t)   ((t) == A_tbl  ? B_tbl  : A_tbl )
+WINDOW *panewin;        /* окно, содержащее обе панели = stdscr */
+typedef enum { NORUN=0, RUNCMD=1, CHDIR=2, TAG=3, FIND=4 } RunType;
+
+#define REPEAT_KEY 666  /* псевдоклавиша "повтори выбор в меню"    */
+#define LEAVE_KEY  777  /* псевдоклавиша "покинь это меню"         */
+#define NOSELECTED (-1) /* в меню ничего пока не выбрано           */
+#define CENTER  (COLS/2-2) /* линия раздела панелей                */
+int done;               /* закончена ли программа ?                */
+char CWD[MAXLEN];       /* полное имя текущего каталога            */
+char SELECTION[MAXLEN]; /* имя выбранного файла                    */
+/*-----------------------------------------------------------------*/
+/* Выдать подсказку в строке редактора                             */
+/*-----------------------------------------------------------------*/
+#include <stdarg.h>
+void Message(char *s, ... ){
+  char msg[80]; va_list args; int field_width;
+  va_start(args, s); vsprintf(msg, s, args); va_end(args);
+  wattrset    (panewin,     A_tbl->sel_attrib);
+  field_width = A_tbl->width + B_tbl->width - 3;
+  mvwprintw   (panewin, LINES-2, tpane1.t.left+1, " %*.*s ",
+	       -field_width, field_width, msg);
+  wattrset    (panewin, A_tbl->bg_attrib);
+  wnoutrefresh(panewin);
+}
+/*-----------------------------------------------------------------*
+ *      Меню порядка сортировки имен файлов.                       *
+ *-----------------------------------------------------------------*/
+Info sort_info[] = {
+    { "По возрастанию", 0}, { "По убыванию",    0},
+    { "По суффиксу",    0}, { "Без сортировки", 0},
+    { "По размеру",     M_HATCH},
+    { NULL, 0}
+};
+/* При входе в меню сортировки указать текущий тип сортировки */
+void sort_show(Menu *m){
+    MnuPointAt(&msort, (int) sorttype);
+}
+/* Выбрать тип сортировки имен файлов */
+static void SelectSortType(int sel){
+    if( sel == NOSELECTED )
+	sel = MnuUsualSelect(&msort, NO);
+    MnuHide(&msort);
+    current_menu = previous_menu;
+    if(M_REFUSED(&msort)) return;
+    sorttype = (Sort) sel;
+    A_dir->lastRead = B_dir->lastRead = 0L; /* форсировать перечитку */
+    /* но ничего явно не пересортировывать и не перерисовывать       */
+}
+/*-----------------------------------------------------------------*
+ *  Отслеживание содержимого каталогов и переинициализация меню.   *
+ *-----------------------------------------------------------------*/
+#define NON_VALID(d)  ((d)->readErrors || (d)->valid == NO)
+/* Сменить содержимое таблицы и списка файлов */
+void InitTblFromDir(FileWidget *wd, int chdired, char *savename){
+     char *msg, *name; Table *tbl = &(wd->t); DirContents *d = &wd->d;
+     int saveind  = tbl->current, saveshift = tbl->shift;
+     char *svname = NULL;
+     if(tbl->nitems > 0 ) svname = strdup(T_ITEMF(tbl, saveind, 0));
+  /* Несуществующие и нечитаемые каталоги выделить особо */
+     if( NON_VALID(d)) wattrset(tbl->win, A_REVERSE);
+     TblClear(tbl);
+     if(d->valid == NO){
+	msg = "Не существует"; name = d->name; goto Report;
+     } else if(d->readErrors){ /* тогда d->files->s == NULL */
+	msg = "Не читается";   name = d->name;
+Report: mvwaddstr(tbl->win, tbl->top + tbl->height/2,
+		  tbl->left + (tbl->width - strlen(name))/2, name);
+	mvwaddstr(tbl->win, tbl->top + tbl->height/2+1,
+		  tbl->left + (tbl->width - strlen(msg))/2, msg);
+     }
+     wattrset(tbl->win, tbl->bg_attrib);
+     tbl->items = d->files; TblInit(tbl, NO);
+     /* Постараться сохранить позицию в таблице */
+     if( chdired ) TblPlaceByName(tbl, savename);
+     else {
+	 if( svname == NULL || TblPlaceByName(tbl, svname) < 0 ){
+	     tbl->shift   = saveshift;
+	     tbl->current = saveind; TblChk(tbl);
+	 }
+     }
+     if(svname) free(svname);
+}
+/* Перейти в каталог и запомнить его полное имя  */
+int mychdir(char *newdir){ int code = chdir(newdir);
+    if( code < 0 ) return code;
+    getwd(CWD); in_the_root = (strcmp(CWD, "/") == 0);
+    HistAdd(&hcwd, CWD, 0); /* запомнить в истории каталогов */
+    t_enter(&tpane1.t);     /* на рамке нарисовать имя текущего каталога */
+    return code;
+}
+/* Изменить текущий каталог и перечитать его содержимое */
+int cd(char *newdir, FileWidget *wd, char *oldname){
+    char oldbase[MAXLEN], *s, *strrchr(char *,char);
+ /* Спасти в oldbase базовое имя старого каталога oldname (обычно CWD) */
+    if(s = strrchr(oldname, '/')) s++; else s = oldname;
+    strcpy(oldbase, s);
+
+    if( mychdir(newdir) < 0){ /* не могу перейти в каталог */
+	Message("Не могу перейти в %s", *newdir ? newdir : "???");
+	beep(); return (-1); }
+    if( ReadDir(CWD, &wd->d)){ /* содержимое изменилось */
+	InitTblFromDir (wd, YES, oldbase);
+	return 1;
+    }
+    return 0;
+}
+/* Проверить содержимое обеих панелей */
+void checkBothPanes(){
+   /* Случай NON_VALID нужен только для того, чтобы Init...
+      восстановил "аварийную" картинку в панели */
+      if( ReadDir(tpane1.d.name, &tpane1.d) || NON_VALID(&tpane1.d))
+	  InitTblFromDir(&tpane1, NO, NULL);
+      if( tpane1.t.exposed == NO ) TblDraw(&tpane1.t);
+      if( ReadDir(tpane2.d.name, &tpane2.d) || NON_VALID(&tpane2.d))
+	  InitTblFromDir(&tpane2, NO, NULL);
+      if( tpane2.t.exposed == NO ) TblDraw(&tpane2.t);
+}
+/*-----------------------------------------------------------------*
+ *    Ввод команд и выдача подсказки.                              *
+ *-----------------------------------------------------------------*/
+/* Особая обработка отдельных клавиш в редакторе строки */
+char  e_move = NO; /* кнопки со стрелками <- -> двигают
+      курсор по строке/по таблице */
+int e_hit[] = { KEY_LEFT, KEY_RIGHT, KEY_UP, KEY_DOWN,
+    KEY_F(0), KEY_IC,
+    ctrl('G'), ctrl('E'), ctrl('L'), ctrl('F'), ctrl('X'), ctrl('Y'),
+    -1 };
+int e_handler (LineEdit *le, int c, HandlerReply *reply){
+    *reply = HANDLER_CONTINUE;
+    switch(c){
+/* Перемещение по таблице без выхода из редактора строки */
+    case KEY_LEFT:
+	 if( !SEL_PANE || !e_move){
+	      *reply=HANDLER_SWITCH; return c; }
+	 TblPointAt(A_tbl, A_tbl->current - A_tbl->height); break;
+    case KEY_RIGHT:
+	 if( !SEL_PANE || !e_move){
+	      *reply=HANDLER_SWITCH; return c; }
+	 TblPointAt(A_tbl, A_tbl->current + A_tbl->height); break;
+    case KEY_DOWN:
+	 if( !SEL_PANE){ *reply=HANDLER_SWITCH; return c; }
+	 TblPointAt(A_tbl, A_tbl->current + 1); break;
+    case KEY_UP:
+	 if( !SEL_PANE){ *reply=HANDLER_SWITCH; return c; }
+	 TblPointAt(A_tbl, A_tbl->current - 1); break;
+    case KEY_F(0):      /* F10 */
+	 e_move = !e_move; break;
+    case KEY_IC:
+	 if( !SEL_PANE){ *reply=HANDLER_SWITCH; return c; }
+	 TblRetag(A_tbl, A_tbl->current, T_LABEL);
+	 TblPointAt(A_tbl, A_tbl->current+1);
+	 break;
+/* Подстановки */
+    case ctrl('G'): /* подставить полное имя домашнего каталога */
+	 LeInsStr(le, getenv("HOME")); LeInsStr(le, " "); break;
+    case ctrl('E'): /* подставить имя выбранного файла */
+	 if( A_tbl->nitems )
+	     LeInsStr(le, T_ITEMF(A_tbl, A_tbl->current, 0));
+	 LeInsStr(le, " "); break;
+    case ctrl('L'): /* подставить имя выбранного файла из другой панели */
+	 LeInsStr(le, T_ITEMF(B_tbl, B_tbl->current, 0));
+	 LeInsStr(le, " "); break;
+    case ctrl('X'): case ctrl('Y'):
+    /* подстановка имен помеченных файлов */
+    {    int label = (c == ctrl('X') ? T_LABEL : T_HATCH);
+	 register i;
+	 for(i=0; i < A_tbl->nitems && le->len < le->maxlen; ++i )
+	     if( T_TST(A_tbl, i, label)){
+		 LeInsStr(le, " "); LeInsStr(le, T_ITEMF(A_tbl, i, 0));
+	     }
+    } break;
+    case ctrl('F'): /* подставить имя текущего каталога */
+	 LeInsStr(le, CWD); LeInsStr(le, " "); break;
+   }
+   return c;
+}
+/* При начале редактирования ставь курсор в конец строки */
+void e_pos (LineEdit *le){ le->pos = le->len; }
+/* Обозначить, что мы покинули редактор строки */
+void e_hide(LineEdit *le){
+     le->sel_attrib = le->fr_attrib = le->bg_attrib = A_ITALICS;
+     LeDraw(le);
+}
+/* Отредактировать строку в предпоследней строке окна */
+char *Edit(WINDOW *w, char *src, RunType dorun){
+    static char CMD[MAXLEN];   /* буфер для строки команды */
+    int c;
+    if(w != TOPW){ beep(); return NULL; }/* это должно быть верхнее окно */
+    keypad(w, TRUE);
+ /* Проинициализировать редактор строки */
+    switch(dorun){
+    case NORUN:  edit.histIn = edit.histOut = NULL;   break;
+    case RUNCMD: edit.histIn = edit.histOut = &hedit; break;
+    case FIND:
+    case TAG:    edit.histIn = edit.histOut = &hpat;  break;
+    case CHDIR:  edit.histIn = &hcwd; edit.histOut = NULL; break;
+    }
+    edit.line   = CMD;
+    edit.maxlen = sizeof(CMD)-1;
+    edit.top    = wlines(w)-2; edit.left = 2;
+    edit.width  = wcols (w)-4 - (1+BARWIDTH);
+    edit.insert = YES; edit.nc = YES;
+    edit.win    = w;
+    edit.wl_attrib  = edit.bg_attrib=A_REVERSE;
+    edit.fr_attrib=A_STANDOUT; edit.sel_attrib = A_NORMAL|A_BLINK;
+    edit.posMe   = e_pos;
+    edit.hitkeys = (SEL_PANE ? e_hit : e_hit+5);
+    edit.handler = e_handler;
+    /* edit.hideMe  = e_hide; вызывается ЯВНО */
+    /* остальные поля равны 0, т.к. edit - статическое данное */
+    for(;;){
+	strcpy(CMD, src); if(*src){ strcat(CMD, " "); }
+	c = LeEdit( &edit );
+	if( LE_REFUSED(&edit) || dorun != RUNCMD ||
+	    !*CMD || c != '\n' ) break;
+	/* курсор в нижнюю строку экрана */
+	attrset(A_NORMAL); move(LINES-1, 0); refresh();
+	resetterm();    /* приостановить работу curses-а    */
+	putchar('\n');  /* промотать экран на строку        */
+	system(CMD);    /* выполнить команду внешним Шеллом */
+	fprintf(stderr,"Нажми ENTER чтобы продолжить --- ");gets(CMD);
+	fixterm();      /* возобновить работу curses-а      */
+	RedrawScreen(); /* перерисовать экран               */
+	if(w == panewin){
+	   checkBothPanes();
+	   if(A_tbl->nitems) TblPoint(A_tbl, A_tbl->current, NO);
+	}
+	src = ""; /* во второй раз ничего не подставлять */
+    }
+    wattrset(w, A_NORMAL); /* ? */
+    e_hide ( &edit );
+    return ( *CMD && !LE_REFUSED(&edit)) ? CMD : NULL;
+}
+/* Выдача подсказки а также сообщений об ошибках.         */
+/* В этом же окне можно набирать команды (dorun==RUNCMD). */
+char *help(char *msg, RunType dorun){ register i; char *s;
+    static char *helptext[] = {
+	"ESC    - выход в главное меню",
+	"F1     - подсказка",
+	"INS    - пометить файл",
+	"ctrl/E - подставить имя выбранного файла",
+	"ctrl/L - подставить имя из другой панели",
+	"ctrl/X - подставить помеченные файлы",
+	"ctrl/Y - подставить помеченные курсивом",
+	"ctrl/G - подставить имя домашнего каталога",
+	"ctrl/F - подставить имя текущего каталога",
+	"F4     - история",
+	"F7     - переключить режим вставки/замены",
+	"F10    - переключить перемещения по строке/по панели",
+    };
+#define HELPLINES (sizeof(helptext)/sizeof helptext[0])
+    Sel save_current_menu = current_menu;
+    /* "выскакивающее" POP-UP window */
+    WINDOW *w = newwin(2+1+HELPLINES+1, 70, 2, (COLS-70)/2);
+    if( w == NULL ) return NULL;
+    current_menu = SEL_HELP;
+    wattrset(w, A_REVERSE);    /* это будет инверсное окно  */
+    werase  (w);               /* заполнить инверсным фоном */
+    wborder(w);  RaiseWin(w);  /* окно появляется */
+    if(*msg){                            wattron (w, A_BOLD);
+      mvwaddstr(w, 1+HELPLINES, 2, msg); wattroff(w, A_BOLD);
+    }
+    for(i=0; i < HELPLINES; i++) mvwaddstr(w, 1+i, 2, helptext[i]);
+    s = Edit(w, "", dorun); PopWin(); /* окно исчезает */
+    current_menu = save_current_menu;
+    return s;
+}
+/*-----------------------------------------------------------------*
+ *   Управляющее меню.                                             *
+ *-----------------------------------------------------------------*/
+int f_left(), f_right(), f_pull(), f_help(), f_sort(), f_dir(),
+    f_bye(),  f_redraw(),f_cdroot();
+/* Обратите внимание, что можно указывать не все поля структуры,
+ * а только первые. Остальные равны 0 */
+#ifndef __GNUC__
+Info mwrk_info[] = {    /* строки для главного меню      */
+    { "\\Current directory",       0       , f_left  }, /* 0 */
+    { "\\Root directory",          M_HATCH , f_right }, /* 1 */
+    { "\\Menus",                   0       , f_pull  }, /* 2 */
+    { "\1", /* гориз. черта */     0                 }, /* 3 */
+    { "\\Help",                    0       , f_help  }, /* 4 */
+    { "Un\\implemented",           I_NOSEL           }, /* 5 */
+    { "Change \\sorttype",         0       , f_sort  }, /* 6 */
+    { "Look directory \\history",  0       , f_dir   }, /* 7 */
+    { "\1", /* гориз. черта */     0                 }, /* 8 */
+    { "\\Quit",                    M_BOLD  , f_bye   }, /* 9 */
+    { "\1", /* гориз. черта */     0                 }, /* 10 */
+    { "\\Redraw screen",           M_HATCH , f_redraw}, /* 11 */
+    { "Chdir both panels to /",    M_HATCH , f_cdroot}, /* 12 */
+    { NULL, 0 }
+};
+#else /* GNU C-компилятор 1.37 не может инициализировать поля-union-ы */
+static char _gnu_[] = "Compiled with GNU C-compiler";
+Info mwrk_info[] = {    /* строки для главного меню      */
+    { "\\Current directory",            0       },
+    { "\\Root directory",               M_HATCH },
+    { "\\Menus",                        0       },
+    { "\1", /* гориз. черта */          0       },
+    { "\\Help",                         0       },
+    { "Un\\implemented",                I_NOSEL },
+    { "Change \\sorttype",              0       },
+    { "Look directory \\history",       0       },
+    { "\1", /* гориз. черта */          0       },
+    { "\\Quit",                         M_BOLD  },
+    { "\1", /* гориз. черта */          0       },
+    { "\\Redraw screen",                M_HATCH },
+    { "Chdir both panels to /",         M_HATCH },
+    { NULL, 0 }
+};
+void mwrk_init(){
+    mwrk_info [0].any.act = f_left;
+    mwrk_info [1].any.act = f_right;
+    mwrk_info [2].any.act = f_pull;
+    mwrk_info [4].any.act = f_help;
+    mwrk_info [6].any.act = f_sort;
+    mwrk_info [7].any.act = f_dir;
+    mwrk_info [9].any.act = f_bye;
+    mwrk_info[11].any.act = f_redraw;
+    mwrk_info[12].any.act = f_cdroot;
+}
+#endif
+char *mwrk_help[] = {
+      "Перейти в левую панель",  "Перейти в правую панель",
+      "Перейти в строчное меню", "",
+      "Выдать подсказку",        "Не реализовано",
+      "Изменить тип сортировки имен", "История путешествий",
+      "", "Выход", "", "Перерисовка экрана",
+      "Обе панели поставить в корневой каталог", NULL
+};
+void m_help(Menu *m, int n, int among){
+     Message(mwrk_help[n]);    }
+/* Выбор в рабочем (командном) меню */
+void SelectWorkingMenu(int sel){
+    if(sel == NOSELECTED)
+       sel = MnuUsualSelect( & mwrk, NO);
+    if( M_REFUSED(&mwrk)) help("Выбери Quit", NORUN);
+    else if(mwrk.items[sel].any.act)
+	  (*mwrk.items[sel].any.act)();
+    if( !done) MnuHide( & mwrk );
+}
+f_left ()  { current_menu = SEL_PANE1; return 0; }
+f_right()  { current_menu = SEL_PANE2; return 0; }
+f_pull ()  { current_menu = SEL_PULL;  return 0; }
+f_help ()  { help("Нажми ENTER или набери команду:", RUNCMD);
+	     return 0; }
+f_sort ()  { SelectSortType(NOSELECTED); return 0; }
+f_dir  ()  { Info *idir; if(idir = HistSelect(&hcwd, 20, 3))
+	       cd(idir->s, &tpane2, CWD);
+	    current_menu = SEL_PANE2;    return 0; }
+f_bye   () { done++;                     return 0; }
+f_redraw() { RedrawScreen();             return 0; }
+f_cdroot() { cd("/", &tpane1, CWD);
+	     cd("/", &tpane2, CWD); checkBothPanes();
+	     return 0;                             }
+/*-----------------------------------------------------------------*
+ *  Выдача информации про файл, редактирование кодов доступа.      *
+ *-----------------------------------------------------------------*/
+void MYwaddstr(WINDOW *w, int y, int x, int maxwidth, char *s){
+     register pos;
+     for(pos=0; *s && *s != '\n' && pos < maxwidth; ++s){
+	 wmove(w, y, x+pos);
+	      if( *s == '\t')  pos += 8 - (pos & 7);
+	 else if( *s == '\b'){ if(pos)  --pos; }
+	 else if( *s == '\r')  pos = 0;
+	 else { ++pos; waddch(w, isprint(*s) ? *s : '?'); }
+     }
+}
+/* Просмотр начала файла в противоположной панели.            */
+void fastView(
+     char *name,    /* имя файла                              */
+     unsigned mode, /* некоторые типы файлов не просматривать */
+     Table *otbl    /* противоположная панель                 */
+){   FILE *fp; register int x, y; char buf[512];
+
+     TblClear(otbl);
+     Message("Нажми ENTER для окончания. "
+	     "ПРОБЕЛ - изменяет код доступа. "
+	     "ESC - откатка.");
+     if( !ISREG(mode)) goto out;
+     if((fp = fopen(name, "r")) == NULL){
+	   Message("Не могу читать %s", name); return;
+     }
+     for(y=0; y < otbl->height && fgets(buf, sizeof buf, fp); y++)
+	 MYwaddstr(panewin, otbl->top+y, otbl->left+1,
+		   otbl->width-2, buf);
+     fclose(fp);
+out: wrefresh(otbl->win);   /* проявить */
+}
+static struct attrNames{
+	unsigned mode; char name; char acc; int off;
+} modes[] = {
+	{ S_IREAD,       'r', 'u',  0    },
+	{ S_IWRITE,      'w', 'u',  1    },
+	{ S_IEXEC,       'x', 'u',  2    },
+	{ S_IREAD  >> 3, 'r', 'g',  3    },
+	{ S_IWRITE >> 3, 'w', 'g',  4    },
+	{ S_IEXEC  >> 3, 'x', 'g',  5    },
+	{ S_IREAD  >> 6, 'r', 'o',  6    },
+	{ S_IWRITE >> 6, 'w', 'o',  7    },
+	{ S_IEXEC  >> 6, 'x', 'o',  8    },
+};
+#define NMODES (sizeof(modes)/sizeof(modes[0]))
+
+/* Позиция в которой изображать i-ый бит кодов доступа */
+#define MODE_X_POS(tbl, i) (tbl->left + DIR_SIZE + 12 + modes[i].off)
+#define MODE_Y_POS(tbl)    (tbl->top  + tbl->height + 1)
+
+#ifdef FILF
+/* Изобразить информацию о текущем выбранном файле */
+void showMode(Table *tbl, int attr){
+   Info *inf   = & tbl->items[tbl->current];    /* файл   */
+   register i; unsigned mode = inf->mode;       /* коды   */
+   int     uid = inf->uid, gid = inf->gid;      /* хозяин */
+   /* идентификаторы хозяина и группы процесса-коммандера */
+   static char first = YES; static int myuid, mygid;
+   WINDOW *win = tbl->win;
+   int xleft   = tbl->left + 1, y = MODE_Y_POS(tbl);
+
+   if( first ){ first = NO; myuid = getuid(); mygid = getgid(); }
+   wattron  (win, attr);
+   mvwprintw(win, y, xleft, " %*.*s %8ld ",  /* имя файла */
+      -DIR_SIZE, DIR_SIZE,
+       inf->s ? (!strcmp(inf->s, "..") ? "<UP-DIR>": inf->s) :
+		"(EMPTY)",
+       inf->size);
+   /* тип файла (обычный|каталог|устройство) */
+   wattron (win, A_ITALICS|A_BOLD);
+   waddch  (win, ISDIR(mode) ? 'd': ISDEV(mode) ? '@' : '-');
+   wattroff(win, A_ITALICS|A_BOLD);
+   /* коды доступа */
+   for(i=0; i < NMODES; i++){
+       if((modes[i].acc == 'u' && myuid == uid) ||
+	  (modes[i].acc == 'g' && mygid == gid) ||
+	  (modes[i].acc == 'o' && myuid != uid && mygid != gid)) ;
+       else     wattron(win, A_ITALICS);
+       mvwaddch(win, y, MODE_X_POS(tbl, i),
+		mode & modes[i].mode ? modes[i].name : '-');
+       wattroff(win, A_ITALICS);
+   }
+   waddch(win, ' '); wattroff(win, attr);
+}
+#define newmode (tbl->items[tbl->current].mode)
+/* Редактирование кодов доступа к файлам. */
+int editAccessModes(FileWidget *wd){
+    Table *tbl  = &wd->t;
+    Table *otbl = &(Other_pane(wd)->t); /* или Other_tbl(tbl); */
+    unsigned prevmode, oldmode;         /* старый код доступа  */
+    char *name;                         /* имя текущего файла  */
+    WINDOW *win = tbl->win;
+    int position = 0, c;
+
+    for(;;){  /* Цикл выбора файлов в таблице */
+	name = T_ITEMF(tbl, tbl->current, 0);
+	oldmode = newmode;             /* запомнить */
+	fastView(name, newmode, otbl); /* показать первые строки файла */
+
+	for(;;){  /* Цикл обработки выбранного файла */
+	   wmove(win, MODE_Y_POS(tbl), MODE_X_POS(tbl, position));
+
+	   switch(c = WinGetch(win)){
+/* Некоторые клавиши вызывают перемещение по таблице */
+case KEY_BACKTAB: TblPointAt(tbl, tbl->current - tbl->height); goto mv;
+case '\t':        TblPointAt(tbl, tbl->current + tbl->height); goto mv;
+case KEY_UP:      TblPointAt(tbl, tbl->current - 1); goto mv;
+case KEY_DOWN:    TblPointAt(tbl, tbl->current + 1); goto mv;
+case KEY_HOME:    TblPointAt(tbl, 0);                goto mv;
+case KEY_END:     TblPointAt(tbl, tbl->nitems-1);    goto mv;
+/* Прочие клавиши предназначены для редактирования кодов доступа */
+	   case KEY_LEFT:  if(position) --position; break;
+	   case KEY_RIGHT: if(position < NMODES-1)  position++; break;
+	   default: goto out;
+	   case ESC:    /* Восстановить старые коды */
+		prevmode = newmode = oldmode; goto change;
+	   case ' ':    /* Инвертировать код доступа */
+		prevmode = newmode;              /* запомнить */
+		newmode ^= modes[position].mode; /* инвертировать */
+change:         if( chmod(name, newmode) < 0){
+		    beep();
+		    Message("Не могу изменить доступ к %s", name);
+		    newmode = prevmode; /* восстановить */
+		} else /* доступ изменен, показать это */
+		    showMode(tbl, A_REVERSE);
+		break;
+	   }
+	} /* Конец цикла обработки выбранного файла */
+mv:     ;
+    } /* Конец цикла выбора файлов в таблице */
+out:
+    /* Очистить противоположную панель после fastView(); */
+    Message(""); TblClear(otbl); return c;
+}
+#undef newmode
+#else
+void editAccessModes(FileWidget *wd){}
+#endif
+long diskFree(){
+      struct ustat ust; struct stat st; long freespace;
+      if(stat(".", &st) < 0) return 0;
+      ustat(st.st_dev, &ust);
+      freespace = ust.f_tfree * 512L; freespace /= 1024;
+      Message("В %*.*s свободно %ld Кб.",
+	 -sizeof(ust.f_fname), sizeof(ust.f_fname),
+	 *ust.f_fname ? ust.f_fname : ".", freespace);
+      doupdate();  /* проявить окно для Message() */
+      return freespace;
+}
+/*-----------------------------------------------------------------*
+ *   Специальные команды, использующие обход дерева
+ *-----------------------------------------------------------------*/
+/* Выдача сообщений об ошибках (смотри Makefile) */
+int tree_err_cant_read(char *name){
+    Message("Не могу читать \"%s\"", name); return WARNING;
+}
+int tree_name_too_long(){
+    Message("Слишком длинное полное имя"); return WARNING;
+}
+char canRun;  /* продолжать ли поиск */
+/* Прерывание обхода по SIGINT */
+void onintr_f(nsig){ canRun = NO; Message("Interrupted"); }
+
+/* ==== место, занимаемое поддеревом ==== */
+long tu(int *count){
+   struct stat st; register i; long sum = 0L;
+   *count = 0;
+   for(i=0; i < A_tbl->nitems ;++i )
+      if( T_TST(A_tbl, i, T_LABEL)){
+	  stat(T_ITEMF(A_tbl, i, 0), &st);
+#define KB(s)   (((s) + 1024L - 1) / 1024L)
+	  sum += KB(st.st_size); (*count)++;
+      }
+   return sum;
+}
+void diskUsage(){ long du(), size, sizetagged; int n;
+  char msg[512];
+  Message("Измеряем объем файлов..."); doupdate();
+  size = du(".");   diskFree();  sizetagged = tu(&n);
+  sprintf(msg, "%ld килобайт в %s, %ld кб в %d помеченных файлах",
+		size,          CWD, sizetagged,   n);
+  help(msg, NORUN);
+}
+/* ==== поиск файла ===================== */
+extern char *find_PATTERN;             /* imported from treemk.c */
+extern Info gargv[]; extern int gargc; /* imported from glob.c   */
+/* Проверить очередное имя и запомнить его, если подходит */
+static int findCheck(char *fullname, int level, struct stat *st){
+    char *basename = strrchr(fullname, '/');
+    if(basename) basename++;
+    else         basename = fullname;
+    if( canRun == NO ) return FAILURE;   /* поиск прерван         */
+    if( match(basename, find_PATTERN)){  /* imported from match.c */
+	gargv[gargc]     = NullInfo;  /* зачистка */
+	gargv[gargc].s   = strdup(fullname);
+	gargv[gargc++].fl= ISDIR(st->st_mode) ? I_DIR : 0;
+	gargv[gargc]     = NullInfo;
+	Message("%s", fullname); doupdate();
+    }
+    /* Страховка от переполнения gargv[] */
+    if   ( gargc < MAX_ARGV - 1 ) return SUCCESS;
+    else { Message("Найдено слишком много имен."); return FAILURE; }
+}
+/* Собрать имена файлов, удовлетворяющие шаблону */
+static Info *findAndCollect(char *pattern){
+     void (*old)() = signal(SIGINT, onintr_f);
+     Sort saveSort;
+
+     find_PATTERN = pattern; canRun = YES;
+     Message("Ищем %s от %s", pattern, CWD); doupdate();
+     greset();  /* смотри glob.c, gargc=0; */
+     walktree(CWD, findCheck, NULL, findCheck);
+     signal(SIGINT, old);
+     saveSort = sorttype; sorttype = SORT_ASC;
+     if(gargc) qsort( gargv, gargc, sizeof(Info), gcmps);
+     sorttype = saveSort;
+     return gargc ? blkcpy(gargv) : NULL;
+}
+/* Обработать собранные имена при помощи предъявления меню с ними */
+void findFile(FileWidget *wd){
+     static Info *found; static Menu mfind;
+     int c; Table *tbl = & wd->t;
+     char *pattern = help("Введи образец для поиска, вроде *.c, "
+			  "или ENTER для прежнего списка", FIND);
+     if( LE_REFUSED( &edit)) return; /* отказались от поиска */
+     /* Если набрана пустая строка, help() выдает NULL       */
+     if( pattern ){            /* задан новый образец - ищем */
+	 /* Уничтожить старый список файлов и меню */
+	 if( found ) blkfree( found );
+	 MnuDeinit( &mfind );
+	 found = findAndCollect(pattern); /* поиск */
+	 HistAdd( &hpat, pattern, 0);
+	 /* Образуем меню из найденных файлов */
+	 if( found ){  /* если что-нибудь нашли */
+	   mfind.items     =  found;
+	   mfind.title     =  pattern ? pattern : "Найденные файлы";
+	   mfind.top       =  3; mfind.left = COLS/6;
+	   mfind.bg_attrib =  A_STANDOUT; mfind.sel_attrib = A_REVERSE;
+	   MnuInit (&mfind);
+	 }
+     } /* else набрана пустая строка - просто вызываем список
+	* найденных ранее файлов.
+	*/
+     if( found == NULL ){
+	 Message("Ничего не найдено"); beep(); return;
+     }
+     c = MnuUsualSelect(&mfind, NO);
+     /* Выбор файла в этом меню вызовет переход в каталог,
+      * в котором содержится этот файл */
+     if( !M_REFUSED( &mfind )){
+	char *s = M_ITEM(&mfind, mfind.current);
+
+	/* пометить выбранный элемент */
+	M_SET(&mfind, mfind.current, M_LABEL);
+	/* если это каталог - войти в него */
+	if( M_TST(&mfind, mfind.current, I_DIR))
+	       cd(s, wd, CWD);
+	/* иначе войти в каталог, содержащий этот файл */
+	else { char *p; struct savech svch; /* смотри glob.h */
+	     SAVE( svch, strrchr(s, '/'));   *svch.s = '\0';
+	     p = strdup(s); RESTORE(svch);
+	     if( !strcmp(CWD, p))               /* мы уже здесь     */
+		 TblPlaceByName(tbl, svch.s+1); /* указать курсором */
+	     else /* изменить каталог и указать курсором на файл s  */
+		 cd(p, wd, s);
+	     free(p);
+	}
+     }
+     MnuHide(&mfind);  /* спрятать меню, не уничтожая его */
+}
+/*-----------------------------------------------------------------*
+ *   Работа с панелями, содержащими имена файлов двух каталогов.   *
+ *-----------------------------------------------------------------*/
+/* Восстановить элементы, затертые рамкой WinBorder */
+void t_restore_corners(){
+    mvwaddch(panewin, LINES-3, 0,               LEFT_JOIN);
+    mvwaddch(panewin, LINES-3, COLS-2-BARWIDTH, RIGHT_JOIN);
+    mvwaddch(panewin, LINES-5, 0,               LEFT_JOIN);
+    mvwaddch(panewin, LINES-5, COLS-2-BARWIDTH, RIGHT_JOIN);
+    mvwaddch(panewin, 2,       CENTER, TOP_JOIN);
+    wattron (panewin, A_BOLD);
+    mvwaddch(panewin, LINES-3, CENTER, BOTTOM_JOIN);
+    mvwaddch(panewin, LINES-5, CENTER, MIDDLE_CROSS);
+    wattroff(panewin, A_BOLD);
+}
+/* Нарисовать нечто при входе в панель. Здесь изменяется
+ * заголовок окна: он становится равным имени каталога,
+ * просматриваемого в панели */
+void t_enter(Table *tbl){
+     WinBorder(tbl->win, tbl->bg_attrib, tbl->sel_attrib,
+	       CWD, BAR_VER|BAR_HOR, NO);
+     t_restore_corners();
+}
+/* Стереть подсветку при выходе из панели */
+void t_leave(Table *tbl){ TblDrawItem( tbl, tbl->current, NO, YES ); }
+/* Рисует недостающую часть рамки, которая не изменяется впоследствии */
+void t_border_common(){
+    WinBorder(panewin, A_tbl->bg_attrib, A_tbl->sel_attrib,
+	      A_dir->name, BAR_VER|BAR_HOR, NO);
+    wattron (panewin, A_BOLD);
+    whorline(panewin, LINES-3, 1, COLS-1-BARWIDTH-1);
+    whorline(panewin, LINES-5, 1, COLS-1-BARWIDTH-1);
+    wverline(panewin, CENTER, A_tbl->top, A_tbl->top + A_tbl->height+2);
+    wattroff(panewin, A_BOLD);
+    t_restore_corners();
+}
+/* Функция, изображающая недостающие части панели при входе в нее */
+int t_show(Table *tbl){
+#ifdef FILF
+     showMode(A_tbl, A_STANDOUT); showMode(B_tbl, A_STANDOUT);
+#endif
+     return 1;
+}
+void t_scrollbar(Table *tbl, int whichbar, int n, int among){
+     WinScrollBar(tbl->win, BAR_VER|BAR_HOR, n, among,
+		  "Yes", tbl->bg_attrib);
+#ifdef FILF
+     showMode(tbl, A_REVERSE);
+#endif
+}
+/* Особая обработка клавиш при выборе в таблице */
+int t_hit[] = {
+   '\t',        KEY_F(1),       KEY_F(2),       KEY_F(3),
+   KEY_F(4),    KEY_F(8),       ' ',            '+',
+   '-',         ctrl('R'),      ctrl('L'),      ctrl('F'),
+   -1 };
+Info t_info[] = {
+  { "TAB    Перейти в другую панель",        0},
+  { "F1     Выдать подсказку",               0},
+  { "F2     Ввести команду",                 0},
+  { "F3     Перейти в родительский каталог", 0},
+  { "F4     Перейти в каталог по имени",     0},
+  { "F8     Удалить помеченные файлы",       0},
+  { "ПРОБЕЛ Редактировать коды доступа",     0},
+  { "+      Пометить файлы",                 0},
+  { "-      Снять пометки",                  0},
+  { "ctrl/R Перечитать каталог",             0},
+  { "ctrl/L Выдать размер файлов в каталоге",0},
+  { "ctrl/F Поиск файла",                    0},
+  { NULL, 0}
+};
+int t_help(){
+   static Menu mth; int c = 0;
+   if( mth.items == NULL ){
+       mth.items     =  t_info;
+       mth.title     =  "Команды в панели";
+       mth.top       =  3; mth.left = COLS/6;
+       mth.bg_attrib =  A_STANDOUT; mth.sel_attrib = A_REVERSE;
+       MnuInit (&mth);
+       mth.hotkeys   = t_hit;
+   }
+   c = MnuUsualSelect(&mth, 0);
+   /* Спрятать меню, не уничтожая его. Уничтожение выглядело бы так:
+    *   mth.hotkeys = NULL; (т.к. они не выделялись malloc()-ом)
+    *   MnuDeinit(&mth);
+    */
+   MnuHide(&mth);
+   if( M_REFUSED(&mth)) return 0;             /* ничего не делать */
+   return t_hit[c];  /* клавиша, соответствующая выбранной строке */
+}
+int t_handler (Table *tbl, int c, HandlerReply *reply){
+    int i, cnt=0; extern int unlink(), rmdir(); char *answer;
+    FileWidget  *wd = TblFW (tbl);
+    switch(c){
+    case '\t':  /* перейти в соседнюю панель */
+	ExchangePanes();
+	*reply = HANDLER_OUT; return LEAVE_KEY; /* покинуть эту панель */
+    case KEY_F(1): *reply = HANDLER_NEWCHAR; return t_help();
+    case KEY_F(2):
+	   (void) Edit(tbl->win, T_ITEMF(tbl, tbl->current, 0), RUNCMD);
+	   break;
+    case KEY_F(3): cd(".." , wd, CWD); break;
+    case KEY_F(4):
+      if(answer = help("Введи имя каталога, в который надо перейти",CHDIR))
+	 cd(answer , wd, CWD);
+      break;
+    case ctrl('R'): break;
+    case KEY_F(8):
+      for(i=0; i < tbl->nitems; i++)
+	 if(T_TST(tbl, i, M_LABEL)){  int code; cnt++;
+if((code = (T_TST(tbl, i, I_DIR) ? rmdir : unlink) (T_ITEMF(tbl, i,0))) < 0)
+	    T_SET(tbl, i, M_HATCH);
+      }
+      if(cnt==0) help("Нет помеченных файлов", NORUN);
+      break;
+    case '+':
+      if(answer = help("Шаблон для пометки", TAG))
+	 TblTagAll(tbl, answer, T_LABEL);
+      break;
+    case '-':
+      if(answer = help("Шаблон для снятия пометок", TAG))
+	 TblUntagAll(tbl, answer, T_LABEL);
+      break;
+    case ctrl('L'):     /* команда "disk usage" */
+      diskUsage(); break;
+    case ctrl('F'):     /* поиск файла */
+      findFile(wd); break;
+    case ' ':           /* редактирование кодов доступа */
+      editAccessModes(wd); break;
+    }
+    *reply = HANDLER_OUT; return REPEAT_KEY;
+    /* вернуться в эту же панель */
+}
+/* Выбор в одной из панелей. */
+int SelectPane(FileWidget *wd){
+    Table *tbl       = & wd->t;
+    DirContents *d   = & wd->d;
+    int sel, retcode = 0;
+
+    RaiseWin( tbl->win );
+ /* войти в указанный каталог, поправить CWD  */
+    if(mychdir( d->name ) < 0) checkBothPanes();
+    /* t_enter( tbl );  /* войти в указанную панель, поправить рамку */
+    for(;;){
+      /* Проверить, не устарело ли содержимое таблиц */
+      checkBothPanes();
+      if((sel = TblUsualSelect( tbl )) == TOTAL_NOSEL ){
+	  current_menu = SEL_PULL; goto out;           }
+      if( T_REFUSED(tbl)) break; /* нажат ESC */
+      if( tbl->key == LEAVE_KEY  ){ retcode=1; break; }
+      strcpy(SELECTION, T_ITEMF(tbl, sel, 0));
+      if( tbl->key == REPEAT_KEY ) continue;
+      if(T_TST(tbl, sel, I_DIR)){ /* это каталог */
+      /* попытаться перейти в этот каталог */
+	 cd(SELECTION, wd, CWD);
+      } else if(T_TST(tbl, sel, I_EXE)){ /* выполняемый файл */
+	 (void) Edit(tbl->win, SELECTION, RUNCMD);
+      } else {
+	 editAccessModes(wd);
+      /* На самом деле надо производить подбор команды по
+       * типу файла (набор соответствий должен программироваться
+       * вами в специальном файле, считываемом при запуске коммандера).
+       *        runCommand( classify(SELECTION));
+       * где классификация в простейшем случае - по имени и суффиксу,
+       * а в более развитом - еще и по кодам доступа (включая тип файла)
+       * и по первой строке файла (или "магическому числу").
+       */
+       }
+    }  /* end for */
+    t_leave( tbl );
+out:
+    if( !retcode ) current_menu = SEL_PULL; /* выход по ESC */
+    return retcode;
+}
+/*-----------------------------------------------------------------*
+ *   Горизонтальное командное меню (вызывается по ESC).            *
+ *-----------------------------------------------------------------*/
+PullInfo pm_items [] = {                 /* подсказка */
+  {{ " \\Left ",     0 },        NULL,   "Left pane"       }, /* 0 */
+  {{ " \\Commands ", 0 },        &mwrk,  "Do some commands"}, /* 1 */
+  {{ " \\Tools ",    PM_NOSEL }, NULL,   ""                }, /* 2 */
+  {{ " \\Sorttype ", 0 },        &msort, "Change sort type"}, /* 3 */
+  {{ " \\Right ",    0 },        NULL,   "Right pane"      }, /* 4 */
+  {{ NULL,           0 },        NULL,   NULL }
+};
+void p_help(PullMenu *p, int n, int among){ Message( PM_NOTE(p, n)); }
+/* Выбор в меню-строке */
+void SelectPullMenu(){
+    int c, sel; Menu *m;
+    for(;current_menu == SEL_PULL;){
+	c = PullUsualSelect(&pull);
+	sel = pull.current;
+	if( PM_REFUSED(&pull)){ current_menu = previous_menu; return;}
+	switch(sel){
+	case 0: current_menu = SEL_PANE1; return;
+	case 1: SelectWorkingMenu(c);     return;
+	case 2:                           return;  /* не бывает */
+	case 3: SelectSortType(c);        return;
+	case 4: current_menu = SEL_PANE2; return;
+	}
+    }
+}
+/*-----------------------------------------------------------------*
+ *   Инициализация и завершение.                                   *
+ *-----------------------------------------------------------------*/
+void die(int sig){
+     echo(); nocbreak(); mvcur(-1,-1,LINES-1,0);
+     refresh(); endwin (); putchar('\n');
+     if(sig) printf("Signal %d\n", sig);
+     if(sig == SIGSEGV) abort(); else exit(sig);
+}
+void main (void) {
+    setlocale(LC_ALL, "");  /* получить информацию о языке диагностик */
+    initscr ();          /* включить curses */
+    signal(SIGINT, die); /* по сигналу вызывать die(); */
+    signal(SIGBUS, die); /* по нарушению защиты памяти */
+    signal(SIGSEGV,die);
+    refresh();           /* обновить экран: это очистит его */
+    noecho(); cbreak();  /* выключить эхо, включить прозрачный ввод */
+/* Проинициализировать истории */
+    HistInit(&hcwd,  20); hcwd. mnu.title = "История пути";
+    HistInit(&hedit, 20); hedit.mnu.title = "История команд";
+    HistInit(&hpat,   8); hpat. mnu.title = "Шаблоны имен";
+/* Разметить меню сортировки   */
+    msort.items     = sort_info;
+    msort.title     = "Вид сортировки каталога";
+    msort.top       = 1; msort.left = 2;
+    msort.showMe    = sort_show;
+    msort.bg_attrib = A_NORMAL; msort.sel_attrib = A_STANDOUT;
+    /* MnuInit (&msort); инициализируется в pull-menu */
+/* Разметить рабочее меню */
+    mwrk.items      =  mwrk_info;
+    mwrk.title      = "Главное меню";
+    mwrk.top        = 1;    mwrk.left = COLS/3;
+    mwrk.handler    = NULL; mwrk.hitkeys = NULL;
+    mwrk.bg_attrib  = A_STANDOUT; mwrk.sel_attrib = A_REVERSE;
+    mwrk.scrollBar  = m_help;
+#ifdef __GNUC__
+    mwrk_init();
+#endif
+    /* MnuInit (&mwrk); инициализируется в pull-menu */
+/* Разметить левую и правую панели */
+    tpane1.t.width      = CENTER - 1;
+    tpane2.t.width      = COLS - tpane1.t.width - 2 - (2 + BARWIDTH);
+    tpane1.t.height     = tpane2.t.height = (LINES - 8);
+    tpane1.t.win        = tpane2.t.win  = panewin = stdscr;
+    tpane1.t.left       = 1;
+    tpane2.t.left       = CENTER+1;
+    tpane1.t.top        = tpane2.t.top    = 3;
+    tpane1.t.bg_attrib  = tpane2.t.bg_attrib  = A_NORMAL;
+    tpane1.t.sel_attrib = tpane2.t.sel_attrib = A_STANDOUT;
+    tpane1.t.scrollBar  = tpane2.t.scrollBar  = t_scrollbar;
+    tpane1.t.hitkeys    = tpane2.t.hitkeys    = t_hit;
+    tpane1.t.handler    = tpane2.t.handler    = t_handler;
+    tpane1.t.showMe     = tpane2.t.showMe     = t_show;
+    tpane1.t.hideMe     = tpane2.t.hideMe     = NULL;
+/* Разметить имена для файловых объектов */
+    tpane1.d.name = strdup("Текущий каталог");
+    tpane2.d.name = strdup("Корневой каталог");
+/* Изобразить рамки (но пока не проявлять их)
+ * Это надо сделать до первого cd(), т.к. иначе при неудаче будет выдано
+ * сообщение, которое проявит НЕЗАВЕРШЕННУЮ картинку */
+    t_border_common(); t_restore_corners();
+/* Доразметить левую панель */
+    mychdir(".");  /* узнать полное имя текущего каталога в CWD[] */
+    /* прочитать содержимое каталога CWD в tpane1.d */
+    cd( CWD , &tpane1, CWD);
+    tpane1.t.fmt        = "directory";
+    InitTblFromDir(&tpane1, NO, NULL);
+/* Доразметить правую панель */
+    tpane2.t.fmt = NULL;
+    /* прочитать содержимое каталога "/" в tpane2.d */
+    cd( "/", &tpane2, CWD); /* теперь стоим в корне */
+/* Вернуться в рабочий каталог */
+    cd( tpane1.d.name, &tpane1, CWD);
+/* Нарисовать обе панели */
+    TblDraw(A_tbl); TblDraw(B_tbl);
+/* Разметить pulldown меню */
+    pull.bg_attrib  = A_REVERSE; pull.sel_attrib = A_NORMAL;
+    pull.items      = pm_items;  pull.scrollBar  = p_help;
+    PullInit(&pull);
+/* Основной цикл */
+    for(done=NO, current_menu=SEL_PANE1, A_pane= &tpane1, B_pane= &tpane2;
+	done == NO; ){
+	Message("");
+	if(SEL_PANE) previous_menu = current_menu;
+	switch(current_menu){
+	case SEL_WRK :  SelectWorkingMenu(NOSELECTED); break;
+	case SEL_PULL:  SelectPullMenu();              break;
+	case SEL_PANE1: if( SelectPane(&tpane1) < 0)
+			    M_SET(&mwrk, 0, I_NOSEL);  break;
+	case SEL_PANE2: if( SelectPane(&tpane2) < 0)
+			    M_SET(&mwrk, 0, I_NOSEL);  break;
+	}
+    }
+    die(0);     /* Завершить работу */
+}
+

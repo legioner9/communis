@@ -1,0 +1,11 @@
+${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_dr1f2e_/dr1f2e_tst/d0/d1/.f2
+${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_dr1f2e_/dr1f2e_tst/d0/.d2/f1
+${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_dr1f2e_/dr1f2e_tst/d0/f3
+${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_dr1f2e_/dr1f2e_tst/d0/.f4
+0
+message in dr1f2e_, with_args: ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_dr1f2e_/dr1f2e_tst/d0x -qq_exit  ,filename: ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_dr1f2e_/dr1f2e_.sh, line: 28
+1
+[0;31m---message: dr1f2e_, with_args: ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_dr1f2e_/dr1f2e_tst/d0x   ,filename: ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_dr1f2e_/dr1f2e_.sh, line: 28---[0m
+[0;31m---file: ---[0m
+[0;31m---line: ---[0m
+1

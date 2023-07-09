@@ -1,0 +1,8 @@
+/*#*/ int usleep_lc_time(useconds_t usec)
+{
+    struct timeval tv;
+    tv.tv_sec = 0;
+    tv.tv_usec = usec; /* 0.2 секунды */
+    select(0, NULL, NULL, NULL, &tv);
+    return 0;
+}

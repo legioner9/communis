@@ -1,0 +1,160 @@
+## Обход поддерева каталогов в MS DOS при помощи chdir.
+
+Пример 13
+/* Обход дерева каталогов в MS DOS при помощи смены текущего каталога.
+ * Аналог ls -R в UNIX. По аналогичному алгоритму работает программа
+ * find . -print  (напишите команду find, используя match())
+ */
+#define STYLE2
+#include <stdio.h>
+#include <stdlib.h>
+#include <dir.h>
+#include <dos.h>
+#include <alloc.h>      /* для malloc() */
+#include <string.h>     /* strchr(), strrchr(), strcpy(), ... */
+
+		/* прототипы */
+char *strend(char *s); char *strdup(const char *s);
+void action(int, char **); void main(int, char **);
+int listdir(char *); void printdir(int n);
+#ifdef STYLE2
+void lookdir(char *s, int ac, char **av, register int level);
+#else
+void lookdir(char *s, int ac, char **av);
+#endif
+
+char root[256]; /* имя стартового каталога */
+char cwd[256];  /* полное имя текущего каталога */
+
+char *strend(register char *s){ while(*s)s++; return s; }
+char *strdup(const char *s){ /* прототип malloc в <stdlib.h> */
+   char *p = (char *) malloc(strlen(s) + 1);
+   if(p) strcpy(p, s); return p;
+}
+
+stop(){  /* Реакция на control/break */
+   chdir( root );
+   /* Это необходимо потому, что MS DOS имеет (в отличие от UNIX)
+      понятие "текущий каталог" как глобальное для всей системы.
+      Если мы прервем программу, то окажемся не в том каталоге,
+      откуда начинали. */
+   printf( "\nInterrupted by ctrl-break\n");
+   return 0;  /* exit */
+}
+
+void main(int argc, char **argv){
+    /* получить имя текущего каталога */
+    (void) getcwd(root, sizeof root);
+    ctrlbrk( stop );  /* установить реакцию на ctrl/break */
+#ifndef STYLE2
+    lookdir( "." /* корень дерева */, argc, argv );
+#else
+    /* для примера: дерево от "\\" а не от "." */
+    lookdir( "\\", argc, argv, 0 /* начальный уровень */ );
+#endif /*STYLE2*/
+    chdir(root); /* вернуться в исх. каталог */
+}
+
+# ifndef STYLE2
+  void lookdir(char *s, int ac, char **av){
+       static int level = 0;   /* уровень рекурсии */
+# else
+  void lookdir(char *s, int ac, char **av, register int level){
+# endif /*STYLE2*/
+   struct ffblk dblk, *psd = &dblk;
+   register done;
+
+   if( chdir(s) < 0 ){ /* войти в каталог */
+       printf( "Cannot cd %s\n", s ); return;
+   } else if (level == 0){ /* верхний уровень */
+       (void) getcwd(cwd, sizeof cwd);
+       /* получить полное имя корня поддерева */
+   }
+   action(ac, av);
+
+   /* искать имена каталогов, удовлетворяющие шаблону "*" */
+   /* (не в алфавитном порядке !)                         */
+   done = findfirst("*.", psd, FA_DIREC);
+   while( !done ){
+     if((psd->ff_attrib & FA_DIREC) && psd->ff_name[0] != '.' ){
+	/* Видим каталог: войти в него! */
+	char *tail =  strend(cwd); char *addplace;
+	if( tail[-1] == '\\' ){
+	    addplace = tail;
+	}else{
+	    *tail = '\\'; addplace = tail+1;
+	}
+	strcpy(addplace, psd->ff_name);
+#ifndef STYLE2
+	level++; lookdir( psd->ff_name, ac, av ); level--;
+#else
+		 lookdir( psd->ff_name, ac, av,   level+1 );
+#endif
+	*tail = '\0';
+     }
+     /* Искать следующее имя. Информация о точке, где был
+      * прерван поиск, хранится в dblk */
+     done = findnext(psd);
+   }
+   if( level ) chdir( ".." );  /* выйти вверх */
+}
+
+/* Выполнить действия в каталоге */
+void action(int ac, char **av){
+   extern int busy;
+   busy = 0;
+   if( ac == 1 ) listdir( "*.*" );
+   else{
+       av++;
+       while( *av ) listdir( *av++ );
+   }
+   printdir( busy );
+}
+
+#define MAXF 400
+struct fst{
+    char *name; long size; short attr;
+} files[MAXF];
+int busy;       /* сколько имен собрано */
+
+/* Собрать имена, удовлетворяющие шаблону. */
+int listdir( char *picture ){
+    int done, n; struct ffblk dentry;
+
+    for(n=0, done=findfirst(picture, &dentry,0xFF /* все типы */);
+	 busy < MAXF && !done ;
+	 done = findnext( &dentry )){
+	    files[busy].name = strdup(dentry.ff_name);
+	    files[busy].size = dentry.ff_fsize;
+	    files[busy].attr = dentry.ff_attrib;
+	    n++; busy++;
+    }
+    return n;
+}
+
+/* int cmp(struct fst *a, struct fst *b)       */
+/* новые веяния в Си требуют такого прототипа: */
+int cmp(const void *a, const void *b){
+    return strcmp(((struct fst *) a) -> name,
+		  ((struct fst *) b) -> name );
+}
+
+/* отсортировать и напечатать */
+void printdir(int n){
+    register i;
+    struct fst *f;
+
+    qsort( files, n, sizeof files[0], cmp );
+    printf( "Directory %s\n", cwd );
+    for( i=0, f = files; i < n; i++, f++ )
+      printf("\t%-16s\t%10ld\t%c%c%c%c%c%c\n",
+	   f->name, f->size,
+	   f->attr & FA_DIREC  ? 'd':'-',  /* directory */
+	   f->attr & FA_RDONLY ? 'r':'-',  /* read only */
+	   f->attr & FA_HIDDEN ? 'h':'-',  /* hidden */
+	   f->attr & FA_SYSTEM ? 's':'-',  /* system */
+	   f->attr & FA_LABEL  ? 'l':'-',  /* volume label */
+	   f->attr & FA_ARCH   ? 'a':'-'   /* archive */
+      ), free(f->name);
+    putchar('\n');
+}

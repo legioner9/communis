@@ -1,0 +1,17 @@
+[1mexec: cat /home/st/REPOBARE/_repo/plt/actio/dir_fp_f_/fp_f_mall_prov_1_extst/extst_1/ex1/_deb/res/dir_ex1_/.d/.dd/tree_gign_dir.man /home/st/REPOBARE/_repo/plt/actio/dir_fp_f_/fp_f_mall_prov_1_extst/extst_1/ex4/res :end exec[0m
+tree -a -L 2 in /home/st/REPOBARE/_repo/plt/actio/dir_fp_f_/fp_f_mall_prov_1_extst/extst_1/ex1/_deb/res/dir_ex1_/.d
+.
+├── .dd
+│   ├── causa.man
+│   ├── cr_tree_gign_dir.sh
+│   ├── sruct.man
+│   ├── textus.man
+│   └── tree_gign_dir.man
+└── .sal
+    ├── ex1_.body.sh
+    ├── ex1_.h.sh
+    ├── ex1_.lst
+    ├── ex1_.man
+    └── ex1_.puml
+
+2 directories, 10 files

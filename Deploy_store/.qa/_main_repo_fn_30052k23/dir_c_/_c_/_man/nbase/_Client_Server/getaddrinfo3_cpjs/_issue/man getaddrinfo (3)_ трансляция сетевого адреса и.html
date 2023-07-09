@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<!-- saved from url=(0037)https://ru.manpages.org/getaddrinfo/3 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com/">
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+  <link rel="dns-prefetch" href="https://www.google-analytics.com/">
+  <title>man getaddrinfo (3): трансляция сетевого адреса и</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="description" content="man getaddrinfo (3): По заданным node и service, определяющим узел и службу Интернета, getaddrinfo() возвращает одну или несколько структур addrinfo, каждая из которых содержит Интернет-адрес, который можно передавать в вызов bind(2) или connect(2). Функция getaddrinfo() объе">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <link href="./man getaddrinfo (3)_ трансляция сетевого адреса и_files/css" rel="stylesheet" type="text/css">
+  <link href="./man getaddrinfo (3)_ трансляция сетевого адреса и_files/css(1)" rel="stylesheet" type="text/css">
+  <link href="./man getaddrinfo (3)_ трансляция сетевого адреса и_files/css(2)" rel="stylesheet" type="text/css">
+  <link data-turbolinks-track="true" href="./man getaddrinfo (3)_ трансляция сетевого адреса и_files/application-f7897fbdd67c6822d0a0ff57b3ffc02f.css" media="all" rel="stylesheet">
+  <script async="" src="./man getaddrinfo (3)_ трансляция сетевого адреса и_files/analytics.js"></script><script async="async" data-turbolinks-track="true" src="./man getaddrinfo (3)_ трансляция сетевого адреса и_files/application-b47bf462822a1e5557c375def5c1aa58.js"></script>
+
+  <!--[if IE]>
+        
+    <![endif]-->
+<script type="text/javascript">
+//<![CDATA[
+      var LANG = 'ru';
+//]]>
+</script>
+  
+  <meta content="authenticity_token" name="csrf-param">
+<meta content="eR+ecn3USp1Yn8F04UQ7cH2qmsxrQBr8A58efSt8hg8=" name="csrf-token">
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-56225390-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<body>
+  <div class="header-container">
+    <header class="clearfix">
+      <div class="logo"><a href="https://ru.manpages.org/"><img src="./man getaddrinfo (3)_ трансляция сетевого адреса и_files/logo-01e8ca9d4868e2e64bed82dde5c62d60.png" alt="logo"></a></div>
+       <!--
+        <nav>
+    <ul>
+        <li class="ОБЗОР selected"><a title="" href="#">ОБЗОР</a></li>
+        <li class="ОПИСАНИЕ"><a title="" href="#">ОПИСАНИЕ</a></li>
+        <li class="ВОЗВРАЩАЕМОЕ ЗНАЧЕНИЕ"><a title="" href="#">ВОЗВРАЩАЕМОЕ ЗНАЧЕНИЕ</a></li>
+        <li class="ФАЙЛЫ"><a title="" href="#">ФАЙЛЫ</a></li>
+        <li class="ПРИМЕР"><a title="" href="#">ПРИМЕР</a></li>
+    </ul>
+  </nav>
+  -->
+      <div class="search">
+        <form accept-charset="UTF-8" action="https://ru.manpages.org/pagenames/autocomplete_page_name_name" method="post"><div style="display:none"><input name="utf8" type="hidden" value="✓" class="ui-autocomplete-input" autocomplete="off"><input name="authenticity_token" type="hidden" value="eR+ecn3USp1Yn8F04UQ7cH2qmsxrQBr8A58efSt8hg8=" class="ui-autocomplete-input" autocomplete="off"></div>
+            <input data-autocomplete="/pagenames/autocomplete_page_name_name" id="page_name_name" name="page_name[name]" placeholder="Поиск в MAN файлах..." type="text" class="ui-autocomplete-input" autocomplete="off">
+            <button type="submit" onclick="return false">
+              <img src="./man getaddrinfo (3)_ трансляция сетевого адреса и_files/search_-5f10690007ebc2fbfce6cf9b1f687474.svg">
+            </button>
+</form>      </div>
+      <a class="mcat"><img src="./man getaddrinfo (3)_ трансляция сетевого адреса и_files/menu-533ee2b7609b0e242c51d7f42ca18b7f.png"></a>
+    </header>
+  </div>
+  <div id="core">
+    <div class="main-wrapper">
+      <link rel="stylesheet" href="./man getaddrinfo (3)_ трансляция сетевого адреса и_files/default.min.css">
+<script src="./man getaddrinfo (3)_ трансляция сетевого адреса и_files/highlight.min.js"></script>
+
+<div class="manpages-show">
+
+
+<div class="main-container">
+  <main>
+
+    <div class="article-container">
+        <div class="article_table">
+            <span>getaddrinfo<i>(3)</i></span>
+            <span>трансляция сетевого адреса и</span>
+        </div>
+      <article>
+        <div class="alias">
+          <p><span class="translation_missing" title="translation missing: ru.Other_Alias">Other Alias</span></p>
+          <span>freeaddrinfo, gai_strerror</span>
+        </div>
+        <a name=""></a><div class="section">
+<h2>ОБЗОР</h2>
+
+<p></p><p><b>#include &lt;sys/types.h&gt;</b><br><b>#include &lt;sys/socket.h&gt;</b><br><b>#include &lt;netdb.h&gt;</b><br></p><hr><b>int getaddrinfo(const char *</b><i>node</i><b>, const char *</b><i>service</i><b>,</b><br><b>                const struct addrinfo *</b><i>hints</i><b>,</b><br><b>                struct addrinfo **</b><i>res</i><b>);</b><br><hr><b>void freeaddrinfo(struct addrinfo *</b><i>res</i><b>);</b><br><hr><b>const char *gai_strerror(int </b><i>errcode</i><b>);</b><p></p>
+
+<p>
+Требования макроса тестирования свойств для glibc
+(см. <b><a class="man" category="7" href="https://ru.manpages.org/feature_test_macros/7">feature_test_macros</a></b>(7)):
+</p><p>
+<b>getaddrinfo</b>(), <b>freeaddrinfo</b>(), <b>gai_strerror</b>():
+</p><dl compact="compact"><dt></dt><dd>
+_POSIX_C_SOURCE&nbsp;&gt;=&nbsp;1 || _XOPEN_SOURCE || _POSIX_SOURCE
+</dd></dl>
+
+
+
+</div>
+<a name=""></a><div class="section">
+<h2>ОПИСАНИЕ</h2>
+По заданным <i>node</i> и <i>service</i>, определяющим узел и службу Интернета,
+<b>getaddrinfo</b>() возвращает одну или несколько структур <i>addrinfo</i>, каждая
+из которых содержит Интернет-адрес, который можно передавать в вызов
+<b><a class="man" category="2" href="https://ru.manpages.org/bind/2">bind</a></b>(2) или <b><a class="man" category="2" href="https://ru.manpages.org/connect/2">connect</a></b>(2). Функция <b>getaddrinfo</b>() объединяет
+возможности, предоставляемые функциями <b><a class="man" category="3" href="https://ru.manpages.org/gethostbyname/3">gethostbyname</a></b>(3) и
+<b><a class="man" category="3" href="https://ru.manpages.org/getservbyname/3">getservbyname</a></b>(3) в одном интерфейсе, но в отличие от этих функций,
+<b>getaddrinfo</b>() реентерабельна и позволяет программам не зависеть от IPv4
+или IPv6.
+<p>
+Структура <i>addrinfo</i>, используемая в <b>getaddrinfo</b>(), содержит следующие
+поля:
+</p><p>
+
+</p><pre class="hljs cpp"><span class="hljs-keyword">struct</span> addrinfo {
+    <span class="hljs-keyword">int</span>              ai_flags;
+    <span class="hljs-keyword">int</span>              ai_family;
+    <span class="hljs-keyword">int</span>              ai_socktype;
+    <span class="hljs-keyword">int</span>              ai_protocol;
+    socklen_t        ai_addrlen;
+    <span class="hljs-keyword">struct</span> sockaddr *ai_addr;
+    <span class="hljs-keyword">char</span>            *ai_canonname;
+    <span class="hljs-keyword">struct</span> addrinfo *ai_next;
+};
+</pre>
+
+
+<p>
+Аргумент <i>hints</i> указывает на структуру <i>addrinfo</i>, которая определяет
+критерии выбора структур адреса сокета, возвращаемых в списке, указанном в
+<i>res</i>. Если <i>hints</i> не является NULL, то он указывает на структуру
+<i>addrinfo</i>. В ней с помощью <i>ai_family</i>, <i>ai_socktype</i> и <i>ai_protocol</i>
+определяются критерии, ограничивающие набор адресов сокета, возвращаемых
+<b>getaddrinfo</b>():
+</p><dl compact="compact">
+<dt><i>ai_family</i></dt><dd>
+Это поле определяет предпочитаемое семейство адресов для возвращаемых
+адресов. Правильными значениями для данного поля могут быть <b>AF_INET</b> и
+<b>AF_INET6</b>. Значение <b>AF_UNSPEC</b> отображает, что <b>getaddrinfo</b>() должна
+возвращать адреса сокета для любого семейства адресов (например, либо IPv4,
+либо IPv6), которые в дальнейшем могут быть использованы вместе с <i>node</i> и
+<i>service</i>.
+</dd><dt><i>ai_socktype</i></dt><dd>
+Это поле определяет предпочитаемы тип сокета, например, <b>SOCK_STREAM</b> или
+<b>SOCK_DGRAM</b>. Если в этом поле указан 0, то это означает, что
+<b>getaddrinfo</b>() может вернуть адреса сокета любого типа.
+</dd><dt><i>ai_protocol</i></dt><dd>
+Это поле определяет протокол для возвращаемых адресов сокета. Если в этом
+поле указан 0, то это означает, что <b>getaddrinfo</b>() может вернуть адрес
+сокета с любым протоколом.
+</dd><dt><i>ai_flags</i></dt><dd>
+В этом поле задаются дополнительные параметры, описываемые ниже. Несколько
+флагов указываются с логическим ИЛИ.
+</dd></dl>
+<p>
+Все остальные поля структуры, указываемой <i>hints</i>, должны содержать 0 или
+указатель null, соответственно.
+</p><p>
+Указание в <i>hints</i> значения NULL эквивалентно установке <i>ai_socktype</i> и
+<i>ai_protocol</i> равными 0; <i>ai_family</i> присваивается <b>AF_UNSPEC</b>;
+<i>ai_flags</i> присваивается <b>(AI_V4MAPPED&nbsp;|&nbsp;AI_ADDRCONFIG)</b> (в POSIX
+указаны другие значения по умолчанию для <i>ai_flags</i>; смотрите ЗАМЕЧАНИЯ). В
+<i>node</i> задаётся либо числовой сетевой адрес (для IPv4 это цифро-точечная
+нотация, которую поддерживает <b><a class="man" category="3" href="https://ru.manpages.org/inet_aton/3">inet_aton</a></b>(3); для IPv6 это строка в
+шестнадцатеричном формате, который поддерживает <b><a class="man" category="3" href="https://ru.manpages.org/inet_pton/3">inet_pton</a></b>(3)), либо
+сетевое имя узла, для которого в дальнейшем определяется адрес. Если в
+<i>hints.ai_flags</i> содержится флаг <b>AI_NUMERICHOST</b>, тогда <i>node</i> должен
+иметь цифровой формат сетевого адреса. При <b>AI_NUMERICHOST</b> любые возможные
+преобразования сетевого адреса узла подавляются.
+</p><p>
+Если в <i>hints.ai_flags</i> указан флаг <b>AI_PASSIVE</b> и <i>node</i> равно NULL, то
+возвращаемые адреса сокета будут пригодны для <b><a class="man" category="2" href="https://ru.manpages.org/bind/2">bind</a></b>(2) сокета, который
+принимает соединение с помощью <b><a class="man" category="2" href="https://ru.manpages.org/accept/2">accept</a></b>(2). Возвращаемый адрес сокета будет
+содержать «шаблонный адрес» (<b>INADDR_ANY</b> для адресов IPv4,
+<b>IN6ADDR_ANY_INIT</b> для адреса IPv6). Шаблонный адрес используется в
+приложениях (обычно, серверах), которым нужно принимать подключения с любых
+сетевых адресов узлов. Если <i>node</i> не равно NULL, то флаг <b>AI_PASSIVE</b>
+игнорируется.
+</p><p>
+Если флаг <b>AI_PASSIVE</b> отсутствует в <i>hints.ai_flags</i>, то возвращаемые
+адреса сокета будут пригодны для использоваться в <b><a class="man" category="2" href="https://ru.manpages.org/connect/2">connect</a></b>(2),
+<b><a class="man" category="2" href="https://ru.manpages.org/sendto/2">sendto</a></b>(2), или <b><a class="man" category="2" href="https://ru.manpages.org/sendmsg/2">sendmsg</a></b>(2). Если <i>node</i> равно NULL, то сетевому адресу
+будет назначен адрес кольцевого интерфейса (loopback) (<b>INADDR_LOOPBACK</b>
+для адресов IPv4, <b>IN6ADDR_LOOPBACK_INIT</b> для адреса IPv6); это
+используется в приложениях, которым нужно связываться с партнёрами,
+запущенными на том же узле.
+</p><p>
+В <i>service</i> задаётся порт для каждой возвращаемой адресной структуры. Если
+этот аргумент — имя службы (смотрите <b><a class="man" category="5" href="https://ru.manpages.org/services/5">services</a></b>(5)), то он транслируется в
+соответствующий номер порта. Также, данный параметр может быть указан в виде
+десятичного числа, которое просто преобразуется в двоичную форму. Если
+<i>service</i> равно NULL, то номер порта возвращаемых сокетных адресов остаётся
+неинициализированным. Если в <i>hints.ai_flags</i> указан флаг <b>AI_NUMERICSERV</b>
+и <i>service</i> не равно NULL, то значение <i>service</i> должно указывать на
+строку с числовым номером порта. Данный флаг используется для запрета вызова
+службы определения имён, если известно, что она не требуется.
+</p><p>
+Либо <i>node</i>, либо <i>service</i> (но не оба одновременно) могут быть равны
+NULL.
+</p><p>
+Функция <b>getaddrinfo</b>() выделяет место и инициализирует связный список
+структур <i>addrinfo</i>, по одной на каждый сетевой адрес, который совпадает с
+<i>node</i> и <i>service</i>, в соответствии с любыми ограничениями, наложенными
+<i>hints</i>, и возвращает указатель на начало списка в <i>res</i>. Элементы в
+связном списке связаны через поле <i>ai_next</i>.
+</p><p>
+Существует несколько причин того, почему связный список может содержать
+более одной структуры <i>addrinfo</i>: сетевой узел имеет несколько адресов,
+доступен по нескольким протоколам (например, <b>AF_INET</b> и <b>AF_INET6</b>);
+служба доступна через несколько типов сокетов (например, один её адрес —
+<b>SOCK_STREAM</b>, а второй — <b>SOCK_DGRAM</b>). Обычно, приложение должно
+стараться использовать адреса в том порядке, в котором они получены. Функция
+сортировки, используемая в <b>getaddrinfo</b>(), определена в RFC&nbsp;3484; в
+системе порядок может быть изменён через файл <i>/etc/gai.conf</i> (доступен,
+начиная с glibc 2.5).
+</p><p>
+Если в <i>hints.ai_flags</i> выставлен флаг <b>AI_CANONNAME</b>, то в поле
+<i>ai_canonname</i> первой из структур <i>addrinfo</i> возвращаемого списка задаётся
+указатель официального имени узла.
+</p><p>
+Остальные поля каждой возвращаемой структуры <i>addrinfo</i> инициализируются
+следующим образом:
+</p><dl compact="compact">
+<dt>*</dt><dd>
+В полях <i>ai_family</i>, <i>ai_socktype</i> и <i>ai_protocol</i> возвращаются параметры
+создания сокета (т. е., эти поля имеют те же значения, что и соответствующие
+аргументы в <b><a class="man" category="2" href="https://ru.manpages.org/socket/2">socket</a></b>(2)). Например, в <i>ai_family</i> может вернуться
+<b>AF_INET</b> или <b>AF_INET6</b>; в <i>ai_socktype</i> может вернуться <b>SOCK_DGRAM</b>
+или <b>SOCK_STREAM</b>; в <i>ai_protocol</i> возвращается протокол сокета.
+</dd><dt>*</dt><dd>
+Указатель на адрес сокета помещается в поле <i>ai_addr</i>, а длина адреса
+сокета (в байтах) помещается в поле <i>ai_addrlen</i>.
+</dd></dl>
+<p>
+Если в <i>hints.ai_flags</i> содержится флаг <b>AI_ADDRCONFIG</b>, то адреса IPv4,
+возвращаются в списке, на который указывает <i>res</i>, только, если в локальной
+системе настроен, как минимум, один адрес IPv4, и адреса IPv6 возвращаются
+только, если в локальной системе настроен, как минимум, один адрес
+IPv6. Кольцевой (loopback) адрес в этом случае не учитывается как
+настроенный. Этот флаг полезен, например в только IPv4-системах, чтобы
+<b>getaddrinfo</b>() не возвращал сокетные адреса IPv6, с которыми невозможно
+выполнить <b><a class="man" category="2" href="https://ru.manpages.org/connect/2">connect</a></b>(2) или <b><a class="man" category="2" href="https://ru.manpages.org/bind/2">bind</a></b>(2).
+</p><p>
+Если в <i>hints.ai_flags</i> содержится флаг <b>AI_V4MAPPED</b> и в
+<i>hints.ai_family</i> задан <b>AF_INET6</b>, и не найдено подходящих адресов IPv6,
+то в списке, на который указывает <i>res</i>, возвращаются IPv6 адреса
+отображённых адресов IPv4. Если в <i>hints.ai_flags</i> указаны и
+<b>AI_V4MAPPED</b>, и <b>AI_ALL</b>, то в списке, на который указывает <i>res</i>,
+возвращаются и адреса IPv6 и IPv6 адреса отображённых адресов IPv4. Флаг
+<b>AI_ALL</b> игнорируется, если с ним не задан <b>AI_V4MAPPED</b>.
+</p><p>
+Функция <b>freeaddrinfo</b>() освобождает память, которая была выделена для
+динамического связного списка <i>res</i>.
+</p></div>
+<div class="section">
+<h2>Расширения getaddrinfo() для интернациональных доменных имён</h2>
+
+<p>
+Начиная с glibc 2.3.4, <b>getaddrinfo</b>() был расширен для выборочного
+прозрачного разрешения исходящих и входящих адресов в формате
+интернациональных доменных имен (IDN, см. RFC 3490, <i>Internationalizing
+Domain Names in Applications (IDNA)</i>). Было определено четыре новых флага:
+</p><dl compact="compact">
+<dt><b>AI_IDN</b></dt><dd>
+Если указан этот флаг, то, в случае необходимости, имя узла, указанного в
+<i>node</i>, будет преобразовано в IDN-формат. Исходной кодировкой будет текущая
+локаль.
+<p>
+Если имя на входе содержит символы не-ASCII, то будет задействовано
+кодирование IDN. Части имени узла (разделенные точками), которые содержат
+символы не-ASCII, будут закодированы с помощью ASCII Compatible Encoding
+(ACE) прежде, чем будут переданы функциям преобразования имен
+</p></dd><dt><b>AI_CANONIDN</b></dt><dd>
+При указанном флаге <b>AI_CANONNAME</b> после успешного преобразования имени
+<b>getaddrinfo</b>() вернет каноничное имя узла согласно значению структуры
+<i>addrinfo</i>. Возвращаемое значение будет точной копией значения,
+возвращенного функцией разрешения имени.
+<p>
+Если имя закодировано с помощью ACE, то оно будет содержать префикс <i>xn--</i>
+для каждого из закодированных компонентов имени. Чтобы преобразовать эти
+компоненты в читаемый вид, вместе с флагом <b>AI_CANONNAME</b> следует передать
+<b>AI_CANONIDN</b>. Итоговая строка будет кодирована при помощи текущей локали.
+</p></dd><dt><b>AI_IDN_ALLOW_UNASSIGNED</b>, <b>AI_IDN_USE_STD3_ASCII_RULES</b></dt><dd>
+Установка этих флагов включает IDNA_ALLOW_UNASSIGNED (разрешать не
+назначенные кодовые точки Юникода) и IDNA_USE_STD3_ASCII_RULES (проверять
+вывод на соответствие имени узла STD3) соответственно для возможности работы
+с IDNA.
+</dd></dl>
+
+</div>
+<a name=""></a><div class="section">
+<h2>ВОЗВРАЩАЕМОЕ ЗНАЧЕНИЕ</h2>
+В случае успеха <b>getaddrinfo</b>() возвращает 0, либо один из следующие
+ненулевых кодов ошибки:
+<dl compact="compact">
+<dt><b>EAI_ADDRFAMILY</b></dt><dd>
+У указанного сетевого узла нет сетевых адресов в запрашиваемом семействе
+адресов.
+</dd><dt><b>EAI_AGAIN</b></dt><dd>
+Сервер имен вернул временную ошибку. Попробуйте позднее.
+</dd><dt><b>EAI_BADFLAGS</b></dt><dd>
+В <i>hints.ai_flags</i> содержатся неправильные флаги, либо <i>hints.ai_flags</i>
+содержит <b>AI_CANONNAME</b>, а <i>name</i> - NULL.
+</dd><dt><b>EAI_FAIL</b></dt><dd>
+Сервер имен вернул постоянную ошибку.
+</dd><dt><b>EAI_FAMILY</b></dt><dd>
+Запрашиваемое семейство адресов не поддерживается.
+</dd><dt><b>EAI_MEMORY</b></dt><dd>
+Не хватает памяти.
+</dd><dt><b>EAI_NODATA</b></dt><dd>
+Указанный сетевой узел существует, однако не имеет ни одного определенного
+сетевого адреса.
+</dd><dt><b>EAI_NONAME</b></dt><dd>
+<i>node</i> или <i>service</i> неизвестно; либо и <i>node</i>, и <i>service</i> равны NULL;
+либо в <i>hints.ai_flags</i> указан флаг <b>AI_NUMERICSERV</b>, а <i>service</i> не
+является числовой строкой порта.
+</dd><dt><b>EAI_SERVICE</b></dt><dd>
+Запрошенная служба не доступна для запрошенного типа сокета. Она может быть
+доступна через другой тип сокета. Например, эта ошибка может возникнуть,
+если в <i>service</i> указан «shell» (служба, доступная только для потоковых
+сокетов) при указанном в <i>hints.ai_protocol</i> <b>IPPROTO_UDP</b>, либо указанном
+в <i>hints.ai_socktype</i> <b>SOCK_DGRAM</b>. Также ошибка может возникнуть, если
+<i>service</i> не равно NULL, а в <i>hints.ai_socktype</i> указано значение
+<b>SOCK_RAW</b> (тип сокета, для которого концепция служб неприменима).
+</dd><dt><b>EAI_SOCKTYPE</b></dt><dd>
+Запрашиваемый тип сокетов не поддерживается. Такая ошибка может возникнуть,
+если <i>hints.ai_socktype</i> и <i>hints.ai_protocol</i> противоречат друг другу
+(например, <b>SOCK_DGRAM</b> и <b>IPPROTO_TCP</b> соответственно).
+</dd><dt><b>EAI_SYSTEM</b></dt><dd>
+Для других системных ошибок следует проверять <i>errno</i>.
+</dd></dl>
+<p>
+Функция <b>gai_strerror</b>() транслирует эти коды ошибок в читаемый формат,
+подходящий для сообщений об ошибке.
+</p></div>
+<a name=""></a><div class="section">
+<h2>ФАЙЛЫ</h2>
+
+<i>/etc/gai.conf</i>
+
+</div>
+<div class="section">
+<h2>АТРИБУТЫ</h2>
+Описание терминов данного раздела смотрите в <b><a class="man" category="7" href="https://ru.manpages.org/attributes/7">attributes</a></b>(7).
+<table border="">
+<tbody><tr valign="top"><td><b>Интерфейс</b></td><td><b>Атрибут</b></td><td><b>Значение</b><br></td></tr>
+<tr valign="top"><td>
+<b>getaddrinfo</b>()
+</td><td>безвредность в нитях</td><td>безвредно (MT-Safe env locale)<br></td></tr>
+<tr valign="top"><td>
+<b>freeaddrinfo</b>(),
+<b>gai_strerror</b>()
+</td><td>безвредность в нитях</td><td>безвредно (MT-Safe)<br></td></tr>
+</tbody></table>
+
+<p>
+
+</p></div>
+<div class="section">
+<h2>СООТВЕТСТВИЕ СТАНДАРТАМ</h2>
+POSIX.1-2001, POSIX.1-2008. Функция <b>getaddrinfo</b>() описана в RFC&nbsp;2553.
+</div>
+<div class="section">
+<h2>ЗАМЕЧАНИЯ</h2>
+
+<b>getaddrinfo</b>() поддерживает нотацию <i>address</i><b>%</b><i>scope-id</i> для указания
+IPv6 scope-ID.
+<p>
+<b>AI_ADDRCONFIG</b>, <b>AI_ALL</b> и <b>AI_V4MAPPED</b> доступны, начиная с glibc
+2.3.3.  <b>AI_NUMERICSERV</b> доступен, начиная с glibc 2.3.4.
+</p><p>
+Согласно POSIX.1, при указании <i>hints</i> в NULL <i>ai_flags</i> должен
+предполагаться как равный 0. Вместо этого библиотека GNU C в данном случае
+предполагает значение <b>(AI_V4MAPPED&nbsp;|&nbsp;AI_ADDRCONFIG)</b>, так как данное
+значение было принято в качестве улучшения спецификации.
+</p></div>
+<a name=""></a><div class="section">
+<h2>ПРИМЕР</h2>
+Следующие программы демонстрируют использование <b>getaddrinfo</b>(),
+<b>gai_strerror</b>(), <b>freeaddrinfo</b>() и <b><a class="man" category="3" href="https://ru.manpages.org/getnameinfo/3">getnameinfo</a></b>(3). Это программы
+эхо-сервера и клиента UDP-дейтаграмм.
+</div>
+<div class="section">
+<h2>Серверная программа</h2>
+
+
+<pre class="hljs cpp"><span class="hljs-preprocessor">#<span class="hljs-keyword">include</span> &lt;sys/types.h&gt;</span>
+<span class="hljs-preprocessor">#<span class="hljs-keyword">include</span> &lt;stdio.h&gt;</span>
+<span class="hljs-preprocessor">#<span class="hljs-keyword">include</span> &lt;stdlib.h&gt;</span>
+<span class="hljs-preprocessor">#<span class="hljs-keyword">include</span> &lt;unistd.h&gt;</span>
+<span class="hljs-preprocessor">#<span class="hljs-keyword">include</span> &lt;string.h&gt;</span>
+<span class="hljs-preprocessor">#<span class="hljs-keyword">include</span> &lt;sys/socket.h&gt;</span>
+<span class="hljs-preprocessor">#<span class="hljs-keyword">include</span> &lt;netdb.h&gt;</span>
+<span class="hljs-preprocessor">#<span class="hljs-keyword">define</span> BUF_SIZE 500</span>
+<span class="hljs-keyword">int</span>
+main(<span class="hljs-keyword">int</span> argc, <span class="hljs-keyword">char</span> *argv[])
+{
+    <span class="hljs-keyword">struct</span> addrinfo hints;
+    <span class="hljs-keyword">struct</span> addrinfo *result, *rp;
+    <span class="hljs-keyword">int</span> sfd, s;
+    <span class="hljs-keyword">struct</span> sockaddr_storage peer_addr;
+    socklen_t peer_addr_len;
+    ssize_t nread;
+    <span class="hljs-keyword">char</span> buf[BUF_SIZE];
+    <span class="hljs-keyword">if</span> (argc != <span class="hljs-number">2</span>) {
+        <span class="hljs-built_in">fprintf</span>(stderr, <span class="hljs-string">"Usage: %s port\n"</span>, argv[<span class="hljs-number">0</span>]);
+        <span class="hljs-built_in">exit</span>(EXIT_FAILURE);
+    }
+    <span class="hljs-built_in">memset</span>(&amp;hints, <span class="hljs-number">0</span>, <span class="hljs-keyword">sizeof</span>(<span class="hljs-keyword">struct</span> addrinfo));
+    hints.ai_family = AF_UNSPEC;    <span class="hljs-comment">/* Разрешены IPv4 и IPv6 */</span>
+    hints.ai_socktype = SOCK_DGRAM; <span class="hljs-comment">/* Сокет для дейтаграмм */</span>
+    hints.ai_flags = AI_PASSIVE;    <span class="hljs-comment">/* Для wildcard IP-адреса */</span>
+    hints.ai_protocol = <span class="hljs-number">0</span>;          <span class="hljs-comment">/* Любой протокол */</span>
+    hints.ai_canonname = NULL;
+    hints.ai_addr = NULL;
+    hints.ai_next = NULL;
+    s = getaddrinfo(NULL, argv[<span class="hljs-number">1</span>], &amp;hints, &amp;result);
+    <span class="hljs-keyword">if</span> (s != <span class="hljs-number">0</span>) {
+        <span class="hljs-built_in">fprintf</span>(stderr, <span class="hljs-string">"getaddrinfo: %s\n"</span>, gai_strerror(s));
+        <span class="hljs-built_in">exit</span>(EXIT_FAILURE);
+    }
+    <span class="hljs-comment">/* getaddrinfo() возвращает список структур адресов.
+       Идет проверка каждого адреса до успешного </span><a class="man" category="2" href="https://ru.manpages.org/bind/2"><span class="hljs-comment">bind</span></a><span class="hljs-comment">(2).
+       Если </span><a class="man" category="2" href="https://ru.manpages.org/socket/2"><span class="hljs-comment">socket</span></a><span class="hljs-comment">(2) (или </span><a class="man" category="2" href="https://ru.manpages.org/bind/2"><span class="hljs-comment">bind</span></a><span class="hljs-comment">(2)) терпит неудачу, мы (закрываем
+       сокет и) пробуем следующий. */</span>
+    <span class="hljs-keyword">for</span> (rp = result; rp != NULL; rp = rp-&gt;ai_next) {
+        sfd = socket(rp-&gt;ai_family, rp-&gt;ai_socktype,
+                rp-&gt;ai_protocol);
+        <span class="hljs-keyword">if</span> (sfd == -<span class="hljs-number">1</span>)
+            <span class="hljs-keyword">continue</span>;
+        <span class="hljs-keyword">if</span> (bind(sfd, rp-&gt;ai_addr, rp-&gt;ai_addrlen) == <span class="hljs-number">0</span>)
+            <span class="hljs-keyword">break</span>;                  <span class="hljs-comment">/* Успех */</span>
+        close(sfd);
+    }
+    <span class="hljs-keyword">if</span> (rp == NULL) {               <span class="hljs-comment">/* Нет успешных адресов */</span>
+        <span class="hljs-built_in">fprintf</span>(stderr, <span class="hljs-string">"Could not bind\n"</span>);
+        <span class="hljs-built_in">exit</span>(EXIT_FAILURE);
+    }
+    freeaddrinfo(result);           <span class="hljs-comment">/* Больше не нужен */</span>
+    <span class="hljs-comment">/* Читаем дейтаграмму и пересылаем ее назад отправителю */</span>
+    <span class="hljs-keyword">for</span> (;;) {
+        peer_addr_len = <span class="hljs-keyword">sizeof</span>(<span class="hljs-keyword">struct</span> sockaddr_storage);
+        nread = recvfrom(sfd, buf, BUF_SIZE, <span class="hljs-number">0</span>,
+                (<span class="hljs-keyword">struct</span> sockaddr *) &amp;peer_addr, &amp;peer_addr_len);
+        <span class="hljs-keyword">if</span> (nread == -<span class="hljs-number">1</span>)
+            <span class="hljs-keyword">continue</span>;               <span class="hljs-comment">/* Игнорируем запрос с ошибкой */</span>
+        <span class="hljs-keyword">char</span> host[NI_MAXHOST], service[NI_MAXSERV];
+        s = getnameinfo((<span class="hljs-keyword">struct</span> sockaddr *) &amp;peer_addr,
+                        peer_addr_len, host, NI_MAXHOST,
+                        service, NI_MAXSERV, NI_NUMERICSERV);
+       <span class="hljs-keyword">if</span> (s == <span class="hljs-number">0</span>)
+            <span class="hljs-built_in">printf</span>(<span class="hljs-string">"Получено %zd байт из %s:%s\n"</span>,
+                    nread, host, service);
+        <span class="hljs-keyword">else</span>
+            <span class="hljs-built_in">fprintf</span>(stderr, <span class="hljs-string">"getnameinfo: %s\n"</span>, gai_strerror(s));
+        <span class="hljs-keyword">if</span> (sendto(sfd, buf, nread, <span class="hljs-number">0</span>,
+                    (<span class="hljs-keyword">struct</span> sockaddr *) &amp;peer_addr,
+                    peer_addr_len) != nread)
+            <span class="hljs-built_in">fprintf</span>(stderr, <span class="hljs-string">"Ошибка отправки ответа\n"</span>);
+    }
+}
+</pre>
+
+
+</div>
+<div class="section">
+<h2>Клиентская программа</h2>
+
+
+<pre class="hljs cpp"><span class="hljs-preprocessor">#<span class="hljs-keyword">include</span> &lt;sys/types.h&gt;</span>
+<span class="hljs-preprocessor">#<span class="hljs-keyword">include</span> &lt;sys/socket.h&gt;</span>
+<span class="hljs-preprocessor">#<span class="hljs-keyword">include</span> &lt;netdb.h&gt;</span>
+<span class="hljs-preprocessor">#<span class="hljs-keyword">include</span> &lt;stdio.h&gt;</span>
+<span class="hljs-preprocessor">#<span class="hljs-keyword">include</span> &lt;stdlib.h&gt;</span>
+<span class="hljs-preprocessor">#<span class="hljs-keyword">include</span> &lt;unistd.h&gt;</span>
+<span class="hljs-preprocessor">#<span class="hljs-keyword">include</span> &lt;string.h&gt;</span>
+<span class="hljs-preprocessor">#<span class="hljs-keyword">define</span> BUF_SIZE 500</span>
+<span class="hljs-keyword">int</span>
+main(<span class="hljs-keyword">int</span> argc, <span class="hljs-keyword">char</span> *argv[])
+{
+    <span class="hljs-keyword">struct</span> addrinfo hints;
+    <span class="hljs-keyword">struct</span> addrinfo *result, *rp;
+    <span class="hljs-keyword">int</span> sfd, s, j;
+    size_t len;
+    ssize_t nread;
+    <span class="hljs-keyword">char</span> buf[BUF_SIZE];
+    <span class="hljs-keyword">if</span> (argc &lt; <span class="hljs-number">3</span>) {
+        <span class="hljs-built_in">fprintf</span>(stderr, <span class="hljs-string">"Usage: %s host port msg...\n"</span>, argv[<span class="hljs-number">0</span>]);
+        <span class="hljs-built_in">exit</span>(EXIT_FAILURE);
+    }
+    <span class="hljs-comment">/* Получаем адрес(а), соответствующие узлу/порту */</span>
+    <span class="hljs-built_in">memset</span>(&amp;hints, <span class="hljs-number">0</span>, <span class="hljs-keyword">sizeof</span>(<span class="hljs-keyword">struct</span> addrinfo));
+    hints.ai_family = AF_UNSPEC;    <span class="hljs-comment">/* Разрешены IPv4 и IPv6 */</span>
+    hints.ai_socktype = SOCK_DGRAM; <span class="hljs-comment">/* Сокет дейтаграмм */</span>
+    hints.ai_flags = <span class="hljs-number">0</span>;
+    hints.ai_protocol = <span class="hljs-number">0</span>;          <span class="hljs-comment">/* Любой протокол */</span>
+    s = getaddrinfo(argv[<span class="hljs-number">1</span>], argv[<span class="hljs-number">2</span>], &amp;hints, &amp;result);
+    <span class="hljs-keyword">if</span> (s != <span class="hljs-number">0</span>) {
+        <span class="hljs-built_in">fprintf</span>(stderr, <span class="hljs-string">"getaddrinfo: %s\n"</span>, gai_strerror(s));
+        <span class="hljs-built_in">exit</span>(EXIT_FAILURE);
+    }
+    <span class="hljs-comment">/* getaddrinfo() возвращает список структур адресов.
+       Идет проверка каждого адреса до успешного </span><a class="man" category="2" href="https://ru.manpages.org/connect/2"><span class="hljs-comment">connect</span></a><span class="hljs-comment">(2).
+       Если </span><a class="man" category="2" href="https://ru.manpages.org/socket/2"><span class="hljs-comment">socket</span></a><span class="hljs-comment">(2) (или </span><a class="man" category="2" href="https://ru.manpages.org/connect/2"><span class="hljs-comment">connect</span></a><span class="hljs-comment">(2)) терпит неудачу, мы (закрываем
+       сокет и) пробуем следующий. */</span>
+    <span class="hljs-keyword">for</span> (rp = result; rp != NULL; rp = rp-&gt;ai_next) {
+        sfd = socket(rp-&gt;ai_family, rp-&gt;ai_socktype,
+                     rp-&gt;ai_protocol);
+        <span class="hljs-keyword">if</span> (sfd == -<span class="hljs-number">1</span>)
+            <span class="hljs-keyword">continue</span>;
+        <span class="hljs-keyword">if</span> (connect(sfd, rp-&gt;ai_addr, rp-&gt;ai_addrlen) != -<span class="hljs-number">1</span>)
+            <span class="hljs-keyword">break</span>;                  <span class="hljs-comment">/* Успех */</span>
+        close(sfd);
+    }
+    <span class="hljs-keyword">if</span> (rp == NULL) {               <span class="hljs-comment">/* Нет успешных адресов */</span>
+        <span class="hljs-built_in">fprintf</span>(stderr, <span class="hljs-string">"Could not connect\n"</span>);
+        <span class="hljs-built_in">exit</span>(EXIT_FAILURE);
+    }
+    freeaddrinfo(result);           <span class="hljs-comment">/* Больше не нужен */</span>
+    <span class="hljs-comment">/* Отправляем оставшиеся аргументы командной строки
+       в виде отдельных дейтаграмм и ждем ответа от сервера */</span>
+    <span class="hljs-keyword">for</span> (j = <span class="hljs-number">3</span>; j &lt; argc; j++) {
+        len = <span class="hljs-built_in">strlen</span>(argv[j]) + <span class="hljs-number">1</span>;
+                <span class="hljs-comment">/* +1 для завершающего null-байта */</span>
+        <span class="hljs-keyword">if</span> (len + <span class="hljs-number">1</span> &gt; BUF_SIZE) {
+            <span class="hljs-built_in">fprintf</span>(stderr,
+                    <span class="hljs-string">"Ignoring long message in argument %d\n"</span>, j);
+            <span class="hljs-keyword">continue</span>;
+        }
+        <span class="hljs-keyword">if</span> (write(sfd, argv[j], len) != len) {
+            <span class="hljs-built_in">fprintf</span>(stderr, <span class="hljs-string">"partial/failed write\n"</span>);
+            <span class="hljs-built_in">exit</span>(EXIT_FAILURE);
+        }
+        nread = read(sfd, buf, BUF_SIZE);
+        <span class="hljs-keyword">if</span> (nread == -<span class="hljs-number">1</span>) {
+            perror(<span class="hljs-string">"read"</span>);
+            <span class="hljs-built_in">exit</span>(EXIT_FAILURE);
+        }
+        <span class="hljs-built_in">printf</span>(<span class="hljs-string">"Получено %zd байт: %s\n"</span>, nread, buf);
+    }
+    <span class="hljs-built_in">exit</span>(EXIT_SUCCESS);
+}
+</pre>
+
+
+</div>
+
+      </article>
+    </div>
+
+
+  </main>
+</div>
+<div class="nav-container">
+<div class="nav" style="height:526px">
+<div class="inner">
+  <nav class="box">
+    <h4>содержание</h4>
+    <ul>
+        <li class="ОБЗОР selected"><a title="" href="https://ru.manpages.org/getaddrinfo/3#">ОБЗОР</a></li>
+        <li class="ОПИСАНИЕ"><a title="" href="https://ru.manpages.org/getaddrinfo/3#">ОПИСАНИЕ</a></li>
+        <li class="ВОЗВРАЩАЕМОЕ ЗНАЧЕНИЕ"><a title="" href="https://ru.manpages.org/getaddrinfo/3#">ВОЗВРАЩАЕМОЕ ЗНАЧЕНИЕ</a></li>
+        <li class="ФАЙЛЫ"><a title="" href="https://ru.manpages.org/getaddrinfo/3#">ФАЙЛЫ</a></li>
+        <li class="ПРИМЕР"><a title="" href="https://ru.manpages.org/getaddrinfo/3#">ПРИМЕР</a></li>
+    </ul>
+  </nav>
+
+  <div class="box lang">
+    <h4>ПЕРЕВОДЫ</h4>
+    <ul>
+        <li class="en"><a class="c3" href="https://manpages.org/getaddrinfo/3"><i></i>АНГЛИЙСКИЙ</a></li>
+        <li class="fr"><a class="c3" href="https://fr.manpages.org/getaddrinfo/3"><i></i>ФРАНЦУЗСКИЙ</a></li>
+        <li class="ja"><a class="c3" href="https://ja.manpages.org/getaddrinfo/3"><i></i>ЯПОНСКИЙ</a></li>
+        <li class="es"><a class="c3" href="https://es.manpages.org/getaddrinfo/3"><i></i>ИСПАНСКИЙ</a></li>
+        <li class="pl"><a class="c3" href="https://pl.manpages.org/getaddrinfo/3"><i></i>ПОЛЬСКИЙ</a></li>
+    </ul>
+  </div>
+  
+
+<!--
+    <div class="ads">
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <ins class="adsbygoogle"
+           style="display:inline-block;width:300px;height:250px"
+           data-ad-client="ca-pub-2811344342425918"
+           data-ad-slot="5277441578"></ins>
+      <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+-->
+    <div class="box see-also">
+      <h4>СМОТРИТЕ ТАКЖЕ</h4>
+      <ul class="clearfix">
+            <li><a href="https://ru.manpages.org/getaddrinfo_a/3" class="c3">getaddrinfo_a <span>(3)</span></a></li>
+            <li><a href="https://ru.manpages.org/gethostbyname/3" class="c3">gethostbyname <span>(3)</span></a></li>
+            <li><a href="https://ru.manpages.org/getnameinfo/3" class="c3">getnameinfo <span>(3)</span></a></li>
+            <li><a href="https://ru.manpages.org/inet/3" class="c3">inet <span>(3)</span></a></li>
+            <li><a href="https://ru.manpages.org/gai.conf/5" class="c5">gai.conf <span>(5)</span></a></li>
+            <li><a href="https://ru.manpages.org/hostname/7" class="c7">hostname <span>(7)</span></a></li>
+            <li><a href="https://ru.manpages.org/ip/7" class="c7">ip <span>(7)</span></a></li>
+      </ul>
+    </div>
+
+        <div class="box last-searched">
+          <h4>ПОСЛЕДНИЕ ЗАПРОСЫ</h4>
+          <ul class="clearfix">
+                <li><a href="https://manpages.org/smd/5" class="c5">smd <span>(5)</span></a></li>
+                <li><a href="https://manpages.org/rexcommandsrsync/3" class="c3">Rex::Commands::Rsync <span>(3)</span></a></li>
+                <li><a href="https://ja.manpages.org/displayheight/3" class="c3">DisplayHeight <span>(3)</span></a></li>
+                <li><a href="https://manpages.org/ddns3" class="c1">ddns3 <span>(1)</span></a></li>
+                <li><a href="https://manpages.org/ipsec_spigrp/8" class="c8">ipsec_spigrp <span>(8)</span></a></li>
+                <li><a href="https://manpages.org/dcm2pnm" class="c1">dcm2pnm <span>(1)</span></a></li>
+                <li><a href="https://manpages.org/aaxine" class="c1">aaxine <span>(1)</span></a></li>
+                <li><a href="https://manpages.org/biosymbolsymboli/3" class="c3">Bio::Symbol::SymbolI <span>(3)</span></a></li>
+                <li><a href="https://manpages.org/newcoils" class="c1">newcoils <span>(1)</span></a></li>
+                <li><a href="https://manpages.org/nvme-list-ctrl" class="c1">nvme-list-ctrl <span>(1)</span></a></li>
+                <li><a href="https://manpages.org/biogenesis" class="c1">biogenesis <span>(1)</span></a></li>
+          </ul>
+        </div>
+</div>
+  </div>
+  </div>
+
+</div>
+<script>
+$(document).ready(function() {
+    $('pre, code').each(function(i, block) {
+    hljs.highlightBlock(block);
+    });
+});
+</script>
+
+    </div>
+  </div><ul class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content" id="ui-id-1" tabindex="0" style="display: none;"></ul><span role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></span>
+  <div class="overlay"></div>
+  <div class="overlay_"></div>
+
+
+<ul class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content" id="ui-id-2" tabindex="0" style="display: none;"></ul><span role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></span><ul class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content" id="ui-id-3" tabindex="0" style="display: none;"></ul><span role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></span><div class="overlay"></div></body><style id="stylus-1" type="text/css" class="stylus">body {
+    font-family: 'pragmata pro mono regular';
+}</style></html>

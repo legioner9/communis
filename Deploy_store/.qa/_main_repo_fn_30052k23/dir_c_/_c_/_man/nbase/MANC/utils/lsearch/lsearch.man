@@ -1,0 +1,342 @@
+### UP
+[lsearch](##lsearch)
+[MAIN](##MAIN)
+[MAIN_ru](##MAIN_ru)
+[ANCORS](##ANCORS)
+[ISU](##ISU)
+[inet](##A_inet)
+[inet](##books_inet)
+[inet](##examples_inet)
+[inet](##classic_inet)
+[inet](##enters_inet)
+[inet](##issue_code_inet)
+[H_FILE](##H_FILE)
+[p_SYNOPSIS](##p_SYNOPSIS)
+[p_RETURN](##p_RETURN)
+[p_RETURN_ru](##p_RETURN_ru)
+[p_BUGS](##p_BUGS)
+[p_DESCRIPTION_ru](##p_DESCRIPTION_ru)
+[p_DESCRIPTION](##p_DESCRIPTION)
+[p_MIRRORS](##p_MIRRORS)
+[p_EXAMPLES](##p_EXAMPLES)
+[p_CODE_h](##p_CODE_h)
+[p_CODE_c](##p_CODE_c)
+[p_CODE_m](##p_CODE_m)
+[p_ERRORS](##p_ERRORS)
+[p_BOOKS](##p_BOOKS)
+[p_BOOKS_ru](##p_BOOKS_ru)
+[p_CONTENT](##p_CONTENT)
+
+[cat_hfiles](../../cat_hfiles.md)
+[cat_utils](../../cat_utils.md)
+[cat_structs](../../cat_structs.md)
+[cat_param](../../cat_params.md)
+[cat_macros](../../cat_macross.md)
+[cat_const](../../cat_consts.md)
+[cat_type](../../cat_types.md)
+[cat_any](../cat_anys.md)
+
+
+[UP](###UP)
+## MAIN
+:lsearch:
+[next](##MAIN_ru)
+
+<<MAIN>>
+[MAIN](../../fills/lsearch/MAIN)
+
+
+
+[UP](###UP)
+## MAIN_ru
+:lsearch:
+[next](##ANCORS)
+
+----------------------------------------------------- 
+-------------------------------------- 
+линейный поиск в массиве
+-------------------------------------- 
+----------------------------------------------------- 
+<<MAIN_ru>>
+[MAIN_ru](../../fills/lsearch/MAIN_ru)
+
+[UP](###UP)
+## ANCORS
+:lsearch:
+[next](##ISU)
+
+----------------------------------------------------- 
+-------------------------------------- 
+https://codecogs.com/library/computing/c/search.h/lsearch.php
+-------------------------------------- 
+----------------------------------------------------- 
+<<ANCORS>>
+[ANCORS](../../fills/lsearch/ANCORS)
+
+[UP](###UP)
+## ISU
+:lsearch:
+[next](##H_FILE)
+
+----------------------------------------------------- 
+-------------------------------------- 
+file://${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_c_/_c_/_man/nbase/_Head_sis_libs_posix/28_search_h/5_lsearch/study_cpjs/lsearch.isu
+-------------------------------------- 
+----------------------------------------------------- 
+<<ISU>>
+only read
+:lsearch:
+[ISU](../../contents)
+[next](##inet)
+
+
+[UP](###UP)
+## inet
+:lsearch:
+[next](##H_FILE)
+
+
+[UP](###UP)
+## A_inet
+[manpages.org](https://www.google.ru/search?q=lsearch+site%3Ahttps%3A%2F%2Fmanpages.org)
+[reposcope.com_ru](https://www.google.ru/search?q=lsearch+site%3Ahttps%3A%2F%2Freposcope.com%2Fmanpages%2Fru)
+[pubs.opengroup.org](https://www.google.com/search?q=lsearch+https%3A%2F%2Fpubs.opengroup.org)
+[manpages.debian.org](https://yandex.ru/search/?text=lsearch+site%3Ahttps%3A%2F%2Fmanpages.debian.org%2F)
+[www.opennet.ru](http://www.opennet.ru/man.shtml?category=2&topic=lsearch)
+[man7.org](https://www.google.ru/search?q=lsearch+site%3Ahttps%3A%2F%2Fman7.org%2Flinux%2Fman-pages)
+[en.cppreference.com](https://www.google.com/search?q=lsearch+en.cppreference.com)
+[www.mankier.com](https://www.mankier.com/?q=lsearch)
+[www.codecogs.com](https://www.google.ru/search?q=lsearch+https%3A%2F%2Fwww.codecogs.com%2Flibrary%2Fcomputing%2F)
+[digitalmars.com](https://www.google.ru/search?q=lsearch+https%3A%2F%2Fdigitalmars.com%2Frtl%2F)
+
+
+[UP](###UP)
+## books_inet
+[cpp.com.ru](https://yandex.ru/search/?text=lsearch+site%3Ahttps%3A%2F%2Fcpp.com.ru)
+[linuxhint.com](https://www.google.ru/search?q=lsearch+site%3Ahttps%3A%2F%2Flinuxhint.com)
+[gnu.org](https://www.google.ru/search?q=lsearch+site%3Ahttps%3A%2F%2Fwww.gnu.org%2Fsoftware%2Flibc%2Fmanual)
+
+[UP](###UP)
+## examples_inet
+[yandex:examples](https://yandex.ru/search/?text=lsearch+example+in+c)
+[docs.oracle.com](https://www.google.com/search?q=lsearch+https%3A%2F%2Fdocs.oracle.com)
+[manpages.debian.org](https://yandex.ru/search/?text=lsearch+site%3Ahttps%3A%2F%2Fmanpages.debian.org%2F)
+[osr507doc.xinuos.com](https://www.google.com/search?q=lsearch+http%3A%2F%2Fosr507doc.xinuos.com%2Fen%2Fman)
+[cpp.hotexamples.com](https://cpp.hotexamples.com/examples/-/-/lsearch/cpp-lsearch-function-examples.html)
+[all-ht.ru](https://yandex.ru/search/?text=lsearch+site%3Ahttp%3A%2F%2Fall-ht.ru%2Finf%2Fprog%2Fc%2F)
+[cppreference.com](https://yandex.ru/search/?text=lsearch+site%3Ahttps%3A%2F%2Fen.cppreference.com%2Fw%2Fc%2F)
+
+[UP](###UP)
+## classic_inet
+[bogatyrev_c_unix](https://www.google.com/search?q=lsearch+site%3Ahttps%3A%2F%2Fcpp.com.ru%2Fbogatyrev_c_unix)
+[kr_cbook](https://www.google.com/search?q=lsearch+site%3Ahttps%3A%2F%2Fcpp.com.ru%2Fkr_cbook)
+
+[UP](###UP)
+## enters_inet
+[pubs.opengroup.org](https://pubs.opengroup.org/onlinepubs/9699919799/idx/head.html)
+
+[UP](###UP)
+## issue_code_inet
+[code.woboq.org](https://www.google.com/search?h=&sitesearch=https%3A%2F%2Fcode.woboq.org%2Fuserspace%2Fglibc%2F&q=lsearch)
+
+
+[UP](###UP)
+## H_FILE 
+[search_h.md](../../hfiles/search_h.md)
+
+
+[UP](###UP)
+## p_SYNOPSIS
+:lsearch:
+[next](##p_RETURN_ru)
+
+----------------------------------------------------- 
+-------------------------------------- 
+#include <search.h>
+void *lfind(const void *key, const void *base, size_t *nmemb,
+size_t size, int(*compar)(const void *, const void *));
+void *lsearch(const void *key, void *base, size_t *nmemb,
+size_t size, int(*compar)(const void *, const void *));
+-------------------------------------- 
+----------------------------------------------------- 
+<<SYNOPSIS>>
+[SYNOPSIS](../../fills/lsearch/SYNOPSIS)
+
+
+[UP](###UP)
+## p_RETURN_ru
+:lsearch:
+[next](##p_RETURN)
+
+<<RETURN>>
+[RETURN_ru](../../fills/lsearch/RETURN)
+
+
+[UP](###UP)
+## p_RETURN
+:lsearch:
+[next](##p_DESCRIPTION_ru)
+
+----------------------------------------------------- 
+-------------------------------------- 
+Функция lfind() возвращает указатель на совпадающий член массива, или NULL, если не было совпадений. Функция lsearch() возвращает указатель на совпадающий член массива, или на добавленный новый член, если не было найдено совпадений.
+-------------------------------------- 
+----------------------------------------------------- 
+<<RETURN_ru>>
+[RETURN](../../fills/lsearch/RETURN_ru)
+
+
+[UP](###UP)
+## p_DESCRIPTION_ru
+:lsearch:
+[next](##p_DESCRIPTION)
+
+----------------------------------------------------- 
+-------------------------------------- 
+Функции lfind() и lsearch() выполняют линейный поиск key в массиве base, который имеет *nmemb элементов, каждый по size байт. Функция сравнения, определяемая compar, должна иметь два параметра, которые указывают на объект key и на член массива, в указанном порядке, и возвращать ноль, если объект key совпадает с членом массива, и ненулевое значение в противном случае.
+Если lsearch() не находит совпадающих элементов, то объект key вставляется в конец таблицы, а значение *nmemb увеличивается. Отметим, что теперь совпадающий элемент существует, и что есть ещё место.
+-------------------------------------- 
+----------------------------------------------------- 
+<<DESCRIPTION_ru>>
+[DESCRIPTION_ru](../../fills/lsearch/DESCRIPTION_ru)
+
+
+[UP](###UP)
+## p_DESCRIPTION
+:lsearch:
+[next](##p_BUGS)
+
+<<DESCRIPTION>>
+[DESCRIPTION](../../fills/lsearch/DESCRIPTION)
+
+
+[UP](###UP)
+## p_MIRRORS
+:lsearch:
+[next](##p_BUGS)
+
+<<MIRRORS>>
+[MIRRORS](../../fills/lsearch/MIRRORS)
+
+
+[UP](###UP)
+## p_BUGS
+:lsearch:
+[next](##p_EXAMPLES)
+
+<<BUGS>>
+[BUGS](../../fills/lsearch/BUGS)
+
+
+[UP](###UP)
+## p_EXAMPLES
+:lsearch:
+[next](##p_CODE)
+
+----------------------------------------------------- 
+-------------------------------------- 
+https://codecogs.com/library/computing/c/search.h/lsearch.php
+#include <stdio.h> 
+#include <stdlib.h> 
+#include <string.h> 
+#include <search.h>
+char *animals[10] = 
+{   
+"Horse", 
+"Dog", 
+"Cat", 
+"Goat", 
+"Peacock" 
+}; 
+size_t elems = 5; 
+int compare (char **x, char **y) 
+{   
+return (strcmp(*x, *y)); 
+} 
+int addelem(char *key) 
+{   
+size_t num = elems; 
+lsearch(&key, animals, &num, sizeof(char *), (int (*)(const void *, const void *)) compare); 
+return (elems == num); 
+} 
+void main () 
+{   
+char *key = "Donkey"; 
+if (addelem(key)) 
+printf (" Animal "%s" already exists in array
+", key); 
+else
+printf (""%s" added to animals array
+", key); 
+}
+Solution
+Output:
+"Donkey" added to animals array
+-------------------------------------- 
+----------------------------------------------------- 
+<<EXAMPLES>>
+[EXAMPLES](../../fills/lsearch/EXAMPLES)
+
+
+[UP](###UP)
+## p_CODE_h
+:lsearch:
+[next](##p_CODE_c)
+
+<<CODE_h>>
+[CODE_h](../../fills/lsearch/CODE_h)
+
+
+[UP](###UP)
+## p_CODE_c
+:lsearch:
+[next](##p_CODE_m)
+
+<<CODE_c>>
+[CODE_c](../../fills/lsearch/CODE_c)
+
+
+[UP](###UP)
+## p_CODE_m
+:lsearch:
+[next](##p_ERRORS)
+
+<<CODE_m>>
+[CODE_m](../../fills/lsearch/CODE_m)
+
+
+[UP](###UP)
+## p_ERRORS
+:lsearch:
+[next](##p_BOOKS)
+
+<<ERRORS>>
+[ERRORS](../../fills/lsearch/ERRORS)
+
+
+[UP](###UP)
+## p_BOOKS
+:lsearch:
+[next](##p_BOOKS_ru)
+
+<<BOOKS>>
+[BOOKS](../../fills/lsearch/BOOKS)
+
+
+[UP](###UP)
+## p_BOOKS_ru
+:lsearch:
+[next](##p_CONTENT)
+
+
+<<BOOKS_ru>>
+[BOOKS_ru](../../fills/lsearch/BOOKS_ru)
+
+
+[UP](###UP)
+## p_CONTENT
+:lsearch:
+[lsearch.cnt](../../contents/lsearch.cnt)
+[next](##UP)
+
+[UP](###UP)

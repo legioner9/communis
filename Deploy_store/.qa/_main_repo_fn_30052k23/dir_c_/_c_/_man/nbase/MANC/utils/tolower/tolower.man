@@ -1,0 +1,297 @@
+### UP
+[tolower](##tolower)
+[MAIN](##MAIN)
+[MAIN_ru](##MAIN_ru)
+[ANCORS](##ANCORS)
+[ISU](##ISU)
+[inet](##A_inet)
+[inet](##books_inet)
+[inet](##examples_inet)
+[inet](##classic_inet)
+[inet](##enters_inet)
+[inet](##issue_code_inet)
+[H_FILE](##H_FILE)
+[p_SYNOPSIS](##p_SYNOPSIS)
+[p_RETURN](##p_RETURN)
+[p_RETURN_ru](##p_RETURN_ru)
+[p_BUGS](##p_BUGS)
+[p_DESCRIPTION_ru](##p_DESCRIPTION_ru)
+[p_DESCRIPTION](##p_DESCRIPTION)
+[p_MIRRORS](##p_MIRRORS)
+[p_EXAMPLES](##p_EXAMPLES)
+[p_CODE_h](##p_CODE_h)
+[p_CODE_c](##p_CODE_c)
+[p_CODE_m](##p_CODE_m)
+[p_ERRORS](##p_ERRORS)
+[p_BOOKS](##p_BOOKS)
+[p_BOOKS_ru](##p_BOOKS_ru)
+[p_CONTENT](##p_CONTENT)
+
+[cat_hfiles](../../cat_hfiles.md)
+[cat_utils](../../cat_utils.md)
+[cat_structs](../../cat_structs.md)
+[cat_param](../../cat_params.md)
+[cat_macros](../../cat_macross.md)
+[cat_const](../../cat_consts.md)
+[cat_type](../../cat_types.md)
+[cat_any](../cat_anys.md)
+
+
+[UP](###UP)
+## MAIN
+:tolower:
+[next](##MAIN_ru)
+
+<<MAIN>>
+[MAIN](../../fills/tolower/MAIN)
+
+
+
+[UP](###UP)
+## MAIN_ru
+:tolower:
+[next](##ANCORS)
+
+----------------------------------------------------- 
+-------------------------------------- 
+преобразуют регистр символов
+-------------------------------------- 
+----------------------------------------------------- 
+<<MAIN_ru>>
+[MAIN_ru](../../fills/tolower/MAIN_ru)
+
+[UP](###UP)
+## ANCORS
+:tolower:
+[next](##ISU)
+
+----------------------------------------------------- 
+-------------------------------------- 
+https://ru.manpages.org/tolower/3
+-------------------------------------- 
+----------------------------------------------------- 
+<<ANCORS>>
+[ANCORS](../../fills/tolower/ANCORS)
+
+[UP](###UP)
+## ISU
+:tolower:
+[next](##H_FILE)
+
+<<ISU>>
+only read
+:tolower:
+[ISU](../../contents)
+[next](##inet)
+
+
+[UP](###UP)
+## inet
+:tolower:
+[next](##H_FILE)
+
+
+[UP](###UP)
+## A_inet
+[manpages.org](https://www.google.ru/search?q=tolower+site%3Ahttps%3A%2F%2Fmanpages.org)
+[reposcope.com_ru](https://www.google.ru/search?q=tolower+site%3Ahttps%3A%2F%2Freposcope.com%2Fmanpages%2Fru)
+[pubs.opengroup.org](https://www.google.com/search?q=tolower+https%3A%2F%2Fpubs.opengroup.org)
+[manpages.debian.org](https://yandex.ru/search/?text=tolower+site%3Ahttps%3A%2F%2Fmanpages.debian.org%2F)
+[www.opennet.ru](http://www.opennet.ru/man.shtml?category=2&topic=tolower)
+[man7.org](https://www.google.ru/search?q=tolower+site%3Ahttps%3A%2F%2Fman7.org%2Flinux%2Fman-pages)
+[en.cppreference.com](https://www.google.com/search?q=tolower+en.cppreference.com)
+[www.mankier.com](https://www.mankier.com/?q=tolower)
+[www.codecogs.com](https://www.google.ru/search?q=tolower+https%3A%2F%2Fwww.codecogs.com%2Flibrary%2Fcomputing%2F)
+[digitalmars.com](https://www.google.ru/search?q=tolower+https%3A%2F%2Fdigitalmars.com%2Frtl%2F)
+
+
+[UP](###UP)
+## books_inet
+[cpp.com.ru](https://yandex.ru/search/?text=tolower+site%3Ahttps%3A%2F%2Fcpp.com.ru)
+[linuxhint.com](https://www.google.ru/search?q=tolower+site%3Ahttps%3A%2F%2Flinuxhint.com)
+[gnu.org](https://www.google.ru/search?q=tolower+site%3Ahttps%3A%2F%2Fwww.gnu.org%2Fsoftware%2Flibc%2Fmanual)
+
+[UP](###UP)
+## examples_inet
+[yandex:examples](https://yandex.ru/search/?text=tolower+example+in+c)
+[docs.oracle.com](https://www.google.com/search?q=tolower+https%3A%2F%2Fdocs.oracle.com)
+[manpages.debian.org](https://yandex.ru/search/?text=tolower+site%3Ahttps%3A%2F%2Fmanpages.debian.org%2F)
+[osr507doc.xinuos.com](https://www.google.com/search?q=tolower+http%3A%2F%2Fosr507doc.xinuos.com%2Fen%2Fman)
+[cpp.hotexamples.com](https://cpp.hotexamples.com/examples/-/-/tolower/cpp-tolower-function-examples.html)
+[all-ht.ru](https://yandex.ru/search/?text=tolower+site%3Ahttp%3A%2F%2Fall-ht.ru%2Finf%2Fprog%2Fc%2F)
+[cppreference.com](https://yandex.ru/search/?text=tolower+site%3Ahttps%3A%2F%2Fen.cppreference.com%2Fw%2Fc%2F)
+
+[UP](###UP)
+## classic_inet
+[bogatyrev_c_unix](https://www.google.com/search?q=tolower+site%3Ahttps%3A%2F%2Fcpp.com.ru%2Fbogatyrev_c_unix)
+[kr_cbook](https://www.google.com/search?q=tolower+site%3Ahttps%3A%2F%2Fcpp.com.ru%2Fkr_cbook)
+
+[UP](###UP)
+## enters_inet
+[pubs.opengroup.org](https://pubs.opengroup.org/onlinepubs/9699919799/idx/head.html)
+
+[UP](###UP)
+## issue_code_inet
+[code.woboq.org](https://www.google.com/search?h=&sitesearch=https%3A%2F%2Fcode.woboq.org%2Fuserspace%2Fglibc%2F&q=tolower)
+
+
+[UP](###UP)
+## H_FILE 
+[ctype_h.md](../../hfiles/ctype_h.md)
+
+
+[UP](###UP)
+## p_SYNOPSIS
+:tolower:
+[next](##p_RETURN_ru)
+
+----------------------------------------------------- 
+-------------------------------------- 
+#include <ctype.h>
+int toupper(int c);
+int tolower(int c);
+int toupper_l(int c, locale_t locale);
+int tolower_l(int c, locale_t locale);
+-------------------------------------- 
+----------------------------------------------------- 
+<<SYNOPSIS>>
+[SYNOPSIS](../../fills/tolower/SYNOPSIS)
+
+
+[UP](###UP)
+## p_RETURN_ru
+:tolower:
+[next](##p_RETURN)
+
+<<RETURN>>
+[RETURN_ru](../../fills/tolower/RETURN)
+
+
+[UP](###UP)
+## p_RETURN
+:tolower:
+[next](##p_DESCRIPTION_ru)
+
+----------------------------------------------------- 
+-------------------------------------- 
+Возвращаемым значением является преобразованная буква или c, если преобразование невозможно.
+-------------------------------------- 
+----------------------------------------------------- 
+<<RETURN_ru>>
+[RETURN](../../fills/tolower/RETURN_ru)
+
+
+[UP](###UP)
+## p_DESCRIPTION_ru
+:tolower:
+[next](##p_DESCRIPTION)
+
+----------------------------------------------------- 
+-------------------------------------- 
+Эти функции преобразуют строчные символы в заглавные и наоборот.
+Если c — строчная буква, то toupper() возвращает её заглавный эквивалент, если он есть в текущей локали. В противном случае возвращается c. Функция toupper_l() выполняет ту же задачу, но использует локаль, на которую ссылается описатель локали locale.
+Если c — заглавная буква, то tolower() возвращает её строчный эквивалент, если он есть в текущей локали. В противном случае возвращается c. Функция tolower_l() выполняет ту же задачу, но использует локаль, на которую ссылается описатель локали locale.
+-------------------------------------- 
+----------------------------------------------------- 
+<<DESCRIPTION_ru>>
+[DESCRIPTION_ru](../../fills/tolower/DESCRIPTION_ru)
+
+
+[UP](###UP)
+## p_DESCRIPTION
+:tolower:
+[next](##p_BUGS)
+
+<<DESCRIPTION>>
+[DESCRIPTION](../../fills/tolower/DESCRIPTION)
+
+
+[UP](###UP)
+## p_MIRRORS
+:tolower:
+[next](##p_BUGS)
+
+<<MIRRORS>>
+[MIRRORS](../../fills/tolower/MIRRORS)
+
+
+[UP](###UP)
+## p_BUGS
+:tolower:
+[next](##p_EXAMPLES)
+
+<<BUGS>>
+[BUGS](../../fills/tolower/BUGS)
+
+
+[UP](###UP)
+## p_EXAMPLES
+:tolower:
+[next](##p_CODE)
+
+<<EXAMPLES>>
+[EXAMPLES](../../fills/tolower/EXAMPLES)
+
+
+[UP](###UP)
+## p_CODE_h
+:tolower:
+[next](##p_CODE_c)
+
+<<CODE_h>>
+[CODE_h](../../fills/tolower/CODE_h)
+
+
+[UP](###UP)
+## p_CODE_c
+:tolower:
+[next](##p_CODE_m)
+
+<<CODE_c>>
+[CODE_c](../../fills/tolower/CODE_c)
+
+
+[UP](###UP)
+## p_CODE_m
+:tolower:
+[next](##p_ERRORS)
+
+<<CODE_m>>
+[CODE_m](../../fills/tolower/CODE_m)
+
+
+[UP](###UP)
+## p_ERRORS
+:tolower:
+[next](##p_BOOKS)
+
+<<ERRORS>>
+[ERRORS](../../fills/tolower/ERRORS)
+
+
+[UP](###UP)
+## p_BOOKS
+:tolower:
+[next](##p_BOOKS_ru)
+
+<<BOOKS>>
+[BOOKS](../../fills/tolower/BOOKS)
+
+
+[UP](###UP)
+## p_BOOKS_ru
+:tolower:
+[next](##p_CONTENT)
+
+
+<<BOOKS_ru>>
+[BOOKS_ru](../../fills/tolower/BOOKS_ru)
+
+
+[UP](###UP)
+## p_CONTENT
+:33333:
+[33333.cnt](../../contents/33333.cnt)
+[next](##UP)
+
+[UP](###UP)

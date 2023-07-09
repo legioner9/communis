@@ -1,0 +1,18 @@
+#>exl
+exl_pause "___ Copy zip files from TOSHIBA_EXT alt to sys? ___ CNTL-C to exit, ENTR to continue"
+
+wrp_fifs1_ file /run/media/st/TOSHIBA_EXT/Codium_zip/alt/ -d1
+
+# .vscode-oss.zip
+wrp_fifs1_ rm /home/st/.vscode-oss.zip -cf1
+wrp_fifs1_ file /home/st/.vscode-oss.zip -nf1
+
+wrp_fifs2_ cp /run/media/st/TOSHIBA_EXT/Codium_zip/alt/.vscode-oss.zip /home/st/
+wrp_fifs1_ file /home/st/.vscode-oss.zip -f1
+
+# VSCodium.zip 
+wrp_fifs1_ rm /home/st/.config/VSCodium.zip -cf1
+wrp_fifs1_ file /home/st/.config/VSCodium.zip -nf1
+
+wrp_fifs2_ cp -rf /run/media/st/TOSHIBA_EXT/Codium_zip/alt/VSCodium.zip /home/st/.config/
+wrp_fifs1_ file /home/st/.config/VSCodium.zip -f1

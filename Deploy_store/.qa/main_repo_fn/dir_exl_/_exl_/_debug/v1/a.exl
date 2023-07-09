@@ -1,0 +1,7 @@
+eval wrp_fifs1_ ls /home/st/TMP  -d1 -qq_exit
+eval wrp_fifs1_ rm -fv ${PATH_MAIN_REPO_FN_DIR}/dir_exl_/_exl_/_debug/ancor_file -cf1 -qq_exit
+eval wrp_fifs2_ cp ${PATH_MAIN_REPO_FN_DIR}/dir_exl_/_exl_/_debug/ancor_dir/ancor_file ${PATH_MAIN_REPO_FN_DIR}/dir_exl_/_exl_/_debug/ancor_file -f1 -qq_exit
+eval wrp_fifs1_ file ${PATH_MAIN_REPO_FN_DIR}/dir_exl_/_exl_/_debug/ancor_file -f1 -qq_exit
+eval wrp_fifs2_ cp ${PATH_MAIN_REPO_FN_DIR}/dir_exl_/_exl_/_debug/ancor_dir/ancor_filex ${PATH_MAIN_REPO_FN_DIR}/dir_exl_/_exl_/_debug/ancor_file -f1 -qq_exit
+
+eval wrp_fifs1_ ls /home/st/TMPx -d1 -qq_exit

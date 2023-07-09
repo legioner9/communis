@@ -1,0 +1,11 @@
+# npm org in ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_mm_npm_/_mm_npm_/_man/help
+
+npm ERR! npm org set orgname username [developer | admin | owner]
+npm ERR! npm org rm orgname username
+npm ERR! npm org ls orgname [<username>]
+
+# npm org -h in ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_mm_npm_/_mm_npm_/_man/help
+
+npm org set orgname username [developer | admin | owner]
+npm org rm orgname username
+npm org ls orgname [<username>]

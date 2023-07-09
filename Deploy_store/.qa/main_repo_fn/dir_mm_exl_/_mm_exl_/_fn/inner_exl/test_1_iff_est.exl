@@ -1,0 +1,17 @@
+#>exl
+# start _mm_exl_/_fn/inner_exl/test_1_iff_est.exl
+
+iff_ _p1_ is_est_ / -d
+ante_cntlif_  --ptr_if _p1_ -develop1
+fif_ _p1_
+
+iff_ _p1_ is_est_ /zzz -d
+ante_cntlif_  --ptr_if _p1_ -develop1
+fif_ _p1_
+
+
+iff_ _p1_ is_est_ /zzz -xxx
+ante_cntlif_  --ptr_if _p1_ -develop1
+fif_ _p1_
+
+# end

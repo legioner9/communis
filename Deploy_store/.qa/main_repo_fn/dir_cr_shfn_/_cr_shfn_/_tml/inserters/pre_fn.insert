@@ -1,0 +1,13 @@
+#!/bin/bash
+
+#. "$HOME/.bashrc"
+
+filename="{root_path}/{fn_name}.sh"
+
+echo -e "${HLIGHT}---start file://$filename ---${NORMAL}" # start file
+
+idir=$(pwd)
+
+# cd "$(prs_f -d $filename)" || qq_exit "$(prs_f -d $filename) not found"
+
+# garg_ $(prs_f -n $filename) $@ 1>/dev/null

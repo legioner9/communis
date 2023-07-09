@@ -1,0 +1,68 @@
+#!/bin/bash
+
+#. "${HOME}/.bashrc"
+
+filename="${PATH_COMMUNIS}/Deploy_store/.qa/lib/user/cr_word_e.sh"
+
+echo -e "${HLIGHT}---start file://$filename ---${NORMAL}" # start file
+
+idir=$(pwd)
+
+# cd "$(prs_f -d $filename)" || qq_exit "$(prs_f -d filename) not found"
+
+cr_word_e() {
+    # echo -e "${CYAN}--- ${FUNCNAME[0]}() $* ---${NORMAL}" #started functions
+    local FNN=${FUNCNAME[0]}
+    local PPW=$(prs_f -d "${PATH_COMMUNIS}/Deploy_store/.qa/lib/user/cr_word_e.sh") # FILENAME==="filename"
+    path_ext=$PPW/$FNN
+
+    # amount_arg $# 1 1
+
+    if [ "-h" == "$1" ]; then
+        echo -e "${CYAN} ${FUNCNAME[0]}() help: 
+            MAIN: create and edit ${PATH_VEXILLUM_DIR}/exec._word in pwd or $1
+            NAME: ${FUNCNAME[0]}()
+            ARGS: [, $1: dest_dir]
+            FLOW:${NORMAL}"
+        return 0
+    fi
+
+    if [ "man" == "$1" ]; then
+        edit_ "$path_ext".man
+        return 0
+    fi
+
+    if [ "lst" == "$1" ]; then
+        edit_ "$path_ext".lst
+        return 0
+    fi
+
+    if [ "_go" == "$1" ]; then
+        edit_ "$PPW"
+        return 0
+    fi
+
+    # amount_arg $# min_args max_args
+    if [ -n "$1" ]; then
+        dir_pwd="$1"
+    else
+        dir_pwd=$(pwd)
+    fi
+
+    echo -e "${GREEN}\$dir_pwd = $dir_pwd${NORMAL}" #print variable
+
+    if [ -f "$dir_pwd"/exec._word ]; then
+        qq_exit "$dir_pwd/exec._word allready exist"
+    else
+        echo -e "${BLUE}--- cp ${PATH_VEXILLUM_DIR}/exec._word $dir_pwd ---${NORMAL}" #sistem info mesage
+        cp "${HOME}"/${PATH_VEXILLUM_DIR}/exec._word "$dir_pwd"
+        edit_ "$dir_pwd/exec._word"
+    fi
+
+    # amount_arg $# min_args max_args
+
+}
+
+cd "$idir"
+
+unset filename

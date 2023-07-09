@@ -1,0 +1,7 @@
+# npm edit in ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_mm_npm_/_mm_npm_/_man/help
+
+npm ERR! npm edit <pkg>[/<subpkg>...]
+
+# npm edit -h in ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_mm_npm_/_mm_npm_/_man/help
+
+npm edit <pkg>[/<subpkg>...]

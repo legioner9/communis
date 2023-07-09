@@ -1,0 +1,12 @@
+https://pubs.opengroup.org/onlinepubs/009695399/functions/ftok.html
+
+#include <sys/ipc.h>
+...
+key_t semkey;
+
+
+if ((semkey = ftok("/tmp", 'a')) == (key_t) -1) {
+    perror("IPC error: ftok"); exit(1);
+}
+
+https://man7.org/linux/man-pages/man2/semget.2.html

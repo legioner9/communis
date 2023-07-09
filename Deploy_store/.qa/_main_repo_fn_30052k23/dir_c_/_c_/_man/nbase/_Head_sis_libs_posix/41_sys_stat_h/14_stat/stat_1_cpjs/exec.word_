@@ -1,0 +1,4 @@
+from> DEMO struct stat  ->
+
+to> -> prn_stat_lc_1_path(const char *path) 
+

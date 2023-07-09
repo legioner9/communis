@@ -1,0 +1,9 @@
+# npm ping in /home/st/REPOBARE/_repo/plt/actio/dir_mm_npm_/_mm_npm_/_man/help
+
+npm notice PING https://registry.npmjs.org/
+npm notice PONG 0.539ms
+
+# npm ping -h in /home/st/REPOBARE/_repo/plt/actio/dir_mm_npm_/_mm_npm_/_man/help
+
+npm ping
+ping registry

@@ -1,0 +1,3 @@
+# Программирование на Rust (весна 2019)
+# https://github.com/matklad/rust-course
+https://www.youtube.com/playlist?list=PLlb7e2G7aSpTfhiECYNI2EZ1uAluUqE_e

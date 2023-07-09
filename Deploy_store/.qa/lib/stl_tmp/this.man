@@ -1,0 +1,12 @@
+# test fali library
+
+do for demonstration FAIL write error:
+
+    if [ "$dir" != "/the/path+" ] ||
+
+in ${COMMUNIS_PATH}/Deploy_store/.qa/lib/stl_tmp/prs_f_tmp.sh
+
+## run . '${COMMUNIS_PATH}/Deploy_store/.qa/lib/stl_tmp/stl_tmp.tst'
+
+    prs_f_test_tmp(): FAIL
+    IN ${COMMUNIS_PATH}/Deploy_store/.qa/lib/stl_tmp/stl_tmp.tis tst FAIL

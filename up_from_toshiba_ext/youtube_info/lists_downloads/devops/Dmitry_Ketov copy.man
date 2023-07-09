@@ -1,0 +1,23 @@
+# Как_работает_Linux
+https://www.youtube.com/playlist?list=PLHHm04DXWzeKZycf_ZuBgxWdVBnrjE_mj
+# Как_работает_DNS
+https://www.youtube.com/playlist?list=PLHHm04DXWzeLQ4eDTSxq4-lexBoejoICy
+# Управление_почтовым_сервером_Linux
+https://www.youtube.com/playlist?list=PLHHm04DXWzeLZPU8yhlJ4osBlfZVOpbmz
+# Основы_операционных_систем
+https://www.youtube.com/playlist?list=PLHHm04DXWzeKuhdGFHSEWDpdgoYpjPptR
+# Внутреннее_устройство_Linux
+https://www.youtube.com/playlist?list=PLHHm04DXWzeJWTXiM9zIM6whZfW7o0EZq
+--- https://www.youtube.com/watch?v=B8Mk-LG11OQ&list=PLHHm04DXWzeJWTXiM9zIM6whZfW7o0EZq&index=6&t=39s
+--- https://www.youtube.com/watch?v=aHtBG9eJYfE&list=PLHHm04DXWzeJWTXiM9zIM6whZfW7o0EZq&index=7
+# Управление_серверами_домена_Linux
+https://www.youtube.com/playlist?list=PLHHm04DXWzeLhOSidfCuenyN4E30WYEgs
+# PXE_окружение_Linux_Управление_DHCP_и_TFTP_серверами 
+https://www.youtube.com/playlist?list=PLHHm04DXWzeKl81My_cwbGBqnPdHuIjsv
+# Пакетная_фильтрация_в_Linux
+https://www.youtube.com/playlist?list=PLHHm04DXWzeKUHrAUg2Z4MOjLhpfNvEfs
+# Управление_DNS-сервером_bind_в_Linux
+https://www.youtube.com/playlist?list=PLHHm04DXWzeLoBbEVnai2WIoWhhTIX2Oo
+# Управление_WEB-сервером_apache_в_Linux
+https://www.youtube.com/playlist?list=PLHHm04DXWzeIRmu0gIdSD438Ljhfb7ZWN
+  

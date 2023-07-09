@@ -1,0 +1,21 @@
+this files from communis:
+
+    ${COMMUNIS_PATH}/.git/
+                                config
+                                path
+
+    ${COMMUNIS_PATH}/
+                            .gitignore
+                            .gittag
+
+    /home/st/
+            .gituid
+            .hosttype
+            .vimrc
+            .plt_name
+            .bash_profile
+            .bashlib
+            .bashrc
+
+    ${COMMUNIS_PATH}/.git/hooks/
+                                        pre-commit

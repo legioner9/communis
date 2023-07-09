@@ -1,0 +1,14 @@
+# in $(pwd) create
+eval PPWD=$(pwd)
+# eval _pause_ that pause - enter y
+wrp2_ mkdir -v --_cnd Pala
+wrp2_ touch --_cnf Pala/0
+wrp2_ mkdir -v --_cnd LibellusTempore
+wrp2_ touch --_cnf LibellusTempore/0
+wrp2_ mkdir -v --_cnd Pebbles
+wrp2_ touch --_cnf Pebbles/0
+wrp2_ mkdir -v --_cnd Repono
+wrp2_ touch --_cnf Repono/0
+wrp2_ mkdir -v --_cnd Tmp
+wrp2_ touch --_cnf Tmp/0
+wrp2_ touch --_cnf README.md

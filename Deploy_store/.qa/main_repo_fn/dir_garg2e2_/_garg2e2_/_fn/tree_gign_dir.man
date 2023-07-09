@@ -1,0 +1,15 @@
+${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_garg2e2_/_garg2e2_/_fn
+├── 0
+├── aaa_extst
+│   ├── extst_1
+│   ├── howuse.man
+│   └── whatshappenig.man
+├── cr_fp_f_mdeb_postfix.sh
+├── cr_fp_f_mdeb_postfix.tmp.exl
+├── fp_f_NFAA_1.sh
+├── garg2e2_mdeb_set_1.sh
+├── garg2e2_mdeb.sh
+├── res
+└── tree_gign_dir.man
+
+2 directories, 10 files

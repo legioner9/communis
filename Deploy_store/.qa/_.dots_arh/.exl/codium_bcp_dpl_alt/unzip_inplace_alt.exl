@@ -1,0 +1,32 @@
+#>exl
+exl_pause "___ Create (unzip) files inplace FS? ___ CNTL-C to exit, ENTR to continue"
+
+# /home/st/.vscode-oss
+wrp_fifs1_ cd /home/st/ -d1
+
+wrp_fifs1_ rm -rf .vscode-oss -cd1
+wrp_fifs1_ file .vscode-oss -nd1
+
+echo wrp_fifs2_ unzip .vscode-oss.zip -f1
+
+eval exec 6>&1
+eval exec >/dev/null
+wrp_fifs1_ unzip .vscode-oss.zip -f1 1>/dev/null
+eval exec 1>&6 6>&-
+
+wrp_fifs1_ file .vscode-oss -d1
+
+# /home/st/.config/VSCodium
+wrp_fifs1_ cd /home/st/.config/ -d1
+
+wrp_fifs1_ rm -fr VSCodium -cd1
+wrp_fifs1_ file VSCodium -nd1
+
+echo wrp_fifs1_ unzip VSCodium.zip -f1
+
+eval exec 6>&1
+eval exec >/dev/null
+wrp_fifs1_ unzip VSCodium.zip -f1 1>/dev/null
+eval exec 1>&6 6>&-
+
+wrp_fifs1_ file VSCodium -d1

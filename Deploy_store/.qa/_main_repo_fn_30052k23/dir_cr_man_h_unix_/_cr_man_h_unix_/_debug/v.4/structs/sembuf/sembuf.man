@@ -1,0 +1,88 @@
+### UP
+[sembuf](##sembuf)
+[H_FILE](##H_FILE)
+[S_SYNOPSIS](##S_SYNOPSIS)
+[S_DESCRIPTION_ru](##S_DESCRIPTION)
+[S_DESCRIPTION](##S_DESCRIPTION_ru)
+[S_EXAMPLES](##S_EXAMPLES)
+[S_EXAMPLES_ru](##S_EXAMPLES_ru)
+[S_ERRORS](##S_ERRORS)
+[S_BOOKS](##S_BOOKS)
+[S_BOOKS_ru](##S_BOOKS_ru)
+
+[cat_hfiles](../../cat_hfiles.md)
+[cat_utils](../../cat_utils.md)
+[cat_structs](../../cat_structs.md)
+[cat_param](../../cat_params.md)
+[cat_macros](../../cat_macross.md)
+[cat_const](../../cat_consts.md)
+[cat_type](../../cat_types.md)
+
+
+[UP](###UP)
+# sembuf
+MAIN :sembuf:
+[ru.manpages.org](https://www.google.ru/search?q=struct+sembuf+site%3Ahttps%3A%2F%2Fru.manpages.org)
+
+
+
+[UP](###UP)
+## H_FILE 
+[sys_sem_h.md](../../hfiles/sys_sem_h.md)
+## S_SYNOPSIS
+:sembuf:
+
+
+
+[UP](###UP)
+## S_DESCRIPTION_ru
+:sembuf:
+[ru.manpages.org](https://www.google.ru/search?q=struct+sembuf+site%3Ahttps%3A%2F%2Fru.manpages.org)
+[man7.org](https://www.google.ru/search?q=sembuf+site%3Ahttps%3A%2F%2Fman7.org%2Flinux%2Fman-pages)
+[next](##S_DESCRIPTION)
+
+
+
+[UP](###UP)
+## S_DESCRIPTION
+:sembuf:
+[ru.manpages.org](https://www.google.ru/search?q=struct+sembuf+site%3Ahttps%3A%2F%2Fru.manpages.org)
+[cplusplus.com](https://www.cplusplus.com/reference/)
+[next](##S_EXAMPLES)
+
+
+
+[UP](###UP)
+## S_EXAMPLES
+:sembuf:
+[cpp.hotexamples.com](https://cpp.hotexamples.com/examples/-/-/struct+sembuf/cpp-close-function-examples.html)
+[linuxhint.com](https://www.google.ru/search?q=struct+sembuf+site%3Ahttps%3A%2F%2Flinuxhint.com)
+[next](##S_EXAMPLES_ru)
+
+
+
+[UP](###UP)
+## S_EXAMPLES_ru
+:sembuf:
+[next](##S_ERRORS)
+
+
+
+[UP](###UP)
+## S_BOOKS
+:sembuf:
+[linuxhint.com](https://www.google.ru/search?q=struct+sembuf+site%3Ahttps%3A%2F%2Flinuxhint.com)
+[gnu.org](https://www.google.ru/search?q=struct+sembuf+site%3Ahttps%3A%2F%2Fwww.gnu.org%2Fsoftware%2Flibc%2Fmanual)
+[next](##S_BOOKS_ru)
+
+
+
+[UP](###UP)
+## S_BOOKS_ru
+:sembuf:
+[cpp.com.ru](https://www.google.ru/search?q=struct+sembuf+site%3Ahttps%3A%2F%2Fcpp.com.ru)
+[next](##STRUCTS)
+
+
+
+[UP](###UP)

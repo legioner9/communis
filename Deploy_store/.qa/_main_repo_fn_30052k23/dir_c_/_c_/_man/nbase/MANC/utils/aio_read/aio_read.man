@@ -1,0 +1,312 @@
+### UP
+[aio_read](##aio_read)
+[MAIN](##MAIN)
+[MAIN_ru](##MAIN_ru)
+[ANCORS](##ANCORS)
+[ISU](##ISU)
+[inet](##A_inet)
+[inet](##books_inet)
+[inet](##examples_inet)
+[inet](##classic_inet)
+[inet](##enters_inet)
+[inet](##issue_code_inet)
+[H_FILE](##H_FILE)
+[p_SYNOPSIS](##p_SYNOPSIS)
+[p_RETURN](##p_RETURN)
+[p_RETURN_ru](##p_RETURN_ru)
+[p_BUGS](##p_BUGS)
+[p_DESCRIPTION_ru](##p_DESCRIPTION_ru)
+[p_DESCRIPTION](##p_DESCRIPTION)
+[p_MIRRORS](##p_MIRRORS)
+[p_EXAMPLES](##p_EXAMPLES)
+[p_CODE_h](##p_CODE_h)
+[p_CODE_c](##p_CODE_c)
+[p_CODE_m](##p_CODE_m)
+[p_ERRORS](##p_ERRORS)
+[p_BOOKS](##p_BOOKS)
+[p_BOOKS_ru](##p_BOOKS_ru)
+[p_CONTENT](##p_CONTENT)
+
+[cat_hfiles](../../cat_hfiles.md)
+[cat_utils](../../cat_utils.md)
+[cat_structs](../../cat_structs.md)
+[cat_param](../../cat_params.md)
+[cat_macros](../../cat_macross.md)
+[cat_const](../../cat_consts.md)
+[cat_type](../../cat_types.md)
+[cat_any](../cat_anys.md)
+
+
+[UP](###UP)
+## MAIN
+:aio_read:
+[next](##MAIN_ru)
+
+<<MAIN>>
+[MAIN](../../fills/aio_read/MAIN)
+
+
+
+[UP](###UP)
+## MAIN_ru
+:aio_read:
+[next](##ANCORS)
+
+----------------------------------------------------- 
+-------------------------------------- 
+асинхронное чтение
+-------------------------------------- 
+----------------------------------------------------- 
+<<MAIN_ru>>
+[MAIN_ru](../../fills/aio_read/MAIN_ru)
+
+[UP](###UP)
+## ANCORS
+:aio_read:
+[next](##ISU)
+
+----------------------------------------------------- 
+-------------------------------------- 
+https://ru.manpages.org/aio_read/3
+-------------------------------------- 
+----------------------------------------------------- 
+<<ANCORS>>
+[ANCORS](../../fills/aio_read/ANCORS)
+
+[UP](###UP)
+## ISU
+:aio_read:
+[next](##H_FILE)
+
+----------------------------------------------------- 
+-------------------------------------- 
+file://${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_c_/_c_/_man/nbase/_Head_sis_libs_posix/1_aio_h/example/mapages_org_cpjs/aio_read.isu
+-------------------------------------- 
+----------------------------------------------------- 
+<<ISU>>
+only read
+:aio_read:
+[ISU](../../contents)
+[next](##inet)
+
+
+[UP](###UP)
+## inet
+:aio_read:
+[next](##H_FILE)
+
+
+[UP](###UP)
+## A_inet
+[manpages.org](https://www.google.ru/search?q=aio_read+site%3Ahttps%3A%2F%2Fmanpages.org)
+[reposcope.com_ru](https://www.google.ru/search?q=aio_read+site%3Ahttps%3A%2F%2Freposcope.com%2Fmanpages%2Fru)
+[pubs.opengroup.org](https://www.google.com/search?q=aio_read+https%3A%2F%2Fpubs.opengroup.org)
+[manpages.debian.org](https://yandex.ru/search/?text=aio_read+site%3Ahttps%3A%2F%2Fmanpages.debian.org%2F)
+[www.opennet.ru](http://www.opennet.ru/man.shtml?category=2&topic=aio_read)
+[man7.org](https://www.google.ru/search?q=aio_read+site%3Ahttps%3A%2F%2Fman7.org%2Flinux%2Fman-pages)
+[en.cppreference.com](https://www.google.com/search?q=aio_read+en.cppreference.com)
+[www.mankier.com](https://www.mankier.com/?q=aio_read)
+[www.codecogs.com](https://www.google.ru/search?q=aio_read+https%3A%2F%2Fwww.codecogs.com%2Flibrary%2Fcomputing%2F)
+[digitalmars.com](https://www.google.ru/search?q=aio_read+https%3A%2F%2Fdigitalmars.com%2Frtl%2F)
+
+
+[UP](###UP)
+## books_inet
+[cpp.com.ru](https://yandex.ru/search/?text=aio_read+site%3Ahttps%3A%2F%2Fcpp.com.ru)
+[linuxhint.com](https://www.google.ru/search?q=aio_read+site%3Ahttps%3A%2F%2Flinuxhint.com)
+[gnu.org](https://www.google.ru/search?q=aio_read+site%3Ahttps%3A%2F%2Fwww.gnu.org%2Fsoftware%2Flibc%2Fmanual)
+
+[UP](###UP)
+## examples_inet
+[yandex:examples](https://yandex.ru/search/?text=aio_read+example+in+c)
+[docs.oracle.com](https://www.google.com/search?q=aio_read+https%3A%2F%2Fdocs.oracle.com)
+[manpages.debian.org](https://yandex.ru/search/?text=aio_read+site%3Ahttps%3A%2F%2Fmanpages.debian.org%2F)
+[osr507doc.xinuos.com](https://www.google.com/search?q=aio_read+http%3A%2F%2Fosr507doc.xinuos.com%2Fen%2Fman)
+[cpp.hotexamples.com](https://cpp.hotexamples.com/examples/-/-/aio_read/cpp-aio_read-function-examples.html)
+[all-ht.ru](https://yandex.ru/search/?text=aio_read+site%3Ahttp%3A%2F%2Fall-ht.ru%2Finf%2Fprog%2Fc%2F)
+[cppreference.com](https://yandex.ru/search/?text=aio_read+site%3Ahttps%3A%2F%2Fen.cppreference.com%2Fw%2Fc%2F)
+
+[UP](###UP)
+## classic_inet
+[bogatyrev_c_unix](https://www.google.com/search?q=aio_read+site%3Ahttps%3A%2F%2Fcpp.com.ru%2Fbogatyrev_c_unix)
+[kr_cbook](https://www.google.com/search?q=aio_read+site%3Ahttps%3A%2F%2Fcpp.com.ru%2Fkr_cbook)
+
+[UP](###UP)
+## enters_inet
+[pubs.opengroup.org](https://pubs.opengroup.org/onlinepubs/9699919799/idx/head.html)
+
+[UP](###UP)
+## issue_code_inet
+[code.woboq.org](https://www.google.com/search?h=&sitesearch=https%3A%2F%2Fcode.woboq.org%2Fuserspace%2Fglibc%2F&q=aio_read)
+
+
+[UP](###UP)
+## H_FILE 
+[aio_h.md](../../hfiles/aio_h.md)
+
+
+[UP](###UP)
+## p_SYNOPSIS
+:aio_read:
+[next](##p_RETURN_ru)
+
+----------------------------------------------------- 
+-------------------------------------- 
+#include <aio.h>
+int aio_read(struct aiocb *aiocbp);
+Link with -lrt
+-------------------------------------- 
+----------------------------------------------------- 
+<<SYNOPSIS>>
+[SYNOPSIS](../../fills/aio_read/SYNOPSIS)
+
+
+[UP](###UP)
+## p_RETURN_ru
+:aio_read:
+[next](##p_RETURN)
+
+<<RETURN>>
+[RETURN_ru](../../fills/aio_read/RETURN)
+
+
+[UP](###UP)
+## p_RETURN
+:aio_read:
+[next](##p_DESCRIPTION_ru)
+
+<<RETURN_ru>>
+[RETURN](../../fills/aio_read/RETURN_ru)
+
+
+[UP](###UP)
+## p_DESCRIPTION_ru
+:aio_read:
+[next](##p_DESCRIPTION)
+
+----------------------------------------------------- 
+-------------------------------------- 
+Функция aio_read() ставит в очередь запрос ввода-вывода, описанный в буфере, на который указывает aiocbp. Эта функция является асинхронным аналогом вызова read(2). Аргументы функции
+read(fd, buf, count)
+соответствуют (в указанном порядке) полям aio_fildes, aio_buf и aio_nbytes структуры, на которую указывает aiocbp (описание структуры aiocb смотрите в aio(7)).
+Чтение данных выполняется начиная с абсолютного смещения в файле aiocbp->aio_offset, независимо от текущего смещения в файле. После вызова значение текущего смещения в файле не определено.
+Прилагательное «асинхронный» означает, что вызов возвращает управление сразу после установки запроса в очередь; при завершении вызова чтение может уже выполнится, а может и нет. Для проверки выполнения чтения используйте aio_error(3). Состояние возврата завершённой операции ввода-вывода можно получить с помощью aio_return(3). Асинхронное уведомление о выполнении ввода-вывода можно получить, установив aiocbp->aio_sigevent соответствующим образом; подробней смотрите в sigevent(7).
+Если определён макрос _POSIX_PRIORITIZED_IO и данный файл его поддерживает, асинхронная операция устанавливается в очередь с приоритетом вызывающего процесса минус aiocbp->aio_reqprio.
+Поле aiocbp->aio_lio_opcode игнорируется.
+-------------------------------------- 
+----------------------------------------------------- 
+<<DESCRIPTION_ru>>
+[DESCRIPTION_ru](../../fills/aio_read/DESCRIPTION_ru)
+
+
+[UP](###UP)
+## p_DESCRIPTION
+:aio_read:
+[next](##p_BUGS)
+
+<<DESCRIPTION>>
+[DESCRIPTION](../../fills/aio_read/DESCRIPTION)
+
+
+[UP](###UP)
+## p_MIRRORS
+:aio_read:
+[next](##p_BUGS)
+
+<<MIRRORS>>
+[MIRRORS](../../fills/aio_read/MIRRORS)
+
+
+[UP](###UP)
+## p_BUGS
+:aio_read:
+[next](##p_EXAMPLES)
+
+<<BUGS>>
+[BUGS](../../fills/aio_read/BUGS)
+
+
+[UP](###UP)
+## p_EXAMPLES
+:aio_read:
+[next](##p_CODE)
+
+<<EXAMPLES>>
+[EXAMPLES](../../fills/aio_read/EXAMPLES)
+
+
+[UP](###UP)
+## p_CODE_h
+:aio_read:
+[next](##p_CODE_c)
+
+<<CODE_h>>
+[CODE_h](../../fills/aio_read/CODE_h)
+
+
+[UP](###UP)
+## p_CODE_c
+:aio_read:
+[next](##p_CODE_m)
+
+----------------------------------------------------- 
+-------------------------------------- 
+https://code.woboq.org/userspace/glibc/sysdeps/pthread/aio_read.c.html
+#include <aio.h>
+#include <aio_misc.h>
+int
+aio_read (struct aiocb *aiocbp)
+{
+return (__aio_enqueue_request ((aiocb_union *) aiocbp, LIO_READ) == NULL
+? -1 : 0);
+}
+-------------------------------------- 
+----------------------------------------------------- 
+<<CODE_c>>
+[CODE_c](../../fills/aio_read/CODE_c)
+
+
+[UP](###UP)
+## p_CODE_m
+:aio_read:
+[next](##p_ERRORS)
+
+<<CODE_m>>
+[CODE_m](../../fills/aio_read/CODE_m)
+
+
+[UP](###UP)
+## p_ERRORS
+:aio_read:
+[next](##p_BOOKS)
+
+<<ERRORS>>
+[ERRORS](../../fills/aio_read/ERRORS)
+
+
+[UP](###UP)
+## p_BOOKS
+:aio_read:
+[next](##p_BOOKS_ru)
+
+<<BOOKS>>
+[BOOKS](../../fills/aio_read/BOOKS)
+
+
+[UP](###UP)
+## p_BOOKS_ru
+:aio_read:
+[next](##p_CONTENT)
+
+
+<<BOOKS_ru>>
+[BOOKS_ru](../../fills/aio_read/BOOKS_ru)
+
+
+[UP](###UP)
+## p_CONTENT
+:aio_read:
+[aio_read.cnt](../../contents/aio_read.cnt)
+[next](##UP)
+
+[UP](###UP)

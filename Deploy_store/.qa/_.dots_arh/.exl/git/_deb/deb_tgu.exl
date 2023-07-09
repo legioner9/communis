@@ -1,0 +1,3 @@
+# eval QQ_EXIT=1
+rr_
+eval gpush_ --tml "${tml_file}" --name "${name_repo}" -verbose

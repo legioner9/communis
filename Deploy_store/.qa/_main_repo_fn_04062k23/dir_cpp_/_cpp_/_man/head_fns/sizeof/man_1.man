@@ -1,0 +1,3 @@
+## sizeof
+
+## https://www.bestprog.net/ru/2017/10/15/the-operation-sizeof-the-operation_ru/

@@ -1,0 +1,343 @@
+### UP
+[sched_setscheduler](##sched_setscheduler)
+[MAIN](##MAIN)
+[MAIN_ru](##MAIN_ru)
+[ANCORS](##ANCORS)
+[ISU](##ISU)
+[inet](##A_inet)
+[inet](##books_inet)
+[inet](##examples_inet)
+[inet](##classic_inet)
+[inet](##enters_inet)
+[inet](##issue_code_inet)
+[H_FILE](##H_FILE)
+[p_SYNOPSIS](##p_SYNOPSIS)
+[p_RETURN](##p_RETURN)
+[p_RETURN_ru](##p_RETURN_ru)
+[p_BUGS](##p_BUGS)
+[p_DESCRIPTION_ru](##p_DESCRIPTION_ru)
+[p_DESCRIPTION](##p_DESCRIPTION)
+[p_MIRRORS](##p_MIRRORS)
+[p_EXAMPLES](##p_EXAMPLES)
+[p_CODE_h](##p_CODE_h)
+[p_CODE_c](##p_CODE_c)
+[p_CODE_m](##p_CODE_m)
+[p_ERRORS](##p_ERRORS)
+[p_BOOKS](##p_BOOKS)
+[p_BOOKS_ru](##p_BOOKS_ru)
+[p_CONTENT](##p_CONTENT)
+
+[cat_hfiles](../../cat_hfiles.md)
+[cat_utils](../../cat_utils.md)
+[cat_structs](../../cat_structs.md)
+[cat_param](../../cat_params.md)
+[cat_macros](../../cat_macross.md)
+[cat_const](../../cat_consts.md)
+[cat_type](../../cat_types.md)
+[cat_any](../cat_anys.md)
+
+
+[UP](###UP)
+## MAIN
+:sched_setscheduler:
+[next](##MAIN_ru)
+
+<<MAIN>>
+[MAIN](../../fills/sched_setscheduler/MAIN)
+
+
+
+[UP](###UP)
+## MAIN_ru
+:sched_setscheduler:
+[next](##ANCORS)
+
+<<MAIN_ru>>
+[MAIN_ru](../../fills/sched_setscheduler/MAIN_ru)
+
+[UP](###UP)
+## ANCORS
+:sched_setscheduler:
+[next](##ISU)
+
+<<ANCORS>>
+[ANCORS](../../fills/sched_setscheduler/ANCORS)
+
+[UP](###UP)
+## ISU
+:sched_setscheduler:
+[next](##H_FILE)
+
+<<ISU>>
+only read
+:sched_setscheduler:
+[ISU](../../contents)
+[next](##inet)
+
+
+[UP](###UP)
+## inet
+:sched_setscheduler:
+[next](##H_FILE)
+
+
+[UP](###UP)
+## A_inet
+[manpages.org](https://www.google.ru/search?q=sched_setscheduler+site%3Ahttps%3A%2F%2Fmanpages.org)
+[reposcope.com_ru](https://www.google.ru/search?q=sched_setscheduler+site%3Ahttps%3A%2F%2Freposcope.com%2Fmanpages%2Fru)
+[pubs.opengroup.org](https://www.google.com/search?q=sched_setscheduler+https%3A%2F%2Fpubs.opengroup.org)
+[manpages.debian.org](https://yandex.ru/search/?text=sched_setscheduler+site%3Ahttps%3A%2F%2Fmanpages.debian.org%2F)
+[www.opennet.ru](http://www.opennet.ru/man.shtml?category=2&topic=sched_setscheduler)
+[man7.org](https://www.google.ru/search?q=sched_setscheduler+site%3Ahttps%3A%2F%2Fman7.org%2Flinux%2Fman-pages)
+[en.cppreference.com](https://www.google.com/search?q=sched_setscheduler+en.cppreference.com)
+[www.mankier.com](https://www.mankier.com/?q=sched_setscheduler)
+[www.codecogs.com](https://www.google.ru/search?q=sched_setscheduler+https%3A%2F%2Fwww.codecogs.com%2Flibrary%2Fcomputing%2F)
+[digitalmars.com](https://www.google.ru/search?q=sched_setscheduler+https%3A%2F%2Fdigitalmars.com%2Frtl%2F)
+
+
+[UP](###UP)
+## books_inet
+[cpp.com.ru](https://yandex.ru/search/?text=sched_setscheduler+site%3Ahttps%3A%2F%2Fcpp.com.ru)
+[linuxhint.com](https://www.google.ru/search?q=sched_setscheduler+site%3Ahttps%3A%2F%2Flinuxhint.com)
+[gnu.org](https://www.google.ru/search?q=sched_setscheduler+site%3Ahttps%3A%2F%2Fwww.gnu.org%2Fsoftware%2Flibc%2Fmanual)
+
+[UP](###UP)
+## examples_inet
+[yandex:examples](https://yandex.ru/search/?text=sched_setscheduler+example+in+c)
+[docs.oracle.com](https://www.google.com/search?q=sched_setscheduler+https%3A%2F%2Fdocs.oracle.com)
+[manpages.debian.org](https://yandex.ru/search/?text=sched_setscheduler+site%3Ahttps%3A%2F%2Fmanpages.debian.org%2F)
+[osr507doc.xinuos.com](https://www.google.com/search?q=sched_setscheduler+http%3A%2F%2Fosr507doc.xinuos.com%2Fen%2Fman)
+[cpp.hotexamples.com](https://cpp.hotexamples.com/examples/-/-/sched_setscheduler/cpp-sched_setscheduler-function-examples.html)
+[all-ht.ru](https://yandex.ru/search/?text=sched_setscheduler+site%3Ahttp%3A%2F%2Fall-ht.ru%2Finf%2Fprog%2Fc%2F)
+[cppreference.com](https://yandex.ru/search/?text=sched_setscheduler+site%3Ahttps%3A%2F%2Fen.cppreference.com%2Fw%2Fc%2F)
+
+[UP](###UP)
+## classic_inet
+[bogatyrev_c_unix](https://www.google.com/search?q=sched_setscheduler+site%3Ahttps%3A%2F%2Fcpp.com.ru%2Fbogatyrev_c_unix)
+[kr_cbook](https://www.google.com/search?q=sched_setscheduler+site%3Ahttps%3A%2F%2Fcpp.com.ru%2Fkr_cbook)
+
+[UP](###UP)
+## enters_inet
+[pubs.opengroup.org](https://pubs.opengroup.org/onlinepubs/9699919799/idx/head.html)
+
+[UP](###UP)
+## issue_code_inet
+[code.woboq.org](https://www.google.com/search?h=&sitesearch=https%3A%2F%2Fcode.woboq.org%2Fuserspace%2Fglibc%2F&q=sched_setscheduler)
+
+
+[UP](###UP)
+## H_FILE 
+[sched_h.md](../../hfiles/sched_h.md)
+
+
+[UP](###UP)
+## p_SYNOPSIS
+:sched_setscheduler:
+[next](##p_RETURN_ru)
+
+----------------------------------------------------- 
+-------------------------------------- 
+int sched_setscheduler(pid_t pid, int policy,
+const struct sched_param *param);
+int sched_getscheduler(pid_t pid);
+-------------------------------------- 
+----------------------------------------------------- 
+<<SYNOPSIS>>
+[SYNOPSIS](../../fills/sched_setscheduler/SYNOPSIS)
+
+
+[UP](###UP)
+## p_RETURN_ru
+:sched_setscheduler:
+[next](##p_RETURN)
+
+<<RETURN>>
+[RETURN_ru](../../fills/sched_setscheduler/RETURN)
+
+
+[UP](###UP)
+## p_RETURN
+:sched_setscheduler:
+[next](##p_DESCRIPTION_ru)
+
+<<RETURN_ru>>
+[RETURN](../../fills/sched_setscheduler/RETURN_ru)
+
+
+[UP](###UP)
+## p_DESCRIPTION_ru
+:sched_setscheduler:
+[next](##p_DESCRIPTION)
+
+----------------------------------------------------- 
+-------------------------------------- 
+Вызов sched_setscheduler() задаёт алгоритм и параметры планирования выполнения нити с идентификатором pid. Если pid равен нулю, то будет изменён алгоритм и параметры планирования вызывающей нити.
+В текущей реализации структура содержит только одно поле — sched_priority. Интерпретация param зависит от выбранного алгоритма.
+В настоящее время в Linux поддерживаются следующие «обычные» (т. е. не реального времени) алгоритмы планирования, которые можно указать в policy:
+SCHED_OTHER
+алгоритм циклического обслуживания с разделением времени;
+SCHED_BATCH
+«пакетный» стиль выполнения процессов;
+SCHED_IDLE
+для выполнения фоновых заданий с очень низким приоритетом.
+Для каждого алгоритма, перечисленного выше, значение param->sched_priority должно быть равно 0.
+Также поддерживаются различные алгоритмы «реального времени», для специальных, критичных ко времени приложений, которым требуется точное управление методом выбора приложением исполняемых нитей. Правила управления, когда процесс может использовать эти алгоритмы, смотрите в sched(7). Алгоритмы реального времени, которые могут быть указаны в policy:
+SCHED_FIFO
+алгоритм «первым вошёл — первым вышел»;
+SCHED_RR
+алгоритм циклического обслуживания.
+-------------------------------------- 
+----------------------------------------------------- 
+<<DESCRIPTION_ru>>
+[DESCRIPTION_ru](../../fills/sched_setscheduler/DESCRIPTION_ru)
+
+
+[UP](###UP)
+## p_DESCRIPTION
+:sched_setscheduler:
+[next](##p_BUGS)
+
+<<DESCRIPTION>>
+[DESCRIPTION](../../fills/sched_setscheduler/DESCRIPTION)
+
+
+[UP](###UP)
+## p_MIRRORS
+:sched_setscheduler:
+[next](##p_BUGS)
+
+<<MIRRORS>>
+[MIRRORS](../../fills/sched_setscheduler/MIRRORS)
+
+
+[UP](###UP)
+## p_BUGS
+:sched_setscheduler:
+[next](##p_EXAMPLES)
+
+<<BUGS>>
+[BUGS](../../fills/sched_setscheduler/BUGS)
+
+
+[UP](###UP)
+## p_EXAMPLES
+:sched_setscheduler:
+[next](##p_CODE)
+
+<<EXAMPLES>>
+[EXAMPLES](../../fills/sched_setscheduler/EXAMPLES)
+
+
+[UP](###UP)
+## p_CODE_h
+:sched_setscheduler:
+[next](##p_CODE_c)
+
+<<CODE_h>>
+[CODE_h](../../fills/sched_setscheduler/CODE_h)
+
+
+[UP](###UP)
+## p_CODE_c
+:sched_setscheduler:
+[next](##p_CODE_m)
+
+----------------------------------------------------- 
+-------------------------------------- 
+https://code.woboq.org/userspace/glibc/posix/sched_sets.c.html
+#include <errno.h>
+#include <sched.h>
+#include <sys/types.h>
+/* Set scheduling algorithm and/or parameters for a process.  */
+int
+__sched_setscheduler (pid_t pid, int policy, const struct sched_param *param)
+{
+__set_errno (ENOSYS);
+return -1;
+}
+libc_hidden_def (__sched_setscheduler)
+stub_warning (sched_setscheduler)
+weak_alias (__sched_setscheduler, sched_setscheduler)
+https://code.woboq.org/userspace/glibc/include/sched.h.html
+#ifndef _SCHED_H
+#include <posix/sched.h>
+#ifndef _ISOMAC
+/* Now define the internal interfaces.  */
+extern int __sched_setparam (__pid_t __pid,
+const struct sched_param *__param);
+libc_hidden_proto (__sched_setparam)
+extern int __sched_getparam (__pid_t __pid, struct sched_param *__param);
+extern int __sched_setscheduler (__pid_t __pid, int __policy,
+const struct sched_param *__param);
+libc_hidden_proto (__sched_setscheduler)
+extern int __sched_getscheduler (__pid_t __pid);
+extern int __sched_yield (void);
+libc_hidden_proto (__sched_yield)
+extern int __sched_get_priority_max (int __algorithm);
+libc_hidden_proto (__sched_get_priority_max)
+extern int __sched_get_priority_min (int __algorithm);
+libc_hidden_proto (__sched_get_priority_min)
+extern int __sched_rr_get_interval (__pid_t __pid, struct timespec *__t);
+/* These are Linux specific.  */
+extern int __clone (int (*__fn) (void *__arg), void *__child_stack,
+int __flags, void *__arg, ...);
+libc_hidden_proto (__clone)
+extern int __clone2 (int (*__fn) (void *__arg), void *__child_stack_base,
+size_t __child_stack_size, int __flags, void *__arg, ...);
+libc_hidden_proto (__clone2)
+/* NB: Can't use "__typeof__ (getcpu)" since getcpu is Linux specific
+and Hurd doesn't have it.  */
+extern int __getcpu (unsigned int *, unsigned int *);
+libc_hidden_proto (__getcpu)
+#endif
+#endif
+-------------------------------------- 
+----------------------------------------------------- 
+<<CODE_c>>
+[CODE_c](../../fills/sched_setscheduler/CODE_c)
+
+
+[UP](###UP)
+## p_CODE_m
+:sched_setscheduler:
+[next](##p_ERRORS)
+
+<<CODE_m>>
+[CODE_m](../../fills/sched_setscheduler/CODE_m)
+
+
+[UP](###UP)
+## p_ERRORS
+:sched_setscheduler:
+[next](##p_BOOKS)
+
+<<ERRORS>>
+[ERRORS](../../fills/sched_setscheduler/ERRORS)
+
+
+[UP](###UP)
+## p_BOOKS
+:sched_setscheduler:
+[next](##p_BOOKS_ru)
+
+<<BOOKS>>
+[BOOKS](../../fills/sched_setscheduler/BOOKS)
+
+
+[UP](###UP)
+## p_BOOKS_ru
+:sched_setscheduler:
+[next](##p_CONTENT)
+
+
+<<BOOKS_ru>>
+[BOOKS_ru](../../fills/sched_setscheduler/BOOKS_ru)
+
+
+[UP](###UP)
+## p_CONTENT
+:33333:
+[33333.cnt](../../contents/33333.cnt)
+[next](##UP)
+
+[UP](###UP)

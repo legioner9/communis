@@ -1,0 +1,523 @@
+## Роллируемое меню. Часть проекта uxcom.
+
+Пример 19
+```cpp
+/* ________________________файл menu.h __________________________ */
+/*                     РОЛЛИРУЕМОЕ МЕНЮ                           */
+/* _______________________________________________________________*/
+#include              <ctype.h>
+#include              <sys/param.h>
+#define M_HOT         '\\'      /* горячий ключ */
+#define M_CTRL        '\1'      /* признак горизонтальной черты */
+#define MXEND(m)      XEND((m)->win,(m)->scrollok)
+#define NOKEY        (-33)      /* горячего ключа нет         */
+#define MAXLEN       MAXPATHLEN /* макс. длина имен файлов    */
+typedef enum { /* Коды, возвращаемые handler-ом (HandlerReply *reply) */
+    HANDLER_OUT      = 0,  /* выйти из функции выбора          */
+    HANDLER_CONTINUE = 1,  /* читать очередную букву           */
+    HANDLER_NEWCHAR  = 2,  /* пойти на анализ кода handler-ом. */
+    HANDLER_SWITCH   = 3,  /* пойти на switch()                */
+    HANDLER_AGAIN    = 4   /* перезапустить всю функцию выбора */
+} HandlerReply;
+typedef struct _Menu {          /* паспорт меню               */
+    int     nitems;             /* число элементов меню       */
+    Info   *items;              /* сам массив элементов       */
+    int    *hotkeys;            /* "горячие" клавиши          */
+    int     key;		/* клавиша, завершившая выбор */
+    int     current;            /* текущая строка списка      */
+    int     shift;              /* сдвиг окна от начала меню  */
+    int     scrollok;           /* окно роллируемое ?         */
+    WINDOW *win;                /* окно для меню              */
+    int     left, top, height, width; /* координаты меню на экране и
+					 размер окна win       */
+    int     textwidth, textheight;    /* размер подокна выбора */
+    int     bg_attrib;          /* атрибут фона окна           */
+    int     sel_attrib;         /* атрибут выбранной строки    */
+    char   *title;              /* заголовок меню              */
+    Point   savep;
+    void  (*showMe)    (struct _Menu *m);
+    void  (*scrollBar) (struct _Menu *m, int n, int among);
+    int    *hitkeys;            /* клавиши, обрабатываемые особо */
+    int   (*handler)   (struct _Menu *m, int c, HandlerReply *reply);
+
+} Menu;
+/* Структура окна с меню:
+	*--------------*    +0
+	|  ЗАГОЛОВОК   |    +1
+	*-----------*--*    +2
+	|+ стр1ааа  |  |    +3
+	|  стр2ббб  |##| <- scroll bar шириной BARWIDTH
+	|  стр3ввв  |  |
+	*___________|__*
+	|DX| len |DX|BS|
+ */
+/* Метки у элементов меню */
+#define M_BOLD       I_DIR      /* яркая строка */
+#define M_HATCH      0x08       /* строка тусклая     */
+#define M_LFT        0x10       /* для использования в pulldown menu */
+#define M_RGT        0x20       /* для использования в pulldown menu */
+#define M_LABEL      0x40       /* строка имеет метку */
+#define M_LEFT       (-111)
+#define M_RIGHT      (-112)
+#define TOTAL_NOSEL  (-I_NOSEL)
+
+#define M_SET(m, i, flg)        (((m)->items)[i]). fl |=  (flg)
+#define M_CLR(m, i, flg)        (((m)->items)[i]). fl &= ~(flg)
+#define M_TST(m, i, flg)        ((((m)->items)[i]).fl &   (flg))
+#define M_ITEM(m, i)            ((((m)->items)[i]).s)
+	/* Прототипы */
+int  MnuInit (Menu *m); void MnuDeinit (Menu *m);
+void MnuDrawItem (Menu * m, int y, int reverse, int selection);
+int     MnuNext (Menu *m); int     MnuPrev (Menu *m);
+int     MnuFirst(Menu *m); int     MnuLast (Menu *m);
+int     MnuPgUp (Menu *m); int     MnuPgDn (Menu *m);
+int     MnuThis (Menu *m); int     MnuHot  (Menu *m, unsigned c);
+int     MnuName (Menu *m, char *name);
+void MnuDraw        (Menu *m);     void MnuHide(Menu *m);
+void MnuPointAt     (Menu *m, int y);
+void MnuPoint       (Menu *m, int line, int eraseOld);
+int  MnuUsualSelect (Menu *m, int block);
+int is_in(register int c, register int s[]);
+char *MnuConvert    (char *s, int *pos);
+
+#define M_REFUSED(m)    ((m)->key < 0 || (m)->key == ESC )
+#define MNU_DY           1
+
+/* _______________________ файл menu.c __________________________ */
+#include "w.h"
+#include "glob.h"
+#include "menu.h"
+#include <signal.h>
+/* ---------------- implementation module ------------------------- */
+/* Не входит ли символ в специальный набор? Массив завершается (-1) */
+int is_in(register int c, register int s[]){
+    while (*s >= 0) {
+	if(*s == c) return YES;
+	s++;
+    }
+    return NO;
+}
+char STRING_BUFFER[ MAXLEN ]; /* временный буфер */
+/* Снять пометку с "горячей" клавиши.            */
+char *MnuConvert (char *s, int *pos){
+    int i = 0;
+    *pos = (-1);
+    while (*s) {
+	if (*s == M_HOT) { *pos = i; s++; }
+	else STRING_BUFFER[i++] = *s++;
+    }
+    STRING_BUFFER[i] = '\0'; return STRING_BUFFER;
+}
+/* Рамка вокруг окна с меню */
+static void MnuWin (Menu *m) {
+    WinBorder(m->win, m->bg_attrib, m->sel_attrib,
+		      m->title, m->scrollok, YES);
+}
+/* Нарисовать scroll bar в нужной позиции */
+static void MnuWinBar (Menu *m) {
+    WINDOW *w = m -> win;  /* окно */
+    WinScrollBar(m->win, m->scrollok, m->current, m->nitems,
+		 m->title, m->bg_attrib);
+    if(m->scrollBar)  /* может быть еще какие-то наши действия */
+       m->scrollBar(m, m->current, m->nitems);
+}
+/* Роллирование меню */
+/*
+	+---+----->+-МАССИВ--+<-----+
+	|  n|всего |;;;;;;;;;|      | shift сдвиг до окна
+     cur|   |      |;;;;;;;;;|      |
+ текущий|   |   =ОКНО============<---------|
+ элемент|   |   I   ;;;;;;;;;   I   | y строка окна
+ 0..n-1 |   |   I   ;;;;;;;;;   I   |      |
+	+------>I###:::::::::###I<--+      |h высота окна
+	    |   I   ;;;;;;;;;   I          |
+	    |   =================<---------+
+	    |      |;;;;;;;;;|
+	    +----->|_________|
+*/
+
+static void MnuRoll (Menu *ptr,
+    int aid,     /* какой новый элемент выбрать (0..n-1) */
+    int *cur, int *shift,
+    int h,       /* высота окна    (строк)      */
+    int n,       /* высота items[] (элементов)  */
+    void (*go)   (Menu *p, int y, int eraseOld),
+    void (*draw) (Menu *p),
+    int DY
+) {
+    int     y = *cur - *shift;	/* текущая строка окна */
+    int     newshift;		/* новый сдвиг */
+    int     AID_UP, AID_DN;
+
+    if (aid < 0 || aid >= n) return;  /* incorrect */
+    if (y   < 0 || y   >= h) return;  /* incorrect */
+    AID_UP = MIN (DY, n);
+    AID_DN = MAX (0, MIN (n, h - 1 - DY));
+
+    if (aid < *cur && y <= AID_UP && *shift > 0)
+	goto scroll;		/* down */
+    if (aid > *cur && y >= AID_DN && *shift + h < n)
+	goto scroll;		/* up */
+
+    if (*shift <= aid && aid < *shift + h) {
+    /* роллировать не надо, а просто пойти в нужную строку окна */
+	(*go) (ptr, aid - *shift, YES);
+	*cur = aid;      /* это надо изменять ПОСЛЕ (*go)() !!! */
+	return;
+    }
+scroll:
+    if      (aid > *cur)   newshift = aid - AID_DN; /* вверх up   */
+    else if (aid < *cur)   newshift = aid - AID_UP; /* вниз  down */
+    else                   newshift = *shift;
+
+    if (newshift + h > n)  newshift = n - h;
+    if (newshift < 0)      newshift = 0;
+
+    *shift = newshift; *cur = aid;
+    (*draw) (ptr); /* перерисовать окно */
+    (*go)   (ptr, aid - newshift, NO); /* встать в нужную строку окна */
+}
+/* Инициализация и разметка меню. На входе:
+	m->items       Массив строк.
+	m->title       Заголовок  меню.
+	m->top         Верхняя строка окна (y).
+	m->left        Левый край (x).
+	m->handler     Обработчик нажатия клавиш или NULL.
+	m->hitkeys     Специальные клавиши [] или NULL.
+	m->bg_attrib   Цвет фона окна.
+	m->sel_attrib  Цвет селекции.
+*/
+int MnuInit (Menu *m) {
+    int len, pos; char *s; register i;
+
+    m -> current  = m -> shift = 0;
+    m -> scrollok = m -> key = 0;
+    if (m -> hotkeys) { /* уничтожить старые "горячие" ключи */
+	free ((char *) m -> hotkeys); m -> hotkeys = (int *) NULL;
+    }
+ /* подсчет элементов меню */
+    for (i = 0; M_ITEM (m, i) != (char *) NULL; i++);
+    m -> nitems = i;
+
+ /* отвести массив для "горячих" клавиш */
+    if (m -> hotkeys = (int *) malloc (sizeof (int) * m -> nitems)) {
+	for (i = 0; i < m -> nitems; i++)
+	    m -> hotkeys[i] = NOKEY;
+    }
+ /* подсчитать ширину текста */
+    len = m -> title ? strlen (m -> title) : 0;
+    for (i = 0; i < m -> nitems; i++) {
+	if (*(s = M_ITEM (m, i)) == M_CTRL) continue;
+	s = MnuConvert (s, &pos);
+	if (m -> hotkeys && pos >= 0)
+	    m -> hotkeys[i] =
+		isupper (s[pos]) ? tolower (s[pos]) : s[pos];
+	if ((pos = strlen (s)) > len)
+	    len = pos;
+    }
+ /* сформировать окно */
+#define BORDERS_HEIGHT (2 +        (m -> title    ? 2 : 0))
+#define BORDERS_WIDTH  (2 + 2*DX + (m -> scrollok ? BARWIDTH + 1 : 0))
+    m -> height = m->nitems + BORDERS_HEIGHT;
+    if (m -> height > LINES * 2 / 3) { /* слишком высокое меню */
+	m -> scrollok = BAR_VER;       /* будет роллироваться  */
+	m -> height = LINES * 2 / 3;
+    }
+    if((m -> width = len + BORDERS_WIDTH) > COLS ) m->width = COLS;
+    m -> textheight = m->height - BORDERS_HEIGHT;
+    m -> textwidth  = m->width  - BORDERS_WIDTH;
+ /* окно должно лежать в пределах экрана */
+    if( m->top  + m->height > LINES ) m->top  = LINES - m->height;
+    if( m->left + m->width  > COLS  ) m->left = COLS  - m->width;
+    if( m->top  < 0 ) m->top  = 0;
+    if( m->left < 0 ) m->left = 0;
+
+    if( m->win ){ /* уничтожить старое окно */
+	KillWin( m->win ); m->win = NULL; }
+    if( m->win == NULL ){ /* создать окно и нарисовать основу */
+	if((m->win =  newwin(m->height, m->width, m->top, m->left))
+		   == NULL) return 0;
+	keypad(m->win, TRUE); MnuWin(m); MnuDraw(m);
+	/* но окно пока не вставлено в список активных окон */
+    }
+    return ( m->win != NULL );
+}
+/* Деинициализировать меню */
+void MnuDeinit (Menu *m) {
+    if( m->win ){ KillWin (m->win); m->win = NULL; }
+    if( m->hotkeys ){
+	free ((char *) m -> hotkeys); m -> hotkeys = (int *) NULL;
+    }
+}
+/* Спрятать меню */
+void MnuHide (Menu *m){ if( m->win ) HideWin(m->win); }
+/* Зачистить место для line-той строки окна меню */
+static void MnuBox (Menu *m, int line, int attr) {
+    register    WINDOW *w = m -> win;
+    register    i, xend   = MXEND(m);
+
+    wattrset (w, attr);
+    for (i = 1; i < xend; i++)
+	mvwaddch (w, line, i, ' ');
+    /* ликвидировать последствия M_CTRL-линии */
+    wattrset (w, m->bg_attrib);
+    mvwaddch (w, line, 0,    VER_LINE);
+    mvwaddch (w, line, xend, VER_LINE);
+    wattrset (w, m->bg_attrib);
+}
+/* Нарисовать строку меню в y-ой строке окна выбора */
+void MnuDrawItem (Menu *m, int y, int reverse, int selection) {
+    register WINDOW *w = m -> win;
+    int     pos, l, attr;
+    int     ay = WY (m->title, y), ax = WX (0);
+    char   *s, c;
+    int     hatch, bold, label, cont = NO, under;
+
+    if (y + m -> shift >= 0 && y + m -> shift < m -> nitems) {
+	s =    M_ITEM (m, y + m -> shift);
+	hatch = M_TST (m, y + m -> shift, I_NOSEL) ||
+		M_TST (m, y + m -> shift, M_HATCH);
+	bold  = M_TST (m, y + m -> shift, M_BOLD);
+	label = M_TST (m, y + m -> shift, M_LABEL);
+	under = M_TST (m, y + m -> shift, I_EXE);
+    }
+    else {  /* строка вне допустимого диапазона */
+	s = "~"; label = hatch = bold = NO;
+    }
+    if (*s == M_CTRL) { /* нарисовать горизонтальную черту */
+	int x, xend = MXEND(m);
+	wattrset(w, m->bg_attrib);
+	for(x=1; x < xend; x++)
+		mvwaddch(w, ay, x, HOR_LINE);
+	mvwaddch (w, ay, 0,    LEFT_JOIN);
+	mvwaddch (w, ay, xend, RIGHT_JOIN);
+	wattrset (w, m->bg_attrib);
+	return;
+    }
+    l = strlen(s = MnuConvert (s, &pos));
+    c = '\0';
+    if (l > m -> textwidth) { /* слишком длинная строка */
+	c = s[m -> textwidth];
+	s[m -> textwidth] = '\0'; cont = YES;
+	if (pos > m -> textwidth) pos = (-1);
+    }
+    if (selection)
+	MnuBox (m, ay, reverse ? m->sel_attrib   : m->bg_attrib);
+    wattrset (w, attr = (bold    ? A_BOLD        : 0) |
+			(hatch   ? A_ITALICS     : 0) |
+			(under   ? A_UNDERLINE   : 0) |
+			(reverse ? m->sel_attrib : m->bg_attrib));
+    mvwaddstr (w, ay, ax, s);
+    if( cont ) mvwaddch(w, ay, ax+m->textwidth, RIGHT_TRIANG);
+ /* Hot key letter */
+    if (pos >= 0) {
+	wattron (w, bold ? A_ITALICS : A_BOLD);
+	mvwaddch (w, ay, WX(pos), s[pos]);
+    }
+    if (label){  /* строка помечена */
+	wattrset (w, attr | A_BOLD);
+	mvwaddch (w, ay, 1, LABEL);
+    }
+    if (under){
+	wattrset (w, A_BOLD);
+	mvwaddch (w, ay, ax-1, BOX_HATCHED);
+    }
+    if (c) s[m->textwidth] = c;
+    wattrset (w, m->bg_attrib);
+    SetPoint (m->savep, ay, ax-1);  /* курсор поставить перед словом */
+}
+/* Выбор в меню подходящего элемента */
+int MnuNext (Menu *m) {
+    char *s; register y = m -> current;
+    for (++y; y < m -> nitems; y++)
+      if ((s = M_ITEM (m, y)) && *s != M_CTRL && !M_TST (m, y, I_NOSEL))
+	 return y;
+    return (-1);
+}
+int MnuPrev (Menu *m) {
+    char *s; register y = m -> current;
+    for (--y; y >= 0; --y)
+      if ((s = M_ITEM (m, y)) && *s != M_CTRL && !M_TST (m, y, I_NOSEL))
+	 return y;
+    return (-1);
+}
+int MnuPgUp (Menu *m) {
+    char *s; register n, y = m -> current;
+    for (--y, n = 0; y >= 0; --y) {
+      if ((s = M_ITEM (m, y)) && *s != M_CTRL && !M_TST (m, y, I_NOSEL))
+	  n++;
+      if (n == m -> textheight) return y;
+    }
+    return MnuFirst (m);
+}
+int MnuPgDn (Menu *m) {
+    char *s; register n, y = m -> current;
+    for (++y, n = 0; y < m -> nitems; y++) {
+      if ((s = M_ITEM (m, y)) && *s != M_CTRL && !M_TST (m, y, I_NOSEL))
+	 n++;
+      if (n == m -> textheight) return y;
+    }
+    return MnuLast (m);
+}
+int MnuFirst (Menu *m) {
+    char *s; register y;
+    for (y = 0; y < m -> nitems; y++)
+      if ((s = M_ITEM (m, y)) && *s != M_CTRL && !M_TST (m, y, I_NOSEL))
+	 return y;
+    return (-1);
+}
+int MnuLast (Menu *m) {
+    char *s; register y;
+    for (y = m -> nitems - 1; y >= 0; --y)
+      if ((s = M_ITEM (m, y)) && *s != M_CTRL && !M_TST (m, y, I_NOSEL))
+	 return y;
+    return (-1);
+}
+int MnuThis (Menu *m) {
+    char *s;
+    if (m -> current < 0 || m -> current >= m -> nitems)
+	return (-1);		/* error */
+    if ((s = M_ITEM (m, m -> current)) &&
+	 *s != M_CTRL && !M_TST (m, m -> current, I_NOSEL))
+	return m -> current;
+    return (-1);
+}
+int MnuName (Menu *m, char *name) {
+    char *s; register y; int pos;
+    for(y = 0; y < m -> nitems; ++y)
+      if ((s = M_ITEM (m, y)) && *s != M_CTRL && !M_TST (m, y, I_NOSEL) &&
+	   strcmp(name, MnuConvert(s, &pos)) == 0 ) return y;
+    return (-1);
+}
+int MnuHot (Menu *m, unsigned c) {
+    register y; char *s;
+    if (m -> hotkeys == (int *) NULL)
+	return (-1);
+    if (c < 0400 && isupper (c))
+	c = tolower (c);
+    for (y = 0; y < m -> nitems; y++)
+	if (c == m -> hotkeys[y] &&
+	   (s = M_ITEM (m, y)) && *s != M_CTRL && !M_TST (m, y, I_NOSEL))
+	    return y;
+    return (-1);
+}
+/* Нарисовать содержимое меню для выбора */
+void MnuDraw (Menu *m) {
+    register    i, j;
+    for (i = 0; i < m -> textheight; i++)
+	MnuDrawItem (m, i, NO, m -> scrollok ? YES : NO);
+}
+/* Поставить курсор в line-тую строку окна. */
+void MnuPoint(Menu *m, int line,
+	      int eraseOld /* стирать старую селекцию? */){
+    int curline = m->current - m->shift; /* текущая строка окна */
+    if (line < 0 || line >= m -> textheight) return;  /* ошибка */
+    if (eraseOld && curline != line) /* стереть старый выбор    */
+	MnuDrawItem (m, curline, NO, YES);
+    MnuDrawItem (m, line, YES, YES); /* подсветить новую строку */
+}
+/* Перейти к y-той строке массива элементов, изменить картинку  */
+void MnuPointAt (Menu *m, int y) { char *s;
+    if (y < 0 || y >= m->nitems) return; /* ошибка! */
+    if ((s = M_ITEM (m, y)) == NULL || *s == M_CTRL) return;
+    MnuRoll (m, y, &m -> current,    &m -> shift,
+		    m -> textheight,  m -> nitems,
+	     MnuPoint, MnuDraw, MNU_DY);
+    if (m -> scrollok) MnuWinBar(m); /* сдвинуть scroll bar */
+    GetBack(m->savep, m->win); /* вернуть курсор в начало строки селекции,
+				* откуда он был сбит MnuWinBar-ом */
+}
+/* Выбор в меню без участия "мыши". */
+int MnuUsualSelect (Menu *m, int block) {
+    int sel, snew, c, done = 0;
+
+    m -> key = (-1);
+    if( ! m->win ) return TOTAL_NOSEL;
+    if((sel = MnuThis  (m)) < 0)
+    if((sel = MnuFirst (m)) < 0)
+	return TOTAL_NOSEL; /* в меню нельзя ничего выбрать */
+    RaiseWin   (m->win);    /* сделать окно верхним         */
+    MnuPointAt (m, sel);    /* проявить */
+    if(m->showMe) m->showMe(m);  /* может быть изменить позицию ? */
+
+    for (;;) {
+	c = WinGetch (m->win);
+INP:
+	if (m -> hitkeys && m -> handler) {
+	    HandlerReply reply;
+	    if (is_in (c, m -> hitkeys)) {
+		c = (*m -> handler) (m, c, &reply);
+	    /* восстановить scroll bar */
+		MnuPointAt (m, m -> current);
+		switch (reply) {
+		    case HANDLER_CONTINUE:     continue;
+		    case HANDLER_NEWCHAR:      goto INP;
+		    case HANDLER_OUT:          goto out;
+		    case HANDLER_SWITCH:       default:
+			break;	/* goto switch(c) */
+		}
+	    }
+	}
+	switch (c) {
+	    case KEY_UP:
+		if ((snew = MnuPrev (m)) < 0)  break;
+		goto mv;
+	    case KEY_DOWN:
+	next:
+		if ((snew = MnuNext (m)) < 0)  break;
+		goto mv;
+	    case KEY_HOME:
+		if ((snew = MnuFirst (m)) < 0) break;
+		goto mv;
+	    case KEY_END:
+		if ((snew = MnuLast (m)) < 0)  break;
+		goto mv;
+	    case KEY_NPAGE:
+		if ((snew = MnuPgDn (m)) < 0)  break;
+		goto mv;
+	    case KEY_PPAGE:
+		if ((snew = MnuPgUp (m)) < 0)  break;
+		goto mv;
+
+	    case KEY_IC:   /* поставить/снять пометку */
+		if (M_TST (m, sel, M_LABEL)) M_CLR (m, sel, M_LABEL);
+		else                         M_SET (m, sel, M_LABEL);
+		MnuPointAt (m, sel);
+	    /* Если вы вычеркнете  goto next;
+	     * и оставите просто   break;
+	     * то вставьте в это место
+	     * MnuPoint( m, m->current - m->shift, NO ); */
+		goto next;
+	    case KEY_DC:
+		if (M_TST (m, sel, M_HATCH)) M_CLR (m, sel, M_HATCH);
+		else                         M_SET (m, sel, M_HATCH);
+		MnuPointAt (m, sel); goto next;
+
+	    case KEY_LEFT:
+		if (block & M_LFT) {
+		    sel = M_LEFT;  goto out;
+		} break;
+	    case KEY_RIGHT:
+		if (block & M_RGT) {
+		    sel = M_RIGHT; goto out;
+		} break;
+	    case 0: break;
+	    default:
+		if (c == '\n' || c == '\r' || c == ESC)
+		    goto out;
+		if ((snew = MnuHot (m, c)) < 0) {
+		    beep(); break;
+		}
+	    /* иначе найден HOT KEY (горячая клавиша) */
+		done++; goto mv;
+	}
+	continue;
+mv:
+	MnuPointAt (m, sel = snew);
+	if(done){ wrefresh(m->win); /* проявить новую позицию */ break; }
+    }
+out: wnoutrefresh(m->win);
+     return((m->key = c) == ESC ? -1 : sel);
+     /* Меню автоматически НЕ ИСЧЕЗАЕТ: если надо
+      * явно делайте MnuHide(m); после MnuUsualSelect(); */
+}

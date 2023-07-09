@@ -1,0 +1,20 @@
+#>exl
+exl_pause "___ Copy zip files from sys to TOSH alt? ___ CNTL-C to exit, ENTR to continue"
+
+# prp
+wrp_fifs1_ cd /run/media/st/TOSH -d1
+wrp_fifs1_ mkdir -p /run/media/st/TOSH/Codium_zip/alt -cnd1
+
+# .vscode-oss.zip
+wrp_fifs1_ rm /run/media/st/TOSH/Codium_zip/alt/.vscode-oss.zip -cf1
+wrp_fifs1_ file /run/media/st/TOSH/Codium_zip/alt/.vscode-oss.zip -cnf1
+
+wrp_fifs2_ cp /home/st/.vscode-oss.zip /run/media/st/TOSH/Codium_zip/alt -f1 -d2
+wrp_fifs1_ file /run/media/st/TOSH/Codium_zip/alt/.vscode-oss.zip -cf1
+
+# VSCodium.zip 
+wrp_fifs1_ rm /run/media/st/TOSH/Codium_zip/alt/VSCodium.zip -cf1
+wrp_fifs1_ file /run/media/st/TOSH/Codium_zip/alt/VSCodium.zip -cnf1
+
+wrp_fifs2_ cp /home/st/.config/VSCodium.zip /run/media/st/TOSH/Codium_zip/alt -f1 -d2
+wrp_fifs1_ file /run/media/st/TOSH/Codium_zip/alt/VSCodium.zip -cf1

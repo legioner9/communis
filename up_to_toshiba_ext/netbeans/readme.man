@@ -1,0 +1,1 @@
+## ftp://ftp.altlinux.org/pub/distributions/ALTLinux/Sisyphus/5.1/branch/files/SRPMS/netbeans-6.5-alt1_3jpp6.src.rpm

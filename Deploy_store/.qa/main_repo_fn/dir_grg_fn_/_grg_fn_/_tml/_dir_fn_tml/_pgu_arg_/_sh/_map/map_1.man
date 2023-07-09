@@ -1,0 +1,10 @@
+fn_name:{fn_name}
+editor_start_command:{editor_start_command}
+dir_project:{dir_project}
+path_main_c:{path_main_c}
+path_go_file:{path_go_file}
+path_help_file:{path_help_file}
+path_rbl_filepath_rbl_file
+path_man_file:{path_man_file}
+path_tst_file:{path_tst_file}
+path_map_file:{path_map_file}

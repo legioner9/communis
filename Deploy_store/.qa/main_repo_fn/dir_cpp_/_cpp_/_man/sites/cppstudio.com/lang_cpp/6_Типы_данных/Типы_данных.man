@@ -1,0 +1,3 @@
+## Типы данных
+
+## http://cppstudio.com/post/271/

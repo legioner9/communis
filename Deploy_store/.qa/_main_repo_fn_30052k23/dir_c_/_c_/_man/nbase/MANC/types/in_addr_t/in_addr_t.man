@@ -1,0 +1,266 @@
+### UP
+[in_addr_t](##in_addr_t)
+[MAIN](##MAIN)
+[MAIN_ru](##MAIN_ru)
+[ANCORS](##ANCORS)
+[ISU](##ISU)
+[inet](##A_inet)
+[inet](##books_inet)
+[inet](##examples_inet)
+[inet](##classic_inet)
+[inet](##enters_inet)
+[inet](##issue_code_inet)
+[H_FILE](##H_FILE)
+[t_SYNOPSIS](##t_SYNOPSIS)
+[t_RETURN](##t_RETURN)
+[t_RETURN_ru](##t_RETURN_ru)
+[t_BUGS](##t_BUGS)
+[t_DESCRIPTION_ru](##t_DESCRIPTION_ru)
+[t_DESCRIPTION](##t_DESCRIPTION)
+[t_MIRRORS](##t_MIRRORS)
+[t_EXAMPLES](##t_EXAMPLES)
+[t_CODE_h](##t_CODE_h)
+[t_CODE_c](##t_CODE_c)
+[t_CODE_m](##t_CODE_m)
+[t_ERRORS](##t_ERRORS)
+[t_BOOKS](##t_BOOKS)
+[t_BOOKS_ru](##t_BOOKS_ru)
+[t_CONTENT](##t_CONTENT)
+
+[cat_hfiles](../../cat_hfiles.md)
+[cat_utils](../../cat_utils.md)
+[cat_structs](../../cat_structs.md)
+[cat_param](../../cat_params.md)
+[cat_macros](../../cat_macross.md)
+[cat_const](../../cat_consts.md)
+[cat_type](../../cat_types.md)
+[cat_any](../cat_anys.md)
+
+
+[UP](###UP)
+## MAIN
+:in_addr_t:
+[next](##MAIN_ru)
+
+<<MAIN>>
+[MAIN](../../fills/in_addr_t/MAIN)
+
+
+
+[UP](###UP)
+## MAIN_ru
+:in_addr_t:
+[next](##ANCORS)
+
+<<MAIN_ru>>
+[MAIN_ru](../../fills/in_addr_t/MAIN_ru)
+
+[UP](###UP)
+## ANCORS
+:in_addr_t:
+[next](##ISU)
+
+<<ANCORS>>
+[ANCORS](../../fills/in_addr_t/ANCORS)
+
+[UP](###UP)
+## ISU
+:in_addr_t:
+[next](##H_FILE)
+
+<<ISU>>
+only read
+:in_addr_t:
+[ISU](../../contents)
+[next](##inet)
+
+
+[UP](###UP)
+## inet
+:in_addr_t:
+[next](##H_FILE)
+
+
+[UP](###UP)
+## A_inet
+[manpages.org](https://www.google.ru/search?q=in_addr_t+site%3Ahttps%3A%2F%2Fmanpages.org)
+[reposcope.com_ru](https://www.google.ru/search?q=in_addr_t+site%3Ahttps%3A%2F%2Freposcope.com%2Fmanpages%2Fru)
+[pubs.opengroup.org](https://www.google.com/search?q=in_addr_t+https%3A%2F%2Fpubs.opengroup.org)
+[manpages.debian.org](https://yandex.ru/search/?text=in_addr_t+site%3Ahttps%3A%2F%2Fmanpages.debian.org%2F)
+[www.opennet.ru](http://www.opennet.ru/man.shtml?category=2&topic=in_addr_t)
+[man7.org](https://www.google.ru/search?q=in_addr_t+site%3Ahttps%3A%2F%2Fman7.org%2Flinux%2Fman-pages)
+[en.cppreference.com](https://www.google.com/search?q=in_addr_t+en.cppreference.com)
+[www.mankier.com](https://www.mankier.com/?q=in_addr_t)
+[www.codecogs.com](https://www.google.ru/search?q=in_addr_t+https%3A%2F%2Fwww.codecogs.com%2Flibrary%2Fcomputing%2F)
+[digitalmars.com](https://www.google.ru/search?q=in_addr_t+https%3A%2F%2Fdigitalmars.com%2Frtl%2F)
+
+
+[UP](###UP)
+## books_inet
+[cpp.com.ru](https://yandex.ru/search/?text=in_addr_t+site%3Ahttps%3A%2F%2Fcpp.com.ru)
+[linuxhint.com](https://www.google.ru/search?q=in_addr_t+site%3Ahttps%3A%2F%2Flinuxhint.com)
+[gnu.org](https://www.google.ru/search?q=in_addr_t+site%3Ahttps%3A%2F%2Fwww.gnu.org%2Fsoftware%2Flibc%2Fmanual)
+
+[UP](###UP)
+## examples_inet
+[yandex:examples](https://yandex.ru/search/?text=in_addr_t+example+in+c)
+[docs.oracle.com](https://www.google.com/search?q=in_addr_t+https%3A%2F%2Fdocs.oracle.com)
+[manpages.debian.org](https://yandex.ru/search/?text=in_addr_t+site%3Ahttps%3A%2F%2Fmanpages.debian.org%2F)
+[osr507doc.xinuos.com](https://www.google.com/search?q=in_addr_t+http%3A%2F%2Fosr507doc.xinuos.com%2Fen%2Fman)
+[cpp.hotexamples.com](https://cpp.hotexamples.com/examples/-/-/in_addr_t/cpp-in_addr_t-function-examples.html)
+[all-ht.ru](https://yandex.ru/search/?text=in_addr_t+site%3Ahttp%3A%2F%2Fall-ht.ru%2Finf%2Fprog%2Fc%2F)
+[cppreference.com](https://yandex.ru/search/?text=in_addr_t+site%3Ahttps%3A%2F%2Fen.cppreference.com%2Fw%2Fc%2F)
+
+[UP](###UP)
+## classic_inet
+[bogatyrev_c_unix](https://www.google.com/search?q=in_addr_t+site%3Ahttps%3A%2F%2Fcpp.com.ru%2Fbogatyrev_c_unix)
+[kr_cbook](https://www.google.com/search?q=in_addr_t+site%3Ahttps%3A%2F%2Fcpp.com.ru%2Fkr_cbook)
+
+[UP](###UP)
+## enters_inet
+[pubs.opengroup.org](https://pubs.opengroup.org/onlinepubs/9699919799/idx/head.html)
+
+[UP](###UP)
+## issue_code_inet
+[code.woboq.org](https://www.google.com/search?h=&sitesearch=https%3A%2F%2Fcode.woboq.org%2Fuserspace%2Fglibc%2F&q=in_addr_t)
+
+
+[UP](###UP)
+## H_FILE 
+[netdb_h.md](../../hfiles/netdb_h.md)
+
+
+[UP](###UP)
+## t_SYNOPSIS
+:in_addr_t:
+[next](##t_RETURN_ru)
+
+<<SYNOPSIS>>
+[SYNOPSIS](../../fills/in_addr_t/SYNOPSIS)
+
+
+[UP](###UP)
+## t_RETURN_ru
+:in_addr_t:
+[next](##t_RETURN)
+
+<<RETURN>>
+[RETURN_ru](../../fills/in_addr_t/RETURN)
+
+
+[UP](###UP)
+## t_RETURN
+:in_addr_t:
+[next](##t_DESCRIPTION_ru)
+
+<<RETURN_ru>>
+[RETURN](../../fills/in_addr_t/RETURN_ru)
+
+
+[UP](###UP)
+## t_DESCRIPTION_ru
+:in_addr_t:
+[next](##t_DESCRIPTION)
+
+<<DESCRIPTION_ru>>
+[DESCRIPTION_ru](../../fills/in_addr_t/DESCRIPTION_ru)
+
+
+[UP](###UP)
+## t_DESCRIPTION
+:in_addr_t:
+[next](##t_BUGS)
+
+<<DESCRIPTION>>
+[DESCRIPTION](../../fills/in_addr_t/DESCRIPTION)
+
+
+[UP](###UP)
+## t_MIRRORS
+:in_addr_t:
+[next](##t_BUGS)
+
+<<MIRRORS>>
+[MIRRORS](../../fills/in_addr_t/MIRRORS)
+
+
+[UP](###UP)
+## t_BUGS
+:in_addr_t:
+[next](##t_EXAMPLES)
+
+<<BUGS>>
+[BUGS](../../fills/in_addr_t/BUGS)
+
+
+[UP](###UP)
+## t_EXAMPLES
+:in_addr_t:
+[next](##t_CODE)
+
+<<EXAMPLES>>
+[EXAMPLES](../../fills/in_addr_t/EXAMPLES)
+
+
+[UP](###UP)
+## t_CODE_h
+:in_addr_t:
+[next](##t_CODE_c)
+
+<<CODE_h>>
+[CODE_h](../../fills/in_addr_t/CODE_h)
+
+
+[UP](###UP)
+## t_CODE_c
+:in_addr_t:
+[next](##t_CODE_m)
+
+<<CODE_c>>
+[CODE_c](../../fills/in_addr_t/CODE_c)
+
+
+[UP](###UP)
+## t_CODE_m
+:in_addr_t:
+[next](##t_ERRORS)
+
+<<CODE_m>>
+[CODE_m](../../fills/in_addr_t/CODE_m)
+
+
+[UP](###UP)
+## t_ERRORS
+:in_addr_t:
+[next](##t_BOOKS)
+
+<<ERRORS>>
+[ERRORS](../../fills/in_addr_t/ERRORS)
+
+
+[UP](###UP)
+## t_BOOKS
+:in_addr_t:
+[next](##t_BOOKS_ru)
+
+<<BOOKS>>
+[BOOKS](../../fills/in_addr_t/BOOKS)
+
+
+[UP](###UP)
+## t_BOOKS_ru
+:in_addr_t:
+[next](##t_CONTENT)
+
+
+<<BOOKS_ru>>
+[BOOKS_ru](../../fills/in_addr_t/BOOKS_ru)
+
+
+[UP](###UP)
+## t_CONTENT
+:33333:
+[33333.cnt](../../contents/33333.cnt)
+[next](##UP)
+
+[UP](###UP)

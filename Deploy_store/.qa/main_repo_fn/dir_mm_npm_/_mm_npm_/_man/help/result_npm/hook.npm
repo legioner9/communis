@@ -1,0 +1,10 @@
+# npm hook in ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_mm_npm_/_mm_npm_/_man/help
+
+npm ERR! npm hook add <pkg> <url> <secret> [--type=<type>]
+npm ERR! npm hook ls [pkg]
+npm ERR! npm hook rm <id>
+npm ERR! npm hook update <id> <url> <secret>
+
+# npm hook -h in ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_mm_npm_/_mm_npm_/_man/help
+
+No results for "hook"

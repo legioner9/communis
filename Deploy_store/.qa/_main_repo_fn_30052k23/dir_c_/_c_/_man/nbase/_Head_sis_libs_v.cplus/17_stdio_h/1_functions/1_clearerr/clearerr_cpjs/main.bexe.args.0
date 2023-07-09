@@ -1,0 +1,6 @@
+main.o
+io_1.o
+lc_0.o
+lc_1.o
+lib_1.o
+-lm

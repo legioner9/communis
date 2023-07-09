@@ -1,0 +1,16 @@
+ANY in ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_c_/_c_/_man/nbase/_Head_sis_libs_v.cplus/17_stdio_h/1_functions/9_fopen/fal_cpjs fail
+IN ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_c_/_c_/_man/nbase/_Head_sis_libs_v.cplus tst FAIL
+ANY in ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_c_/_c_/_man/nbase/_Head_sis_libs_posix/55_unistd_h/1_access/cb_cpjs fail
+ANY in ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_c_/_c_/_man/nbase/_Head_sis_libs_posix/55_unistd_h/1_access/mankier_cpjs fail
+ANY in ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_c_/_c_/_man/nbase/_Head_sis_libs_posix/55_unistd_h/24_fork/suc_cpjs fail
+ANY in ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_c_/_c_/_man/nbase/_Head_sis_libs_posix/55_unistd_h/32_getgroups/mankier_cpjs fail
+ANY in ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_c_/_c_/_man/nbase/_Head_sis_libs_posix/55_unistd_h/34_gethostname/mankier_cpjs fail
+ANY in ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_c_/_c_/_man/nbase/_Head_sis_libs_posix/55_unistd_h/35_getlogin/mankier_cpjs fail
+ANY in ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_c_/_c_/_man/nbase/_Head_sis_libs_posix/55_unistd_h/36_getlogin_r/mankier_cpjs fail
+ANY in ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_c_/_c_/_man/nbase/_Head_sis_libs_posix/55_unistd_h/3_chdir/mankier_cpjs fail
+bash: ./main.bexe: Нет такого файла или каталога
+ANY in ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_c_/_c_/_man/nbase/_Head_sis_libs_posix/55_unistd_h/42_getsid/getsid_cpjs fail
+ANY in ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_c_/_c_/_man/nbase/_Head_sis_libs_posix/55_unistd_h/56_read/mankier_cpjs fail
+ANY in ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_c_/_c_/_man/nbase/_Head_sis_libs_posix/6_fcntl_h/3_open/mankier_new_cpjs fail
+IN ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_c_/_c_/_man/nbase/_Head_sis_libs_posix tst FAIL
+IN check_all_tst_arr() tst FAIL

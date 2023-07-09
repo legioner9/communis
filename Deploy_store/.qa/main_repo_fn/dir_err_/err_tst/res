@@ -1,0 +1,13 @@
+[0;36m---qq_exit() $.1=$1=-d: not equal (-i|-p|-e|-n) $.2= ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_err_/err_tst/_flow_tst.sh err_ $.3=100---[0m
+[0;31m---message: $1=-d: not equal (-i|-p|-e|-n)---[0m
+[0;31m---file:  ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_err_/err_tst/_flow_tst.sh err_---[0m
+[0;31m---line: 100---[0m
+[0;31m--- err_: message ---[0m
+[0;36m---qq_pause() $.1=err_: message $.2= $.3=---[0m
+[0;31m---message: err_: message---[0m
+[0;31m---file: ---[0m
+[0;31m---line: ---[0m
+[0;36m---qq_exit() $.1=err_: message $.2= $.3=---[0m
+[0;31m---message: err_: message---[0m
+[0;31m---file: ---[0m
+[0;31m---line: ---[0m

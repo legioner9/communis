@@ -1,0 +1,117 @@
+### UP
+[00000](##00000)
+[H_FILE](##H_FILE)
+[44444_SYNOPSIS](##44444_SYNOPSIS)
+[44444_DESCRIPTION_ru](##44444_DESCRIPTION)
+[44444_DESCRIPTION](##44444_DESCRIPTION_ru)
+[44444_EXAMPLES](##44444_EXAMPLES)
+[44444_EXAMPLES_ru](##44444_EXAMPLES_ru)
+[44444_ERRORS](##44444_ERRORS)
+[44444_BOOKS](##44444_BOOKS)
+[44444_BOOKS_ru](##44444_BOOKS_ru)
+[44444_CONTENT](##44444_CONTENT)
+
+[cat_hfiles](../../cat_hfiles.md)
+[cat_utils](../../cat_utils.md)
+[cat_structs](../../cat_structs.md)
+[cat_param](../../cat_params.md)
+[cat_macros](../../cat_macross.md)
+[cat_const](../../cat_consts.md)
+[cat_type](../../cat_types.md)
+
+
+<<DESCRIPTION>>
+
+
+[UP](###UP)
+# 00000
+MAIN :00000:
+[manpages.org](https://www.google.ru/search?q=00000+site%3Ahttps%3A%2F%2Fmanpages.org)
+[pubs.opengroup.org](https://www.google.com/search?q=00000+https%3A%2F%2Fpubs.opengroup.org)
+[www.opennet.ru](http://www.opennet.ru/man.shtml?category=2&topic=00000)
+[man7.org](https://www.google.ru/search?q=00000+site%3Ahttps%3A%2F%2Fman7.org%2Flinux%2Fman-pages)
+[en.cppreference.com](https://www.google.com/search?q=00000+en.cppreference.com)
+[www.mankier.com](https://www.mankier.com/?q=00000)
+
+books
+[cpp.com.ru](https://yandex.ru/search/?text=00000+site%3Ahttps%3A%2F%2Fcpp.com.ru)
+[linuxhint.com](https://www.google.ru/search?q=00000+site%3Ahttps%3A%2F%2Flinuxhint.com)
+[gnu.org](https://www.google.ru/search?q=00000+site%3Ahttps%3A%2F%2Fwww.gnu.org%2Fsoftware%2Flibc%2Fmanual)
+
+examples
+[cpp.hotexamples.com](https://cpp.hotexamples.com/examples/-/-/00000/cpp-00000-function-examples.html)
+
+classic
+[bogatyrev_c_unix](https://www.google.com/search?q=00000+site%3Ahttps%3A%2F%2Fcpp.com.ru%2Fbogatyrev_c_unix)
+[kr_cbook](https://www.google.com/search?q=00000+site%3Ahttps%3A%2F%2Fcpp.com.ru%2Fkr_cbook)
+
+eners
+[pubs.opengroup.org](https://pubs.opengroup.org/onlinepubs/9699919799/idx/head.html)
+
+
+
+
+[UP](###UP)
+## H_FILE 
+[11111](../../hfiles/11111)
+## 44444_SYNOPSIS
+:00000:
+
+
+
+[UP](###UP)
+## 44444_DESCRIPTION_ru
+:00000:
+[ru.manpages.org](https://www.google.ru/search?q=00000+site%3Ahttps%3A%2F%2Fru.manpages.org)
+[man7.org](https://www.google.ru/search?q=00000+site%3Ahttps%3A%2F%2Fman7.org%2Flinux%2Fman-pages)
+[next](##44444_DESCRIPTION)
+
+
+
+[UP](###UP)
+## 44444_DESCRIPTION
+:00000:
+[ru.manpages.org](https://www.google.ru/search?q=00000+site%3Ahttps%3A%2F%2Fru.manpages.org)
+[cplusplus.com](https://www.cplusplus.com/reference/)
+[next](##44444_EXAMPLES)
+
+
+
+[UP](###UP)
+## 44444_EXAMPLES
+:00000:
+[cpp.hotexamples.com](https://cpp.hotexamples.com/examples/-/-/00000/cpp-00000-function-examples.html)
+[linuxhint.com](https://www.google.ru/search?q=00000+site%3Ahttps%3A%2F%2Flinuxhint.com)
+[next](##44444_EXAMPLES_ru)
+
+
+
+[UP](###UP)
+## 44444_EXAMPLES_ru
+:00000:
+[next](##44444_ERRORS)
+
+
+
+[UP](###UP)
+## 44444_BOOKS
+:00000:
+[linuxhint.com](https://www.google.ru/search?q=00000+site%3Ahttps%3A%2F%2Flinuxhint.com)
+[gnu.org](https://www.google.ru/search?q=00000+site%3Ahttps%3A%2F%2Fwww.gnu.org%2Fsoftware%2Flibc%2Fmanual)
+[next](##44444_BOOKS_ru)
+
+
+
+[UP](###UP)
+## 44444_BOOKS_ru
+:00000:
+[cpp.com.ru](https://www.google.ru/search?q=00000+site%3Ahttps%3A%2F%2Fcpp.com.ru)
+[next](##STRUCTS)
+
+[UP](###UP)
+## 44444_CONTENT
+:33333:
+[33333.cnt](../../contents/33333.cnt)
+[next](##UP)
+
+[UP](###UP)

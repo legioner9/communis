@@ -1,0 +1,9 @@
+## bckp_list_
+{cp -ruT files accoding param and delimed line from list_file}
+ARGS
+$1 (-bckp|-depl)
+$2 path_file.list2 with PATH_TAIL
+$3 delim_char
+FLOW
+-bckp => cp -ruT part_1 part_2
+-depl => cp -ruT part)2 part_1

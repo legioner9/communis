@@ -1,0 +1,10 @@
+https://code.woboq.org/userspace/glibc/sysdeps/pthread/aio_read.c.html
+
+#include <aio.h>
+#include <aio_misc.h>
+int
+aio_read (struct aiocb *aiocbp)
+{
+  return (__aio_enqueue_request ((aiocb_union *) aiocbp, LIO_READ) == NULL
+          ? -1 : 0);
+}

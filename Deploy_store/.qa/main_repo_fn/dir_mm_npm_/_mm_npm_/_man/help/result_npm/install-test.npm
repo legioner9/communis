@@ -1,0 +1,26 @@
+# npm install-test in ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_mm_npm_/_mm_npm_/_man/help
+
+npm WARN help@1.0.0 No description
+npm WARN help@1.0.0 No repository field.
+
+audited 98 packages in 1.05s
+
+24 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+
+> help@1.0.0 test ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_mm_npm_/_mm_npm_/_man/help
+> echo "Error: no test specified" && exit 1
+
+Error: no test specified
+npm ERR! Test failed.  See above for more details.
+
+# npm install-test -h in ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_mm_npm_/_mm_npm_/_man/help
+
+
+npm install-test [args]
+Same args as `npm install`
+
+alias: it

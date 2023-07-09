@@ -1,0 +1,24 @@
+# recommended symbols: allowed in cr_f_ as --vr0 [symbol]
+
+    # 
+    !
+    @
+    %
+    _
+    +
+    =
+    {        
+    }
+    :
+    /
+
+# allowed wraps
+
+    #cascsd#
+    /cascsd/
+    ::cascsd::
+    !cascsd!
+    {erverf}
+
+
+

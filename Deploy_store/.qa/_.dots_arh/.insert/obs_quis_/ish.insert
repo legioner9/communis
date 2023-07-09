@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+filename="$HOME/"
+
+# echo -e "${HLIGHT}---start file://$filename ---${NORMAL}" # start file
+
+PW=$(pwd)
+idir="$(dirname ${filename})"
+
+# cd "${idir}" || {
+#     echo "${idir} not dir" >&2
+#     return 1
+# }
+#?----------------------------------------------------
+#?-------------------------------------
+#{body_sh}
+#?-------------------------------------
+#?----------------------------------------------------
+
+# cd "$idir"
+
+unset filename
+unset PW
+unset idir

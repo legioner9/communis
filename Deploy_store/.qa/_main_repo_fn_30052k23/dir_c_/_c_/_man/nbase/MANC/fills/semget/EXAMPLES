@@ -1,0 +1,105 @@
+https://man7.org/linux/man-pages/man2/semget.2.html
+
+ Программа, показанная ниже, использует semget() для создания нового
+набора семафоров или получения идентификатора существующего набора. Он генерирует ключ
+для semget() с помощью ftok(3). Первые два аргумента командной строки
+используются в качестве аргументов pathname и proj_id для ftok(3). 
+Третий аргумент командной строки - это целое число, которое задает аргумент
+nsems для semget(). Параметры командной строки можно использовать для
+указания флагов IPC_CREAT (-c) и IPC_EXCL (-x) для вызова
+semget(). Использование этой программы продемонстрировано ниже.
+
+ Сначала мы создаем два файла, которые будут использоваться для генерации ключей
+с помощью ftok(3), создаем два набора семафоров с использованием этих файлов, а
+затем перечисляем наборы с помощью ipcs(1):
+
+           $ touch mykey mykey2
+           $ ./t_semget -c mykey p 1
+           ID = 9
+           $ ./t_semget -c mykey2 p 2
+           ID = 10
+           $ ipcs -s
+
+           ------ Semaphore Arrays --------
+           key        semid      owner      perms      nsems
+           0x7004136d 9          mtk        600        1
+           0x70041368 10         mtk        600        2
+
+ Далее мы продемонстрируем, что когда semctl(2) присваивается тот же ключ
+ (сгенерированный теми же аргументами, что и ftok(3)), он возвращает
+идентификатор уже существующего набора семафоров:
+
+           $ ./t_semget -c mykey p 1
+           ID = 9
+
+ Наконец, мы демонстрируем тип коллизии, которая может возникнуть, когда
+ftok(3) присваивается другое имя пути аргументы, имеющие одинаковый
+номер индекса:
+
+           $ ln mykey link
+           $ ls -i1 link mykey
+           2233197 link
+           2233197 mykey
+           $ ./t_semget link p 1       # Generates same key as 'mykey'
+           ID = 9
+
+ Исходный код программы
+
+       /* t_semget.c
+
+          Licensed under GNU General Public License v2 or later.
+       */
+       #include <sys/types.h>
+       #include <sys/ipc.h>
+       #include <sys/sem.h>
+       #include <sys/stat.h>
+       #include <stdio.h>
+       #include <stdlib.h>
+       #include <unistd.h>
+
+       static void
+       usage(const char *pname)
+       {
+           fprintf(stderr, "Usage: %s [-cx] pathname proj-id num-sems\n",
+                   pname);
+           fprintf(stderr, "    -c           Use IPC_CREAT flag\n");
+           fprintf(stderr, "    -x           Use IPC_EXCL flag\n");
+           exit(EXIT_FAILURE);
+       }
+
+       int
+       main(int argc, char *argv[])
+       {
+           int semid, nsems, flags, opt;
+           key_t key;
+
+           flags = 0;
+           while ((opt = getopt(argc, argv, "cx")) != -1) {
+               switch (opt) {
+               case 'c': flags |= IPC_CREAT;   break;
+               case 'x': flags |= IPC_EXCL;    break;
+               default:  usage(argv[0]);
+               }
+           }
+
+           if (argc != optind + 3)
+               usage(argv[0]);
+
+           key = ftok(argv[optind], argv[optind + 1][0]);
+           if (key == -1) {
+               perror("ftok");
+               exit(EXIT_FAILURE);
+           }
+
+           nsems = atoi(argv[optind + 2]);
+
+           semid = semget(key, nsems, flags | 0600);
+           if (semid == -1) {
+               perror("semget");
+               exit(EXIT_FAILURE);
+           }
+
+           printf("ID = %d\n", semid);
+
+           exit(EXIT_SUCCESS);
+       }

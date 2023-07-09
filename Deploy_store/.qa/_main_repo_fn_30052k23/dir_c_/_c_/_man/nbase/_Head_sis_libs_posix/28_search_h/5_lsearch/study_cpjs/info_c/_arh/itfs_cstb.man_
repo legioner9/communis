@@ -1,0 +1,46 @@
+basename
+
+    <errprf>
+
+         _a :: error -> look [=-1]itfs // (return =-1 if error)
+         _c :: error -> look [errno]itfs // ( perror, exit(errno) )
+        _ab :: error -> call cberr_a(error) look [-1]itfs
+        _cb :: error -> call cberr_c(error) look [errno]itfs
+
+         _d :: error -> look [=NULL]itfs // (return =NULL if error)
+         _e :: error -> look [!=0]itfs // (return !=0 if error)
+    <resprf>
+           _b :: result -> call cbres(result)
+
+for WRAPfn arg itfs: 
+
+    basename_a(args, __FILE__, __LINE__)
+    basename_c(args, __FILE__, __LINE__)
+    basename_x(args, __FILE__, __LINE__)
+
+
+    basename_ab(cberr_a, args, __FILE__, __LINE__)
+    basename_cb(cberr_c, args, __FILE__, __LINE__)
+    basename_xb(cberr_x, args, __FILE__, __LINE__)
+
+    basename_a_b(cbres, args, __FILE__, __LINE__)
+    basename_c_b(cbres, args, __FILE__, __LINE__)
+    basename_x_b(cbres, args, __FILE__, __LINE__)
+
+    basename_ab_b(cberr_a, cbres, args, __FILE__, __LINE__)
+    basename_cb_b(cberr_c, cbres, args, __FILE__, __LINE__)
+    basename_xb_b(cberr_x, cbres, args, __FILE__, __LINE__)
+
+for USEfn arg itfs: 
+
+    basename_a(__FILE__, __LINE__, args)
+    basename_c(__FILE__, __LINE__, args)
+
+    basename_ab(__FILE__, __LINE__, cberr, args)
+    basename_cb(__FILE__, __LINE__, cberr, args)
+
+    basename_a_b(__FILE__, __LINE__, cbres, args)
+    basename_c_b(__FILE__, __LINE__, cbres, args)
+
+    basename_ab_b(__FILE__, __LINE__, cberr, cbres, args)
+    basename_cb_b(__FILE__, __LINE__, cberr, cbres, args)

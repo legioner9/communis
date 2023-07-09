@@ -1,0 +1,7 @@
+# npm bin in /home/st/REPOBARE/_repo/plt/actio/dir_mm_npm_/_mm_npm_/_man/help
+
+/home/st/REPOBARE/_repo/plt/actio/dir_mm_npm_/_mm_npm_/_man/help/node_modules/.bin
+
+# npm bin -h in /home/st/REPOBARE/_repo/plt/actio/dir_mm_npm_/_mm_npm_/_man/help
+
+npm bin [--global]

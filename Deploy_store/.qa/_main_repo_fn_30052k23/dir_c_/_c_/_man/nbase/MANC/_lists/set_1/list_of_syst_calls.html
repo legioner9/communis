@@ -1,0 +1,554 @@
+<li><a href="#table-of-contents">Table of Contents</a>
+    <ul>
+    <li><a href="#read">read</a></li>
+    <li><a href="#write">write</a></li>
+    <li><a href="#open">open</a>
+    <ul>
+    <li><a href="#open-flags">open flags</a></li>
+    </ul>
+    </li>
+    <li><a href="#close">close</a></li>
+    <li><a href="#stat">stat</a></li>
+    <li><a href="#fstat">fstat</a></li>
+    <li><a href="#lstat">lstat</a></li>
+    <li><a href="#poll">poll</a></li>
+    <li><a href="#lseek">lseek</a>
+    <ul>
+    <li><a href="#whence-flags">whence flags</a></li>
+    </ul>
+    </li>
+    <li><a href="#mmap">mmap</a>
+    <ul>
+    <li><a href="#prot-flags">prot flags</a></li>
+    <li><a href="#flags">flags</a></li>
+    </ul>
+    </li>
+    <li><a href="#mprotect">mprotect</a>
+    <ul>
+    <li><a href="#prot-flags-1">prot flags</a></li>
+    </ul>
+    </li>
+    <li><a href="#munmap">munmap</a></li>
+    <li><a href="#brk">brk</a></li>
+    <li><a href="#rtsigaction">rt_sigaction</a></li>
+    <li><a href="#rtsigprocmask">rt_sigprocmask</a>
+    <ul>
+    <li><a href="#how-flags">how flags</a></li>
+    </ul>
+    </li>
+    <li><a href="#rtsigreturn">rt_sigreturn</a></li>
+    <li><a href="#ioctl">ioctl</a></li>
+    <li><a href="#pread64">pread64</a></li>
+    <li><a href="#pwrite64">pwrite64</a></li>
+    <li><a href="#readv">readv</a></li>
+    <li><a href="#writev">writev</a></li>
+    <li><a href="#access">access</a></li>
+    <li><a href="#pipe">pipe</a></li>
+    <li><a href="#select">select</a></li>
+    <li><a href="#schedyield">sched_yield</a></li>
+    <li><a href="#mremap">mremap</a>
+    <ul>
+    <li><a href="#flags-1">flags</a></li>
+    </ul>
+    </li>
+    <li><a href="#msync">msync</a>
+    <ul>
+    <li><a href="#flags-2">flags</a></li>
+    </ul>
+    </li>
+    <li><a href="#mincore">mincore</a></li>
+    <li><a href="#madvise">madvise</a>
+    <ul>
+    <li><a href="#advice">advice</a></li>
+    </ul>
+    </li>
+    <li><a href="#shmget">shmget</a>
+    <ul>
+    <li><a href="#shmflg">shmflg</a></li>
+    </ul>
+    </li>
+    <li><a href="#shmat">shmat</a>
+    <ul>
+    <li><a href="#shmflg-1">shmflg</a></li>
+    </ul>
+    </li>
+    <li><a href="#shmctl">shmctl</a>
+    <ul>
+    <li><a href="#cmd">cmd</a></li>
+    </ul>
+    </li>
+    <li><a href="#dup">dup</a></li>
+    <li><a href="#dup2">dup2</a></li>
+    <li><a href="#pause">pause</a></li>
+    <li><a href="#nanosleep">nanosleep</a></li>
+    <li><a href="#getitimer">getitimer</a>
+    <ul>
+    <li><a href="#which-timers">which timers</a></li>
+    </ul>
+    </li>
+    <li><a href="#alarm">alarm</a></li>
+    <li><a href="#setitimer">setitimer</a></li>
+    <li><a href="#getpid">getpid</a></li>
+    <li><a href="#sendfile">sendfile</a></li>
+    <li><a href="#socket">socket</a>
+    <ul>
+    <li><a href="#domain-flags">domain flags</a></li>
+    <li><a href="#type-flags">type flags</a></li>
+    </ul>
+    </li>
+    <li><a href="#connect">connect</a></li>
+    <li><a href="#accept">accept</a></li>
+    <li><a href="#sendto">sendto</a>
+    <ul>
+    <li><a href="#flags-3">flags</a></li>
+    </ul>
+    </li>
+    <li><a href="#recvfrom">recvfrom</a>
+    <ul>
+    <li><a href="#flags-4">flags</a></li>
+    </ul>
+    </li>
+    <li><a href="#sendmsg">sendmsg</a></li>
+    <li><a href="#recvmsg">recvmsg</a></li>
+    <li><a href="#shutdown">shutdown</a>
+    <ul>
+    <li><a href="#how">how</a></li>
+    </ul>
+    </li>
+    <li><a href="#bind">bind</a></li>
+    <li><a href="#listen">listen</a></li>
+    <li><a href="#getsockname">getsockname</a></li>
+    <li><a href="#getpeername">getpeername</a></li>
+    <li><a href="#socketpair">socketpair</a></li>
+    <li><a href="#setsockopt">setsockopt</a></li>
+    <li><a href="#getsockopt">getsockopt</a></li>
+    <li><a href="#clone">clone</a>
+    <ul>
+    <li><a href="#flags-5">flags</a></li>
+    </ul>
+    </li>
+    <li><a href="#fork">fork</a></li>
+    <li><a href="#vfork">vfork</a></li>
+    <li><a href="#execve">execve</a></li>
+    <li><a href="#exit">exit</a></li>
+    <li><a href="#wait4">wait4</a>
+    <ul>
+    <li><a href="#options">options</a></li>
+    </ul>
+    </li>
+    <li><a href="#kill">kill</a></li>
+    <li><a href="#getppid">getppid</a></li>
+    <li><a href="#uname">uname</a></li>
+    <li><a href="#semget">semget</a></li>
+    <li><a href="#semop">semop</a></li>
+    <li><a href="#semctl">semctl</a>
+    <ul>
+    <li><a href="#cmd-1">cmd</a></li>
+    </ul>
+    </li>
+    <li><a href="#shmdt">shmdt</a></li>
+    <li><a href="#msgget">msgget</a></li>
+    <li><a href="#msgsnd">msgsnd</a>
+    <ul>
+    <li><a href="#msgflg">msgflg</a></li>
+    </ul>
+    </li>
+    <li><a href="#msgrcv">msgrcv</a></li>
+    <li><a href="#msgctl">msgctl</a>
+    <ul>
+    <li><a href="#cmd-2">cmd</a></li>
+    </ul>
+    </li>
+    <li><a href="#fcntl">fcntl</a>
+    <ul>
+    <li><a href="#cmd-3">cmd</a></li>
+    <li><a href="#flock">flock</a></li>
+    <li><a href="#fownerex">f_owner_ex</a></li>
+    </ul>
+    </li>
+    <li><a href="#flock-1">flock</a>
+    <ul>
+    <li><a href="#operation">operation</a></li>
+    </ul>
+    </li>
+    <li><a href="#fsync">fsync</a></li>
+    <li><a href="#fdatasync">fdatasync</a></li>
+    <li><a href="#truncate">truncate</a></li>
+    <li><a href="#ftruncate">ftruncate</a></li>
+    <li><a href="#getdents">getdents</a>
+    <ul>
+    <li><a href="#types">types</a></li>
+    </ul>
+    </li>
+    <li><a href="#getcwd">getcwd</a></li>
+    <li><a href="#chdir">chdir</a></li>
+    <li><a href="#fchdir">fchdir</a></li>
+    <li><a href="#rename">rename</a></li>
+    <li><a href="#mkdir">mkdir</a></li>
+    <li><a href="#rmdir">rmdir</a></li>
+    <li><a href="#creat">creat</a></li>
+    <li><a href="#link">link</a></li>
+    <li><a href="#unlink">unlink</a></li>
+    <li><a href="#symlink">symlink</a></li>
+    <li><a href="#readlink">readlink</a></li>
+    <li><a href="#chmod">chmod</a></li>
+    <li><a href="#fchmod">fchmod</a></li>
+    <li><a href="#chown">chown</a></li>
+    <li><a href="#fchown">fchown</a></li>
+    <li><a href="#lchown">lchown</a></li>
+    <li><a href="#umask">umask</a></li>
+    <li><a href="#gettimeofday">gettimeofday</a></li>
+    <li><a href="#getrlimit">getrlimit</a>
+    <ul>
+    <li><a href="#resource-flags">resource flags</a></li>
+    </ul>
+    </li>
+    <li><a href="#getrusage">getrusage</a>
+    <ul>
+    <li><a href="#who-target">who target</a></li>
+    </ul>
+    </li>
+    <li><a href="#sysinfo">sysinfo</a></li>
+    <li><a href="#times">times</a></li>
+    <li><a href="#ptrace">ptrace</a>
+    <ul>
+    <li><a href="#request-flags">request flags</a></li>
+    </ul>
+    </li>
+    <li><a href="#getuid">getuid</a></li>
+    <li><a href="#syslog">syslog</a>
+    <ul>
+    <li><a href="#type-flag">type flag</a></li>
+    </ul>
+    </li>
+    <li><a href="#getgid">getgid</a></li>
+    <li><a href="#setuid">setuid</a></li>
+    <li><a href="#setgid">setgid</a></li>
+    <li><a href="#geteuid">geteuid</a></li>
+    <li><a href="#getegid">getegid</a></li>
+    <li><a href="#setpgid">setpgid</a></li>
+    <li><a href="#getppid-1">getppid</a></li>
+    <li><a href="#getpgrp">getpgrp</a></li>
+    <li><a href="#setsid">setsid</a></li>
+    <li><a href="#setreuid">setreuid</a></li>
+    <li><a href="#setregid">setregid</a></li>
+    <li><a href="#getgroups">getgroups</a></li>
+    <li><a href="#setgroups">setgroups</a></li>
+    <li><a href="#setresuid">setresuid</a></li>
+    <li><a href="#setresgid">setresgid</a></li>
+    <li><a href="#getresuid">getresuid</a></li>
+    <li><a href="#getresgid">getresgid</a></li>
+    <li><a href="#getpgid">getpgid</a></li>
+    <li><a href="#setfsuid">setfsuid</a></li>
+    <li><a href="#setfsgid">setfsgid</a></li>
+    <li><a href="#getsid">getsid</a></li>
+    <li><a href="#capget">capget</a></li>
+    <li><a href="#capset">capset</a></li>
+    <li><a href="#rtsigpending">rt_sigpending</a></li>
+    <li><a href="#rtsigtimedwait">rt_sigtimedwait</a></li>
+    <li><a href="#rtsigqueueinfo">rt_sigqueueinfo</a></li>
+    <li><a href="#rtsigsuspend">rt_sigsuspend</a></li>
+    <li><a href="#sigaltstack">sigaltstack</a></li>
+    <li><a href="#utime">utime</a></li>
+    <li><a href="#mknod">mknod</a></li>
+    <li><a href="#uselib">uselib</a></li>
+    <li><a href="#personality">personality</a></li>
+    <li><a href="#ustat">ustat</a></li>
+    <li><a href="#statfs">statfs</a></li>
+    <li><a href="#fstatfs">fstatfs</a></li>
+    <li><a href="#sysfs">sysfs</a></li>
+    <li><a href="#getpriority">getpriority</a>
+    <ul>
+    <li><a href="#which">which</a></li>
+    </ul>
+    </li>
+    <li><a href="#setpriority">setpriority</a></li>
+    <li><a href="#schedsetparam">sched_setparam</a></li>
+    <li><a href="#schedgetparam">sched_getparam</a></li>
+    <li><a href="#schedsetscheduler">sched_setscheduler</a>
+    <ul>
+    <li><a href="#policy">policy</a></li>
+    </ul>
+    </li>
+    <li><a href="#schedgetscheduler">sched_getscheduler</a></li>
+    <li><a href="#schedgetprioritymax">sched_get_priority_max</a></li>
+    <li><a href="#schedgetprioritymin">sched_get_priority_min</a></li>
+    <li><a href="#schedrrgetinterval">sched_rr_get_interval</a></li>
+    <li><a href="#mlock">mlock</a></li>
+    <li><a href="#munlock">munlock</a></li>
+    <li><a href="#mlockall">mlockall</a>
+    <ul>
+    <li><a href="#flags-6">flags</a></li>
+    </ul>
+    </li>
+    <li><a href="#munlockall">munlockall</a></li>
+    <li><a href="#vhangup">vhangup</a></li>
+    <li><a href="#modifyldt">modify_ldt</a></li>
+    <li><a href="#pivotroot">pivot_root</a></li>
+    <li><a href="#prctl">prctl</a>
+    <ul>
+    <li><a href="#option">option</a></li>
+    </ul>
+    </li>
+    <li><a href="#archprctl">arch_prctl</a></li>
+    <li><a href="#adjtimex">adjtimex</a></li>
+    <li><a href="#setrlimit">setrlimit</a></li>
+    <li><a href="#chroot">chroot</a></li>
+    <li><a href="#sync">sync</a></li>
+    <li><a href="#acct">acct</a></li>
+    <li><a href="#settimeofday">settimeofday</a></li>
+    <li><a href="#mount">mount</a>
+    <ul>
+    <li><a href="#mountflags">mountflags</a></li>
+    </ul>
+    </li>
+    <li><a href="#umount2">umount2</a>
+    <ul>
+    <li><a href="#flags-7">flags</a></li>
+    </ul>
+    </li>
+    <li><a href="#swapon">swapon</a>
+    <ul>
+    <li><a href="#swapflags">swapflags</a></li>
+    </ul>
+    </li>
+    <li><a href="#swapoff">swapoff</a></li>
+    <li><a href="#reboot">reboot</a>
+    <ul>
+    <li><a href="#arg">arg</a></li>
+    </ul>
+    </li>
+    <li><a href="#sethostname">sethostname</a></li>
+    <li><a href="#setdomainname">setdomainname</a></li>
+    <li><a href="#iopl">iopl</a></li>
+    <li><a href="#ioperm">ioperm</a></li>
+    <li><a href="#initmodule">init_module</a></li>
+    <li><a href="#deletemodule">delete_module</a>
+    <ul>
+    <li><a href="#flags-8">flags</a></li>
+    </ul>
+    </li>
+    <li><a href="#quotactl">quotactl</a>
+    <ul>
+    <li><a href="#cmd-4">cmd</a></li>
+    </ul>
+    </li>
+    <li><a href="#gettid">gettid</a></li>
+    <li><a href="#readahead">readahead</a></li>
+    <li><a href="#setxattr">setxattr</a></li>
+    <li><a href="#lsetxattr">lsetxattr</a></li>
+    <li><a href="#fsetxattr">fsetxattr</a></li>
+    <li><a href="#getxattr">getxattr</a></li>
+    <li><a href="#lgetxattr">lgetxattr</a></li>
+    <li><a href="#fgetxattr">fgetxattr</a></li>
+    <li><a href="#listxattr">listxattr</a></li>
+    <li><a href="#llistxattr">llistxattr</a></li>
+    <li><a href="#flistxattr">flistxattr</a></li>
+    <li><a href="#removexattr">removexattr</a></li>
+    <li><a href="#lremovexattr">lremovexattr</a></li>
+    <li><a href="#fremovexattr">fremovexattr</a></li>
+    <li><a href="#tkill">tkill</a></li>
+    <li><a href="#time">time</a></li>
+    <li><a href="#futex">futex</a>
+    <ul>
+    <li><a href="#op">op</a></li>
+    </ul>
+    </li>
+    <li><a href="#schedsetaffinity">sched_setaffinity</a></li>
+    <li><a href="#schedgetaffinity">sched_getaffinity</a></li>
+    <li><a href="#setthreadarea">set_thread_area</a></li>
+    <li><a href="#iosetup">io_setup</a></li>
+    <li><a href="#iodestroy">io_destroy</a></li>
+    <li><a href="#iogetevents">io_getevents</a></li>
+    <li><a href="#iosubmit">io_submit</a></li>
+    <li><a href="#iocancel">io_cancel</a></li>
+    <li><a href="#getthreadarea">get_thread_area</a></li>
+    <li><a href="#lookupdcookie">lookup_dcookie</a></li>
+    <li><a href="#epollcreate">epoll_create</a></li>
+    <li><a href="#getdents64">getdents64</a></li>
+    <li><a href="#settidaddress">set_tid_address</a></li>
+    <li><a href="#restartsyscall">restart_syscall</a></li>
+    <li><a href="#semtimedop">semtimedop</a></li>
+    <li><a href="#fadvise64">fadvise64</a>
+    <ul>
+    <li><a href="#advice-1">advice</a></li>
+    </ul>
+    </li>
+    <li><a href="#timercreate">timer_create</a>
+    <ul>
+    <li><a href="#clockid">clockid</a></li>
+    </ul>
+    </li>
+    <li><a href="#timersettime">timer_settime</a></li>
+    <li><a href="#timergettime">timer_gettime</a></li>
+    <li><a href="#timergetoverrun">timer_getoverrun</a></li>
+    <li><a href="#timerdelete">timer_delete</a></li>
+    <li><a href="#clocksettime">clock_settime</a></li>
+    <li><a href="#clockgettime">clock_gettime</a></li>
+    <li><a href="#clockgetres">clock_getres</a></li>
+    <li><a href="#clocknanosleep">clock_nanosleep</a></li>
+    <li><a href="#exitgroup">exit_group</a></li>
+    <li><a href="#epollwait">epoll_wait</a></li>
+    <li><a href="#epollctl">epoll_ctl</a>
+    <ul>
+    <li><a href="#op-1">op</a></li>
+    </ul>
+    </li>
+    <li><a href="#tgkill">tgkill</a></li>
+    <li><a href="#utimes">utimes</a></li>
+    <li><a href="#mbind">mbind</a>
+    <ul>
+    <li><a href="#mode">mode</a></li>
+    </ul>
+    </li>
+    <li><a href="#setmempolicy">set_mempolicy</a></li>
+    <li><a href="#getmempolicy">get_mempolicy</a>
+    <ul>
+    <li><a href="#flags-9">flags</a></li>
+    </ul>
+    </li>
+    <li><a href="#mqopen">mq_open</a>
+    <ul>
+    <li><a href="#oflag">oflag</a></li>
+    </ul>
+    </li>
+    <li><a href="#mqunlink">mq_unlink</a></li>
+    <li><a href="#mqtimedsend">mq_timedsend</a></li>
+    <li><a href="#mqtimedreceive">mq_timedreceive</a></li>
+    <li><a href="#mqnotify">mq_notify</a></li>
+    <li><a href="#kexecload">kexec_load</a>
+    <ul>
+    <li><a href="#flags-10">flags</a></li>
+    </ul>
+    </li>
+    <li><a href="#waitid">waitid</a>
+    <ul>
+    <li><a href="#options-1">options</a></li>
+    </ul>
+    </li>
+    <li><a href="#addkey">add_key</a>
+    <ul>
+    <li><a href="#keyring">keyring</a></li>
+    </ul>
+    </li>
+    <li><a href="#requestkey">request_key</a></li>
+    <li><a href="#keyctl">keyctl</a>
+    <ul>
+    <li><a href="#cmd-5">cmd</a></li>
+    </ul>
+    </li>
+    <li><a href="#ioprioset">ioprio_set</a>
+    <ul>
+    <li><a href="#which-1">which</a></li>
+    </ul>
+    </li>
+    <li><a href="#ioprioget">ioprio_get</a></li>
+    <li><a href="#inotifyinit">inotify_init</a></li>
+    <li><a href="#inotifyaddwatch">inotify_add_watch</a></li>
+    <li><a href="#inotifyrmwatch">inotify_rm_watch</a></li>
+    <li><a href="#migratepages">migrate_pages</a></li>
+    <li><a href="#openat">openat</a></li>
+    <li><a href="#mkdirat">mkdirat</a></li>
+    <li><a href="#mknodat">mknodat</a></li>
+    <li><a href="#fchownat">fchownat</a></li>
+    <li><a href="#unlinkat">unlinkat</a></li>
+    <li><a href="#renameat">renameat</a></li>
+    <li><a href="#linkat">linkat</a></li>
+    <li><a href="#symlinkat">symlinkat</a></li>
+    <li><a href="#readlinkat">readlinkat</a></li>
+    <li><a href="#fchmodat">fchmodat</a></li>
+    <li><a href="#faccessat">faccessat</a></li>
+    <li><a href="#pselect6">pselect6</a></li>
+    <li><a href="#ppoll">ppoll</a></li>
+    <li><a href="#unshare">unshare</a>
+    <ul>
+    <li><a href="#flags-11">flags</a></li>
+    </ul>
+    </li>
+    <li><a href="#setrobustlist">set_robust_list</a></li>
+    <li><a href="#getrobustlist">get_robust_list</a></li>
+    <li><a href="#splice">splice</a>
+    <ul>
+    <li><a href="#flags-12">flags</a></li>
+    </ul>
+    </li>
+    <li><a href="#tee">tee</a></li>
+    <li><a href="#syncfilerange">sync_file_range</a>
+    <ul>
+    <li><a href="#flags-13">flags</a></li>
+    </ul>
+    </li>
+    <li><a href="#vmsplice">vmsplice</a></li>
+    <li><a href="#movepages">move_pages</a>
+    <ul>
+    <li><a href="#flags-14">flags</a></li>
+    </ul>
+    </li>
+    <li><a href="#utimensat">utimensat</a></li>
+    <li><a href="#epollpwait">epoll_pwait</a></li>
+    <li><a href="#signalfd">signalfd</a></li>
+    <li><a href="#timerfdcreate">timerfd_create</a></li>
+    <li><a href="#eventfd">eventfd</a>
+    <ul>
+    <li><a href="#flags-15">flags</a></li>
+    </ul>
+    </li>
+    <li><a href="#fallocate">fallocate</a>
+    <ul>
+    <li><a href="#mode-1">mode</a></li>
+    </ul>
+    </li>
+    <li><a href="#timerfdsettime">timerfd_settime</a></li>
+    <li><a href="#timerfdgettime">timerfd_gettime</a></li>
+    <li><a href="#accept4">accept4</a></li>
+    <li><a href="#signalfd4">signalfd4</a></li>
+    <li><a href="#eventfd2">eventfd2</a></li>
+    <li><a href="#epollcreate1">epoll_create1</a></li>
+    <li><a href="#dup3">dup3</a></li>
+    <li><a href="#pipe2">pipe2</a></li>
+    <li><a href="#inotifyinit1">inotify_init1</a></li>
+    <li><a href="#preadv">preadv</a></li>
+    <li><a href="#pwritev">pwritev</a></li>
+    <li><a href="#rttgsigqueueinfo">rt_tgsigqueueinfo</a></li>
+    <li><a href="#perfeventopen">perf_event_open</a>
+    <ul>
+    <li><a href="#flags-16">flags</a></li>
+    </ul>
+    </li>
+    <li><a href="#recvmmsg">recvmmsg</a></li>
+    <li><a href="#fanotifyinit">fanotify_init</a>
+    <ul>
+    <li><a href="#flags-17">flags</a></li>
+    <li><a href="#eventfflags">event_f_flags</a></li>
+    </ul>
+    </li>
+    <li><a href="#fanotifymark">fanotify_mark</a>
+    <ul>
+    <li><a href="#dirfd">dirfd</a></li>
+    <li><a href="#flags-18">flags</a></li>
+    </ul>
+    </li>
+    <li><a href="#nametohandleat">name_to_handle_at</a></li>
+    <li><a href="#openbyhandleat">open_by_handle_at</a></li>
+    <li><a href="#syncfs">syncfs</a></li>
+    <li><a href="#sendmmsg">sendmmsg</a></li>
+    <li><a href="#setns">setns</a>
+    <ul>
+    <li><a href="#nsflag">nsflag</a></li>
+    </ul>
+    </li>
+    <li><a href="#getcpu">getcpu</a></li>
+    <li><a href="#processvmreadv">process_vm_readv</a></li>
+    <li><a href="#processvmwritev">process_vm_writev</a></li>
+    <li><a href="#kcmp">kcmp</a>
+    <ul>
+    <li><a href="#type-flags-1">type flags</a></li>
+    </ul>
+    </li>
+    <li><a href="#finitmodule">finit_module</a>
+    <ul>
+    <li><a href="#flags-19">flags</a></li>
+    </ul>
+    </li>
+    </ul>
+    </li>

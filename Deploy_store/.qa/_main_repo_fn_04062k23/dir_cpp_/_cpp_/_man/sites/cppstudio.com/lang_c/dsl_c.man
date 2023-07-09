@@ -1,0 +1,7 @@
+## dsl_c
+
+### definePtr declarePtr defineVar declareVar
+
+
+int var;
+

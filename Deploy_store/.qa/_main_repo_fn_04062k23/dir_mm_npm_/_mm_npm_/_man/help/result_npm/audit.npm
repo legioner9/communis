@@ -1,0 +1,13 @@
+# npm audit in /home/st/REPOBARE/_repo/plt/actio/dir_mm_npm_/_mm_npm_/_man/help
+
+[90m                                                                                [39m
+[90m [39m                      === npm audit security report ===                       [90m [39m
+[90m                                                                                [39m
+found 0 vulnerabilities
+ in 98 scanned packages
+
+# npm audit -h in /home/st/REPOBARE/_repo/plt/actio/dir_mm_npm_/_mm_npm_/_man/help
+
+
+npm audit [--json] [--production]
+npm audit fix [--force|--package-lock-only|--dry-run|--production|--only=(dev|prod)]

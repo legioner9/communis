@@ -1,0 +1,3 @@
+    if grep -q foo <<<"$string"; then
+        echo "It's there"
+    fi

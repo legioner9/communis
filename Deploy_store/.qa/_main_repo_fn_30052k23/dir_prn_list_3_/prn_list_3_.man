@@ -1,0 +1,8 @@
+## prn_list_3_
+{[item] <- f2e list_file[$1] => [part] <- dlm_s item delim[$2] => echo (part1, part2, part3)}
+
+### requirement for .list3 format:
+
+- if part bee nul is SPACE
+- any part mast contane 2 delim($2)
+- part (#) or empty_line not considered

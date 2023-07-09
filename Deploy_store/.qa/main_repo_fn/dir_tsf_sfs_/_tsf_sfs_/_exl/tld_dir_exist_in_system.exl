@@ -1,0 +1,19 @@
+#>exl
+eval [ ${develop1_tsf_sfs_} -eq 1 ] || exl_pause "___ TLD file to file~ in system alt ?___ CNTL-C to exit, ENTR to continue"
+
+eval echo "${name_flash}"
+eval echo "${src_d}"
+eval echo "${src_ne}"
+eval echo "${dest_d}"
+eval echo "${dest_ne}"
+eval echo "${bag}"
+
+# /home/st/.vscode-oss
+eval wrp_fifs1_ cd "${dest_d}" -d1
+
+# .vscode-oss
+eval wrp_fifs1_ rm -rf "${dest_ne}"~ -ce1
+eval wrp_fifs1_ file "${dest_ne}"~ -ne1
+
+eval wrp_fifs2_ cp -rf "${dest_ne}" "${dest_ne}"~ -ce1 -ne2
+eval wrp_fifs1_ file "${dest_ne}"~ -ce1

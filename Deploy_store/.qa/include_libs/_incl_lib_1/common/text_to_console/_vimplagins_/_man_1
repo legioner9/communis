@@ -1,0 +1,56 @@
+# https://stackoverflow.com/questions/11045390/how-to-install-vim-plugins-in-fedora-16
+# https://github.com/tpope/vim-pathogen
+#! https://setiwik.ru/kak-ustanovit-plaginy-vim-v-linux/
+
+По умолчанию Vim ожидает, что каждый плагин будет храниться в  ~/.vim/pack/<my-plugins>/. Когда Vim запустится, он загрузит все плагины, хранящиеся в файле /.vim/pack/my-plugins/start. Вы можете дать каталогу любое имя напримерmy-plugins.
+
+Создайте каталог для хранения плагинов Vim:
+$ mkdir -p ~/.vim/pack/my-plugins/start
+Если вы не хотите, чтобы плагин Vim запускался автоматически при запуске, создайте подпапку opt в каталоге плагинов ( ‘my-plugins‘) и добавьте туда пакет.
+
+Пакет, добавленный в opt, может быть загружен в память с помощью:
+
+:packadd packagename
+
+Например, давайте установим два плагина Vim – NERDTree и Vim Airline.
+
+$ mkdir -p ~/.vim/pack/my-plugins/start/NERDTree/
+$ git clone – depth 1 https://github.com/preservim/nerdtree.git ~/.vim/pack/my-plugins/start/NERDTree/ $ mkdir -p ~/.vim/pack/my-plugins/start/Airline/
+$ git clone – depth 1 https://github.com/vim-airline/vim-airline.git ~/.vim/pack/my-plugins/start/Airline/
+
+Установка плагина Vim с помощью менеджера плагинов
+Менеджеры плагинов по-прежнему полезны из-за своих особенностей. Менеджер плагинов имеет такие функции, как обновление, отключение плагинов, что позволяет легко управлять плагинами vim.
+
+Популярными менеджерами плагинов являются Vim-plug, Vundle, Pathogen, dein.vim и VAM.
+
+Давайте проверим, как установить плагины vim с помощью vim-plug.
+
+Шаг 1: Установка vim-plug
+Для установки vim-plug используйте следующую команду
+
+$ curl -fLo ~/.vim/autoload/plug.vim – create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+Шаг 2: Создайте файл ~/.vimrc
+Сделать это можно коандой:
+
+$ touch ~/.vimrc file
+
+Шаг 3: Добавьте плагины для установки в файл ~/.vimrc
+Добавьте имя и расположение каждого плагина, который будет установлен между plug#begin и plug#end ().
+
+call plug#begin()
+Plug 'preservim/NERDTree'
+Plug 'vim-airline/vim-airline'
+Plug 'https://github.com/ap/vim-css-color'
+call plug#end()
+
+Шаг 4: Установка плагинов
+Откройте Vim в терминале и введите:
+
+:PlugInstall
+
+Чтобы обновить один плагин, введите:
+
+:PlugUpdate vim-airline
+
+

@@ -1,0 +1,7 @@
+#>exl
+# ${PATH_MAIN_REPO_FN_DIR}/dir_wrp2_/_wrp2_/_fn/check_list.exl
+
+wrp2_ file --_xxd /tmp
+wrp2_ file --_xnd /tmp
+wrp2_ file --_cxd /tmp
+wrp2_ file --_cnd /tmps

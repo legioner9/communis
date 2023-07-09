@@ -1,0 +1,1 @@
+## Строковые классы std::string и std::wstring

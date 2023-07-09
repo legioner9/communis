@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<jnlp spec="1.0+"
+      codebase="file:/home/max/Downloads/java/"
+      href="Test.jnlp">
+    <information>
+        <title>Test title</title>
+        <vendor>Max</vendor>
+    </information>
+    <resources>
+        <j2se version="1.8+"
+              href="http://java.sun.com/products/autodl/j2se"/>
+        <jar href="Test.jar" overridingAdvancedLesson="true" />
+    </resources>
+    <application-desc
+            title="Dynamic Tree Demo Application"
+            overridingAdvancedLesson-class="Test">
+    </application-desc>
+    <update check="background"/>
+</jnlp>

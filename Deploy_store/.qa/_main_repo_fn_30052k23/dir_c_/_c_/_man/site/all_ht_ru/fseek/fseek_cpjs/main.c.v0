@@ -1,0 +1,77 @@
+#include <stdio.h>
+#include <stdbool.h>
+#include <inttypes.h>
+#include <iso646.h>
+#include <stdlib.h>
+#include <time.h>
+#include <limits.h>
+#include <float.h>
+#include <string.h>
+#include <math.h>
+#include <errno.h>
+#include <unistd.h>
+
+// LIB FROM ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_c_/_c_/_lib
+#include "lib/lc_0.h"
+#include "lib/lc_1.h"
+#include "lib/io_1.h"
+
+#define N 6
+
+int main(int argc, char const *argv[])
+{
+    // Переменная, в которую будет сохранен указатель
+    // на управляющую таблицу открываемого потока данных
+    FILE *mf;
+    //Массив в который будет записана считанная из потока данных строка
+    char str[50];
+
+    // Открытие файла
+    printf("Открытие файла\
+           : ");
+    mf = fopen("test.tx","r +");
+    // Проверка открытия файла
+    if (mf == NULL)
+        printf("ошибка\n");
+    else
+        printf("выполнено\n");
+
+    //Установка текущей позиции
+    printf(" Установка позиции на начало файла: ");
+    if (fseek(mf, 0, SEEK_SET) == 0)
+        printf("выполнено\n");
+    else
+        printf("ошибка\n");
+
+    //Чтение строки из файла
+    printf(" Считываем строку: ");
+    if (fgets(str, sizeof(str), mf) == NULL)
+        printf("строка не считана\n");
+    else
+        printf("% s\n", str);
+
+    //Установка текущей позиции
+    printf(" Установка позиции на пятый байт: ");
+    if (fseek(mf, 5, SEEK_SET) == 0)
+        printf("выполнено\n");
+    else
+        printf("ошибка\n");
+
+    //Чтение строки из файла
+    printf(" Считываем строку\
+           : ");
+    if (fgets(str, sizeof(str), mf) == NULL)
+        printf("строка не считана\n");
+    else
+        printf("% s\n", str);
+
+    // Закрытие файла
+    printf("Закрытие файла\
+           : ");
+    if (fclose(mf) == EOF)
+        printf("ошибка\n");
+    else
+        printf("выполнено\n");
+
+    return 0;
+}

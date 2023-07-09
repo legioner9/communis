@@ -1,0 +1,15 @@
+${PATH_MAIN_REPO_FN_DIR}/dir_dotnet_/_dotnet_/_examples/pr_1/MyApp/bin/Debug/net6.0/MyApp
+${PATH_MAIN_REPO_FN_DIR}/dir_dotnet_/_dotnet_/_examples/pr_1/MyApp/bin/Debug/net6.0/MyApp.deps.json
+${PATH_MAIN_REPO_FN_DIR}/dir_dotnet_/_dotnet_/_examples/pr_1/MyApp/bin/Debug/net6.0/MyApp.runtimeconfig.json
+${PATH_MAIN_REPO_FN_DIR}/dir_dotnet_/_dotnet_/_examples/pr_1/MyApp/bin/Debug/net6.0/MyApp.dll
+${PATH_MAIN_REPO_FN_DIR}/dir_dotnet_/_dotnet_/_examples/pr_1/MyApp/bin/Debug/net6.0/ref/MyApp.dll
+${PATH_MAIN_REPO_FN_DIR}/dir_dotnet_/_dotnet_/_examples/pr_1/MyApp/bin/Debug/net6.0/MyApp.pdb
+${PATH_MAIN_REPO_FN_DIR}/dir_dotnet_/_dotnet_/_examples/pr_1/MyApp/obj/Debug/net6.0/MyApp.csproj.AssemblyReference.cache
+${PATH_MAIN_REPO_FN_DIR}/dir_dotnet_/_dotnet_/_examples/pr_1/MyApp/obj/Debug/net6.0/MyApp.GeneratedMSBuildEditorConfig.editorconfig
+${PATH_MAIN_REPO_FN_DIR}/dir_dotnet_/_dotnet_/_examples/pr_1/MyApp/obj/Debug/net6.0/MyApp.AssemblyInfoInputs.cache
+${PATH_MAIN_REPO_FN_DIR}/dir_dotnet_/_dotnet_/_examples/pr_1/MyApp/obj/Debug/net6.0/MyApp.AssemblyInfo.cs
+${PATH_MAIN_REPO_FN_DIR}/dir_dotnet_/_dotnet_/_examples/pr_1/MyApp/obj/Debug/net6.0/MyApp.csproj.CoreCompileInputs.cache
+${PATH_MAIN_REPO_FN_DIR}/dir_dotnet_/_dotnet_/_examples/pr_1/MyApp/obj/Debug/net6.0/MyApp.dll
+${PATH_MAIN_REPO_FN_DIR}/dir_dotnet_/_dotnet_/_examples/pr_1/MyApp/obj/Debug/net6.0/ref/MyApp.dll
+${PATH_MAIN_REPO_FN_DIR}/dir_dotnet_/_dotnet_/_examples/pr_1/MyApp/obj/Debug/net6.0/MyApp.pdb
+${PATH_MAIN_REPO_FN_DIR}/dir_dotnet_/_dotnet_/_examples/pr_1/MyApp/obj/Debug/net6.0/MyApp.genruntimeconfig.cache

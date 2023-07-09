@@ -1,0 +1,2 @@
+return 0 if function success
+return n != 0 likewise errno clang error style

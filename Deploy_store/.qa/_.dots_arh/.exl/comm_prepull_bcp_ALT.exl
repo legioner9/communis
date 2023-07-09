@@ -1,0 +1,12 @@
+
+eval wrp_fifs1_ rm -frv ${PATH_MY_ONE}/ALT_store/ -cd1 -qq_exit
+eval wrp_fifs1_ rm -frv ${PATH_TOSHIBA_EXT}/ALT_store/ -cd1 -qq_exit
+eval wrp_fifs1_ rm -frv ${PATH_TOSH}/ALT_store/ -cd1 -qq_exit
+
+
+eval wrp_fifs2_ cp -rfv ${PATH_COMMUNIS}/Store/ALT_store/ ${PATH_MY_ONE}/ -cd1 -cd2 -qq_exit 1>/dev/null
+eval wrp_fifs2_ cp -rfv ${PATH_COMMUNIS}/Store/ALT_store/ ${PATH_TOSHIBA_EXT}/ -cd1 -cd2 -qq_exit 1>/dev/null
+eval wrp_fifs2_ cp -rfv ${PATH_COMMUNIS}/Store/ALT_store/ ${PATH_TOSH}/ -cd1 -cd2 -qq_exit 1>/dev/null
+eval wrp_fifs2_ cp -rfv ${PATH_COMMUNIS}/Deploy_store/plt_bd/main_store/sys_stores ${PATH_MY_ONE}/ -cd1 -cd2 -qq_exit 1>/dev/null
+eval wrp_fifs2_ cp -rfv ${PATH_COMMUNIS}/Deploy_store/plt_bd/main_store/sys_stores ${PATH_TOSHIBA_EXT}/ -cd1 -cd2 -qq_exit 1>/dev/null
+eval wrp_fifs2_ cp -rfv ${PATH_COMMUNIS}/Deploy_store/plt_bd/main_store/sys_stores ${PATH_TOSH}/ -cd1 -cd2 -qq_exit 1>/dev/null

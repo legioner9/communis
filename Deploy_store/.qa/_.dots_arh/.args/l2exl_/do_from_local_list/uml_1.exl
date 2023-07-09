@@ -1,0 +1,10 @@
+#>exl
+# ${PATH_ARGS_DIR}/l2exl_/cr_from_local_list/cr_symple_dirs.exl
+eval wrp2_ cd --_xxd ${root_dir}
+eval echo \${l2exl_item}=${l2exl_item}
+eval echo \${root_dir}=${root_dir}
+eval wrp2_ mkdir --_cnd ${root_dir}/${l2exl_item}
+eval is_est_ ${root_dir}/${l2exl_item} -d
+eval wrp2_ cp --_xxf 1.puml ${l2exl_item}/1.puml 
+eval wrp2_ cp --_xxf 1.man ${l2exl_item}/1.man
+eval wrp2_ mv --_cxf ${l2exl_item}.pdf ${l2exl_item}/${l2exl_item}.pdf

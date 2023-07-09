@@ -1,0 +1,7 @@
+## [msgctl](utils/msgctl/msgctl.man)
+## [msgget](utils/msgget/msgget.man)
+## [msgrcv](utils/msgrcv/msgrcv.man)
+## [semctl](utils/semctl/semctl.man)
+## [semget](utils/semget/semget.man)
+## [semop](utils/semop/semop.man)
+## [msgsnd](utils/msgsnd/msgsnd.man)

@@ -1,0 +1,14 @@
+#include <netdb.h>
+
+struct protoent *getprotobyname(const char *name);
+struct protoent *getprotobyname_r(const char *name,
+     struct protoent *result, char *buffer,
+     int buflen);
+struct protoent *getprotobynumber(int proto);
+struct protoent *getprotobynumber_r(int proto, struct protoent *result,
+     char *buffer, int buflen);
+struct protoent *getprotoent(void);
+struct protoent *getprotoent_r(struct protoent *result, char *buffer,
+     int buflen);
+int setprotoent(int stayopen);
+int endprotoent(void);

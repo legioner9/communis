@@ -1,0 +1,5 @@
+# my man menu_nm_ (simple hardcord menu)
+
+in: undefine
+fliow: choice item -> exec case with item
+out: exec result

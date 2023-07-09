@@ -1,0 +1,1 @@
+The memmove() function shall return s1; no return value is reserved to indicate an error.

@@ -1,0 +1,26 @@
+https://ru.manpages.org/offsetof/3
+
+В системах Linux/i386 при использовании компилятора gcc(1) с параметрами по умолчанию нижеследующая программа дает следующий результат:
+$ ./a.out
+offsets: i=0; c=4; d=8 a=16
+sizeof(struct s)=16
+
+#include <stddef.h>
+#include <stdio.h>
+#include <stdlib.h>
+int
+main(void)
+{
+    struct s {
+        int i;
+        char c;
+        double d;
+        char a[];
+    };
+    /* Вывод зависит от компилятора */
+    printf("offsets: i=%zd; c=%zd; d=%zd a=%zd\n",
+            offsetof(struct s, i), offsetof(struct s, c),
+            offsetof(struct s, d), offsetof(struct s, a));
+    printf("sizeof(struct s)=%zd\n", sizeof(struct s));
+    exit(EXIT_SUCCESS);
+}

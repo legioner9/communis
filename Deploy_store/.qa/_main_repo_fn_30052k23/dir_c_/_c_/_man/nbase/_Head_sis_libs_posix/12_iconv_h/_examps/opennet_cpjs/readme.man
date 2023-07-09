@@ -1,0 +1,50 @@
+## [Пример использования iconv в Си программе (charset iconv convert gcc example)](https://www.opennet.ru/base/dev/iconv_c.txt.html)
+
+Date: Mon, 10 Mar 2003 14:38:56 +0500
+From: Valentin Nechayev <netch@segfault.kiev.ua>
+Newsgroups: ftn.ru.unix.prog
+Subject: Пример использования iconv в Си программе
+
+VN> Вот что заработало:
+
+Соврал, и заработало не полностью, и не то показываю.
+Криворукость заразна ;)
+Логические ошибки, кроме упомянутых выше: проверка k на !=0 бессмысленна,
+если все конверсии обратимы.
+
+Вот так вот (с учётом кодировок) сейчас работает вроде бы окончательно:
+
+#include <stdio.h>
+#include <iconv.h>
+#include <errno.h>
+#include <err.h>
+int main() {
+  iconv_t cd;
+  size_t k, f, t;
+  int se;
+  const char *code = "Вопрос!";
+  const char* in = code;
+  char buf[100];
+  char* out = buf;
+
+  cd = iconv_open("cp1251", "koi8-r");
+  if( cd == (iconv_t)(-1) )
+    err( 1, "iconv_open" );
+  f = strlen(code);
+  t = sizeof buf;
+  memset( &buf, 0, sizeof buf );
+  errno = 0;
+  k = iconv(cd, &in, &f, &out, &t);
+  se = errno;
+  printf( "converted: %u,error=%d\n", (unsigned) k, se );
+
+  printf("string: %s\n", buf);
+
+  iconv_close(cd);
+  return 0;
+}
+
+Выдаёт:
+
+converted: 0,error=0
+string: бHОПHЯ!

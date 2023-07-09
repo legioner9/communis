@@ -1,0 +1,10 @@
+if [ "-h" == "$1" ]; then
+    echo -e "${CYAN} ${FNN}() help: 
+            MAIN: 
+            NAME: ${FNN}()
+            ARGS: 
+            FLOW:
+    
+            ${NORMAL}"
+    return 0
+fi

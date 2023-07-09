@@ -1,0 +1,42 @@
+[0;36m---gclone_() --tml ${COMMUNIS_PATH}/Deploy_store/.qa/.var/git/hsc_alt/main.var --name tgu -verbose ---[0m
+tml_gclone_=${COMMUNIS_PATH}/Deploy_store/.qa/.var/git/hsc_alt/main.var
+name_gclone_=tgu
+verbose_gclone_=1
+[1m--- /home/st/REPOBARE/_repo/tgu repo not exsist, clone flow: ---[0m
+[1m--- git clone git@github.com:legioner9/tgu.git ---[0m
+Cloning into 'tgu'...
+[0;36m---gadd_remote_() --tml ${COMMUNIS_PATH}/Deploy_store/.qa/.var/git/hsc_alt/main.var --name tgu -verbose ---[0m
+tml_gadd_remote_=${COMMUNIS_PATH}/Deploy_store/.qa/.var/git/hsc_alt/main.var
+name_gadd_remote_=tgu
+verbose_gadd_remote_=1
+verbose MODE in fn: gadd_remote_, with_args: --tml ${COMMUNIS_PATH}/Deploy_store/.qa/.var/git/hsc_alt/main.var --name tgu -verbose, filename: ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_gadd_remote_/gadd_remote_.sh, line: 28
+[1m--- git remote add GITHUB_LEGIONER9_tgu git@github.com:legioner9/tgu.git &>/dev/null ---[0m
+[1m--- git remote add GITHUB_LEGIONER9_tgu git@github.com:legioner9/tgu.git &>/dev/null ---[0m
+error: remote GITHUB_LEGIONER9_tgu already exists.
+[1m--- git remote add HOME_REPOBARE_BARE_tgu /home/st/REPOBARE/_bare/tgu &>/dev/null ---[0m
+[1m--- git remote add MY_ONE_REPOBARE_BARE_tgu /run/media/st/MY_ONE/REPOBARE/_bare/tgu &>/dev/null ---[0m
+[1m--- git remote add TOSHIBA_EXT_REPOBARE_BARE_tgu /run/media/st/TOSHIBA_EXT/REPOBARE/_bare/tgu &>/dev/null ---[0m
+[1m--- git remote add TOSH_REPOBARE_BARE_tgu /run/media/st/TOSH/REPOBARE/_bare/tgu &>/dev/null ---[0m
+[0;34m--- git remote -v in /run/media/st/TOSH/REPOBARE/_bare/tgu<>TOSH_REPOBARE_BARE_tgu ---[0m
+GITHUB_LEGIONER9_tgu	git@github.com:legioner9/tgu.git (fetch)
+GITHUB_LEGIONER9_tgu	git@github.com:legioner9/tgu.git (push)
+HOME_REPOBARE_BARE_tgu	/home/st/REPOBARE/_bare/tgu (fetch)
+HOME_REPOBARE_BARE_tgu	/home/st/REPOBARE/_bare/tgu (push)
+MY_ONE_REPOBARE_BARE_tgu	/run/media/st/MY_ONE/REPOBARE/_bare/tgu (fetch)
+MY_ONE_REPOBARE_BARE_tgu	/run/media/st/MY_ONE/REPOBARE/_bare/tgu (push)
+TOSHIBA_EXT_REPOBARE_BARE_tgu	/run/media/st/TOSHIBA_EXT/REPOBARE/_bare/tgu (fetch)
+TOSHIBA_EXT_REPOBARE_BARE_tgu	/run/media/st/TOSHIBA_EXT/REPOBARE/_bare/tgu (push)
+TOSH_REPOBARE_BARE_tgu	/run/media/st/TOSH/REPOBARE/_bare/tgu (fetch)
+TOSH_REPOBARE_BARE_tgu	/run/media/st/TOSH/REPOBARE/_bare/tgu (push)
+origin	git@github.com:legioner9/tgu.git (fetch)
+origin	git@github.com:legioner9/tgu.git (push)
+[0;36m---gpull_() --tml ${COMMUNIS_PATH}/Deploy_store/.qa/.var/git/hsc_alt/main.var --name tgu -verbose ---[0m
+tml_gpull_=${COMMUNIS_PATH}/Deploy_store/.qa/.var/git/hsc_alt/main.var
+name_gpull_=tgu
+verbose_gpull_=1
+[1m--- git pull GITHUB_LEGIONER9_tgu master ---[0m
+From github.com:legioner9/tgu
+ * branch            master     -> FETCH_HEAD
+ * [new branch]      master     -> GITHUB_LEGIONER9_tgu/master
+Already up to date.
+[0;34m--- Success git pull GITHUB_LEGIONER9_tgu master to /home/st/REPOBARE/_repo/tgu ---[0m

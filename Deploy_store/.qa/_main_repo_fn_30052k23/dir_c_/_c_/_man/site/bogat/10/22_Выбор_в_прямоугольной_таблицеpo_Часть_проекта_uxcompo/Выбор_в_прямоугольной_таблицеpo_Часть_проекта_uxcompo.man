@@ -1,0 +1,597 @@
+## Выбор в прямоугольной таблице. Часть проекта uxcom.
+
+Пример 22
+
+```cpp
+/* ______________________________________________________________ */
+/*      ПРЯМОУГОЛЬНАЯ ТАБЛИЦА-МЕНЮ                                */
+/* _______________________ файл table.h _________________________ */
+typedef struct _Table { /* Паспорт таблицы                */
+	int nitems;     /* количество элементов в таблице */
+	Info *items;    /* массив элементов               */
+	char *fmt;      /* формат вывода                  */
+	int key;        /* кнопка, завершившая выбор в таблице */
+
+	int current;    /* номер выбранного элемента      */
+	int shift;      /* число элементов перед окном    */
+	WINDOW *win;    /* окно в котором размещена таблица */
+	int left, top, height, width; /* размеры и расположение
+			   таблицы в окне */
+	int space;      /* интервал между колонками   */
+	int elen;       /* макс. ширина колонки       */
+	int tcols;      /* число колонок в таблице    */
+	int cols;       /* число колонок в видимой части таблицы       */
+	int cutpos;     /* позиция для обрубания слишком длинных строк */
+	int scrollok;   /* роллируется ? */
+	int exposed;    /* нарисована  ? */
+	int elems;      /* текущее число эл-тов в подокне      */
+	int maxelems;   /* максимальное число эл-тов в подокне */
+	int maxshift;   /* максимальный сдвиг */
+	int bg_attrib, sel_attrib;      /* цвет фона и выбранного
+					   элемента */
+	Point   savep;
+	/* Функции проявки/спрятывания окна */
+	int  (*showMe)(struct _Table *tbl);
+	void (*hideMe)(struct _Table *tbl);
+void (*scrollBar)(struct _Table *tbl, int whichbar, int n, int among);
+	/* Обработчик специальных клавиш */
+	int *hitkeys;
+	int (*handler)(struct _Table *tbl, int c, HandlerReply *reply);
+} Table;
+
+#define T_BOLD       M_BOLD
+#define T_NOSEL      I_NOSEL
+#define T_HATCH      M_HATCH
+#define T_LABEL      M_LABEL
+
+#define T_SET(m, i, flg)        (((m)->items)[i]).fl  |=  (flg)
+#define T_CLR(m, i, flg)        (((m)->items)[i]).fl  &= ~(flg)
+#define T_TST(m, i, flg)        ((((m)->items)[i]).fl &   (flg))
+
+#define T_ITEM(m, i)            ((((m)->items)[i]).s)
+/* Формат 'd' ниже вставлен лишь для текущего состояния использования
+ * форматов в нашем проекте:      */
+#define T_ITEMF(m, i, cut)        \
+  ((m)->fmt && *(m)->fmt != 'd' ? \
+	TblConvert(T_ITEM((m), i), (m)->fmt, (cut)) : T_ITEM((m), i))
+#define T_VISIBLE(tbl, new)   ((tbl)->exposed == YES && \
+  (new) >= (tbl)->shift && (new) < (tbl)->shift + (tbl)->elems)
+#define TLABSIZE        2  /* ширина поля меток */
+#define T_REFUSED(t)	((t)->key < 0 || (t)->key == ESC )
+
+int TblCount( Table *tbl );
+void TblInit( Table *tbl, int forcedOneColumn );
+
+void TblChkCur  ( Table *tbl );
+int  TblChkShift( Table *tbl );
+void TblChk     ( Table *tbl );
+char *TblConvert( char *s, char *fmt, int cutpos );
+
+void TblPointAt ( Table *tbl, int snew );
+void TblPoint   ( Table *tbl, int snew, int eraseOld );
+void TblDraw    ( Table *tbl );
+void TblDrawItem( Table *tbl, int at, int reverse, int selection);
+void TblBox     ( Table *tbl, int at, int reverse, int hatched,
+		  int width, int axl, int axi, int ay);
+int  TblClear( Table *tbl );
+int  TblPlaceByName( Table *tbl, char *p );
+void TblReport( Table *tbl );
+
+void TblTag  ( Table *tbl, int at, int flag);
+void TblUntag( Table *tbl, int at, int flag);
+void TblRetag( Table *tbl, int at, int flag);
+void TblTagAll( Table *tbl, char *pattern, int flag );
+void TblUntagAll( Table *tbl, char *pattern, int flag );
+
+int  TblUsualSelect( Table *tbl );
+
+/* _______________________ файл table.c _________________________ */
+#include "w.h"
+#include "glob.h"
+#include "menu.h"
+#include "table.h"
+extern char STRING_BUFFER[MAXLEN]; /* imported from menu.c */
+/* надо указать размер, чтоб работал sizeof(STRING_BUFFER) */
+
+/* Переформатировать строку по формату fmt для выдачи в таблицу.
+ * Пока предложена простейшая интерпретация. */
+char *TblConvert( char *s, char *fmt, int cutpos ){
+    if( fmt && *fmt == 'd'){
+	register i, j, len; char *p = strrchr(s, '.');
+	if((len = strlen(s)) < DIR_SIZE && *s != '.' && p ){
+	  int sufxlen = strlen(p);
+	  for(i=0; i < len - sufxlen  ; ++i) STRING_BUFFER[i] = s[i];
+	  for(; i < DIR_SIZE - sufxlen; ++i) STRING_BUFFER[i] = ' ';
+	  for(j=0; i < DIR_SIZE; j++,   ++i) STRING_BUFFER[i] = p[j];
+	  STRING_BUFFER[i] = '\0';
+	} else strcpy(STRING_BUFFER, s);
+	if(cutpos > 0 && cutpos < sizeof(STRING_BUFFER))
+		STRING_BUFFER[cutpos] = '\0';
+    } else {  /* без формата, только обрубание */
+       if( cutpos <= 0 ) cutpos = 32000; /* Обрубание выключено */
+       strncpy(STRING_BUFFER, s, MIN(sizeof(STRING_BUFFER) - 1, cutpos));
+    }
+    return STRING_BUFFER;
+}
+/* Обрубить s до длины cutpos букв */
+char *TblCut( char *s, int cutpos ){
+    if( cutpos <= 0 ) return s;
+    strncpy(STRING_BUFFER, s, MIN(sizeof(STRING_BUFFER) - 1, cutpos));
+	return STRING_BUFFER;
+}
+/* Подсчет элементов таблицы и ширины столбца */
+int TblCount( Table *tbl ){
+	register i, L, LL; char *s;
+	L = i = 0;
+	if( tbl->items)
+	    while((s = T_ITEM(tbl, i)) != NULL ){
+		if( tbl->fmt )
+			s = TblConvert(s, tbl->fmt, 0);
+		LL = strlen(s);
+		if( LL > L ) L = LL;
+		i++;
+	    }
+	tbl->nitems = i; return L;
+}
+/* Разметка таблицы. На входе:
+	t->items          Массив данных, показываемый в меню.
+	t->exposed = NO   Таблица уже нарисована ?
+	t->fmt            Формат строк, выводимых в таблицу.
+	t->win            Окно для размещения таблицы.
+	t->showMe         Функция проявки окна.
+	t->hideMe         Функция упрятывания окна.
+	t->hitkeys        Специальные клавиши []. Конец -1.
+	t->handler        Обработчик или NULL.
+	t->width          Ширина поля таблицы.
+	t->height         Высота поля таблицы.
+	t->left           Левый край таблицы в окне.
+	t->top            Верхний край таблицы в окне.
+	t->scrollBar      Функция рисования scroll-bar-а или NULL.
+	t->bg_attrib      Цвет фона (== цвету фона окна).
+	t->sel_attrib     Цвет выбранного элемента.
+	forcedOneColumn == YES делает таблицу в 1 колонку.
+*/
+void TblInit( Table *tbl, int forcedOneColumn ){
+	int mlen = TblCount( tbl ); /* самый широкий элемент таблицы */
+     /* усечь до ширины таблицы */
+	if( mlen > tbl->width || forcedOneColumn )
+		mlen = tbl->width; /* слишком широко */
+/* ширина столбца таблицы = ширина элемента + поле меток + разделитель */
+	tbl->elen = mlen + TLABSIZE + 1;
+	/*     #####строка_элемент|     */
+	/*     метки   элемент    1     */
+     /* число столбцов во всей таблице */
+	tbl->tcols = (tbl->nitems + tbl->height - 1) / tbl->height;
+     /* число столбцов, видимых через окно (+1 для ошибок округления) */
+	tbl->cols  = tbl->width / (tbl->elen + 1);
+	if( tbl->cols == 0 ){   /* слишком широкая таблица */
+		tbl->cols = 1;  /* таблица в одну колонку  */
+		tbl->elen = tbl->width - 2;
+		mlen = tbl->elen - (TLABSIZE + 1);
+		tbl->cutpos = mlen;  /* и придется обрубать строки */
+	} else  tbl->cutpos = 0;     /* без обрубания              */
+	tbl->cols  = MIN(tbl->cols, tbl->tcols);
+     /* интервал между колонками */
+	tbl->space = (tbl->width - tbl->cols * tbl->elen)/(tbl->cols+1);
+	if( tbl->space < 0 ){ beep(); tbl->space = 0; }
+     /* сколько элементов умещается в окно */
+	tbl->maxelems = tbl-> cols *  tbl->height;
+	tbl->maxshift = (tbl->tcols * tbl->height) - tbl->maxelems;
+	if( tbl->maxshift < 0 ) tbl->maxshift = 0;
+     /* требуется ли роллирование таблицы через окно */
+	tbl->scrollok = (tbl->nitems > tbl->maxelems);
+	tbl->elems    = tbl->shift = tbl->current = 0;  /* пока */
+	tbl->exposed  = NO;     /* таблица еще не нарисована */
+	tbl->key      = (-1);
+}
+/* Проверить корректность текущей позиции */
+void TblChkCur( Table *tbl ){
+	if( tbl->current >= tbl->nitems )
+		tbl->current = tbl->nitems - 1;
+	if( tbl->current < 0 )
+		tbl->current = 0;
+}
+/* Проверить корректность сдвига (числа элементов ПЕРЕД окном) */
+int TblChkShift( Table *tbl ){
+	register int oldshift = tbl->shift;
+	/* в колонке должно быть видно достаточно много элементов */
+	if( tbl->cols == 1 &&   /* таблица в 1 колонку */
+	    tbl->tcols > 1 &&   /* но всего в ней не одна колонка */
+	    tbl->nitems - tbl->shift < tbl->height / 2 + 1
+	)   tbl->shift = tbl->nitems - (tbl->height/2 + 1);
+
+	if( tbl->shift > tbl->maxshift )
+	    tbl->shift = tbl->maxshift;
+	if( tbl->shift < 0 )
+	    tbl->shift = 0;
+	return tbl->shift != oldshift; /* скорректировано ? */
+}
+/* Проверить корректность параметров таблицы */
+void TblChk( Table *tbl ){
+again:
+     TblChkCur( tbl ); TblChkShift( tbl );
+     if( tbl -> maxelems ){
+       if( tbl -> current >= tbl->shift + tbl->maxelems ){
+	   tbl->shift = tbl->current - (tbl->maxelems - 1);
+	   goto again;
+       }
+       if( tbl->current < tbl->shift ){
+	   tbl->shift = tbl->current; goto again;
+       }
+     }
+}
+/* Указать на snew-тый элемент списка, перерисовать картинку */
+void TblPointAt( Table *tbl, int snew ){
+     int curCol; /* текущий столбец всей таблицы (для current) */
+     int newCol; /* нужный столбец таблицы       (для snew)    */
+     int colw;   /* нужный столбец ОКНА          (для snew)    */
+     int gap;    /* зазор */
+     int newshift = tbl->shift; /* новый сдвиг окна от начала массива */
+     int drawn = NO;  /* таблица целиком перерисована ? */
+
+     /* ПРоверить корректность номера желаемого элемента */
+     if( snew < 0 ) snew = 0;
+     if( snew >= tbl->nitems ) snew = tbl->nitems - 1;
+
+     if( tbl->current == snew && tbl->exposed == YES)
+	 return; /* уже стоим на требуемом элементе */
+#define WANTINC 1
+#define WANTDEC (tbl->cols-1-WANTINC)
+	gap = (tbl->height - (tbl->shift % tbl->height)) % tbl->height;
+     /* gap - это смещение, которое превращает строгую
+	постолбцовую структуру
+		 --0--        --3-		 --1--        --4-		 --2--        --5-	в сдвинутую структуру
+	     ____                          |-----    gap=2___/    пусто g0     --1-- g3     |    --4-- g6      ....
+	    \____пусто g1     --2-- g4     |    --5-- g7
+		 --0-- g2     --3-- g5     |    --6-- g8
+					   |------ shift=4
+	*/
+/* операция прокрутки данных через таблицу: TblRoll() _________________*/
+	/* Элемент уже виден в текущем окне ?     */
+	/* Параметр elems вычисляется в TblDraw() */
+	if( T_VISIBLE(tbl, snew))
+		goto ThisWindow;
+
+	/* smooth scrolling (гладкое роллирование) */
+	if( snew == tbl->shift + tbl->elems &&
+	    /* элемент непосредственно следующий ЗА окном */
+	    tbl->current == tbl->shift + tbl->elems - 1
+	    /* курсор стоит в нижнем правом углу окна */
+	){
+	    newshift++; gap--;
+	    if ( gap < 0 ) gap = tbl->height - 1 ;
+	    goto do_this;
+	}
+	if( snew == tbl->shift - 1  &&
+	    /* элемент непосредственно стоящий ПЕРЕД окном */
+	    tbl->current == tbl->shift
+	    /* и курсор стоит в верхнем левом углу окна таблицы */
+	){
+	    newshift --; gap = (gap + 1) % tbl->height;
+	    goto do_this;
+	}
+
+	/* jump scrolling (прокрутка скачком) */
+
+	curCol = (tbl->current+gap) / tbl->height;
+	newCol = (snew        +gap) / tbl->height;
+	if( tbl->cols > 1 ){
+		if( newCol > curCol ) colw = WANTINC;
+		else                  colw = WANTDEC;
+	} else  colw = 0;
+	newshift = (newCol - colw) * tbl->height  -  gap ;
+
+do_this:
+	if( tbl->shift != newshift || tbl->exposed == NO){
+	   tbl->shift = newshift;
+	   TblChkShift( tbl ); /* >= 0  && <= max */
+	   TblDraw( tbl );     /* перерисовать все окно с нового места */
+	   drawn = YES;        /* перерисовано целиком */
+	}
+ThisWindow: /* поставить курсор в текущем окне без перерисовки окна */
+	TblPoint( tbl,  snew, !drawn );
+	/* tbl->current = snew; сделается в TblPoint() */
+}
+/* Поставить курсор на элемент в текущем окне */
+void TblPoint ( Table *tbl, int snew, int eraseOld ){
+	if( ! T_VISIBLE(tbl, snew)){
+		beep(); /* ERROR !!! */ return;
+	}
+	if( eraseOld && tbl->current != snew )
+	    TblDrawItem( tbl, tbl->current, NO, YES );
+	TblDrawItem( tbl, snew, YES, YES );
+	tbl->current = snew;
+	TblReport( tbl );
+}
+/* Нарисовать scroll bar в нужной позиции. Кроме того,
+ * в эту функцию можно включить и другие действия, например
+ * выдачу имени T_ITEM(tbl, tbl->current) на рамке окна. */
+void TblReport( Table *tbl ){
+     if ( tbl->scrollBar )
+	(*tbl->scrollBar)( tbl, BAR_VER|BAR_HOR,
+			   tbl->current, tbl->nitems);
+     GetBack( tbl->savep, tbl->win ); /* курсор на место ! */
+}
+/* Перерисовать все окно таблицы */
+void TblDraw( Table *tbl ){
+     register next;
+     /* число элементов в таблице (может остаться незанятое
+      * место в правой нижней части окна */
+     tbl->elems = MIN(tbl->nitems - tbl->shift, tbl->maxelems );
+     for( next = 0; next < tbl->maxelems; next++ )
+       TblDrawItem(tbl, next + tbl->shift, NO, tbl->scrollok ? YES : NO);
+     tbl->exposed = YES; /* окно изображено */
+}
+/* Нарисовать элемент таблицы */
+void TblDrawItem( Table *tbl, int at, int reverse, int selection){
+     register WINDOW *w = tbl->win;
+     int pos; char *s; int hatch, bold, label, under;
+     int ax, axl, ay, column;
+
+     if( at >= 0 && at < tbl->nitems ){
+	 s =     T_ITEM( tbl, at );
+	 if( tbl->fmt )
+	     s = TblConvert(s, tbl->fmt, tbl->cutpos);
+	 else if( tbl->cutpos > 0 )
+	     s = TblCut(s, tbl->cutpos);
+	 /* выделения */
+	 hatch = T_TST( tbl,  at, T_HATCH );
+	 bold  = T_TST( tbl,  at, T_BOLD  );
+	 label = T_TST( tbl,  at, T_LABEL );
+	 under = T_TST( tbl,  at, I_EXE   );
+     } else { s = "~"; label = hatch = bold = under = NO; }
+
+     at -= tbl->shift; /* координату в списке перевести в коорд. окна */
+     ay  = tbl->top + at % tbl->height;
+     column = at / tbl->height;
+     /* начало поля меток */
+     axl = tbl->left + tbl->space + column * (tbl->space + tbl->elen);
+     /* начало строки-элемента */
+     ax = axl + TLABSIZE;
+     if(selection)
+       TblBox( tbl, at, reverse, reverse && hatch, strlen(s), axl, ax, ay );
+     wattrset (w, reverse ? tbl->sel_attrib : tbl->bg_attrib);
+     if( hatch ) wattron(w, A_ITALICS);
+     if( bold  ) wattron(w, A_BOLD);
+     if( under ) wattron(w, A_UNDERLINE);
+     mvwaddstr(w, ay, ax, s);
+     wattrset(w, tbl->bg_attrib | (bold ? A_BOLD:0));
+     if( label )                      mvwaddch(w, ay, axl,   LABEL);
+     if( under ){ wattron(w, A_BOLD); mvwaddch(w, ay, axl+1, BOX_HATCHED);}
+     wattrset(w, tbl->bg_attrib);
+     if( column != tbl->cols-1 ) /* не последний столбец */
+	mvwaddch(w, ay, axl+tbl->elen-1 + (tbl->space+1)/2, VER_LINE);
+     wmove(w, ay, ax-1);             /* курсор перед началом строки   */
+     SetPoint(tbl->savep, ay, ax-1); /* запомнить координаты курсора */
+}
+/* Зачистить область окна для рисования элемента таблицы */
+void TblBox(Table *tbl, int at, int reverse, int hatched,
+     int width, int axl, int axi, int ay){
+     register WINDOW *w = tbl->win;
+     int len = tbl->elen;
+
+     wattrset (w, tbl->bg_attrib);
+     wboxerase(w, axl, ay, axl+len-1, ay);
+     wattrset (w, reverse ? tbl->sel_attrib : tbl->bg_attrib);
+     /* если ниже задать   axl+len+1, то подсвеченный
+      * прямоугольник будет фиксированного размера    */
+     wboxerase(w, axi, ay, axl+width-1, ay);
+     wattrset (w, tbl->bg_attrib);
+}
+/* Зачистить прямоугольную рабочую область окна tbl->win,
+ * в которой будет изображаться таблица.
+ * Эта функция нигде не вызывается ЯВНО, поэтому ВЫ должны
+ * вызывать ее сами после каждого TblInit()
+ * для этого удобно поместить ее в демон (*showMe)();
+ */
+int TblClear( Table *tbl ){
+	tbl->exposed = NO;
+	tbl->elems = 0;   /* Это всегда происходит при exposed:= NO */
+	wboxerase( tbl->win,
+		tbl->left, tbl->top,
+		tbl->left + tbl->width - 1,
+		tbl->top  + tbl->height - 1);
+	return 1;
+}
+/* Пометить элемент в таблице */
+void TblTag( Table *tbl, int at, int flag){
+	if( T_TST(tbl, at, flag)) return;
+	T_SET(tbl, at, flag);
+	if( T_VISIBLE(tbl, at))
+	    TblDrawItem(tbl, at, tbl->current == at ? YES:NO, YES );
+}
+/* Снять пометку с элемента таблицы */
+void TblUntag( Table *tbl, int at, int flag){
+	if( ! T_TST(tbl, at, flag)) return;
+	T_CLR(tbl, at, flag);
+	if( T_VISIBLE(tbl, at))
+	    TblDrawItem(tbl, at, tbl->current == at ? YES:NO, YES );
+}
+/* Изменить пометку элемента таблицы */
+void TblRetag( Table *tbl, int at, int flag){
+	if( T_TST(tbl, at, flag)) T_CLR(tbl, at, flag);
+	else                      T_SET(tbl, at, flag);
+	if( T_VISIBLE(tbl, at))
+	    TblDrawItem(tbl, at, tbl->current == at ? YES:NO, YES );
+}
+/* Используется в match() для выдачи сообщения об ошибке */
+void TblMatchErr(){}
+/* Пометить элементы, чьи имена удовлетворяют шаблону */
+void TblTagAll( Table *tbl, char *pattern, int flag ){
+     register i;
+     for(i=0; i < tbl->nitems; i++)
+     if( !T_TST(tbl, i, I_DIR) && match( T_ITEMF(tbl, i, 0), pattern))
+	  TblTag( tbl, i, flag );
+}
+/* Снять пометки с элементов по шаблону имени */
+void TblUntagAll( Table *tbl, char *pattern, int flag ){
+     register i;
+     for(i=0; i < tbl->nitems; i++)
+	 if( match( T_ITEMF(tbl, i, 0), pattern))
+	     TblUntag( tbl, i, flag );
+}
+/* Указать на элемент по шаблону его имени */
+int TblPlaceByName( Table *tbl, char *p ){
+	register i; char *s;
+
+	for( i=0; i < tbl->nitems; i++ ){
+	     s = T_ITEMF(tbl, i, 0);
+	     if( match( s, p )){
+		 if( tbl->exposed == NO ){
+		     /* Задать некорректный shift,
+		      * чтобы окно полностью перерисовалось */
+		     tbl->shift = tbl->nitems+1; tbl->elems = 0;
+		 }
+		 TblPointAt( tbl, i );
+		 return i;
+	     }
+	} return (-1);
+}
+/* Перемещение по таблице набором первых букв названия элемента */
+static int TblTrack( Table *tbl, int c){
+	char *s; register i;
+	int from;  /* с какого элемента начинать поиск */
+	int found   = 0; /* сколько было найдено */
+	int plength = 0;
+	int more    = 0;
+	char pattern[20];
+
+	if( c >= 0400 || iscntrl(c)){ beep(); return 0; }
+AddCh:
+	from = 0;
+	pattern[plength] = c;
+	pattern[plength+1] = '*';
+	pattern[plength+2] = '\0';
+	plength++;
+More:
+	for(i = from; i < tbl->nitems; i++){
+	    s = T_ITEMF(tbl, i, 0);
+	    if( match(s, pattern)){
+		++found; from = i+1;
+		TblPointAt( tbl, i );
+		c = WinGetch( tbl->win );
+
+		switch(c){
+		case '\t':   /* find next matching */
+			more++;
+			goto More;
+		case KEY_BACKSPACE: case '\177': case '\b':
+			if( plength > 1 ){
+				plength--;
+				pattern[plength]   = '*';
+				pattern[plength+1] = '\0';
+				from = 0; more++;
+				goto More;
+			} else goto out;
+		default:
+			if( c >= 0400 || iscntrl(c))        return c;
+			if( plength >= sizeof pattern - 2 ) goto out;
+			goto AddCh;
+		}
+	    }
+	}
+	/* не найдено */
+	if(more && found){ /* нет БОЛЬШЕ подходящих, но ВООБЩЕ - есть */
+	       beep(); more = found = from = 0; goto More; }
+out:    beep(); return 0;
+}
+/* Выбор в таблице */
+int TblUsualSelect( Table *tbl ){
+	int c, want;
+
+	tbl->key = (-1);
+	if( tbl->items == NULL || tbl->nitems <= 0 ) return TOTAL_NOSEL;
+	TblChk( tbl );
+	if( tbl->showMe )
+		if((*tbl->showMe)(tbl) <= 0 )
+			return (-1);
+	if( !tbl->win ) return TOTAL_NOSEL;
+	if( tbl->exposed == NO ){
+	    TblDraw ( tbl );
+	}
+	/* Указать текущий элемент */
+	TblPoint( tbl, tbl->current, NO);
+	TblReport( tbl );
+	for( ;; ){
+		c = WinGetch(tbl->win);
+	INP:
+		if( tbl->hitkeys && tbl->handler ){
+		    HandlerReply reply;
+		    if( is_in(c, tbl->hitkeys)){
+			c = (*tbl->handler)(tbl, c, &reply);
+			TblReport( tbl ); /* restore scroll bar */
+			switch( reply ){
+			case HANDLER_CONTINUE:   continue;
+			case HANDLER_NEWCHAR:    goto INP;
+			case HANDLER_OUT:        goto out;
+			case HANDLER_SWITCH:
+			default: break;  /* goto switch(c) */
+			}
+		    }
+		}
+sw:             switch( c ){
+		case KEY_LEFT:
+			want = tbl->current - tbl->height; goto mv;
+		case KEY_RIGHT:
+			want = tbl->current + tbl->height; goto mv;
+		case KEY_UP:
+			want = tbl->current - 1; goto mv;
+		case KEY_DOWN:
+		next:
+			want = tbl->current + 1; goto mv;
+		case KEY_HOME:
+			want = 0;                goto mv;
+		case KEY_END:
+			want = tbl->nitems - 1;  goto mv;
+		case KEY_NPAGE:
+			want = tbl->current + tbl->elems; goto mv;
+		case KEY_PPAGE:
+			want = tbl->current - tbl->elems; goto mv;
+		case KEY_IC:
+			if( T_TST(tbl, tbl->current, T_LABEL ))
+				T_CLR(tbl, tbl->current, T_LABEL );
+			else    T_SET(tbl, tbl->current, T_LABEL);
+
+			if( tbl->current == tbl->nitems - 1 /* LAST */){
+				TblPoint(tbl, tbl->current, NO );
+				break;
+			}
+			TblPointAt(tbl, tbl->current );
+			/* if not       goto next;
+			 * but          break;
+			 * then use
+			 *      TblPoint(tbl, tbl->current, NO);
+			 * here
+			 */
+			goto next;
+
+		case KEY_DC:
+			if( T_TST(tbl, tbl->current, T_HATCH ))
+				T_CLR(tbl, tbl->current, T_HATCH );
+			else    T_SET(tbl, tbl->current, T_HATCH);
+
+			if( tbl->current == tbl->nitems - 1 /* LAST */){
+				TblPoint(tbl, tbl->current, NO );
+				break;
+			}
+			TblPointAt(tbl, tbl->current );
+			goto next;
+
+		case ESC:
+		case '\r':
+		case '\n':
+			goto out;
+
+		case 0: break;
+		default:
+			c = TblTrack(tbl, c);
+			if( c ) goto  INP;
+			break;
+		}
+		continue;
+	mv:     TblPointAt( tbl, want );
+	}
+out:    wnoutrefresh( tbl->win );
+	if( tbl->hideMe ) (*tbl->hideMe)(tbl);
+	return ((tbl->key = c) == ESC ? -1 : tbl->current );
+}

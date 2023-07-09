@@ -1,0 +1,2 @@
++ dirent_1::opendir_с
++ dirent_1::readdir_r_e

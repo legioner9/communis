@@ -1,0 +1,5 @@
+ FILE *fopen_s(const char *path, const char *mode)
+ int fseek_s(FILE *pF, int offset, int endSet)
+ char *fgets_s(char *str, int num, FILE *stream)
+ int fclose_s(FILE *stream)
+ int fputs_s(const char *str, FILE *stream)

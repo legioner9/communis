@@ -1,0 +1,1 @@
+    prn_stat_lc_1_path_с(file_path ,__FILE__, __LINE__, STMO_PRN, STIF_ONE, STRE_MNS); /*#*/

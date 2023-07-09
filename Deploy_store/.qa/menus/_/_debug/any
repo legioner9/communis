@@ -1,0 +1,5 @@
+
+    "    # arr+=(\"sudo snap install enter arg - snap package management\")",
+    "    # res+=(\"sudo snap install\")",
+    "    # arr+=(\"sudo snap remove choice arg - snap package management\")",
+    "    # res+=(\"sudo snap remove\")",

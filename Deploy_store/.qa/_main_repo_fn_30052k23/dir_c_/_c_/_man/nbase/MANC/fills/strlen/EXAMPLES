@@ -1,0 +1,20 @@
+В следующем примере устанавливается максимальная длина ключа и данных с помощью strlen() для получения длины этих строк.
+
+#include <string.h>
+...
+struct element {
+    char *key;
+    char *data;
+};
+...
+char *key, *data;
+int len;
+
+
+*keylength = *datalength = 0;
+...
+if ((len = strlen(key)) > *keylength)
+    *keylength = len;
+if ((len = strlen(data)) > *datalength)
+    *datalength = len;
+...

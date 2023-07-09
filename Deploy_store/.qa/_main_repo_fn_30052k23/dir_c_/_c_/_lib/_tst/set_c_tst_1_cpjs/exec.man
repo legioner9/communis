@@ -1,0 +1,5 @@
++ io_1::fopen_c
++ io_1::fseek_c
++ io_1::fputs_c
++ io_1::fgets_c
++ io_1::fclose_c

@@ -1,0 +1,10 @@
+# npm deprecate in ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_mm_npm_/_mm_npm_/_man/help
+
+npm ERR! Usage: npm deprecate <pkg>[@<version>] <message>
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/st/.npm/_logs/2023-03-08T07_16_03_590Z-debug.log
+
+# npm deprecate -h in ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_mm_npm_/_mm_npm_/_man/help
+
+npm deprecate <pkg>[@<version>] <message>

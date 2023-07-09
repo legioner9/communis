@@ -1,0 +1,2 @@
+stdopen
+stdclose

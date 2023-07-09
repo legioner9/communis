@@ -1,0 +1,9 @@
+## man lc_0 lib CLang
+
+### void fill_rand_lc_0_MxV_Ac_Ar(int max_value, int argc, int arr[]);
+
+Fill Ar random int numbers from 0 to MxV
+
+### void pr_int_arr_lc_0_Ac_Ar(int argc, int arr[]);
+
+Print Ar %4d

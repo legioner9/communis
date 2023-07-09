@@ -1,0 +1,13 @@
+# npm whoami in ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_mm_npm_/_mm_npm_/_man/help
+
+npm ERR! code ENEEDAUTH
+npm ERR! need auth This command requires you to be logged in.
+npm ERR! need auth You need to authorize this machine using `npm adduser`
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/st/.npm/_logs/2023-03-08T07_17_36_812Z-debug.log
+
+# npm whoami -h in ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_mm_npm_/_mm_npm_/_man/help
+
+npm whoami [--registry <registry>]
+(just prints username according to given registry)

@@ -1,0 +1,16 @@
+# npm unstar in ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_mm_npm_/_mm_npm_/_man/help
+
+npm ERR! npm star [<pkg>...]
+npm ERR! npm unstar [<pkg>...]
+npm ERR! 
+npm ERR! alias: unstar
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/st/.npm/_logs/2023-03-08T07_17_26_003Z-debug.log
+
+# npm unstar -h in ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_mm_npm_/_mm_npm_/_man/help
+
+npm star [<pkg>...]
+npm unstar [<pkg>...]
+
+alias: unstar

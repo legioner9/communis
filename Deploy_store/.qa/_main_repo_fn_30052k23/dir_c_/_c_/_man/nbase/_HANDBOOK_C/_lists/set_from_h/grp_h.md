@@ -1,0 +1,7 @@
+endgrent
+getgrent
+getgrgid
+getgrgid_r
+getgrnam
+getgrnam_r
+setgrent

@@ -1,0 +1,19 @@
+---------------------
+-----
+void main()
+{  
+FILE *fp;   // Declaring a file pointer.
+fp = fopen("file.txt", "w");        // file will be opened in write mode.
+fprintf(fp, " Reading data from a file is a common feature of the file\n");
+fclose(fp);
+
+char ch;
+fp = fopen("file.txt", "r");  
+while((ch=fgetc(fp))!=EOF)// fgetc () function is called to read character from the file.
+{  
+printf("%c",ch);  // print the each character.
+}  
+fclose(fp);        
+}
+-----
+---------------------

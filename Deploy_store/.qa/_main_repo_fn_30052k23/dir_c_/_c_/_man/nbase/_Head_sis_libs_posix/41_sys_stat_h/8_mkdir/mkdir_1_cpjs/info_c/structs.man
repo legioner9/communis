@@ -1,0 +1,10 @@
+## dirent
+
+    struct dirent {
+        ino_t          d_ino;       /* номер inode */
+        off_t          d_off;       /* не смещение; смотрите ЗАМЕЧАНИЯ */
+        unsigned short d_reclen;    /* длина этой записи */
+        unsigned char  d_type;      /* тип файла; поддерживается
+                                    не всеми типами файловых систем */
+        char           d_name[256]; /* имя файла */
+    };

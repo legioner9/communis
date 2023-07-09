@@ -1,0 +1,4 @@
+## Оператор выбора switch
+
+## http://cppstudio.com/post/6691/
+

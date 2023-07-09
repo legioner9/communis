@@ -1,0 +1,7 @@
+# my man add_tag_nm_
+
+in: $1 = name_fn
+flow: 
+- exec choice_tag
+- search 
+out:

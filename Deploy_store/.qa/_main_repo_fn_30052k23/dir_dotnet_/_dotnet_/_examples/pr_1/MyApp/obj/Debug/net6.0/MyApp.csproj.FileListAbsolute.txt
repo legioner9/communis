@@ -1,0 +1,15 @@
+${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_dotnet_/_dotnet_/_examples/pr_1/MyApp/bin/Debug/net6.0/MyApp
+${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_dotnet_/_dotnet_/_examples/pr_1/MyApp/bin/Debug/net6.0/MyApp.deps.json
+${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_dotnet_/_dotnet_/_examples/pr_1/MyApp/bin/Debug/net6.0/MyApp.runtimeconfig.json
+${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_dotnet_/_dotnet_/_examples/pr_1/MyApp/bin/Debug/net6.0/MyApp.dll
+${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_dotnet_/_dotnet_/_examples/pr_1/MyApp/bin/Debug/net6.0/ref/MyApp.dll
+${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_dotnet_/_dotnet_/_examples/pr_1/MyApp/bin/Debug/net6.0/MyApp.pdb
+${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_dotnet_/_dotnet_/_examples/pr_1/MyApp/obj/Debug/net6.0/MyApp.csproj.AssemblyReference.cache
+${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_dotnet_/_dotnet_/_examples/pr_1/MyApp/obj/Debug/net6.0/MyApp.GeneratedMSBuildEditorConfig.editorconfig
+${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_dotnet_/_dotnet_/_examples/pr_1/MyApp/obj/Debug/net6.0/MyApp.AssemblyInfoInputs.cache
+${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_dotnet_/_dotnet_/_examples/pr_1/MyApp/obj/Debug/net6.0/MyApp.AssemblyInfo.cs
+${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_dotnet_/_dotnet_/_examples/pr_1/MyApp/obj/Debug/net6.0/MyApp.csproj.CoreCompileInputs.cache
+${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_dotnet_/_dotnet_/_examples/pr_1/MyApp/obj/Debug/net6.0/MyApp.dll
+${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_dotnet_/_dotnet_/_examples/pr_1/MyApp/obj/Debug/net6.0/ref/MyApp.dll
+${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_dotnet_/_dotnet_/_examples/pr_1/MyApp/obj/Debug/net6.0/MyApp.pdb
+${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_dotnet_/_dotnet_/_examples/pr_1/MyApp/obj/Debug/net6.0/MyApp.genruntimeconfig.cache

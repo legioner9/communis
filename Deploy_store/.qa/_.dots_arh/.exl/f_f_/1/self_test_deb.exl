@@ -1,0 +1,106 @@
+#? cp tml to fs
+eval wrp2_ mkdir --_cnd "${PWD}/dir_${name_fn_}"
+eval wrp2_ cp -rf --_xxf "${tml_dir}/f_f_" --_xnf "${PWD}/dir_${name_fn_}/${name_fn_}.sh"
+eval wrp2_ cp -rf --_xxf "${tml_dir}/file.man" --_xnf "$PWD/dir_${name_fn_}/${name_fn_}.man"
+eval wrp2_ cp -rf --_xxf "${tml_dir}/file.lst" --_xnf "$PWD/dir_${name_fn_}/${name_fn_}.lst"
+eval wrp2_ cp -rf --_xxd "${tml_dir}/_00000" --_xnd "$PWD/dir_${name_fn_}/_${name_fn_}"
+
+#? ------------------------------------------------------------
+
+#? insert to main ${name_fn_}.sh
+eval src_fn_file=${PWD}/dir_${name_fn_}/${name_fn_}.sh
+
+eval is_est_ ${src_fn_file} -f
+
+eval echo cr_f_dir_insert_ --name ${src_fn_file} --dir_insert ${insert_dir}/_fn_fff_sh/1 ===================================================
+eval cr_f_dir_insert_ --name ${src_fn_file} --dir_insert ${insert_dir}/_fn_fff_sh/1
+
+eval echo cr_f_dir_insert_ --name ${src_fn_file} --dir_insert ${insert_dir}/_fn_fff_sh/2 ===================================================
+eval cr_f_dir_insert_ --name ${src_fn_file} --dir_insert ${insert_dir}/_fn_fff_sh/2
+
+# name_fn_
+eval cr_f_ ${src_fn_file} --vi0 ${name_fn_} --vr0 {name_fn_}
+
+# dir_fns_
+eval cr_f_ ${src_fn_file} --vi0 ${dir_fns_} --vr0 {dir_fns_}
+
+eval upg_path_ ${src_fn_file}
+
+#? ------------------------------------------------------------
+
+#* work in _debug >>>>>>>>>>
+eval wrp2_ cd --_xxd ${dir_fns_}/dir_${name_fn_}/_${name_fn_}/_debug/v1
+
+eval cr_sh_ deb_1.sh
+
+eval wrp2_ cd --_xxd ${dir_fns_}/dir_${name_fn_}/_${name_fn_}/_debug
+
+eval cr_sh_ mdeb.sh
+
+#? _fn/${name_fn_}_mdeb.sh
+eval file_path=${dir_fns_}/dir_${name_fn_}/_${name_fn_}/_fn/${name_fn_}mdeb.sh
+
+eval cr_shfn_ ${file_path}
+
+eval body_fn=${insert_dir}/_fn_fff_mdeb_sh/body_fn_mdeb.insert
+
+eval cr_f_ ${file_path} --fi0 ${body_fn} --fr0 {body_fn}
+
+eval obs_quis_ ${file_path}
+
+#? insert to {zzz20} in _fn/${name_fn_}_mdeb.sh
+eval arr_res=${insert_dir}/_fn_fff_mdeb_sh/arr_res.insert
+eval echo ${file_path}
+eval cr_f_ ${file_path} --fi0 ${arr_res} --fr0 {arr_res}
+
+#? _fn/${name_fn_}_mdeb_set_1.sh
+eval file_path=${dir_fns_}/dir_${name_fn_}/_${name_fn_}/_fn/${name_fn_}mdeb_set_1.sh
+eval cr_shfn_ ${file_path}
+
+eval body_fn=${insert_dir}/_fn_fff_mdeb_set_1_sh/body_mdeb_set_1.insert
+eval echo ${file_path}
+eval cr_f_ ${file_path} --fi0 ${body_fn} --fr0 {body_fn}
+
+#? _debug/self_tst/generate_self_tst_1.sh
+eval wrp2_ cd --_xxd ${dir_fns_}/dir_${name_fn_}/_${name_fn_}/_debug/self_tst
+eval cr_sh_ generate_self_tst_1.sh
+eval echo ${file_path}
+eval file_path=${dir_fns_}/dir_${name_fn_}/_${name_fn_}/_debug/self_tst/generate_self_tst_1.sh
+eval body=${insert_dir}/_fn_fff_self_tst_1/body_self_tst_1.insert
+
+eval echo ${file_path}
+eval cr_f_ ${file_path} --fi0 ${body} --fr0 {body}
+
+# eval edit_ "${dir_fns_}/dir_${name_fn_}"
+
+# eval . ${dir_fns_}/dir_${name_fn_}/_${name_fn_}/_debug/self_tst/generate_self_tst_1.sh
+# #* work in _debug <<<<<<<<<<
+
+# #* work in extst >>>>>>>>>>
+# eval wrp2_ cd --_xxd ${dir_fns_}/dir_${name_fn_}/
+# # wrp_fifs1_ cd ${dir_fns_}/dir_${name_fn_}/ -d1
+# eval wrp2_ mkdir --_cnd ${name_fn_}extst
+# # wrp_fifs1_ mkdir ${name_fn_}extst -cnd1
+# eval wrp2_ cd --_xxd ${name_fn_}extst
+# # wrp_fifs1_ cd ${name_fn_}extst -d1
+
+# #? cr_tst_sys_
+# eval cr_tst_sys_ --name_dir extst_1 --ext extst
+
+# #! be created cr_tst_dir_ --name "${name_fn_}"tst --ext tst (wrp_fifs1_ cd ${dir_fns_}/dir_${name_fn_}/)
+# eval wrp2_ cd --_xxd ${dir_fns_}/dir_${name_fn_}
+# # wrp_fifs1_ cd ${dir_fns_}/dir_${name_fn_} -d1
+# eval cr_tst_dir_ --name_dir "${name_fn_}"tst --ext tst
+
+# #* work in extst <<<<<<<<<<
+
+# #* work in _default >>>>>>>>>>
+# eval wrp2_ cd --_xxd ${dir_fns_}/dir_${name_fn_}/_${name_fn_}/_default
+# eval cr_sh_ default_deb.sh
+
+# eval file_path=${dir_fns_}/dir_${name_fn_}/_${name_fn_}/_default/default_deb.sh
+# eval body=${insert_dir}/_fn_fff_default_deb/body_default_deb.insert
+
+# eval cr_f_ ${file_path} --fi0 ${body} --fr0 {body}
+
+# #* work in _default >>>>>>>>>>

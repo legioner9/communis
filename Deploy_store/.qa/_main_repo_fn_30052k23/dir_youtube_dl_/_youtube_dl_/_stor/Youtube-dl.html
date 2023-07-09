@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if IE 7]><html class="lt-ie9 lt-ie8"><![endif]-->
+<!--[if IE 8]><html class="lt-ie9"><![endif]-->
+<!--[if gt IE 8]><!--><html><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta name="keywords" content="Профессиональный инструмент загрузки Youtube, подробное руководство по использованию Youtube-dl и практический пример, Русские Блоги" />
+<meta name="description" content="Профессиональный инструмент загрузки Youtube, подробное руководство по использованию Youtube-dl и практический пример, Русские Блоги, лучший сайт для обмена техническими статьями программиста." />
+<title>Профессиональный инструмент загрузки Youtube, подробное руководство по использованию Youtube-dl и практический пример - Русские Блоги</title>
+<link rel="stylesheet" href="/css/normalize.css">
+<link rel="stylesheet" href="/css/foundation.min.css">
+<link rel="stylesheet" href="/css/superfish.css">
+<link rel="stylesheet" href="/css/stylesheet.css">
+<link href='/css/fonts.css' rel='stylesheet' type='text/css' />
+<!--[if lt IE 9]>
+<link rel="stylesheet" href="/css/ie-fixes.css">
+<![endif]-->
+<link rel="stylesheet" href="/css/atom-one-dark.css">
+<link rel="stylesheet" href="/css/ck.css">
+<link rel="stylesheet" href="/css/viewer.min.css">
+
+<script type="text/javascript" async=true>
+(function() {
+  var host = 'www.themoneytizer.com';
+  var element = document.createElement('script');
+  var firstScript = document.getElementsByTagName('script')[0];
+  var url = 'https://cmp.quantcast.com'
+    .concat('/choice/', '6Fv0cGNfc_bw8', '/', host, '/choice.js');
+  var uspTries = 0;
+  var uspTriesLimit = 3;
+  element.async = true;
+  element.type = 'text/javascript';
+  element.src = url;
+
+  firstScript.parentNode.insertBefore(element, firstScript);
+
+  function makeStub() {
+    var TCF_LOCATOR_NAME = '__tcfapiLocator';
+    var queue = [];
+    var win = window;
+    var cmpFrame;
+
+    function addFrame() {
+      var doc = win.document;
+      var otherCMP = !!(win.frames[TCF_LOCATOR_NAME]);
+
+      if (!otherCMP) {
+        if (doc.body) {
+          var iframe = doc.createElement('iframe');
+
+          iframe.style.cssText = 'display:none';
+          iframe.name = TCF_LOCATOR_NAME;
+          doc.body.appendChild(iframe);
+        } else {
+          setTimeout(addFrame, 5);
+        }
+      }
+      return !otherCMP;
+    }
+
+    function tcfAPIHandler() {
+      var gdprApplies;
+      var args = arguments;
+
+      if (!args.length) {
+        return queue;
+      } else if (args[0] === 'setGdprApplies') {
+        if (
+          args.length > 3 &&
+          args[2] === 2 &&
+          typeof args[3] === 'boolean'
+        ) {
+          gdprApplies = args[3];
+          if (typeof args[2] === 'function') {
+            args[2]('set', true);
+          }
+        }
+      } else if (args[0] === 'ping') {
+        var retr = {
+          gdprApplies: gdprApplies,
+          cmpLoaded: false,
+          cmpStatus: 'stub'
+        };
+
+        if (typeof args[2] === 'function') {
+          args[2](retr);
+        }
+      } else {
+        if(args[0] === 'init' && typeof args[3] === 'object') {
+          args[3] = { ...args[3], tag_version: 'V2' };
+        }
+        queue.push(args);
+      }
+    }
+
+    function postMessageEventHandler(event) {
+      var msgIsString = typeof event.data === 'string';
+      var json = {};
+
+      try {
+        if (msgIsString) {
+          json = JSON.parse(event.data);
+        } else {
+          json = event.data;
+        }
+      } catch (ignore) {}
+
+      var payload = json.__tcfapiCall;
+
+      if (payload) {
+        window.__tcfapi(
+          payload.command,
+          payload.version,
+          function(retValue, success) {
+            var returnMsg = {
+              __tcfapiReturn: {
+                returnValue: retValue,
+                success: success,
+                callId: payload.callId
+              }
+            };
+            if (msgIsString) {
+              returnMsg = JSON.stringify(returnMsg);
+            }
+            if (event && event.source && event.source.postMessage) {
+              event.source.postMessage(returnMsg, '*');
+            }
+          },
+          payload.parameter
+        );
+      }
+    }
+
+    while (win) {
+      try {
+        if (win.frames[TCF_LOCATOR_NAME]) {
+          cmpFrame = win;
+          break;
+        }
+      } catch (ignore) {}
+
+      if (win === window.top) {
+        break;
+      }
+      win = win.parent;
+    }
+    if (!cmpFrame) {
+      addFrame();
+      win.__tcfapi = tcfAPIHandler;
+      win.addEventListener('message', postMessageEventHandler, false);
+    }
+  };
+
+  makeStub();
+
+  var uspStubFunction = function() {
+    var arg = arguments;
+    if (typeof window.__uspapi !== uspStubFunction) {
+      setTimeout(function() {
+        if (typeof window.__uspapi !== 'undefined') {
+          window.__uspapi.apply(window.__uspapi, arg);
+        }
+      }, 500);
+    }
+  };
+
+  var checkIfUspIsReady = function() {
+    uspTries++;
+    if (window.__uspapi === uspStubFunction && uspTries < uspTriesLimit) {
+      console.warn('USP is not accessible');
+    } else {
+      clearInterval(uspInterval);
+    }
+  };
+
+  if (typeof window.__uspapi === 'undefined') {
+    window.__uspapi = uspStubFunction;
+    var uspInterval = setInterval(checkIfUspIsReady, 6000);
+  }
+})();
+</script>
+
+
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PC2RG39');</script>
+
+<script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+<script>
+   window.googletag = window.googletag || {cmd: []};
+         googletag.cmd.push(function() {
+           var interstitialSlot = googletag.defineOutOfPageSlot('/147246189,22396446015/russianblogs.com_interstitial', googletag.enums.OutOfPageFormat.INTERSTITIAL);
+           if (interstitialSlot) interstitialSlot.addService(googletag.pubads());
+           googletag.pubads().enableSingleRequest();
+           googletag.enableServices();
+           googletag.display(interstitialSlot);
+       });
+</script>
+</head>
+<body>
+<div class="row outterWrapper">
+<div class="columns large-12">
+<div class="row header-row">
+<div class="columns header-inner large-12" style="padding:0px;padding-left:39px;"><h1 style="font-size:40px;font-weight: bold;margin-bottom:8px;margin-top:8px;"><a href="https://russianblogs.com">Русские Блоги</a><span id="short-desc" style="font-size:12px;font-weight: normal;">&nbsp;</span></h1></div>
+</div>
+<div class="row menu-row">
+<div class="columns top-menu large-12 top-nav">
+<nav>
+<section>
+<ul class="sf-menu">
+<li class="active"><a href="https://russianblogs.com">Главная</a></li>
+<li><a href="/cdn-cgi/l/email-protection#89fbfcfafae0e8e7ebe5e6eefac9eee4f1a7eae6e4">Свяжитесь с нами</a></li>
+</ul>
+</section>
+</nav>
+</div>
+</div>
+<div class="row small-top-menu">
+<div class="columns large-12 plr0 top-nav">
+<form name="dropdown" action="#">
+<nav>
+<section>
+<ul class="sf-menu">
+<li class="active"><a href="https://russianblogs.com">Главная</a></li>
+<li><a href="/cdn-cgi/l/email-protection#e3919690908a828d818f8c8490a3848e9bcd808c8e">Свяжитесь с нами</a></li>
+</ul>
+</section>
+</nav>
+</form>
+</div>
+</div>
+</div>
+<div class="columns large-12 content-row">
+<div class="row title">
+<div class="columns large-12 content-title-inner">
+<div class="row">
+<div class="columns large-12">
+<form id="searchForm" action="/search" method="post" onsubmit="return validate();" style="margin:0;float:right;">
+<div>
+<input type="text" name="s" id="s" style="font-size:16px;width:200px;display: inline-block;padding:0;margin:0" /> <input type="submit" value="Поиск" style="color:black;display: inline-block;height:32px;font-size:16px;" />
+</div>
+</form>
+<div style="clear:both;"></div>
+</div>
+</div>
+</div>
+</div>
+<div id="topads" style="text-align:center;margin-top:10px;width:100%;height:250px;" class="adsloading">
+<div style="text-align:center;" id="82332-31"><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="//ads.themoneytizer.com/s/gen.js?type=31"></script><script src="//ads.themoneytizer.com/s/requestform.js?siteId=82332&formatId=31"></script></div>
+</div>
+<div id="topads1" style="text-align:center;margin-top:10px;">
+<iframe data-id="russianblogs.com_980x300_responsive_1_DFP" FRAMEBORDER="0" SCROLLING="no" MARGINHEIGHT="0" MARGINWIDTH="0" TOPMARGIN="0" LEFTMARGIN="0" width="1" height="1"></iframe>
+<script>
+    (function () {
+        var size='970x250|300x250',
+            adunit = 'russianblogs.com_980x300_responsive_1_DFP',
+            childNetworkId = '22396446015',
+            xmlhttp = new XMLHttpRequest();xmlhttp.onreadystatechange = function(){if(xmlhttp.readyState==4 && xmlhttp.status==200){var es = document.querySelectorAll("[data-id='"+adunit+"']");var e = Array.from(es).filter(function(e) {return !e.hasAttribute("data-rendered")});if(e.length > 0){e.forEach(function(el){var iframe = el.contentWindow.document;iframe.open();iframe.write(xmlhttp.responseText);iframe.close();el.setAttribute('data-rendered', true)})}}};var child=childNetworkId.trim()?','+childNetworkId.trim():'';xmlhttp.open("GET", 'https://pubads.g.doubleclick.net/gampad/adx?iu=/147246189'+child+'/'+adunit+'&sz='+encodeURI(size)+'&t=Placement_type%3Dserving&'+Date.now(), true);xmlhttp.send();})();
+</script>
+</div>
+<div class="row content about">
+<div class="columns large-12 content-inner">
+<div class="row">
+<div class="columns large-7">
+<h2 style="line-height: 32px;">
+<span>Профессиональный инструмент загрузки Youtube, подробное руководство по использованию Youtube-dl и практический пример</span>
+</h2>
+<p style="margin-bottom:5px;">Теги: &nbsp;<a href='/tag/%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%BD%D0%B5%D1%82-%D0%BD%D0%B0%D0%B2%D1%8B%D0%BA%D0%B8/' title='Интернет-навыки'>Интернет-навыки</a></p><div style="clear:both;"></div>
+<div id="contentaboveads" style="width:100%;text-align:center;padding-top:10px;">
+<iframe data-id="russianblogs.com_750x200_responsive_2_DFP" FRAMEBORDER="0" SCROLLING="no" MARGINHEIGHT="0" MARGINWIDTH="0" TOPMARGIN="0" LEFTMARGIN="0" width="1" height="1"></iframe>
+<script>
+    (function () {
+        var size='750x200|300x250',
+            adunit = 'russianblogs.com_750x200_responsive_2_DFP',
+            childNetworkId = '22396446015',
+            xmlhttp = new XMLHttpRequest();xmlhttp.onreadystatechange = function(){if(xmlhttp.readyState==4 && xmlhttp.status==200){var es = document.querySelectorAll("[data-id='"+adunit+"']");var e = Array.from(es).filter(function(e) {return !e.hasAttribute("data-rendered")});if(e.length > 0){e.forEach(function(el){var iframe = el.contentWindow.document;iframe.open();iframe.write(xmlhttp.responseText);iframe.close();el.setAttribute('data-rendered', true)})}}};var child=childNetworkId.trim()?','+childNetworkId.trim():'';xmlhttp.open("GET", 'https://pubads.g.doubleclick.net/gampad/adx?iu=/147246189'+child+'/'+adunit+'&sz='+encodeURI(size)+'&t=Placement_type%3Dserving&'+Date.now(), true);xmlhttp.send();})();
+</script>
+</div>
+<div style="padding:5px 5px 5px 5px;word-wrap: break-word; word-break: normal;max-width: 950px;font-size:14px;" id="article_content">
+<div class="htmledit_views">
+<h2>Прежде чем копировать и вставлять точки знаний, найденные в Интернете, добавьте важные аспекты при первом использовании:</h2>
+<p>youtube-dl поддерживает файлы конфигурации. Если вы хорошо говорите по-английски, просто посмотрите документацию Git. Я просто систематизирую ее:</p>
+<p>Я использую платформу<strong><em>Win10+youtube-dl.exe</em></strong></p>
+<p>Файл конфигурации по умолчанию имеет два места:</p>
+<pre><code>%APPDATA%\youtube-dl\config.txt</code></pre>
+<p>также как и</p>
+<pre><code>C: \ Users \ &lt;ваше имя пользователя&gt; \ youtube-dl.conf</code></pre>
+<p>Конечно, вы также можете указать расположение файла конфигурации отдельно для каждой команды загрузки ~</p>
+<p>Поэтому я хочу использовать эту функцию, в основном, в следующих трех конфигурациях:</p>
+<pre><code># Мой прокси SS
+--proxy 127.0.0.1:1080
+
+ # Обычно сохраняю в видеотеке
+-o ~/Videos/%(title)s.%(ext)s
+
+ # Лучшее качество загрузки ограничено 720P. В конце концов, этого качества достаточно для отечественных видеоплатформ.
+-f &quot;mp4[height&lt;=720]+m4a/best[height&lt;=720]&quot;</code></pre>
+<p>Готово, начни копировать и вставлять</p>
+<hr />
+<h2><a href="https://www.sysgeek.cn/youtube-dl-examples/" rel="nofollow,noindex" target="_blank">Первоисточник</a>→</h2>
+<h2>Установите инструмент Youtube-dl</h2>
+<p>Официально рекомендуемый метод установки Youtube-dl очень прост: просто сохраните его в PATH в соответствии с платформой операционной системы, которую вы используете, вы можете запустить его и сразу же начать использовать:</p>
+<pre>sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl</pre>
+<p>Если в вашей системе нет curl, вы можете использовать вместо него wget:</p>
+<pre>sudo wget https://yt-dl.org/downloads/latest/youtube-dl -O /usr/local/bin/youtube-dl</pre>
+<p>После завершения загрузки необходимо указать разрешения на ее выполнение:</p>
+<pre>sudo chmod a+rx /usr/local/bin/youtube-dl</pre>
+<p>В качестве альтернативы вы также можете использовать pip для его установки:</p>
+<pre>sudo -H pip install --upgrade youtube-dl</pre>
+<p>Помимо загрузки напрямую с официального сайта, многие распространенные дистрибутивы Linux<a href="https://www.sysgeek.cn/ubuntu-ppa/" rel="nofollow,noindex" target="_blank">Официальный репозиторий или какой-нибудь PPA</a>Youtube-dl включен в оба, например:</p>
+<ul>
+<li>Arch Linux&nbsp;sudo pacman -S youtube-dl</li>
+<li>Debian или Ubuntu sudo apt install youtube-dl</li>
+<li>Fedora&nbsp;sudo dnf install youtube-dl</li>
+</ul>
+<h2>Youtube-dl подробные уроки и примеры для начинающих</h2>
+<h3>1. Скачайте видео или плейлисты.</h3>
+<p>Чтобы загрузить видео или весь список воспроизведения видео с Youtube, просто используйте URL-адрес напрямую:</p>
+<pre>youtube-dl https://www.youtube.com/watch?v=iJvr0VPsn-s</pre>
+<p><img alt="" src="/images/774/fd662a34fc3559faf30477b482f76f8e.JPEG" /></p>
+<p>Если вы хотите указать название видео после загрузки, вы можете использовать следующий метод:</p>
+<pre>youtube-dl -o 'A REAL Back to School Laptop Guide.mp4' https://www.youtube.com/watch?v=iJvr0VPsn-s</pre>
+<p><img alt="" src="/images/545/eb53a03933ad1e6965fa2bc27c744b99.JPEG" /></p>
+<p>Конечно, вы также можете приложить более подробную информацию при загрузке видео. Доступные параметры: заголовок, имя загрузчика (название канала), дата загрузки видео и т. Д .:</p>
+<pre>youtube-dl -o '%(title)s by %(uploader)s on %(upload_date)s in %(playlist)s.%(ext)s' https://www.youtube.com/watch?v=iJvr0VPsn-s</pre>
+<h3>2. Загрузите несколько видео.</h3>
+<p>Иногда нам нужно загрузить несколько разных видео с Youtube одновременно. В настоящее время нам нужно только разделить несколько URL-адресов пробелами:</p>
+<pre>youtube-dl &lt;url1&gt; &lt;url2&gt;</pre>
+<p>Или вы можете поместить все URL-адреса видео, которые хотите загрузить, в текстовый файл и передать их в качестве параметра Youtube-dl:</p>
+<pre>youtube-dl -a url.txt</pre>
+<p>Приведенная выше команда загрузит все видео, на которые указывает URL-адрес в файле url.txt.</p>
+<h3>3. Скачивайте только аудио (в видео)</h3>
+<p>Youtube-dl позволяет нам скачивать аудио только из видеороликов Youtube, например:</p>
+<pre>youtube-dl -x https://www.youtube.com/watch?v=iJvr0VPsn-s</pre>
+<p><img alt="" src="/images/803/d8ebe4166bc15e2a1c6007a0174928db.JPEG" /></p>
+<p>По умолчанию Youtube-dl сохраняет аудио в формате Ogg (opus). Если вы хотите скачать аудио в любом другом формате, например в mp3, запустите:</p>
+<pre>youtube-dl -x --audio-format mp3 https://www.youtube.com/watch?v=iJvr0VPsn-s</pre>
+<p><img alt="" src="/images/811/8a30585c9456a6248e27e285974f88f3.JPEG" /></p>
+<p>Эта команда загрузит звук из данного видео / плейлиста, преобразует его в MP3 и сохранит в текущем каталоге.</p>
+<blockquote>
+<p>Примечание. Для преобразования файлов в формат mp3 необходимо установить ffmpeg или avconv.</p>
+</blockquote>
+<h3>4. Загрузите видео с описанием, метаданными, комментариями, субтитрами и миниатюрами.</h3>
+<p>Чтобы загрузить видео и другую подробную информацию, такую ​​как описание, метаданные, комментарии, субтитры и эскизы, используйте следующую команду:</p>
+<pre>youtube-dl --write-description --write-info-json --write-annotations --write-sub --write-thumbnail https://www.youtube.com/watch?v=iJvr0VPsn-s</pre>
+<p><img alt="" src="/images/542/5fc7bc245f10ece67a154419bb9304c6.JPEG" /></p>
+<h3>5. Перечислите все доступные аудио / видео форматы.</h3>
+<p>Видео и аудио на веб-сайте Youtube будут автоматически перекодированы в несколько аудио / видео форматов. Чтобы просмотреть все загружаемые аудио / видео форматы для видео или списка воспроизведения, используйте следующую команду:</p>
+<pre>youtube-dl --list-formats https://www.youtube.com/watch?v=iJvr0VPsn-s</pre>
+<p>Или аббревиатуру, которую обычно использует автор:</p>
+<pre>youtube-dl -F https://www.youtube.com/watch?v=iJvr0VPsn-s</pre>
+<p><img alt="" src="/images/124/b869f53996c2b3119704d2ddf791b39c.JPEG" /></p>
+<p>Как показано на рисунке выше, Youtube-dl перечисляет все доступные форматы для данного видео слева направо:<strong>format code</strong>(Код формата видео),<strong>extension</strong>(имя расширения),<strong>resolution</strong>(Разрешение) и<strong>note</strong>(Комментарий). Если вы хотите загрузить видео в определенном качестве или формате, очень удобно сначала проверить, что доступно.</p>
+<h3>6. Скачивайте видео в определенном качестве и / или формате.</h3>
+<p>По умолчанию Youtube-dl самостоятельно выбирает лучшее качество для скачивания видео. Однако также можно загружать видео или плейлисты в определенном качестве или формате.</p>
+<p>Youtube-dl поддерживает следующие качества:</p>
+<ul>
+<li>лучше всего выбрать аудио / видео файл лучшего качества</li>
+<li>худший выберите формат худшего качества (видео и аудио)</li>
+<li>bestvideo выбирает видеоформат наилучшего качества (например, DASH-видео), который может быть недоступен.</li>
+<li>худшее видео Выберите чистый видеоформат с худшим качеством, которое может быть недоступно.</li>
+<li>bestaudio выбирает аудиоформат самого высокого качества, который может быть недоступен.</li>
+<li>худшийаудио Выберите аудиоформат с худшим качеством, который может быть недоступен.</li>
+</ul>
+<p>Например, если вы хотите автоматически выбирать и загружать формат наилучшего качества (аудио и видео), просто используйте следующую команду:</p>
+<pre>youtube-dl -f best https://www.youtube.com/watch?v=iJvr0VPsn-s</pre>
+<p><img alt="" src="/images/955/4b5b6677ca3129f02558e9ed53a2bf73.JPEG" /></p>
+<p>Точно так же, чтобы загружать только аудио с лучшим качеством, выполните:</p>
+<pre>youtube-dl -f bestaudio https://www.youtube.com/watch?v=iJvr0VPsn-s</pre>
+<p><img alt="" src="/images/872/da71da884cbc363d1af9ee2609eef4b0.JPEG" /></p>
+<p>Вы также можете комбинировать следующие различные варианты формата:</p>
+<pre>youtube-dl -f bestvideo+bestaudio https://www.youtube.com/watch?v=iJvr0VPsn-s</pre>
+<p><img alt="" src="/images/532/8de256152c0b2ca3c96e4c9cdc482fa4.JPEG" /></p>
+<p>Приведенная выше команда будет<strong>Скачать отдельно</strong><em>Только видео самого высокого качества</em>с участием<em>Чистый аудиоформат высочайшего качества</em>, Затем используйте ffmpeg или avconv, чтобы объединить в файл MKV наилучшего качества; если вы не хотите объединять, замените + (плюс) на, (запятая), чтобы получить аудио и видео самого высокого качества (два файла), Следующим образом:</p>
+<pre>youtube-dl -f 'bestvideo,bestaudio' https://www.youtube.com/watch?v=iJvr0VPsn-s</pre>
+<h3>7. Скачивание файлов с помощью видеокода (общий метод)</h3>
+<p>фронт<strong>Метод 5</strong>Как уже упоминалось, все видео Youtube имеют код формата, который мы можем использовать для загрузки видео определенного качества.</p>
+<p>Например, используйте<strong>Метод 5</strong>Просмотреть все доступные аудио / видео форматы и соответствующие им<strong>format code</strong>(Код формата видео):</p>
+<pre>youtube-dl -F https://www.youtube.com/watch?v=iJvr0VPsn-s</pre>
+<p><img alt="" src="/images/124/b869f53996c2b3119704d2ddf791b39c.JPEG" /></p>
+<p>Затем используйте код для загрузки указанного аудио / видео формата. Например, чтобы загрузить видеофайл наилучшего качества (код формата 22), выполните следующую команду:</p>
+<pre>youtube-dl -f 22 https://www.youtube.com/watch?v=iJvr0VPsn-s</pre>
+<p><img alt="" src="/images/647/2db6ea20af52f4f5fe1678bea67b7ecf.JPEG" /></p>
+<p>При загрузке видео из плейлиста некоторые видео могут иметь другой формат. В этом случае можно указать несколько кодов формата в предпочтительном порядке, например:</p>
+<pre>youtube-dl -f 22/17/18 &lt;playlist_url&gt;</pre>
+<p>Согласно приведенному выше примеру Youtube-dl загрузит видео в формате 22 (если доступен); если формат 22 недоступен, он загрузит формат 17 (если доступен); если форматы 22 и 17 недоступны, наконец, попробуйте загрузить формат 18. . Если все коды формата не совпадают, Youtube-dl сообщит о подсказке. Также следует отметить, что косая черта является левоассоциативной, то есть крайний левый код формата является предпочтительным.</p>
+<h3>8. Загрузите аудио / видео через расширение файла.</h3>
+<p>Чтобы загрузить видео в предпочитаемом формате, например MP4, просто выполните:</p>
+<pre>youtube-dl --format mp4 https://www.youtube.com/watch?v=iJvr0VPsn-s</pre>
+<p>или</p>
+<pre>youtube-dl -f mp4 https://www.youtube.com/watch?v=iJvr0VPsn-s</pre>
+<p>Как я упоминал в предыдущем разделе, некоторые видео могут быть недоступны в предпочитаемом вами формате. В этом случае Youtube-dl загрузит другие наилучшие доступные форматы. Например, эта команда загрузит файл в формате MP4 самого высокого качества. Если формат MP4 недоступен, будет загружен другой наилучший доступный формат.</p>
+<pre>youtube-dl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best' https://www.youtube.com/watch?v=iJvr0VPsn-s</pre>
+<h3>9. Ограничьте размер загружаемых видео.</h3>
+<p>При загрузке нескольких видео из плейлиста Youtube вы можете захотеть загрузить только видео определенного размера. Например, эта команда не будет загружать видео меньше указанного размера, например 100 МБ:</p>
+<pre>youtube-dl --min-filesize 100M &lt;playlist_url&gt;</pre>
+<p>Если вы не хотите загружать видео больше заданного размера, вы можете сделать следующее:</p>
+<pre>youtube-dl --max-filesize 100M &lt;playlist_url&gt;</pre>
+<p>Мы также можем использовать комбинированные форматы и выбирать операторов для загрузки видео определенного размера. Например, следующая команда загрузит видео в лучшем видеоформате, но не более 100 МБ:</p>
+<pre>youtube-dl -f 'best[filesize&lt;100M]' https://www.youtube.com/watch?v=iJvr0VPsn-s</pre>
+<h3>10. Скачивание видео по дате</h3>
+<p>Youtube-dl позволяет нам фильтровать и загружать видео или плейлисты в зависимости от даты загрузки. Например, для загрузки видео, загруженных 1 августа 2019 года, вы можете использовать:</p>
+<pre>youtube-dl --date 20190801 &lt;URL&gt;</pre>
+<p>Загрузите видео, загруженные не ранее определенной даты:</p>
+<pre>youtube-dl --datebefore 20190801 &lt;URL&gt;</pre>
+<p>Скачать видео, загруженные не ранее определенной даты:</p>
+<pre><code>youtube-dl --dateafter 20190101 &lt;URL&gt;</code></pre>
+<p>Скачивайте только видео, загруженные за последние 6 месяцев:</p>
+<pre>youtube-dl --dateafter now-6months &lt;URL&gt;</pre>
+<p>Загрузите видео, загруженные в течение определенного периода времени (например, с 1 января 2018 г. по 1 января 2019 г.):</p>
+<pre>youtube-dl --dateafter 20180101 --datebefore 20190101 &lt;URL&gt;</pre>
+<h3>11. Загрузите конкретное видео из плейлиста.</h3>
+<p>Загрузка определенных видео из плейлистов - еще одна очень полезная функция Youtube-dl. Например, чтобы загрузить 10-й файл из списка воспроизведения, используйте:</p>
+<pre>youtube-dl --playlist-items 10 &lt;playlist_url&gt;</pre>
+<p>Точно так же, чтобы загрузить несколько указанных файлов, просто разделите их запятыми:</p>
+<pre>youtube-dl --playlist-items 2,3,7,10 &lt;playlist_url&gt;</pre>
+<p>Конечно, вы также можете указать диапазон загрузок по порядковому номеру, например, начиная с 10-го, загрузить полный список напрямую:</p>
+<pre>youtube-dl --playlist-start 10 &lt;playlist_url&gt;</pre>
+<p>Или загрузите в плейлист только файлы с 2 по 5:</p>
+<pre>youtube-dl --playlist-start 2 --playlist-end 5 &lt;playlist_url&gt;</pre>
+<h3>12. Скачивайте только видео, подходящие для определенного возраста.</h3>
+<p>Еще одна особенность Youtube-dl в том, что он позволяет скачивать только видео, подходящие для определенного возраста. Например, чтобы загрузить все элементы, не отмеченные как &quot;<a href="https://zh.wikipedia.org/wiki/NSFW" rel="nofollow,noindex" target="_blank">NSFW</a>В видео &quot;Или поиграем&quot; только для 7-летних детей можно использовать:</p>
+<pre>youtube-dl --match-title &quot;let's play&quot; --age-limit 7 --reject-title &quot;nsfw&quot; &lt;playlist_url&gt;</pre>
+<h3>13. Используйте справку</h3>
+<p>Я считаю, что благодаря представлению приведенных выше примеров он смог удовлетворить потребности большинства пользователей в загрузке видео с Youtube и использовании youtube-dl. Для получения дополнительных сведений см. Справку Youtube-dl:</p>
+<pre>youtube-dl --help</pre>
+<p><img alt="" src="/images/486/48ad89fe291b531411472b6c46da616e.JPEG" /></p>
+</div></div>
+<div id="contentbelowads" style="width:100%;text-align:center;padding-top:10px;">
+<iframe data-id="russianblogs.com_728x90_responsive_5_DFP" FRAMEBORDER="0" SCROLLING="no" MARGINHEIGHT="0" MARGINWIDTH="0" TOPMARGIN="0" LEFTMARGIN="0" width="1" height="1"></iframe>
+<script>
+    (function () {
+        var size='728x90|300x250',
+            adunit = 'russianblogs.com_728x90_responsive_5_DFP',
+            childNetworkId = '22396446015',
+            xmlhttp = new XMLHttpRequest();xmlhttp.onreadystatechange = function(){if(xmlhttp.readyState==4 && xmlhttp.status==200){var es = document.querySelectorAll("[data-id='"+adunit+"']");var e = Array.from(es).filter(function(e) {return !e.hasAttribute("data-rendered")});if(e.length > 0){e.forEach(function(el){var iframe = el.contentWindow.document;iframe.open();iframe.write(xmlhttp.responseText);iframe.close();el.setAttribute('data-rendered', true)})}}};var child=childNetworkId.trim()?','+childNetworkId.trim():'';xmlhttp.open("GET", 'https://pubads.g.doubleclick.net/gampad/adx?iu=/147246189'+child+'/'+adunit+'&sz='+encodeURI(size)+'&t=Placement_type%3Dserving&'+Date.now(), true);xmlhttp.send();})();
+</script>
+</div>
+<div style="clear:both;"></div>
+<hr>
+<h3><span>Интеллектуальная рекомендация</span></h3>
+<div>
+<div>
+<div style="padding-top:6px;padding-bottom:6px;">
+<div class="loop-wrap clearfix">
+<div class="loop-thumb">
+<a href="/article/49502043558/"><img style="width:172px;height:120px;" src="/thumbs/93/b1189cf5e39d927138381438d54e5775.JPEG">
+</a>
+</div>
+<header class="loop-data">
+<h3 style="margin-top:0px;border-bottom-style: none;padding-bottom: 0px;margin-bottom: 0px;overflow:hidden;line-height:30px;">
+<a href="/article/49502043558/" rel="bookmark" title="ImportError: DLLLOCK не удалось, что появляется при импорте MATPLOTLIB.PYPLOT: не могу найти указанный модуль">ImportError: DLLLOCK не удалось, что появляется при импорте MATPLOTLIB.PYPLOT: не могу найти указанный модуль</a>
+</h3>
+</header>
+<div class="mh-excerpt">
+<p style="line-height:25px;">Все библиотеки зависимостей в Matplotlib (зависимые данные библиотеки:Нажмите, чтобы открыть ссылкуПосле успешной установки импортируйте MATPLOTLIB успешно, но произошла следующая ошибка при импорте M...</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div style="padding-top:6px;padding-bottom:6px;">
+<div class="loop-wrap clearfix">
+<div class="loop-thumb">
+<a href="/article/48182936355/"><img style="width:172px;height:120px;" src="/thumbs/345/07dc372baaff80523e81e61377f37d99.png">
+</a>
+</div>
+<header class="loop-data">
+<h3 style="margin-top:0px;border-bottom-style: none;padding-bottom: 0px;margin-bottom: 0px;overflow:hidden;line-height:30px;">
+<a href="/article/48182936355/" rel="bookmark" title="Один вопрос ежедневно: интервал вставки (сложность ??? среда)">Один вопрос ежедневно: интервал вставки (сложность ??? среда)</a>
+</h3>
+</header>
+<div class="mh-excerpt">
+<p style="line-height:25px;">57. Вставьте интервал 1. Источник тем Ссылка на тему:Вставка Источник заголовка: LeetCode 2. Описание заголовка Учитывая список интервальной сортировки с помощью Unkalified, в соответствии с начальной...</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div style="padding-top:6px;padding-bottom:6px;">
+<div class="loop-wrap clearfix">
+<div class="loop-thumb">
+<a href="/article/6602226895/"><img style="width:172px;height:120px;" src="/thumbs/805/c1242cd567f38467cd0b554e60cd4f45.png">
+</a>
+</div>
+<header class="loop-data">
+<h3 style="margin-top:0px;border-bottom-style: none;padding-bottom: 0px;margin-bottom: 0px;overflow:hidden;line-height:30px;">
+<a href="/article/6602226895/" rel="bookmark" title="Поместите статические файлы в экспресс">Поместите статические файлы в экспресс</a>
+</h3>
+</header>
+<div class="mh-excerpt">
+<p style="line-height:25px;">Если вы не используете шаблонизатор, вам нужно добавить html напрямую. Вы можете использовать промежуточное программное обеспечение express.static () для установки каталога статических файлов, а затем...</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div style="padding-top:6px;padding-bottom:6px;">
+<div class="loop-wrap clearfix">
+<div class="loop-thumb">
+<a href="/article/58291540279/"><img style="width:172px;height:120px;" src="/thumbs/29/0754d672da845f2be5fbe5720b2f2f6d.png">
+</a>
+</div>
+<header class="loop-data">
+<h3 style="margin-top:0px;border-bottom-style: none;padding-bottom: 0px;margin-bottom: 0px;overflow:hidden;line-height:30px;">
+<a href="/article/58291540279/" rel="bookmark" title="Spring boot использует FreeMarker для отправки почты">Spring boot использует FreeMarker для отправки почты</a>
+</h3>
+</header>
+<div class="mh-excerpt">
+<p style="line-height:25px;">Spring boot использует FreeMarker для отправки почты Предисловие Недавно я написал проект и использовал функцию почты, которая должна отправлять приветственное письмо при регистрации пользователя. Я н...</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div style="padding-top:6px;padding-bottom:6px;">
+<div class="loop-wrap clearfix">
+<header class="loop-data">
+<h3 style="margin-top:0px;border-bottom-style: none;padding-bottom: 0px;margin-bottom: 0px;overflow:hidden;line-height:30px;">
+<a href="/article/11282398703/" rel="bookmark" title="Время формата">Время формата</a>
+</h3>
+</header>
+<div class="mh-excerpt">
+<p style="line-height:25px;">...</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="rightads2" style="width:100%;height:90px;margin-top:10px;margin-bottom:10px;" class="adsloading">
+<div id="82332-1"><script src="//ads.themoneytizer.com/s/gen.js?type=1"></script><script src="//ads.themoneytizer.com/s/requestform.js?siteId=82332&formatId=1"></script></div>
+</div>
+<h3><span>Вам также может понравиться</span></h3>
+<div>
+<div>
+<div style="padding-top:6px;padding-bottom:6px;">
+<div class="loop-wrap clearfix">
+<header class="loop-data">
+<h3 style="margin-top:0px;border-bottom-style: none;padding-bottom: 0px;margin-bottom: 0px;overflow:hidden;line-height:30px;">
+<a href="/article/63073032852/" rel="bookmark" title="Spring вводит файлы конфигурации">Spring вводит файлы конфигурации</a>
+</h3>
+</header>
+<div class="mh-excerpt">
+<p style="line-height:25px;">Введите один файл конфигурации Представьте набор файлов конфигурации Конфигурационный файл Java Получите параметры в файле конфигурации Введите атрибуты непосредственно в файл конфигурации &nbsp;...</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div style="padding-top:6px;padding-bottom:6px;">
+<div class="loop-wrap clearfix">
+<div class="loop-thumb">
+<a href="/article/1719416487/"><img style="width:172px;height:120px;" src="/thumbs/731/9a9b3568c0e653892c98f1b28b797ee3.png">
+</a>
+</div>
+<header class="loop-data">
+<h3 style="margin-top:0px;border-bottom-style: none;padding-bottom: 0px;margin-bottom: 0px;overflow:hidden;line-height:30px;">
+<a href="/article/1719416487/" rel="bookmark" title="4. Перегрузка оператора">4. Перегрузка оператора</a>
+</h3>
+</header>
+<div class="mh-excerpt">
+<p style="line-height:25px;">Что такое перегрузка оператора Так называемая перегрузка - это придание нового значения. Перегрузка функций заключается в том, чтобы придать новое значение существующей функции и заставить ее реализов...</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div style="padding-top:6px;padding-bottom:6px;">
+<div class="loop-wrap clearfix">
+<header class="loop-data">
+<h3 style="margin-top:0px;border-bottom-style: none;padding-bottom: 0px;margin-bottom: 0px;overflow:hidden;line-height:30px;">
+<a href="/article/45962313109/" rel="bookmark" title="Запишите данные о производительности для веб-приложений Java с AOP">Запишите данные о производительности для веб-приложений Java с AOP</a>
+</h3>
+</header>
+<div class="mh-excerpt">
+<p style="line-height:25px;">Как разработчик, производительность приложения всегда является одним из наших наиболее интересованных тем. Тем не менее, не все разработчики знают о своих характеристиках своего собственного обслужива...</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div style="padding-top:6px;padding-bottom:6px;">
+<div class="loop-wrap clearfix">
+<div class="loop-thumb">
+<a href="/article/8799245096/"><img style="width:172px;height:120px;" src="/thumbs/157/e8d737b44a99ae76e4184eb758dece4d.JPEG">
+</a>
+</div>
+<header class="loop-data">
+<h3 style="margin-top:0px;border-bottom-style: none;padding-bottom: 0px;margin-bottom: 0px;overflow:hidden;line-height:30px;">
+<a href="/article/8799245096/" rel="bookmark" title="Галерея 12 Введение в Android">Галерея 12 Введение в Android</a>
+</h3>
+</header>
+<div class="mh-excerpt">
+<p style="line-height:25px;">Эта статья взята изhttp://blog.csdn.net/hellogv/ , Ссылка должна указывать источник! Управление галереей в Android - это очень хороший элемент управления просмотром изображений, который значительно со...</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div style="padding-top:6px;padding-bottom:6px;">
+<div class="loop-wrap clearfix">
+<div class="loop-thumb">
+<a href="/article/5182179349/"><img style="width:172px;height:120px;" src="/thumbs/792/68b000b793433b79e4fadd5c4a963430.png">
+</a>
+</div>
+<header class="loop-data">
+<h3 style="margin-top:0px;border-bottom-style: none;padding-bottom: 0px;margin-bottom: 0px;overflow:hidden;line-height:30px;">
+<a href="/article/5182179349/" rel="bookmark" title="Дом Черной Обезьяны: Конфигурация переменной среды Linux Jdk 1.8">Дом Черной Обезьяны: Конфигурация переменной среды Linux Jdk 1.8</a>
+</h3>
+</header>
+<div class="mh-excerpt">
+<p style="line-height:25px;">1. Загрузите Linux, используйте команду tar для распаковки jdk-пакета. image.png 2. Просмотр JDK после распаковки image.png 3. Измените / etc / profile и настройте переменные среды jdk image.png 4, пр...</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="rightads3" style="width:100%;height:90px;margin-top:10px;margin-bottom:10px;" class="adsloading">
+<div id="82332-28"><script src="//ads.themoneytizer.com/s/gen.js?type=28"></script><script src="//ads.themoneytizer.com/s/requestform.js?siteId=82332&formatId=28"></script></div>
+</div>
+</div>
+<div class="columns large-4 large-offset-1 sidebar" style="position: -webkit-sticky;position: sticky;top: 0;">
+<div id="leftads0">
+<iframe data-id="russianblogs.com_300x250_responsive_3_DFP" FRAMEBORDER="0" SCROLLING="no" MARGINHEIGHT="0" MARGINWIDTH="0" TOPMARGIN="0" LEFTMARGIN="0" width="1" height="1"></iframe>
+<script>
+    (function () {
+        var size='300x250',
+            adunit = 'russianblogs.com_300x250_responsive_3_DFP',
+            childNetworkId = '22396446015',
+            xmlhttp = new XMLHttpRequest();xmlhttp.onreadystatechange = function(){if(xmlhttp.readyState==4 && xmlhttp.status==200){var es = document.querySelectorAll("[data-id='"+adunit+"']");var e = Array.from(es).filter(function(e) {return !e.hasAttribute("data-rendered")});if(e.length > 0){e.forEach(function(el){var iframe = el.contentWindow.document;iframe.open();iframe.write(xmlhttp.responseText);iframe.close();el.setAttribute('data-rendered', true)})}}};var child=childNetworkId.trim()?','+childNetworkId.trim():'';xmlhttp.open("GET", 'https://pubads.g.doubleclick.net/gampad/adx?iu=/147246189'+child+'/'+adunit+'&sz='+encodeURI(size)+'&t=Placement_type%3Dserving&'+Date.now(), true);xmlhttp.send();})();
+</script>
+</div>
+<h3 class="page-title services" style="margin-top:0px;">Статьи по теме</h3>
+<ul>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;"><a href="/article/66152469462/" title="[Шаблон] youtubedl подбираться в youtube аудио шаблон код">[Шаблон] youtubedl подбираться в youtube аудио шаблон код</a></li>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;"><a href="/article/30911311935/" title="Руководство по установке и использованию инструмента Python labelImg (действительно для профессионального тестирования)">Руководство по установке и использованию инструмента Python labelImg (действительно для профессионального тестирования)</a></li>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;"><a href="/article/52872432041/" title="У меня недавно получил сеть инструментов для загрузки видео Youtube">У меня недавно получил сеть инструментов для загрузки видео Youtube</a></li>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;"><a href="/article/96121308819/" title="установка youtube-dl и руководство по использованию для новичков">установка youtube-dl и руководство по использованию для новичков</a></li>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;"><a href="/article/63371686717/" title="Подробное практическое руководство Playmaker по часто используемым инструментам Playmaker">Подробное практическое руководство Playmaker по часто используемым инструментам Playmaker</a></li>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;"><a href="/article/88781134844/" title="Это очень подробное руководство по Retrofit 2.0 (включая практические примеры).">Это очень подробное руководство по Retrofit 2.0 (включая практические примеры).</a></li>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;"><a href="/article/18731686890/" title="Самый полный и самый мощный подробный пример практического руководства SpringMVC в истории">Самый полный и самый мощный подробный пример практического руководства SpringMVC в истории</a></li>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;"><a href="/article/90251122126/" title="Подробное практическое руководство по Maven">Подробное практическое руководство по Maven</a></li>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;"><a href="/article/60231182329/" title="Бессерверное практическое подробное руководство">Бессерверное практическое подробное руководство</a></li>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;"><a href="/article/4371917330/" title="Подробное использование MybatisGenerator, включая установку подключаемого модуля eclipse, официальный адрес веб-сайта для загрузки инструмента и соответствующие подробные руководства">Подробное использование MybatisGenerator, включая установку подключаемого модуля eclipse, официальный адрес веб-сайта для загрузки инструмента и соответствующие подробные руководства</a></li>
+</ul>
+<div style="width:320px;height:250px;background-color: white;" id="leftads1" class="adsloading">
+<div id="82332-2"><script src="//ads.themoneytizer.com/s/gen.js?type=2"></script><script src="//ads.themoneytizer.com/s/requestform.js?siteId=82332&formatId=2"></script></div>
+</div>
+<h3 class="page-title services" style="margin-top:0px;">популярные статьи</h3>
+<ul>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;"><a href="/article/18022989211/" title="Кэш сеанса Enterprise WeChat">Кэш сеанса Enterprise WeChat</a></li>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;"><a href="/article/47961365418/" title="Printf () не отображает метод решения проблемы в консольном проекте Qtcreator">Printf () не отображает метод решения проблемы в консольном проекте Qtcreator</a></li>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;"><a href="/article/7563668472/" title="PHP небольшой проект (вероятность успеха в руках)">PHP небольшой проект (вероятность успеха в руках)</a></li>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;"><a href="/article/40921972109/" title="Какие компании имеют более 500 000 новых годовых заработной платы?">Какие компании имеют более 500 000 новых годовых заработной платы?</a></li>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;"><a href="/article/6081424970/" title="Просмотр всех сочетаний клавиш интерфейса в IDEA">Просмотр всех сочетаний клавиш интерфейса в IDEA</a></li>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;"><a href="/article/8072713680/" title="Neo4j: fulltext search">Neo4j: fulltext search</a></li>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;"><a href="/article/70831008919/" title="Установите caffe в win10 и настройте интерфейсы MATLAB и Python (поддержка ускорения графического процессора)">Установите caffe в win10 и настройте интерфейсы MATLAB и Python (поддержка ускорения графического процессора)</a></li>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;"><a href="/article/67602172648/" title="Отказался быть яма! Как определить кисть заказов с Python и анализа данных! ?">Отказался быть яма! Как определить кисть заказов с Python и анализа данных! ?</a></li>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;"><a href="/article/8716918094/" title="Нет интернета, безопасное решение">Нет интернета, безопасное решение</a></li>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;"><a href="/article/10803052286/" title="Относительно решения проблем с перекрестным доменом в Ajax в JS">Относительно решения проблем с перекрестным доменом в Ajax в JS</a></li>
+</ul>
+<div style="width:320px;height:615px;background-color: white;" id="leftads2" class="adsloading">
+<div id="82332-3"><script src="//ads.themoneytizer.com/s/gen.js?type=3"></script><script src="//ads.themoneytizer.com/s/requestform.js?siteId=82332&formatId=3"></script></div>
+</div>
+<h3 class="page-title services" style="margin-top:0px;">рекомендованная статья</h3>
+<ul>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;"><a href="/article/52162954395/" title="WeChat Mini Program Zero Basic Development">WeChat Mini Program Zero Basic Development</a></li>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;"><a href="/article/21503131041/" title="Получите значение Textarea и замените ее изменяющиеся символы и пространства для достижения стиля дисплея.">Получите значение Textarea и замените ее изменяющиеся символы и пространства для достижения стиля дисплея.</a></li>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;"><a href="/article/3942930783/" title="Markdown Monster (редактор Markdown) v1.13.9 бесплатная версия">Markdown Monster (редактор Markdown) v1.13.9 бесплатная версия</a></li>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;"><a href="/article/20471810274/" title="1 минута прерывает 500 миллионов, серия Huawei Mate 30 сумасшедшая!">1 минута прерывает 500 миллионов, серия Huawei Mate 30 сумасшедшая!</a></li>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;"><a href="/article/11961447880/" title="Как заменить пути к изображениям в пакетах в dedecms">Как заменить пути к изображениям в пакетах в dedecms</a></li>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;"><a href="/article/20691061979/" title="Самая длинная подстрока без повторяющихся символов (Like)">Самая длинная подстрока без повторяющихся символов (Like)</a></li>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;"><a href="/article/2810962477/" title="Подзапрос Oracle">Подзапрос Oracle</a></li>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;"><a href="/article/82131899917/" title="Поделитесь проблемой CPU98%">Поделитесь проблемой CPU98%</a></li>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;"><a href="/article/9308240029/" title="Решение для журналов аудита истории операций JPA + Hibernate 3 CRUD">Решение для журналов аудита истории операций JPA + Hibernate 3 CRUD</a></li>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;"><a href="/article/71612229601/" title="Браузер Google использует Charles Capture Bag Localhost">Браузер Google использует Charles Capture Bag Localhost</a></li>
+</ul>
+<div style="width:320px;height:250px;background-color: white;" id="leftads3" class="adsloading">
+<div id="82332-19"><script src="//ads.themoneytizer.com/s/gen.js?type=19"></script><script src="//ads.themoneytizer.com/s/requestform.js?siteId=82332&formatId=19"></script></div>
+</div>
+<h3 class="page-title services" style="margin-top:0px;">Связанные теги</h3>
+<ul>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;"><a href='/tag/python/' title='python'>python</a></li>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;"><a href='/tag/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0+%D0%B8%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0/' title='Установка инструмента'>Установка инструмента</a></li>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;"><a href='/tag/pip/' title='pip'>pip</a></li>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;"><a href='/tag/pytorch/' title='pytorch'>pytorch</a></li>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;"><a href='/tag/Youtube/' title='Youtube'>Youtube</a></li>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;"><a href='/tag/YouTube+%D0%B2%D0%B8%D0%B4%D0%B5%D0%BE+%D1%81%D0%BA%D0%B0%D1%87%D0%B0%D1%82%D1%8C/' title='YouTube видео скачать'>YouTube видео скачать</a></li>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;"><a href='/tag/YouTube+%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD+%D1%81%D0%BA%D0%B0%D1%87%D0%B0%D1%82%D1%8C/' title='YouTube онлайн скачать'>YouTube онлайн скачать</a></li>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;"><a href='/tag/Environment/' title='Environment'>Environment</a></li>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;"><a href='/tag/generatorConfig.xml/' title='generatorConfig.xml'>generatorConfig.xml</a></li>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;"><a href='/tag/MybatisGenerator/' title='MybatisGenerator'>MybatisGenerator</a></li>
+</ul>
+<div id="leftads_bottom">
+<iframe data-id="russianblogs.com_300x600_responsive_4_DFP" FRAMEBORDER="0" SCROLLING="no" MARGINHEIGHT="0" MARGINWIDTH="0" TOPMARGIN="0" LEFTMARGIN="0" width="1" height="1"></iframe>
+<script>
+    (function () {
+        var size='300x600|300x250',
+            adunit = 'russianblogs.com_300x600_responsive_4_DFP',
+            childNetworkId = '22396446015',
+            xmlhttp = new XMLHttpRequest();xmlhttp.onreadystatechange = function(){if(xmlhttp.readyState==4 && xmlhttp.status==200){var es = document.querySelectorAll("[data-id='"+adunit+"']");var e = Array.from(es).filter(function(e) {return !e.hasAttribute("data-rendered")});if(e.length > 0){e.forEach(function(el){var iframe = el.contentWindow.document;iframe.open();iframe.write(xmlhttp.responseText);iframe.close();el.setAttribute('data-rendered', true)})}}};var child=childNetworkId.trim()?','+childNetworkId.trim():'';xmlhttp.open("GET", 'https://pubads.g.doubleclick.net/gampad/adx?iu=/147246189'+child+'/'+adunit+'&sz='+encodeURI(size)+'&t=Placement_type%3Dserving&'+Date.now(), true);xmlhttp.send();})();
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="anchor_ads">
+<iframe data-id="russianblogs.com_970x90_sticky_anchorad_responsive_DFP" FRAMEBORDER="0" SCROLLING="no" MARGINHEIGHT="0" MARGINWIDTH="0" TOPMARGIN="0" LEFTMARGIN="0" width="1" height="1"></iframe>
+<script>
+    (function () {
+        var size='970x90|320x100',
+            adunit = 'russianblogs.com_970x90_sticky_anchorad_responsive_DFP',
+            childNetworkId = '22396446015',
+            xmlhttp = new XMLHttpRequest();xmlhttp.onreadystatechange = function(){if(xmlhttp.readyState==4 && xmlhttp.status==200){var es = document.querySelectorAll("[data-id='"+adunit+"']");var e = Array.from(es).filter(function(e) {return !e.hasAttribute("data-rendered")});if(e.length > 0){e.forEach(function(el){var iframe = el.contentWindow.document;iframe.open();iframe.write(xmlhttp.responseText);iframe.close();el.setAttribute('data-rendered', true)})}}};var child=childNetworkId.trim()?','+childNetworkId.trim():'';xmlhttp.open("GET", 'https://pubads.g.doubleclick.net/gampad/adx?iu=/147246189'+child+'/'+adunit+'&sz='+encodeURI(size)+'&t=Placement_type%3Dserving&'+Date.now(), true);xmlhttp.send();})();
+</script>
+</div>
+<div class="columns footer-meta">
+<div class="row">
+<div class="columns large-12 footer-meta-inner">
+<div class="row">
+<div class="columns large-12"> &copy; 2020-2022 All rights reserved by russianblogs.com</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script src="/js/jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/hljs.js" type="text/javascript"></script>
+<script type="text/javascript">
+	$(function(){
+		var allEscRegex = /&(lt|gt|amp|quot|nbsp|shy|#\d{1,5});/g,
+		    namedEntities = {
+					lt: '<',
+					gt: '>',
+					amp: '&',
+					quot: '"',
+					nbsp: '\u00a0',
+					shy: '\u00ad'
+				}
+		var allEscDecode = function( match, code ) {
+				return namedEntities[ code ];
+		};
+		htmlDecodeAttr = function( text ) {
+				return text.replace( allEscRegex, allEscDecode );
+		}
+	  hljs.initHighlightingOnLoad();
+	  hljs.initCopyButtonOnLoad();
+	  hljs.initLineNumbersOnLoad();
+		if($('pre .language-plain').length>0){
+			$('pre .language-plain').each(function(i,e){
+				var highlightRe = hljs.highlightAuto(htmlDecodeAttr(e.innerHTML))
+				e.innerHTML = highlightRe.value;
+				e.className = 'language-'+highlightRe.language;
+			});
+		}
+	})
+	</script>
+<script src="/js/viewer.min.js"></script>
+<script>
+var viewer = new Viewer(document.getElementById('article_content'));
+</script>
+<script src="/js/bottom.js"></script>
+
+<script type="text/javascript">
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(72909481, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/72909481" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+
+</body>
+</html>

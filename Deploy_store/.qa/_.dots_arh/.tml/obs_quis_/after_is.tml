@@ -1,0 +1,4 @@
+if [ $? -ne 0 ]; then
+    plt_exit "be return 1 <- Fail: ${FUNCNAME[0]} in ${FNLOCK}"
+    return 1
+fi

@@ -1,0 +1,8 @@
+
+[вывести с помощью sed номер строки начинающейся с $begin и заканчивающейся на $end.
+Так выводит номер строки если заканчивается на end.](https://unixforum.org/viewtopic.php?t=137565)
+
+@@
+
+    sed -n '/^\$begin.*\$end$/=' file
+    sed -n '/^\@@/=' ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_sed_/_sed_/_man/examp_a.man

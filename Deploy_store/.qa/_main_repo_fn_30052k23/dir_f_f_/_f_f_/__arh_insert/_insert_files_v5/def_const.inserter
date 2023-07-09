@@ -1,0 +1,19 @@
+local FNN=${FUNCNAME[0]}
+local ORIGO_DIR=$PATH_FN/dir_$FNN
+local PPWD=$PWD
+local FLN=$0
+local ARGS=($@)
+local FN_OUT_DIR=$PATH_FN/dir_$FNN/_$FNN/_out
+local NARGS=$#
+# last par ${!#}
+# all param as "unied word" $*
+# all param as "summ singl words $@"
+# T"ODO that
+local FNLOCK="fn: ${FNN}, with_args: ${ARGS[*]} , filename: ${PATH_FN}/dir_${FNN}/${FNN}.sh, line: $LINENO"
+local FN_ERR_FILE="${PATH_FN}/dir_${FNN}/_${FNN}/_out/err.res"
+wrp_fifs1_ rm -f "${FN_ERR_FILE}" -cf1
+
+verbose=0
+[[ " ${ARGS[*]} " =~ " -verbose " ]] || verbose=1
+
+[[ 1 -eq ${verbose} ]] || echo -e "${CYAN}---$FNN() $* ---${NORMAL}" #started functions

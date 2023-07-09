@@ -1,0 +1,19 @@
+# npm cache in /home/st/REPOBARE/_repo/plt/actio/dir_mm_npm_/_mm_npm_/_man/help
+
+npm ERR! Usage: npm cache add <tarball file>
+npm ERR! npm cache add <folder>
+npm ERR! npm cache add <tarball url>
+npm ERR! npm cache add <git url>
+npm ERR! npm cache add <name>@<version>
+npm ERR! npm cache clean
+npm ERR! npm cache verify
+
+# npm cache -h in /home/st/REPOBARE/_repo/plt/actio/dir_mm_npm_/_mm_npm_/_man/help
+
+npm cache add <tarball file>
+npm cache add <folder>
+npm cache add <tarball url>
+npm cache add <git url>
+npm cache add <name>@<version>
+npm cache clean
+npm cache verify

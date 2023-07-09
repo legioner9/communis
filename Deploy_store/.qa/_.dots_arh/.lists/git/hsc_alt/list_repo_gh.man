@@ -1,0 +1,71 @@
+#! main flow
+Lexicon
+
+-------------------------------------------
+#! current to bcp once
+communis
+
+
+#! any source (sync before) to bcp {$ gh repo sync owner/cli-fork -b BRANCH_NAME}
+### HowProgrammingWorks/Book
+# Book
+
+#! once arch
+Node_Docs
+Local_Catalog
+NBase 
+Libellus
+Node_Way_third
+in_libero_vitae
+Archt
+AFO_GenerativusFucus 
+GenerativusFucus 
+node_modules_
+legioner9.github.io 
+Book
+-------------------------------------------
+
+
+
+## my repo
+communis
+Node_Docs
+Local_Catalog
+NBase 
+Lexicon 
+Libellus
+Node_Way_third
+in_libero_vitae
+Archt
+AFO_GenerativusFucus 
+GenerativusFucus 
+node_modules_
+legioner9.github.io 
+
+
+
+## TSH 
+### metarhia/impress
+impress
+
+### metatech-university/Mentors
+Mentors
+
+### HowProgrammingWorks/Book
+Book
+AbstractionLayers
+NodejsStarterKit 
+
+### Metaserverless/Metaserverless.com
+Metaserverless.com
+
+
+
+## GNU (clang source bash) http://git.savannah.gnu.org/cgit/bash.git/
+svannah_bash
+
+
+
+## QOTEQ
+### QOTEQ/Demo
+Demo

@@ -1,0 +1,17 @@
+# npm team in ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_mm_npm_/_mm_npm_/_man/help
+
+npm ERR! npm team create <scope:team> [--otp <otpcode>]
+npm ERR! npm team destroy <scope:team> [--otp <otpcode>]
+npm ERR! npm team add <scope:team> <user> [--otp <otpcode>]
+npm ERR! npm team rm <scope:team> <user> [--otp <otpcode>]
+npm ERR! npm team ls <scope>|<scope:team>
+npm ERR! npm team edit <scope:team>
+
+# npm team -h in ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_mm_npm_/_mm_npm_/_man/help
+
+npm team create <scope:team> [--otp <otpcode>]
+npm team destroy <scope:team> [--otp <otpcode>]
+npm team add <scope:team> <user> [--otp <otpcode>]
+npm team rm <scope:team> <user> [--otp <otpcode>]
+npm team ls <scope>|<scope:team>
+npm team edit <scope:team>

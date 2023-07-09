@@ -1,0 +1,37 @@
+#!/bin/bash
+
+#. "$HOME/.bashrc"
+
+filename="${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_f_f_/f_f_extst/dir_1/ex2_tst/exec._extst" 
+
+# echo -e "${HLIGHT}---start file://$filename ---${NORMAL}" # start file
+
+idir=$(pwd)
+
+# cd "$(prs_f -d $filename)" || qq_exit "$(prs_f -d filename) not found"
+
+dir=$(prs_f -d "$filename")
+cd "$dir" || qq_exit
+. "$dir"/_flow_tst.sh &>/dev/null
+# . "$dir"/_flow_tst.sh &>res
+
+# cd "$dir"/use/ || qq_exit
+
+# ./main.bexe &>res
+
+flag=1
+if ! diff -r "$dir/_pre_d/dir_nnn2_" "$dir/_res_d/dir_nnn2_" 1>/dev/null; then
+    flag=0
+fi
+
+if [ 0 -eq "$flag" ]; then
+    echo "ANY in file://$dir fail" >&2
+
+else
+    echo "ALL in $dir true"
+
+fi
+
+cd "$idir"
+
+unset filename

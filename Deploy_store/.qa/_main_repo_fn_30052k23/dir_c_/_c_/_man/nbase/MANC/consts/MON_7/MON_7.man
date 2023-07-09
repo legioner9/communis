@@ -1,0 +1,266 @@
+### UP
+[MON_7](##MON_7)
+[MAIN](##MAIN)
+[MAIN_ru](##MAIN_ru)
+[ANCORS](##ANCORS)
+[ISU](##ISU)
+[inet](##A_inet)
+[inet](##books_inet)
+[inet](##examples_inet)
+[inet](##classic_inet)
+[inet](##enters_inet)
+[inet](##issue_code_inet)
+[H_FILE](##H_FILE)
+[c_SYNOPSIS](##c_SYNOPSIS)
+[c_RETURN](##c_RETURN)
+[c_RETURN_ru](##c_RETURN_ru)
+[c_BUGS](##c_BUGS)
+[c_DESCRIPTION_ru](##c_DESCRIPTION_ru)
+[c_DESCRIPTION](##c_DESCRIPTION)
+[c_MIRRORS](##c_MIRRORS)
+[c_EXAMPLES](##c_EXAMPLES)
+[c_CODE_h](##c_CODE_h)
+[c_CODE_c](##c_CODE_c)
+[c_CODE_m](##c_CODE_m)
+[c_ERRORS](##c_ERRORS)
+[c_BOOKS](##c_BOOKS)
+[c_BOOKS_ru](##c_BOOKS_ru)
+[c_CONTENT](##c_CONTENT)
+
+[cat_hfiles](../../cat_hfiles.md)
+[cat_utils](../../cat_utils.md)
+[cat_structs](../../cat_structs.md)
+[cat_param](../../cat_params.md)
+[cat_macros](../../cat_macross.md)
+[cat_const](../../cat_consts.md)
+[cat_type](../../cat_types.md)
+[cat_any](../cat_anys.md)
+
+
+[UP](###UP)
+## MAIN
+:MON_7:
+[next](##MAIN_ru)
+
+<<MAIN>>
+[MAIN](../../fills/MON_7/MAIN)
+
+
+
+[UP](###UP)
+## MAIN_ru
+:MON_7:
+[next](##ANCORS)
+
+<<MAIN_ru>>
+[MAIN_ru](../../fills/MON_7/MAIN_ru)
+
+[UP](###UP)
+## ANCORS
+:MON_7:
+[next](##ISU)
+
+<<ANCORS>>
+[ANCORS](../../fills/MON_7/ANCORS)
+
+[UP](###UP)
+## ISU
+:MON_7:
+[next](##H_FILE)
+
+<<ISU>>
+only read
+:MON_7:
+[ISU](../../contents)
+[next](##inet)
+
+
+[UP](###UP)
+## inet
+:MON_7:
+[next](##H_FILE)
+
+
+[UP](###UP)
+## A_inet
+[manpages.org](https://www.google.ru/search?q=MON_7+site%3Ahttps%3A%2F%2Fmanpages.org)
+[reposcope.com_ru](https://www.google.ru/search?q=MON_7+site%3Ahttps%3A%2F%2Freposcope.com%2Fmanpages%2Fru)
+[pubs.opengroup.org](https://www.google.com/search?q=MON_7+https%3A%2F%2Fpubs.opengroup.org)
+[manpages.debian.org](https://yandex.ru/search/?text=MON_7+site%3Ahttps%3A%2F%2Fmanpages.debian.org%2F)
+[www.opennet.ru](http://www.opennet.ru/man.shtml?category=2&topic=MON_7)
+[man7.org](https://www.google.ru/search?q=MON_7+site%3Ahttps%3A%2F%2Fman7.org%2Flinux%2Fman-pages)
+[en.cppreference.com](https://www.google.com/search?q=MON_7+en.cppreference.com)
+[www.mankier.com](https://www.mankier.com/?q=MON_7)
+[www.codecogs.com](https://www.google.ru/search?q=MON_7+https%3A%2F%2Fwww.codecogs.com%2Flibrary%2Fcomputing%2F)
+[digitalmars.com](https://www.google.ru/search?q=MON_7+https%3A%2F%2Fdigitalmars.com%2Frtl%2F)
+
+
+[UP](###UP)
+## books_inet
+[cpp.com.ru](https://yandex.ru/search/?text=MON_7+site%3Ahttps%3A%2F%2Fcpp.com.ru)
+[linuxhint.com](https://www.google.ru/search?q=MON_7+site%3Ahttps%3A%2F%2Flinuxhint.com)
+[gnu.org](https://www.google.ru/search?q=MON_7+site%3Ahttps%3A%2F%2Fwww.gnu.org%2Fsoftware%2Flibc%2Fmanual)
+
+[UP](###UP)
+## examples_inet
+[yandex:examples](https://yandex.ru/search/?text=MON_7+example+in+c)
+[docs.oracle.com](https://www.google.com/search?q=MON_7+https%3A%2F%2Fdocs.oracle.com)
+[manpages.debian.org](https://yandex.ru/search/?text=MON_7+site%3Ahttps%3A%2F%2Fmanpages.debian.org%2F)
+[osr507doc.xinuos.com](https://www.google.com/search?q=MON_7+http%3A%2F%2Fosr507doc.xinuos.com%2Fen%2Fman)
+[cpp.hotexamples.com](https://cpp.hotexamples.com/examples/-/-/MON_7/cpp-MON_7-function-examples.html)
+[all-ht.ru](https://yandex.ru/search/?text=MON_7+site%3Ahttp%3A%2F%2Fall-ht.ru%2Finf%2Fprog%2Fc%2F)
+[cppreference.com](https://yandex.ru/search/?text=MON_7+site%3Ahttps%3A%2F%2Fen.cppreference.com%2Fw%2Fc%2F)
+
+[UP](###UP)
+## classic_inet
+[bogatyrev_c_unix](https://www.google.com/search?q=MON_7+site%3Ahttps%3A%2F%2Fcpp.com.ru%2Fbogatyrev_c_unix)
+[kr_cbook](https://www.google.com/search?q=MON_7+site%3Ahttps%3A%2F%2Fcpp.com.ru%2Fkr_cbook)
+
+[UP](###UP)
+## enters_inet
+[pubs.opengroup.org](https://pubs.opengroup.org/onlinepubs/9699919799/idx/head.html)
+
+[UP](###UP)
+## issue_code_inet
+[code.woboq.org](https://www.google.com/search?h=&sitesearch=https%3A%2F%2Fcode.woboq.org%2Fuserspace%2Fglibc%2F&q=MON_7)
+
+
+[UP](###UP)
+## H_FILE 
+[langinfo_h.md](../../hfiles/langinfo_h.md)
+
+
+[UP](###UP)
+## c_SYNOPSIS
+:MON_7:
+[next](##c_RETURN_ru)
+
+<<SYNOPSIS>>
+[SYNOPSIS](../../fills/MON_7/SYNOPSIS)
+
+
+[UP](###UP)
+## c_RETURN_ru
+:MON_7:
+[next](##c_RETURN)
+
+<<RETURN>>
+[RETURN_ru](../../fills/MON_7/RETURN)
+
+
+[UP](###UP)
+## c_RETURN
+:MON_7:
+[next](##c_DESCRIPTION_ru)
+
+<<RETURN_ru>>
+[RETURN](../../fills/MON_7/RETURN_ru)
+
+
+[UP](###UP)
+## c_DESCRIPTION_ru
+:MON_7:
+[next](##c_DESCRIPTION)
+
+<<DESCRIPTION_ru>>
+[DESCRIPTION_ru](../../fills/MON_7/DESCRIPTION_ru)
+
+
+[UP](###UP)
+## c_DESCRIPTION
+:MON_7:
+[next](##c_BUGS)
+
+<<DESCRIPTION>>
+[DESCRIPTION](../../fills/MON_7/DESCRIPTION)
+
+
+[UP](###UP)
+## c_MIRRORS
+:MON_7:
+[next](##c_BUGS)
+
+<<MIRRORS>>
+[MIRRORS](../../fills/MON_7/MIRRORS)
+
+
+[UP](###UP)
+## c_BUGS
+:MON_7:
+[next](##c_EXAMPLES)
+
+<<BUGS>>
+[BUGS](../../fills/MON_7/BUGS)
+
+
+[UP](###UP)
+## c_EXAMPLES
+:MON_7:
+[next](##c_CODE)
+
+<<EXAMPLES>>
+[EXAMPLES](../../fills/MON_7/EXAMPLES)
+
+
+[UP](###UP)
+## c_CODE_h
+:MON_7:
+[next](##c_CODE_c)
+
+<<CODE_h>>
+[CODE_h](../../fills/MON_7/CODE_h)
+
+
+[UP](###UP)
+## c_CODE_c
+:MON_7:
+[next](##c_CODE_m)
+
+<<CODE_c>>
+[CODE_c](../../fills/MON_7/CODE_c)
+
+
+[UP](###UP)
+## c_CODE_m
+:MON_7:
+[next](##c_ERRORS)
+
+<<CODE_m>>
+[CODE_m](../../fills/MON_7/CODE_m)
+
+
+[UP](###UP)
+## c_ERRORS
+:MON_7:
+[next](##c_BOOKS)
+
+<<ERRORS>>
+[ERRORS](../../fills/MON_7/ERRORS)
+
+
+[UP](###UP)
+## c_BOOKS
+:MON_7:
+[next](##c_BOOKS_ru)
+
+<<BOOKS>>
+[BOOKS](../../fills/MON_7/BOOKS)
+
+
+[UP](###UP)
+## c_BOOKS_ru
+:MON_7:
+[next](##c_CONTENT)
+
+
+<<BOOKS_ru>>
+[BOOKS_ru](../../fills/MON_7/BOOKS_ru)
+
+
+[UP](###UP)
+## c_CONTENT
+:33333:
+[33333.cnt](../../contents/33333.cnt)
+[next](##UP)
+
+[UP](###UP)

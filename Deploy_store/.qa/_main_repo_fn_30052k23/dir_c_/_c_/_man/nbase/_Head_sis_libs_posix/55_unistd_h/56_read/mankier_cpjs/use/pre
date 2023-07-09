@@ -1,0 +1,3 @@
+failed in file main.c at line # 48
+from read_с nbyte = -1, errno = 14
+exit(errno) with: Bad address

@@ -1,0 +1,12 @@
+# 01112k21 age of plt
+
+# f_f_ create main_fn
+
+# f_f_ _0
+
+1) start    3) vim	5) menu	    7) add_tag
+2) edit	    4) man	6) tag
+
+## start
+
+

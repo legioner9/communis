@@ -1,0 +1,42 @@
+## НАЗВАНИЕ
+scandir, alphasort, versionsort - поиск совпадающих элементов в каталоге  
+СИНТАКСИС
+
+    #include <dirent.h>
+
+    int scandir(const char *dir, struct dirent ***namelist,
+    int(*select)(const struct dirent *),
+    int(*compar)(const struct dirent **, const struct dirent **));
+
+
+int alphasort(const void *a, const void *b);
+
+
+int versionsort(const void *a, const void *b);
+ 
+ОПИСАНИЕ
+Функция scandir() производит поиск элементов в каталоге dir, посылая каждому элементу вызов select(). Элементы, которым select() возвращает ненулевое значение, записываются в строках и размещаются в памяти при помощи malloc(); они сортируются посредством функции qsort() и функции сравнения compar(), а затем накапливаются в массиве namelist , который размещается в памяти функцией malloc(). Если select равен NULL, то выбираются все записи.
+Функции alphasort() и versionsort() могут быть использованы как функции сравнения compar(). Первая упорядочивает записи с помощью strcoll(3), а вторая использует strverscmpcmp(3) для строк (*a)->d_name и (*b)->d_name.  
+
+ВОЗВРАЩАЕМЫЕ ЗНАЧЕНИЯ
+Функция scandir() возвращает количество выбранных записей или -1, если произошла ошибка.
+Функции alphasort() и versionsort() возвращают целое число меньше нуля, ноль или целое число больше нуля, если первый аргумент функции соответственно меньше второго, равен второму или больше второго аргумента. 
+
+ПРИМЕРЫ ИСПОЛЬЗОВАНИЯ
+
+    /* печатает файлы в каталоге в обратном порядке */
+    #include <dirent.h>
+    main(){
+        struct dirent **namelist;
+        int n;
+        n = scandir(".", &namelist, 0, alphasort);
+        if (n < 0)
+            perror("scandir");
+        else {
+            while(n--) {
+                printf("%s\n", namelist[n]->d_name);
+                free(namelist[n]);
+            }
+            free(namelist);
+        }
+    }

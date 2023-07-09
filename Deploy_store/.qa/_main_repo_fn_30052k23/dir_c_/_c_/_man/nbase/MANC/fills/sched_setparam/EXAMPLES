@@ -1,0 +1,80 @@
+http://osr507doc.xinuos.com/en/man/html.S/sched_setparam.S.html
+
+   int pmin, pmax, priority = 36;
+   struct sched_param sp;
+   ...
+   pmin = sched_get_priority_min(SCHED_FIFO);
+   pmax = sched_get_priority_max(SCHED_FIFO);
+   
+
+   if (priority >= pmin && priority <= pmax) {
+      sp.sched_priority = priority;
+   }
+   else {
+      sp.sched_priority = pmin;
+   }
+   
+
+
+   sched_setparam(0, &sp);
+
+https://yumichan.net/programming/obtain-a-list-of-process-scheduling-policy-and-priority/
+
+/* Includes */
+#include <stdio.h>
+#include <sched.h>
+
+/* Functions */
+int main() {
+	int ret;
+	int numOfProcess = 31;
+	const pid_t pid[] = { 1, 2, 3, 4, 5, 6, 7, 8, 138, 140, 
+		141, 143, 156, 169, 170, 252, 255, 309, 317, 325, 
+		399, 404, 409, 412, 415, 418, 460, 469, 487, 500,
+		505 }; // an array of pids, change to the list you want
+	int i = 0;
+	struct sched_param stSched = { 0 };
+	
+	for ( ; i < numOfProcess; ++i) {
+		ret = sched_getscheduler(pid[i]); // get the policy
+		if (ret < 0) {
+			printf("Error: sched_getscheduler\n");
+			goto ERR_STATE;
+		}
+		
+		printf("pid %d Policy: %d ", pid[i], ret);
+		
+		switch (ret) {
+		case SCHED_OTHER: // the default policy, use SCHED_NORMAL instead of SCHED_OTHER sometimes
+			printf("SCHED_OTHER\t");
+			break;
+		case SCHED_FIFO:
+			printf("SCHED_FIFO\t");
+			break;
+		case SCHED_RR:
+			printf("SCHED_RR\t");
+			break;
+		/*case SCHED_BATCH: // uncomment this case if your Linux support it
+			printf("SCHED_BATCH\n");
+			break;
+		case SCHED_IDLE: // uncomment this case if your Linux support it
+			printf("SCHED_IDLE\n");
+			break;*/
+		default:
+			printf("No matching schedule policy!\n");
+			break;
+		};
+		
+		ret = sched_getparam(pid[i], &stSched); // get the priority
+		if (ret != 0) {
+			printf("Error: sched_getparam\n");
+			goto ERR_STATE;
+		}
+		printf("Priority: %d\n", stSched.sched_priority);
+		
+		memset(&stSched, 0, sizeof(struct sched_param));
+	}
+	
+ERR_STATE:
+	return 0;
+}

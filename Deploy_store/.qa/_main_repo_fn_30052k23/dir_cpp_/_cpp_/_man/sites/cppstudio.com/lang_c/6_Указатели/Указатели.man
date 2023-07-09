@@ -1,0 +1,4 @@
+## Указатели
+
+## http://cppstudio.com/post/5828/
+

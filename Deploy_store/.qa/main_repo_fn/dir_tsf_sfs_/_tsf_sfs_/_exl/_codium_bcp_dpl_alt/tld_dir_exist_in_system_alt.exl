@@ -1,0 +1,22 @@
+#>exl
+exl_pause "___ TLD file to file~ in system alt ?___ CNTL-C to exit, ENTR to continue"
+
+# /home/st/.vscode-oss
+wrp_fifs1_ cd /home/st/ -d1
+
+# .vscode-oss
+wrp_fifs1_ rm -rf .vscode-oss~ -cd1
+wrp_fifs1_ file .vscode-oss~ -nd1
+
+wrp_fifs2_ cp -rf .vscode-oss .vscode-oss~ -d1 -nd2
+wrp_fifs1_ file .vscode-oss~ -d1
+
+# VSCodium
+
+wrp_fifs1_ cd /home/st/.config/ -d1
+
+wrp_fifs1_ rm -rf VSCodium~ -cd1
+wrp_fifs1_ file VSCodium~ -nd1
+
+wrp_fifs2_ cp -rf VSCodium VSCodium~ -d1 -nd2
+wrp_fifs1_ file VSCodium~ -d1

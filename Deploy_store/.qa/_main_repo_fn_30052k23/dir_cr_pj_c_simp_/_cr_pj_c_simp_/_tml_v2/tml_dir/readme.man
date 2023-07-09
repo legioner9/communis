@@ -1,0 +1,5 @@
+## recommended
+
+If allocated with malloc, calloc, realloc, valloc or memalign, you must deallocate with free.
+If allocated with new, you must deallocate with delete.
+If allocated with new[], you must deallocate with delete[].

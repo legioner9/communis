@@ -1,0 +1,155 @@
+## Общение двух процессов через "трубу".
+
+Пример 24
+
+```cpp
+/* Пример коммуникации процессов при помощи программных каналов
+ * (трубы, pipes).
+ *      Данная программа превращается в две программы,
+ *      соединенные трубами в таком порядке:
+ *
+ *         stdout                  stdin
+ *        /------------ PIP1 -----------> cmd2
+ *      cmd1 <----------PIP2---------------/
+ *         stdin                   stdout
+ */
+/* файл LOOP_strt.c */
+#include <stdio.h>
+
+#define eq(s1,s2) ( strcmp(s1,s2) == 0 ) /* истина, если строки равны */
+#define SEP         "---"                /* разделитель команд при наборе */
+
+main( c, v ) char **v;
+{
+	char **p, **q;
+	int pid;
+	int PIP1[2];    /* труба cmd1-->cmd2 */
+	int PIP2[2];    /* труба cmd2-->cmd1 */
+
+	if( c==1 ){
+		printf( "Call: strt cmd1... %s cmd2...\n", SEP );
+		exit(1);
+	}
+
+			/* разбор аргументов */
+	v++;
+	/* в p - аргументы первой команды */
+	p = v;
+	while( *v && !eq( *v, SEP ))
+		v++;
+	*v = NULL;
+
+	v++;
+	/* в q - аргументы второй команды */
+	q = v;
+
+	pipe( PIP1 );   /* создаем две трубы */
+	pipe( PIP2 );   /* PIP[0] - открыт на чтение, PIP[1] - на запись */
+
+	if( pid = fork()){      /* развилка: порождаем процесс */
+	/* ПОРОЖДЕННЫЙ ПРОЦЕСС */
+		fprintf( stderr, "сын=%s pid=%d\n", p[0], getpid());
+
+		/* перенаправляем stdout нового процесса в PIP1 */
+		dup2( PIP1[1], 1 );
+		close( PIP1[1] );
+		/* канал чтения мы не будем использовать */
+		   close( PIP1[0] );
+
+		/* перенаправляем stdin из PIP2 */
+		dup2( PIP2[0], 0 );
+		close( PIP2[0] );
+		/* канал записи мы не будем использовать */
+		   close( PIP2[1] );
+
+		/* начинаем выполнять программу, содержащуюся в
+		 * файле p[0] с аргументами p (т.е. cmd1)
+		 */
+		execvp( p[0], p );
+		/* возврата из сисвызова exec не бывает */
+	}else{
+	/* ПРОЦЕСС-РОДИТЕЛЬ */
+		fprintf( stderr, "отец=%s pid=%d\n", q[0], getpid());
+
+		/* перенаправляем stdout в PIP2 */
+		dup2( PIP2[1], 1 );
+		close( PIP2[1] ); close( PIP2[0] );
+
+		/* перенаправляем stdin из PIP1 */
+		dup2( PIP1[0], 0 );
+		close( PIP1[0] ); close( PIP1[1] );
+
+		/* запускаем cmd2 */
+		execvp( q[0], q );
+	}
+}
+/* Ниже приводятся тексты двух программ, которые можно запустить
+ * как тест. Сервер компилируется в программу cmd2,
+ * клиент - в программу cmd1. Если запускающая программа
+ * скомпилирована в strt, то наберите команду
+ *              strt cmd1 --- cmd2
+ *  либо        strt cmd2 --- cmd1
+ */
+
+/* файл LOOP_p.c --------------------------------------------
+ * Процесс-клиент (cmd1)
+ */
+#include <stdio.h>
+int trace = 1;  /* вести трассировку своих действий */
+
+main(c , v) char **v;
+{
+	FILE *fp;       int pid;
+	char buf[128];
+
+	fprintf( stderr, "P: process pid=%d\n", getpid());
+	fp = fopen( "LOOP_p.c", "r" );
+	/* открываем файл с текстом этой команды */
+
+	/* читаем его построчно */
+	while( fgets( buf, sizeof buf, fp ) != NULL ){
+
+		if( trace ) fprintf( stderr, "P посылает: %s", buf );
+		/* посылаем его в стандартный вывод: трубу PIP1 */
+		printf( "%s", buf );
+		fflush( stdout );
+
+		/* ожидать ответа из трубы PIP2 */
+		fgets( buf, sizeof buf, stdin );
+		if( trace ) fprintf( stderr, "P получил: %s", buf );
+	}
+	fclose( stdout );
+	/* отключиться от трубы PIP1. Если этого не сделать, сервер
+	 * не прочитает из нее EOF */
+
+	while((pid = wait(NULL)) > 0 )
+		fprintf( stderr, "P: %d умер\n", pid );
+}
+
+/* файл LOOP_q.c -----------------------------------------------
+ * процесс-сервер (cmd2)
+ */
+#include <stdio.h>
+int trace = 1;
+
+main(c , v) char **v;
+{
+	char buf[128];          int pid;
+
+	fprintf( stderr, "Q: process pid=%d\n", getpid());
+	/* читать поступающие из трубы PIP1 строки */
+	while( fgets( buf, sizeof(buf), stdin ) != NULL ){
+
+		/* напечатать полученное сообщение */
+		if( trace ) fprintf( stderr, "Q прочел: %s", buf );
+
+		if( trace ) fprintf( stderr, "Q отвечает: OK=%s", buf );
+		/* ответить в трубу PIP2 */
+		printf( "OK=%s", buf ); fflush( stdout );
+	}
+	fclose( stdout );       /* отключиться от трубы PIP2 */
+
+	while((pid = wait(NULL)) > 0 )
+		fprintf( stderr, "Q: %d умер\n", pid );
+}
+© Copyright А. Богатырев, 1992-95

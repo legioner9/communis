@@ -1,0 +1,8 @@
+from> skill fs ->
+
+do> 
+^1^ remove file - (!)ignor if not exist
+^2^ remove dir not(!) remove
+^3^ remove_с dir prt_mode (Directory not empty)
+
+to> -> remove_с look done mode3

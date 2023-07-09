@@ -1,0 +1,266 @@
+### UP
+[l64a](##l64a)
+[MAIN](##MAIN)
+[MAIN_ru](##MAIN_ru)
+[ANCORS](##ANCORS)
+[ISU](##ISU)
+[inet](##A_inet)
+[inet](##books_inet)
+[inet](##examples_inet)
+[inet](##classic_inet)
+[inet](##enters_inet)
+[inet](##issue_code_inet)
+[H_FILE](##H_FILE)
+[p_SYNOPSIS](##p_SYNOPSIS)
+[p_RETURN](##p_RETURN)
+[p_RETURN_ru](##p_RETURN_ru)
+[p_BUGS](##p_BUGS)
+[p_DESCRIPTION_ru](##p_DESCRIPTION_ru)
+[p_DESCRIPTION](##p_DESCRIPTION)
+[p_MIRRORS](##p_MIRRORS)
+[p_EXAMPLES](##p_EXAMPLES)
+[p_CODE_h](##p_CODE_h)
+[p_CODE_c](##p_CODE_c)
+[p_CODE_m](##p_CODE_m)
+[p_ERRORS](##p_ERRORS)
+[p_BOOKS](##p_BOOKS)
+[p_BOOKS_ru](##p_BOOKS_ru)
+[p_CONTENT](##p_CONTENT)
+
+[cat_hfiles](../../cat_hfiles.md)
+[cat_utils](../../cat_utils.md)
+[cat_structs](../../cat_structs.md)
+[cat_param](../../cat_params.md)
+[cat_macros](../../cat_macross.md)
+[cat_const](../../cat_consts.md)
+[cat_type](../../cat_types.md)
+[cat_any](../cat_anys.md)
+
+
+[UP](###UP)
+## MAIN
+:l64a:
+[next](##MAIN_ru)
+
+<<MAIN>>
+[MAIN](../../fills/l64a/MAIN)
+
+
+
+[UP](###UP)
+## MAIN_ru
+:l64a:
+[next](##ANCORS)
+
+<<MAIN_ru>>
+[MAIN_ru](../../fills/l64a/MAIN_ru)
+
+[UP](###UP)
+## ANCORS
+:l64a:
+[next](##ISU)
+
+<<ANCORS>>
+[ANCORS](../../fills/l64a/ANCORS)
+
+[UP](###UP)
+## ISU
+:l64a:
+[next](##H_FILE)
+
+<<ISU>>
+only read
+:l64a:
+[ISU](../../contents)
+[next](##inet)
+
+
+[UP](###UP)
+## inet
+:l64a:
+[next](##H_FILE)
+
+
+[UP](###UP)
+## A_inet
+[manpages.org](https://www.google.ru/search?q=l64a+site%3Ahttps%3A%2F%2Fmanpages.org)
+[reposcope.com_ru](https://www.google.ru/search?q=l64a+site%3Ahttps%3A%2F%2Freposcope.com%2Fmanpages%2Fru)
+[pubs.opengroup.org](https://www.google.com/search?q=l64a+https%3A%2F%2Fpubs.opengroup.org)
+[manpages.debian.org](https://yandex.ru/search/?text=l64a+site%3Ahttps%3A%2F%2Fmanpages.debian.org%2F)
+[www.opennet.ru](http://www.opennet.ru/man.shtml?category=2&topic=l64a)
+[man7.org](https://www.google.ru/search?q=l64a+site%3Ahttps%3A%2F%2Fman7.org%2Flinux%2Fman-pages)
+[en.cppreference.com](https://www.google.com/search?q=l64a+en.cppreference.com)
+[www.mankier.com](https://www.mankier.com/?q=l64a)
+[www.codecogs.com](https://www.google.ru/search?q=l64a+https%3A%2F%2Fwww.codecogs.com%2Flibrary%2Fcomputing%2F)
+[digitalmars.com](https://www.google.ru/search?q=l64a+https%3A%2F%2Fdigitalmars.com%2Frtl%2F)
+
+
+[UP](###UP)
+## books_inet
+[cpp.com.ru](https://yandex.ru/search/?text=l64a+site%3Ahttps%3A%2F%2Fcpp.com.ru)
+[linuxhint.com](https://www.google.ru/search?q=l64a+site%3Ahttps%3A%2F%2Flinuxhint.com)
+[gnu.org](https://www.google.ru/search?q=l64a+site%3Ahttps%3A%2F%2Fwww.gnu.org%2Fsoftware%2Flibc%2Fmanual)
+
+[UP](###UP)
+## examples_inet
+[yandex:examples](https://yandex.ru/search/?text=l64a+example+in+c)
+[docs.oracle.com](https://www.google.com/search?q=l64a+https%3A%2F%2Fdocs.oracle.com)
+[manpages.debian.org](https://yandex.ru/search/?text=l64a+site%3Ahttps%3A%2F%2Fmanpages.debian.org%2F)
+[osr507doc.xinuos.com](https://www.google.com/search?q=l64a+http%3A%2F%2Fosr507doc.xinuos.com%2Fen%2Fman)
+[cpp.hotexamples.com](https://cpp.hotexamples.com/examples/-/-/l64a/cpp-l64a-function-examples.html)
+[all-ht.ru](https://yandex.ru/search/?text=l64a+site%3Ahttp%3A%2F%2Fall-ht.ru%2Finf%2Fprog%2Fc%2F)
+[cppreference.com](https://yandex.ru/search/?text=l64a+site%3Ahttps%3A%2F%2Fen.cppreference.com%2Fw%2Fc%2F)
+
+[UP](###UP)
+## classic_inet
+[bogatyrev_c_unix](https://www.google.com/search?q=l64a+site%3Ahttps%3A%2F%2Fcpp.com.ru%2Fbogatyrev_c_unix)
+[kr_cbook](https://www.google.com/search?q=l64a+site%3Ahttps%3A%2F%2Fcpp.com.ru%2Fkr_cbook)
+
+[UP](###UP)
+## enters_inet
+[pubs.opengroup.org](https://pubs.opengroup.org/onlinepubs/9699919799/idx/head.html)
+
+[UP](###UP)
+## issue_code_inet
+[code.woboq.org](https://www.google.com/search?h=&sitesearch=https%3A%2F%2Fcode.woboq.org%2Fuserspace%2Fglibc%2F&q=l64a)
+
+
+[UP](###UP)
+## H_FILE 
+[stdlib_h.md](../../hfiles/stdlib_h.md)
+
+
+[UP](###UP)
+## p_SYNOPSIS
+:l64a:
+[next](##p_RETURN_ru)
+
+<<SYNOPSIS>>
+[SYNOPSIS](../../fills/l64a/SYNOPSIS)
+
+
+[UP](###UP)
+## p_RETURN_ru
+:l64a:
+[next](##p_RETURN)
+
+<<RETURN>>
+[RETURN_ru](../../fills/l64a/RETURN)
+
+
+[UP](###UP)
+## p_RETURN
+:l64a:
+[next](##p_DESCRIPTION_ru)
+
+<<RETURN_ru>>
+[RETURN](../../fills/l64a/RETURN_ru)
+
+
+[UP](###UP)
+## p_DESCRIPTION_ru
+:l64a:
+[next](##p_DESCRIPTION)
+
+<<DESCRIPTION_ru>>
+[DESCRIPTION_ru](../../fills/l64a/DESCRIPTION_ru)
+
+
+[UP](###UP)
+## p_DESCRIPTION
+:l64a:
+[next](##p_BUGS)
+
+<<DESCRIPTION>>
+[DESCRIPTION](../../fills/l64a/DESCRIPTION)
+
+
+[UP](###UP)
+## p_MIRRORS
+:l64a:
+[next](##p_BUGS)
+
+<<MIRRORS>>
+[MIRRORS](../../fills/l64a/MIRRORS)
+
+
+[UP](###UP)
+## p_BUGS
+:l64a:
+[next](##p_EXAMPLES)
+
+<<BUGS>>
+[BUGS](../../fills/l64a/BUGS)
+
+
+[UP](###UP)
+## p_EXAMPLES
+:l64a:
+[next](##p_CODE)
+
+<<EXAMPLES>>
+[EXAMPLES](../../fills/l64a/EXAMPLES)
+
+
+[UP](###UP)
+## p_CODE_h
+:l64a:
+[next](##p_CODE_c)
+
+<<CODE_h>>
+[CODE_h](../../fills/l64a/CODE_h)
+
+
+[UP](###UP)
+## p_CODE_c
+:l64a:
+[next](##p_CODE_m)
+
+<<CODE_c>>
+[CODE_c](../../fills/l64a/CODE_c)
+
+
+[UP](###UP)
+## p_CODE_m
+:l64a:
+[next](##p_ERRORS)
+
+<<CODE_m>>
+[CODE_m](../../fills/l64a/CODE_m)
+
+
+[UP](###UP)
+## p_ERRORS
+:l64a:
+[next](##p_BOOKS)
+
+<<ERRORS>>
+[ERRORS](../../fills/l64a/ERRORS)
+
+
+[UP](###UP)
+## p_BOOKS
+:l64a:
+[next](##p_BOOKS_ru)
+
+<<BOOKS>>
+[BOOKS](../../fills/l64a/BOOKS)
+
+
+[UP](###UP)
+## p_BOOKS_ru
+:l64a:
+[next](##p_CONTENT)
+
+
+<<BOOKS_ru>>
+[BOOKS_ru](../../fills/l64a/BOOKS_ru)
+
+
+[UP](###UP)
+## p_CONTENT
+:33333:
+[33333.cnt](../../contents/33333.cnt)
+[next](##UP)
+
+[UP](###UP)

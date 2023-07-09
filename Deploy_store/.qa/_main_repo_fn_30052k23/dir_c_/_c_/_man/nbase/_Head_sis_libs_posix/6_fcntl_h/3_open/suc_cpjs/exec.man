@@ -1,0 +1,2 @@
++ fcntl_1::read_с
++ fcntl_1::open_с

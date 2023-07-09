@@ -1,0 +1,5 @@
+^C  3
+\n  9
+tab 10
+CR  13 (enter)
+esc 27

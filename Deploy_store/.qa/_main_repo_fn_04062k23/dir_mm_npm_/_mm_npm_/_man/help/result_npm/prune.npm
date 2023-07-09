@@ -1,0 +1,16 @@
+# npm prune in /home/st/REPOBARE/_repo/plt/actio/dir_mm_npm_/_mm_npm_/_man/help
+
+npm WARN help@1.0.0 No description
+npm WARN help@1.0.0 No repository field.
+
+audited 98 packages in 1.01s
+
+24 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+
+# npm prune -h in /home/st/REPOBARE/_repo/plt/actio/dir_mm_npm_/_mm_npm_/_man/help
+
+npm prune [[<@scope>/]<pkg>...] [--production]

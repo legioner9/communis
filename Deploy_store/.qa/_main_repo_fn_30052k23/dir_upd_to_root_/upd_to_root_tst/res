@@ -1,0 +1,13 @@
+${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_upd_to_root_/upd_to_root_tst/a
+[0;36m---qq_exit() $.1=: EXIT amount args = 0: not >= 1 or <= 2 $.2= $.3=---[0m
+[0;31m---message: : EXIT amount args = 0: not >= 1 or <= 2---[0m
+[0;31m---file: ---[0m
+[0;31m---line: ---[0m
+[0;36m---qq_exit() $.1=in upd_to_root_ : $add: /z is root $.2=${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_upd_to_root_/upd_to_root_tst/_flow_tst.sh $.3=123---[0m
+[0;31m---message: in upd_to_root_ : $add: /z is root---[0m
+[0;31m---file: ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_upd_to_root_/upd_to_root_tst/_flow_tst.sh---[0m
+[0;31m---line: 123---[0m
+[0;36m---qq_exit() $.1=in upd_to_root_: $dir: d is NOT root $.2=${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_upd_to_root_/upd_to_root_tst/_flow_tst.sh $.3=119---[0m
+[0;31m---message: in upd_to_root_: $dir: d is NOT root---[0m
+[0;31m---file: ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_upd_to_root_/upd_to_root_tst/_flow_tst.sh---[0m
+[0;31m---line: 119---[0m

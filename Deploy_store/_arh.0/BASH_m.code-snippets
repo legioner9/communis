@@ -1,0 +1,87 @@
+{
+	// Place your st workspace snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"scope": "javascript,typescript",
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+	"create file with filename": {
+		"prefix": "##",
+		"body": [
+		  "#!/bin/bash",
+		  "",
+		  "#. \"\\$HOME/.bashrc\"",
+		  "",
+		  "filename=\"$1\"",
+		  "",
+		  "echo -e \"\\${HLIGHT}---start file: \\$filename---\\${NORMAL}\" # start file",
+		  "",
+		  "#e_exer \"Questions? See far!\" \"\\$filename\" \"\\$LINENO\"",
+		  "",
+		  "#up_lib_git",
+		  "",
+		  "unset filename",
+
+		],
+		"description": "create file with filename"
+	  },
+	"echo -e GREEN var": {
+		"prefix": "ev",
+		"body": [
+			"echo -e \"\\${GREEN}\\\\\\$${1:var} = \\$${1:var}\\${NORMAL}\" #print variable"
+		],
+		"description": "echo -e GREEN var"
+	},
+	"echo -e BLUE info": {
+		"prefix": "ei",
+		"body": [
+			"echo -e \"\\${BLUE}---${1:message}---\\${NORMAL}\" #sistem info mesage"
+		],
+		"description": "echo -e BLUE info"
+	},
+	"echo -e HLIGHT hint": {
+		"prefix": "eh",
+		"body": [
+			"echo -e \"\\${HLIGHT}---${1:hint message}---\\${NORMAL}\" #start files"
+		],
+		"description": "echo -e HLIGHT hint"
+	},
+	"echo -e RED error": {
+		"prefix": "eer",
+		"body": [
+			"echo -e \"\\${RED}---${1:error message}---\\${NORMAL}\" #exit 1"
+		],
+		"description": "echo -e RED error"
+	},
+	"echo -e CYAN started": {
+		"prefix": "es",
+		"body": [
+			"echo -e \"\\${CYAN}---${1:started}()---\\${NORMAL}\" #started functions"
+		],
+		"description": "echo -e CYAN started"
+	},
+	"echo -e ULINE dubled_command": {
+		"prefix": "edc",
+		"body": [
+			"echo -e \"\\${ULINE}${1:dubled_command}\\${NORMAL}\" #repit commands"
+		],
+		"description": "echo -e ULINE dubled_command"
+	},
+	"e_exer standart": {
+		"prefix": "e_e",
+		"body": [
+			"e_exer \"${1:err_message}\" \"\\$filename\" \"\\$LINENO\""
+		],
+		"description": "e_exer standart"
+	}
+}

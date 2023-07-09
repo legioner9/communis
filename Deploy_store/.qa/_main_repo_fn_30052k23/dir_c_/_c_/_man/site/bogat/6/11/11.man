@@ -1,0 +1,131 @@
+## 6.11. Мультиплексирование ввода-вывода.
+Данная глава посвящена системному вызову select, который, однако, мы предоставляем вам исследовать самостоятельно. Его роль такова: он позволяет опрашивать нес- колько дескрипторов открытых файлов (или устройств) и как только в файле появляется новая информация - сообщать об этом нашей программе. Обычно это бывает связано с дескрипторами, ведущими к сетевым устройствам.
+
+6.11.1.
+
+    /* Пример использования вызова select() для мультиплексирования
+     * нескольких каналов ввода. Этот вызов можно также использовать
+     * для получения таймаута.
+     *     Вызов: войти на терминалах tty01 tty02 и набрать на каждом
+     *            sleep 30000
+     *     затем  на tty00 сказать           select /dev/tty01 /dev/tty02
+     *     и вводить что-либо на терминалах  tty01 и tty02
+     * Сборка:      cc select.c -o select -lsocket
+     */
+    #include <stdio.h>
+    #include <fcntl.h>
+    #include <sys/types.h>  /* fd_set, FD_SET, e.t.c. */
+    #include <sys/param.h>  /* NOFILE */
+    #include <sys/select.h>
+    #include <sys/time.h>
+    #include <sys/filio.h>  /* для FIONREAD */
+    #define max(a,b)        ((a) > (b) ? (a) : (b))
+
+    char buf[512];          /* буфер чтения                      */
+    int fdin, fdout;        /* дескрипторы каналов stdin, stdout */
+    int nready;             /* число готовых каналов             */
+    int nopen;              /* число открытых каналов            */
+    int maxfd = 0;          /* максимальный дескриптор           */
+    int nfds;               /* сколько первых дескрипторов проверять */
+    int f;                  /* текущий дескриптор                */
+    fd_set set, rset;       /* маски                             */
+
+    /* таблица открытых нами файлов */
+    struct _fds {
+            int fd;         /* дескриптор */
+            char name[30];  /* имя файла  */
+    } fds[ NOFILE ] = { /* NOFILE - макс. число открытых файлов на процесс */
+            { 0, "stdin" }, { 1, "stdout" }, { 2, "stderr" }
+            /* все остальное - нули */
+    };
+    struct timeval timeout, rtimeout;
+
+    /* выдать имя файла по дескриптору */
+    char *N( int fd ){
+            register i;
+            for(i=0; i < NOFILE; i++)
+                    if(fds[i].fd == fd ) return fds[i].name;
+            return "???";
+    }
+
+    void main( int ac, char **av ){
+            nopen = 3;              /* stdin, stdout, stderr */
+            for( f = 3; f < NOFILE; f++ ) fds[f].fd = (-1);
+            fdin = fileno(stdin);   fdout = fileno(stdout);
+            setbuf(stdout, NULL);   /* отмена буферизации */
+            FD_ZERO(&set);          /* очистка маски */
+
+            for(f=1; f < ac; f++ )
+                    if((fds[nopen].fd = open(av[f], O_RDONLY)) < 0 ){
+                       fprintf(stderr, "Can't read %s\n", av[f] );
+                       continue;
+                    } else {
+                       FD_SET(fds[nopen].fd, &set );   /* учесть в маске */
+                          maxfd = max(maxfd, fds[nopen].fd );
+                       strncpy(fds[nopen].name, av[f], sizeof(fds[0].name) - 1);
+                       nopen++;
+                    }
+
+            if( nopen == 3 ){
+                    fprintf(stderr, "Nothing is opened\n");
+                    exit(1);
+            }
+
+            FD_SET(fdin, &set); /* учесть stdin */
+               maxfd = max(maxfd, fdin );
+            nopen -= 2;         /* stdout и stderr не участвуют в select */
+            timeout.tv_sec = 10;    /* секунд */
+            timeout.tv_usec = 0;    /* миллисекунд */
+
+        /* nfds - это КОЛИЧЕСТВО первых дескрипторов, которые надо
+         * просматривать. Здесь можно использовать
+         *          nfds = NOFILE;  (кол-во ВСЕХ дескрипторов   )
+         * или      nfds = maxfd+1; (кол-во = номер последнего+1)
+         * ( +1 т.к. нумерация fd идет с номера 0, а количество - с 1).
+         */
+            nfds = maxfd + 1;
+            while( nopen ){
+
+               rset = set; rtimeout = timeout; /* копируем, т.к. изменятся */
+        /* опрашивать можно FIFO-файлы, терминалы, pty, socket-ы, stream-ы */
+
+               nready = select( nfds, &rset, NULL, NULL, &rtimeout );
+
+        /* Если вместо &rtimeout написать NULL, то ожидание будет
+         * бесконечным (пока не собьют сигналом)
+         */
+               if( nready <= 0 ){  /* ничего не поступило */
+                    fprintf(stderr, "Timed out, nopen=%d\n", nopen);
+                    continue;
+               }
+               /* опрос готовых дескрипторов */
+               for(f=0; f < nfds; f++ )
+                    if( FD_ISSET(f, &rset)){  /* дескриптор f готов */
+                            int n;
+
+                            /* Вызов FIONREAD позволяет запросить
+                             * число байт готовых к передаче
+                             * через дескриптор.
+                             */
+                            if(ioctl(f, FIONREAD, &n) < 0)
+                                    perror("FIONREAD");
+                            else printf("%s have %d bytes.\n", N(f), n);
+
+                            if((n = read(f, buf, sizeof buf)) <= 0 ){
+                    eof:
+                                FD_CLR(f, &set); /* исключить */
+                                close(f); nopen--;
+                                fprintf(stderr, "EOF in %s\n", N(f));
+
+                            } else {
+
+                                fprintf(stderr, "\n%d bytes from %s:\n", n, N(f));
+                                write(fdout, buf, n);
+                                if( n == 4 && !strncmp(buf, "end\n", 4))
+                                /* ncmp, т.к. buf может не оканчиваться \0 */
+                                    goto eof;
+                            }
+                    }
+            }
+            exit(0);
+    }

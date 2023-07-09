@@ -1,0 +1,266 @@
+### UP
+[ECANCELED](##ECANCELED)
+[MAIN](##MAIN)
+[MAIN_ru](##MAIN_ru)
+[ANCORS](##ANCORS)
+[ISU](##ISU)
+[inet](##A_inet)
+[inet](##books_inet)
+[inet](##examples_inet)
+[inet](##classic_inet)
+[inet](##enters_inet)
+[inet](##issue_code_inet)
+[H_FILE](##H_FILE)
+[c_SYNOPSIS](##c_SYNOPSIS)
+[c_RETURN](##c_RETURN)
+[c_RETURN_ru](##c_RETURN_ru)
+[c_BUGS](##c_BUGS)
+[c_DESCRIPTION_ru](##c_DESCRIPTION_ru)
+[c_DESCRIPTION](##c_DESCRIPTION)
+[c_MIRRORS](##c_MIRRORS)
+[c_EXAMPLES](##c_EXAMPLES)
+[c_CODE_h](##c_CODE_h)
+[c_CODE_c](##c_CODE_c)
+[c_CODE_m](##c_CODE_m)
+[c_ERRORS](##c_ERRORS)
+[c_BOOKS](##c_BOOKS)
+[c_BOOKS_ru](##c_BOOKS_ru)
+[c_CONTENT](##c_CONTENT)
+
+[cat_hfiles](../../cat_hfiles.md)
+[cat_utils](../../cat_utils.md)
+[cat_structs](../../cat_structs.md)
+[cat_param](../../cat_params.md)
+[cat_macros](../../cat_macross.md)
+[cat_const](../../cat_consts.md)
+[cat_type](../../cat_types.md)
+[cat_any](../cat_anys.md)
+
+
+[UP](###UP)
+## MAIN
+:ECANCELED:
+[next](##MAIN_ru)
+
+<<MAIN>>
+[MAIN](../../fills/ECANCELED/MAIN)
+
+
+
+[UP](###UP)
+## MAIN_ru
+:ECANCELED:
+[next](##ANCORS)
+
+<<MAIN_ru>>
+[MAIN_ru](../../fills/ECANCELED/MAIN_ru)
+
+[UP](###UP)
+## ANCORS
+:ECANCELED:
+[next](##ISU)
+
+<<ANCORS>>
+[ANCORS](../../fills/ECANCELED/ANCORS)
+
+[UP](###UP)
+## ISU
+:ECANCELED:
+[next](##H_FILE)
+
+<<ISU>>
+only read
+:ECANCELED:
+[ISU](../../contents)
+[next](##inet)
+
+
+[UP](###UP)
+## inet
+:ECANCELED:
+[next](##H_FILE)
+
+
+[UP](###UP)
+## A_inet
+[manpages.org](https://www.google.ru/search?q=ECANCELED+site%3Ahttps%3A%2F%2Fmanpages.org)
+[reposcope.com_ru](https://www.google.ru/search?q=ECANCELED+site%3Ahttps%3A%2F%2Freposcope.com%2Fmanpages%2Fru)
+[pubs.opengroup.org](https://www.google.com/search?q=ECANCELED+https%3A%2F%2Fpubs.opengroup.org)
+[manpages.debian.org](https://yandex.ru/search/?text=ECANCELED+site%3Ahttps%3A%2F%2Fmanpages.debian.org%2F)
+[www.opennet.ru](http://www.opennet.ru/man.shtml?category=2&topic=ECANCELED)
+[man7.org](https://www.google.ru/search?q=ECANCELED+site%3Ahttps%3A%2F%2Fman7.org%2Flinux%2Fman-pages)
+[en.cppreference.com](https://www.google.com/search?q=ECANCELED+en.cppreference.com)
+[www.mankier.com](https://www.mankier.com/?q=ECANCELED)
+[www.codecogs.com](https://www.google.ru/search?q=ECANCELED+https%3A%2F%2Fwww.codecogs.com%2Flibrary%2Fcomputing%2F)
+[digitalmars.com](https://www.google.ru/search?q=ECANCELED+https%3A%2F%2Fdigitalmars.com%2Frtl%2F)
+
+
+[UP](###UP)
+## books_inet
+[cpp.com.ru](https://yandex.ru/search/?text=ECANCELED+site%3Ahttps%3A%2F%2Fcpp.com.ru)
+[linuxhint.com](https://www.google.ru/search?q=ECANCELED+site%3Ahttps%3A%2F%2Flinuxhint.com)
+[gnu.org](https://www.google.ru/search?q=ECANCELED+site%3Ahttps%3A%2F%2Fwww.gnu.org%2Fsoftware%2Flibc%2Fmanual)
+
+[UP](###UP)
+## examples_inet
+[yandex:examples](https://yandex.ru/search/?text=ECANCELED+example+in+c)
+[docs.oracle.com](https://www.google.com/search?q=ECANCELED+https%3A%2F%2Fdocs.oracle.com)
+[manpages.debian.org](https://yandex.ru/search/?text=ECANCELED+site%3Ahttps%3A%2F%2Fmanpages.debian.org%2F)
+[osr507doc.xinuos.com](https://www.google.com/search?q=ECANCELED+http%3A%2F%2Fosr507doc.xinuos.com%2Fen%2Fman)
+[cpp.hotexamples.com](https://cpp.hotexamples.com/examples/-/-/ECANCELED/cpp-ECANCELED-function-examples.html)
+[all-ht.ru](https://yandex.ru/search/?text=ECANCELED+site%3Ahttp%3A%2F%2Fall-ht.ru%2Finf%2Fprog%2Fc%2F)
+[cppreference.com](https://yandex.ru/search/?text=ECANCELED+site%3Ahttps%3A%2F%2Fen.cppreference.com%2Fw%2Fc%2F)
+
+[UP](###UP)
+## classic_inet
+[bogatyrev_c_unix](https://www.google.com/search?q=ECANCELED+site%3Ahttps%3A%2F%2Fcpp.com.ru%2Fbogatyrev_c_unix)
+[kr_cbook](https://www.google.com/search?q=ECANCELED+site%3Ahttps%3A%2F%2Fcpp.com.ru%2Fkr_cbook)
+
+[UP](###UP)
+## enters_inet
+[pubs.opengroup.org](https://pubs.opengroup.org/onlinepubs/9699919799/idx/head.html)
+
+[UP](###UP)
+## issue_code_inet
+[code.woboq.org](https://www.google.com/search?h=&sitesearch=https%3A%2F%2Fcode.woboq.org%2Fuserspace%2Fglibc%2F&q=ECANCELED)
+
+
+[UP](###UP)
+## H_FILE 
+[errno_h.md](../../hfiles/errno_h.md)
+
+
+[UP](###UP)
+## c_SYNOPSIS
+:ECANCELED:
+[next](##c_RETURN_ru)
+
+<<SYNOPSIS>>
+[SYNOPSIS](../../fills/ECANCELED/SYNOPSIS)
+
+
+[UP](###UP)
+## c_RETURN_ru
+:ECANCELED:
+[next](##c_RETURN)
+
+<<RETURN>>
+[RETURN_ru](../../fills/ECANCELED/RETURN)
+
+
+[UP](###UP)
+## c_RETURN
+:ECANCELED:
+[next](##c_DESCRIPTION_ru)
+
+<<RETURN_ru>>
+[RETURN](../../fills/ECANCELED/RETURN_ru)
+
+
+[UP](###UP)
+## c_DESCRIPTION_ru
+:ECANCELED:
+[next](##c_DESCRIPTION)
+
+<<DESCRIPTION_ru>>
+[DESCRIPTION_ru](../../fills/ECANCELED/DESCRIPTION_ru)
+
+
+[UP](###UP)
+## c_DESCRIPTION
+:ECANCELED:
+[next](##c_BUGS)
+
+<<DESCRIPTION>>
+[DESCRIPTION](../../fills/ECANCELED/DESCRIPTION)
+
+
+[UP](###UP)
+## c_MIRRORS
+:ECANCELED:
+[next](##c_BUGS)
+
+<<MIRRORS>>
+[MIRRORS](../../fills/ECANCELED/MIRRORS)
+
+
+[UP](###UP)
+## c_BUGS
+:ECANCELED:
+[next](##c_EXAMPLES)
+
+<<BUGS>>
+[BUGS](../../fills/ECANCELED/BUGS)
+
+
+[UP](###UP)
+## c_EXAMPLES
+:ECANCELED:
+[next](##c_CODE)
+
+<<EXAMPLES>>
+[EXAMPLES](../../fills/ECANCELED/EXAMPLES)
+
+
+[UP](###UP)
+## c_CODE_h
+:ECANCELED:
+[next](##c_CODE_c)
+
+<<CODE_h>>
+[CODE_h](../../fills/ECANCELED/CODE_h)
+
+
+[UP](###UP)
+## c_CODE_c
+:ECANCELED:
+[next](##c_CODE_m)
+
+<<CODE_c>>
+[CODE_c](../../fills/ECANCELED/CODE_c)
+
+
+[UP](###UP)
+## c_CODE_m
+:ECANCELED:
+[next](##c_ERRORS)
+
+<<CODE_m>>
+[CODE_m](../../fills/ECANCELED/CODE_m)
+
+
+[UP](###UP)
+## c_ERRORS
+:ECANCELED:
+[next](##c_BOOKS)
+
+<<ERRORS>>
+[ERRORS](../../fills/ECANCELED/ERRORS)
+
+
+[UP](###UP)
+## c_BOOKS
+:ECANCELED:
+[next](##c_BOOKS_ru)
+
+<<BOOKS>>
+[BOOKS](../../fills/ECANCELED/BOOKS)
+
+
+[UP](###UP)
+## c_BOOKS_ru
+:ECANCELED:
+[next](##c_CONTENT)
+
+
+<<BOOKS_ru>>
+[BOOKS_ru](../../fills/ECANCELED/BOOKS_ru)
+
+
+[UP](###UP)
+## c_CONTENT
+:33333:
+[33333.cnt](../../contents/33333.cnt)
+[next](##UP)
+
+[UP](###UP)

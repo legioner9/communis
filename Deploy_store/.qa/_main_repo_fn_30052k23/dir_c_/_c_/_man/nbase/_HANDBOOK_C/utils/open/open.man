@@ -1,0 +1,117 @@
+### UP
+[open](##open)
+
+[H_FILE](##H_FILE)
+
+[SYNOPSIS](##SYNOPSIS)
+
+[RETURN](##RETURN)
+
+[RETURN_ru](##RETURN_ru)
+
+[DESCRIPTION](##DESCRIPTION)
+
+[DESCRIPTION_ru](##DESCRIPTION_ru)
+
+[EXAMPLES](##EXAMPLES)
+
+[EXAMPLES_ru](##EXAMPLES_ru)
+
+[ERRORS](##ERRORS)
+
+[BOOKS](##BOOKS)
+
+[BOOKS_ru](##BOOKS_ru)
+
+
+# open
+[man7.org](https://www.google.ru/search?q=open+site%3Ahttps%3A%2F%2Fman7.org%2Flinux%2Fman-pages)
+
+
+
+[UP](###UP)
+
+## H_FILE <^>
+[ru.manpages.org](https://www.google.ru/search?q=open+site%3Ahttps%3A%2F%2Fru.manpages.org)
+
+[man7.org](https://www.google.ru/search?q=open+site%3Ahttps%3A%2F%2Fman7.org%2Flinux%2Fman-pages)
+
+
+
+[UP](###UP)
+
+## SYNOPSIS
+
+[UP](###UP)
+
+
+
+## RETURN
+[man7.org](https://www.google.ru/search?q=open+site%3Ahttps%3A%2F%2Fman7.org%2Flinux%2Fman-pages)
+
+
+
+[UP](###UP)
+
+## RETURN_ru
+[ru.manpages.org](https://www.google.ru/search?q=open+site%3Ahttps%3A%2F%2Fru.manpages.org)
+
+
+
+[UP](###UP)
+
+## DESCRIPTION
+[man7.org](https://www.google.ru/search?q=open+site%3Ahttps%3A%2F%2Fman7.org%2Flinux%2Fman-pages)
+
+
+
+[UP](###UP)
+
+## DESCRIPTION_ru
+[ru.manpages.org](https://www.google.ru/search?q=open+site%3Ahttps%3A%2F%2Fru.manpages.org)
+
+
+
+[UP](###UP)
+
+## EXAMPLES
+[cpp.hotexamples.com](https://cpp.hotexamples.com/examples/-/-/open/cpp-close-function-examples.html)
+
+[linuxhint.com](https://www.google.ru/search?q=open+site%3Ahttps%3A%2F%2Flinuxhint.com)
+
+
+
+[UP](###UP)
+
+## EXAMPLES_ru
+
+
+
+[UP](###UP)
+
+## ERRORS
+[man7.org](https://www.google.ru/search?q=open+site%3Ahttps%3A%2F%2Fman7.org%2Flinux%2Fman-pages)
+
+
+## ERRORS_ru
+[ru.manpages.org](https://www.google.ru/search?q=open+site%3Ahttps%3A%2F%2Fru.manpages.org)
+
+
+
+[UP](###UP)
+
+## BOOKS
+[linuxhint.com](https://www.google.ru/search?q=open+site%3Ahttps%3A%2F%2Flinuxhint.com)
+
+[gnu.org](https://www.google.ru/search?q=open+site%3Ahttps%3A%2F%2Fwww.gnu.org%2Fsoftware%2Flibc%2Fmanual)
+
+
+
+[UP](###UP)
+
+## BOOKS_ru
+[cpp.com.ru](https://www.google.ru/search?q=open+site%3Ahttps%3A%2F%2Fcpp.com.ru)
+
+
+
+[UP](###UP)

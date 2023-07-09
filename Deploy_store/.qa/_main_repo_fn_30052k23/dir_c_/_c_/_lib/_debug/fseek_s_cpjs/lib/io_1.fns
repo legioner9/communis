@@ -1,0 +1,2 @@
+ FILE *fopen_s(const char *path, const char *mode)
+ int fseek_s(FILE *pF, int offset, int endSet)

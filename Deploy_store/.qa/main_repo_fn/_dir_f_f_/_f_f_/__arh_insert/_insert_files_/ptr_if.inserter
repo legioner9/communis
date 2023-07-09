@@ -1,0 +1,13 @@
+# start ---------------------------- if ptr block-------------------------------------------
+
+local ptr_value=${ptr_if_}
+
+if [[ -n ${ptr_value} ]] && [[ ${ptr_value} -ne 1 ]]; then
+    if [ -n ${develop1_} ] && [ ${develop1_} -eq 1 ]; then
+        echo -e "${RED}--- $FNN() $* be ignored ---${NORMAL}" #started functions
+    fi
+    return 0
+fi
+
+# end ---------------------------- if ptr block-------------------------------------------
+#

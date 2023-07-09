@@ -1,0 +1,133 @@
+## S_IFx [  int mknodat(int fd, const char *path, mode_t mode, dev_t dev); ]
+mode::
+
+S_IFIFO   ::   FIFO-special
+S_IFCHR   ::   Character-special (non-portable)
+S_IFDIR   ::   Directory (non-portable)  
+S_IFBLK   ::   Block-special (non-portable)
+S_IFREG   ::   Regular (non-portable)
+0         ::   Regular (non-portable)
+
+## O_x [ int open(const char *path, int oflag, ...); ]
+oflag::
+
+O_EXEC    ::   Open for execute only (non-directory files)
+O_RDONLY  ::   Open for reading only
+O_RDWR    ::   Open for reading and writing
+O_SEARCH  ::   Open directory for search only
+O_WRONLY  ::   Open for writing only
+
+O_APPEND  ::   If set, the file offset shall be set to the end of the file prior to each write
+O_CLOEXEC ::   If set, the FD_CLOEXEC flag for the new file descriptor shall be set
+O_CREAT   ::   If the file exists, this flag has no effect except as noted under O_EXCL below
+O_DIRECTORY :: If path resolves to a non-directory file, fail and set errno to [ENOTDIR].
+O_DSYNC   ::   Write I/O operations on the file descriptor shall
+                     complete as defined by synchronized I/O data
+                     integrity completion.
+O_EXCL    ::   If O_CREAT and O_EXCL are set, open() shall fail if
+                     the file exists
+O_NOCTTY  ::   If set and path identifies a terminal device,
+                     open() shall not cause the terminal device to
+                     become the controlling terminal for the process
+O_NOFOLLOW ::  If path names a symbolic link, fail and set errno
+                     to [ELOOP].
+O_NONBLOCK ::  When opening a FIFO with O_RDONLY or O_WRONLY set: ...
+O_RSYNC    ::  Read I/O operations on the file descriptor shall
+                     complete at the same level of integrity as
+                     specified by the O_DSYNC and O_SYNC flags
+O_SYNC     :: Write I/O operations on the file descriptor shall
+                     complete as defined by synchronized I/O file
+                     integrity completion
+O_TRUNC    :: If the file exists and is a regular file, and the
+                     file is successfully opened O_RDWR or O_WRONLY, its
+                     length shall be truncated to 0, and the mode and
+                     owner shall be unchanged
+O_TTY_INIT :: If path identifies a terminal device other than a
+                     pseudo-terminal, the device is not already open in
+                     any process, and either O_TTY_INIT is set in oflag
+                     or O_TTY_INIT has the value zero
+
+## S_Ix [ int chmod(const char *path, mode_t mode); ]
+mode::
+
+S_ISUID   ::   Set user ID on execution
+S_ISGID   ::   Set group ID on execution
+S_IRWXU   ::   Read, write, or execute (search) by owner
+S_IRUSR   ::   Read by owner
+S_IWUSR   ::   Write by owner
+S_IXUSR   ::   Execute (search) by owner
+S_IRWXG   ::   Read, write, or execute (search) by group
+S_IRGRP   ::   Read by group
+S_IWGRP   ::   Write by group
+S_IXGRP   ::   Execute (search) by group
+S_IRWXO   ::   Read, write, or execute (search) by others
+S_IROTH   ::   Read by others
+S_IWOTH   ::   Write by others
+S_IXOTH   ::   Execute (search) by others
+
+S_ISVTX   ::   On directories, restricted deletion flag
+
+
+## F_x [ result = int fcntl(int fildes, int cmd, ...); ]
+cmd ::
+
+F_DUPFD   ::   Duplicate file descriptor [A new file descriptor]
+F_DUPFD_CLOEXEC :: Duplicate file descriptor with the close-on-exec flag FD_CLOEXEC set
+F_GETFD   ::   Get file descriptor flags
+F_SETFD   ::   Set file descriptor flags
+F_GETFL   ::   Get file status flags and file access modes
+F_SETFL   ::   Set file status flags
+F_GETLK   ::   Get record locking information
+F_SETLK   ::   Set record locking information
+F_SETLKW  ::   Set record locking information; wait if blocked
+F_GETOWN  ::   Get process or process group ID to receive SIGURG signals
+F_SETOWN  ::  
+
+result:: 
+F_DUPFD   ::   A new file descriptor
+F_DUPFD_CLOEXEC :: A new file descriptor
+F_GETFD   ::   Value of flags defined in <fcntl.h>. The return value shall not be negative >0
+F_SETFD   ::   Value other than -1
+F_GETFL   ::   Value of file status flags and access modes. The return value is not negative>0
+F_SETFL   ::   Value other than -1
+F_GETLK   ::   Value other than -1
+F_SETLK   ::   Value other than -1
+F_SETLKW  ::   Value other than -1
+F_GETOWN  ::   Value of the socket owner process or process group; this will not be -1
+F_SETOWN  ::   Value other than -1
+
+## WRDE_x [ int wordexp (const char *words, wordexp_t *word-vector-ptr, int flags) ]
+flags::
+
+WRDE_APPEND :: Добавляет слова этого разложения к вектору слов, произведенных предыдущими обращениями к wordexp.
+WRDE_DOOFFS :: Оставляет пустое место в начале вектора слов. We_offs поле говорит, сколько места оставить. 
+                        Пустое место содержит пустые указатели.
+WRDE_NOCMD  :: Не делает замену команд; при попытке замены команды, сообщаает об ошибке
+WRDE_REUSE  :: Многократно использует вектор слов, сделанный предыдущим обращением к wordexp. 
+                        Вместо того, чтобы зарезервировать новый вектор слов, 
+                        это обращение к wordexp использует вектор, который уже 
+                        существует (увеличивая его в случае необходимости).
+WRDE_SHOWERR:: Покажет любые сообщения об ошибках.
+WRDE_UNDEF  :: Если ввод относится к переменной оболочки которая не определена, выдает ошибку.
+
+## SOCK_x [ int socket (int domain, int type, int protocol) ]
+domain::
+
+AF-UNIX   ::   При работе с одной ЭВМ используется UNIX-домен, где адреса интерпретируются как имена файлов в UNIX
+
+type::
+
+SOCK_STREAM   ::   потоковый сокет
+SOCK_DGRAM    ::   датаграмный сокет
+SOCK_SEQPACKET::   сохраняющий границы сообщений и доставляющий сообщения в том же порядке, в каком они были отправлены
+SOCK_RAW      ::   
+
+       tcp_socket = socket(AF_INET, SOCK_STREAM, 0);
+       udp_socket = socket(AF_INET, SOCK_DGRAM, 0);
+       raw_socket = socket(AF_INET, SOCK_RAW, protocol);
+       protocol ::
+            IPPROTO_TCP     :: 
+            IPPROTO_UDP     :: 
+            IPPROTO_ICMP    :: 
+            IPPOROTO_IGMP   ::
+            IPPROTO_RAW     ::

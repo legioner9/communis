@@ -1,0 +1,243 @@
+## [__FE] {__FE}
+
+__FILE__, __LINE__, STMO_PRN, STIF_ONE, STRE_EXI
+
+## [cfn_c] {cfn_c}
+
+TYP ${1:fn}_с(char *DDDDD, const char *file, const int line, int st__mo, int st__if, int st__re)
+{
+
+    /* code with RESULT */
+
+    if(ZZZZZ)
+        {
+            /* code with RESULT */
+        }
+    else 
+        {
+            if (st__mo & STMO_PRN)
+            {
+                fprintf(stderr, "failed in file %s at line # %d\n", file, line);
+                fprintf(stderr, "from ${1:fn}_с SSSSS = %s\n", SSSSS);
+            }
+            if (st__re & STRE_MNS)
+            {
+                if (st__mo & STMO_PRN)
+                    printf("return -1");
+                return -1;
+            }
+            else if (st__re & STRE_EXI)
+            {
+                if (st__mo & STMO_PRN)
+                    printf("exit(1)");
+                exit(1);
+            }
+            else if (st__re & STRE_ERR)
+            {
+                if (st__mo & STMO_PRN)
+                    printf("return original error");
+                return RESULT;
+            }
+        }
+}
+
+## [/*#*/] {/*#*/-1}
+
+/*#*/ TYP ${1:fn}_с(char *DDDDD, const char *file, const int line, int st__mo, int st__if, int st__re)
+{
+
+    /* SINGL SECTION START -----------------------------------------*/
+    if (st__if & STIF_NUL)
+    {
+        TYP a = ${1:fn}(DDDDD);
+        if (NULL == a)
+        {
+            if (st__mo & STMO_PRN)
+            {
+                fprintf(stderr, "failed in file %s at line # %d\n", file, line);
+                fprintf(stderr, "from ${1:fn}_с SSSSS = %s, errno = %d\n", SSSSS, errno);
+                perror("Error is: ");
+                fflush(stdout);
+            }
+            if (st__re & STRE_MNS)
+            {
+                if (st__mo & STMO_PRN)
+                    printf("return -1");
+                return -1;
+            }
+            else if (st__re & STRE_EXI)
+            {
+                if (st__mo & STMO_PRN)
+                    printf("exit(errno): ");
+                exit(errno);
+            }
+            else if (st__re & STRE_ERR)
+            {
+                if (st__mo & STMO_PRN)
+                    printf("return original error");
+                return a;
+            }
+            else
+            {
+                fprintf(stderr, "failed in file %s at line # %d\n", file, line);
+                fprintf(stderr, "from ${1:fn}_с SSSSS = %s, errno = %d\n", SSSSS, errno);
+                perror("st__re NOT equal (STRE_ERR|STRE_MNS|STRE_EXI)  exit(1) That error NOT treat: ");
+                exit(1);
+            }
+        }
+        return a;
+    }
+    else
+    {
+        perror(" st__if NOT equal STIF_NUL exit(1)");
+        exit(1);
+    }
+    /* SINGL SECTION END -------------------------------------------*/
+
+    /* SINGL SECTION START -----------------------------------------*/
+    if (st__if & STIF_ONE)
+    {
+        TYP a = ${1:fn}(DDDDD);
+        if (-1 == a)
+        {
+            if (st__mo & STMO_PRN)
+            {
+                fprintf(stderr, "failed in file %s at line # %d\n", file, line);
+                fprintf(stderr, "from ${1:fn}_с SSSSS = %s, errno = %d\n", SSSSS, errno);
+                perror("Error is: ");
+                fflush(stdout);
+            }
+            if (st__re & STRE_MNS)
+            {
+                if (st__mo & STMO_PRN)
+                    printf("return -1");
+                return -1;
+            }
+            else if (st__re & STRE_EXI)
+            {
+                if (st__mo & STMO_PRN)
+                    printf("exit(errno): ");
+                exit(errno);
+            }
+            else if (st__re & STRE_ERR)
+            {
+                if (st__mo & STMO_PRN)
+                    printf("return original error");
+                return a;
+            }
+            else
+            {
+                fprintf(stderr, "failed in file %s at line # %d\n", file, line);
+                fprintf(stderr, "from ${1:fn}_с SSSSS = %s, errno = %d\n", SSSSS, errno);
+                perror("st__re NOT equal (STRE_ERR|STRE_MNS|STRE_EXI)  exit(1) That error NOT treat: ");
+                exit(1);
+            }
+        }
+        return a;
+    }
+    else
+    {
+        perror(" st__if NOT equal STIF_ONE exit(1)");
+        exit(1);
+    }
+    /* SINGL SECTION END -------------------------------------------*/
+
+    /* SINGL SECTION START -----------------------------------------*/
+    if (st__if & STIF_ENU)
+    {
+
+        int e_start = errno;
+        TYP a = ${1:fn}(DDDDD);
+        if (NULL == a && e_start != errno)
+        {
+            if (st__mo & STMO_PRN)
+            {
+                fprintf(stderr, "failed in file %s at line # %d\n", file, line);
+                fprintf(stderr, "from ${1:fn}_с SSSSS = %s, errno = %d\n", SSSSS, errno);
+                perror("Error is: ");
+                fflush(stdout);
+            }
+            if (st__re & STRE_MNS)
+            {
+                if (st__mo & STMO_PRN)
+                    printf("return -1");
+                return -1;
+            }
+            else if (st__re & STRE_EXI)
+            {
+                if (st__mo & STMO_PRN)
+                    printf("exit(errno): ");
+                exit(errno);
+            }
+            else if (st__re & STRE_ERR)
+            {
+                if (st__mo & STMO_PRN)
+                    printf("return original error");
+                return a;
+            }
+            else
+            {
+                fprintf(stderr, "failed in file %s at line # %d\n", file, line);
+                fprintf(stderr, "from ${1:fn}_с SSSSS = %s, errno = %d\n", SSSSS, errno);
+                perror("st__re NOT equal (STRE_ERR|STRE_MNS|STRE_EXI)  exit(1) That error NOT treat: ");
+                exit(1);
+            }
+        }
+        return a;
+    }
+    else
+    {
+        perror(" st__if NOT equal STIF_ENU exit(1)");
+        exit(1);
+    }
+    /* SINGL SECTION END -------------------------------------------*/
+    
+    /* SINGL SECTION START -----------------------------------------*/
+    if (st__if & STIF_NEN)
+    {
+
+        TYP a = ${1:fn}(DDDDD);
+        if (0 != a)
+        {
+            if (st__mo & STMO_PRN)
+            {
+                fprintf(stderr, "failed in file %s at line # %d\n", file, line);
+                fprintf(stderr, "from ${1:fn}_с SSSSS = %s, errno = %d\n", SSSSS, errno);
+                perror("Error is: ");
+                fflush(stdout);
+            }
+            if (st__re & STRE_MNS)
+            {
+                if (st__mo & STMO_PRN)
+                    printf("return -1");
+                return -1;
+            }
+            else if (st__re & STRE_EXI)
+            {
+                if (st__mo & STMO_PRN)
+                    printf("exit(errno): ");
+                exit(errno);
+            }
+            else if (st__re & STRE_ERR)
+            {
+                if (st__mo & STMO_PRN)
+                    printf("return original error");
+                return a;
+            }
+            else
+            {
+                fprintf(stderr, "failed in file %s at line # %d\n", file, line);
+                fprintf(stderr, "from ${1:fn}_с SSSSS = %s, errno = %d\n", SSSSS, errno);
+                perror("st__re NOT equal (STRE_ERR|STRE_MNS|STRE_EXI)  exit(1) That error NOT treat: ");
+                exit(1);
+            }
+        }
+        return a;
+    }
+    else
+    {
+        perror(" st__if NOT equal STIF_NEN exit(1)");
+        exit(1);
+    }
+    /* SINGL SECTION END -------------------------------------------*/    
+}

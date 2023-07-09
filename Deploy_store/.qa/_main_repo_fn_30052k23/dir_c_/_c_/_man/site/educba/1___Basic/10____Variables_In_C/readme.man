@@ -1,0 +1,16 @@
+## [Спецификаторы класса памяти](https://cpp.com.ru/shildt_spr_po_c/02/0207.html)
+
+## [Внутренняя и внешняя линковка в C++](https://habr.com/ru/company/otus/blog/432834/)
+
+    int f();               // объявление
+    int f() { return 42; } // определение
+
+    extern int x; // объявление
+    int x = 42;   // определение
+
+    extern int x = 5; // то же самое, что и not minde!!!
+    int x = 5;
+
+    void fn(){}; // ALLWAYS extern
+
+    static // only inside file!!! if include in main exectly main file!!!

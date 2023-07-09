@@ -1,0 +1,5 @@
+#>var
+
+eval src="/home/st/test_tmp" 
+eval dest_d="/home/st/dest_d" 
+eval bag="/home/st/test_TOSHIBA_EXT/test_zip"

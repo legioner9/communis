@@ -1,0 +1,29 @@
+# npm version in ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_mm_npm_/_mm_npm_/_man/help
+
+{
+  help: '1.0.0',
+  npm: '6.14.17',
+  ares: '1.18.1',
+  brotli: '1.0.9',
+  cldr: '39.0',
+  icu: '69.1',
+  llhttp: '2.1.6',
+  modules: '83',
+  napi: '8',
+  nghttp2: '1.41.0',
+  node: '14.21.1',
+  openssl: '1.1.1q',
+  tz: '2021a',
+  unicode: '13.0',
+  uv: '1.42.0',
+  v8: '8.4.371.23-node.87',
+  zlib: '1.2.12'
+}
+
+# npm version -h in ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_mm_npm_/_mm_npm_/_man/help
+
+npm version [<newversion> | major | minor | patch | premajor | preminor | prepatch | prerelease [--preid=<prerelease-id>] | from-git]
+(run in package dir)
+'npm -v' or 'npm --version' to print npm version (6.14.17)
+'npm view <pkg> version' to view a package's published version
+'npm ls' to inspect current package/dependency versions

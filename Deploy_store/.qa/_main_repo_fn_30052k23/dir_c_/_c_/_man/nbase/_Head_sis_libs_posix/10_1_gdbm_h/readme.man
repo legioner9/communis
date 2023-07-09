@@ -1,0 +1,13 @@
+p@gdbm_open
+p@gdbm_close
+p@gdbm_store
+p@gdbm_fetch
+p@gdbm_delete
+p@gdbm_firstkey
+p@gdbm_nextkey
+p@gdbm_sync
+p@gdbm_exists
+p@gdbm_strerror
+p@gdbm_setopt
+p@gdbm_fdesc
+s@datum

@@ -1,0 +1,225 @@
+## 6.3. Свободное место на диске.
+6.3.1. Системный вызов ustat() позволяет узнать количество свободного места в файловой системе, содержащей заданный файл (в примере ниже - текущий каталог):
+
+    #include <sys/types.h>
+    #include <sys/stat.h>
+    #include <ustat.h>
+    struct stat st; struct ustat ust;
+    void main(int ac, char *av[]){
+         char *file = (ac==1 ? "." : av[1]);
+         if( stat(file, &st) < 0) exit(1);
+         ustat(st.st_dev, &ust);
+         printf("На диске %*.*s\n"
+           "%ld свободных блоков (%ld Кб)\n"
+           "%d свободных I-узлов\n",
+         sizeof ust.f_fname, sizeof ust.f_fname,
+         ust.f_fname, /* название файловой системы (метка) */
+         ust.f_tfree, /* блоки по 512 байт */
+        (ust.f_tfree * 512L) / 1024,
+         ust.f_tinode );
+    }
+Обратите внимание на запись длинной строки в printf: строки, перечисленные последовательно, склеиваются ANSI C компилятором в одну длинную строку:
+
+    char s[] = "This is"  " a line "  "of words";
+            совпадает с
+    char s[] = "This is a line of words";
+6.3.2. Более правильно, однако, пользоваться сисвызовом statvfs - статистика по виртуальной файловой системе. Рассмотрим его в следующем примере: копирование файла с проверкой на наличие свободного места.
+
+    #include <stdio.h>
+    #include <string.h>
+    #include <stdlib.h>
+    #include <stdarg.h>
+    #include <fcntl.h>              /* O_RDONLY */
+    #include <sys/types.h>
+    #include <sys/stat.h>
+    #include <sys/statvfs.h>
+    #include <sys/param.h>          /* MAXPATHLEN */
+
+    char *progname;                 /* имя программы */
+
+    void error(char *fmt, ...){
+            va_list args;
+
+            va_start(args, fmt);
+            fprintf(stderr, "%s: ", progname);
+            vfprintf(stderr, fmt, args);
+            fputc('\n', stderr);
+            va_end(args);
+    }
+
+    int copyFile(char *to, char *from){       /* куда, откуда */
+            char newname[MAXPATHLEN+1];
+            char answer[20];
+            struct stat stf, stt;
+            int fdin, fdout;
+            int n, code = 0;
+            char iobuf[64 * 1024];
+            char *dirname = NULL, *s;
+
+            if((fdin = open(from, O_RDONLY)) < 0){
+                    error("Cannot read %s", from);
+                    return (-1);
+            }
+            fstat(fdin, &stf);
+            if((stf.st_mode & S_IFMT) == S_IFDIR){
+                    close(fdin);
+                    error("%s is a directory", from);
+                    return (-2);
+            }
+
+            if(stat(to, &stt) >= 0){
+                    /* Файл уже существует */
+
+                    if((stt.st_mode & S_IFMT) == S_IFDIR){
+                            /* И это каталог */
+
+                            /* Выделить последнюю компоненту пути from */
+                            if((s = strrchr(from, '/')) && s[1])
+                                    s++;
+                            else    s = from;
+
+                            dirname = to;
+
+                            /* Целевой файл - файл в этом каталоге */
+                            sprintf(newname, "%s/%s", to, s);
+                            to = newname;
+
+                            if(stat(to, &stt) < 0)
+                                    goto not_exist;
+                    }
+
+                    if(stt.st_dev == stf.st_dev && stt.st_ino == stf.st_ino){
+                            error("%s: cannot copy file to itself", from);
+                            return (-3);
+                    }
+                    switch(stt.st_mode & S_IFMT){
+                    case S_IFBLK:
+                    case S_IFCHR:
+                    case S_IFIFO:
+                            break;
+
+                    default:
+                            printf("%s already exists, overwrite ? ", to);
+                            fflush(stdout);
+
+                            *answer = '\0';
+                            gets(answer);
+
+                            if(*answer != 'y'){     /* NO */
+                                    close(fdin);
+                                    return (-4);
+                            }
+                            break;
+                    }
+            }
+
+    not_exist:
+            printf("COPY %s TO %s\n", from, to);
+
+            if((stf.st_mode & S_IFMT) == S_IFREG){
+                    /* Проверка наличия свободного места в каталоге dirname */
+                    struct statvfs fs;
+                    char tmpbuf[MAXPATHLEN+1];
+
+                    if(dirname == NULL){
+                            /* То 'to' - это имя файла, а не каталога */
+                            strcpy(tmpbuf, to);
+                            if(s = strrchr(tmpbuf, '/')){
+                                    if(*tmpbuf != '/' || s != tmpbuf){
+                                            /* Имена "../xxx"
+                                             * и второй случай:
+                                             * абсолютные имена не в корне,
+                                             * то есть не "/" и не "/xxx"
+                                             */
+                                            *s = '\0';
+                                    }else{
+                                            /* "/" или "/xxx" */
+                                            if(s[1]) s[1] = '\0';
+                                    }
+                                    dirname = tmpbuf;
+                            } else  dirname = ".";
+                    }
+
+                    if(statvfs(dirname, &fs) >= 0){
+                            size_t size = (geteuid() == 0 ) ?
+                                    /* Доступно суперпользователю: байт */
+                                    fs.f_frsize * fs.f_bfree :
+                                    /* Доступно обычному пользователю: байт */
+                                    fs.f_frsize * fs.f_bavail;
+
+                            if(size < stf.st_size){
+                               error("Not enough free space on %s: have %lu, need %lu",
+                                      dirname, size, stf.st_size);
+                               close(fdin);
+                               return (-5);
+                            }
+                    }
+            }
+
+            if((fdout = creat(to, stf.st_mode)) < 0){
+                    error("Can't create %s", to);
+                    close(fdin);
+                    return (-6);
+            } else {
+                    fchmod(fdout, stf.st_mode);
+                    fchown(fdout, stf.st_uid, stf.st_gid);
+            }
+
+            while (n = read (fdin, iobuf, sizeof iobuf)) {
+                    if(n < 0){
+                            error ("read error");
+                            code = (-7);
+                            goto done;
+                    }
+                    if(write (fdout, iobuf, n) != n) {
+                            error ("write error");
+                            code = (-8);
+                            goto done;
+                    }
+            }
+
+    done:
+            close (fdin);
+            close (fdout);
+
+            /* Проверить: соответствует ли результат ожиданиям */
+            if(stat(to, &stt) >= 0 && (stt.st_mode & S_IFMT) == S_IFREG){
+                    if(stf.st_size < stt.st_size){
+                            error("File has grown at the time of copying");
+                    } else if(stf.st_size > stt.st_size){
+                            error("File too short, target %s removed", to);
+                            unlink(to);
+                            code = (-9);
+                    }
+            }
+            return code;
+    }
+
+    int main(int argc, char *argv[]){
+            int i, code = 0;
+
+            progname = argv[0];
+
+            if(argc < 3){
+                    error("Usage: %s from... to", argv[0]);
+                    return 1;
+            }
+            for(i=1; i < argc-1; i++)
+                    code |= copyFile(argv[argc-1], argv[i]) < 0 ? 1 : 0;
+            return code;
+    }
+Возвращаемая структура struct statvfs содержит такие поля (в частности):
+
+    Типа long:
+    f_frsize                размер блока
+    f_blocks                размер файловой системы в блоках
+    f_bfree                 свободных блоков (для суперпользователя)
+    f_bavail                свободных блоков (для всех остальных)
+
+    f_files                 число I-nodes в файловой системе
+    f_ffree                 свободных I-nodes (для суперпользователя)
+    f_favail                свободных I-nodes (для всех остальных)
+
+    Типа char *
+    f_basetype              тип файловой системы: ufs, nfs, ...
+По два значения дано потому, что операционная система резервирует часть файловой системы для использования ТОЛЬКО суперпользователем (чтобы администратор смог распихать файлы в случае переполнения диска, и имел резерв на это). ufs - это UNIX file system из BSD 4.x

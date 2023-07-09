@@ -1,0 +1,15 @@
+# npm dedupe in /home/st/REPOBARE/_repo/plt/actio/dir_mm_npm_/_mm_npm_/_man/help
+
+audited 98 packages in 0.855s
+
+24 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+
+# npm dedupe -h in /home/st/REPOBARE/_repo/plt/actio/dir_mm_npm_/_mm_npm_/_man/help
+
+npm dedupe
+
+aliases: ddp, find-dupes

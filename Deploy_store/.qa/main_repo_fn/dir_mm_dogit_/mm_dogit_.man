@@ -1,0 +1,11 @@
+## before all 
+
+if up_err_ gitrc ${REPO_PATH} 1>/dev/null; then
+    echo -e "${BLUE}---INIT0 patch in ${list} with EXIT 0---${NORMAL}" #sistem info mesage
+    # exit 0
+    return 0
+else
+    echo -e "${RED}---INIT0 patch in ${list} with EXIT 1---${NORMAL}" >&2 #sistem info mesage
+    # exit 1
+    ret
+fi

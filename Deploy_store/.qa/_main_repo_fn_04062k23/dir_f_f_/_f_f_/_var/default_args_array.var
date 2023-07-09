@@ -1,0 +1,5 @@
+#>var
+
+eval arr_num_args=(echo debug verbose develop1)
+
+eval arr_str_args=(errmes outmes ptr_if_ ptr_sem_)

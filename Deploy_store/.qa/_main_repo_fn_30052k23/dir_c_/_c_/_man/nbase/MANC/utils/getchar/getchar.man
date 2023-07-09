@@ -1,0 +1,287 @@
+### UP
+[getchar](##getchar)
+[MAIN](##MAIN)
+[MAIN_ru](##MAIN_ru)
+[ANCORS](##ANCORS)
+[ISU](##ISU)
+[inet](##A_inet)
+[inet](##books_inet)
+[inet](##examples_inet)
+[inet](##classic_inet)
+[inet](##enters_inet)
+[inet](##issue_code_inet)
+[H_FILE](##H_FILE)
+[p_SYNOPSIS](##p_SYNOPSIS)
+[p_RETURN](##p_RETURN)
+[p_RETURN_ru](##p_RETURN_ru)
+[p_BUGS](##p_BUGS)
+[p_DESCRIPTION_ru](##p_DESCRIPTION_ru)
+[p_DESCRIPTION](##p_DESCRIPTION)
+[p_MIRRORS](##p_MIRRORS)
+[p_EXAMPLES](##p_EXAMPLES)
+[p_CODE_h](##p_CODE_h)
+[p_CODE_c](##p_CODE_c)
+[p_CODE_m](##p_CODE_m)
+[p_ERRORS](##p_ERRORS)
+[p_BOOKS](##p_BOOKS)
+[p_BOOKS_ru](##p_BOOKS_ru)
+[p_CONTENT](##p_CONTENT)
+
+[cat_hfiles](../../cat_hfiles.md)
+[cat_utils](../../cat_utils.md)
+[cat_structs](../../cat_structs.md)
+[cat_param](../../cat_params.md)
+[cat_macros](../../cat_macross.md)
+[cat_const](../../cat_consts.md)
+[cat_type](../../cat_types.md)
+[cat_any](../cat_anys.md)
+
+
+[UP](###UP)
+## MAIN
+:getchar:
+[next](##MAIN_ru)
+
+<<MAIN>>
+[MAIN](../../fills/getchar/MAIN)
+
+
+
+[UP](###UP)
+## MAIN_ru
+:getchar:
+[next](##ANCORS)
+
+----------------------------------------------------- 
+-------------------------------------- 
+функции для ввода символов и строк
+-------------------------------------- 
+----------------------------------------------------- 
+<<MAIN_ru>>
+[MAIN_ru](../../fills/getchar/MAIN_ru)
+
+[UP](###UP)
+## ANCORS
+:getchar:
+[next](##ISU)
+
+----------------------------------------------------- 
+-------------------------------------- 
+https://ru.manpages.org/getchar/3
+-------------------------------------- 
+----------------------------------------------------- 
+<<ANCORS>>
+[ANCORS](../../fills/getchar/ANCORS)
+
+[UP](###UP)
+## ISU
+:getchar:
+[next](##H_FILE)
+
+<<ISU>>
+only read
+:getchar:
+[ISU](../../contents)
+[next](##inet)
+
+
+[UP](###UP)
+## inet
+:getchar:
+[next](##H_FILE)
+
+
+[UP](###UP)
+## A_inet
+[manpages.org](https://www.google.ru/search?q=getchar+site%3Ahttps%3A%2F%2Fmanpages.org)
+[reposcope.com_ru](https://www.google.ru/search?q=getchar+site%3Ahttps%3A%2F%2Freposcope.com%2Fmanpages%2Fru)
+[pubs.opengroup.org](https://www.google.com/search?q=getchar+https%3A%2F%2Fpubs.opengroup.org)
+[manpages.debian.org](https://yandex.ru/search/?text=getchar+site%3Ahttps%3A%2F%2Fmanpages.debian.org%2F)
+[www.opennet.ru](http://www.opennet.ru/man.shtml?category=2&topic=getchar)
+[man7.org](https://www.google.ru/search?q=getchar+site%3Ahttps%3A%2F%2Fman7.org%2Flinux%2Fman-pages)
+[en.cppreference.com](https://www.google.com/search?q=getchar+en.cppreference.com)
+[www.mankier.com](https://www.mankier.com/?q=getchar)
+[www.codecogs.com](https://www.google.ru/search?q=getchar+https%3A%2F%2Fwww.codecogs.com%2Flibrary%2Fcomputing%2F)
+[digitalmars.com](https://www.google.ru/search?q=getchar+https%3A%2F%2Fdigitalmars.com%2Frtl%2F)
+
+
+[UP](###UP)
+## books_inet
+[cpp.com.ru](https://yandex.ru/search/?text=getchar+site%3Ahttps%3A%2F%2Fcpp.com.ru)
+[linuxhint.com](https://www.google.ru/search?q=getchar+site%3Ahttps%3A%2F%2Flinuxhint.com)
+[gnu.org](https://www.google.ru/search?q=getchar+site%3Ahttps%3A%2F%2Fwww.gnu.org%2Fsoftware%2Flibc%2Fmanual)
+
+[UP](###UP)
+## examples_inet
+[yandex:examples](https://yandex.ru/search/?text=getchar+example+in+c)
+[docs.oracle.com](https://www.google.com/search?q=getchar+https%3A%2F%2Fdocs.oracle.com)
+[manpages.debian.org](https://yandex.ru/search/?text=getchar+site%3Ahttps%3A%2F%2Fmanpages.debian.org%2F)
+[osr507doc.xinuos.com](https://www.google.com/search?q=getchar+http%3A%2F%2Fosr507doc.xinuos.com%2Fen%2Fman)
+[cpp.hotexamples.com](https://cpp.hotexamples.com/examples/-/-/getchar/cpp-getchar-function-examples.html)
+[all-ht.ru](https://yandex.ru/search/?text=getchar+site%3Ahttp%3A%2F%2Fall-ht.ru%2Finf%2Fprog%2Fc%2F)
+[cppreference.com](https://yandex.ru/search/?text=getchar+site%3Ahttps%3A%2F%2Fen.cppreference.com%2Fw%2Fc%2F)
+
+[UP](###UP)
+## classic_inet
+[bogatyrev_c_unix](https://www.google.com/search?q=getchar+site%3Ahttps%3A%2F%2Fcpp.com.ru%2Fbogatyrev_c_unix)
+[kr_cbook](https://www.google.com/search?q=getchar+site%3Ahttps%3A%2F%2Fcpp.com.ru%2Fkr_cbook)
+
+[UP](###UP)
+## enters_inet
+[pubs.opengroup.org](https://pubs.opengroup.org/onlinepubs/9699919799/idx/head.html)
+
+[UP](###UP)
+## issue_code_inet
+[code.woboq.org](https://www.google.com/search?h=&sitesearch=https%3A%2F%2Fcode.woboq.org%2Fuserspace%2Fglibc%2F&q=getchar)
+
+
+[UP](###UP)
+## H_FILE 
+[stdio_h.md](../../hfiles/stdio_h.md)
+
+
+[UP](###UP)
+## p_SYNOPSIS
+:getchar:
+[next](##p_RETURN_ru)
+
+<<SYNOPSIS>>
+[SYNOPSIS](../../fills/getchar/SYNOPSIS)
+
+
+[UP](###UP)
+## p_RETURN_ru
+:getchar:
+[next](##p_RETURN)
+
+<<RETURN>>
+[RETURN_ru](../../fills/getchar/RETURN)
+
+
+[UP](###UP)
+## p_RETURN
+:getchar:
+[next](##p_DESCRIPTION_ru)
+
+<<RETURN_ru>>
+[RETURN](../../fills/getchar/RETURN_ru)
+
+
+[UP](###UP)
+## p_DESCRIPTION_ru
+:getchar:
+[next](##p_DESCRIPTION)
+
+----------------------------------------------------- 
+-------------------------------------- 
+Функция fgetc() считывает очередной символ из потока stream и возвращает unsigned char преобразованный в int, или EOF при достижении конца файла или при возникновении ошибки.
+Функция getc() похожа на fgetc(), но она может быть реализована как макрос, который определяет состояние stream более одного раза.
+Функция getchar() эквивалентна getc(stdin).
+Функция fgets() считывает максимум size -1 символов из stream и записывает их в буфер, на который указывает s. Чтение прерывается по достижении EOF или символа новой строки. Если получен символ новой строки, то он заносится в буфер. В конец буфера после последнего символа добавляется завершающий байт null ('0').
+Функция ungetc() заносит c обратно в stream, преобразует в unsigned char, если это возможно для дальнейших операций чтения. Занесённые обратно символы будут возвращаться в обратном порядке; гарантируется только одно занесение символов.
+Вызовы функций, описанные здесь, могут смешиваться друг с другом и с другими функциями ввода из библиотеки stdio для того же потока ввода.
+Неблокирующие аналоги смотрите в unlocked_stdio(3).
+-------------------------------------- 
+----------------------------------------------------- 
+<<DESCRIPTION_ru>>
+[DESCRIPTION_ru](../../fills/getchar/DESCRIPTION_ru)
+
+
+[UP](###UP)
+## p_DESCRIPTION
+:getchar:
+[next](##p_BUGS)
+
+<<DESCRIPTION>>
+[DESCRIPTION](../../fills/getchar/DESCRIPTION)
+
+
+[UP](###UP)
+## p_MIRRORS
+:getchar:
+[next](##p_BUGS)
+
+<<MIRRORS>>
+[MIRRORS](../../fills/getchar/MIRRORS)
+
+
+[UP](###UP)
+## p_BUGS
+:getchar:
+[next](##p_EXAMPLES)
+
+<<BUGS>>
+[BUGS](../../fills/getchar/BUGS)
+
+
+[UP](###UP)
+## p_EXAMPLES
+:getchar:
+[next](##p_CODE)
+
+<<EXAMPLES>>
+[EXAMPLES](../../fills/getchar/EXAMPLES)
+
+
+[UP](###UP)
+## p_CODE_h
+:getchar:
+[next](##p_CODE_c)
+
+<<CODE_h>>
+[CODE_h](../../fills/getchar/CODE_h)
+
+
+[UP](###UP)
+## p_CODE_c
+:getchar:
+[next](##p_CODE_m)
+
+<<CODE_c>>
+[CODE_c](../../fills/getchar/CODE_c)
+
+
+[UP](###UP)
+## p_CODE_m
+:getchar:
+[next](##p_ERRORS)
+
+<<CODE_m>>
+[CODE_m](../../fills/getchar/CODE_m)
+
+
+[UP](###UP)
+## p_ERRORS
+:getchar:
+[next](##p_BOOKS)
+
+<<ERRORS>>
+[ERRORS](../../fills/getchar/ERRORS)
+
+
+[UP](###UP)
+## p_BOOKS
+:getchar:
+[next](##p_BOOKS_ru)
+
+<<BOOKS>>
+[BOOKS](../../fills/getchar/BOOKS)
+
+
+[UP](###UP)
+## p_BOOKS_ru
+:getchar:
+[next](##p_CONTENT)
+
+
+<<BOOKS_ru>>
+[BOOKS_ru](../../fills/getchar/BOOKS_ru)
+
+
+[UP](###UP)
+## p_CONTENT
+:33333:
+[33333.cnt](../../contents/33333.cnt)
+[next](##UP)
+
+[UP](###UP)

@@ -1,0 +1,557 @@
+### UP
+[mmap](##mmap)
+[MAIN](##MAIN)
+[MAIN_ru](##MAIN_ru)
+[ANCORS](##ANCORS)
+[ISU](##ISU)
+[inet](##A_inet)
+[inet](##books_inet)
+[inet](##examples_inet)
+[inet](##classic_inet)
+[inet](##enters_inet)
+[inet](##issue_code_inet)
+[H_FILE](##H_FILE)
+[p_SYNOPSIS](##p_SYNOPSIS)
+[p_RETURN](##p_RETURN)
+[p_RETURN_ru](##p_RETURN_ru)
+[p_BUGS](##p_BUGS)
+[p_DESCRIPTION_ru](##p_DESCRIPTION_ru)
+[p_DESCRIPTION](##p_DESCRIPTION)
+[p_MIRRORS](##p_MIRRORS)
+[p_EXAMPLES](##p_EXAMPLES)
+[p_CODE_h](##p_CODE_h)
+[p_CODE_c](##p_CODE_c)
+[p_CODE_m](##p_CODE_m)
+[p_ERRORS](##p_ERRORS)
+[p_BOOKS](##p_BOOKS)
+[p_BOOKS_ru](##p_BOOKS_ru)
+[p_CONTENT](##p_CONTENT)
+
+[cat_hfiles](../../cat_hfiles.md)
+[cat_utils](../../cat_utils.md)
+[cat_structs](../../cat_structs.md)
+[cat_param](../../cat_params.md)
+[cat_macros](../../cat_macross.md)
+[cat_const](../../cat_consts.md)
+[cat_type](../../cat_types.md)
+[cat_any](../cat_anys.md)
+
+
+[UP](###UP)
+## MAIN
+:mmap:
+[next](##MAIN_ru)
+
+<<MAIN>>
+[MAIN](../../fills/mmap/MAIN)
+
+
+
+[UP](###UP)
+## MAIN_ru
+:mmap:
+[next](##ANCORS)
+
+<<MAIN_ru>>
+[MAIN_ru](../../fills/mmap/MAIN_ru)
+
+[UP](###UP)
+## ANCORS
+:mmap:
+[next](##ISU)
+
+<<ANCORS>>
+[ANCORS](../../fills/mmap/ANCORS)
+
+[UP](###UP)
+## ISU
+:mmap:
+[next](##H_FILE)
+
+----------------------------------------------------- 
+-------------------------------------- 
+file://${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_c_/_c_/_man/nbase/_Head_sis_libs_posix/34_sys_mman_h/SET_EXAMPS/example_1/mmap_1_cpjs/mmap.isu
+file://${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_c_/_c_/_man/nbase/_Head_sis_libs_posix/34_sys_mman_h/SET_EXAMPS/example_2/mmap_2_cpjs/mmap.isu
+file://${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_c_/_c_/_man/nbase/_Head_sis_libs_posix/34_sys_mman_h/SET_EXAMPS/example_3/mmap_3_cpjs/mmap.isu
+file://${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_c_/_c_/_man/nbase/_Head_sis_libs_posix/34_sys_mman_h/SET_EXAMPS/example_4/mmap_4_cpjs/mmap.isu
+-------------------------------------- 
+----------------------------------------------------- 
+<<ISU>>
+only read
+:mmap:
+[ISU](../../contents)
+[next](##inet)
+
+
+[UP](###UP)
+## inet
+:mmap:
+[next](##H_FILE)
+
+
+[UP](###UP)
+## A_inet
+[manpages.org](https://www.google.ru/search?q=mmap+site%3Ahttps%3A%2F%2Fmanpages.org)
+[reposcope.com_ru](https://www.google.ru/search?q=mmap+site%3Ahttps%3A%2F%2Freposcope.com%2Fmanpages%2Fru)
+[pubs.opengroup.org](https://www.google.com/search?q=mmap+https%3A%2F%2Fpubs.opengroup.org)
+[manpages.debian.org](https://yandex.ru/search/?text=mmap+site%3Ahttps%3A%2F%2Fmanpages.debian.org%2F)
+[www.opennet.ru](http://www.opennet.ru/man.shtml?category=2&topic=mmap)
+[man7.org](https://www.google.ru/search?q=mmap+site%3Ahttps%3A%2F%2Fman7.org%2Flinux%2Fman-pages)
+[en.cppreference.com](https://www.google.com/search?q=mmap+en.cppreference.com)
+[www.mankier.com](https://www.mankier.com/?q=mmap)
+[www.codecogs.com](https://www.google.ru/search?q=mmap+https%3A%2F%2Fwww.codecogs.com%2Flibrary%2Fcomputing%2F)
+[digitalmars.com](https://www.google.ru/search?q=mmap+https%3A%2F%2Fdigitalmars.com%2Frtl%2F)
+
+
+[UP](###UP)
+## books_inet
+[cpp.com.ru](https://yandex.ru/search/?text=mmap+site%3Ahttps%3A%2F%2Fcpp.com.ru)
+[linuxhint.com](https://www.google.ru/search?q=mmap+site%3Ahttps%3A%2F%2Flinuxhint.com)
+[gnu.org](https://www.google.ru/search?q=mmap+site%3Ahttps%3A%2F%2Fwww.gnu.org%2Fsoftware%2Flibc%2Fmanual)
+
+[UP](###UP)
+## examples_inet
+[yandex:examples](https://yandex.ru/search/?text=mmap+example+in+c)
+[docs.oracle.com](https://www.google.com/search?q=mmap+https%3A%2F%2Fdocs.oracle.com)
+[manpages.debian.org](https://yandex.ru/search/?text=mmap+site%3Ahttps%3A%2F%2Fmanpages.debian.org%2F)
+[osr507doc.xinuos.com](https://www.google.com/search?q=mmap+http%3A%2F%2Fosr507doc.xinuos.com%2Fen%2Fman)
+[cpp.hotexamples.com](https://cpp.hotexamples.com/examples/-/-/mmap/cpp-mmap-function-examples.html)
+[all-ht.ru](https://yandex.ru/search/?text=mmap+site%3Ahttp%3A%2F%2Fall-ht.ru%2Finf%2Fprog%2Fc%2F)
+[cppreference.com](https://yandex.ru/search/?text=mmap+site%3Ahttps%3A%2F%2Fen.cppreference.com%2Fw%2Fc%2F)
+
+[UP](###UP)
+## classic_inet
+[bogatyrev_c_unix](https://www.google.com/search?q=mmap+site%3Ahttps%3A%2F%2Fcpp.com.ru%2Fbogatyrev_c_unix)
+[kr_cbook](https://www.google.com/search?q=mmap+site%3Ahttps%3A%2F%2Fcpp.com.ru%2Fkr_cbook)
+
+[UP](###UP)
+## enters_inet
+[pubs.opengroup.org](https://pubs.opengroup.org/onlinepubs/9699919799/idx/head.html)
+
+[UP](###UP)
+## issue_code_inet
+[code.woboq.org](https://www.google.com/search?h=&sitesearch=https%3A%2F%2Fcode.woboq.org%2Fuserspace%2Fglibc%2F&q=mmap)
+
+
+[UP](###UP)
+## H_FILE 
+[sys_mman_h.md](../../hfiles/sys_mman_h.md)
+
+
+[UP](###UP)
+## p_SYNOPSIS
+:mmap:
+[next](##p_RETURN_ru)
+
+<<SYNOPSIS>>
+[SYNOPSIS](../../fills/mmap/SYNOPSIS)
+
+
+[UP](###UP)
+## p_RETURN_ru
+:mmap:
+[next](##p_RETURN)
+
+<<RETURN>>
+[RETURN_ru](../../fills/mmap/RETURN)
+
+
+[UP](###UP)
+## p_RETURN
+:mmap:
+[next](##p_DESCRIPTION_ru)
+
+----------------------------------------------------- 
+-------------------------------------- 
+При успешном выполнении mmap() возвращает 0; при сбое функция возвращает MAP_FAILED .
+-------------------------------------- 
+----------------------------------------------------- 
+<<RETURN_ru>>
+[RETURN](../../fills/mmap/RETURN_ru)
+
+
+[UP](###UP)
+## p_DESCRIPTION_ru
+:mmap:
+[next](##p_DESCRIPTION)
+
+----------------------------------------------------- 
+-------------------------------------- 
+Функция mmap() используется для сопоставления адресного пространства процесса с файлами или устройствами. Когда файл сопоставляется с адресным пространством процесса, к файлу можно обращаться как к массиву в программе. Это один из наиболее эффективных способов доступа к данным в файле и обеспечивает бесшовный интерфейс кодирования, который является естественным для структуры данных, которую можно оценивать без абстрагирования чтения и записи из файлов. В этой статье мы обсудим, как использовать функцию mmap() в Linux. Итак, давайте начнем.
+Аргументы:
+Функция принимает 6 аргументов:
+1. адрес:
+Этот аргумент дает предпочтительный начальный адрес для сопоставления. Если другого сопоставления там не существует, ядро выберет ближайшую границу страницы и создаст сопоставление; в противном случае ядро выбирает новый адрес. Если этот аргумент равен NULL, то ядро может разместить отображение в любом месте, где сочтет нужным.
+2. длина:
+Это количество байтов, которые должны быть сопоставлены.
+3. защита:
+Этот аргумент используется для управления тем, какой доступ разрешен. Этот аргумент может быть логическим "ИЛИ" из следующих флагов PROT_READ | PROT_WRITE | PROT_EXEC | PROT_NONE. Типы доступа для чтения, записи и выполнения - это разрешения на содержимое.
+4. флаги:
+Этот аргумент используется для управления характером карты. Ниже приведены некоторые общие значения флагов:
+MAP_SHARED: этот флаг используется для совместного использования сопоставления со всеми другими процессами, которые сопоставлены с этим объектом. Изменения, внесенные в область сопоставления, будут записаны обратно в файл.
+MAP_PRIVATE: когда используется этот флаг, отображение не будет видно никаким другим процессам, и внесенные изменения не будут записаны в файл.
+MAP_ANONYMOUS / MAP_ANON: этот флаг используется для создания анонимного сопоставления. Анонимное сопоставление означает, что сопоставление не связано ни с какими файлами. Это отображение используется в качестве основного примитива для расширения кучи.
+MAP_FIXED: когда используется этот флаг, система должна быть вынуждена использовать точный адрес сопоставления, указанный в адресе, если это невозможно, то сопоставление не будет выполнено.
+5. файлы:
+Это дескриптор файла, который должен быть сопоставлен.
+6. смещение:
+Это смещение от того места, где началось сопоставление файлов. Проще говоря, сопоставление подключается к (смещение) к (смещение + длина-1) байтам для файла, открытого в дескрипторе filedes.
+Возвращаемые значения:
+При успешном выполнении mmap() возвращает 0; при сбое функция возвращает MAP_FAILED .
+![jpg](../../src/1-22.jpg)
+-------------------------------------- 
+----------------------------------------------------- 
+<<DESCRIPTION_ru>>
+[DESCRIPTION_ru](../../fills/mmap/DESCRIPTION_ru)
+
+
+[UP](###UP)
+## p_DESCRIPTION
+:mmap:
+[next](##p_BUGS)
+
+<<DESCRIPTION>>
+[DESCRIPTION](../../fills/mmap/DESCRIPTION)
+
+
+[UP](###UP)
+## p_MIRRORS
+:mmap:
+[next](##p_BUGS)
+
+<<MIRRORS>>
+[MIRRORS](../../fills/mmap/MIRRORS)
+
+
+[UP](###UP)
+## p_BUGS
+:mmap:
+[next](##p_EXAMPLES)
+
+<<BUGS>>
+[BUGS](../../fills/mmap/BUGS)
+
+
+[UP](###UP)
+## p_EXAMPLES
+:mmap:
+[next](##p_CODE)
+
+----------------------------------------------------- 
+-------------------------------------- 
+https://linuxhint.com/using_mmap_function_linux/
+Функция mmap() используется для сопоставления адресного пространства процесса с файлами или устройствами. Когда файл сопоставляется с адресным пространством процесса, к файлу можно обращаться как к массиву в программе. Это один из наиболее эффективных способов доступа к данным в файле и обеспечивает бесшовный интерфейс кодирования, который является естественным для структуры данных, которую можно оценивать без абстрагирования чтения и записи из файлов. В этой статье мы обсудим, как использовать функцию mmap() в Linux. Итак, давайте начнем.
+Header File:
+#include <sys/mman.h>
+Syntax:
+void * mmap (void *address, size_t length, int protect, int flags, int filedes,
+off_t offset)
+Аргументы:
+Функция принимает 6 аргументов:
+1. адрес:
+Этот аргумент дает предпочтительный начальный адрес для сопоставления. Если другого сопоставления там не существует, ядро выберет ближайшую границу страницы и создаст сопоставление; в противном случае ядро выбирает новый адрес. Если этот аргумент равен NULL, то ядро может разместить отображение в любом месте, где сочтет нужным.
+2. длина:
+Это количество байтов, которые должны быть сопоставлены.
+3. защита:
+Этот аргумент используется для управления тем, какой доступ разрешен. Этот аргумент может быть логическим "ИЛИ" из следующих флагов PROT_READ | PROT_WRITE | PROT_EXEC | PROT_NONE. Типы доступа для чтения, записи и выполнения - это разрешения на содержимое.
+4. флаги:
+Этот аргумент используется для управления характером карты. Ниже приведены некоторые общие значения флагов:
+MAP_SHARED: этот флаг используется для совместного использования сопоставления со всеми другими процессами, которые сопоставлены с этим объектом. Изменения, внесенные в область сопоставления, будут записаны обратно в файл.
+MAP_PRIVATE: когда используется этот флаг, отображение не будет видно никаким другим процессам, и внесенные изменения не будут записаны в файл.
+MAP_ANONYMOUS / MAP_ANON: этот флаг используется для создания анонимного сопоставления. Анонимное сопоставление означает, что сопоставление не связано ни с какими файлами. Это отображение используется в качестве основного примитива для расширения кучи.
+MAP_FIXED: когда используется этот флаг, система должна быть вынуждена использовать точный адрес сопоставления, указанный в адресе, если это невозможно, то сопоставление не будет выполнено.
+5. файлы:
+Это дескриптор файла, который должен быть сопоставлен.
+6. смещение:
+Это смещение от того места, где началось сопоставление файлов. Проще говоря, сопоставление подключается к (смещение) к (смещение + длина-1) байтам для файла, открытого в дескрипторе filedes.
+Возвращаемые значения:
+При успешном выполнении mmap() возвращает 0; при сбое функция возвращает MAP_FAILED .
+Наглядно мы можем представить функцию map следующим образом:
+Для снятия карты используется функция munmap() отображенной области :
+Синтаксис:
+int munmap(void *address, size_t длина);
+Возвращаемые значения:
+При успешном выполнении функция munmap() возвращает 0; при сбое функция возвращает -1.
+Распределение памяти (Example1.c)
+Чтение файла (Example2.c)
+Запись файла (Example3.c)
+Межпроцессное взаимодействие (Example4.c)
+Example1.c
+#include <stdio.h>
+#include <sys/mman.h>
+int main(){
+int N=5;
+int *ptr = mmap ( NULL, N*sizeof(int),
+PROT_READ | PROT_WRITE, MAP_PRIVATE | MAP_ANONYMOUS, 0, 0 );
+if(ptr == MAP_FAILED){
+printf("Mapping Failed
+");
+return 1;
+}
+for(int i=0; i<N; i++)
+ptr[i] = i*10;
+for(int i=0; i<N; i++)
+printf("[%d] ",ptr[i]);
+printf("
+");
+int err = munmap(ptr, 10*sizeof(int));
+if(err != 0){
+printf("UnMapping Failed
+");
+return 1;
+}
+return 0;
+}
+В примере 1.c мы выделяем память с помощью mmap. Здесь мы использовали 
+защиту PROT_READ | PROT_WRITE для чтения и записи в отображенную область. 
+Мы использовали флаг MAP_PRIVATE | MAP_ANONYMOUS. MAP_PRIVATE используется, 
+потому что область сопоставления не используется совместно с другими процессами, 
+а MAP_ANONYMOUS используется, потому что здесь мы не сопоставили ни одного файла. 
+По той же причине для дескриптора файла и значения смещения установлено значение 0.
+Example2.c
+#include <stdio.h>
+#include <sys/mman.h>
+#include <stdlib.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <unistd.h>
+int main(int argc, char *argv[]){
+if(argc < 2){
+printf("File path not mentioned
+");
+exit(0);
+}
+const char *filepath = argv[1];
+int fd = open(, O_RDONLY);
+if(fd < 0){
+printf("
+"%s " could not open
+",
+filepath);
+exit(1);
+}
+struct stat statbuf;
+int err = fstat(fd, &statbuf);
+if(err < 0){
+printf("
+"%s " could not open
+",
+filepath);
+exit(2);
+}
+char *ptr = mmap(NULL,statbuf.st_size,
+PROT_READ|PROT_WRITE,MAP_SHARED,
+fd,0);
+if(ptr == MAP_FAILED){
+printf("Mapping Failed
+");
+return 1;
+}
+close(fd);
+ssize_t n = write(1,ptr,statbuf.st_size);
+if(n != statbuf.st_size){
+printf("Write failed");
+}
+err = munmap(ptr, statbuf.st_size);
+if(err != 0){
+printf("UnMapping Failed
+");
+return 1;
+}
+return 0;
+}
+В Example2.c мы сопоставили файл “file1.txt ”. Сначала мы создали файл, 
+затем сопоставили файл с процессом. Мы открываем файл в режиме O_RDONLY, 
+потому что здесь мы хотим только прочитать файл.
+Example3.c
+#include <stdio.h>
+#include <sys/mman.h>
+#include <stdlib.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <unistd.h>
+int main(int argc, char *argv[]){
+if(argc < 2){
+printf("File path not mentioned
+");
+exit(0);
+}
+const char *filepath = argv[1];
+int fd = open(, O_RDWR);
+if(fd < 0){
+printf("
+"%s " could not open
+",
+filepath);
+exit(1);
+}
+struct stat statbuf;
+int err = fstat(fd, &statbuf);
+if(err < 0){
+printf("
+"%s " could not open
+",
+filepath);
+exit(2);
+}
+char *ptr = mmap(NULL,statbuf.st_size,
+PROT_READ|PROT_WRITE,
+MAP_SHARED,
+fd,0);
+if(ptr == MAP_FAILED){
+printf("Mapping Failed
+");
+return 1;
+}
+close(fd);
+ssize_t n = write(1,ptr,statbuf.st_size);
+if(n != statbuf.st_size){
+printf("Write failed
+");
+}
+// Reverse the file contents
+for(size_t i=0; i 
+);
+n = write(1,ptr,statbuf.st_size);
+if(n != statbuf.st_size){
+printf("Write failed
+");
+}
+err = munmap(ptr, statbuf.st_size);
+if(err != 0){
+printf("UnMapping Failed
+");
+return 1;
+}
+return 0;
+}
+В Example3.c мы прочитали, а затем записали в файл.
+Example4.c
+#include <stdio.h>
+#include <unistd.h>
+#include <sys/wait.h>
+#include <sys/mman.h>
+int main(){
+int N=5; // Number of elements for the array
+int *ptr = mmap(NULL,N*sizeof(int),
+PROT_READ | PROT_WRITE,
+MAP_SHARED | MAP_ANONYMOUS,
+0,0);    
+if(ptr == MAP_FAILED){
+printf("Mapping Failed
+");
+return 1;
+}
+for(int i=0; i < N; i++){
+ptr[i] = i + 1;
+}
+printf("Initial values of the array elements :
+");
+for (int i = 0; i < N; i++ ){
+printf(" %d", ptr[i] );
+}
+printf("
+");
+pid_t child_pid = fork();
+if ( child_pid == 0 ){
+//child
+for (int i = 0; i < N; i++){
+ptr[i] = ptr[i] * 10;
+}
+}
+else{
+//parent
+waitpid ( child_pid, NULL, 0);
+printf("
+Parent:
+");
+printf("Updated values of the array elements :
+");
+for (int i = 0; i < N; i++ ){
+printf(" %d", ptr[i] );
+}
+printf("
+");
+}
+int err = munmap(ptr, N*sizeof(int));
+if(err != 0){
+printf("UnMapping Failed
+");
+return 1;
+}
+return 0;
+}
+В Example4.c сначала массив инициализируется некоторыми значениями, затем 
+дочерний процесс обновляет значения. Родительский процесс считывает значения, 
+обновленные дочерним процессом, поскольку отображенная память является общей для обоих процессов.
+Заключение:
+Mmap() - это мощный системный вызов. Эту функцию не следует использовать 
+при проблемах с переносимостью, поскольку эта функция поддерживается только средой Linux.
+-------------------------------------- 
+----------------------------------------------------- 
+<<EXAMPLES>>
+[EXAMPLES](../../fills/mmap/EXAMPLES)
+
+
+[UP](###UP)
+## p_CODE_h
+:mmap:
+[next](##p_CODE_c)
+
+<<CODE_h>>
+[CODE_h](../../fills/mmap/CODE_h)
+
+
+[UP](###UP)
+## p_CODE_c
+:mmap:
+[next](##p_CODE_m)
+
+<<CODE_c>>
+[CODE_c](../../fills/mmap/CODE_c)
+
+
+[UP](###UP)
+## p_CODE_m
+:mmap:
+[next](##p_ERRORS)
+
+<<CODE_m>>
+[CODE_m](../../fills/mmap/CODE_m)
+
+
+[UP](###UP)
+## p_ERRORS
+:mmap:
+[next](##p_BOOKS)
+
+<<ERRORS>>
+[ERRORS](../../fills/mmap/ERRORS)
+
+
+[UP](###UP)
+## p_BOOKS
+:mmap:
+[next](##p_BOOKS_ru)
+
+<<BOOKS>>
+[BOOKS](../../fills/mmap/BOOKS)
+
+
+[UP](###UP)
+## p_BOOKS_ru
+:mmap:
+[next](##p_CONTENT)
+
+
+<<BOOKS_ru>>
+[BOOKS_ru](../../fills/mmap/BOOKS_ru)
+
+
+[UP](###UP)
+## p_CONTENT
+:mmap:
+[mmap.cnt](../../contents/mmap.cnt)
+[next](##UP)
+
+[UP](###UP)

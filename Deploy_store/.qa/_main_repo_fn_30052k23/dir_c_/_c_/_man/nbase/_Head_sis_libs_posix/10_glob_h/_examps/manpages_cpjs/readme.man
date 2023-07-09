@@ -1,0 +1,14 @@
+## [ищет имена путей по шаблону, освобождает память после](https://ru.manpages.org/glob/3)
+
+Пример использования приводится ниже, в нём имитируется набор строки
+ls -l *.c ../*.c
+
+в оболочке:
+
+glob_t globbuf;
+globbuf.gl_offs = 2;
+glob("*.c", GLOB_DOOFFS, NULL, &globbuf);
+glob("../*.c", GLOB_DOOFFS | GLOB_APPEND, NULL, &globbuf);
+globbuf.gl_pathv[0] = "ls";
+globbuf.gl_pathv[1] = "-l";
+execvp("ls", &globbuf.gl_pathv[0]);

@@ -1,0 +1,152 @@
+#!/bin/bash
+
+# echo "start .bashrc"echo -e "${HLIGHT}---${HOME}/.bashrc---${NORMAL}" #start files
+
+IIFS=$IFS
+
+# export PATH="${PATH_MAIN_REPO_FN_DIR}/dir_c_/_c_/_man/site/KeRi/1_Обзор_языка/res_cpp:$PATH"
+
+PPWD="$(pwd)"
+
+PLT_NAME=$(cat "${HOME}"/.plt_name)
+
+. "${PATH_CONFIG_DIR}/env.sh"
+
+TSH_book_path="${HOME}"/ProjectRepo_2/_repo/BOOK
+# PATH_OS=${PATH_COMMUNIS}/Deploy_store
+# PATH_FN="$PATH_OS/.qa/main_repo_fn" # path to pln
+# PATH_TAG="$PATH_FN/_config/agno_tag" # path to tag tree
+
+export IIFS
+
+export MANOPT="-L ru"
+
+. "$PATH_OS/.os/.sh/git-prompt.sh"
+
+export GIT_PS1_SHOWDIRTYSTATE=1
+export PS1='\033[35;40m\u@\H \w$(__git_ps1 " (%s)")\$\033[0m '
+
+if [ -f ~/.bash_aliases ]; then
+
+    . ~/.bash_aliases
+
+fi
+
+. "$PATH_OS/.qa/lib/user/0_ini.sh"
+
+# c_up() {
+#     echo -e "${CYAN}---c_up() \$1 = $1---${NORMAL}" #started functions
+#     IFS=$IIFS
+
+#     # cd_h "$1" "$filename" "$LINENO"
+#     cd_h "$1"
+
+#     local dir
+#     dir=$(pwd)
+
+#     for item in *; do
+#         # echo -e "${GREEN}\$item = $item${NORMAL}"             #print variable
+#         # echo -e "${GREEN}\${item:0:1} = ${item:0:1}${NORMAL}" #print variable
+#         local item_path=$dir/$item
+#         if [ -f "$item_path" ] && [ "${item:0:1}" != "_" ]; then
+#             . "$item_path"
+#             elif [ -d "$item_path" ] && [ "${item:0:1}" != "_" ]; then
+
+#             c_up "$item_path"
+
+#         fi
+
+#     done
+# }
+
+c_up() {
+    echo -e "${CYAN}---c_up() \$1 = $1---${NORMAL}" #started functions
+    IFS=$IIFS
+
+    # cd_h "$1" "$filename" "$LINENO"
+    cd_h "$1"
+
+    local dir
+    dir=$(pwd)
+
+    for item in *; do
+
+        local item_path=$dir/$item
+        if [ -f "$item_path" ] && [ "${item:0:1}" != "_" ] && [ "${item##*.}" = sh ]; then
+            # echo "---------- "${item##*.}" ---------------"
+            # if [ -f "$item_path" ] && [ "${item:0:1}" != "_" ]; then
+            # echo "$item_path"
+            # read -r e
+            . "$item_path"
+
+        elif
+            [ -d "$item_path" ] && [ "${item:0:1}" != "_" ]
+        then
+
+            c_up "$item_path"
+
+        fi
+
+    done
+}
+
+export c_up
+
+c_test() {
+    # echo -e "${CYAN}---c_test() \$1 = $1---${NORMAL}" #started functions
+    # IFS=$IIFS
+
+    # cd_h "$1" "$filename" "$LINENO"
+    cd "$1"
+
+    local dir
+    dir=$(pwd)
+
+    for item in *; do
+
+        local item_path=$dir/$item
+        if [ -f "$item_path" ] && [ "${item:0:1}" != "_" ] && [ "${item##*.}" = "tst" ]; then
+            # echo "---------- "$item_path" ---------------"
+            . "$item_path"
+        elif [ -d "$item_path" ] && [ "${item:0:1}" != "_" ]; then
+
+            c_test "$item_path"
+
+        fi
+
+    done
+}
+
+rr() {
+    echo -e "${CYAN}---rr()---${NORMAL}" #started functions
+
+    echo -e "${ULINE}. "file://${HOME}/.bashrc"${NORMAL}" #repit commands
+    . "${HOME}/.bashrc"
+}
+
+tst_bash() {
+
+    c_test "$PATH_OS/.qa/" 1>/dev/null
+    c_test "$PATH_OS/.os/" 1>/dev/null
+    c_test "$PATH_OS/.os/.sh/" 1>/dev/null
+    c_test "$PATH_OS/" 1>/dev/null
+
+}
+
+c_up "$PATH_OS/.qa/"
+c_up "$PATH_OS/.os/"
+c_up "$PATH_OS/.os/.sh/"
+c_up "$PATH_OS/"
+
+up_hosttype_
+
+upgit
+e_git
+
+add_PATH_
+# ce_
+
+cd_s "$PPWD" "$filename" "$LINENO"
+
+#######
+# . "${HOME}/.cargo/env"

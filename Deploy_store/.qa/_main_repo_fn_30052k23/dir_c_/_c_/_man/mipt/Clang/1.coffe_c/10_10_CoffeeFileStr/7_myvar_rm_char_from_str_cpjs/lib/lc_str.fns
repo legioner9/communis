@@ -1,0 +1,7 @@
+ int cp_str_lc_str(char *to, char *from)
+ int unseal_cntchar_lc_str(char *s)
+ int unseal_cntcharn_lc_str(char *s, int n)
+ char *l2a_free_lc_str(char *literal)
+ char *strcat_lc_str(char *dest, char *src)
+ size_t strlen_lc_str(char *str)
+ char *rm_charn_lc_str(char *str, char removed, int n)

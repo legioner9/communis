@@ -1,0 +1,882 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0061)https://intuit.ru/studies/courses/2249/52/lecture/1552?page=2 -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru" lang="ru" dir="ltr" prefix="ya: http://webmaster.yandex.ru/vocabularies/" class="js"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta property="ya:interaction" content="XML_FORM">
+        <meta property="ya:interaction:url" content="https://intuit.ru/sites/all/themes/intuit/yandex_interactive.xml">
+        <!--<script type="text/javascript" src="/intuit_user_ha_login/vk/openapi"></script>-->
+        <!--<script type="text/javascript" src="/intuit_user_ha_login/vk/share"></script>-->
+	
+<link rel="shortcut icon" href="https://intuit.ru/sites/all/themes/intuit/favicon.ico" type="image/x-icon">
+    <title>НОУ ИНТУИТ | Лекция | Процессы в операционной системе UNIX</title>
+    <link type="text/css" rel="stylesheet" media="all" href="./НОУ ИНТУИТ _ Лекция _ Процессы в операционной системе UNIX_files/css_ac9382ddba761f52421b126e3e93821a.css">
+<link type="text/css" rel="stylesheet" media="print" href="./НОУ ИНТУИТ _ Лекция _ Процессы в операционной системе UNIX_files/css_88cb6b8f1d13ad44cb15a93eaa507b43.css">
+    <script src="./НОУ ИНТУИТ _ Лекция _ Процессы в операционной системе UNIX_files/all.js" async="" crossorigin="anonymous"></script><script async="" type="text/javascript" src="./НОУ ИНТУИТ _ Лекция _ Процессы в операционной системе UNIX_files/app.103cb5db.js"></script><script type="text/javascript" src="./НОУ ИНТУИТ _ Лекция _ Процессы в операционной системе UNIX_files/context.js" async=""></script><script type="text/javascript" src="./НОУ ИНТУИТ _ Лекция _ Процессы в операционной системе UNIX_files/context.js" async=""></script><script id="facebook-jssdk" src="./НОУ ИНТУИТ _ Лекция _ Процессы в операционной системе UNIX_files/all(1).js"></script><script async="" type="text/javascript" src="./НОУ ИНТУИТ _ Лекция _ Процессы в операционной системе UNIX_files/at.js"></script><script type="text/javascript" src="./НОУ ИНТУИТ _ Лекция _ Процессы в операционной системе UNIX_files/jquery.js"></script>
+<script type="text/javascript" src="./НОУ ИНТУИТ _ Лекция _ Процессы в операционной системе UNIX_files/drupal.js"></script>
+<script type="text/javascript" src="./НОУ ИНТУИТ _ Лекция _ Процессы в операционной системе UNIX_files/ru_232ad9f18e4714ad4cbfe8578f61e008.js"></script>
+<script type="text/javascript" src="./НОУ ИНТУИТ _ Лекция _ Процессы в операционной системе UNIX_files/intuit_advertising.ads.js"></script>
+<script type="text/javascript" src="./НОУ ИНТУИТ _ Лекция _ Процессы в операционной системе UNIX_files/check_accounts.js"></script>
+<script type="text/javascript" src="./НОУ ИНТУИТ _ Лекция _ Процессы в операционной системе UNIX_files/lightbox.js"></script>
+<script type="text/javascript" src="./НОУ ИНТУИТ _ Лекция _ Процессы в операционной системе UNIX_files/memcache.js"></script>
+<script type="text/javascript" src="./НОУ ИНТУИТ _ Лекция _ Процессы в операционной системе UNIX_files/poormanscron.js"></script>
+<script type="text/javascript" src="./НОУ ИНТУИТ _ Лекция _ Процессы в операционной системе UNIX_files/jquery.ui.core.js"></script>
+<script type="text/javascript" src="./НОУ ИНТУИТ _ Лекция _ Процессы в операционной системе UNIX_files/jquery.ui.widget.js"></script>
+<script type="text/javascript" src="./НОУ ИНТУИТ _ Лекция _ Процессы в операционной системе UNIX_files/jquery.ui.position.js"></script>
+<script type="text/javascript" src="./НОУ ИНТУИТ _ Лекция _ Процессы в операционной системе UNIX_files/jquery.ui.mouse.js"></script>
+<script type="text/javascript" src="./НОУ ИНТУИТ _ Лекция _ Процессы в операционной системе UNIX_files/jquery.ui.draggable.js"></script>
+<script type="text/javascript" src="./НОУ ИНТУИТ _ Лекция _ Процессы в операционной системе UNIX_files/jquery.ui.resizable.js"></script>
+<script type="text/javascript" src="./НОУ ИНТУИТ _ Лекция _ Процессы в операционной системе UNIX_files/jquery.ui.button.js"></script>
+<script type="text/javascript" src="./НОУ ИНТУИТ _ Лекция _ Процессы в операционной системе UNIX_files/jquery.ui.dialog.js"></script>
+<script type="text/javascript" src="./НОУ ИНТУИТ _ Лекция _ Процессы в операционной системе UNIX_files/system.js"></script>
+<script type="text/javascript" src="./НОУ ИНТУИТ _ Лекция _ Процессы в операционной системе UNIX_files/universal-ajax-control.js"></script>
+<script type="text/javascript" src="./НОУ ИНТУИТ _ Лекция _ Процессы в операционной системе UNIX_files/popup_list.js"></script>
+<script type="text/javascript" src="./НОУ ИНТУИТ _ Лекция _ Процессы в операционной системе UNIX_files/jQuery_list_pager.js"></script>
+<script type="text/javascript" src="./НОУ ИНТУИТ _ Лекция _ Процессы в операционной системе UNIX_files/page_functions.js"></script>
+<script type="text/javascript" src="./НОУ ИНТУИТ _ Лекция _ Процессы в операционной системе UNIX_files/jquery.int.contextmenu.js"></script>
+<script type="text/javascript" src="./НОУ ИНТУИТ _ Лекция _ Процессы в операционной системе UNIX_files/spelling.js"></script>
+<script type="text/javascript" src="./НОУ ИНТУИТ _ Лекция _ Процессы в операционной системе UNIX_files/person_account_pay.js"></script>
+<script type="text/javascript" src="./НОУ ИНТУИТ _ Лекция _ Процессы в операционной системе UNIX_files/person_account_rechange_form.js"></script>
+<script type="text/javascript" src="./НОУ ИНТУИТ _ Лекция _ Процессы в операционной системе UNIX_files/lecture.js"></script>
+<script type="text/javascript" src="./НОУ ИНТУИТ _ Лекция _ Процессы в операционной системе UNIX_files/jquery.tooltip.min.js"></script>
+<script type="text/javascript" src="./НОУ ИНТУИТ _ Лекция _ Процессы в операционной системе UNIX_files/jquery.cookie.js"></script>
+<script type="text/javascript" src="./НОУ ИНТУИТ _ Лекция _ Процессы в операционной системе UNIX_files/jquery.timers-1.2.js"></script>
+<script type="text/javascript" src="./НОУ ИНТУИТ _ Лекция _ Процессы в операционной системе UNIX_files/lecture_user_control.js"></script>
+<script type="text/javascript" src="./НОУ ИНТУИТ _ Лекция _ Процессы в операционной системе UNIX_files/privacy_control.js"></script>
+<script type="text/javascript" src="./НОУ ИНТУИТ _ Лекция _ Процессы в операционной системе UNIX_files/jquery.hint.js"></script>
+<script type="text/javascript" src="./НОУ ИНТУИТ _ Лекция _ Процессы в операционной системе UNIX_files/jquery.elastic.source.js"></script>
+<script type="text/javascript" src="./НОУ ИНТУИТ _ Лекция _ Процессы в операционной системе UNIX_files/autoresize.jquery.js"></script>
+<script type="text/javascript" src="./НОУ ИНТУИТ _ Лекция _ Процессы в операционной системе UNIX_files/jquery.int.elastic.js"></script>
+<script type="text/javascript" src="./НОУ ИНТУИТ _ Лекция _ Процессы в операционной системе UNIX_files/share_thoughts_dialog.js"></script>
+<script type="text/javascript" src="./НОУ ИНТУИТ _ Лекция _ Процессы в операционной системе UNIX_files/intuit_informer_pannel.js"></script>
+<script type="text/javascript" src="./НОУ ИНТУИТ _ Лекция _ Процессы в операционной системе UNIX_files/left_navigation_block.js"></script>
+<script type="text/javascript" src="./НОУ ИНТУИТ _ Лекция _ Процессы в операционной системе UNIX_files/right_pannel_block.js"></script>
+<script type="text/javascript" src="./НОУ ИНТУИТ _ Лекция _ Процессы в операционной системе UNIX_files/int_search.js"></script>
+<script type="text/javascript" src="./НОУ ИНТУИТ _ Лекция _ Процессы в операционной системе UNIX_files/jquery.livequery.js"></script>
+<script type="text/javascript" src="./НОУ ИНТУИТ _ Лекция _ Процессы в операционной системе UNIX_files/avatar_popup.js"></script>
+<script type="text/javascript" src="./НОУ ИНТУИТ _ Лекция _ Процессы в операционной системе UNIX_files/aoc_popup.js"></script>
+<script type="text/javascript" src="./НОУ ИНТУИТ _ Лекция _ Процессы в операционной системе UNIX_files/aocmobi_popup.js"></script>
+<script type="text/javascript" src="./НОУ ИНТУИТ _ Лекция _ Процессы в операционной системе UNIX_files/language.js"></script>
+<script type="text/javascript" src="./НОУ ИНТУИТ _ Лекция _ Процессы в операционной системе UNIX_files/intuit.js"></script>
+<script type="text/javascript" src="./НОУ ИНТУИТ _ Лекция _ Процессы в операционной системе UNIX_files/jquery.form.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, { "basePath": "\/", "intuit_advertising": [ ".horizontal-advertising-block", ".vertical-160-advertising-block", ".vertical-240-advertising-block", ".vertical-advertising-for-right-column1-block", ".inline-advertising-for-lecture-block", ".random-horizontal-advertising-block", ".frontpage-horizontal-advertising-block", ".innerpage-horizontal-advertising-block", ".inner-horizontal-advertising-block", "#course-advertising2-informer" ], "person_account": { "basePath": "\/intuituser\/person_account", "runNext": 1653458726 }, "lightbox2": { "rtl": "0", "file_path": "\/(\\w\\w\/)sites\/default\/files", "default_image": "\/sites\/all\/modules\/lightbox2\/images\/brokenimage.jpg", "border_size": 10, "font_color": "000", "box_color": "fff", "top_position": "", "overlay_opacity": "0.8", "overlay_color": "000", "disable_close_click": 1, "resize_sequence": 0, "resize_speed": 400, "fade_in_speed": 400, "slide_down_speed": 600, "use_alt_layout": 1, "disable_resize": 0, "disable_zoom": 0, "force_show_nav": 0, "show_caption": 1, "loop_items": 0, "node_link_text": "View Image Details", "node_link_target": 0, "image_count": "Image !current of !total", "video_count": "Video !current of !total", "page_count": "Page !current of !total", "lite_press_x_close": "press \u003ca href=\"#\" onclick=\"hideLightbox(); return FALSE;\"\u003e\u003ckbd\u003ex\u003c\/kbd\u003e\u003c\/a\u003e to close", "download_link_text": "", "enable_login": false, "enable_contact": false, "keys_close": "c x 27", "keys_previous": "p 37", "keys_next": "n 39", "keys_zoom": "z", "keys_play_pause": "32", "display_image_size": "original", "image_node_sizes": "()", "trigger_lightbox_classes": "", "trigger_lightbox_group_classes": "", "trigger_slideshow_classes": "", "trigger_lightframe_classes": "", "trigger_lightframe_group_classes": "", "custom_class_handler": 0, "custom_trigger_classes": "", "disable_for_gallery_lists": true, "disable_for_acidfree_gallery_lists": true, "enable_acidfree_videos": true, "slideshow_interval": 5000, "slideshow_automatic_start": true, "slideshow_automatic_exit": true, "show_play_pause": true, "pause_on_next_click": false, "pause_on_previous_click": true, "loop_slides": false, "iframe_width": 600, "iframe_height": 400, "iframe_border": 1, "enable_video": 0 }, "cron": { "basePath": "\/poormanscron", "runNext": 1653494402 }, "spelling": { "requestUri": "studies\/courses\/2249\/52\/lecture\/1552", "uri": "\/admin\/content\/spelling\/save_form" } });
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+document.write("<sc" + "ript type='text/javascript' src='https://an.yandex.ru/system/context.js'><" + "/script>");
+//--><!]]>
+</script><script type="text/javascript" src="./НОУ ИНТУИТ _ Лекция _ Процессы в операционной системе UNIX_files/context.js"></script><script charset="utf-8" src="./НОУ ИНТУИТ _ Лекция _ Процессы в операционной системе UNIX_files/858730dd690ae2001b73.js" crossorigin="anonymous" importance="high"></script><script charset="utf-8" src="./НОУ ИНТУИТ _ Лекция _ Процессы в операционной системе UNIX_files/ba5361f4e4118e22b684.js" crossorigin="anonymous" importance="high"></script><script async="" crossorigin="anonymous" src="./НОУ ИНТУИТ _ Лекция _ Процессы в операционной системе UNIX_files/host.js"></script><link rel="preconnect" href="https://yastatic.net/"><link rel="preconnect" href="https://avatars.mds.yandex.net/"><link rel="preconnect" href="https://mc.yandex.ru/"><meta id="https://yastatic.net/partner-code-bundles/585690/context_static.js"><link rel="preconnect" href="https://ads.adfox.ru/"><script charset="utf-8" src="./НОУ ИНТУИТ _ Лекция _ Процессы в операционной системе UNIX_files/6102c5dc4938bb888118.js" crossorigin="anonymous" importance="high"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+document.write("<sc" + "ript type='text/javascript' src='https://an.yandex.ru/system/context.js'><" + "/script>");
+//--><!]]>
+</script><script type="text/javascript" src="./НОУ ИНТУИТ _ Лекция _ Процессы в операционной системе UNIX_files/context.js"></script>
+                  
+    <meta property="og:image" content="https://intuit.ru/sites/all/themes/intuit/images/4vk.png">
+    <link rel="image_src" href="https://intuit.ru/sites/all/themes/intuit/images/4vk.png">
+      
+<script async="" type="text/javascript" src="./НОУ ИНТУИТ _ Лекция _ Процессы в операционной системе UNIX_files/consent_214053.js"></script>
+<script async="" type="text/javascript" src="./НОУ ИНТУИТ _ Лекция _ Процессы в операционной системе UNIX_files/pb214053.js"></script>
+<script async="" type="text/javascript" src="./НОУ ИНТУИТ _ Лекция _ Процессы в операционной системе UNIX_files/common_402.js"></script>
+<script async="" id="__lxGc__rtr" type="text/javascript" src="./НОУ ИНТУИТ _ Лекция _ Процессы в операционной системе UNIX_files/360.js"></script>
+     <!-- 28.09.2020-->
+      <script async="" src="./НОУ ИНТУИТ _ Лекция _ Процессы в операционной системе UNIX_files/header-bidding.js"></script>
+<script>
+    const adfoxBiddersMap = {
+        'myTarget': '816008' ,
+        'betweenDigital': '871789' ,
+    };
+    var adUnits = [
+        {
+            code: 'adfox_155972944194112345',
+            sizes: [ [240,400] ],
+            bids: [
+                {
+                    bidder: 'myTarget',
+                    params: {
+                        placementId: 482726,
+                    }
+                },                {
+                    bidder: 'betweenDigital',
+                    params: {
+                        placementId: 3149298,
+                    }
+                },
+            ]
+        },
+        {
+            code: 'adfox_156016928467189461',
+            sizes: [ [750,300],[728,90] ],
+            bids: [
+                {
+                    bidder: 'myTarget',
+                    params: {
+                        placementId: 487178,
+                    }
+                },                {
+                    bidder: 'betweenDigital',
+                    params: {
+                        placementId: 3159072,
+                    }
+                },
+            ]
+        },
+
+    ];
+    var userTimeout = 500;
+    window.YaHeaderBiddingSettings = {
+        biddersMap: adfoxBiddersMap,
+        adUnits: adUnits,
+        timeout: userTimeout
+    };
+</script>
+<script>(function(){function a(){__clADF__.adxAllowed(0)}var b=window,c=b.document,d=c.getElementsByTagName('head')[0];d||(d=c.createElement('head'),b.appendChild(d)),b.__clADF__={state:0,loaded:0,adxAllowed:function(a){if(1!=this.loaded){n='adfoxAsyncParams',b[n]&&b[n].forEach(function(b){b.params.pk=a}),n1=n+'Scroll',b[n1]&&b[n1].forEach(function(b){b[0].params.pk=a}),n1=n+'Adaptive',b[n1]&&b[n1].forEach(function(b){b[0].params.pk=a}),n='Adaptive',b[n]&&b[n].forEach(function(b){b[0].params.pk=a}),this.state=a;var d=document.createElement('script');d.setAttribute('src','https://yastatic.net/pcode/adfox/loader.js'),d.setAttribute('async','async');var e=c.getElementsByTagName('head')[0];e||(e=c.createElement('head'),b.appendChild(e)),e.appendChild(d),this.loaded=1}}};var e=c.createElement('script');e.setAttribute('src','//clickiocdn.com/hbadx/?f=__clADF__&rt='+new Date().getTime()+'&site_id=214053&title='+encodeURIComponent(c.title)+'&r='+encodeURIComponent(c.referrer)),e.setAttribute('async','async'),e.onreadystatechange=function(){'loaded'!=this.readyState&&'complete'!=this.readyState&&setTimeout(a,0)},e.onerror=function(){setTimeout(a,0)},d.appendChild(e),setTimeout(a,3e3)})();</script><script src="./НОУ ИНТУИТ _ Лекция _ Процессы в операционной системе UNIX_files/saved_resource" async="async"></script>
+      <!-- 28.09.2020-->
+                  <style>
+          #lx_655355{
+              display: none!important;
+          }
+      </style>
+            <!-- 14.06.2019-->
+  <link href="./НОУ ИНТУИТ _ Лекция _ Процессы в операционной системе UNIX_files/screen.8f8a87b4.css" type="text/css" rel="stylesheet" media="screen"><script async="" crossorigin="anonymous" src="./НОУ ИНТУИТ _ Лекция _ Процессы в операционной системе UNIX_files/watch.js"></script><style type="text/css">.xb35ae226{opacity: !important;white-space:normal !important;visibility:visible !important}.xb35ae226,.xb35ae226 yatag{display:block !important;font-family:inherit !important}.xb35ae226,.xb35ae226,.xb35ae226 a,.xb35ae226 b,.xb35ae226 em,.xb35ae226 iframe,.xb35ae226 img,.xb35ae226 table,.xb35ae226 tbody,.xb35ae226 td,.xb35ae226 tr,.xb35ae226 yatag{-webkit-box-sizing:content-box !important;box-sizing:content-box !important;color:inherit !important;font-size:inherit !important;font-weight:inherit !important;-webkit-hyphens:manual !important;-ms-hyphens:manual !important;hyphens:manual !important;-webkit-transition:none !important;-o-transition:none !important;transition:none !important}.xb35ae226,.xb35ae226 a,.xb35ae226 b,.xb35ae226 em,.xb35ae226 iframe,.xb35ae226 img,.xb35ae226 table,.xb35ae226 tbody,.xb35ae226 td,.xb35ae226 tr{background:none !important;border:none !important;border-radius:0 !important;border-spacing:0 !important;border-collapse:collapse !important;clear:none !important;float:none !important;font-variant:normal !important;letter-spacing:normal !important;line-height:normal !important;margin:0 !important;max-height:none !important;max-width:none !important;min-height:0 !important;min-width:0 !important;outline:none !important;padding:0 !important;position:static !important;text-align:left !important;text-decoration:none !important;text-indent:0 !important;text-transform:none !important;vertical-align:baseline !important;visibility:inherit !important;word-spacing:normal !important}.xb35ae226,.xb35ae226 a,.xb35ae226 b,.xb35ae226 em,.xb35ae226 img,.xb35ae226 table,.xb35ae226 tbody,.xb35ae226 td,.xb35ae226 tr{height:auto !important}.xb35ae226 table{display:table !important;empty-cells:hide !important;table-layout:fixed !important}.xb35ae226 table,.xb35ae226 td{font-size:100% !important}.xb35ae226 td{display:table-cell !important;vertical-align:middle !important}.xb35ae226{width:auto !important;height:auto !important;overflow:visible !important}.xb35ae226 .i65b32ef7{position:relative !important;margin:auto !important;display:-webkit-box !important;display:-ms-flexbox !important;display:flex !important;-webkit-box-pack:center !important;-ms-flex-pack:center !important;justify-content:center !important;-webkit-box-align:center !important;-ms-flex-align:center !important;align-items:center !important;overflow:hidden !important}.xb35ae226 .n6b06ca17{padding:10px 16px 86px !important}.xb35ae226 .dede4be58,.xb35ae226 .u8d1fd73a{position:absolute !important;z-index:1 !important;top:0 !important;left:0 !important;right:0 !important;bottom:0 !important;width:100% !important;height:100% !important;display:none !important}.xb35ae226 .h7b077d70{position:relative !important;z-index:2 !important}.xb35ae226 .n8cdf1707{position:relative !important;top:0 !important;left:0 !important;width:100% !important;height:100% !important;-webkit-transform-origin:0 0 !important;transform-origin:0 0 !important}.xb35ae226 .n8cdf1707 iframe{position:absolute !important;top:0 !important;left:0 !important;width:100% !important;height:100% !important}.xb35ae226 .g59718c18{position:absolute !important;width:100% !important;right:0 !important;top:0 !important;z-index:20 !important}.xb35ae226 .se1619200{position:absolute !important;z-index:21 !important;top:0 !important;left:0 !important;width:100% !important;height:100% !important}.xb35ae226 .q3940bbb2{position:absolute !important;top:0 !important;left:0 !important;z-index:10 !important;height:16px !important;padding:0 4px !important;font-size:11px !important;line-height:16px !important;color:#000 !important;text-decoration:none !important;background:#fff !important;border:1px solid #e5e5e5 !important;border-bottom-right-radius:3px !important;cursor:pointer !important}.xb35ae226 .q8efa7976{border:1px solid #303050 !important}.xb35ae226 .k888ecad2{max-width:100% !important;max-height:100% !important}.xb35ae226 .k888ecad2 .dede4be58,.xb35ae226 .k888ecad2 .u8d1fd73a{display:block !important}.xb35ae226 .k888ecad2 .u8d1fd73a{-webkit-filter:blur(10px) saturate(0) contrast(400%) !important;filter:blur(10px) saturate(0) contrast(400%) !important}.xb35ae226 .k888ecad2 .dede4be58{background-color:rgba(38,38,38,.9) !important}.xb35ae226 .ae47c12b4{-webkit-box-pack:start !important;-ms-flex-pack:start !important;justify-content:flex-start !important}.xb35ae226 .uceff1e40,.xb35ae226 .l27d07868{visibility:hidden !important;opacity:0 !important}.xb35ae226 .l27d07868{max-width:1px !important;max-height:1px !important}.xb35ae226 .xbc8c7b2{position:absolute !important;bottom:20px !important;left:16px !important;right:16px !important;z-index:3 !important;display:-webkit-box !important;display:-ms-flexbox !important;display:flex !important}@media (orientation:landscape){.xb35ae226 .xbc8c7b2{margin:0 auto !important;width:260px !important}}.xb35ae226 .q78d2cee1{height:48px !important;line-height:48px !important;font-size:16px !important;border-radius:8px !important;text-align:center !important;font-weight:700 !important;-ms-flex-item-align:stretch !important;align-self:stretch !important;padding:0 20px !important;white-space:nowrap !important;min-width:0 !important}.xb35ae226 .c69c3d6da{background:-webkit-gradient(linear,left top,left bottom,from(#efefef),to(#e5e5e5)) !important;background:-o-linear-gradient(top,#efefef 0,#e5e5e5 100%) !important;background:linear-gradient(180deg,#efefef,#e5e5e5) !important;margin-right:8px !important;-webkit-box-flex:2 !important;-ms-flex:2 1 !important;flex:2 1 !important}.xb35ae226 .hcb26b104{background:-webkit-gradient(linear,left top,right top,color-stop(-40%,#f60),color-stop(20%,rgba(255,102,0,0))),-webkit-gradient(linear,right top,left top,color-stop(-40%,#f60),color-stop(20%,rgba(255,102,0,0))),-webkit-gradient(linear,left bottom,left top,color-stop(-80%,#f60),color-stop(80%,#fd0)) !important;background:-o-linear-gradient(left,#f60 -40%,rgba(255,102,0,0) 20%),-o-linear-gradient(right,#f60 -40%,rgba(255,102,0,0) 20%),-o-linear-gradient(bottom,#f60 -80%,#fd0 80%) !important;background:linear-gradient(90deg,#f60 -40%,rgba(255,102,0,0) 20%),linear-gradient(270deg,#f60 -40%,rgba(255,102,0,0) 20%),linear-gradient(0deg,#f60 -80%,#fd0 80%) !important;-webkit-box-flex:3 !important;-ms-flex:3 1 !important;flex:3 1 !important}.xb35ae226 .h7597c8ae{display:inline-block !important;margin-left:8px !important}.xb35ae226 .q75fe6707{position:absolute !important;left:-1000px !important;top:-1000px !important;width:1px !important;height:1px !important;display:block !important}.xb35ae226 .c2920e79e{cursor:pointer !important;position:absolute !important;right:4px !important;top:4px !important;z-index:10 !important}.xb35ae226 .ee95dc28b.c2920e79e{display:-webkit-box !important;display:-ms-flexbox !important;display:flex !important;-webkit-box-align:center !important;-ms-flex-align:center !important;align-items:center !important;-webkit-box-pack:center !important;-ms-flex-pack:center !important;justify-content:center !important;pointer-events:auto !important;border-radius:50% !important;-webkit-user-select:none !important;-moz-user-select:none !important;-ms-user-select:none !important;user-select:none !important;-webkit-tap-highlight-color:transparent !important}.xb35ae226 .ee95dc28b.c2920e79e:before{content:"" !important;position:absolute !important;top:-4px !important;left:50% !important;-webkit-transform:translateX(-50%) !important;transform:translateX(-50%) !important}.xb35ae226 .ee95dc28b.c2920e79e:hover .jbb456c6e{opacity:.8 !important}.xb35ae226 .ee95dc28b.c2920e79e.e6f8fabe5 .jbb456c6e{background-color:#fff !important;opacity:.8 !important}.xb35ae226 .ee95dc28b.c2920e79e.e6f8fabe5 .q2ac39d20 svg{fill:#575c66 !important}.xb35ae226 .ee95dc28b.c2920e79e.x3fc2c97d .jbb456c6e,.xb35ae226 .ee95dc28b.c2920e79e.b5f342c5f .jbb456c6e{background:none !important}.xb35ae226 .ee95dc28b.c2920e79e.x3fc2c97d:hover{background-color:#e9e9e9 !important}.xb35ae226 .ee95dc28b.c2920e79e.x3fc2c97d .q2ac39d20 svg{fill:#242526 !important}.xb35ae226 .ee95dc28b.c2920e79e.x3fc2c97d .dc8af835c{color:#242526 !important}.xb35ae226 .ee95dc28b.c2920e79e.b5f342c5f:hover{background-color:rgba(248,250,255,.2) !important}.xb35ae226 .ee95dc28b.c2920e79e.b5f342c5f .q2ac39d20 svg{fill:#fff !important}.xb35ae226 .ee95dc28b.c2920e79e.b5f342c5f .dc8af835c{color:#fff !important}.xb35ae226 .ee95dc28b.ec0bbe5b0{width:12px !important;height:12px !important}.xb35ae226 .ee95dc28b.ec0bbe5b0:before{width:28px !important;height:28px !important}.xb35ae226 .ee95dc28b.ec0bbe5b0 .q2ac39d20{-webkit-transform:scale(.6) !important;transform:scale(.6) !important}.xb35ae226 .ee95dc28b.q676be048{width:16px !important;height:16px !important}.xb35ae226 .ee95dc28b.q676be048:before{width:32px !important;height:32px !important}.xb35ae226 .ee95dc28b.q676be048 .q2ac39d20{-webkit-transform:scale(.8) !important;transform:scale(.8) !important}.xb35ae226 .ee95dc28b.x27a58b96{width:24px !important;height:24px !important}.xb35ae226 .ee95dc28b.x27a58b96:before{width:42px !important;height:42px !important}.xb35ae226 .ee95dc28b.kdcdd15b7{width:28px !important;height:28px !important}.xb35ae226 .ee95dc28b.kdcdd15b7:before{width:42px !important;height:42px !important}.xb35ae226 .jbb456c6e{height:100% !important;width:100% !important;position:absolute !important;top:0 !important;left:0 !important;z-index:-1 !important;border-radius:inherit !important;-webkit-transition:opacity .15s !important;-o-transition:opacity .15s !important;transition:opacity .15s !important;-webkit-transition:background-color .5s ease-in-out !important;-o-transition:background-color .5s ease-in-out !important;transition:background-color .5s ease-in-out !important}.xb35ae226 .jbb456c6e.q67cabfe1{background:rgba(26,43,77,.4) !important;color:#fff !important}.xb35ae226 .jbb456c6e.q67cabfe1:hover{opacity:.5 !important}.xb35ae226 .jbb456c6e.w764d9143{background:hsla(0,0%,100%,.8) !important;color:#3a3c40 !important}.xb35ae226 .jbb456c6e.w764d9143:hover{opacity:.9 !important}.xb35ae226 .jbb456c6e.b77491224{background:none !important}.xb35ae226 .ee95dc28b .q2ac39d20{display:-webkit-box !important;display:-ms-flexbox !important;display:flex !important;-webkit-box-align:center !important;-ms-flex-align:center !important;align-items:center !important;-webkit-box-pack:center !important;-ms-flex-pack:center !important;justify-content:center !important;pointer-events:none !important}.xb35ae226 .ee95dc28b .q2ac39d20.q67cabfe1 svg{fill:#fff !important}.xb35ae226 .ee95dc28b .q2ac39d20.q67cabfe1 svg,.xb35ae226 .ee95dc28b .q2ac39d20.w764d9143 svg{-webkit-transition:fill .5s ease-in-out !important;-o-transition:fill .5s ease-in-out !important;transition:fill .5s ease-in-out !important}.xb35ae226 .ee95dc28b .q2ac39d20.w764d9143 svg{fill:#242526 !important}.xb35ae226 .dc8af835c{display:-webkit-box !important;display:-ms-flexbox !important;display:flex !important;-webkit-box-align:center !important;-ms-flex-align:center !important;align-items:center !important;-webkit-box-pack:center !important;-ms-flex-pack:center !important;justify-content:center !important;pointer-events:none !important}.xb35ae226 .dc8af835c.q67cabfe1{color:#fff !important}.xb35ae226 .dc8af835c.w764d9143{color:#242526 !important}@-webkit-keyframes jb29f918e{0%,to{opacity:0 !important;visibility:hidden !important}4%,96%{visibility:visible !important;opacity:1 !important}}@keyframes jb29f918e{0%,to{opacity:0 !important;visibility:hidden !important}4%,96%{visibility:visible !important;opacity:1 !important}}@media (hover:hover) and (pointer:fine){.xb35ae226 .waf5c046f:hover .a9454c2f4{opacity:0 !important;visibility:hidden !important}.xb35ae226 .waf5c046f:hover .u347c4cc1{visibility:visible !important;opacity:1 !important}.xb35ae226 .waf5c046f[data-active]:hover .u347c4cc1{opacity:0 !important;visibility:hidden !important}.xb35ae226 .waf5c046f[data-active]:hover .a9454c2f4{visibility:visible !important;opacity:1 !important}}.xb35ae226 .waf5c046f.l2c2a1f9f{right:45px !important}.xb35ae226 .waf5c046f.l2c2a1f9f .ef505e5b4.a9454c2f4{-webkit-transform:translateX(41px) !important;transform:translateX(41px) !important}.xb35ae226 .waf5c046f.l2c2a1f9f .ef505e5b4.a9454c2f4 .p6da4d10d{-webkit-transform:translateX(-43px) !important;transform:translateX(-43px) !important}.xb35ae226 .waf5c046f{right:36px !important;width:32px !important}.xb35ae226 .waf5c046f[data-active] svg{color:#ee4f4f !important;fill:#ee4f4f !important}.xb35ae226 .waf5c046f[data-active] .a9454c2f4{-webkit-animation:jb29f918e 8s linear !important;animation:jb29f918e 8s linear !important}.xb35ae226 .waf5c046f .ef505e5b4{position:absolute !important;color:#fff !important;opacity:0 !important;visibility:hidden !important;white-space:nowrap !important;top:29px !important;right:50% !important;-webkit-transform:translateX(50%) !important;transform:translateX(50%) !important;background:#343334 !important;border-radius:6px !important;padding:0 8px !important;height:24px !important;line-height:24px !important;font-size:11px !important;-webkit-transition:all .2s !important;-o-transition:all .2s !important;transition:all .2s !important}.xb35ae226 .waf5c046f .ef505e5b4.a9454c2f4{-webkit-transform:translateX(32px) !important;transform:translateX(32px) !important;right:0 !important}.xb35ae226 .waf5c046f .ef505e5b4.a9454c2f4 .p6da4d10d{right:0 !important;-webkit-transform:translateX(-34px) !important;transform:translateX(-34px) !important}.xb35ae226 .waf5c046f .ef505e5b4 .lf0344109{font-size:11px !important}.xb35ae226 .waf5c046f .ef505e5b4 .p6da4d10d{width:28px !important;height:8px !important;position:absolute !important;top:-6px !important;right:50% !important;-webkit-transform:translateX(50%) !important;transform:translateX(50%) !important;display:-webkit-box !important;display:-ms-flexbox !important;display:flex !important;-webkit-box-align:center !important;-ms-flex-align:center !important;align-items:center !important;-webkit-box-pack:center !important;-ms-flex-pack:center !important;justify-content:center !important}.xb35ae226 .waf5c046f .ef505e5b4 .cb9ecca54{color:#ffd400 !important;text-decoration:none !important;text-transform:lowercase !important}.xb35ae226 .refe034a7{height:100% !important;width:100% !important;position:absolute !important;top:0 !important;left:0 !important;z-index:-1 !important;border-radius:inherit !important;-webkit-transition:background-color .5s ease-in-out !important;-o-transition:background-color .5s ease-in-out !important;transition:background-color .5s ease-in-out !important}.xb35ae226 .ta3e32dc2{display:-webkit-box !important;display:-ms-flexbox !important;display:flex !important;cursor:pointer !important;position:absolute !important;left:4px !important;top:4px !important;z-index:10 !important;font-family:Helvetica,Arial,sans-serif !important;height:12px !important;-webkit-box-sizing:border-box !important;box-sizing:border-box !important;line-height:9px !important;padding:2px 4px !important;color:hsla(0,0%,100%,.8) !important;border-radius:16px !important;font-size:8px !important;text-transform:uppercase !important;letter-spacing:.125em !important;pointer-events:none !important;-webkit-transition:color .5s ease-in-out !important;-o-transition:color .5s ease-in-out !important;transition:color .5s ease-in-out !important}.xb35ae226 .ta3e32dc2,.xb35ae226 .ta3e32dc2>a{text-decoration:none !important}.xb35ae226 .ta3e32dc2>a{color:inherit !important}.xb35ae226 .ta3e32dc2.e6f8fabe5{color:#575c66 !important}.xb35ae226 .ta3e32dc2.e6f8fabe5 .refe034a7{background-color:#fff !important;opacity:.8 !important}.xb35ae226 .ta3e32dc2.x3fc2c97d,.xb35ae226 .ta3e32dc2.w764d9143{color:#3a3c40 !important}.xb35ae226 .ta3e32dc2.w764d9143{background:hsla(0,0%,100%,.8) !important}.xb35ae226 .ta3e32dc2.q67cabfe1,.xb35ae226 .ta3e32dc2.b5f342c5f{color:#fff !important}.xb35ae226 .ta3e32dc2.q67cabfe1{background:rgba(26,43,77,.4) !important}.xb35ae226 .ta3e32dc2.w94c1862,.xb35ae226 .ta3e32dc2.f574f069e{top:auto !important;left:auto !important;right:0 !important;bottom:0 !important;background:none !important;text-shadow:none !important;font-size:7px !important;padding:0 !important;line-height:normal !important;height:auto !important;opacity:.8 !important;-webkit-backdrop-filter:none !important;backdrop-filter:none !important}.xb35ae226 .ta3e32dc2.b77491224{background:none !important}.xb35ae226 .l5ee30f2d{margin:0 2px !important}.xb35ae226 .r764ecc61{text-decoration:none !important;pointer-events:auto !important;color:inherit !important}@-moz-document url-prefix(){.xb35ae226 .ta3e32dc2{padding-top:1px!important}}.xb35ae226 .eda4a0386{position:absolute !important;right:-2px !important;top:0 !important;z-index:9 !important;pointer-events:auto !important}.xb35ae226 .w60bd25eb{background:red !important}</style><style nonce="">#2510c1132b{width:1px;height:1px;position:relative;}</style><style nonce="">#id9216{width:1px;height:1px;top:0px;left:0px;position:absolute;}</style><style nonce="">#ya_partner_R-A-98260-1{width:100%;height:100%;position:relative;}</style><style nonce="">#id5404{width:100%;height:100%;top:0px;left:0px;position:absolute;}</style><style rel="stylesheet" type="text/css">div.__lxG__multi_lx_674694.__lxG__ribboned{background: #F2F2F2 !important;text-align: center !important;padding: 0 !important;height: auto !important;width: auto !important;display: inline-block !important;margin: 10px 0px 10px 0px !important;}div.__lxG__multi_lx_674694.__lxG__ribboned div.__lxG__ribboned__title{font-size: 12px !important;display: flex;flex-direction: row;flex-wrap: nowrap;justify-content: center;align-content: flex-start;align-items: center;padding: 7px 15px;}div.__lxG__multi_lx_674694.__lxG__ribboned div.__lxG__ribboned__title .__lxG__ribboned__title__text{color: #444444;order: 0;flex: 0 1 auto;align-self: auto;}</style><style rel="stylesheet" type="text/css">div.__lxG__multi_lx_674697.__lxG__ribboned{background: #F2F2F2 !important;text-align: center !important;padding: 0 !important;height: auto !important;width: auto !important;display: inline-block !important;margin: 10px 0px 10px 0px !important;}div.__lxG__multi_lx_674697.__lxG__ribboned div.__lxG__ribboned__title{font-size: 12px !important;display: flex;flex-direction: row;flex-wrap: nowrap;justify-content: center;align-content: flex-start;align-items: center;padding: 7px 15px;}div.__lxG__multi_lx_674697.__lxG__ribboned div.__lxG__ribboned__title .__lxG__ribboned__title__text{color: #444444;order: 0;flex: 0 1 auto;align-self: auto;}</style><style rel="stylesheet" type="text/css">#div-gpt-ad-22548132904-1 {max-width: 240px; max-height: 400px}</style><script type="text/javascript" src="./НОУ ИНТУИТ _ Лекция _ Процессы в операционной системе UNIX_files/context(1).js"></script><style rel="stylesheet" type="text/css">#div-gpt-ad-22548012258-1 {max-width: %SLOT_MAX_WIDTH%px; max-height: %SLOT_MAX_HEIGHT%px}</style><script charset="utf-8" src="./НОУ ИНТУИТ _ Лекция _ Процессы в операционной системе UNIX_files/c5cbb1d2128d57b74fc6.js" crossorigin="anonymous" importance="high"></script><script charset="utf-8" src="./НОУ ИНТУИТ _ Лекция _ Процессы в операционной системе UNIX_files/327aec500068f2bdd4ca.js" crossorigin="anonymous" importance="high"></script><style type="text/css">.cREWUr{width:100%;height:inherit;min-height:inherit;max-height:inherit}</style><style type="text/css" data-fbcssmodules="css:fb.css.base css:fb.css.dialog css:fb.css.iframewidget css:fb.css.customer_chat_plugin_iframe">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_dialog_advanced{border-radius:8px;padding:10px}.fb_dialog_content{background:#fff;color:#373737}.fb_dialog_close_icon{background:url(https://z-p3-static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{left:5px;right:auto;top:5px}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://z-p3-static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent}.fb_dialog_close_icon:active{background:url(https://z-p3-static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://z-p3-static.xx.fbcdn.net/rsrc.php/v3/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{height:100%;left:0;margin:0;overflow:visible;position:absolute;top:-10000px;transform:none;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://z-p3-static.xx.fbcdn.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{background:none;height:auto;min-height:initial;min-width:initial;width:auto}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{clear:both;color:#fff;display:block;font-size:18px;padding-top:20px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .4);bottom:0;left:0;min-height:100%;position:absolute;right:0;top:0;width:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_mobile .fb_dialog_iframe{position:sticky;top:0}.fb_dialog_content .dialog_header{background:linear-gradient(from(#738aba), to(#2c4987));border-bottom:1px solid;border-color:#043b87;box-shadow:white 0 1px 1px -1px inset;color:#fff;font:bold 14px Helvetica, sans-serif;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:linear-gradient(from(#4267B2), to(#2a4887));background-clip:padding-box;border:1px solid #29487d;border-radius:3px;display:inline-block;line-height:18px;margin-top:3px;max-width:85px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{background:none;border:none;color:#fff;font:bold 12px Helvetica, sans-serif;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://z-p3-static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #4a4a4a;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f5f6f7;border:1px solid #4a4a4a;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://z-p3-static.xx.fbcdn.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png);background-position:50% 50%;background-repeat:no-repeat;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}
+.fb_mpn_mobile_landing_page_slide_out{animation-duration:200ms;animation-name:fb_mpn_landing_page_slide_out;transition-timing-function:ease-in}.fb_mpn_mobile_landing_page_slide_out_from_left{animation-duration:200ms;animation-name:fb_mpn_landing_page_slide_out_from_left;transition-timing-function:ease-in}.fb_mpn_mobile_landing_page_slide_up{animation-duration:500ms;animation-name:fb_mpn_landing_page_slide_up;transition-timing-function:ease-in}.fb_mpn_mobile_bounce_in{animation-duration:300ms;animation-name:fb_mpn_bounce_in;transition-timing-function:ease-in}.fb_mpn_mobile_bounce_out{animation-duration:300ms;animation-name:fb_mpn_bounce_out;transition-timing-function:ease-in}.fb_mpn_mobile_bounce_out_v2{animation-duration:300ms;animation-name:fb_mpn_fade_out;transition-timing-function:ease-in}.fb_customer_chat_bounce_in_v2{animation-duration:300ms;animation-name:fb_bounce_in_v2;transition-timing-function:ease-in}.fb_customer_chat_bounce_in_from_left{animation-duration:300ms;animation-name:fb_bounce_in_from_left;transition-timing-function:ease-in}.fb_customer_chat_bounce_out_v2{animation-duration:300ms;animation-name:fb_bounce_out_v2;transition-timing-function:ease-in}.fb_customer_chat_bounce_out_from_left{animation-duration:300ms;animation-name:fb_bounce_out_from_left;transition-timing-function:ease-in}.fb_invisible_flow{display:inherit;height:0;overflow-x:hidden;width:0}@keyframes fb_mpn_landing_page_slide_out{0%{margin:0 12px;width:100% - 24px}60%{border-radius:18px}100%{border-radius:50%;margin:0 24px;width:60px}}@keyframes fb_mpn_landing_page_slide_out_from_left{0%{left:12px;width:100% - 24px}60%{border-radius:18px}100%{border-radius:50%;left:12px;width:60px}}@keyframes fb_mpn_landing_page_slide_up{0%{bottom:0;opacity:0}100%{bottom:24px;opacity:1}}@keyframes fb_mpn_bounce_in{0%{opacity:.5;top:100%}100%{opacity:1;top:0}}@keyframes fb_mpn_fade_out{0%{bottom:30px;opacity:1}100%{bottom:0;opacity:0}}@keyframes fb_mpn_bounce_out{0%{opacity:1;top:0}100%{opacity:.5;top:100%}}@keyframes fb_bounce_in_v2{0%{opacity:0;transform:scale(0, 0);transform-origin:bottom right}50%{transform:scale(1.03, 1.03);transform-origin:bottom right}100%{opacity:1;transform:scale(1, 1);transform-origin:bottom right}}@keyframes fb_bounce_in_from_left{0%{opacity:0;transform:scale(0, 0);transform-origin:bottom left}50%{transform:scale(1.03, 1.03);transform-origin:bottom left}100%{opacity:1;transform:scale(1, 1);transform-origin:bottom left}}@keyframes fb_bounce_out_v2{0%{opacity:1;transform:scale(1, 1);transform-origin:bottom right}100%{opacity:0;transform:scale(0, 0);transform-origin:bottom right}}@keyframes fb_bounce_out_from_left{0%{opacity:1;transform:scale(1, 1);transform-origin:bottom left}100%{opacity:0;transform:scale(0, 0);transform-origin:bottom left}}@keyframes slideInFromBottom{0%{opacity:.1;transform:translateY(100%)}100%{opacity:1;transform:translateY(0)}}@keyframes slideInFromBottomDelay{0%{opacity:0;transform:translateY(100%)}97%{opacity:0;transform:translateY(100%)}100%{opacity:1;transform:translateY(0)}}</style></head>
+  <body class="person-account-check-processed lightbox-processed cron-check-processed at-sp-active"><div data-ng-non-bindable=""><div id="at-panel" data-ng-controller="PanelCtrl" style="display:none" data-ng-class="[
+&#39;at-panel_lang-&#39; + lang
+]" class="at-panel at-panel_lang-" data-panel="" data-instance-id="1">
+	<div id="at-panel-dialog-holder"></div>
+	<div id="at-panel-overlay" data-ng-click="onClickOverlay()"></div>
+</div></div>
+      <div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; width: 0px; height: 0px;"><div></div></div></div>
+        <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/ru_RU/all.js#xfbml=1";
+        fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+  
+    <div id="page-content">
+        <div class="inner-horizontal-advertising-block test">
+            <!-- Yandex.RTB R-A-98260-2mm -->
+<div id="yandex_rtb_R-A-98260-2"><div></div></div>
+<script type="text/javascript">
+    (function(w, d, n, s, t) {
+        w[n] = w[n] || [];
+        w[n].push(function() {
+            Ya.Context.AdvManager.render({
+                blockId: "R-A-98260-2",
+                renderTo: "yandex_rtb_R-A-98260-2",
+                async: true
+            });
+        });
+        t = d.getElementsByTagName("script")[0];
+        s = d.createElement("script");
+        s.type = "text/javascript";
+        s.src = "//an.yandex.ru/system/context.js";
+        s.async = true;
+        t.parentNode.insertBefore(s, t);
+    })(this, this.document, "yandexContextAsyncCallbacks");
+</script>
+
+<!-- <script async type='text/javascript' src='//s.luxupcdnc.com/t/common_402.js'></script> -->
+<!-- <script class='__lxGc__' type='text/javascript'> -->
+<!-- ((__lxGc__=window.__lxGc__||{'s':{},'b':0})['s']['_214053']=__lxGc__['s']['_214053']||{'b':{}})['b']['_684675']={'i':__lxGc__.b++};  -->
+<!-- </script> -->
+
+
+        </div>
+      <div id="main-wraper">
+          <div class="main-wraper-tr">
+              <div class="main-wraper-td"><div class="inner-horizontal-advertising-block">
+        <!-- Yandex.RTB R-A-98260-2 -->
+<!--<div id="yandex_rtb_R-A-98260-2"></div>-->
+<!--<script type="text/javascript">-->
+<!--    (function(w, d, n, s, t) {-->
+<!--        w[n] = w[n] || [];-->
+<!--        w[n].push(function() {-->
+<!--            Ya.Context.AdvManager.render({-->
+<!--                blockId: "R-A-98260-2",-->
+<!--                renderTo: "yandex_rtb_R-A-98260-2",-->
+<!--                async: true-->
+<!--            });-->
+<!--        });-->
+<!--        t = d.getElementsByTagName("script")[0];-->
+<!--        s = d.createElement("script");-->
+<!--        s.type = "text/javascript";-->
+<!--        s.src = "//an.yandex.ru/system/context.js";-->
+<!--        s.async = true;-->
+<!--        t.parentNode.insertBefore(s, t);-->
+<!--    })(this, this.document, "yandexContextAsyncCallbacks");-->
+<!--</script>-->
+
+</div>              </div>
+          </div>
+          <div class="main-wraper-tr">
+              <div class="main-wraper-td"><div style="align:center; height:28px;"><div style="margin-right:-17px; margin-left:-17px; margin-top:0px; margin-bottom:0px;"><div style="border-style: solid; border-top-width: 2px; border-left-width: 0px; border-right-width: 0px; border-bottom-width: 2px; border-color: #ff8800;"><div style="text-align:center; font-size:16px; font-family:Arial;"><b><style>.AAA a {color: red!important;}</style><div class="AAA"><a control_type="dialog" request_url="/intuituser/person_account/pay_update" destination_block_id="rechange-dialog-block" request_data_source="attr" request_data="service=3" dialog_min_size="true" no_check_plain="1" dialog_title="" class="ajax-command-anchor" href="https://intuit.ru/studies/courses/2249/52/lecture/1552?page=2#">Учитесь и получайте официальные документы БЕСПЛАТНО. Вы можете поддержать наш проект.</a></div></b></div></div></div></div>              </div>
+          </div>
+        <div class="main-wraper-tr">
+          <div class="main-wraper-td" style="height:58px;">
+
+
+
+            <div id="header">
+              <div id="site-logo">
+                <a href="https://intuit.ru/" title="Национальный Открытый Университет &quot;ИНТУИТ&quot;">
+                               <img src="./НОУ ИНТУИТ _ Лекция _ Процессы в операционной системе UNIX_files/logo.png" alt="Национальный Открытый Университет " ИНТУИТ""="" id="logo">
+                             </a>              </div>
+              <div id="login-box-region"><div id="UserLoginBlock"><div id="Greeting"><span id="d1">Добро пожаловать,</span>&nbsp;<a href="https://intuit.ru/intuituser/userpage/bitrix24_ru1984_2461439"><span>Василий Иванович</span>!</a>&nbsp;<a href="https://intuit.ru/logout" id="Button">(<span>Выйти</span>)</a></div><div id="Ctrl-Enter"><a control_type="messagebox" dialog_title="Как сообщить об ошибке на сайте?" dialog_text="Новая версия сайта проходит тестирование.&lt;br/&gt;
+                                              Пожалуйста, сообщайте об ошибках, присылайте свои предложения и замечания.&lt;br/&gt;
+                                              Для этого выделите текст на странице и нажмите Ctrl+Enter&lt;br/&gt;
+                                              и постарайтесь кратко сформулировать проблему." dialog_buttons="{
+                                                  &#39;Закрыть&#39; : function() { $(this).dialog(&#39;close&#39;); }
+                                                }" class="ajax-command-anchor" href="https://intuit.ru/studies/courses/2249/52/lecture/1552?page=2#">Сообщить об ошибке &gt;&gt;</a></div></div></div>
+              <div id="slogan-box">Твой путь к знаниям!</div>
+              <div id="search-box-region"><form action="https://intuit.ru/studies/courses/2249/52/lecture/1552?page=2" accept-charset="UTF-8" method="post" id="search-theme-form">
+<div><div id="search" class="container-inline">
+  <div class="search-table"><div class="search-cell fld-search-cell"><div class="form-item table" id="edit-search-theme-form-1-wrapper"><div class="tr"><div class="input-wrapper additional-padding"><input type="text" maxlength="128" name="search_theme_form" id="edit-search-theme-form-1" size="15" value="" title="Искать" class="form-text blur"></div><div class="placeholder"></div></div></div></div><div class="search-cell btn-search-cell"><input type="submit" name="op" id="edit-submit-1" value="" title="Расширенный поиск" class="form-submit">
+</div><div class="search-cell adv-search-cell"></div></div><input type="hidden" name="form_build_id" id="form-5003a910076793e1f1f60e609b38df2c" value="form-5003a910076793e1f1f60e609b38df2c">
+<input type="hidden" name="form_token" id="edit-search-theme-form-form-token" value="0cb8ca35025d00839dc379900cbfc9b7">
+<input type="hidden" name="form_id" id="edit-search-theme-form" value="search_theme_form">
+</div>
+
+</div></form>
+</div>
+            </div>
+          </div>
+        </div>
+        <div class="main-wraper-tr">
+          <div class="main-wraper-td" style="height:60px;">
+            <div id="header-panel">
+            <div id="block-intuit_menu-main_menu" class="block-intuit_menu">
+
+
+  <div class="content"><div id="main-menu">
+    <div class="main-menu-tr">
+        <div class="container">
+            <div class="top">
+                <div class="first-level">
+                    <div class="item-list"><ul><li class="first"><b class="left"></b><a href="https://intuit.ru/intuituser" title="Я">Я</a><b class="right"></b></li>
+<li class="selected"><b class="left"></b><a href="https://intuit.ru/studies" title="Учеба">Учеба</a><b class="right"></b></li>
+<li class=""><b class="left"></b><a href="https://intuit.ru/academies" title="Академии">Академии</a><b class="right"></b></li>
+<li class=""><b class="left"></b><a href="https://intuit.ru/teachers" title="Учителя">Учителя</a><b class="right"></b></li>
+<li class=""><b class="left"></b><a href="https://intuit.ru/ratings" title="Рейтинг">Рейтинг</a><b class="right"></b></li>
+<li class=""><b class="left"></b><a href="https://intuit.ru/questions" title="Вопросы">Вопросы</a><b class="right"></b></li>
+<li class="last"><b class="left"></b><a href="https://intuit.ru/goods_store" title="Магазин">Магазин</a><b class="right"></b></li>
+</ul></div>                </div>
+                <div class="orgaization-info">
+                    <a href="https://intuit.ru/content/svedeniya-ob-obrazovatelnoj-organizatsii" target="_blank">
+                        Сведения об образовательной организации
+                    </a>
+                </div>
+                <div class="additional">
+                    <div class="aoc">
+                                            </div>
+                    <div class="locale">
+                                            </div>
+                    <div class="submenu">
+                        <div class="item-list"><ul><li class="first"><a href="https://intuit.ru/news" title="RSS"><b class="left rss"></b><span>Новости</span></a></li>
+<li class=""><a href="https://intuit.ru/help" title="Помощь"><b class="left help"></b><span>Помощь</span></a></li>
+<li class=""><a href="https://intuit.ru/content/about-project" title="О проекте"><b class="left about"></b><span>О проекте</span></a></li>
+<li class="last"><a href="https://intuit.ru/site_map" title="Карта сайта"><b class="left site_map"></b></a></li>
+</ul></div>                    </div>
+                </div>
+            </div>
+            <div class="second-level table">
+                <div class="tr">
+                    <div class="menu td">
+                        <div class="item-list"><ul><li class="selected first"><a href="https://intuit.ru/studies/courses">Курсы</a></li>
+<li class=""><a href="https://intuit.ru/studies/school">Школа</a></li>
+<li class=""><a href="https://intuit.ru/studies/mini_mba">Мини-МБА</a></li>
+<li class=""><a href="https://intuit.ru/studies/professional_retraining">Профессиональная переподготовка</a></li>
+<li class=""><a href="https://intuit.ru/studies/professional_skill_improvements">Повышение квалификации</a></li>
+<li class="last"><a href="https://intuit.ru/studies/certification">Сертификации</a></li>
+</ul></div><div class="right-part-slinks "><div class="item-list"><ul class="right-part-ul"><li id="vklink" class="right-part-li first"><a href="https://vk.com/nouintuit" external="1" title="Вконтакте" target="_blank"></a></li>
+<li id="fblink" class="right-part-li"><a href="https://facebook.com/nouintuit" external="1" title="Facebook" target="_blank"></a></li>
+<li id="twlink" class="right-part-li"><a href="https://twitter.com/nouintuit" external="1" title="Twitter" target="_blank"></a></li>
+<li id="oklink" class="right-part-li last"><a href="https://www.odnoklassniki.ru/group/52905067217125" external="1" title="Одноклассники" target="_blank"></a></li>
+</ul></div></div>                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="right-side">
+            <b></b>
+        </div>
+    </div>
+</div></div>
+</div>
+<div id="block-intuit_informer_pannel-intuit_informer_pannel" class="block-intuit_informer_pannel">
+
+
+  <div class="content"><div id="informer-panel">
+  <div class="container">
+    <div class="left-part column">
+      <b class="left-part-border"></b>
+      <div class="left-part-pannel"><div class="item-list"><ul class="left-part-ul"><li id="intuituser/userpage" class="person left-part-li first"><div class="int-avatar img36" user_id="2461439" id="user_2461439_avatar"><a href="https://intuit.ru/intuituser/userpage/bitrix24_ru1984_2461439" title="Василий Петров"><img src="./НОУ ИНТУИТ _ Лекция _ Процессы в операционной системе UNIX_files/avatar-men-2.png" alt="Василий Петров" title="Василий Петров" width="36" height="36"></a></div></li>
+<li id="messages" class="left-part-li"><a href="https://intuit.ru/intuituser/communication/messages" title="Сообщения" class="control"><span id="messages-count" style="display:none;">0</span></a></li>
+<li id="bell" class="left-part-li last"><a href="https://intuit.ru/intuituser/communication/notifications" class="control more-anchor" count="0" title="Уведомления"><span id="notifications-count" style="display:none;"></span><div id="notifications-block" style="display:none;"></div></a></li>
+</ul></div></div>    </div>
+    <div class="center-part column">
+      <div class="center-part-pannel"><div class="item-list"><ul class="center-part-ul"><li id="record-book-informer" class="center-part-li first"><a href="https://intuit.ru/intuituser/study/record_book" title="Зачетка"></a></li>
+<li id="diplomas-informer" class="center-part-li"><a href="https://intuit.ru/intuituser/study/diplomas" title="Дипломы"></a></li>
+<li id="last_delimiter" class="center-part-li last"></li>
+</ul></div></div>    </div>
+    <div class="right-part column">
+      <div class="right-part-pannel"><div class="item-list"></div></div>      <b class="right-part-border"></b>
+    </div>
+  </div>  
+</div></div>
+</div>
+                      </div>
+          </div>
+        </div>
+        <div class="main-wraper-tr">
+          <div class="main-wraper-td" style="height: 100%;">
+            <div id="panel-container" class="table">
+              <div id="panel-wrapper" class="tr">
+                                <div id="left-panel" class="column td">
+                    <div id="block-intuit_menu-left_navigation" class="block-intuit_menu">
+
+
+  <div class="content"><div id="left-navigation">
+      <div class="top-menu">
+    <div class="item-list"><ul class="menu"><li class="left-navigation-first-level first"><div class="non- non-collapse-button" name="0">
+                                        <span style="float: left;" class="pic about_course"></span>
+                                        <span style="float: left;" class="text">О курсе</span>
+                                      </div><span style="clear: both;"></span><div class="item-list"><ul class="non-collapsible-submenu submenu" id="non-collapsible-item-0" style="display:block;"><li class="first"><a href="https://intuit.ru/studies/courses/2249/52/info">Информация</a></li>
+<li class=""><a href="https://intuit.ru/studies/courses/2249/52/glossary">Глоссарий</a></li>
+<li class=""><a href="https://intuit.ru/studies/courses/2249/52/diplomas">Дипломы</a></li>
+<li class=""><a href="https://intuit.ru/studies/courses/2249/52/questions">Вопросы и ответы</a></li>
+<li class=""><a href="https://intuit.ru/studies/courses/2249/52/students">Студенты</a></li>
+<li class=""><a href="https://intuit.ru/studies/courses/2249/52/ratings">Рейтинг выпускников</a></li>
+<li class=""><a href="https://intuit.ru/studies/courses/2249/52/opinions">Мнения</a></li>
+<li class=""><a href="https://intuit.ru/studies/courses/2249/52/literature">Литература</a></li>
+<li class="last"><a href="https://intuit.ru/studies/courses/2249/52/curriculums">Учебные программы</a></li>
+</ul></div></li>
+<li class="left-navigation-first-level last"><div class="non- non-collapse-button" name="1">
+                                        <span style="float: left;" class="pic about_course"></span>
+                                        <span style="float: left;" class="text">План занятий</span>
+                                      </div><span style="clear: both;"></span><div class="item-list"><ul class="non-collapsible-submenu submenu" id="non-collapsible-item-1" style="display:block;"><li class="first"><a href="https://intuit.ru/studies/courses/2249/52/test/4/0" title="27 вопросов" class="">Сдать экзамен экстерном</a></li>
+<li><div class="lecture-navigation-wrapper">
+                                                       <a href="https://intuit.ru/studies/courses/2249/52/lecture/1550" class="lecture-title notselected grey" title="Введение в курс практических занятий. Знакомство с операционной системой UNIX">Лекция&nbsp;1</a>
+                                                          <div class="navigation-wrapper" style="display:none;"><div class="lecture_content">
+<div class="lecture_content_adds"></div>
+<ul></ul>
+</div>
+</div>
+                                                        </div></li>
+<li class=""><a href="https://intuit.ru/studies/courses/2249/52/test/1/751" title="3 вопроса" class="">Тест 1</a></li>
+<li><div class="lecture-navigation-wrapper selected">
+                                                       <a href="https://intuit.ru/studies/courses/2249/52/lecture/1552" class="lecture-title  active" title="Процессы в операционной системе UNIX">Лекция&nbsp;2</a>
+                                                          <div class="navigation-wrapper" style="display:block;"><div class="lecture_content">
+<div class="lecture_content_adds"></div>
+<ul></ul>
+</div>
+</div>
+                                                        </div></li>
+<li class=""><a href="https://intuit.ru/studies/courses/2249/52/test/1/752" title="3 вопроса" class="">Тест 2</a></li>
+<li><div class="lecture-navigation-wrapper">
+                                                       <a href="https://intuit.ru/studies/courses/2249/52/lecture/1554" class="lecture-title notselected" title="Организация взаимодействия процессов через pipe и FIFO в UNIX">Лекция&nbsp;3</a>
+                                                          <div class="navigation-wrapper" style="display:none;"><div class="lecture_content">
+<div class="lecture_content_adds"></div>
+<ul></ul>
+</div>
+</div>
+                                                        </div></li>
+<li class=""><a href="https://intuit.ru/studies/courses/2249/52/test/1/753" title="3 вопроса" class="">Тест 3</a></li>
+<li><div class="lecture-navigation-wrapper">
+                                                       <a href="https://intuit.ru/studies/courses/2249/52/lecture/1556" class="lecture-title notselected" title="Средства System V IPC. Организация работы с разделяемой памятью в UNIX. Понятие нитей исполнения (thread)">Лекция&nbsp;4</a>
+                                                          <div class="navigation-wrapper" style="display:none;"><div class="lecture_content">
+<div class="lecture_content_adds"></div>
+<ul></ul>
+</div>
+</div>
+                                                        </div></li>
+<li class=""><a href="https://intuit.ru/studies/courses/2249/52/test/1/754" title="3 вопроса" class="">Тест 4</a></li>
+<li><div class="lecture-navigation-wrapper">
+                                                       <a href="https://intuit.ru/studies/courses/2249/52/lecture/1558" class="lecture-title notselected" title="Семафоры в UNIX как средство синхронизации процессов">Лекция&nbsp;5</a>
+                                                          <div class="navigation-wrapper" style="display:none;"><div class="lecture_content">
+<div class="lecture_content_adds"></div>
+<ul></ul>
+</div>
+</div>
+                                                        </div></li>
+<li class=""><a href="https://intuit.ru/studies/courses/2249/52/test/1/755" title="3 вопроса" class="">Тест 5</a></li>
+<li><div class="lecture-navigation-wrapper">
+                                                       <a href="https://intuit.ru/studies/courses/2249/52/lecture/1560" class="lecture-title notselected" title="Очереди сообщений в UNIX">Лекция&nbsp;6</a>
+                                                          <div class="navigation-wrapper" style="display:none;"><div class="lecture_content">
+<div class="lecture_content_adds"></div>
+<ul></ul>
+</div>
+</div>
+                                                        </div></li>
+<li class=""><a href="https://intuit.ru/studies/courses/2249/52/test/1/756" title="3 вопроса" class="">Тест 6</a></li>
+<li><div class="lecture-navigation-wrapper">
+                                                       <a href="https://intuit.ru/studies/courses/2249/52/lecture/1561" class="lecture-title notselected" title="Контрольная работа">Лекция&nbsp;7</a>
+                                                          <div class="navigation-wrapper" style="display:none;"><div class="lecture_content">
+<div class="lecture_content_adds"></div>
+<ul></ul>
+</div>
+</div>
+                                                        </div></li>
+<li><div class="lecture-navigation-wrapper">
+                                                       <a href="https://intuit.ru/studies/courses/2249/52/lecture/1563" class="lecture-title notselected" title="Организация файловой системы в UNIX. Работа с файлами и директориями. Понятие о memory mapped файлах">Лекция&nbsp;8</a>
+                                                          <div class="navigation-wrapper" style="display:none;"><div class="lecture_content">
+<div class="lecture_content_adds"></div>
+<ul></ul>
+</div>
+</div>
+                                                        </div></li>
+<li class=""><a href="https://intuit.ru/studies/courses/2249/52/test/1/757" title="3 вопроса" class="">Тест 7</a></li>
+<li><div class="lecture-navigation-wrapper">
+                                                       <a href="https://intuit.ru/studies/courses/2249/52/lecture/1565" class="lecture-title notselected" title="Организация ввода-вывода в UNIX. Файлы устройств. Аппарат прерываний. Сигналы в UNIX">Лекция&nbsp;9</a>
+                                                          <div class="navigation-wrapper" style="display:none;"><div class="lecture_content">
+<div class="lecture_content_adds"></div>
+<ul></ul>
+</div>
+</div>
+                                                        </div></li>
+<li class=""><a href="https://intuit.ru/studies/courses/2249/52/test/1/758" title="3 вопроса" class="">Тест 8</a></li>
+<li><div class="lecture-navigation-wrapper">
+                                                       <a href="https://intuit.ru/studies/courses/2249/52/lecture/1567" class="lecture-title notselected" title="Семейство протоколов TCP/IP. Сокеты (sockets) в UNIX и основы работы с ними">Лекция&nbsp;10</a>
+                                                          <div class="navigation-wrapper" style="display:none;"><div class="lecture_content">
+<div class="lecture_content_adds"></div>
+<ul></ul>
+</div>
+</div>
+                                                        </div></li>
+<li class=""><a href="https://intuit.ru/studies/courses/2249/52/test/1/759" title="3 вопроса" class="">Тест 9</a></li>
+<li class="last"><a href="https://intuit.ru/studies/courses/2249/52/test/3/0" title="20 вопросов" class="">Экзамен</a></li>
+</ul></div></li>
+</ul></div>  </div>
+        <div class="content">
+    <div class="sponsors">    
+                <div class="sposors-list">
+  
+  <div class="list"><div class="sposor-item">
+                                  <div class="title">Спонсор: <b><a href="http://www.intel.ru/">Intel</a></b></div><div class="logo"><a href="http://www.intel.ru/"><img alt="Intel" src="./НОУ ИНТУИТ _ Лекция _ Процессы в операционной системе UNIX_files/logo(1).png" width="144"></a></div></div></div>
+</div>
+ 
+              </div><div class="donate">
+                Вы можете <div class="donate-control">
+    <a control_type="dialog" request_url="/intuituser/person_account/pay_update" destination_block_id="rechange-dialog-block" request_data_source="attr" request_data="service=3&amp;additional_text=Вы или Ваша компания можете оказать спонсорскую поддержку этого курса." dialog_min_size="true" no_check_plain="1" dialog_title="Поддержка курса" class="ajax-command-anchor" href="https://intuit.ru/studies/courses/2249/52/lecture/1552?page=2#"><span class="donate">поддержать</span></a></div> этот курс.
+             </div>  </div>
+  </div>
+</div>
+</div>
+<div id="block-intuit_advertising-vertical_160_advertising" class="block-intuit_advertising">
+
+
+  <div class="content"><div id="id-pure-content-1f9a95296e370b72a8167c055da8c992" class="vertical-160-advertising-block">
+    </div>
+</div>
+</div>
+                </div>
+                <div class="column td margin-18"></div>
+                                <div id="center-panel" class="column td">
+                                                                                                            <div id="course-lecture-block" class="entities-standard-block ">
+  <div class="table header">
+    <div class="row">
+            <div class="title">        
+                  
+        <span class="zag">
+        <a href="https://intuit.ru/academies/companiesn/41/info">Академия Intel</a>: <span title="текстовый курс" class="text-paper"></span><a href="https://intuit.ru/studies/courses/2249/52/info"><span class="spelling-content-entity" data="iduniver_edu_prog=2249&amp;idcourse=52&amp;type=4&amp;comment=title"><h3 class="inn">Основы операционных систем. Практикум</h3></span></a>        </span>
+      </div>
+                  <div class="links" style="padding-left:10px;">
+        <span id="course-information-button" class="closed">[+]</span>      </div>
+          </div>
+  </div>
+  <div class="container">
+        <div class="content">
+      <div class="horizontal-advertising-block  top">
+    <div>
+          </div>
+    <div id="id-study-content-lecture-top-2">
+          </div>
+</div>
+    <div id="course-information" class="info-item" style="display: none;">
+                <div id="entity-university-courses" class="feature">
+        <div class="text university-name">
+      Московский физико-технический институт    </div>
+  </div>
+    <div id="" class="info-item">
+                Опубликован:&nbsp;<span>16.09.2004</span> | Доступ:&nbsp;<span>свободный</span> | Студентов:&nbsp;<span><span title="Учатся">7549</span> / <span title="Закончили">1544</span></span> | Оценка:&nbsp;<span><span title="Качество лекций"><meta itemprop="rating" content="4.44">4.44</span> / <span title="Качество заданий">4.28</span></span> | Длительность:&nbsp;<span>15:33:00</span>    </div>
+    <div id="" class="info-item">
+                Тема:&nbsp;<span id="entity_52_0"><a href="https://intuit.ru/studies/courses?page=1&amp;service=0&amp;option_id=6" rel="nofollow">Операционные системы</a></span>    </div>
+    <div id="" class="info-item">
+                Специальности: <span id="entity_52_1"><a href="https://intuit.ru/studies/courses?page=1&amp;service=2&amp;option_id=200" rel="nofollow">Архитектор программного обеспечения</a></span>    </div>
+    <div id="" class="info-item">
+                Теги: <span id="entity_52_tags"><a href="https://intuit.ru/studies/courses?page=1&amp;service=1&amp;option_id=496" rel="nofollow">linux</a>, <a href="https://intuit.ru/studies/courses?page=1&amp;service=1&amp;option_id=1383" rel="nofollow">PIPS</a>, <a href="https://intuit.ru/studies/courses?page=1&amp;service=1&amp;option_id=500" rel="nofollow">posix</a>, <a href="https://intuit.ru/studies/courses?page=1&amp;service=1&amp;option_id=1341" rel="nofollow">SIG</a>, <a href="https://intuit.ru/studies/courses?page=1&amp;service=1&amp;option_id=1384" rel="nofollow">system v ipc</a>, <a href="https://intuit.ru/studies/courses?page=1&amp;service=1&amp;option_id=505" rel="nofollow">unix</a>, <a href="https://intuit.ru/studies/courses?page=1&amp;service=1&amp;option_id=649" rel="nofollow">драйверы</a>, <a href="https://intuit.ru/studies/courses?page=1&amp;service=1&amp;option_id=1390" rel="nofollow">значение семафора</a>, <a href="https://intuit.ru/studies/courses?page=1&amp;service=1&amp;option_id=509" rel="nofollow">каталоги</a>, <a href="https://intuit.ru/studies/courses?page=1&amp;service=1&amp;option_id=619" rel="nofollow">клиенты</a>, <a href="https://intuit.ru/studies/courses?page=1&amp;service=1&amp;option_id=1389" rel="nofollow">маска создания файлов текущего процесса</a>, <a href="https://intuit.ru/studies/courses?page=1&amp;service=1&amp;option_id=1198" rel="nofollow">непрямая адресация</a>, <a href="https://intuit.ru/studies/courses?page=1&amp;service=1&amp;option_id=1385" rel="nofollow">нить исполнения</a>, <a href="https://intuit.ru/studies/courses?page=1&amp;service=1&amp;option_id=458" rel="nofollow">операционные системы</a>, <a href="https://intuit.ru/studies/courses?page=1&amp;service=1&amp;option_id=1388" rel="nofollow">порядок байт</a>, <a href="https://intuit.ru/studies/courses?page=1&amp;service=1&amp;option_id=629" rel="nofollow">потоки</a>, <a href="https://intuit.ru/studies/courses?page=1&amp;service=1&amp;option_id=201" rel="nofollow">протоколы</a>, <a href="https://intuit.ru/studies/courses?page=1&amp;service=1&amp;option_id=1387" rel="nofollow">регулярный файл</a>, <a href="https://intuit.ru/studies/courses?page=1&amp;service=1&amp;option_id=108" rel="nofollow">серверы</a>, <a href="https://intuit.ru/studies/courses?page=1&amp;service=1&amp;option_id=1386" rel="nofollow">системный контекст</a>, <a href="https://intuit.ru/studies/courses?page=1&amp;service=1&amp;option_id=639" rel="nofollow">указатели</a>, <a href="https://intuit.ru/studies/courses?page=1&amp;service=1&amp;option_id=565" rel="nofollow">файловые системы</a>, <a href="https://intuit.ru/studies/courses?page=1&amp;service=1&amp;option_id=875" rel="nofollow">элементы</a>, <a href="https://intuit.ru/studies/courses?page=1&amp;service=1&amp;option_id=515" rel="nofollow">ядро</a></span>    </div>
+<script type="text/javascript">if($("#course-information-button").hasClass("closed"))
+                        {
+                          $("#course-information").hide();
+                          $("#course-information-button").html("[+]");
+                        }
+                        else
+                        {
+                          $("#course-information-button").html("[-]");
+                        }
+                        $("#course-information-button").bind("click", function() 
+                                                                      { 
+                                                                        $("#course-information").toggle("fast", function () 
+                                                                                                        {
+                                                                                                          var $button = $("#course-information-button");
+                                                                                                          if($button.hasClass("closed")) 
+                                                                                                          {
+                                                                                                            $button.removeClass("closed");
+                                                                                                            $button.html("[-]");
+                                                                                                          }
+                                                                                                          else
+                                                                                                          {
+                                                                                                            $button.addClass("closed");
+                                                                                                            $button.html("[+]");
+                                                                                                          }
+                                                                                                        });
+                                                                      });</script>    </div>
+    <div id="course-controls" class="info-item">
+                    <div id="course-semicontrols" class="info-item">
+                <span>    <div id="course-signin-button" class="info-item">
+                <div id="signin-button-2249" class="feature"><div class="text entity-signin-button"><span class="sigin icon"></span>&nbsp;<span class="red">Изучаю</span></div></div>    </div>
+</span> | <span><div id="likit-control-likeit-courses-52">  <a control_type="command" request_url="/intuit_common_interface/json/likeit" destination_block_id="likit-control-likeit-courses-52" request_data_source="attr" request_data="block_id=likeit-courses-52&amp;type=like_course&amp;id=52" title="Мне нравится" class="ajax-command-anchor" href="https://intuit.ru/studies/courses/2249/52/lecture/1552?page=2#">Вам нравится?</a>    Нравится&nbsp;<a control_type="dialog" request_url="/intuit_common_interface/json/likeit_list" destination_block_id="likeit-list" dialog_title="Нравится" request_data_source="attr" request_data="type=like_course&amp;id=52" title="Показать всех пользователей" dialog_attr="{width:450}" no_check_plain="1" dialog_buttons="{&#39;Закрыть&#39; : function() { $(this).dialog(&#39;close&#39;); } }" class="ajax-command-anchor" href="https://intuit.ru/studies/courses/2249/52/lecture/1552?page=2#"><span>66</span>&nbsp;студентам</a>  </div></span> | <span><a control_type="dialog" request_url="/intuit_social_event_line/json/share_thoughts" destination_block_id="share-thoughts-dialog" request_data_source="attr" request_data="entity_id=52&amp;entity_type=course&amp;info_about=1&amp;dialog_alt=Расскажите о курсе своим друзьям" dialog_title="Расскажите о курсе своим друзьям" class="share-thoughts-controls ajax-command-anchor" dialog_attr="{width:600}" success_callback="function(){inintializePrivacyControl($(&#39;#share-thoughts-dialog .privacy-control&#39;), $(&#39;#share-thoughts-dialog #edit-privacy-dialog&#39;));}" href="https://intuit.ru/studies/courses/2249/52/lecture/1552?page=2#">Поделиться</a></span> | <span><div class="donate-control">
+      <span class="donate-icon"></span>
+    <a control_type="dialog" request_url="/intuituser/person_account/pay_update" destination_block_id="rechange-dialog-block" request_data_source="attr" request_data="service=3&amp;additional_text=Вы или Ваша компания можете оказать спонсорскую поддержку этого курса." dialog_min_size="true" no_check_plain="1" dialog_title="Поддержка курса" class="ajax-command-anchor" href="https://intuit.ru/studies/courses/2249/52/lecture/1552?page=2#"><span class="donate">Поддержать курс</span></a></div></span> | <span><a href="https://intuit.ru/goods_store/ebooks/8194" class="red">Скачать электронную книгу</a></span>    </div>
+    </div>
+<div id="lecture-block" class="entities-standard-block ">
+  <div class="table header plated">
+    <div class="row">
+            <div class="title">        
+                  
+        <span class="zag">
+        Лекция&nbsp;2: <span class="spelling-content-entity" data="iduniver_edu_prog=2249&amp;idcourse=52&amp;idlecture=801&amp;type=2&amp;comment=title"><h1 class="inn">Процессы в операционной системе UNIX</h1></span>        </span>
+      </div>
+                  <div class="links" style="padding-left:10px;">
+        <div class="lecture-user-control">
+    <div class="font-size-control">
+    <span class="less" title="Уменьшить шрифт"></span><span class="normal" title="Вы можете изменить размер шрифта в лекциях">A</span><span class="more" title="Увеличить шрифт"></span>
+  </div>
+    |  <div class="print-control">
+    <a href="https://intuit.ru/studies/courses/2249/52/print_lecture/1552" title="версия для печати">версия для печати</a>  </div>
+    
+    </div>
+      </div>
+          </div>
+  </div>
+  <div class="container">
+        <div class="content">
+      <div class="pager"><a href="https://intuit.ru/studies/courses/2249/52/test/1/751">&lt; Тест 1</a> || <b>Лекция&nbsp;2</b>: <span class="page"><a href="https://intuit.ru/studies/courses/2249/52/lecture/1552?page=1" class="page active">1</a></span><span class="delimiter"></span><span class="page current-page">2</span><span class="delimiter"></span><span class="page"><a href="https://intuit.ru/studies/courses/2249/52/lecture/1552?page=3" class="page active">3</a></span><span class="delimiter"></span><span class="page"><a href="https://intuit.ru/studies/courses/2249/52/lecture/1552?page=4" class="page active">4</a></span> || <a href="https://intuit.ru/studies/courses/2249/52/lecture/1554">Лекция&nbsp;3 &gt;</a></div><div class="eoi spelling-content-entity" data="iduniver_edu_prog=2249&amp;idcourse=52&amp;idlecture=801&amp;type=2&amp;comment=lecture-text&amp;page=2"><a xmlns:edi="http://www.intuit.ru/2010/edi" name="sect7"></a><h3>Создание процесса в UNIX. Системный вызов fork()</h3><p xmlns:edi="http://www.intuit.ru/2010/edi" id="id_54"><a name="keyword-context9"></a>В операционной системе UNIX новый процесс может быть порожден единственным способом – с помощью системного вызова <span class="texample"> <span class="keyword_def"><a name="keyword71"></a><span class="keyword">fork()</span></span> </span>. При этом вновь созданный процесс будет являться практически полной копией родительского процесса. У порожденного процесса по сравнению с родительским процессом (на уровне уже полученных знаний) изменяются значения следующих параметров:</p><div xmlns:edi="http://www.intuit.ru/2010/edi" class="lecture_mark" id="mark_54"></div><ul id="id_56">
+<li xmlns:edi="http://www.intuit.ru/2010/edi">
+<a name="keyword72"></a><span class="keyword">идентификатор процесса</span>  – <span class="texample"> <a name="keyword73"></a><span class="keyword">PID</span> </span> ;</li>
+<li xmlns:edi="http://www.intuit.ru/2010/edi">
+<a name="keyword74"></a><span class="keyword">идентификатор родительского процесса</span>  – <span class="texample"> <a name="keyword75"></a><span class="keyword">PPID</span> </span>.</li>
+</ul><div class="lecture_mark" id="mark_56"></div><p xmlns:edi="http://www.intuit.ru/2010/edi" id="id_61">Дополнительно может измениться поведение порожденного процесса по отношению к некоторым сигналам, о чем подробнее будет рассказано на семинарах 13–14, когда мы будем говорить о сигналах в операционной системе <a name="keyword76"></a><span class="keyword">UNIX</span>.</p><div xmlns:edi="http://www.intuit.ru/2010/edi" class="lecture_mark" id="mark_61"></div><div xmlns:edi="http://www.intuit.ru/2010/edi" class="xml_table_env" id="id_62">
+<a name="table."></a><table border="0" class="xml_table" cellpadding="2" cellspacing="1"><tbody><tr><td bgcolor="#eaeaea" valign="top">
+<p id="id_63"><b>Системный вызов для порождения нового процесса</b></p>
+<div class="lecture_mark" id="mark_63"></div>
+<p id="id_64"><b>Прототип системного вызова</b></p>
+<div class="lecture_mark" id="mark_64"></div>
+<div class="example" id="id_65"><pre>#include &lt;sys/types.h&gt;
+#include &lt;unistd.h&gt;
+pid_t fork(void);</pre></div>
+<div class="lecture_mark" id="mark_65"></div>
+<p id="id_66"><b>Описание системного вызова</b></p>
+<div class="lecture_mark" id="mark_66"></div>
+<p id="id_67">Системный вызов <span class="texample"> <a name="keyword77"></a><span class="keyword">fork</span> </span>  служит для создания нового процесса в операционной системе UNIX. Процесс, который инициировал системный вызов <span class="texample"> <a name="keyword78"></a><span class="keyword">fork</span> </span>, принято называть родительским процессом ( <span class="texample"><a name="keyword79"></a><span class="keyword">parent process</span></span> ). Вновь порожденный процесс принято называть процессом-ребенком ( <span class="texample"><a name="keyword80"></a><span class="keyword">child process</span></span> ). Процесс-ребенок является почти полной копией родительского процесса. У порожденного процесса по сравнению с родительским изменяются значения следующих параметров:</p>
+<div class="lecture_mark" id="mark_67"></div>
+<ul id="id_72">
+<li>идентификатор процесса;</li>
+<li>
+<a name="keyword81"></a><span class="keyword">идентификатор родительского процесса</span>;</li>
+<li>время, оставшееся до получения сигнала <span class="texample">SIGALRM</span> ;</li>
+<li>сигналы, ожидавшие доставки родительскому процессу, не будут доставляться порожденному процессу.</li>
+</ul>
+<div class="lecture_mark" id="mark_72"></div>
+<p id="id_78">При однократном системном вызове возврат из него может произойти дважды: один раз в родительском процессе, а второй раз в порожденном процессе. Если создание нового процесса произошло успешно, то в порожденном процессе системный вызов вернет значение <span class="texample">0</span>, а в родительском процессе – положительное значение, равное идентификатору процесса-ребенка. Если создать новый процесс не удалось, то системный вызов вернет в инициировавший его процесс отрицательное значение.</p>
+<div class="lecture_mark" id="mark_78"></div>
+<p id="id_80">Системный вызов <span class="texample"> <a name="keyword82"></a><span class="keyword">fork</span> </span>  является единственным способом породить новый процесс после инициализации операционной системы UNIX.</p>
+<div class="lecture_mark" id="mark_80"></div>
+</td></tr></tbody></table>
+</div><div xmlns:edi="http://www.intuit.ru/2010/edi" class="lecture_mark" id="mark_62"></div><p xmlns:edi="http://www.intuit.ru/2010/edi" id="id_82">В процессе выполнения системного вызова <span class="texample"> <a name="keyword83"></a><span class="keyword">fork()</span> </span>  порождается копия родительского процесса и возвращение из системного вызова будет происходить уже как в родительском, так и в порожденном процессах. Этот <a name="keyword84"></a><span class="keyword">системный вызов</span> является единственным, который вызывается один раз, а при успешной работе возвращается два раза (один раз в процессе-родителе и один раз в процессе-ребенке)! После выхода из системного вызова оба процесса продолжают выполнение регулярного пользовательского кода, следующего за системным вызовом.</p><div xmlns:edi="http://www.intuit.ru/2010/edi" class="lecture_mark" id="mark_82"></div><a xmlns:edi="http://www.intuit.ru/2010/edi" name="sect8"></a><h3>Прогон программы с fork() с одинаковой работой родителя и ребенка</h3><p xmlns:edi="http://www.intuit.ru/2010/edi" id="id_84">Для иллюстрации сказанного давайте рассмотрим следующую программу:</p><div xmlns:edi="http://www.intuit.ru/2010/edi" class="lecture_mark" id="mark_84"></div><a name="example_3.1"></a><div xmlns:edi="http://www.intuit.ru/2010/edi" class="example" id="id_85">
+<pre>/* Программа 03-1.с – пример создания нового
+   процесса с одинаковой работой процессов 
+   ребенка и родителя */ 
+
+#include &lt;sys/types.h&gt;
+#include &lt;unistd.h&gt;
+#include &lt;stdio.h&gt;
+int main()
+{
+    pid_t pid, ppid;
+    int a = 0; 
+    (void)fork();
+
+    /* При успешном создании нового процесса
+       с этого места псевдопараллельно 
+       начинают работать два процесса: старый
+       и новый */
+    /* Перед выполнением следующего выражения 
+       значение переменной a в обоих процессах
+       равно 0 */
+
+    a = a+1;
+
+    /* Узнаем идентификаторы текущего и роди-
+       тельского процесса (в каждом из 
+       процессов !!!) */
+
+    pid = getpid();
+    ppid = getppid();
+
+    /* Печатаем значения PID, PPID и вычислен-
+       ное значение переменной a (в каждом из
+       процессов !!!) */
+    printf("My pid = %d, my ppid = %d, 
+      result = %d\n", (int)pid, (int)ppid, a);
+    return 0;
+}</pre>
+<span class="objectName">
+                            Листинг
+                        3.1.
+                    Программа 03-1.с – пример создания нового процесса с одинаковой работой процессов ребенка и родителя.</span>
+</div><div xmlns:edi="http://www.intuit.ru/2010/edi" class="lecture_mark" id="mark_85"></div><p xmlns:edi="http://www.intuit.ru/2010/edi" id="id_86">Наберите эту программу, откомпилируйте ее и запустите на <a name="keyword85"></a><span class="keyword">исполнение</span> (лучше всего это делать не из оболочки <span class="texample">mc</span>, так как она не очень корректно сбрасывает буферы ввода-вывода). Проанализируйте полученный результат.</p><div xmlns:edi="http://www.intuit.ru/2010/edi" class="lecture_mark" id="mark_86"></div><a xmlns:edi="http://www.intuit.ru/2010/edi" name="sect9"></a><h3>Системный вызов fork() (продолжение)</h3><p xmlns:edi="http://www.intuit.ru/2010/edi" id="id_88">Для того чтобы после возвращения из системного вызова <span class="texample"> <a name="keyword86"></a><span class="keyword">fork()</span> </span>  процессы могли определить, кто из них является ребенком, а кто родителем, и, соответственно, по-разному организовать свое поведение, <a name="keyword87"></a><span class="keyword">системный вызов</span> возвращает в них разные значения. При успешном создании нового процесса в процесс-родитель возвращается положительное <a name="keyword88"></a><span class="keyword">значение</span>, равное идентификатору процесса-ребенка. В процесс-ребенок же возвращается <a name="keyword89"></a><span class="keyword">значение</span> <span class="texample">0</span>. Если по какой-либо причине создать новый процесс не удалось, то <a name="keyword90"></a><span class="keyword">системный вызов</span> вернет в инициировавший его процесс <a name="keyword91"></a><span class="keyword">значение</span> <span class="texample">-1</span>. Таким образом, общая схема организации различной работы процесса-ребенка и процесса-родителя выглядит так:</p><div xmlns:edi="http://www.intuit.ru/2010/edi" class="lecture_mark" id="mark_88"></div><div xmlns:edi="http://www.intuit.ru/2010/edi" class="example" id="id_92"><pre>pid = fork();
+if(pid == -1){
+    ...
+    /* ошибка */
+    ...
+} else if (pid == 0){
+    ...
+    /* ребенок */
+    ...
+} else {
+    ...
+    /* родитель */
+    ...
+}</pre></div><div xmlns:edi="http://www.intuit.ru/2010/edi" class="lecture_mark" id="mark_92"></div><a xmlns:edi="http://www.intuit.ru/2010/edi" name="sect10"></a><h3>Написание, компиляция и запуск программы с использованием вызова fork() с разным поведением процессов ребенка и родителя</h3><p xmlns:edi="http://www.intuit.ru/2010/edi" id="id_93">Измените предыдущую программу с <span class="texample"> <a name="keyword92"></a><span class="keyword">fork()</span> </span>  так, чтобы родитель и ребенок совершали разные действия (какие – не важно).</p><div xmlns:edi="http://www.intuit.ru/2010/edi" class="lecture_mark" id="mark_93"></div></div><div class="next-button-wrapper"><a href="https://intuit.ru/studies/courses/2249/52/lecture/1552?page=3" class="active"><div class="command-button">
+            <div class="command-button-border-1">
+              <div class="command-button-border-2">
+                <div class="command-button-border-3">
+                  <b class="button-center">Дальше &gt;&gt;</b>
+                </div>
+              </div>
+            </div>
+          </div></a></div><div class="pager"><a href="https://intuit.ru/studies/courses/2249/52/test/1/751">&lt; Тест 1</a> || <b>Лекция&nbsp;2</b>: <span class="page"><a href="https://intuit.ru/studies/courses/2249/52/lecture/1552?page=1" class="page active">1</a></span><span class="delimiter"></span><span class="page current-page">2</span><span class="delimiter"></span><span class="page"><a href="https://intuit.ru/studies/courses/2249/52/lecture/1552?page=3" class="page active">3</a></span><span class="delimiter"></span><span class="page"><a href="https://intuit.ru/studies/courses/2249/52/lecture/1552?page=4" class="page active">4</a></span> || <a href="https://intuit.ru/studies/courses/2249/52/lecture/1554">Лекция&nbsp;3 &gt;</a></div><div class="horizontal-advertising-block ">
+    <div>
+      <div style="text-align: center"> <script async="" type="text/javascript" src="./НОУ ИНТУИТ _ Лекция _ Процессы в операционной системе UNIX_files/common_402.js"></script>
+                                    <div id="lx_674697" data-cnt="1" class="__lxG__multi __lxG__multi_lx_674697 __lxG__ribboned __lxG__size_fixed __lxG__not_empty_block" style="display: block; min-width: 0px; min-height: 34.3906px; pointer-events: auto;"><style>
+#lx_674697 {margin: 10px auto !important;text-align: center;}
+</style><div class="__lxG__ribboned__title"><div class="__lxG__ribboned__title__text">Реклама</div></div><div id="div-gpt-ad-22548012258-1"><div></div></div></div><script class="__lxGc__" type="text/javascript" data-cnt="1">
+                                    ((__lxGc__=window.__lxGc__||{'s':{},'b':0})['s']['_214053']=__lxGc__['s']['_214053']||{'b':{}})['b']['_630405']={'i':__lxGc__.b++};
+                                    </script></div>    </div>
+    <div id="id-study-content-lecture-bottom-1">
+          </div>
+</div>
+<!-- Yandex.RTB R-A-98260-1 -->
+<div id="yandex_rtb_R-A-98260-1"><yatag class="f3d60be3a xb35ae226"><yatag class="q75fe6707"></yatag><yatag class="i65b32ef7 ae47c12b4 s64c3783"><yatag class="h7b077d70" style="width: 240px !important; height: 400px !important;"><yatag id="ya_partner_R-A-98260-1" class="n8cdf1707" style="width: 240px !important; height: 400px !important;"><iframe frameborder="no" scrolling="no" allowtransparency="true" hidefocus="true" tabindex="-1" marginwidth="0" marginheight="0" src="./НОУ ИНТУИТ _ Лекция _ Процессы в операционной системе UNIX_files/render.html" sandbox="allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-scripts allow-forms" id="id5404" style="opacity: 1;"></iframe></yatag><yatag class="ta3e32dc2 e6f8fabe5 b77491224" data-label="true"><yatag data-test="AdKebabAndLabel--adLabelBg" class="refe034a7"></yatag>Реклама</yatag><yatag class="g59718c18 b4a5f841e v7ec4311e"><yatag data-close="true" data-new-adtune="true" class="ee95dc28b c2920e79e e6f8fabe5 x27a58b96"><yatag class="jbb456c6e b77491224"></yatag><yatag class="q2ac39d20"><svg width="8" height="20" fill="#fff" xmlns="http://www.w3.org/2000/svg"><circle cx="4" cy="4" r="1.5"></circle><circle cx="4" cy="10" r="1.5"></circle><circle cx="4" cy="16" r="1.5"></circle></svg></yatag></yatag></yatag></yatag></yatag></yatag></div>
+<script type="text/javascript">
+    (function(w, d, n, s, t) {
+        w[n] = w[n] || [];
+        w[n].push(function() {
+            Ya.Context.AdvManager.render({
+                blockId: "R-A-98260-1",
+                renderTo: "yandex_rtb_R-A-98260-1",
+                async: true
+            });
+        });
+        t = d.getElementsByTagName("script")[0];
+        s = d.createElement("script");
+        s.type = "text/javascript";
+        s.src = "//an.yandex.ru/system/context.js";
+        s.async = true;
+        t.parentNode.insertBefore(s, t);
+    })(this, this.document, "yandexContextAsyncCallbacks");
+</script>    </div>
+          </div>
+</div>
+    </div>
+          </div>
+</div>
+                                  </div>
+                <div class="column td margin-18"></div>
+                                <div id="right-panel" class="column td">
+                    <div id="block-intuit_social-right_pannel" class="block-intuit_social">
+
+
+  <div class="content"><div id="right-social-network-pannel" style="width: 256px;">
+  <div class="common-content-without-border">
+    <div class="common-content-border-content">
+    <div id="search-by-course-informer-block" class="entities-standard-block ">
+  <div class="container">
+        <div class="content">
+      <div id="simple-by-course-search-form" style="display:block;"><form action="https://intuit.ru/studies/courses/2249/52/search" accept-charset="UTF-8" method="post" id="search-by-course-informer-form">
+<div><script type="text/javascript">$(document).ready(function() { $("#search-by-course-informer-form #edit-data").hint(); });</script><div class="form-item table" id="edit-data-wrapper"><div class="tr"><div class="input-wrapper additional-padding"><input type="text" maxlength="256" name="data" id="edit-data" size="40" value="" title="Искать в курсе" class="form-text blur"></div><div class="placeholder"></div></div></div><div class="submit-button-wrapper">
+              <div id="button-op" class="submit-button">
+                <div class="submit-button-border-1">
+                  <div class="submit-button-border-2">
+                    <div class="submit-button-border-3">
+                      <input type="submit" name="op" id="edit-search" value="" class="form-submit">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div><input type="hidden" name="form_build_id" id="form-7c0f4926a1ce707b2e331c7caf619df9" value="form-7c0f4926a1ce707b2e331c7caf619df9">
+<input type="hidden" name="form_token" id="edit-search-by-course-informer-form-form-token" value="e9e7b841827ef2c524d31db964b4c38f">
+<input type="hidden" name="form_id" id="edit-search-by-course-informer-form" value="search_by_course_informer_form">
+
+</div></form>
+</div>    </div>
+          </div>
+</div>
+<div id="course-questions-informer" class="entities-standard-block ">
+  <div class="table header">
+    <div class="row">
+            <div class="title">        
+                  
+        <h3>
+        <a href="https://intuit.ru/studies/courses/2249/52/questions?finished=0">Вопросы и ответы</a>        </h3>
+      </div>
+                  <div class="links" style="padding-left:10px;">
+        <span><a href="https://intuit.ru/studies/courses/2249/52/questions">вопросов: 1</a></span>      </div>
+          </div>
+  </div>
+  <div class="container">
+        <div class="list">
+      <div class="right-pannel-person-view table">
+  <div class="tr">
+    <div class="td picture">
+      <div class="int-avatar img48" user_id="2116662" id="user_2116662_avatar"><a href="https://intuit.ru/intuituser/userpage/2116662" title="Макар Оганесов"><img src="./НОУ ИНТУИТ _ Лекция _ Процессы в операционной системе UNIX_files/avatar-men-2(1).png" alt="Макар Оганесов" title="Макар Оганесов" width="48" height="48"></a></div>    </div>
+    <div class="td data">
+      <div class="name">
+        Макар Оганесов      </div>
+      <div class="text">
+        <table><tbody><tr><td>
+        <div id="5bc84a33c53f8"></div>        </td></tr></tbody></table>
+      </div>
+      <div class="commands">
+        <span class="triangle"></span><a href="https://intuit.ru/studies/courses/2249/52/questions">ответить</a>      </div>
+    </div>
+  </div>
+</div><a href="https://intuit.ru/studies/courses/2249/52/questions"><b>Задать вопрос</b></a>    </div>
+          </div>
+</div>
+<div id="course-advertising2-informer" class="entities-standard-block ">
+  <div class="container">
+        <div class="list">
+      <!-- CLICKIO AdFox unit 643904 -->
+<div id="adfox_155972944194112345"><div id="yandex_rtb_4016578674" class="cREWUr yandex_rtb_R-A-406925-1"><div></div></div></div>
+<script>
+    (function(w, n) {
+w[n] = w[n] || [];
+w[n].push([{
+        ownerId: 257193,
+        containerId: 'adfox_155972944194112345',
+                params: {
+            pk: __clADF__.state,
+            pp: 'ksp',
+            ps: 'digd',
+            p2: 'fpxb'
+        }
+    }, [ 'desktop', 'tablet', 'phone' ], {
+        tabletWidth: 1024,
+        phoneWidth: 767,
+        isAutoReloads: false
+    }]);})(window, 'adfoxAsyncParamsAdaptive');
+</script>    </div>
+          </div>
+</div>
+<div id="id-pure-content-1f9a95296e370b72a8167c055da8c992-1" class="vertical-240-advertising-block">
+    
+    <!-- формат 240x400 каскадный стики -->
+    <script async="" type="text/javascript" src="./НОУ ИНТУИТ _ Лекция _ Процессы в операционной системе UNIX_files/common_402.js"></script>
+    <div id="lx_674694" data-cnt="1" class="__lxG__multi __lxG__multi_lx_674694 __lxG__ribboned __lxG__not_empty_block __lx_sticky_1 __lx_sticky_pos_empty" style="pointer-events: auto;"><style>
+#lx_674694 {
+margin: auto !important;
+}
+#lx_674694 {max-width: 240px;}
+</style><div class="__lxG__ribboned__title"><div class="__lxG__ribboned__title__text">Реклама</div></div><div id="div-gpt-ad-22548132904-1"><div></div></div></div><script class="__lxGc__" type="text/javascript" data-cnt="1">
+        ((__lxGc__=window.__lxGc__||{'s':{},'b':0})['s']['_214053']=__lxGc__['s']['_214053']||{'b':{}})['b']['_640364']={'i':__lxGc__.b++};
+    </script>
+</div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+                </div>
+                              </div>
+            </div>
+          </div>
+        </div>
+        <div class="main-wraper-tr">
+          <div class="main-wraper-td" style="height:94px;">
+            <div class="wrapper-wrapper">
+              <div id="footer-panel">
+                                <div id="block-spelling-0" class="block-spelling" style="display: block;">
+
+  <h2>Исправление ошибок</h2>
+
+  <div class="content">Внимание! Если Вы увидите ошибку на нашем сайте, выделите её и нажмите Ctrl+Enter.<a id="admin-content-spelling-save-form-a" control_type="dialog" request_url="/admin/content/spelling/spelling_form" destination_block_id="spelling-save-form-dialog" dialog_title="Сообщение об ошибке" dialog_min_size="true" dialog_buttons="[
+                                                 {
+                                                   &#39;text&#39;: &#39;Сохранить&#39;,
+                                                   &#39;click&#39;: function() { spelling.save_error(&#39;/admin/content/spelling/spelling_save_form&#39;); }
+                                                 },
+                                                 {
+                                                   &#39;text&#39;: &#39;Отмена&#39;,
+                                                   &#39;class&#39;: &#39;cancel-button&#39;,
+                                                   &#39;click&#39;: function() { $(this).dialog(&#39;close&#39;); }
+                                                 }
+                                               ]" class="ajax-command-anchor" href="https://intuit.ru/studies/courses/2249/52/lecture/1552?page=2#"></a></div>
+</div>
+<div id="block-intuit_footer-intuit_footer_block" class="block-intuit_footer">
+
+
+  <div class="content"><div style="text-align: center;">
+    </div>
+<div class="table footer">
+  <div class="tr">
+    <div class="td column-1">
+      © НОУ «ИНТУИТ»,<br>2003 – 2022    </div>
+    <div class="td column-2">
+      <div class="footer-menu-wrapper">
+        <a href="https://intuit.ru/content/rules">Пользовательское соглашение</a> | <a href="https://intuit.ru/content/confidential">Политика конфиденциальности</a> | <a href="https://intuit.ru/content/reklama-na-sajte">Реклама на сайте</a> | <a href="https://intuit.ru/contactus/add">Напишите нам</a>      </div>
+      <div class="footer-contacts-wrapper">
+        <p>
+	Телефон: +7 (499) 253-9312, WhatsApp, Telegram, Viber: +7 (977) 954-84-50, факс: +7 (499) 253-9310, e-mail: <a href="mailto:info@intuit.ru">info@intuit.ru</a>, Skype: Intuit.ru</p>
+      </div>
+    </div>
+    <div class="td column-3">
+                </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  var scripts = document.querySelectorAll('script');
+  var head= document.getElementsByTagName('head')[0];
+  for(var k = 0; k < scripts.length; k++ ) {
+    var script = scripts[k];
+    var src = script.src;
+    if (src != '' && src.indexOf('https://') == -1) {
+      var newscript= document.createElement('script');
+      var newSrc = src.replace('http://','https://');
+      newscript.type= 'text/javascript';
+      newscript.src= newSrc;
+      head.appendChild(newscript);
+    }
+  }
+</script>
+
+</div>
+</div>
+                              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+
+<div id="lightbox2-overlay" style="display: none;"></div>      <div id="lightbox" style="display: none;" class="lightbox2-alt-layout">        <div id="outerImageContainer" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"><div id="modalContainer" style="display: none; padding: 10px;"></div><div id="frameContainer" style="display: none; padding: 10px;"></div><div id="imageContainer" style="display: none; padding: 10px;"><img id="lightboxImage" alt=""></div><div id="loading"><a href="https://intuit.ru/studies/courses/2249/52/lecture/1552?page=2#" id="loadingLink"></a></div><div id="bottomNav"><a id="bottomNavClose" title="Закрыть" href="https://intuit.ru/studies/courses/2249/52/lecture/1552?page=2#" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"></a><a id="bottomNavZoom" href="https://intuit.ru/studies/courses/2249/52/lecture/1552?page=2#" style="bottom: 10px; right: 10px;"></a><a id="bottomNavZoomOut" href="https://intuit.ru/studies/courses/2249/52/lecture/1552?page=2#" style="bottom: 10px; right: 10px;"></a></div></div>        <div id="imageDataContainer" class="clearfix" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);">          <div id="imageData"><div id="hoverNav"><a id="prevLink" title="Previous" href="https://intuit.ru/studies/courses/2249/52/lecture/1552?page=2#" style="padding-top: 10px;"></a><a id="nextLink" title="Next" href="https://intuit.ru/studies/courses/2249/52/lecture/1552?page=2#" style="padding-top: 10px;"></a></div><div id="imageDetails"><span id="caption"></span><span id="numberDisplay"></span><a id="lightshowPause" title="Pause Slideshow" href="https://intuit.ru/studies/courses/2249/52/lecture/1552?page=2#" style="display: none;"></a><a id="lightshowPlay" title="Play Slideshow" href="https://intuit.ru/studies/courses/2249/52/lecture/1552?page=2#" style="display: none;"></a></div></div>        </div>      </div><div id="tooltip" style="display: none;"><h3></h3><div class="body"></div><div class="url"></div></div><div style="position: fixed; left: -99px;"><div id="2510c1132b"><iframe frameborder="no" scrolling="no" allowtransparency="true" hidefocus="true" tabindex="-1" marginwidth="0" marginheight="0" src="./НОУ ИНТУИТ _ Лекция _ Процессы в операционной системе UNIX_files/render(1).html" id="id9216" style="opacity: 1;"></iframe></div></div></body><style id="stylus-1" type="text/css" class="stylus">body {
+    font-family: 'pragmata pro mono regular';
+}</style></html>

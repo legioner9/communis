@@ -1,0 +1,372 @@
+<table class="table table-bordered table-striped table-hover" border="1" cellspacing="1" cellpadding="1" align="center">
+<caption>Таблица 1 — Флаги форматирования в С++</caption>
+<thead>
+<tr>
+<th scope="col">Флаг</th>
+<th scope="col">Назначение</th>
+<th scope="col">Пример</th>
+<th scope="col">Результат</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>boolalpha</strong></td>
+<td>
+<div>Вывод &nbsp; логических&nbsp;<span style="text-align: justify;">величин в текстовом&nbsp;</span><span style="text-align: justify;">виде (</span><code>true</code><span style="text-align: justify;">,&nbsp;</span><code>false</code><span style="text-align: justify;">)</span></div>
+</td>
+<td>
+<div><strong>cout.setf(ios::boolalpha);</strong></div>
+<div><strong>bool log_false = 0,</strong></div>
+<div><strong>log_true = 1;</strong></div>
+<div><strong>cout &lt;&lt; log_false &lt;&lt; endl&nbsp;</strong></div>
+<div><strong>&lt;&lt; log_true &lt;&lt; endl;</strong></div>
+<div></div>
+</td>
+<td><strong>false<br>
+true</strong></td>
+</tr>
+<tr>
+<td><strong>oct</strong></td>
+<td>
+<div>Ввод/вывод &nbsp; величин &nbsp; в</div>
+<div>восьмеричной&nbsp;<span style="text-align: justify;">системе &nbsp; счисления (сначала снимаем флаг&nbsp;</span><code>dec</code><span style="text-align: justify;">, затем устанавливаем флаг&nbsp;</span><code>oct</code><span style="text-align: justify;">)</span></div>
+<div></div>
+</td>
+<td>
+<div><strong>cout.unsetf(ios::dec);</strong></div>
+<div><strong>cout.setf(ios::oct);</strong></div>
+<div><strong>int value;</strong></div>
+<div><strong>cin &gt;&gt; value;</strong></div>
+<div><strong>cout &lt;&lt; value &lt;&lt; endl;</strong></div>
+<div></div>
+</td>
+<td>ввод:<strong>99<sub>10</sub></strong><br>
+вывод:<strong>143<sub>8</sub></strong></td>
+</tr>
+<tr>
+<td><strong>dec</strong></td>
+<td>
+<div>Ввод/вывод &nbsp; величин &nbsp; в&nbsp;<span style="text-align: justify;">десятичной &nbsp; системе&nbsp;</span><span style="text-align: justify;">счисления &nbsp; (флаг установлен по&nbsp;</span><span style="text-align: justify;">умолчанию)</span></div>
+</td>
+<td>
+<div><strong>cout.setf(ios::dec);</strong></div>
+<div><strong>int value = 148;</strong></div>
+<div><strong>cout &lt;&lt; value &lt;&lt; endl;</strong></div>
+<div></div>
+</td>
+<td><strong>148</strong></td>
+</tr>
+<tr>
+<td><strong>hex</strong></td>
+<td>
+<div>Ввод/вывод &nbsp; величин &nbsp; в&nbsp;<span style="text-align: justify;">шестнадцатеричной&nbsp;</span><span style="text-align: justify;">системе &nbsp; счисления&nbsp;</span><span style="text-align: justify;">(сначала снимаем флаг&nbsp;</span><code>dec</code><span style="text-align: justify;">, затем устанавливаем флаг&nbsp;</span><code>hex</code><span style="text-align: justify;">)</span></div>
+</td>
+<td>
+<div><strong>cout.unsetf(ios::dec);</strong></div>
+<div><strong>cout.setf(ios::hex);</strong></div>
+<div><strong>int value;</strong></div>
+<div><strong>cin &gt;&gt; value;</strong></div>
+<div><strong>cout &lt;&lt; value &lt;&lt; endl;</strong></div>
+</td>
+<td>ввод:<strong>99<sub>10</sub></strong><br>
+вывод:<strong>63<sub>16</sub></strong></td>
+</tr>
+<tr>
+<td><strong>showbase&nbsp;</strong></td>
+<td>
+<div>Выводить индикатор&nbsp;<span style="text-align: justify;">основания &nbsp; системы&nbsp;</span><span style="text-align: justify;">счисления</span></div>
+</td>
+<td>
+<div><strong>cout.unsetf(ios::dec);</strong></div>
+<div><strong>cout.setf(ios::oct | ios::showbase);</strong></div>
+<div><strong>int value;</strong></div>
+<div><strong>cin &gt;&gt; value;</strong></div>
+<div><strong>cout &lt;&lt; value &lt;&lt; endl;</strong></div>
+<div></div>
+</td>
+<td>ввод:<strong>99<sub>10</sub></strong><br>
+вывод:<strong>0143<sub>8</sub></strong></td>
+</tr>
+<tr>
+<td><strong>uppercase</strong></td>
+<td>В шестнадцатеричной системе счисления использовать буквы верхнего регистра(по умолчанию установлены буквы нижнего регистра)</td>
+<td>
+<div><strong>cout.unsetf(ios::dec);</strong></div>
+<div><strong>cout.setf(ios::hex | ios::uppercase);</strong></div>
+<div><strong>int value;</strong></div>
+<div><strong>cin &gt;&gt; value;</strong></div>
+<div><strong>cout &lt;&lt; value &lt;&lt; endl;</strong></div>
+</td>
+<td>ввод:<strong>255<sub>10</sub></strong><br>
+вывод:<strong>FF<sub>16</sub></strong></td>
+</tr>
+<tr>
+<td><strong>showpos</strong></td>
+<td>Вывод знака плюс <code>+</code>&nbsp;для положительных чисел</td>
+<td>
+<div><strong>cout.setf(ios::showpos);</strong></div>
+<div><strong>int value = 15;</strong></div>
+<div><strong>cout &lt;&lt; value &lt;&lt; endl;</strong></div>
+</td>
+<td><strong>+15</strong></td>
+</tr>
+<tr>
+<td><strong>scientific</strong></td>
+<td>Вывод чисел с плавающей точкой в экспоненциальной форме</td>
+<td>
+<div><strong>cout.setf(ios::scientific);</strong></div>
+<div><strong>double value = 1024.165;</strong></div>
+<div><strong>cout &lt;&lt; value &lt;&lt; endl;</strong></div>
+</td>
+<td><strong>1.024165e+003</strong></td>
+</tr>
+<tr>
+<td><strong>fixed</strong></td>
+<td>Вывод чисел с плавающей точкой в фиксированной форме(по умолчанию)</td>
+<td>
+<div><strong>double value = 1024.165;</strong></div>
+<div><strong>cout &lt;&lt; value &lt;&lt; endl;</strong></div>
+</td>
+<td><strong>1024.165</strong></td>
+</tr>
+<tr>
+<td><strong>right</strong></td>
+<td>Выравнивание по правой границе(по умолчанию). Сначала необходимо установить ширину поля(ширина поля должна быть заведомо большей чем, длина выводимой строки).</td>
+<td>
+<div><strong>cout.width(40);</strong></div>
+<div><strong>cout &lt;&lt; «cppstudio.com» &lt;&lt; endl;</strong></div>
+</td>
+<td><strong>__cppstudio.com&nbsp;</strong></td>
+</tr>
+<tr>
+<td><strong>left&nbsp;</strong></td>
+<td>Выравнивание по левой границе. Сначала необходимо установить ширину поля(ширина поля должна быть заведомо большей чем, длина выводимой строки).</td>
+<td>
+<div><strong>cout.setf(ios::left);</strong></div>
+<div><strong>cout.width(40);</strong></div>
+<div><strong>cout &lt;&lt; «cppstudio.com» &lt;&lt; endl;</strong></div>
+</td>
+<td><strong>cppstudio.com__</strong></td>
+</tr>
+</tbody>
+</table>
+
+<table class="table table-bordered table-striped table-hover" border="1" cellspacing="1" cellpadding="1" align="center">
+<caption>Таблица 2 — Манипуляторы форматирования в С++</caption>
+<thead>
+<tr>
+<th scope="col">Манипулятор</th>
+<th scope="col">Назначение</th>
+<th scope="col">Пример</th>
+<th scope="col">Результат</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>endl</strong></td>
+<td>Переход на новую строку при выводе</td>
+<td><strong>cout &lt;&lt; «website:» &lt;&lt; endl &lt;&lt; «cppstudio.com»;</strong></td>
+<td><strong>website:</strong><br>
+<strong>cppstudio.com</strong></td>
+</tr>
+<tr>
+<td><strong>boolalpha</strong></td>
+<td>
+<div>Вывод &nbsp; логических</div>
+<div>величин в текстовом</div>
+<div>виде (<code>true</code>,&nbsp;<code>false</code>)</div>
+</td>
+<td>
+<div><strong>&nbsp;&nbsp;bool log_true = 1;</strong></div>
+<div><strong>cout &lt;&lt; boolalpha &lt;&lt; log_true &lt;&lt; endl;</strong></div>
+</td>
+<td><strong>true</strong></td>
+</tr>
+<tr>
+<td><strong>noboolalpha</strong></td>
+<td>
+<div>Вывод &nbsp; логических</div>
+<div>величин в числовом</div>
+<div>виде (<code>true</code>,&nbsp;<code>false</code>)</div>
+</td>
+<td>
+<div><strong>&nbsp;bool log_true = true;</strong></div>
+<div><strong>cout &lt;&lt; noboolalpha &lt;&lt; log_true &lt;&lt; endl;</strong></div>
+</td>
+<td><strong>1</strong></td>
+</tr>
+<tr>
+<td><strong>oct</strong></td>
+<td>
+<div>Вывод &nbsp; величин &nbsp; в</div>
+<div>восьмеричной</div>
+<div>системе &nbsp; счисления</div>
+<div></div>
+</td>
+<td>
+<div>
+<div><strong>int value = 64;</strong></div>
+<div><strong>cout &lt;&lt; oct &lt;&lt; value &lt;&lt; endl;</strong></div>
+</div>
+</td>
+<td><strong>100<sub>8</sub></strong></td>
+</tr>
+<tr>
+<td><strong>dec</strong></td>
+<td>
+<div>Вывод &nbsp; величин &nbsp; в</div>
+<div>десятичной &nbsp; системе</div>
+<div>счисления &nbsp; (по&nbsp;умолчанию)</div>
+</td>
+<td>
+<div>
+<div><strong>int value = 64;</strong></div>
+<div><strong>cout &lt;&lt; dec &lt;&lt; value &lt;&lt; endl;</strong></div>
+</div>
+</td>
+<td><strong>64<sub>10</sub></strong></td>
+</tr>
+<tr>
+<td><strong>hex</strong></td>
+<td>
+<div>Вывод &nbsp; величин &nbsp; в</div>
+<div>шестнадцатеричной</div>
+<div>системе &nbsp; счисления</div>
+<div></div>
+</td>
+<td>
+<div>
+<div>
+<div><strong>int value = 64;</strong></div>
+<div><strong>cout &lt;&lt; hex &lt;&lt; value &lt;&lt; endl;</strong></div>
+</div>
+</div>
+</td>
+<td><strong>40<sub>8</sub></strong></td>
+</tr>
+<tr>
+<td><strong>showbase&nbsp;</strong></td>
+<td>
+<div>Выводить индикатор</div>
+<div>основания &nbsp; системы</div>
+<div>счисления</div>
+</td>
+<td>
+<div>
+<div><strong>int value = 64;</strong></div>
+<div><strong>cout &lt;&lt; showbase &lt;&lt; hex &lt;&lt; value &lt;&lt; endl;</strong></div>
+</div>
+</td>
+<td><strong>0x40</strong></td>
+</tr>
+<tr>
+<td><strong>noshowbase&nbsp;</strong></td>
+<td>
+<div>Не выводить индикатор</div>
+<div>основания &nbsp; системы</div>
+<div>счисления (по умолчанию).</div>
+</td>
+<td>
+<div><strong>int value = 64;</strong></div>
+<div><strong>cout &lt;&lt; noshowbase &lt;&lt; hex &lt;&lt; value &lt;&lt; endl;</strong></div>
+</td>
+<td><strong>40</strong></td>
+</tr>
+<tr>
+<td><strong>uppercase</strong></td>
+<td>В шестнадцатеричной системе счисления использовать буквы верхнего регистра (по умолчанию установлены буквы нижнего регистра).</td>
+<td>
+<div>
+<div><strong>int value = 255;</strong></div>
+<div><strong>cout &lt;&lt; uppercase &lt;&lt; hex &lt;&lt; value &lt;&lt; endl;</strong></div>
+</div>
+</td>
+<td><strong>FF<sub>16</sub></strong></td>
+</tr>
+<tr>
+<td><strong>nouppercase&nbsp;</strong></td>
+<td>В шестнадцатеричной системе счисления использовать буквы нижнего регистра (по умолчанию).</td>
+<td>
+<div><strong>int value = 255;</strong></div>
+<div><strong>cout &lt;&lt; nouppercase &lt;&lt; hex &lt;&lt; value &lt;&lt; endl;</strong></div>
+</td>
+<td><strong>ff<sub>16</sub></strong></td>
+</tr>
+<tr>
+<td><strong>showpos</strong></td>
+<td>Вывод знака плюс <code>+</code>&nbsp;для положительных чисел</td>
+<td>
+<div>
+<div><strong>int value = 255;</strong></div>
+<div><strong>cout &lt;&lt; showpos&lt;&lt; value &lt;&lt; endl;</strong></div>
+</div>
+</td>
+<td><strong>+255</strong></td>
+</tr>
+<tr>
+<td><strong>noshowpos</strong></td>
+<td>Не выводить знак плюс <strong><code>+</code></strong>&nbsp;для положительных чисел (по умолчанию).</td>
+<td>
+<div><strong>int value = 255;</strong></div>
+<div><strong>cout &lt;&lt;noshowpos&lt;&lt; value &lt;&lt; endl;</strong></div>
+</td>
+<td><strong>255</strong></td>
+</tr>
+<tr>
+<td><strong>scientific</strong></td>
+<td>Вывод чисел с плавающей точкой в экспоненциальной форме</td>
+<td>
+<div>
+<div><strong>double value = 1024.165;</strong></div>
+<div><strong>cout &lt;&lt; scientific &lt;&lt; value &lt;&lt; endl;</strong></div>
+</div>
+</td>
+<td><strong>1.024165e+003</strong></td>
+</tr>
+<tr>
+<td><strong>fixed</strong></td>
+<td>Вывод чисел с плавающей точкой в фиксированной форме (по умолчанию).</td>
+<td>
+<div>
+<div><strong>double value = 1024.165;</strong></div>
+<div><strong>cout &lt;&lt; fixed &lt;&lt; value &lt;&lt; endl;</strong></div>
+</div>
+</td>
+<td><strong>1024.165</strong></td>
+</tr>
+<tr>
+<td><strong>setw(int number)</strong></td>
+<td>Установить ширину поля, где&nbsp;<code>number</code>&nbsp;— количество позиций, символов (выравнивание по умолчанию по правой границе).&nbsp;Манипулятор с параметром.</td>
+<td><strong>cout &lt;&lt; setw(40) &lt;&lt; «cppstudio.com» &lt;&lt; endl;</strong></td>
+<td><strong>__cppstudio.com</strong></td>
+</tr>
+<tr>
+<td><strong>right</strong></td>
+<td>Выравнивание по правой границе(по умолчанию). Сначала необходимо установить ширину поля(ширина поля должна быть заведомо большей чем, длина выводимой строки).</td>
+<td>
+<div><strong>cout &lt;&lt; setw(40) &lt;&lt; right &lt;&lt; «cppstudio.com» &lt;&lt; endl;</strong></div>
+</td>
+<td><strong>__cppstudio.com</strong></td>
+</tr>
+<tr>
+<td><strong>left&nbsp;</strong></td>
+<td>Выравнивание по левой границе. Сначала необходимо установить ширину поля(ширина поля должна быть заведомо большей чем, длина выводимой строки).</td>
+<td>
+<div><strong>cout &lt;&lt; setw(40) &lt;&lt; left &lt;&lt; «cppstudio.com» &lt;&lt; endl;</strong></div>
+</td>
+<td><strong>cppstudio.com__</strong></td>
+</tr>
+<tr>
+<td><strong>setprecision(int count)</strong></td>
+<td>Задаёт количество знаков после запятой, где&nbsp;<code>count</code>&nbsp;— количество знаков после десятичной точки</td>
+<td><strong>cout &lt;&lt; fixed &lt;&lt; setprecision(3) &lt;&lt; (13.5 / 2) &lt;&lt; endl;</strong></td>
+<td><strong>6.750</strong></td>
+</tr>
+<tr>
+<td><strong>setfill(int symbol)</strong></td>
+<td>Установить символ заполнитель. Если ширина поля больше, чем выводимая величина, то свободные места поля будут наполняться символом&nbsp;<code>symbol</code><strong>&nbsp;</strong>— символ заполнитель</td>
+<td><strong>cout &lt;&lt; setfill(‘0′) &lt;&lt; setw(4) &lt;&lt; 15 &lt;&lt; ends &lt;&lt; endl;</strong></td>
+<td><strong>0015</strong></td>
+</tr>
+</tbody>
+</table>

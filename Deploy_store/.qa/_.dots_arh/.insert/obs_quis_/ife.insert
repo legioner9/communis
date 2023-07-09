@@ -1,0 +1,5 @@
+local errno=$?
+if [ ${errno} -ne 0 ]; then
+    plt_exit "be return ${errno} <- Fail: ${FNN} in ${FNLOCK}"
+    return ${errno}
+fi

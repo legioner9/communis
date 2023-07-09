@@ -1,0 +1,20 @@
+#>exl
+
+# start/communis/Deploy_store/.qa/.exl/cr_tst_dir_/create_tst_dir.exl
+
+eval tml_dir=${PATH_TML_DIR}/cr_tst_dir_/fn_tst
+eval tst_dir=${PPWD}/${name_dir}
+eval cp -rfuv ${tml_dir}/. ${tst_dir}
+
+#? _flow_tst.sh
+eval file_path=${tst_dir}/_flow_tst.sh
+
+eval cr_f_ ${file_path} --vi0 ${file_path} --vr0 {file_path}
+eval upg_path_ ${file_path}
+
+#? exec._tst
+eval wrp_fifs2_ mv ${tst_dir}/exec._tst ${tst_dir}/exec._${ext}
+eval file_path=${tst_dir}/exec._${ext}
+
+eval cr_f_ ${file_path} --vi0 ${file_path} --vr0 {file_path}
+eval upg_path_ ${file_path}

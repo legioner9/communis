@@ -1,0 +1,24 @@
+#!/bin/bash
+
+#. "$HOME/.bashrc"
+
+filename="$HOME/00000/virga_tsa/specto_tsa.tsc"
+
+# echo -e "${HLIGHT}---start file://$filename ---${NORMAL}" # start file
+
+idir=$(pwd)
+
+# cd "$(prs_f -d $filename)" || qq_exit "$(prs_f -d $filename) not found"
+
+garg_ $(prs_f -n $filename) $@ 1>/dev/null
+
+if [ "$(up_err_ tsa 00000/virga_tsa/path_tsa.list)" ]; then
+    echo "IN file://$filename tst TRUE"
+else
+    echo "IN file://$filename tst FAIL" >&2
+fi
+
+
+cd "$idir"
+
+unset filename

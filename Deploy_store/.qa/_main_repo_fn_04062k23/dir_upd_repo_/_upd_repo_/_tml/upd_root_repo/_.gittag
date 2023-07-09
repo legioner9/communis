@@ -1,0 +1,24 @@
+# tasks: Maj=^^ Min=^ Patch=
+# *=done or not actual @=to archiv &=to future
+# -< cancel that
+# ! dont forget
+# v.1.0.0
+# complete git_init.sh 
+# ?*-> fix push in all bare (_bare Bare_1 Bare_2)
+# *^-> add refresh_repo
+# v.1.0.1
+# complete add _bare  
+# *-> not init git in $repo_path
+# v.1.0.2
+# complete not init git in $repo_path
+# *-> fix push in all bare (_bare Bare_1 Bare_2)
+# ?*-> fix /home/st/Bare_1 to /home/st/Bare_1/$name_repo in init Bare
+# v.1.0.3
+# complete fix push in all bare (_bare Bare_1 Bare_2)
+# *^-> add refresh_repo
+# @-> now_arr_bare
+# v.1.1.0
+# cross platform add
+# @-> add add_to_now_repo from reserv_repo (mark # in .gitrepo)
+# @-> get_reserv_repo resulting reserv_repo in up_git_memory.sh
+# *-> communis Bat/sis as entre point 

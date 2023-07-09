@@ -1,0 +1,71 @@
+## main ancors site http://cppstudio.com/
+
+<table class="table table-bordered table-striped table-hover">
+<thead>
+<tr>
+<th style="text-align: center;">С++</th>
+<th style="text-align: center;">ДЛЯ&nbsp;НАЧИНАЮЩИХ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="width: 50%;">Полезная информация по языку программирования С++:<p></p>
+<ul>
+<li style="text-align: justify;"><a href="http://cppstudio.com/post/1984/">история возникновения С++</a>;</li>
+<li style="text-align: justify;">краткое описание <a href="http://cppstudio.com/post/1980/">основных характеристик</a> языков программирования;</li>
+<li style="text-align: justify;"><a href="http://cppstudio.com/post/2025/">Часто задаваемые вопросы</a>, касающиеся С++.</li>
+</ul>
+</td> 
+<td>Полезная информация для новичков в C/С++:<p></p>
+<ul>
+<li style="text-align: justify;"><a href="http://cppstudio.com/cat/299/">рекомендуемая литература по &nbsp;C/С++</a>;</li>
+<li style="text-align: justify;"><a href="http://cppstudio.com/post/154/">установка и выбор компиляторов</a> (IDE -среда разработки);</li>
+<li style="text-align: justify;"><a href="http://cppstudio.com/post/134/">как начать программировать на&nbsp;C/С++</a>;</li>
+<li style="text-align: justify;"><a href="http://cppstudio.com/cat/270/">полезная информация по С++</a>&nbsp;и много других интересных статей для начинающих программистов.</li>
+</ul>
+</td>
+</tr>
+<tr>
+<th style="text-align: center;">УЧЕБНИКИ</th>
+<th style="text-align: center;">ПРАКТИКУМ</th>
+</tr>
+<tr>
+<td>Интересные и&nbsp;познавательные&nbsp;статьи нашего сайта, касающиеся различных конструкций изучаемого языка:<p></p>
+<ul>
+<li style="text-align: justify;"><a href="http://cppstudio.com/cat/271/">учебник C (СИ)</a>;</li>
+<li style="text-align: justify;"><a href="http://cppstudio.com/cat/274/">учебник С++ (Си++)</a>;</li>
+<li style="text-align: justify;">программирование игр;</li>
+<li style="text-align: justify;">программирование графики;</li>
+<li style="text-align: justify;"><a href="http://cppstudio.com/cat/293/">алгоритмы и структуры данных</a>;</li>
+<li style="text-align: justify;"><a href="http://cppstudio.com/post/262/">отладка</a>;</li>
+<li style="text-align: justify;"><a href="http://academy.cppstudio.com/lesson/57/" target="_blank">интерактивные уроки по С++</a>.</li>
+</ul>
+</td>
+<td>Большое количество <a href="http://cppstudio.com/cat/285/">задач и их исходный код</a>, который исправно работает. Есть возможность выбрать любую понравившуюся задачу и решить, если не получается — подсмотрите в готовый исходный код.<p></p>
+<p style="text-align: justify;">Задачи задачами, а изученный теоретический материал нужно закрепить на практике. Для этого, на ресурсе выложено <a href="http://cppstudio.com/praktikum/testy-po-programmirovaniyu-na-yazyke-s/">большое количество тестов</a>, отвечайте на вопросы и в конце увидите свой результат.</p>
+<p style="text-align: justify;">Недо-код — это ещё один вид самоконтроля, вам даются <a href="http://cppstudio.com/cat/307/">программы, в которых отсутствуют некоторые фрагменты кода</a>. Ваша задача — дописать этот код таким образом, чтобы программа работала точно так, как требует того условие.</p>
+<p style="text-align: justify;">Новый формат обучения — <a href="http://academy.cppstudio.com/courses/" target="_blank">академия C++</a>, присоединяйтесь.</p>
+</td>
+</tr>
+<tr>
+<th style="text-align: center;">СПРАВОЧНИКИ</th>
+<th style="text-align: center;">&nbsp;ФОРУМ</th>
+</tr>
+<tr>
+<td>Описание наиболее важных классов, функций и объектов стандартной библиотеки языка С++, с примерами кодов программ и результатами их работы.<p></p>
+<ul>
+<li style="text-align: justify;"><a href="http://cppstudio.com/cat/309/">Си библиотеки</a>&nbsp;— популярные заголовочные файлы, которые входят в состав языка C++.</li>
+<li style="text-align: justify;">IOStream библиотеки.&nbsp;Стандартный заголовочный файл языка C++ для &nbsp;организации операций ввода/вывода.</li>
+<li style="text-align: justify;">Библиотека String — Заголовочный файл определяющий класс string .</li>
+<li style="text-align: justify;">STL — стандартный заголовочный файл шаблонов, которые определяют контейнеры, &nbsp;алгоритмы &nbsp;и т. д.</li>
+</ul>
+</td>
+<td>Своеобразная доска объявлений, тут пользователи могут обмениваться информацией, комментировать, задавать или отвечать на вопросы.<p></p>
+<p style="text-align: justify;">Чтобы оставлять комментарии и сообщения на форуме необходимо&nbsp;<a href="http://cppstudio.com/wp-login.php?action=register">зарегистрироваться</a> и авторизоваться.</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+
+

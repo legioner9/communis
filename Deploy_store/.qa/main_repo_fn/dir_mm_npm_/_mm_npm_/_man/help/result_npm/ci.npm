@@ -1,0 +1,8 @@
+# npm ci in ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_mm_npm_/_mm_npm_/_man/help
+
+npm WARN prepare removing existing node_modules/ before installation
+added 98 packages in 0.994s
+
+# npm ci -h in ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_mm_npm_/_mm_npm_/_man/help
+
+npm ci

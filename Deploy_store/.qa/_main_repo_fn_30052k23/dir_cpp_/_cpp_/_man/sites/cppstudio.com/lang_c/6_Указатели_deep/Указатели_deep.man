@@ -1,0 +1,4 @@
+## Указатели_deep
+
+## https://learnc.info/c/pointers.html
+

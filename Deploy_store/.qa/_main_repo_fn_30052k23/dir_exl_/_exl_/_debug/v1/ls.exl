@@ -1,0 +1,3 @@
+eval ls $HOME/TMP
+eval ls $HOME/TMPx 2>/dev/null
+eval ls $HOME/TMP

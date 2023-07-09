@@ -1,0 +1,11 @@
+# spec plt
+
+# 1_2_3_
+
+## 1 - ch=choice s=search se=seer is=issuer re=recurse cft=shifter cr=create
+## 2 - tg=tag fn=function ma=man ty=type md=md
+## 3 - 
+
+### re_S_a_ = recurse function for s_a_ - define in _sh dir_re_S_a
+### abc_L = any function - define in this function only for L local use
+

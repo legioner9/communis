@@ -1,0 +1,266 @@
+### UP
+[sigaltstack](##sigaltstack)
+[MAIN](##MAIN)
+[MAIN_ru](##MAIN_ru)
+[ANCORS](##ANCORS)
+[ISU](##ISU)
+[inet](##A_inet)
+[inet](##books_inet)
+[inet](##examples_inet)
+[inet](##classic_inet)
+[inet](##enters_inet)
+[inet](##issue_code_inet)
+[H_FILE](##H_FILE)
+[p_SYNOPSIS](##p_SYNOPSIS)
+[p_RETURN](##p_RETURN)
+[p_RETURN_ru](##p_RETURN_ru)
+[p_BUGS](##p_BUGS)
+[p_DESCRIPTION_ru](##p_DESCRIPTION_ru)
+[p_DESCRIPTION](##p_DESCRIPTION)
+[p_MIRRORS](##p_MIRRORS)
+[p_EXAMPLES](##p_EXAMPLES)
+[p_CODE_h](##p_CODE_h)
+[p_CODE_c](##p_CODE_c)
+[p_CODE_m](##p_CODE_m)
+[p_ERRORS](##p_ERRORS)
+[p_BOOKS](##p_BOOKS)
+[p_BOOKS_ru](##p_BOOKS_ru)
+[p_CONTENT](##p_CONTENT)
+
+[cat_hfiles](../../cat_hfiles.md)
+[cat_utils](../../cat_utils.md)
+[cat_structs](../../cat_structs.md)
+[cat_param](../../cat_params.md)
+[cat_macros](../../cat_macross.md)
+[cat_const](../../cat_consts.md)
+[cat_type](../../cat_types.md)
+[cat_any](../cat_anys.md)
+
+
+[UP](###UP)
+## MAIN
+:sigaltstack:
+[next](##MAIN_ru)
+
+<<MAIN>>
+[MAIN](../../fills/sigaltstack/MAIN)
+
+
+
+[UP](###UP)
+## MAIN_ru
+:sigaltstack:
+[next](##ANCORS)
+
+<<MAIN_ru>>
+[MAIN_ru](../../fills/sigaltstack/MAIN_ru)
+
+[UP](###UP)
+## ANCORS
+:sigaltstack:
+[next](##ISU)
+
+<<ANCORS>>
+[ANCORS](../../fills/sigaltstack/ANCORS)
+
+[UP](###UP)
+## ISU
+:sigaltstack:
+[next](##H_FILE)
+
+<<ISU>>
+only read
+:sigaltstack:
+[ISU](../../contents)
+[next](##inet)
+
+
+[UP](###UP)
+## inet
+:sigaltstack:
+[next](##H_FILE)
+
+
+[UP](###UP)
+## A_inet
+[manpages.org](https://www.google.ru/search?q=sigaltstack+site%3Ahttps%3A%2F%2Fmanpages.org)
+[reposcope.com_ru](https://www.google.ru/search?q=sigaltstack+site%3Ahttps%3A%2F%2Freposcope.com%2Fmanpages%2Fru)
+[pubs.opengroup.org](https://www.google.com/search?q=sigaltstack+https%3A%2F%2Fpubs.opengroup.org)
+[manpages.debian.org](https://yandex.ru/search/?text=sigaltstack+site%3Ahttps%3A%2F%2Fmanpages.debian.org%2F)
+[www.opennet.ru](http://www.opennet.ru/man.shtml?category=2&topic=sigaltstack)
+[man7.org](https://www.google.ru/search?q=sigaltstack+site%3Ahttps%3A%2F%2Fman7.org%2Flinux%2Fman-pages)
+[en.cppreference.com](https://www.google.com/search?q=sigaltstack+en.cppreference.com)
+[www.mankier.com](https://www.mankier.com/?q=sigaltstack)
+[www.codecogs.com](https://www.google.ru/search?q=sigaltstack+https%3A%2F%2Fwww.codecogs.com%2Flibrary%2Fcomputing%2F)
+[digitalmars.com](https://www.google.ru/search?q=sigaltstack+https%3A%2F%2Fdigitalmars.com%2Frtl%2F)
+
+
+[UP](###UP)
+## books_inet
+[cpp.com.ru](https://yandex.ru/search/?text=sigaltstack+site%3Ahttps%3A%2F%2Fcpp.com.ru)
+[linuxhint.com](https://www.google.ru/search?q=sigaltstack+site%3Ahttps%3A%2F%2Flinuxhint.com)
+[gnu.org](https://www.google.ru/search?q=sigaltstack+site%3Ahttps%3A%2F%2Fwww.gnu.org%2Fsoftware%2Flibc%2Fmanual)
+
+[UP](###UP)
+## examples_inet
+[yandex:examples](https://yandex.ru/search/?text=sigaltstack+example+in+c)
+[docs.oracle.com](https://www.google.com/search?q=sigaltstack+https%3A%2F%2Fdocs.oracle.com)
+[manpages.debian.org](https://yandex.ru/search/?text=sigaltstack+site%3Ahttps%3A%2F%2Fmanpages.debian.org%2F)
+[osr507doc.xinuos.com](https://www.google.com/search?q=sigaltstack+http%3A%2F%2Fosr507doc.xinuos.com%2Fen%2Fman)
+[cpp.hotexamples.com](https://cpp.hotexamples.com/examples/-/-/sigaltstack/cpp-sigaltstack-function-examples.html)
+[all-ht.ru](https://yandex.ru/search/?text=sigaltstack+site%3Ahttp%3A%2F%2Fall-ht.ru%2Finf%2Fprog%2Fc%2F)
+[cppreference.com](https://yandex.ru/search/?text=sigaltstack+site%3Ahttps%3A%2F%2Fen.cppreference.com%2Fw%2Fc%2F)
+
+[UP](###UP)
+## classic_inet
+[bogatyrev_c_unix](https://www.google.com/search?q=sigaltstack+site%3Ahttps%3A%2F%2Fcpp.com.ru%2Fbogatyrev_c_unix)
+[kr_cbook](https://www.google.com/search?q=sigaltstack+site%3Ahttps%3A%2F%2Fcpp.com.ru%2Fkr_cbook)
+
+[UP](###UP)
+## enters_inet
+[pubs.opengroup.org](https://pubs.opengroup.org/onlinepubs/9699919799/idx/head.html)
+
+[UP](###UP)
+## issue_code_inet
+[code.woboq.org](https://www.google.com/search?h=&sitesearch=https%3A%2F%2Fcode.woboq.org%2Fuserspace%2Fglibc%2F&q=sigaltstack)
+
+
+[UP](###UP)
+## H_FILE 
+[signal_h.md](../../hfiles/signal_h.md)
+
+
+[UP](###UP)
+## p_SYNOPSIS
+:sigaltstack:
+[next](##p_RETURN_ru)
+
+<<SYNOPSIS>>
+[SYNOPSIS](../../fills/sigaltstack/SYNOPSIS)
+
+
+[UP](###UP)
+## p_RETURN_ru
+:sigaltstack:
+[next](##p_RETURN)
+
+<<RETURN>>
+[RETURN_ru](../../fills/sigaltstack/RETURN)
+
+
+[UP](###UP)
+## p_RETURN
+:sigaltstack:
+[next](##p_DESCRIPTION_ru)
+
+<<RETURN_ru>>
+[RETURN](../../fills/sigaltstack/RETURN_ru)
+
+
+[UP](###UP)
+## p_DESCRIPTION_ru
+:sigaltstack:
+[next](##p_DESCRIPTION)
+
+<<DESCRIPTION_ru>>
+[DESCRIPTION_ru](../../fills/sigaltstack/DESCRIPTION_ru)
+
+
+[UP](###UP)
+## p_DESCRIPTION
+:sigaltstack:
+[next](##p_BUGS)
+
+<<DESCRIPTION>>
+[DESCRIPTION](../../fills/sigaltstack/DESCRIPTION)
+
+
+[UP](###UP)
+## p_MIRRORS
+:sigaltstack:
+[next](##p_BUGS)
+
+<<MIRRORS>>
+[MIRRORS](../../fills/sigaltstack/MIRRORS)
+
+
+[UP](###UP)
+## p_BUGS
+:sigaltstack:
+[next](##p_EXAMPLES)
+
+<<BUGS>>
+[BUGS](../../fills/sigaltstack/BUGS)
+
+
+[UP](###UP)
+## p_EXAMPLES
+:sigaltstack:
+[next](##p_CODE)
+
+<<EXAMPLES>>
+[EXAMPLES](../../fills/sigaltstack/EXAMPLES)
+
+
+[UP](###UP)
+## p_CODE_h
+:sigaltstack:
+[next](##p_CODE_c)
+
+<<CODE_h>>
+[CODE_h](../../fills/sigaltstack/CODE_h)
+
+
+[UP](###UP)
+## p_CODE_c
+:sigaltstack:
+[next](##p_CODE_m)
+
+<<CODE_c>>
+[CODE_c](../../fills/sigaltstack/CODE_c)
+
+
+[UP](###UP)
+## p_CODE_m
+:sigaltstack:
+[next](##p_ERRORS)
+
+<<CODE_m>>
+[CODE_m](../../fills/sigaltstack/CODE_m)
+
+
+[UP](###UP)
+## p_ERRORS
+:sigaltstack:
+[next](##p_BOOKS)
+
+<<ERRORS>>
+[ERRORS](../../fills/sigaltstack/ERRORS)
+
+
+[UP](###UP)
+## p_BOOKS
+:sigaltstack:
+[next](##p_BOOKS_ru)
+
+<<BOOKS>>
+[BOOKS](../../fills/sigaltstack/BOOKS)
+
+
+[UP](###UP)
+## p_BOOKS_ru
+:sigaltstack:
+[next](##p_CONTENT)
+
+
+<<BOOKS_ru>>
+[BOOKS_ru](../../fills/sigaltstack/BOOKS_ru)
+
+
+[UP](###UP)
+## p_CONTENT
+:33333:
+[33333.cnt](../../contents/33333.cnt)
+[next](##UP)
+
+[UP](###UP)

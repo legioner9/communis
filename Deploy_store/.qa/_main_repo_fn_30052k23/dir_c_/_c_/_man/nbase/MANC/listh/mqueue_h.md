@@ -1,0 +1,11 @@
+p@mq_close
+p@mq_getattr
+p@mq_notify
+p@mq_open
+p@mq_receive
+p@mq_send
+p@mq_setattr
+p@mq_timedreceive
+p@mq_timedsend
+p@mq_unlink
+s@mq_attr

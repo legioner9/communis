@@ -1,0 +1,210 @@
+[code stiles requirements]
+
+WITHOUT space character in any path
+
+[plt functions]
+ 
+a_           ::  A_point
+a0_          :: discribe main flow
+b_           :: start A_point [plt functions]
+i_           :: start hot functions 
+p_           :: plans: done -> far
+ca_          :: start [learn_explore functions]
+ce_          :: exec and prepear clang man1 command
+hh_          :: echo hight hints
+rr           :: reboot bash
+rr_          :: reboot bash only error display
+s_s_         :: search main_fn by tag
+s_w_         :: search man info by word
+f_f_         :: create main_fn
+l_c_         :: treat c lang libs
+l_cpp_       :: treat cpp lang libs
+gtt_communis :: edit .gittag communis (files)
+qqq_enter    :: git framework
+spec_ _0     :: spec_plt.man lexicon_plt.man
+cr_0         :: start_intreract   cr_dir_from_file_ , prepeare that
+cpp_         :: start g++ in fis_dir
+mm_flow_     :: group menu
+setp_        :: set of steps (as: get sudo in Fedora, ...) 
+book_pull_run_open :: HPW BOOK.pdf
+upd_repo_    :: (Update exsists repo - style_repo , default fs_sis souch as git_hooks ...)
+git_         :: (wrap_git cli)
+edit_        :: exec exist sis editor gvim first
+stl_         :: what contane in BASH stl LIB
+any_         :: open other git pdf ...
+fed_         :: util for every Fedora (from fedora-faq-ru.pdf)
+pre_         :: start needed progs
+tst_         :: start all tests in .qa mirror pre-push hook [echo word fnm]
+code_        :: start_mode of code
+correct_     :: correct any files (as .css) and other configs
+tmls_        :: list of standart .tml (sh.tml ...)
+hint_        :: cat .word and any hint dots in any dir
+manc_        :: treat all clang man pages flow
+mancc_       :: <return:echo> grep search mans from 'start/communis/Deploy_store/.qa/main_repo_fn/dir_c_/_c_/_man/nbase/MANC '
+rep_         :: repair BAG -> makefiles gcc in (mancc_.list) usr/lib/gcc/x86_64-redhat-linux cp -rf 12/ 11/
+setp_        :: flows to setup any system (sudo -i or watches vscode)
+clr_cpjs_    :: rm *.o *.d from clr_cpjs_.lst
+add_PATH_    :: once add $1 to PATH (in shell)
+adf_fn_      :: add (modify) exist f_f_ file structure (exec in $PATH_FN/_dir_00000)
+chk_tst_     :: qq_exit if tst_ fail
+mmm_         :: menu of mm_... menu
+mm_rbl_cat_ext_ :: menu with rbl all cat for .ext (.word .cexa) , bfn -h with --grep
+mm_cr_all_   :: menu of all cr_...
+mm_rbl_all_  :: menu of all rbl_...
+mm_dogit_    :: start standart cases in gish
+examps_      :: any examples
+
+[ext]
+.lnf         :: file with links to file_system
+.word        :: for search in [tst_ word] exec (contane file in aggirgator)
+.isu         :: for search in rbl_man functions (name_file as using functions)
+.tst         :: .sh file for [tst_] exec
+.lst         :: standrt_fn file with using list
+.exa         :: examp files
+.anc         :: internet ancors
+.tod         :: tasks
+.cexa        :: examp files c
+.flu         :: flumen tempus - writer for day
+.var         :: --list .exl with variables for exl_
+.exl         :: --list for exl_
+.warg        :: 
+.plist       :: file list with ptrs($var)
+
+[dirs communis .qa]
+.canons      :: lists fns {bash, clang}
+.config      :: 1).tst: list_dirs for tst_ 2) env.sh - st env bash
+.flumen_tempus :: evrynotes [ .flu ]
+.lists       :: examples dimention_lists
+.tst         :: global tst_fies for all system
+.vexillum    :: templates for all system
+.ifs         :: files of interfaces [ *.ifs ]
+binc         :: cfiles_bin for use systems
+lib          :: bash libs
+main_repo_fn :: fns [true and empty]
+include_.sh  :: upper files from pwd [ ... env.sh ]
+
+[clang hints]
+..._z        :: {name_clang_fn}_z polofill original {name_clang_fn}
+lc_...       :: st clibs
+..._1.c      :: safe variants of unix clib
+mipt         :: fresh_cource for clang
+
+[bash hints]
+...__        :: modifyed standart bash function
+..._         :: .plt fn
+_..._        :: fonsh fn
+
+[bash naming]
+fnd_... :: find any
+rbl_... :: not once rebild (eg. catalog or opus from files)
+bld_... :: once bild (eg. DwF-dirs with files)
+cr_...  :: create single file or dir
+is_...  :: solet return 1 or 0
+prs_... :: [p]a[rs]ing 
+wrp_... :: [wr]a[p]per
+<ifs>   :: interface (eg. file <ifs> 2 arg :: wrp_fifs2_)
+mm_...  :: menu
+mmm_... :: menu of menu
+aes_... :: depr.:catalog contane from collect files
+opus_...:: hand made
+kbr_... :: [k]ey[b]oa[r]d 
+grg_... :: gregem (bilder fleet) fn (e.g. c, bash, c++)
+pgu_... :: pagus (canton - administrative part)
+rts_... :: ratis (e.g. heap)
+mst_... :: master - main
+
+[dig sign]
+
+...2... :: ... pipe to ...
+...3... :: ... treat to ...
+...7... :: in ... search where ... 
+
+[.qa/lib/user lib]
+PATH
+${PATH_COMMUNIS}/Deploy_store/.qa/lib/user
+<entety>
+enter_value_echo :: read value and echo that
+
+[plt_bd lib]
+PATH
+${PATH_COMMUNIS}/Deploy_store/plt_bd/sh
+<entety>
+pull_bck_push :: pull_push [if not exist create _git_communis in usb TOSHIBA_EXT, MY_ONE, ${HOME}/Bare_communis] 
+file://${PATH_COMMUNIS}/Deploy_store/plt_bd/sh/pull_bck_push.sh
+
+[MANC]
+specificator_chapts
+${PATH_MAIN_REPO_FN_DIR}/dir_c_/_c_/_man/articulus/man/specificator_chapts.man
+manc(7)
+${PATH_MAIN_REPO_FN_DIR}/dir_c_/_c_/_man/nbase/MANC/listh/a_explicatio_r.md
+manc(1)
+
+[fc_ ...] copy .ext files from ${PATH_VEXILLUM_DIR}
+cr_word :: exec._word common tasks and explanations
+cr_cexa :: name._cexa c examples
+
+[sys]
+xdg-open
+
+[env plt]
+env.sh : "${HOME}"/${PATH_CONFIG_DIR}/env
+[II plt functions]
+
+cr_0              :
+cr_dir_from_file_ :: create fs accoding _cr_dir_from_file_.md list and enteing .ext
+cr_1_to_n_files   :: create fs 1 to n .ext=.man
+cr_cpp_h_         :: create C++ .h file with header guards
+cr_pj_c_simp_     :: ceate Project Clang Simple
+
+[in functions]
+
+clear_symbols_ :: $1 var_to_clear $2 replaser ( _ default )
+
+[learn_explore functions]
+
+[mysql_] 'qweQWE123!@#'
+
+[AUTO TEST SITEM]
+env.sh: $PATH_TST_FILE path to ${PATH_CONFIG_DIR}/.tst WITH tested dir
+ret_true_fail $1 flag default = 1 is TRUE if = 0 is FAIL $2 = filename where run 
+examp cli call:
+$ ret_true_fail 1 "${PATH_COMMUNIS}/Deploy_store/.qa/" 
+$ IN ${PATH_TST_DIR} TRUE
+
+[DIR TST]:
+check_dir_tst $1 fullname whear call this function dir file in dir for check ALL .sh fnfile
+examp dir: ${PATH_COMMUNIS}/Deploy_store/.qa/lib/stl_tmp
+
+[FILE TST]:
+examp dir: start/communis/Deploy_store/.qa/lib/stl_tmp_2
+
+[FREE TST]:
+examp dir: start/communis/Deploy_store/.qa/lib/stl_tmp_3
+
+[ALL REPO TST]:
+check_all_tst $1 dir for search .tst files for exec NOT_DOT_AND_UNDERSCORE_IN_PATH
+examp pre_push file: start/communis/Deploy_store/.qa/_examps/pre-push
+
+[ALL REPO MORE_ONE_DIR TST]:
+check_all_tst_arr NOT_ARG but IN_FN_USE arr_dir_for_check_all_tst from global 
+examp pre_push file: start/communis/Deploy_store/.qa/_examps/pre-push.2
+
+[code USER SNIPPETS]
+cpp     :: main file c++
+ccp     :: main file clang
+lc_0    :: include lc_0.h with comment all function
+ppy     :: main file python
+forbc   :: safe_space loop
+cd_err  :: cd \$dir || qq_exit :staff:
+
+
+[stl]
+prs_f.sh   :: pars path dir files ext {prs_f -h} help
+d_a_stl.sh :: contane dir to arr->echo
+
+[pli fn default args]
+man :: edit_ "$PATH_FN"/dir_"$FNN"/"$FNN".man    -- in fn dir .man file
+test :: "$FNN"test                               -- start infn test (examp: start/communis/Deploy_store/.qa/lib/stl/prs_f.sh)
+list :: edit_ "$PATH_FN"/dir_"$FNN"/"$FNN".lst   -- 
+go :: edit dir with fn                           --
+

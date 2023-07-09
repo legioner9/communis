@@ -1,0 +1,6 @@
+#>var
+
+eval src="/home/${USER}/.vscode-oss" 
+eval dest_d="/home/${USER}" 
+#! usually eval bag="/run/media/${USER}/${name_flash}/TSF/${prf}_tsf"
+eval bag="/run/media/${USER}/${name_flash}/TSF/${prf}_tsf"

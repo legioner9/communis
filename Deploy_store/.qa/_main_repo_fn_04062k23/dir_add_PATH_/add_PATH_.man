@@ -1,0 +1,3 @@
+## man add_PATH_
+
+once add pathes from add_PATH_.lst to PATH

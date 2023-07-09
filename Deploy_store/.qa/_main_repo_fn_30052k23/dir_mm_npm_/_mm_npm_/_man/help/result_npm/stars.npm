@@ -1,0 +1,12 @@
+# npm stars in ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_mm_npm_/_mm_npm_/_man/help
+
+npm ERR! code ENEEDAUTH
+npm ERR! need auth 'npm stars' on your own user account requires auth
+npm ERR! need auth You need to authorize this machine using `npm adduser`
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/st/.npm/_logs/2023-03-08T07_17_11_935Z-debug.log
+
+# npm stars -h in ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_mm_npm_/_mm_npm_/_man/help
+
+npm stars [<user>]

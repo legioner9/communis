@@ -1,0 +1,11 @@
+https://manpages.org/getpriority
+
+#include <sys/resource.h>
+...
+int which = PRIO_PROCESS;
+id_t pid;
+int priority = -20;
+int ret;
+
+pid = getpid();
+ret = setpriority(which, pid, priority);

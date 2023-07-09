@@ -1,0 +1,151 @@
+## dirent
+
+    struct dirent {
+        ino_t          d_ino;       /* номер inode */
+        off_t          d_off;       /* не смещение; смотрите ЗАМЕЧАНИЯ */
+        unsigned short d_reclen;    /* длина этой записи */
+        unsigned char  d_type;      /* тип файла; поддерживается
+                                    не всеми типами файловых систем */
+        char           d_name[256]; /* имя файла */
+    };
+
+## stat
+
+    struct stat {
+        dev_t     st_dev;         /* ID of device containing file */
+        ino_t     st_ino;         /* Inode number */
+        mode_t    st_mode;        /* File type and mode */
+        nlink_t   st_nlink;       /* Number of hard links */
+        uid_t     st_uid;         /* User ID of owner */
+        gid_t     st_gid;         /* Group ID of owner */
+        dev_t     st_rdev;        /* Device ID (if special file) */
+        off_t     st_size;        /* Total size, in bytes */
+        blksize_t st_blksize;     /* Block size for filesystem I/O */
+        blkcnt_t  st_blocks;      /* Number of 512B blocks allocated */
+
+        /* Since Linux 2.6, the kernel supports nanosecond
+            precision for the following timestamp fields.
+            For the details before Linux 2.6, see NOTES. */
+
+        struct timespec st_atim;  /* Time of last access */
+        struct timespec st_mtim;  /* Time of last modification */
+        struct timespec st_ctim;  /* Time of last status change */
+
+    #define st_atime st_atim.tv_sec      /* Backward compatibility */
+    #define st_mtime st_mtim.tv_sec
+    #define st_ctime st_ctim.tv_sec
+    };
+
+## timespec
+
+    struct timespec {
+        time_t tv_sec;        /* секунды */
+        long   tv_nsec;       /* наносекунды */
+    };
+
+## glob_t
+
+    typedef struct {
+        size_t   gl_pathc;    /* количество совпавших путей  */
+        char   **gl_pathv;    /* список совпавших имён путей.  */
+        size_t   gl_offs;     /* зарезервированные в gl_pathv слоты.  */
+    } glob_t;
+
+## wordexp_t
+
+    typedef struct {
+        size_t   we_wordc;   // Количество слов, совпадающих по словам.
+        char   **we_wordv;   // Указатель на список развернутых слов.
+        size_t   we_offs     // Слоты для резервирования в начале pwordexp->we_wordv.
+        }
+
+## utmpx
+
+    struct utmpx {
+            short           ut_type;    /* Type of entry. */
+            struct timeval  ut_tv;      /* Time entry was made. */
+            char            ut_id[];    /* Record identifier. */
+            pid_t           ut_pid;     /* Process ID. */
+            char            ut_user[];  /* User login name. */
+            char            ut_line[];  /* Device name. */
+            char            ut_host[];  /* Remote hostname. */
+    };
+
+## utimbuf
+
+    struct utimbuf {
+            time_t actime;  /* время доступа */
+            time_t modtime; /* время модификации */
+    };
+
+## timeval
+
+    struct timeval {
+            long    tv_sec;         /* секунды */
+            long    tv_usec;        /* микросекунды */
+    };
+
+## termios
+
+    ?struct termios {
+            tcflag_t c_iflag;      /* режимы ввода */
+            tcflag_t c_oflag;      /* режимы вывода */
+            tcflag_t c_cflag;      /* режимы управления */
+            tcflag_t c_lflag;      /* режимы локали */
+            cc_t c_cc[NCCS];       /* управляющие символы */
+    }
+
+## utsname
+
+    struct utsname {
+               char sysname[];    /* Operating system name (e.g., "Linux") */
+               char nodename[];   /* Name within "some implementation-defined
+                                     network" */
+               char release[];    /* Operating system release
+                                     (e.g., "2.6.28") */
+               char version[];    /* Operating system version */
+               char machine[];    /* Hardware identifier */
+           #ifdef _GNU_SOURCE
+               char domainname[]; /* NIS or YP domain name */
+           #endif
+           };
+
+## sockaddr_un
+
+    struct sockaddr_un {
+        sa_family_t sun_family;               /* AF_UNIX */
+        char        sun_path[108];            /* имя пути */
+    };
+
+## ucred
+
+    struct ucred {
+        pid_t pid;    /* идентификатор посылающего процесса */
+        uid_t uid;    /* идентификатор пользователя посылающего процесса */
+        gid_t gid;    /* идентификатор группы посылающего процесса */
+    };
+
+## statvfs 
+
+    struct statvfs {
+        unsigned long  f_bsize;    /* размер блока файловой системы */
+        unsigned long  f_frsize;   /* размер фрагмента */
+        fsblkcnt_t     f_blocks;   /* размер ФС в единицах f_frsize */
+        fsblkcnt_t     f_bfree;    /* количество свободных блоков */
+        fsblkcnt_t     f_bavail;   /* количество свободных блоков
+                                    для непривилегированных пользователей */
+        fsfilcnt_t     f_files;    /* количество inodes */
+        fsfilcnt_t     f_ffree;    /* количество свободных inodes */
+        fsfilcnt_t     f_favail;   /* количество свободных inodes
+                                    для непривилегированных пользователей */
+        unsigned long  f_fsid;     /* идентификатор файловой системы */
+        unsigned long  f_flag;     /* параметры монтирования */
+        unsigned long  f_namemax;  /* максимальная длина имени файла */
+    };
+
+## sockaddr_un
+
+    struct sockaddr_un {
+    sa_family_t sun_family;               /* AF_UNIX */
+    char        sun_path[108];            /* имя пути */
+    };

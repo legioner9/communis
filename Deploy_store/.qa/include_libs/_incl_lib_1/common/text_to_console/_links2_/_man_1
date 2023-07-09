@@ -1,0 +1,25 @@
+# http://links.twibright.com/download.php
+# http://links.twibright.com/download/links-2.25.tar.gz
+
+
+Распакуйте исходный архив: «tar xzvf links-2.25.tar.gz» или «tar xjvf links-2.25.tar.bz2» Перейдите во вновь созданный каталог.
+Задайте "./configure --help" и запустите "./configure" с нужными параметрами (возможно, --enable-graphics и, возможно, еще несколько).
+После завершения "настройки" проверьте таблицу, действительно ли вы получили то, что хотите.
+Типа "сделать". Игнорируйте возможное предупреждение о функции tempnam, код ссылок правильный.
+Если у вас есть root-доступ, войдите в систему как root и выполните «make install» в том же каталоге. Если вы устанавливаете Links как обычный пользователь, поместите исполняемый файл «links», созданный командой «make», в какое-нибудь подходящее место, возможно, в вашем $ PATH.
+Если у вас нет постоянного доступа к Интернету, скопируйте весь подкаталог «doc /» в какое-нибудь подходящее место (/ usr / share /, / usr / local / share / или у себя дома ...). Наиболее важным является подкаталог «doc / links_cal /», который содержит документы HTML (calibrace.html на английском языке и kalibrace.html на чешском языке) и изображения, которые используются для калибровки.
+Если у вас есть оконный менеджер системы X Window и вы хотите установить в него значок ссылок, вы найдете подходящий значок 48x48 в файле graphics / links.xpm.
+Удалите архив и исходный каталог.
+Если графический режим включен, запустите «links -g doc / Calibration.html » (или «links -g» и укажите в браузере процедуру калибровки ) и продолжите калибровку монитора и ссылки.
+Теперь вы можете использовать браузер. Запустите «links -g», если вы хотите работать с графикой, и «links», если вы хотите работать в текстовом режиме.
+
+Unpack the source archive: "tar xzvf links-2.25.tar.gz" or "tar xjvf links-2.25.tar.bz2" Change into the newly-created directory.
+Issue "./configure --help" and the run "./configure" with the parameters you want (probably --enable-graphics and maybe some more)
+After "configure" ends, check the table if you really get what you want
+Type "make". Ignore possible warning about tempnam function, links code is correct.
+If you got a root access, log in as root and do "make install" in the same directory. If you are installing Links as an ordinary user, place the "links" executable file that was created by the "make" command into some suitable place possibly within your $PATH.
+If you haven't got a permanent Internet access, copy the whole subdirectory "doc/" into some suitable place (/usr/share/, /usr/local/share/, or in your home...). Most important is the "doc/links_cal/" subdirectory which contains HTML documents (calibration.html in English and kalibrace.html in Czech) and pictuers that are used for calibration.
+If you have an X Window System windowmanager and want to install a Links icon into it, you will find a suitable 48x48 icon in graphics/links.xpm.
+Delete the archive and the source directory.
+If graphics mode is enabled, run "links -g doc/calibration.html" (or "links -g" and point the browser to The Calibration Procedure) and proceed with the calibration of your monitor and Links
+Now you can use the browser. Run "links -g" if you want to run in graphics and "links" if you want to run in text mode.

@@ -1,0 +1,23 @@
+main_getline
+main_copy
+
+main(){
+
+    int longest_len = 0;
+    char longest[MAXLEN];
+    char str_from_stdout[MAXLEN];
+
+
+    for (i=0; (n = main_getline(str_from_stdout, MAXLEN)) < MAXLEN, ++i){
+        if (n > longest_len){
+            longest_len = n;
+            main_copy(longest_len, str_from_stdout);
+            }
+    }
+
+    if (longest_len > 0){
+        printf(longest);
+    }
+
+}
+

@@ -1,0 +1,17 @@
+# proc_bcp_to_flash.exl
+- cp_zip_to_tosh_alt.exl
+- cp_zip_from_toshiba_ext_alt.exl
+
+# zip_inplace (at system fs :: SF)(at flash fs :: FF)
+
+## SF rm file.zip SF
+## SF file file not exist SF
+## SF zip in place file -> file.zip 
+## SF file file.zip exist
+
+# cp file.zip from SF to FF  
+
+## FF rm file.zip
+## FF file file.zip not exist FF
+## cp SF file.zip to FF file.zip
+## FF file file.zip exist FF

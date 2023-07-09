@@ -1,0 +1,14 @@
+-d delete all exclude /listh/ 
+
+EXAMP
+in ${PATH_MAIN_REPO_FN_DIR}/dir_cr_man_h_unix_/_cr_man_h_unix_/_debug/v.5
+cr_man_h_unix_ (create man system)
+cr_man_h_unix_ -d (delite man system)
+
+
+p@ prototype
+t@ type
+s@ struct
+c@ symbolic constants
+d@ compile parametr
+m@ macros

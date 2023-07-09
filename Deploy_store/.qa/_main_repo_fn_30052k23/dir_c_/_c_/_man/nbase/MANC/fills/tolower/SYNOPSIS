@@ -1,0 +1,5 @@
+#include <ctype.h>
+int toupper(int c);
+int tolower(int c);
+int toupper_l(int c, locale_t locale);
+int tolower_l(int c, locale_t locale);

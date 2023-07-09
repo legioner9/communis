@@ -1,0 +1,25 @@
+count=0
+
+IFS='
+'
+
+# $1=file.list2
+# $2=delim
+
+for item in $(prn_list_2_ "$x1" "$x2"); do
+
+    # echo -e "${GREEN}\$item = $item${NORMAL}" #print variable
+
+    if [ 0 -eq "$count" ]; then
+        PART_1=$item
+        count=1
+        continue
+    fi
+    if [ 1 -eq "$count" ]; then
+        PART_2=$item
+        # use args PART_1, PART_2
+        count=0
+        continue
+    fi
+    # count=$((count +1))
+done

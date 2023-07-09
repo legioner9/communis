@@ -1,0 +1,105 @@
+https://ru.manpages.org/strtok_r/3
+
+В программе, представленной далее, используются вложенные циклы, которые вызывают strtok_r() для разделения строки на составляющие её токены. В первом параметре командной строки задаётся анализируемая строка. Во втором параметре задаётся байт(ы)- разделитель, который используется для деления строки на «составные» токены. В третьем параметре указывается байт(ы)- разделитель, который используется для разделения «составных» токенов на подтокены.
+Пример результата вывода программы:
+
+$ ./a.out 'a/bbb///cc;xxx:yyy:' ':;' '/'
+1: a/bbb///cc
+         --> a
+         --> bbb
+         --> cc
+2: xxx
+         --> xxx
+3: yyy
+         --> yyy
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+int
+main(int argc, char *argv[])
+{
+    char *str1, *str2, *token, *subtoken;
+    char *saveptr1, *saveptr2;
+    int j;
+    if (argc != 4) {
+        fprintf(stderr, "Использование: %s string delim subdelim\n",
+                argv[0]);
+        exit(EXIT_FAILURE);
+    }
+    for (j = 1, str1 = argv[1]; ; j++, str1 = NULL) {
+        token = strtok_r(str1, argv[2], &saveptr1);
+        if (token == NULL)
+            break;
+        printf("%d: %s\n", j, token);
+        for (str2 = token; ; str2 = NULL) {
+            subtoken = strtok_r(str2, argv[3], &saveptr2);
+            if (subtoken == NULL)
+                break;
+            printf("	 --> %s\n", subtoken);
+        }
+    }
+    exit(EXIT_SUCCESS);
+}
+
+https://manpages.org/strtok
+
+The following example searches for tokens separated by <space>s.
+
+#include <string.h>
+...
+char *token;
+char *line = "LINE TO BE SEPARATED";
+char *search = " ";
+
+/* Token will point to "LINE". */
+token = strtok(line, search);
+
+/* Token will point to "TO". */
+token = strtok(NULL, search);
+
+
+The following example uses strtok() to break a line into two character strings separated by any combination of <space>s, <tab>s, or <newline>s.
+
+#include <string.h>
+...
+struct element {
+    char *key;
+    char *data;
+};
+...
+char line[LINE_MAX];
+char *key, *data;
+...
+key = strtok(line, "    \n");
+data = strtok(NULL, "   \n");
+...
+
+В примере, в строка «test1/test2/test3/test4» разбивается на части по разделителю “/” с помощью функции strtok. Результат разбиения выводится на консоль.
+
+int main (void)
+{    
+   // Массив со строкой для поиска
+   char str [24]=” test1/test2/test3/test4”;
+   // Набор символов, которые должны входить в искомый сегмент
+   char sep [10]=”/”;
+   // Переменная, в которую будут заноситься начальные адреса частей
+   // строки str
+   char *istr;
+
+   printf (“Исходная строка: %s\n“, str);
+   printf (“Результат разбиения:\n“);
+   // Выделение первой части строки
+   istr = strtok (str,sep);
+
+   // Выделение последующих частей
+   while (istr != NULL)
+   {
+      // Вывод очередной выделенной части
+      printf (“%s\n”,istr);
+      // Выделение очередной части строки
+      istr = strtok (NULL,sep);
+   }
+
+   return 0;
+}

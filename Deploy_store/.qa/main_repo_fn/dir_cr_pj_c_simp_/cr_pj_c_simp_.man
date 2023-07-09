@@ -1,0 +1,1 @@
+# cr_pj_c_simp_ :: create in root_dir $1 name Clang simple project

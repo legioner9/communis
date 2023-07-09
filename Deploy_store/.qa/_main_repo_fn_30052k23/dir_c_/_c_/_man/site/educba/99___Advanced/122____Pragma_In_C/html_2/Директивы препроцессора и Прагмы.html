@@ -1,0 +1,870 @@
+
+<!-- saved from url=(0038)https://cpp.com.ru/ansi_c/ar01s08.html -->
+<html m_init="2259300202203300732"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1251"><title>Директивы препроцессора и Прагмы</title><meta name="generator" content="DocBook XSL Stylesheets V1.75.2"><link rel="home" href="https://cpp.com.ru/ansi_c/index.html" title="Описание языка программирования ANSI C."><link rel="up" href="https://cpp.com.ru/ansi_c/index.html" title="Описание языка программирования ANSI C."><link rel="prev" href="https://cpp.com.ru/ansi_c/ar01s07.html" title="Функции">
+
+<!-- head begin -->
+
+	<script async="" src="./Директивы препроцессора и Прагмы_files/async-ads.js"></script><script src="./Директивы препроцессора и Прагмы_files/cb=gapi.loaded_1" async=""></script><script src="./Директивы препроцессора и Прагмы_files/cb=gapi.loaded_0" async=""></script><script async="" type="text/javascript" src="https://openstat.net/cnt.js"></script><script type="text/javascript" async="" src="./Директивы препроцессора и Прагмы_files/plusone.js" gapi_processed="true"></script><script type="text/javascript" async="" src="./Директивы препроцессора и Прагмы_files/f.txt"></script><script type="text/javascript" async="" src="./Директивы препроцессора и Прагмы_files/ga.js"></script><script type="text/javascript">
+
+          	var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-22695535-1']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+
+	</script>
+
+	<!-- Put the following javascript before the closing </head> tag. -->
+	<script>
+	  (function() {
+	    var cx = 'partner-pub-5771899961401791:8114144010';
+	    var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+	    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+		'//www.google.ru/cse/cse.js?cx=' + cx;
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+	  })();
+	</script>
+
+	<!-- vk like begin -->
+	<!-- Put this script tag to the <head> of your page -->
+	<script type="text/javascript" src="./Директивы препроцессора и Прагмы_files/openapi.js"></script>
+
+	<script type="text/javascript">
+	  VK.init({apiId: 3153833, onlyWidgets: true});
+	</script>
+	<!-- vk like end -->
+
+<!-- head end -->
+<script type="text/javascript" async="" src="./Директивы препроцессора и Прагмы_files/rotaban.js"></script><script src="./Директивы препроцессора и Прагмы_files/cse_element__ru.js" type="text/javascript"></script><link type="text/css" rel="stylesheet" href="./Директивы препроцессора и Прагмы_files/default+ru.css"><link type="text/css" rel="stylesheet" href="./Директивы препроцессора и Прагмы_files/default.css"><script type="text/javascript" id="_rotaban_js_0136f42239f2400dadf98977553229e1" src="./Директивы препроцессора и Прагмы_files/0136f42239f2400dadf98977553229e1.js" referrerpolicy="strict-origin-when-cross-origin" async="async"></script><style type="text/css">.gsc-control-cse{font-family:arial, sans-serif}.gsc-control-cse .gsc-table-result{font-family:arial, sans-serif}.gsc-refinementsGradient{background:linear-gradient(to left,rgba(255,255,255,1),rgba(255,255,255,0))}</style><style type="text/css">.gscb_a{display:inline-block;font:27px/13px arial,sans-serif}.gsst_a .gscb_a{color:#a1b9ed;cursor:pointer}.gsst_a:hover .gscb_a,.gsst_a:focus .gscb_a{color:#36c}.gsst_a{display:inline-block}.gsst_a{cursor:pointer;padding:0 4px}.gsst_a:hover{text-decoration:none!important}.gsst_b{font-size:16px;padding:0 2px;position:relative;user-select:none;-webkit-user-select:none;white-space:nowrap}.gsst_e{vertical-align:middle;opacity:0.55;}.gsst_a:hover .gsst_e,.gsst_a:focus .gsst_e{opacity:0.72;}.gsst_a:active .gsst_e{opacity:1;}.gsst_f{background:white;text-align:left}.gsst_g{background-color:white;border:1px solid #ccc;border-top-color:#d9d9d9;box-shadow:0 2px 4px rgba(0,0,0,0.2);-webkit-box-shadow:0 2px 4px rgba(0,0,0,0.2);margin:-1px -3px;padding:0 6px}.gsst_h{background-color:white;height:1px;margin-bottom:-1px;position:relative;top:-1px}.gsib_a{width:100%;padding:4px 6px 0}.gsib_a,.gsib_b{vertical-align:top}.gssb_c{border:0;position:absolute;z-index:989}.gssb_e{border:1px solid #ccc;border-top-color:#d9d9d9;box-shadow:0 2px 4px rgba(0,0,0,0.2);-webkit-box-shadow:0 2px 4px rgba(0,0,0,0.2);cursor:default}.gssb_f{visibility:hidden;white-space:nowrap}.gssb_k{border:0;display:block;position:absolute;top:0;z-index:988}.gsdd_a{border:none!important}.gsq_a{padding:0}.gssb_a{padding:0 7px}.gssb_a,.gssb_a td{white-space:nowrap;overflow:hidden;line-height:22px}#gssb_b{font-size:11px;color:#36c;text-decoration:none}#gssb_b:hover{font-size:11px;color:#36c;text-decoration:underline}.gssb_g{text-align:center;padding:8px 0 7px;position:relative}.gssb_h{font-size:15px;height:28px;margin:0.2em;-webkit-appearance:button}.gssb_i{background:#eee}.gss_ifl{visibility:hidden;padding-left:5px}.gssb_i .gss_ifl{visibility:visible}a.gssb_j{font-size:13px;color:#36c;text-decoration:none;line-height:100%}a.gssb_j:hover{text-decoration:underline}.gssb_l{height:1px;background-color:#e5e5e5}.gssb_m{color:#000;background:#fff}.gssb_a{padding:0 9px}.gsib_a{padding:5px 9px 4px 9px}.gscb_a{line-height:27px}.gssb_e{border:0}.gssb_l{margin:5px 0}input.gsc-input::-webkit-input-placeholder{font-size:14px}input.gsc-input:-moz-placeholder{font-size:14px}input.gsc-input::-moz-placeholder{font-size:14px}input.gsc-input:-ms-input-placeholder{font-size:14px}input.gsc-input:focus::-webkit-input-placeholder{color:transparent}input.gsc-input:focus:-moz-placeholder{color:transparent}input.gsc-input:focus::-moz-placeholder{color:transparent}input.gsc-input:focus:-ms-input-placeholder{color:transparent}.gssb_c .gsc-completion-container{position:static}.gssb_c{z-index:5000}.gsc-completion-container table{background:transparent;font-size:inherit;font-family:inherit}.gssb_c > tbody > tr,.gssb_c > tbody > tr > td,.gssb_d,.gssb_d > tbody > tr,.gssb_d > tbody > tr > td,.gssb_e,.gssb_e > tbody > tr,.gssb_e > tbody > tr > td{padding:0;margin:0;border:0}.gssb_a table,.gssb_a table tr,.gssb_a table tr td{padding:0;margin:0;border:0}</style><style type="text/css">div.rotaban_218286{width:100%;display:block;}div.rotaban_218286 a{width:728px;}div.rotaban_218286 a img{padding:0;}div.rotaban_218286 a em{font-style:normal;}html>body div.rotaban_218286 a{display:block;font-size:11px;color:#888;font-family:verdana,sans-serif;margin:0 4px 10px 0;text-align:center;text-decoration:none;overflow:hidden;}html>body div.rotaban_218286 img{border:0;clear:right;}html>body div.rotaban_218286 a.rb_adhere{color:#666;font-weight:bold;font-size:12px;border:1px solid #ccc;background:#e7e7e7;text-align:center;}html>body div.rotaban_218286 a.rb_adhere:hover{border:1px solid #999;background:#ddd;color:#333;}html>body div.rotaban_218286 a{display:inline-block;position:relative;vertical-align:top;}div.rotaban_218286 a.rb_adhere{width:728px;height:90px;line-height:720%;}div.rotaban_218286 a.rb_adhere{width:726px;height:88px;border:1px solid #ccc;background:#e7e7e7;color:#444;}div.rotaban_218286 a.rb_adhere:hover{border:1px solid #999;background:#ddd;color:#222;}div.rotaban_218286 img.s{height:0;width:0;}</style></head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<!-- body_header begin -->
+
+<!-- RotaBan.ru Ad Code -->
+<script type="text/javascript">
+(function(){
+    var rb = document.createElement('script');
+        d = new Date();
+    d.setHours(0);
+    d.setMinutes(0);
+    d.setSeconds(0);
+    d.setMilliseconds(0);
+    rb.type = 'text/javascript';
+    rb.async = true;
+    rb.src = '//s1.rotaban.ru/rotaban.js?v=' + d.getTime();
+    (document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(rb);
+})();
+</script>
+<!-- END RotaBan.ru Ad Code -->
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tbody><tr>
+	<td>
+	<p align="left">
+<!-- RotaBan.ru Zone Code -->
+</p><div id="rotaban_218286" class="rotaban_218286 rotaban"><iframe width="728" height="90" src="./Директивы препроцессора и Прагмы_files/rotaban_218286.html" frameborder="0" hspace="0" vspace="0" marginheight="0" marginwidth="0" scrolling="no" allowtransparency="true" style="left:0;top:0;"></iframe></div>
+<!-- END RotaBan.ru Zone Code -->
+	<p></p>
+	</td><td>
+	<p align="right">
+
+<!-- Place this tag where you want both of the search box and the search results to render -->
+<div id="___gcse_0"><div class="gsc-control-cse gsc-control-cse-ru"><div class="gsc-control-wrapper-cse" dir="ltr"><form class="gsc-search-box gsc-search-box-tools" accept-charset="utf-8"><table cellspacing="0" cellpadding="0" class="gsc-search-box"><tbody><tr><td class="gsc-input"><div class="gsc-input-box" id="gsc-iw-id1"><table cellspacing="0" cellpadding="0" id="gs_id50" class="gstl_50 gsc-input" style="width: 100%; padding: 0px;"><tbody><tr><td id="gs_tti50" class="gsib_a"><input autocomplete="off" type="text" size="10" class="gsc-input" name="search" title="поиск" id="gsc-i-id1" dir="ltr" spellcheck="false" style="width: 100%; padding: 0px; border: none; margin: 0px; height: auto; background: url(&quot;https://www.google.com/cse/static/images/1x/ru/branding.png&quot;) left center no-repeat rgb(255, 255, 255); outline: none;"></td><td class="gsib_b"><div class="gsst_b" id="gs_st50" dir="ltr"><a class="gsst_a" href="javascript:void(0)" title="Очистить окно поиска" role="button" style="display: none;"><span class="gscb_a" id="gs_cb50" aria-hidden="true">&#215;</span></a></div></td></tr></tbody></table></div></td><td class="gsc-search-button"><button class="gsc-search-button gsc-search-button-v2"><svg width="13" height="13" viewBox="0 0 13 13"><title>поиск</title><path d="m4.8495 7.8226c0.82666 0 1.5262-0.29146 2.0985-0.87438 0.57232-0.58292 0.86378-1.2877 0.87438-2.1144 0.010599-0.82666-0.28086-1.5262-0.87438-2.0985-0.59352-0.57232-1.293-0.86378-2.0985-0.87438-0.8055-0.010599-1.5103 0.28086-2.1144 0.87438-0.60414 0.59352-0.8956 1.293-0.87438 2.0985 0.021197 0.8055 0.31266 1.5103 0.87438 2.1144 0.56172 0.60414 1.2665 0.8956 2.1144 0.87438zm4.4695 0.2115 3.681 3.6819-1.259 1.284-3.6817-3.7 0.0019784-0.69479-0.090043-0.098846c-0.87973 0.76087-1.92 1.1413-3.1207 1.1413-1.3553 0-2.5025-0.46363-3.4417-1.3909s-1.4088-2.0686-1.4088-3.4239c0-1.3553 0.4696-2.4966 1.4088-3.4239 0.9392-0.92727 2.0864-1.3969 3.4417-1.4088 1.3553-0.011889 2.4906 0.45771 3.406 1.4088 0.9154 0.95107 1.379 2.0924 1.3909 3.4239 0 1.2126-0.38043 2.2588-1.1413 3.1385l0.098834 0.090049z"></path></svg></button></td><td class="gsc-clear-button"><div class="gsc-clear-button" title="удалить результаты">&nbsp;</div></td></tr></tbody></table></form><div class="gsc-results-wrapper-nooverlay"><div class="gsc-positioningWrapper"><div class="gsc-tabsAreaInvisible"><div aria-label="refinement" role="tab" class="gsc-tabHeader gsc-inline-block gsc-tabhActive">Система пользовательского поиска</div><span class="gs-spacer"> </span></div></div><div class="gsc-positioningWrapper"><div class="gsc-refinementsAreaInvisible"></div></div><div class="gsc-above-wrapper-area-invisible"><table cellspacing="0" cellpadding="0" class="gsc-above-wrapper-area-container"><tbody><tr><td class="gsc-result-info-container"><div class="gsc-result-info-invisible"></div></td></tr></tbody></table></div><div class="gsc-adBlockInvisible"></div><div class="gsc-wrapper"><div class="gsc-adBlockInvisible"></div><div class="gsc-resultsbox-invisible"><div class="gsc-resultsRoot gsc-tabData gsc-tabdActive"><div><div class="gsc-expansionArea"></div></div></div></div></div></div></div></div></div>
+	</p>
+
+	</td>
+
+</tr>
+</tbody></table>
+<hr>
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tbody><tr>
+	<td>
+	<p>
+	    <a href="http://cpp.com.ru/">[ Главная ]</a>
+	    <a href="http://cpp.com.ru/guest/index.php">[ Гостевая ]</a>
+	</p>
+	</td>
+	<td align="right"> 
+
+		<!-- vk like begin -->
+		<!-- Put this div tag to the place, where the Like block will be -->
+		<div id="vk_like" style="width: 115px; height: 24px; background: none; position: relative; clear: both;"><iframe name="fXD8bd33" frameborder="0" src="./Директивы препроцессора и Прагмы_files/widget_like.html" width="100%" height="24" scrolling="no" id="vkwidget1" style="overflow: hidden; height: 24px; width: 115px; z-index: 150;"></iframe></div>
+		<script type="text/javascript">
+		VK.Widgets.Like("vk_like", {type: "mini", height: 24});
+		</script>
+		<!-- vk like end -->
+
+	</td>
+	<td align="right" width="1"> 
+
+		<!-- begin google +1 -->
+		<!-- Place this tag where you want the +1 button to render. -->
+		<div id="___plusone_0" style="position: absolute; width: 450px; left: -10000px;"><iframe ng-non-bindable="" frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position:absolute;top:-10000px;width:450px;margin:0px;border-style:none" tabindex="0" vspace="0" width="100%" id="I0_1649051837809" name="I0_1649051837809" src="./Директивы препроцессора и Прагмы_files/fastbutton.html" data-gapiattached="true"></iframe></div><div class="g-plusone" data-gapiscan="true" data-onload="true" data-gapistub="true"></div>
+
+		<!-- Place this tag after the last +1 button tag. -->
+		<script type="text/javascript">
+		  window.___gcfg = {lang: 'ru'};
+
+		  (function() {
+		    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+		    po.src = 'https://apis.google.com/js/plusone.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+		  })();
+		</script>
+		<!-- end google +1 -->
+	</td>
+</tr>
+</tbody></table>
+
+<!-- body_header end -->
+<div class="navheader"><table width="100%" summary="Navigation header"><tbody><tr><th colspan="3" align="center">Директивы препроцессора и Прагмы</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="https://cpp.com.ru/ansi_c/ar01s07.html">Пред.</a>&nbsp;</td><th width="60%" align="center">&nbsp;</th><td width="20%" align="right">&nbsp;</td></tr></tbody></table><hr></div><div class="section" title="Директивы препроцессора и Прагмы"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="%D0%B4%D0%B8%D1%80%D0%B5%D0%BA%D1%82%D0%B8%D0%B2%D1%8B-%D0%BF%D1%80%D0%B5%D0%BF%D1%80%D0%BE%D1%86%D0%B5%D1%81%D1%81%D0%BE%D1%80%D0%B0-%D0%B8-%D0%BF%D1%80%D0%B0%D0%B3%D0%BC%D1%8B"></a>Директивы препроцессора и Прагмы</h2></div></div></div><div class="section" title="Введение"><div class="titlepage"><div><div><h3 class="title"><a name="%D0%B2%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5-7"></a>Введение</h3></div></div></div><p>
+      Директивы предпроцессора это инструкции предпроцессору С.
+      Предпроцессор С это текстовый процессор, который манипулирует
+      текстом исходного файла на первой фазе компиляции. Хотя компилятор
+      вызывает предпроцессор на своей первой стадии, его можно вызвать и
+      отдельно для обработки текста без компилирования. Директивы
+      предпроцессора обычно используются для облегчения внесения
+      изменений в исходные программы и для облегчения их компилирования в
+      разных средах выполнения. Расположенные в исходном файле директивы
+      заставляют предпроцессор выполнять конкретные действия. Например,
+      предпроцессор может заменить лексемы в тексте, вставить содержимое
+      других файлов в исходный файл или подавить компиляцию части файла,
+      удаляя сегменты текста. Предпроцессор С распознает следующие
+      директивы:
+    </p><pre class="screen">           #define        #if            #line
+           #elif          #ifdef         #undef
+           #else          #ifndef
+           #endif         #include
+</pre><p>
+      Знак номера (#) должен быть первым неразделительным символом на
+      строке, содержащей директиву, между символом номера и первой буквой
+      директивы могут появляться разделительные символы. Некоторые
+      директивы содержат аргументы или значения. Любой текст, который
+      следует за директивой (кроме аргумента или значения, который
+      является частью директивы) должен быть заключен в скобки
+      комментария (/* */). Директивы предпроцессора могут появляться в
+      произвольном месте исходного файла, но они будут воздействовать
+      только на оставшуюся часть исходного файла, в котором они
+      появились. "Оператор предпроцессора" это оператор,
+      который признается оператором только в контексте директив
+      предпроцессора. Есть только три специфические оператора
+      предпроцессора: "строковый" (#), "вставки
+      лексем" (##) и defined. Первые два оператора будут рассмотрены
+      в данной Главе позднее в контексте директивы #define. Оператор
+      defined также будет позже рассмотрен в данной Главе в Разделе
+      "Директивы #if, #elif, #else и #endif".
+      "Прагма" это "прагматическая", или
+      практическая, инструкция компилятору С. Прагмы в исходном файле С
+      обычно используются для управления действиями компилятора над
+      конкретной частью программы без воздействия на программу в целом.
+      (Синтаксис прагм рассмотрен в Разделе 8.6.) Однако, доступность и
+      предназначение отдельных прагм определяется конкретной реализацией
+      компилятора. Информацию об использовании и действии конкретных
+      прагм можно найти в Вашем Руководстве по компилятору.
+    </p></div><div class="section" title="Объявленные константы и Макросы"><div class="titlepage"><div><div><h3 class="title"><a name="%D0%BE%D0%B1%D1%8A%D1%8F%D0%B2%D0%BB%D0%B5%D0%BD%D0%BD%D1%8B%D0%B5-%D0%BA%D0%BE%D0%BD%D1%81%D1%82%D0%B0%D0%BD%D1%82%D1%8B-%D0%B8-%D0%BC%D0%B0%D0%BA%D1%80%D0%BE%D1%81%D1%8B"></a>Объявленные константы и Макросы</h3></div></div></div><p>
+      Директива #define обычно используется для организации связи
+      содержательных идентификаторов с константами, ключевыми словами и
+      часто используемыми операторами и выражениями. Представляющие
+      константы идентификаторы называются "объявленными
+      константами". Представляющие операторы или выражения константы
+      называются "макросами". После определения идентификатора
+      его нельзя переопределить для другого значения, если не удалить
+      первоначальное определение. Однако, можно переопределить
+      идентификатор тем же самым определением. Следовательно, одно
+      определение может появиться в программе несколько раз. Директива
+      #undef удаляет определение идентификатора. После удаления
+      определения идентификатор можно переопределить другим значением.
+      Директивы #define и #undef рассматриваются соответственно в
+      Разделах 8.2.2 и 8.2.3. Практически можно выделить два типа
+      макросов. "Объектные" макросы не принимают аргументов, а
+      "функциональные" определены таким образом, что принимают
+      аргументы, и выглядят и действуют подобно вызовам функций. Макросы
+      не генерируют действительные вызовы функций, поэтому программа
+      будет работать быстрее, если заменить вызовы функций макросами.
+      Однако, макросы могут создать свои проблемы, если не подойти к их
+      определению и использованию со всей тщательностью. В определении
+      макросов с аргументами возможно придется воспользоваться скобками
+      для установления надлежащего порядка проведения вычислений в
+      выражениях. Кроме того, макросы могут некорректно обработать
+      выражения с побочными эффектами. Дополнительную информацию можно
+      увидеть в примерах Раздела 8.2.2, "Директива #define".
+      {Операторы предпроцессора }Есть три специфических оператора
+      предпроцессора: один представлен знаком номера (#), другой
+      удвоенным знаком номера (##), а третий словом defined.
+      "Строковый" оператор (#), который предшествует имени
+      формального параметра макро, заставляет предпроцессор заключить
+      соответствующий действительный аргумент в строковые цитатные
+      скобки. Оператор "вставки лексем" (##) позволяет
+      осуществить слияние лексем, заданных в качестве действительных
+      аргументов, в форму другой лексемы. Эти два оператора используются
+      в контексте директивы #define и описаны в Разделах 8.2.2.1 и
+      8.2.2.2. И, наконец, оператор defined упрощает написание составных
+      выражений в некоторых директивах макро. Он используется при
+      условной компиляции и поэтому рассмотрен в Разделе 8.4.1
+      "Директивы #if, #elif, #else и #endif".
+      {Директива \#define }
+    </p><pre class="screen">      Синтаксис: #define идентификатор текст-замены
+                 #define идентификатор(список-параметров)
+                     текст-замены
+</pre><p>
+      Директива #define заменяет все появления "идентификатор"
+      в исходном файле на "текст-замены". Идентификатор
+      заменяется только тогда, когда он формирует лексему. (Лексемы
+      описаны в Главе "Элементы языка С" и "Кратком обзоре
+      синтаксиса".) Например, идентификатор не будет заменен, если
+      он появляется в строке или как часть более длинного идентификатора.
+      Если после идентификатора следует список параметров, то директива
+      #define заменит каждое появление идентификатор(список-параметров)
+      на версию аргумента текст-замены в которой формальные параметры
+      заменены на действительные аргументы. Аргумент
+      "текст-замены" состоит из ряда лексем, таких как ключевые
+      слова, константы или полные операторы. Один или несколько
+      разделительных символов должны отделять текст-замены от
+      идентификатора (или от закрывающей скобки списка параметров). Эти
+      разделительные символы не считаются частью текста-замены, также как
+      и любые разделительные символы, которые следуют за последней
+      лексемой текста. Текст, занимающий более одной строки, может быть
+      продолжен на следующей строке, если до символа перехода на новую
+      строку поместить знак обратного деления (\ ). Аргумент текст-замены
+      может быть пустым. Выбор этой опции удаляет все появления
+      идентификатора из исходного файла. Однако, идентификатор все еще
+      считается определенным и дает значение 1 при его проверке
+      директивой #if (рассматривается в Разделе 8.4.1). Необязательный
+      список параметров состоит из одного или нескольких имен формальных
+      параметров, разделенных запятыми. Каждое имя списка должно быть
+      уникальным и весь список должен быть заключен в скобки. Нельзя
+      ставить пробел между идентификатором и открывающей скобкой. Сфера
+      действия формального параметра распространяется до той строки,
+      которая заканчивает текст-замены. Имена формальных параметров
+      появляются в тексте-замены для того, чтобы пометить места, куда
+      будут вставлены действительные значения. Имя формального параметра
+      может появляться в тексте замены несколько раз и имена могут
+      следовать в произвольном порядке. Действительные аргументы, которые
+      следуют за появлениями идентификатора в исходном файле совпадают с
+      соответствующими формальными параметрами списка параметров. Каждый
+      формальный параметр в тексте замены, которому не предшествует
+      оператор # или ##, или за которым следует оператор ##, будет
+      заменен соответствующим действительным аргументом. Все макросы
+      действительного аргумента будут раскрыты до замены ими формального
+      параметра. (Операторы # и ## описаны в Разделах 8.2.2.1 и 8.2.2.2.)
+      Список действительных аргументов должен иметь столько аргументов,
+      сколько их в списке параметров. Если имя определенного макро
+      появляется в тексте замены (даже в результате раскрытия другого
+      макро), то оно не раскрывается. Аргументы с побочными эффектами
+      иногда вынуждают макро выдавать неожиданные результаты. Заданный
+      формальный параметр может появиться в тексте замены несколько раз.
+      Если формальный параметр заменяется выражением с побочным эффектом,
+      то выражение, с его побочным эффектом, будет вычисляться несколько
+      раз. (См. Пример 4 в Разделе 8.2.2.2, "Оператор вставки
+      лексем". Строковый оператор (#) Знак номера или строковый
+      оператор (#) используется только с макросами, которые принимают
+      аргументы. Если в определении макро он предшествует формальному
+      параметру, то передаваемый при вызове макро действительный аргумент
+      заключается в цитатные скобки и обрабатывается как строковый
+      литерал. Затем строковый литерал заменяет каждое появление
+      комбинации строкового оператора и формального параметра в
+      определении макро. Предшествующие первой лексеме действительного
+      аргумента разделительные символы и следующие за последней лексемой
+      действительного аргумента разделительные символы игнорируются. В
+      результирующем строковом литерале разделительные символы между
+      лексемами действительного аргумента сокращаются до одного.
+      Следовательно, если между двумя лексемами действительного аргумента
+      есть комментарий, он будет сокращен до одного разделительного
+      символа. Результирующий строковый литерал автоматически сливается с
+      любым соседним строковым литералом от которого он разделен лишь
+      разделительным символом. Более того, если аргумент содержит символ,
+      который обычно требует управляющей последовательности для
+      использования в качестве строкового литерала - например, цитатная
+      скобка (") или знак обратного деления (\ ) - то перед этим
+      символом будет автоматически вставлен необходимый для управляющей
+      последовательности знак обратного деления. Следующий пример
+      показывает определение макро, которое содержит строковый оператор,
+      и функцию main, которая вызывает это макро:
+    </p><pre class="screen"> #define stringer(x) printf(#x "\n")
+
+  main()
+  {
+   stringer (I will be in quotes in the printf function call);
+   stringer ("I will be in quotes when printed to the screen");
+   stringer (This: \" prints an escaped double quote mark);
+  }
+</pre><p>
+      В результате предпроцессорной обработки получим следующий код:
+    </p><pre class="screen"> printf("I will be in quotes in the printf function call" "\n");
+ printf("\"I will be in quotes when printed to the screen\"" "\n");
+ printf(This: \\\" prints an escaped double quote mark");
+</pre><p>
+      При работе программы на экран выведется следующий текст:
+    </p><pre class="screen">      I will be in quotes in the printf function call
+      "I will be in quotes when printed to the screen"
+      This: \" prints an escaped double quote mark
+</pre><p>
+      Оператор вставки лексем (##) Удвоенный знак номера или оператор
+      "вставки лексем" (##) используется и в объектный и в
+      функциональных макро. Он позволяет объединять отдельные лексемы в
+      единую лексему и следовательно не может быть первой или последней
+      лексемой в определении макро. Если до или после формального
+      параметра в определении макро стоит оператор вставки лексем, то
+      формальный параметр немедленно заменяется на нераскрытый
+      действительный аргумент. Раскрытие макро не производится над
+      аргументом до его замены. Затем все появления оператора с тексте
+      замены удаляются и предшествующие и последующие им лексемы
+      объединяются. Результирующая лексема должна быть корректной. Если
+      это так, то лексема просматривается на возможную замену, если она
+      содержит имя макро. Пример 7 показывает, как лексемы могут быть
+      вставлены вместе с использованием оператора вставки лексем. Пример
+      1 В данном примере определяется идентификатор WIDTH как целая
+      константа 80, в терминах WIDTH определяется LENGTH и целая
+      константа 10. Каждое появление LENGTH заменяется на (WIDTH + 10). В
+      свою очередь, каждое появление WIDTH + 10 заменяется выражением
+      (80+10).
+    </p><pre class="screen">           #define WIDTH  80
+           #define LENGTH (WIDTH + 10)
+</pre><p>
+      Замыкающие WIDTH + 10 скобки очень важны, т.к. они управляют
+      интерпретацией операторов, подобных следующему:
+    </p><pre class="screen">           var = LENGTH * 20;
+</pre><p>
+      После стадии предпроцессорной обработки этот оператор будет
+      выглядеть так:
+    </p><pre class="screen">           var = (80 + 10) * 20;
+</pre><p>
+      что даст в результате 1800. Без скобок результат будет 280:
+    </p><pre class="screen">           var = 80 + 10 * 20;
+</pre><p>
+      Пример 2 В данном примере определяется идентификатор FILEMESSAGE.
+      Его определение расширяется на вторую строку использованием символа
+      обратного деления, за которым следует символ новой строки.
+    </p><pre class="screen">      #define FILEMASSAGE "Attempt to create file \
+      failed because of insufficient space"
+</pre><p>
+      Пример 3 В данном примере определяются три идентификатора: REG1,
+      REG2 и REG3. REG1 и REG2 определяются как ключевое слово register.
+      Определение REG3 пусто, поэтому из исходного файла будет удалены
+      все появления REG3. Эти директивы можно использовать для того,
+      чтобы убедиться в том, что наиболее важные переменные программы
+      (объявленные с REG1 и REG2) заданы с классом хранения register.
+      (Расширенную версию данного примера можно найти при рассмотрении
+      директивы #if в Разделе 8.4.1.)
+    </p><pre class="screen">           #define REG1   register
+           #define REG2   register
+           #define REG3
+</pre><p>
+      Пример 4 В данном примере определяется макро с именем MAX. После
+      этого определения все появления идентификатора MAX в исходном файле
+      будут заменены на выражение
+    </p><pre class="screen">           ((x) &gt; (y)) ? (x) : (y)
+</pre><p>
+      где действительные значения заменят параметры x и y. Например,
+      появление
+    </p><pre class="screen">           MAX(1,2)
+</pre><p>
+      будет заменено на
+    </p><pre class="screen">           ((1) &gt; (2)) ? (1) : (2)
+</pre><p>
+      и появление
+    </p><pre class="screen">           MAX(i,s[i])
+</pre><p>
+      будет заменено на
+    </p><pre class="screen">           ((i) &gt; (s[i])) ? (i) : (s[i])
+</pre><pre class="screen">           #define MAX(x,y)    ((x) &gt; (y)) ? (x) : (y)
+</pre><p>
+      Макро легче читается, чем соответствующее выражение, поэтому легче
+      понять исходный текст программы. Обратите внимание на то, что
+      аргументы с побочными эффектами могут дать неожиданные результаты
+      при выполнении макро. Например, появление MAX(i, s[i++]) будет
+      заменено на ((i)&gt;(s[i++]))?(i): (s[i++]). Выражение (s[i++])
+      может быть вычислено дважды, поэтому после вычисления тернарного
+      оператора i может быть увеличено единожды или дважды, в зависимости
+      от результатов сравнения. Пример 5 В данном примере определяется
+      макро MULT. После определения этого макро появление выражений
+      подобных MULT(3,5) будет заменены на (3)*(5). Скобки вокруг
+      параметров важны, т.к. управление интерпретацией сложных выражений
+      формирует аргументы макро. Например, появление MULT(3+4,5+6) будет
+      заменено на (3+4)*(5+6), что даст в результате 77. Без скобок
+      получаем 3+4*5+6, или 29, т.к. оператор умножения (*) имеет
+      приоритет выше, чем оператор сложения (+).
+    </p><pre class="screen">           #define MULT(a,b)   ((a) * (b))
+</pre><p>
+      Пример 6 В данном примере определяются два макро. Объектное макро
+      раскрывается в строковый литерал Hello,Word!, а другое
+      функциональное макро вызывает show, которое берет один аргумент.
+      Однако, определение второго макро включает строковый оператор (#),
+      который непосредственно предшествует формальному параметру x. При
+      передаче аргумента в макро show формальный параметр будет заменен
+      действительным аргументом, заключенным в двойные цитатные скобки.
+    </p><pre class="screen">           #define GREETING Hello, World!
+           #define show(x) printf(#x)
+
+           main()
+           {
+                show(x+z);
+                printf("\n");
+                show(n /* some comment */ + p);
+                printf("\n");
+                show(GREETING); /* GREETING не раскрыто; */
+                printf("\n");   /* вместо этого отработал */
+                show ('\x');    /* строковый оператор */
+                }
+</pre><p>
+      По мере обработки предпроцессором исходного файла ссылки на show
+      будут раскрыты так:
+    </p><pre class="screen">      show (x+z); даст printf("x+z");
+      show (n/*ccomment*/+p); даст printf("n+p");
+      show (GREETING); даст printf("GREETING");
+      show ('\x'); даст printf("'\\x'");
+</pre><p>
+      При работе программы на экран будет выведено:
+    </p><pre class="screen">      x+z
+      n+p
+      GREETING
+      '\x'
+</pre><p>
+      Пример 7 Данный пример показывает использование строкового
+      оператора и оператора вставки лексем для организации вывода
+      программы.
+    </p><pre class="screen">      #define paster(n) printf("token" #n " = %d", token##n)
+</pre><p>
+      Если объявлен token9 и макро вызывается с числовым аргументом,
+      подобно:
+    </p><pre class="screen">           paster(9);
+</pre><p>
+      то макро преобразуется в вид:
+    </p><pre class="screen">           printf("token" "9" " = %d", token9);
+</pre><p>
+      который станет
+    </p><pre class="screen">           printf("token9 = %d", token9);
+</pre><p>
+      {Директива \#undef }
+    </p><pre class="screen">      Синтаксис:     #undef идентификатор
+</pre><p>
+      Директива #undef удаляет текущее определение идентификатора.
+      Поэтому все встречающиеся появления идентификатора будут
+      игнорироваться предпроцессором. Для удаления определения макро с
+      использованием #undef, нужно задать только идентификатор макро, не
+      задавая список параметров. Можно применить директиву #undef к
+      идентификатору, у которого нет определения. Тем самым пользователь
+      получает дополнительную гарантию того, что данный идентификатор не
+      определен. Директива #undef обычно используется в паре с директивой
+      #define для задания области исходной программы, в которой
+      идентификатор имеет специальное значение. Например, некоторая
+      функция исходной программы может иметь объявленные константы,
+      которые задают значения среды работы, которые не влияют на
+      остальную часть программы. Директива #undef также работает с
+      директивой #if (см. Раздел 8.4.1) для управления условной
+      компиляцией исходной программы. Пример В данном примере директива
+      #undef удаляет определения объявленных констант и макро. Обратите
+      внимание на то, что задается только идентификатор макро.
+    </p><pre class="screen">           #define WIDTH  80
+           #define ADD(X,Y)    (X) + (Y)
+           .
+           .
+           .
+           #undef WIDTH
+           #undef ADD
+</pre></div><div class="section" title="Включаемые файлы"><div class="titlepage"><div><div><h3 class="title"><a name="%D0%B2%D0%BA%D0%BB%D1%8E%D1%87%D0%B0%D0%B5%D0%BC%D1%8B%D0%B5-%D1%84%D0%B0%D0%B9%D0%BB%D1%8B"></a>Включаемые файлы</h3></div></div></div><pre class="screen">      Синтаксис:     #include "спецификация-пути"
+                     #include &lt;спецификация-пути&gt;
+</pre><p>
+      v Директива #include добавляет содержимое заданного файла в другой
+      файл. Можно организовать определения констант и макро в отдельном
+      файле, а затем вставить его директивой #include в любой другой
+      файл. Вставка файлов также очень удобна для объединения объявлений
+      внешних переменных и сложных типов данных. Нужно определить и
+      задать имена этих типов только один раз в созданный для этих целей
+      файл. Директива #include информирует предпроцессор о том, что
+      содержание файла с заданным именем следует обрабатывать так, как
+      будто оно присутствует в исходной программе в месте расположения
+      этой директивы. Новый текст также может содержать директивы
+      предпроцессора. Предпроцессор выполняет директивы в новом тексте, а
+      затем продолжает обработку текста исходного файла.
+      "Спецификация пути" это имя файла, которому может
+      предшествовать директория. Это должно быть имя существующего файла.
+      Синтаксис спецификации файла зависит от операционной системы, в
+      которой компилируется программа. При поиске файлов предпроцессор
+      использует концепцию "стандартной" директории.
+      Расположение стандартных директорий для файлов зависит от
+      реализации и операционной системы. Определение стандартной
+      директории можно найти в Вашем Руководстве по компилятору.
+      Предпроцессор останавливает поиск сразу же после обнаружения файла
+      с заданным именем. Если задать полную спецификацию файла,
+      заключенную в двойные цитатные скобки (" "), то
+      предпроцессор использует ее для поиска и игнорирует стандартную
+      директорию. Если заключенная в двойные цитатные скобки спецификация
+      файла является неполной, то предпроцессор сначала ищет директорию
+      "родительского" файла. Родительский файл это файл,
+      содержащий директиву #include. Например, если файл fil2 вставляется
+      в файл fil1, то fil1 будет родительским файлом. Вставка файлов
+      может быть вложенной. Т.е. директива #include может появляться в
+      файле, который сам вставляется директивой #include. Например, в
+      приведенном выше примере файл fil2 может вызывать файл fil3. В этом
+      случае fil1 все еще будет родительским для fil2, но
+      "дедушкой" для fil3. При вложенной вставке файлов поиск
+      директории начинается с родительского файла, затем проходит по
+      дедушкиным файлам. Следовательно, поиск начинается в директории,
+      которая содержит обрабатываемый исходный файл. Если файл не найден,
+      то поиск продолжается в директориях, заданных в командной строке
+      компилятора. И, наконец, производится поиск в стандартной
+      директории. Если спецификация файла заключена в угловые скобки, то
+      предпроцессор не проводит поиска в текущем рабочем каталоге. Поиск
+      файла начинается в директориях, заданный в командной строке
+      компилятора, а затем в стандартной директории. Допускается вложение
+      вставки файлов до 10 уровней. При обработке вложенных #include
+      предпроцессор всегда будет осуществлять вставку в первоначальный
+      исходный файл. Пример 1 В данном примере содержимое файла с именем
+      stdio.h будет вставлено в исходную программу. Угловые скобки
+      заставляют предпроцессор искать stdio.h в стандартной директории,
+      после поиска в директориях, указанных в командной строке.
+    </p><pre class="screen">                #include &lt;stdio.h&gt;
+</pre><p>
+      Пример 2 Данный пример добавит в исходный файл содержимое файла
+      defs.h. Двойные цитатные скобки означают, что предпроцессор начнет
+      поиск в родительском каталоге.
+    </p><pre class="screen">                #include "defs.h"
+</pre></div><div class="section" title="Условная компиляция"><div class="titlepage"><div><div><h3 class="title"><a name="%D1%83%D1%81%D0%BB%D0%BE%D0%B2%D0%BD%D0%B0%D1%8F-%D0%BA%D0%BE%D0%BC%D0%BF%D0%B8%D0%BB%D1%8F%D1%86%D0%B8%D1%8F"></a>Условная компиляция</h3></div></div></div><p>
+      Данный раздел описывает синтаксис и использование директив, которые
+      управляют "условной компиляцией". Эти директивы позволяют
+      подавить компиляцию части исходного файла, проверяя постоянное
+      выражение или идентификатор. Результат проверки определяет, какие
+      блоки текста будут переданы в компилятор и какие блоки текста будут
+      удалены из исходного файла при предпроцессорной обработке.
+    </p><div class="section" title="Директивы #if, #elif, #else и #endif"><div class="titlepage"><div><div><h4 class="title"><a name="%D0%B4%D0%B8%D1%80%D0%B5%D0%BA%D1%82%D0%B8%D0%B2%D1%8B-if-elif-else-%D0%B8-endif"></a>Директивы #if, #elif, #else и #endif</h4></div></div></div><pre class="screen">      Синтаксис:     #if граничное-постоянное-выражение
+                          [блок-текста]
+                     [#elif граничное-постоянное-выражение
+                          блок-текста]
+                     [#elif граничное-постоянное-выражение
+                          блок-текста]
+                     .
+                     .
+                     .
+                     [#else
+                          блок-текста]
+                     #endif
+</pre><p>
+        Директива #if вместе с директивами #elif, #else и #endif управляют
+        компиляцией части исходного файла. Каждая директива #if в исходном
+        файле должна иметь соответствующую закрывающую директиву #endif.
+        Между директивами #if и #endif может появиться любое число директив
+        #elif, но допускается наличие только одной директивы #else. Если
+        имеется директива #else, то она должна быть последней директивой
+        перед #endif. Предпроцессор выбирает одно из заданных появлений
+        блока текста для дальнейшей обработки. Этот блок может быть любой
+        последовательностью текста. Он может занимать несколько строк.
+        Обычно блок текста это текст программы, который имеет значение для
+        компилятора или предпроцессора. Предпроцессор обрабатывает
+        выбранный блок текста и передает его компилятору. Если блок текста
+        содержит директивы предпроцессора, то предпроцессор выполнит эти
+        директивы. Все блоки текста, не выбранные предпроцессором,
+        удаляются из обрабатываемого файла. Следовательно, эти блоки текста
+        не компилируются. Предпроцессор выбирает отдельный блок текста
+        вычисляя выражение граничной константы, которое следует за каждой
+        директивой #if или #elif, пока результатом выражения граничной
+        константы не будет "истина" (не ноль). Выбирается весь
+        текст (включая начинающиеся с # другие директивы предпроцессора) до
+        соответствующего #elif, #else или #endif. Если значением всех
+        выражений граничных констант будет "ложь", или нет
+        директивы #elif, то предпроцессор выберет блок текста после
+        предложения #else. Если предложения #else нет, то блок вообще не
+        выбирается. Каждое выражение граничной константы соответствует
+        правилам Раздела 5.2.10. Эти выражения не могут содержать выражений
+        sizeof, приведения типа или перечислимых констант. Однако, они
+        могут содержать оператор предпроцессора defined в специальном
+        постоянном выражении, имеющем следующий синтаксис:
+      </p><pre class="screen">                defined(идентификатор)
+</pre><p>
+        Это постоянное выражение будет иметь значение "истина"
+        (не ноль), если заданный идентификатор определен, в противном
+        случае - "ложь" (0). Идентификатор, определенный как
+        пустой текст, считается определенным. Директивы #if, #elif, #else и
+        #endif могут быть вложены в другие директивы #if. Каждая вложенная
+        директива #else, #elif или #endif принадлежит к ближайшей к ней
+        директиве #if. Пример 1 В данном примере директивы #if и #endif
+        управляют компиляцией одного из трех вызовов функции. Вызов функции
+        credit компилируется, если определен идентификатор CREDIT. Если
+        определен идентификатор DEBIT, то компилируется вызов функции
+        debit. Если не определен ни один из идентификаторов, то
+        компилируется вызов printerror. Обратите внимание на то, что CREDIT
+        и credit это разные идентификаторы в языке С.
+      </p><pre class="screen">           #if defined(CREDIT)
+                credit();
+           #elif defined(DEBIT)
+                debit();
+           #else
+                printerror();
+           #end
+</pre><p>
+        Пример 2 Примеры 2 и 3 предполагают наличие ранее определенной
+        константы с именем DLEVEL. Пример 2 показывает два вложенных набора
+        директив #if, #else и #endif. Первый набор директив будет обработан
+        только если значение DLEVEL&gt;5 "истина". В противном
+        случае будет обработан второй набор директив.
+      </p><pre class="screen">           #if DLEVEL&gt;5
+                #define SIGNAL 1
+                #if STACKUSE == 1
+                     #define STACK 200
+                #else
+                     #define STACK 100
+                #endif
+           #else
+                #define SIGNAL 0
+                #if STACKUSE == 1
+                     #define STACK 100
+                #else
+                     #define STACK 50
+                #endif
+           #endif
+</pre><p>
+        v Пример 3 В примере 3 директивы #elif и #else применятся для того,
+        чтобы сделать выбор одного из четырех вариантов на основании
+        значения DLEVEL. Объявленная константа STACK устанавливается в 0,
+        100 или 200 в зависимости от определения DLEVEL. Если DLEVEL больше
+        5, то компилируется display(debugptr); и STACK не определяется.
+      </p><pre class="screen">           #if DLEVEL == 0
+                #define STACK 0
+           #elif DLEVEL == 1
+                #define STACK 100
+           #elif DLEVEL &gt; 5
+                display(debugptr);
+           #else
+                #define STACK 200
+           #endif
+</pre><p>
+        Пример 4 В данном примере директивы предпроцессора используются для
+        управления значением объявления register в мобильном исходном
+        файле. Компилятор выделяет регистровую память переменным в той
+        последовательности, в которой объявления register появляются в
+        исходном файле. Если в программе присутствуют больше объявлений
+        register, чем допускает компьютер, то компилятор дает приоритет
+        более ранним объявлениям над более поздними. Программа может стать
+        менее эффективной, если наиболее часто используемые переменные
+        объявлены слишком поздно.
+      </p><pre class="screen">           #define REG1 register
+           #define REG2 register
+
+           #if defined(M_86)
+                #define REG3
+                #define REG4
+                #define REG5
+
+           #else
+                #define REG3 register
+                #if defined(M_68000)
+                     #define REG4 register
+                     #define REG5 register
+                #else
+                     #define REG4 register
+                     #define REG5
+                #endif
+           #endif
+</pre><p>
+        Приведенные в Примере 4 определения можно использовать для задания
+        высшего приоритета наиболее важным объявлениям регистров. REG1 и
+        REG2 определены с ключевым словом register и для этих двух наиболее
+        важных переменных программы выделяется регистровая память.
+        Например, в следующем фрагменте b и c имеют приоритет выше, чем a и
+        d:
+      </p><pre class="screen">                func(a)
+
+                REG3 int a;
+
+                {
+                     REG1 int b;
+                     REG2 int c;
+                     REG4 int d;
+                     .
+                     .
+                     .
+                }
+</pre><p>
+        Если определен M_86, то предпроцессор удалит идентификатор REG3 из
+        файла, заменив его пустым текстом. а не будет выделена регистровая
+        память за счет b и с. Если задан M_68000, то всем четырем
+        переменным выделяется регистровая память. Если не задан ни М_86 ни
+        М_68000, то регистровая память выделяется а, b и с.
+        {Директивы \#ifdef и \#ifndef }
+      </p><pre class="screen">      Синтаксис:     #ifdef идентификатор
+                     #ifndef идентификатор
+</pre><p>
+        Директивы #ifdef и #ifndef выполняют те же функции, что и директива
+        #if с defined(идентификатор). Директивы #ifdef и #ifndef можно
+        использовать везде, где допустимо использование #if. Эти директивы
+        реализованы только для обеспечения совместимости с предыдущими
+        версиями языка. Предпочтительно использовать постоянное выражение
+        defined(идентификатор) c с директивой #if.
+      </p><p>
+        Когда предпроцессор обнаруживает директиву #ifdef, он проверяет,
+        определен ли идентификатор. Если это так, то значение условия
+        "истина" (не ноль), и "ложь" (0) в противном
+        случае.
+      </p><p>
+        Директива #ifndef проверяет условие, противоположное условию
+        #ifdef. Если идентификатор не определен (или его определение
+        удалено с помощью #undef), то условие "истина", и
+        "ложь" (0) в противном случае.
+      </p></div></div><div class="section" title="Управление Line"><div class="titlepage"><div><div><h3 class="title"><a name="%D1%83%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-line"></a>Управление Line</h3></div></div></div><pre class="screen">      Синтаксис:     #line константа["имя-файла"]
+</pre><p>
+      Директива #line дает команду компилятору сменить хранимые им номер
+      строки и имя файла на данные. Компилятор использует номер строки и
+      имя файла для указания ошибок, которые он обнаруживает при
+      компиляции. Номер строки обычно соответствует текущей строке, а имя
+      файла - текущему файлу. После обработки каждой строки номер строки
+      увеличивается. Если сменить номер строки и имя файла, то компилятор
+      игнорирует предыдущие значения и продолжит обработку с новыми
+      значениями. Директива #line обычно используется генераторами
+      программ для появления сообщений об ошибках в исходном тексте, а не
+      в генерируемой программе. Константа в директиве #line может быть
+      любой целой константой. Имя файла может быть любой комбинацией
+      символов, заключенной в двойные цитатные скобки. Если имя файла не
+      задано, то предыдущее имя файла остается без изменения. Всегда
+      имеется доступ к текущему номеру строки и имени файла через заранее
+      определенные идентификаторы __LINE__ и __FILE__. Эти идентификаторы
+      можно использовать в самодокументирующихся сообщения об ошибках,
+      помещенных в текст программы. Идентификатор __FILE__ раскрывается в
+      строку, содержимое которой есть имя файла, заключенное в двойные
+      цитатные скобки. Пример 1 В данном примере хранимый номер строки
+      меняется на 151, а имя файла меняется на copy.c .
+    </p><pre class="screen">                #line 151 "copy.c"
+</pre><p>
+      Пример 2 В данном примере макро ASSERT использует ранее
+      определенные идентификаторы __LINE__ и __FILE__ для печати
+      сообщения об ошибке в исходном файле, если значение условия
+      "ложь".
+    </p><code class="code">
+           #define ASSERT(cond)     if(!cond)\
+           {printf("assertion error line %d, file(%s)\
+           __LINE__, __FILE__ );} else
+</code></div><div class="section" title="Прагмы"><div class="titlepage"><div><div><h3 class="title"><a name="%D0%BF%D1%80%D0%B0%D0%B3%D0%BC%D1%8B"></a>Прагмы</h3></div></div></div><pre class="screen">      Синтаксис:     #pragma последовательность-символов
+</pre><p>
+      #pragma это инструкция компилятору, которая определяется
+      реализацией. Последовательность символов задает конкретную
+      инструкцию компилятору и аргументы, если они есть. Знак номера (#)
+      должен быть первым неразделительным символом на строке, содержащей
+      прагму. Между знаком номера и словом pragma могут стоять
+      разделительные символы.
+    </p><p>
+      Информация об имеющихся в реализации Вашего компилятора прагмах
+      содержится в Вашем Руководстве по компилятору.
+    </p></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tbody><tr><td width="40%" align="left"><a accesskey="p" href="https://cpp.com.ru/ansi_c/ar01s07.html">Пред.</a>&nbsp;</td><td width="20%" align="center">&nbsp;</td><td width="40%" align="right">&nbsp;</td></tr><tr><td width="40%" align="left" valign="top">Функции&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="https://cpp.com.ru/ansi_c/index.html">Начало</a></td><td width="40%" align="right" valign="top">&nbsp;</td></tr></tbody></table></div>
+
+<!-- footer begin -->
+
+<noindex>
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tbody><tr>
+	<td>
+	<p>
+	    <a href="http://cpp.com.ru/">[ Главная ]</a>
+	    <a href="http://cpp.com.ru/guest/index.php">[ Гостевая ]</a>
+	</p>
+	</td>
+
+	<td align="right">
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-5771899961401791";
+/* links-block-horizontal-medium */
+google_ad_slot = "3283180390";
+google_ad_width = 468;
+google_ad_height = 15;
+//-->
+</script>
+<script type="text/javascript" src="./Директивы препроцессора и Прагмы_files/f(1).txt">
+</script>
+	</td>
+</tr>
+</tbody></table>
+
+<hr>
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tbody><tr>
+	<td>
+
+		<script type="text/javascript"><!--
+			google_ad_client = "ca-pub-5771899961401791";
+			/* banned-bottom */
+			google_ad_slot = "0990189094";
+			google_ad_width = 728;
+			google_ad_height = 90;
+			//-->
+		</script>
+			<script type="text/javascript" src="./Директивы препроцессора и Прагмы_files/f(1).txt">
+		</script>
+	</td>
+	<td>
+		<p align="right">
+
+		    <!--Openstat-->
+			<span id="openstat2172937"></span>
+			<script type="text/javascript">
+			var openstat = { counter: 2172937, image: 93, color: "828282", next: openstat };
+			(function(d, t, p) {
+			var j = d.createElement(t); j.async = true; j.type = "text/javascript";
+			j.src = ("https:" == p ? "https:" : "http:") + "//openstat.net/cnt.js";
+			var s = d.getElementsByTagName(t)[0]; s.parentNode.insertBefore(j, s);
+			})(document, "script", document.location.protocol);
+		    </script>
+		    <!--/Openstat-->
+		
+			<!-- begin of Top100 code -->
+			  <script id="top100Counter" type="text/javascript" src="./Директивы препроцессора и Прагмы_files/top100.jcn"></script>
+			  <noscript>
+			 <a href="http://top100.rambler.ru/navi/2453376/">
+			     <img src="http://counter.rambler.ru\/top100.cnt?2453376" alt="Rambler's Top100" border="0" />
+			 </a>
+			</noscript>
+			<!-- end of Top100 code -->
+
+
+			<!--LiveInternet counter--><script type="text/javascript"><!--
+			document.write("<a href='http://www.liveinternet.ru/click' "+
+			"target=_blank><img src='//counter.yadro.ru/hit?t44.6;r"+
+			escape(document.referrer)+((typeof(screen)=="undefined")?"":
+			";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+			screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+			";"+Math.random()+
+			"' alt='' title='LiveInternet' "+
+			"border='0' width='31' height='31'><\/a>")
+			//--></script><a href="http://www.liveinternet.ru/click" target="_blank"><img src="./Директивы препроцессора и Прагмы_files/hit" alt="" title="LiveInternet" border="0" width="31" height="31"></a><!--/LiveInternet-->
+
+			<!--Rating@Mail.ru counter-->
+			<script language="javascript"><!--
+			d=document;var a='';a+=';r='+escape(d.referrer);js=10;//--></script>
+			<script language="javascript1.1"><!--
+			a+=';j='+navigator.javaEnabled();js=11;//--></script>
+			<script language="javascript1.2"><!--
+			s=screen;a+=';s='+s.width+'*'+s.height;
+			a+=';d='+(s.colorDepth?s.colorDepth:s.pixelDepth);js=12;//--></script>
+			<script language="javascript1.3"><!--
+			js=13;//--></script><script language="javascript" type="text/javascript"><!--
+			d.write('<a href="http://top.mail.ru/jump?from=2034329" target="_top">'+
+			'<img src="http://da.c0.bf.a1.top.mail.ru/counter?id=2034329;t=69;js='+js+
+			a+';rand='+Math.random()+'" alt="Рейтинг@Mail.ru" border="0" '+
+			'height="31" width="38"><\/a>');if(11<js)d.write('<'+'!-- ');//--></script><a href="http://top.mail.ru/jump?from=2034329" target="_top"><img src="./Директивы препроцессора и Прагмы_files/counter" alt="Рейтинг@Mail.ru" border="0" height="31" width="38"></a><!-- 
+			<noscript><a target="_top" href="http://top.mail.ru/jump?from=2034329">
+			<img src="http://da.c0.bf.a1.top.mail.ru/counter?js=na;id=2034329;t=69" 
+			height="31" width="38" border="0" alt="Рейтинг@Mail.ru"></a></noscript>
+			<script language="javascript" type="text/javascript"><!--
+			if(11<js)d.write('--'+'>');//-->
+			<!--// Rating@Mail.ru counter-->
+
+			<a href="http://www.gamedev.ru/top/">
+			<img src="./Директивы препроцессора и Прагмы_files/saved_resource" width="88" height="31" style="border: 0;" alt="Топ Разработка игр">
+			</a>
+		</p>
+	</td>
+</tr>
+</tbody></table>
+
+</noindex>
+
+<!-- footer end -->
+
+
+<iframe name="oauth2relay368958879" id="oauth2relay368958879" src="./Директивы препроцессора и Прагмы_files/postmessageRelay.html" tabindex="-1" aria-hidden="true" style="width: 1px; height: 1px; position: absolute; top: -100px;"></iframe><table cellspacing="0" cellpadding="0" class="gstl_50 gssb_c" style="width: 165px; display: none; top: 39px; left: 1043px; position: absolute;"><tbody><tr><td class="gssb_f"></td><td class="gssb_e" style="width: 100%;"></td></tr></tbody></table></body><style id="stylus-1" type="text/css" class="stylus">body {
+    font-family: 'pragmata pro mono regular';
+}</style></html>

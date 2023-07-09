@@ -1,0 +1,12 @@
+[0;36m---ques_()---[0m
+[0;32m$PWD = ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_ques_/ques_tst[0m
+[0;32mfile = .git/hooks/pre-commit[0m
+[0;32margs = ls -a[0m
+[0;34m---Exec ls -a  (y) ?---[0m
+.
+..
+dat
+exec.tst
+_flow_tst.sh
+pre
+res

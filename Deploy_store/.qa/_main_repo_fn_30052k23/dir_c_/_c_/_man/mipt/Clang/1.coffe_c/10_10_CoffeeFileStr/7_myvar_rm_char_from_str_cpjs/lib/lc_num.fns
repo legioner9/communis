@@ -1,0 +1,2 @@
+ isDiv_01_lc_num(int devidend, int divider)
+ void swap_lc_num(float *a, float *b)

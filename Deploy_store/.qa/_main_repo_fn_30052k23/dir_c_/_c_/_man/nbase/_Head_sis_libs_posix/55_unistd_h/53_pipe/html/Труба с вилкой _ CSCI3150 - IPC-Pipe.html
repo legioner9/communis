@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<!-- saved from url=(0072)http://www.cse.cuhk.edu.hk/~ericlo/teaching/os/lab/6-IPC1/pipe-fork.html -->
+<html lang="ru"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Труба с вилкой | CSCI3150 - IPC-Pipe</title>
+        
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="http://www.cse.cuhk.edu.hk/~ericlo/teaching/os/lab/6-IPC1/gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="http://www.cse.cuhk.edu.hk/~ericlo/teaching/os/lab/6-IPC1/gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="./Труба с вилкой _ CSCI3150 - IPC-Pipe_files/style.css">
+    
+        
+        <link rel="stylesheet" href="./Труба с вилкой _ CSCI3150 - IPC-Pipe_files/style(1).css">
+        
+    
+        
+        <link rel="stylesheet" href="./Труба с вилкой _ CSCI3150 - IPC-Pipe_files/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="./Труба с вилкой _ CSCI3150 - IPC-Pipe_files/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="./Труба с вилкой _ CSCI3150 - IPC-Pipe_files/website(1).css">
+        
+    
+    
+
+        
+    
+    
+    
+    
+    
+    
+    
+
+        
+    <link rel="prev" href="http://www.cse.cuhk.edu.hk/~ericlo/teaching/os/lab/6-IPC1/pipe-creation.html"><link rel="next" href="http://www.cse.cuhk.edu.hk/~ericlo/teaching/os/lab/6-IPC1/exercise-1.html"></head>
+    <body>
+        
+        
+    <div class="book without-animation with-summary font-size-2 font-family-1" data-level="2.2" data-chapter-title="Pipe with fork" data-filepath="pipe-fork.md" data-basepath="." data-revision="Thu Oct 06 2016 12:56:14 GMT+0800 (HKT)" data-innerlanguage="">
+    
+
+<div class="book-summary"><div class="book-search" role="search"><input type="text" class="form-control" placeholder="Тип для поиска"></div>
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="http://www.cse.cuhk.edu.hk/~ericlo/teaching/os/lab/6-IPC1/index.html">
+                
+                        <i class="fa fa-check"></i>    Цель этой лаборатории  </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1">
+            
+            <span><b>1.</b> Знание о трубе</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="man-pipe.html">
+            
+                
+                    <a href="http://www.cse.cuhk.edu.hk/~ericlo/teaching/os/lab/6-IPC1/man-pipe.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b> Обзор трубы  </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="system-pipe.html">
+            
+                
+                    <a href="http://www.cse.cuhk.edu.hk/~ericlo/teaching/os/lab/6-IPC1/system-pipe.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b> Труба системного вызова  </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2">
+            
+            <span><b>2.</b> Научитесь использовать трубу</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="pipe-creation.html">
+            
+                
+                    <a href="http://www.cse.cuhk.edu.hk/~ericlo/teaching/os/lab/6-IPC1/pipe-creation.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b> Создание трубы  </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.2" data-path="pipe-fork.html">
+            
+                
+                    <a href="http://www.cse.cuhk.edu.hk/~ericlo/teaching/os/lab/6-IPC1/pipe-fork.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b> Труба с вилкой  </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="exercise-1.html">
+            
+                
+                    <a href="http://www.cse.cuhk.edu.hk/~ericlo/teaching/os/lab/6-IPC1/exercise-1.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b> Упражнение  </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3">
+            
+            <span><b>3.</b> Труба в оболочке</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="pipe-shell.html">
+            
+                
+                    <a href="http://www.cse.cuhk.edu.hk/~ericlo/teaching/os/lab/6-IPC1/pipe-shell.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b> Реализовать ls | less в C  </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="exercise-2.html">
+            
+                
+                    <a href="http://www.cse.cuhk.edu.hk/~ericlo/teaching/os/lab/6-IPC1/exercise-2.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b> Упражнение  </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="reference.html">
+            
+                
+                    <a href="http://www.cse.cuhk.edu.hk/~ericlo/teaching/os/lab/6-IPC1/reference.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b> 4. Ссылка  </a>
+            
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com/" target="blank" class="gitbook-link">  Опубликовано с помощью GitBook  </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <a class="btn pull-left js-toolbar-action" aria-label="" href="http://www.cse.cuhk.edu.hk/~ericlo/teaching/os/lab/6-IPC1/pipe-fork.html#"><i class="fa fa-align-justify"></i></a><a class="btn pull-left js-toolbar-action" aria-label="Поиск" href="http://www.cse.cuhk.edu.hk/~ericlo/teaching/os/lab/6-IPC1/pipe-fork.html#"><i class="fa fa-search"></i></a><div class="dropdown pull-right  js-toolbar-action"><a class="btn toggle-dropdown" aria-label="Поделиться" href="http://www.cse.cuhk.edu.hk/~ericlo/teaching/os/lab/6-IPC1/pipe-fork.html#"><i class="fa fa-share-alt"></i></a><div class="dropdown-menu dropdown-left"><div class="dropdown-caret"><span class="caret-outer"></span><span class="caret-inner"></span></div><div class="buttons"><button class="button size-5 ">Facebook</button><button class="button size-5 ">Google+</button><button class="button size-5 ">Twitter</button><button class="button size-5 ">Weibo</button><button class="button size-5 ">Instapaper</button></div></div></div><a class="btn pull-right js-toolbar-action" aria-label="" href="http://www.cse.cuhk.edu.hk/~ericlo/teaching/os/lab/6-IPC1/pipe-fork.html#"><i class="fa fa-facebook"></i></a><a class="btn pull-right js-toolbar-action" aria-label="" href="http://www.cse.cuhk.edu.hk/~ericlo/teaching/os/lab/6-IPC1/pipe-fork.html#"><i class="fa fa-twitter"></i></a><div class="dropdown pull-left font-settings js-toolbar-action"><a class="btn toggle-dropdown" aria-label="Настройки шрифта" href="http://www.cse.cuhk.edu.hk/~ericlo/teaching/os/lab/6-IPC1/pipe-fork.html#"><i class="fa fa-font"></i></a><div class="dropdown-menu dropdown-right"><div class="dropdown-caret"><span class="caret-outer"></span><span class="caret-inner"></span></div><div class="buttons"><button class="button size-2 font-reduce">A</button><button class="button size-2 font-enlarge">A</button></div><div class="buttons"><button class="button size-2 "></button><button class="button size-2 ">Без засечек</button></div><div class="buttons"><button class="button size-3 ">Белая</button><button class="button size-3 "></button><button class="button size-3 ">ночь сепии</button></div></div></div><h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="http://www.cse.cuhk.edu.hk/~ericlo/teaching/os/lab/6-IPC1/">CSCI3150 - IPC-Pipe</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h2 id="pipe-with-fork">Труба с вилкой</h2>
+<hr>
+<p><code>pipe1.c</code> показывает вам основную операцию на трубе. Но для одного процесса не очень полезно использовать трубу для разговора с самим собой. При обычном использовании процесс создает трубу непосредственно перед тем, как он разветвляет один или несколько дочерних процессов. Затем труба используется для связи либо между родительским или дочерним процессами, либо между двумя родственными процессами <strong>(A2)</strong>. <code>pipe2.c</code>и <code>pipe3.c</code>показать вам, как труба работает между связанным процессом.</p>
+<p>В<a href="http://www.cse.cuhk.edu.hk/~ericlo/teaching/os/lab/6-IPC1/code/pipe2.c"><code>pipe2.c</code></a>, родитель пишет "CSCI3150" в трубу, ребенок читает из трубы 1 байт за раз, пока труба не опустеет.</p>
+<pre><code class="lang-c"><span class="hljs-comment">/* pipe2.c */</span>
+<span class="hljs-preprocessor">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span>
+<span class="hljs-preprocessor">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdlib.h&gt;</span></span>
+<span class="hljs-preprocessor">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;unistd.h&gt;</span></span>
+<span class="hljs-preprocessor">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;string.h&gt;</span></span>
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">int</span> argc, <span class="hljs-keyword">char</span>* argv[])</span>
+</span>{
+    <span class="hljs-keyword">int</span> pipefds[<span class="hljs-number">2</span>];
+      <span class="hljs-keyword">pid_t</span> pid;
+    <span class="hljs-keyword">char</span> buf[<span class="hljs-number">30</span>];
+    <span class="hljs-comment">//create pipe</span>
+    <span class="hljs-keyword">if</span>(pipe(pipefds) == -<span class="hljs-number">1</span>){
+        perror(<span class="hljs-string">"pipe"</span>);
+        <span class="hljs-built_in">exit</span>(EXIT_FAILURE);
+    }
+      <span class="hljs-built_in">memset</span>(buf,<span class="hljs-number">0</span>,<span class="hljs-number">30</span>);
+      pid = fork();
+    <span class="hljs-keyword">if</span> (pid &gt; <span class="hljs-number">0</span>) {
+      <span class="hljs-built_in">printf</span>(<span class="hljs-string">" PARENT write in pipe\n"</span>);
+    <span class="hljs-comment">//parent close the read end</span>
+          close(pipefds[<span class="hljs-number">0</span>]);
+    <span class="hljs-comment">//parent write in the pipe write end                 </span>
+      write(pipefds[<span class="hljs-number">1</span>], <span class="hljs-string">"CSCI3150"</span>, <span class="hljs-number">9</span>);
+    <span class="hljs-comment">//after finishing writing, parent close the write end</span>
+          close(pipefds[<span class="hljs-number">1</span>]);
+    <span class="hljs-comment">//parent wait for child                </span>
+      wait(<span class="hljs-literal">NULL</span>);                         
+    }<span class="hljs-keyword">else</span> {
+      <span class="hljs-comment">//child close the write end  </span>
+      close(pipefds[<span class="hljs-number">1</span>]);   <span class="hljs-comment">//-----line *</span>
+      <span class="hljs-comment">//child read from the pipe read end until the pipe is empty   </span>
+      <span class="hljs-keyword">while</span>(read(pipefds[<span class="hljs-number">0</span>], buf, <span class="hljs-number">1</span>)==<span class="hljs-number">1</span>)   
+        <span class="hljs-built_in">printf</span>(<span class="hljs-string">"CHILD read from pipe -- %s\n"</span>, buf);
+      <span class="hljs-comment">//after finishing reading, child close the read end</span>
+      close(pipefds[<span class="hljs-number">0</span>]);
+      <span class="hljs-built_in">printf</span>(<span class="hljs-string">"CHILD: EXITING!"</span>);
+      <span class="hljs-built_in">exit</span>(EXIT_SUCCESS);
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</code></pre>
+<p><img src="./Труба с вилкой _ CSCI3150 - IPC-Pipe_files/pipe2.PNG" alt="">
+<strong>Анализ:</strong> Как вы можете видеть, труба работает правильно. После fork() дескрипторы файлов труб совместно используются родителем и потомком, как показано на рисунке ниже.</p>
+<p><img src="./Труба с вилкой _ CSCI3150 - IPC-Pipe_files/pipe_fork.PNG" alt=""></p>
+<p>Чтобы обеспечить правильную работу трубы, вы должны:<strong>* Всегда закрывайте конец трубы, который вас не касается.</strong>То есть, если родитель хочет получить данные от ребенка, он должен закрыть pipefds[1], а ребенок должен закрыть pipefds[0]. Когда процессы закончат чтение или запись, закройте связанные файловые дескрипторы. В противном случае возникнут нежелательные проблемы синхронизации.</p>
+<p><a href="http://www.cse.cuhk.edu.hk/~ericlo/teaching/os/lab/6-IPC1/code/pipe3.c"><code>pipe3.c</code></a> почти то же самое с pipe2.c, за исключением линии * закомментирована. Это означает, что ребенок забывает закрыть конец записи. Что произойдет?</p>
+<pre><code class="lang-c"><span class="hljs-comment">/* pipe3.c */</span>
+<span class="hljs-preprocessor">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span>
+<span class="hljs-preprocessor">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdlib.h&gt;</span></span>
+<span class="hljs-preprocessor">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;unistd.h&gt;</span></span>
+<span class="hljs-preprocessor">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;string.h&gt;</span></span>
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">int</span> argc, <span class="hljs-keyword">char</span>* argv[])</span>
+</span>{
+    <span class="hljs-keyword">int</span> pipefds[<span class="hljs-number">2</span>];
+      <span class="hljs-keyword">pid_t</span> pid;
+    <span class="hljs-keyword">char</span> buf[<span class="hljs-number">30</span>];
+    <span class="hljs-comment">//create pipe</span>
+    <span class="hljs-keyword">if</span>(pipe(pipefds) == -<span class="hljs-number">1</span>){
+        perror(<span class="hljs-string">"pipe"</span>);
+        <span class="hljs-built_in">exit</span>(EXIT_FAILURE);
+    }
+      <span class="hljs-built_in">memset</span>(buf,<span class="hljs-number">0</span>,<span class="hljs-number">30</span>);
+      pid = fork();
+    <span class="hljs-keyword">if</span> (pid &gt; <span class="hljs-number">0</span>) {
+      <span class="hljs-built_in">printf</span>(<span class="hljs-string">" PARENT write in pipe\n"</span>);
+    <span class="hljs-comment">//parent close the read end</span>
+          close(pipefds[<span class="hljs-number">0</span>]);
+    <span class="hljs-comment">//parent write in the pipe write end                 </span>
+      write(pipefds[<span class="hljs-number">1</span>], <span class="hljs-string">"CSCI3150"</span>, <span class="hljs-number">9</span>);
+    <span class="hljs-comment">//after finishing writing, parent close the write end</span>
+          close(pipefds[<span class="hljs-number">1</span>]);
+    <span class="hljs-comment">//parent wait for child                </span>
+      wait(<span class="hljs-literal">NULL</span>);                         
+    }<span class="hljs-keyword">else</span> {  
+      <span class="hljs-comment">//child read from the pipe read end until the pipe is empty   </span>
+      <span class="hljs-keyword">while</span>(read(pipefds[<span class="hljs-number">0</span>], buf, <span class="hljs-number">1</span>)==<span class="hljs-number">1</span>)   
+        <span class="hljs-built_in">printf</span>(<span class="hljs-string">"CHILD read from pipe -- %s\n"</span>, buf);
+      <span class="hljs-comment">//after finishing reading, child close the read end</span>
+      close(pipefds[<span class="hljs-number">0</span>]);
+      <span class="hljs-built_in">printf</span>(<span class="hljs-string">"CHILD: EXITING!"</span>);
+      <span class="hljs-built_in">exit</span>(EXIT_SUCCESS);
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</code></pre>
+<p><img src="./Труба с вилкой _ CSCI3150 - IPC-Pipe_files/pipe3.PNG" alt="">
+<strong>Анализ:</strong> Мы видим, что дочерний процесс не завершается. Что происходит? Обратите внимание, что дочерний процесс все еще имеет открытые pipefds[1]. Система будет предполагать, что запись может произойти, когда любой процесс имеет открытый конец записи, даже если единственным таким процессом является тот, который в данный момент пытается прочитать из трубы, и поэтому система не сообщит EOF <strong>(A4)</strong>. Таким образом, ребенок ждет чтения из pipefds[0], и операционная система не знает, что ни один процесс не будет записывать в pipdfds [1]. Таким <strong>образом, дочерний процесс блокируется до тех пор, пока не поступят данные для чтения (A3)</strong></p>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="http://www.cse.cuhk.edu.hk/~ericlo/teaching/os/lab/6-IPC1/pipe-creation.html" class="navigation navigation-prev " aria-label="Предыдущая страница: Создание трубы"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="http://www.cse.cuhk.edu.hk/~ericlo/teaching/os/lab/6-IPC1/exercise-1.html" class="navigation navigation-next " aria-label="Следующая страница: Упражнение" style="margin-right: 15px;"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="./Труба с вилкой _ CSCI3150 - IPC-Pipe_files/app.js"></script>
+
+    
+    <script src="./Труба с вилкой _ CSCI3150 - IPC-Pipe_files/script.js"></script>
+    
+
+    
+    <script src="./Труба с вилкой _ CSCI3150 - IPC-Pipe_files/lunr.min.js"></script>
+    
+
+    
+    <script src="./Труба с вилкой _ CSCI3150 - IPC-Pipe_files/search.js"></script>
+    
+
+    
+    <script src="./Труба с вилкой _ CSCI3150 - IPC-Pipe_files/buttons.js"></script>
+    
+
+    
+    <script src="./Труба с вилкой _ CSCI3150 - IPC-Pipe_files/buttons(1).js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"quiz":{},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    
+    
+
+</body><style id="stylus-1" type="text/css" class="stylus">body {
+    font-family: 'pragmata pro mono regular';
+}</style></html>

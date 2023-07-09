@@ -1,0 +1,88 @@
+## Уроки Java
+https://www.youtube.com/playlist?list=PL786bPIlqEjRDXpAKYbzpdTaOYsWyjtCX
+## Spark & BigData
+https://www.youtube.com/playlist?list=PL786bPIlqEjRi19k9phfLFDvXx6iNo9MT
++-
+https://www.youtube.com/watch?v=7VIqgemfbmE&list=PL786bPIlqEjRi19k9phfLFDvXx6iNo9MT&index=3
+## Kotlin
+https://www.youtube.com/playlist?list=PL786bPIlqEjRARZ3bfJgBT2fdh_H-Rb2F
+## Mongo & NOSql
+https://www.youtube.com/playlist?list=PL786bPIlqEjTIVP-EA7H302-GuA7DAaAY
+## Docker
+https://www.youtube.com/playlist?list=PL786bPIlqEjQQq-KG4zTpz07SsYxFeBQD
+## JUnit
+https://www.youtube.com/playlist?list=PL786bPIlqEjQBhjxIV5H27q2kWX0DbFx8
+## GIT
+https://www.youtube.com/playlist?list=PL786bPIlqEjRbdDJg2nVYQDgImmQ79h-i
+## Maven
+https://www.youtube.com/playlist?list=PL786bPIlqEjQmG_5YnZbhEJqSGUL_tU76
+## JPA
+https://www.youtube.com/playlist?list=PL786bPIlqEjTxMfBQQAPSpRFB0wWU-ZEK
+## Bean validation
+https://www.youtube.com/playlist?list=PL786bPIlqEjTdgwSxUoZyV7n5DuQJmfrT
++-
+https://www.youtube.com/watch?v=dneuHnq-XLQ&list=PL786bPIlqEjTdgwSxUoZyV7n5DuQJmfrT&index=5
+## Context & Dependency injection
+https://www.youtube.com/playlist?list=PL786bPIlqEjR3RVDn1tWOW2myLCD9kl1j
++-
+https://www.youtube.com/watch?v=9UsDe9gPmMY&list=PL786bPIlqEjR3RVDn1tWOW2myLCD9kl1j&index=6
+https://www.youtube.com/watch?v=3tQaiCUeRi0&list=PL786bPIlqEjR3RVDn1tWOW2myLCD9kl1j&index=10
+## WebXml
+https://www.youtube.com/playlist?list=PL786bPIlqEjSTQTbyAal_QDLbw2FFjrK6
+## JSP
+https://www.youtube.com/playlist?list=PL786bPIlqEjTzcnx5pcHAmrxvjVYFwLkO
++-
+https://www.youtube.com/watch?v=9B3ZIWGtFJM&list=PL786bPIlqEjTzcnx5pcHAmrxvjVYFwLkO&index=8
+## Servlets
+https://www.youtube.com/playlist?list=PL786bPIlqEjRVDNpxzgLv9iMmB4y5kMfT
+
+---------------------------------------------------------------------
+
+## Java EE
+https://www.youtube.com/playlist?list=PL786bPIlqEjSoaZjtS5y6hQrUWOzs72Jl
++-
+https://www.youtube.com/watch?v=QiVM_DTuB7Q&list=PL786bPIlqEjSoaZjtS5y6hQrUWOzs72Jl&index=65
+https://www.youtube.com/watch?v=2UFMIoUCQHw&list=PL786bPIlqEjSoaZjtS5y6hQrUWOzs72Jl&index=66
+## Best practice
+https://www.youtube.com/playlist?list=PL786bPIlqEjTj4KkBF8W1YcwhR3frd7nn
++-
+https://www.youtube.com/watch?v=tgfMAfI_1Z4&list=PL786bPIlqEjTj4KkBF8W1YcwhR3frd7nn&index=9
+## Advanced 2
+https://www.youtube.com/playlist?list=PL786bPIlqEjRslBKWykYYlZATPenv73xD
++
+https://www.youtube.com/watch?v=uL9r3TEL9rc&list=PL786bPIlqEjRslBKWykYYlZATPenv73xD&index=14
+## Collections
+https://www.youtube.com/playlist?list=PL786bPIlqEjRvuYGGDMxy6YqzG-Hizvs8
+## Generics
+https://www.youtube.com/playlist?list=PL786bPIlqEjRgNRjyr3Ae6u9Kt4WLr4-f
+
+-------------------------------------------------------------------------
+
+## Java 8
+https://www.youtube.com/playlist?list=PL786bPIlqEjSAvjUJtG_q9bFxQnNvI0Ab
+## SOLID
+https://www.youtube.com/playlist?list=PL786bPIlqEjSIw5MkTKYMm0pHIvqxnCpC
+## Patterns
+https://www.youtube.com/playlist?list=PL786bPIlqEjRMh8_H4EBkxXlLis-Ag4na
+## Regular expression
+https://www.youtube.com/playlist?list=PL786bPIlqEjQsE_WAcKpkZ-Q4T-A8j1D2
+## Java FX
+https://www.youtube.com/playlist?list=PL786bPIlqEjQ-0zPCuCcVDYdrCGdu71r-
++
+https://www.youtube.com/watch?v=IMYi0bbOKvw&list=PL786bPIlqEjQ-0zPCuCcVDYdrCGdu71r-&index=1
+https://www.youtube.com/watch?v=8fgjcJ8nDPA&list=PL786bPIlqEjQ-0zPCuCcVDYdrCGdu71r-&index=10
+
+--------------------------------------------------------------
+
+## More advanced
+https://www.youtube.com/playlist?list=PL786bPIlqEjQifz13w4nAE9d-53HW387n
+## Java 9
+https://www.youtube.com/playlist?list=PL786bPIlqEjS5f6Qv-d-G06Yq_QVvCSOS
+## JDBC
+https://www.youtube.com/playlist?list=PL786bPIlqEjTblvnalTTxuH9kzMC6oOxR
+## Network
+https://www.youtube.com/playlist?list=PL786bPIlqEjQgfFzMu_nS2Mrs9GGfMlAq
+## XML
+https://www.youtube.com/playlist?list=PL786bPIlqEjQA-dqxCcH1f4EkcJtFGUHA
+## Advanced Java
+https://

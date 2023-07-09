@@ -1,0 +1,6 @@
+#include <strings.h>
+
+int ffs(int i);
+#include <string.h>
+int ffsl(long int i);
+int ffsll(long long int i);

@@ -1,0 +1,7 @@
+# in deb_1.sh
+
+## delete dir_1
+## create directory dir_1/ex1 with envariment for exec._extst process
+## create directory dir_1/ex2 with envariment for exec._extst process
+## create check_distst.list in dir_1
+## create start_check_distst.sh in dir_1

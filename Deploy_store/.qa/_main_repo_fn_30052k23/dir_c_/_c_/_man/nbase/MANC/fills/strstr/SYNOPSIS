@@ -1,0 +1,7 @@
+#include <string.h>
+
+char *strstr(const char *haystack, const char *needle);
+#define _GNU_SOURCE /* см. feature_test_macros(7) */
+
+#include <string.h>
+char *strcasestr(const char *haystack, const char *needle);

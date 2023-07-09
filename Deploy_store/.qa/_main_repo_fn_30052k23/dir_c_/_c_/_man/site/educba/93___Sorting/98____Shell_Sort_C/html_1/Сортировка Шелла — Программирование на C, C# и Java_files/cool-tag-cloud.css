@@ -1,0 +1,139 @@
+.cool-tag-cloud .ctcdefault .ctcleft a {
+	background: url(images/default-left.png) no-repeat!important;  
+}
+.cool-tag-cloud .ctcdefault .ctcright a {
+	background: url(images/default-right.png) no-repeat!important;  
+}
+.cool-tag-cloud .ctcleft a {
+	margin: 0 4px 4px -2px!important;
+	display: inline-block!important;  
+	height: 25px!important;  
+	line-height:22px!important;
+	color: #fff!important;  
+	text-decoration: none!important;  
+	padding: 0 10px 0 21px!important;  
+	text-shadow: none!important;  
+	white-space: nowrap!important;  
+	position: relative!important;  
+	border-color: none!important;
+	border: none!important;
+	transition: none!important;
+}	
+.cool-tag-cloud .ctcright a {
+	margin: 0 17px 4px 0px!important;
+	display: inline-block!important;  
+	height: 25px!important;  
+	line-height:22px!important;
+	color: #fff!important;  
+	text-decoration: none!important;  
+	padding: 0 5px 0 12px!important;  
+	text-shadow: none!important;  
+	white-space: nowrap!important;  
+	position: relative!important;  
+	border-color: none!important;
+	border: none!important;
+	transition: none!important;
+}
+.cool-tag-cloud  .ctcdefault .ctcleft a:after { 
+	background: url(images/default-left.png) top right no-repeat!important; 
+}
+.cool-tag-cloud  .ctcdefault .ctcright a:after { 
+	background: url(images/default-right.png) top right no-repeat!important; 
+}
+.cool-tag-cloud  .ctcleft a:after { 
+	content: ''!important;  
+	position: absolute!important;  
+	top: 0!important;  
+	right: -2px!important;  
+	width: 2px!important;  
+	height: 25px!important;   
+	border: none!important;
+	transition: none!important;
+}  
+.cool-tag-cloud  .ctcright a:after { 
+	content: ''!important;  
+	position: absolute!important;  
+	top: 0!important;  
+	right: -17px!important;  
+	width: 17px!important;  
+	height: 25px!important;   
+	border: none!important;
+	transition: none!important;
+} 
+.cool-tag-cloud .ctcdefault .ctcleft a:hover {  
+	background: url(images/default-left.png) bottom left no-repeat!important;  
+}
+.cool-tag-cloud .ctcdefault .ctcright a:hover {  
+	background: url(images/default-right.png) bottom left no-repeat!important;  
+}
+.cool-tag-cloud .ctcleft a:hover { 
+	margin: 0 4px 4px -2px!important;
+	display: inline-block!important;  
+	height: 25px!important;  
+	line-height:22px!important; 
+	color: #fff!important;  
+	text-decoration: none!important;  
+	padding: 0 10px 0 21px!important;  
+	text-shadow: none!important;  
+	white-space: nowrap!important;  
+	position: relative!important;  
+	border-color: none!important;
+	border: none!important;
+	transition: none!important;
+}  
+.cool-tag-cloud .ctcright a:hover { 
+	margin: 0 17px 4px 0px!important;
+	display: inline-block!important;  
+	height: 25px!important;  
+	line-height:22px!important; 
+	color: #fff!important;  
+	text-decoration: none!important;  
+	padding: 0 5px 0 12px!important;  
+	text-shadow: none!important;  
+	white-space: nowrap!important;  
+	position: relative!important;  
+	border-color: none!important;
+	border: none!important;
+	transition: none!important;
+} 
+.cool-tag-cloud .ctcdefault .ctcleft a:hover:after {
+	background: url(images/default-left.png) bottom right no-repeat!important; 
+}
+.cool-tag-cloud .ctcdefault .ctcright a:hover:after {
+	background: url(images/default-right.png) bottom right no-repeat!important; 
+}
+.cool-tag-cloud .ctcleft a:hover:after {
+  content: ''!important;  
+  position: absolute!important;  
+  top: 0!important;  
+  right: -2px!important;  
+  width: 2px!important;  
+  height: 25px!important;  
+  text-shadow: none!important;  
+  border: none!important;
+  transition: none!important;
+}
+.cool-tag-cloud .ctcright a:hover:after {
+  content: ''!important;  
+  position: absolute!important;  
+  top: 0!important;  
+  right: -17px!important;  
+  width: 17px!important;  
+  height: 25px!important;  
+  text-shadow: none!important;  
+  border: none!important;
+  transition: none!important;
+}
+
+
+.cool-tag-cloud .cloudbold  a{
+	font-weight:bold!important;
+}
+.cool-tag-cloud .arial {font-family:Arial, Helvetica, Sans-serif!important}
+.cool-tag-cloud .rockwell {font-family:Rockwell, Georgia, Serif!important}
+.cool-tag-cloud .tahoma {font-family:Tahoma, Geneva, Sans-serif!important}
+.cool-tag-cloud .georgia {font-family:Georgia, Times, Serif!important}
+.cool-tag-cloud .times {font-family:Times, Georgia, Serif!important}
+.cool-tag-cloud .cambria {font-family:Cambria, Georgia, Serif!important}
+.cool-tag-cloud .verdana {font-family:Verdana, Lucida, Sans-serif!important}
+.cool-tag-cloud .opensans {font-family:"Open Sans", Helvetica, Arial!important}

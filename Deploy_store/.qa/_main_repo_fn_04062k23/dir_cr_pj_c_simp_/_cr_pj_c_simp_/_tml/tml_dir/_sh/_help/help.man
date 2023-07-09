@@ -1,0 +1,15 @@
+"\033[0;36m {fn_name} help: 
+___________:MAIN:  
+___________:NAME: {fn_name}()
+___________:ARGS:
+___________:CNTL: 
+___________:-h  :: echo help (. dir_project/_sh/help.sh [ echo \"help\" ])
+___________:_go :: edit fn_dir (. dir_project/_sh/go.sh [ \$MAINEDITOR dir_project ])
+___________:_rbl:: rebild fn_dir (. dir_project/_sh/rbl.sh [ . dir_project/_sh/_patch/patch_1.sh ] )
+___________:_man:: edit man_file (. dir_project/_sh/man.sh [ \$MAINEDITOR dir_project/_sh/_man/man_1.man ])
+___________:_tst:: exec .tst file (. dir_project/_sh/tst.sh [ if exist (. dir_project/exec.tst )])
+___________:[, -echo, -debug ...]
+___________:TAGS:
+___________:FLOW:
+___________:DEBUG:
+___________:EXAMP:\033[0m}"

@@ -1,0 +1,266 @@
+### UP
+[remquol](##remquol)
+[MAIN](##MAIN)
+[MAIN_ru](##MAIN_ru)
+[ANCORS](##ANCORS)
+[ISU](##ISU)
+[inet](##A_inet)
+[inet](##books_inet)
+[inet](##examples_inet)
+[inet](##classic_inet)
+[inet](##enters_inet)
+[inet](##issue_code_inet)
+[H_FILE](##H_FILE)
+[p_SYNOPSIS](##p_SYNOPSIS)
+[p_RETURN](##p_RETURN)
+[p_RETURN_ru](##p_RETURN_ru)
+[p_BUGS](##p_BUGS)
+[p_DESCRIPTION_ru](##p_DESCRIPTION_ru)
+[p_DESCRIPTION](##p_DESCRIPTION)
+[p_MIRRORS](##p_MIRRORS)
+[p_EXAMPLES](##p_EXAMPLES)
+[p_CODE_h](##p_CODE_h)
+[p_CODE_c](##p_CODE_c)
+[p_CODE_m](##p_CODE_m)
+[p_ERRORS](##p_ERRORS)
+[p_BOOKS](##p_BOOKS)
+[p_BOOKS_ru](##p_BOOKS_ru)
+[p_CONTENT](##p_CONTENT)
+
+[cat_hfiles](../../cat_hfiles.md)
+[cat_utils](../../cat_utils.md)
+[cat_structs](../../cat_structs.md)
+[cat_param](../../cat_params.md)
+[cat_macros](../../cat_macross.md)
+[cat_const](../../cat_consts.md)
+[cat_type](../../cat_types.md)
+[cat_any](../cat_anys.md)
+
+
+[UP](###UP)
+## MAIN
+:remquol:
+[next](##MAIN_ru)
+
+<<MAIN>>
+[MAIN](../../fills/remquol/MAIN)
+
+
+
+[UP](###UP)
+## MAIN_ru
+:remquol:
+[next](##ANCORS)
+
+<<MAIN_ru>>
+[MAIN_ru](../../fills/remquol/MAIN_ru)
+
+[UP](###UP)
+## ANCORS
+:remquol:
+[next](##ISU)
+
+<<ANCORS>>
+[ANCORS](../../fills/remquol/ANCORS)
+
+[UP](###UP)
+## ISU
+:remquol:
+[next](##H_FILE)
+
+<<ISU>>
+only read
+:remquol:
+[ISU](../../contents)
+[next](##inet)
+
+
+[UP](###UP)
+## inet
+:remquol:
+[next](##H_FILE)
+
+
+[UP](###UP)
+## A_inet
+[manpages.org](https://www.google.ru/search?q=remquol+site%3Ahttps%3A%2F%2Fmanpages.org)
+[reposcope.com_ru](https://www.google.ru/search?q=remquol+site%3Ahttps%3A%2F%2Freposcope.com%2Fmanpages%2Fru)
+[pubs.opengroup.org](https://www.google.com/search?q=remquol+https%3A%2F%2Fpubs.opengroup.org)
+[manpages.debian.org](https://yandex.ru/search/?text=remquol+site%3Ahttps%3A%2F%2Fmanpages.debian.org%2F)
+[www.opennet.ru](http://www.opennet.ru/man.shtml?category=2&topic=remquol)
+[man7.org](https://www.google.ru/search?q=remquol+site%3Ahttps%3A%2F%2Fman7.org%2Flinux%2Fman-pages)
+[en.cppreference.com](https://www.google.com/search?q=remquol+en.cppreference.com)
+[www.mankier.com](https://www.mankier.com/?q=remquol)
+[www.codecogs.com](https://www.google.ru/search?q=remquol+https%3A%2F%2Fwww.codecogs.com%2Flibrary%2Fcomputing%2F)
+[digitalmars.com](https://www.google.ru/search?q=remquol+https%3A%2F%2Fdigitalmars.com%2Frtl%2F)
+
+
+[UP](###UP)
+## books_inet
+[cpp.com.ru](https://yandex.ru/search/?text=remquol+site%3Ahttps%3A%2F%2Fcpp.com.ru)
+[linuxhint.com](https://www.google.ru/search?q=remquol+site%3Ahttps%3A%2F%2Flinuxhint.com)
+[gnu.org](https://www.google.ru/search?q=remquol+site%3Ahttps%3A%2F%2Fwww.gnu.org%2Fsoftware%2Flibc%2Fmanual)
+
+[UP](###UP)
+## examples_inet
+[yandex:examples](https://yandex.ru/search/?text=remquol+example+in+c)
+[docs.oracle.com](https://www.google.com/search?q=remquol+https%3A%2F%2Fdocs.oracle.com)
+[manpages.debian.org](https://yandex.ru/search/?text=remquol+site%3Ahttps%3A%2F%2Fmanpages.debian.org%2F)
+[osr507doc.xinuos.com](https://www.google.com/search?q=remquol+http%3A%2F%2Fosr507doc.xinuos.com%2Fen%2Fman)
+[cpp.hotexamples.com](https://cpp.hotexamples.com/examples/-/-/remquol/cpp-remquol-function-examples.html)
+[all-ht.ru](https://yandex.ru/search/?text=remquol+site%3Ahttp%3A%2F%2Fall-ht.ru%2Finf%2Fprog%2Fc%2F)
+[cppreference.com](https://yandex.ru/search/?text=remquol+site%3Ahttps%3A%2F%2Fen.cppreference.com%2Fw%2Fc%2F)
+
+[UP](###UP)
+## classic_inet
+[bogatyrev_c_unix](https://www.google.com/search?q=remquol+site%3Ahttps%3A%2F%2Fcpp.com.ru%2Fbogatyrev_c_unix)
+[kr_cbook](https://www.google.com/search?q=remquol+site%3Ahttps%3A%2F%2Fcpp.com.ru%2Fkr_cbook)
+
+[UP](###UP)
+## enters_inet
+[pubs.opengroup.org](https://pubs.opengroup.org/onlinepubs/9699919799/idx/head.html)
+
+[UP](###UP)
+## issue_code_inet
+[code.woboq.org](https://www.google.com/search?h=&sitesearch=https%3A%2F%2Fcode.woboq.org%2Fuserspace%2Fglibc%2F&q=remquol)
+
+
+[UP](###UP)
+## H_FILE 
+[math_h.md](../../hfiles/math_h.md)
+
+
+[UP](###UP)
+## p_SYNOPSIS
+:remquol:
+[next](##p_RETURN_ru)
+
+<<SYNOPSIS>>
+[SYNOPSIS](../../fills/remquol/SYNOPSIS)
+
+
+[UP](###UP)
+## p_RETURN_ru
+:remquol:
+[next](##p_RETURN)
+
+<<RETURN>>
+[RETURN_ru](../../fills/remquol/RETURN)
+
+
+[UP](###UP)
+## p_RETURN
+:remquol:
+[next](##p_DESCRIPTION_ru)
+
+<<RETURN_ru>>
+[RETURN](../../fills/remquol/RETURN_ru)
+
+
+[UP](###UP)
+## p_DESCRIPTION_ru
+:remquol:
+[next](##p_DESCRIPTION)
+
+<<DESCRIPTION_ru>>
+[DESCRIPTION_ru](../../fills/remquol/DESCRIPTION_ru)
+
+
+[UP](###UP)
+## p_DESCRIPTION
+:remquol:
+[next](##p_BUGS)
+
+<<DESCRIPTION>>
+[DESCRIPTION](../../fills/remquol/DESCRIPTION)
+
+
+[UP](###UP)
+## p_MIRRORS
+:remquol:
+[next](##p_BUGS)
+
+<<MIRRORS>>
+[MIRRORS](../../fills/remquol/MIRRORS)
+
+
+[UP](###UP)
+## p_BUGS
+:remquol:
+[next](##p_EXAMPLES)
+
+<<BUGS>>
+[BUGS](../../fills/remquol/BUGS)
+
+
+[UP](###UP)
+## p_EXAMPLES
+:remquol:
+[next](##p_CODE)
+
+<<EXAMPLES>>
+[EXAMPLES](../../fills/remquol/EXAMPLES)
+
+
+[UP](###UP)
+## p_CODE_h
+:remquol:
+[next](##p_CODE_c)
+
+<<CODE_h>>
+[CODE_h](../../fills/remquol/CODE_h)
+
+
+[UP](###UP)
+## p_CODE_c
+:remquol:
+[next](##p_CODE_m)
+
+<<CODE_c>>
+[CODE_c](../../fills/remquol/CODE_c)
+
+
+[UP](###UP)
+## p_CODE_m
+:remquol:
+[next](##p_ERRORS)
+
+<<CODE_m>>
+[CODE_m](../../fills/remquol/CODE_m)
+
+
+[UP](###UP)
+## p_ERRORS
+:remquol:
+[next](##p_BOOKS)
+
+<<ERRORS>>
+[ERRORS](../../fills/remquol/ERRORS)
+
+
+[UP](###UP)
+## p_BOOKS
+:remquol:
+[next](##p_BOOKS_ru)
+
+<<BOOKS>>
+[BOOKS](../../fills/remquol/BOOKS)
+
+
+[UP](###UP)
+## p_BOOKS_ru
+:remquol:
+[next](##p_CONTENT)
+
+
+<<BOOKS_ru>>
+[BOOKS_ru](../../fills/remquol/BOOKS_ru)
+
+
+[UP](###UP)
+## p_CONTENT
+:33333:
+[33333.cnt](../../contents/33333.cnt)
+[next](##UP)
+
+[UP](###UP)

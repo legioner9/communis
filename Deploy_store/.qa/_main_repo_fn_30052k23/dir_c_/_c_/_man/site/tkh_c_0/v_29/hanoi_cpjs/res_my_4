@@ -1,0 +1,37 @@
+
+n = 1 : from 1 to 3
+n = 2 : from 1 to 2
+n = 1 : from 3 to 2
+n = 3 : from 1 to 3
+n = 1 : from 2 to 1
+n = 2 : from 2 to 3
+n = 1 : from 1 to 3
+n = 4 : from 1 to 2
+n = 1 : from 3 to 2
+n = 2 : from 3 to 1
+n = 1 : from 2 to 1
+n = 3 : from 3 to 2
+n = 1 : from 1 to 3
+n = 2 : from 1 to 2
+n = 1 : from 3 to 2
+[1m---start file: ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_c_/_c_/_man/site/tkh_c_0/v_29/hanoi_cpjs/exec.sh ---[0m
+[0;36m---c_to_h_() -u ---[0m
+[0;32m$PWD = ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_c_/_c_/_man/site/tkh_c_0/v_29/hanoi_cpjs[0m
+[0;32mfile = bash[0m
+[0;32margs = -u[0m
+[0;32m${ARGS[@]} = -u[0m
+[0;32m${ARGS[0]} = -u[0m
+[0;32m${ARGS[1]} = [0m
+[0;36m---c_up() $1 = ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_c_to_h_/_c_to_h_/_sh/---[0m
+[0;36m---cd_h() $.1=${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_c_to_h_/_c_to_h_/_sh/ $.2= $.3=---[0m
+[0;34m---cd ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_c_to_h_/_c_to_h_/_sh/ succ))---[0m
+[1m---start file: ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_c_to_h_/_c_to_h_/_sh/c_to_h_lib_dir_.sh ---[0m
+[0;36m---c_to_h_lib_dir_() ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_c_/_c_/_lib ---[0m
+[0;32m$(pwd) = ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_c_to_h_/_c_to_h_/_sh[0m
+[0;36m---cd_h() $.1=${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_c_/_c_/_lib $.2=${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_c_/_c_/_lib not exist dir in  $.3=---[0m
+[0;34m---cd ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_c_/_c_/_lib succ))---[0m
+[0;32m$item = lc_0.c[0m
+[0;34m--- Lib Already Updated ---[0m
+make: «main.bexe» не требует обновления.
+[0;31m--- start main.bexe ---[0m
+[0;31m--- end main.bexe ---[0m

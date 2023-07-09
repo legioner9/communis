@@ -1,0 +1,11 @@
+"$rdir"/res
+ --tml
+"$rdir"/f.tml 
+--vi0 
+"$filename" 
+--vr0 
+"{vph0}" 
+--fi0 
+"$rdir"/val.ins 
+--fr0 
+"{fph0}"

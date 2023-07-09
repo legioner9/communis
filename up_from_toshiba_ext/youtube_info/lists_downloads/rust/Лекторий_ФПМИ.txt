@@ -1,0 +1,5 @@
+# Программирование на Rust (3 курс, весна 2022) - Становой А.
+# https://gitlab.com/alex.stanovoy/mipt-rust
+
+Программирование на Rust (3 курс, весна 2022) - Становой А.(rust 3 couse)
+https://www.youtube.com/playlist?list=PL4_hYwCyhAvbeLzi699gqMUA4UaPkcdmJ

@@ -1,0 +1,10 @@
+{
+    wrp dir_1
+    file_1
+    file_2
+    {
+        dir_2
+        file_3
+        file_4
+    }
+}

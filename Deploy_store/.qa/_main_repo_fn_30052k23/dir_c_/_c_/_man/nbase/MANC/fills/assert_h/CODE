@@ -1,0 +1,173 @@
+https://code.woboq.org/userspace/glibc/assert/assert.h.html
+
+/*
+ *        ISO C99 Standard: 7.2 Diagnostics        <assert.h>
+ */
+#ifdef        _ASSERT_H
+# undef        _ASSERT_H
+# undef        assert
+# undef __ASSERT_VOID_CAST
+# ifdef        __USE_GNU
+#  undef assert_perror
+# endif
+#endif /* assert.h        */
+#define        _ASSERT_H        1
+#include <features.h>
+#if defined __cplusplus && __GNUC_PREREQ (2,95)
+# define __ASSERT_VOID_CAST static_cast<void>
+#else
+# define __ASSERT_VOID_CAST (void)
+#endif
+/* void assert (int expression);
+   If NDEBUG is defined, do nothing.
+   If not, and EXPRESSION is zero, print an error message and abort.  */
+#ifdef        NDEBUG
+# define assert(expr)                (__ASSERT_VOID_CAST (0))
+/* void assert_perror (int errnum);
+   If NDEBUG is defined, do nothing.  If not, and ERRNUM is not zero, print an
+   error message with the error text for ERRNUM and abort.
+   (This is a GNU extension.) */
+# ifdef        __USE_GNU
+#  define assert_perror(errnum)        (__ASSERT_VOID_CAST (0))
+# endif
+#else /* Not NDEBUG.  */
+__BEGIN_DECLS
+/* This prints an "Assertion failed" message and aborts.  */
+extern void __assert_fail (const char *__assertion, const char *__file,
+                           unsigned int __line, const char *__function)
+     __THROW __attribute__ ((__noreturn__));
+/* Likewise, but prints the error text for ERRNUM.  */
+extern void __assert_perror_fail (int __errnum, const char *__file,
+                                  unsigned int __line, const char *__function)
+     __THROW __attribute__ ((__noreturn__));
+/* The following is not at all used here but needed for standard
+   compliance.  */
+extern void __assert (const char *__assertion, const char *__file, int __line)
+     __THROW __attribute__ ((__noreturn__));
+__END_DECLS
+/* When possible, define assert so that it does not add extra
+   parentheses around EXPR.  Otherwise, those added parentheses would
+   suppress warnings we'd expect to be detected by gcc's -Wparentheses.  */
+# if defined __cplusplus
+#  define assert(expr)                                                        \
+     (static_cast <bool> (expr)                                                \
+      ? void (0)                                                        \
+      : __assert_fail (#expr, __FILE__, __LINE__, __ASSERT_FUNCTION))
+# elif !defined __GNUC__ || defined __STRICT_ANSI__
+#  define assert(expr)                                                        \
+    ((expr)                                                                \
+     ? __ASSERT_VOID_CAST (0)                                                \
+     : __assert_fail (#expr, __FILE__, __LINE__, __ASSERT_FUNCTION))
+# else
+/* The first occurrence of EXPR is not evaluated due to the sizeof,
+   but will trigger any pedantic warnings masked by the __extension__
+   for the second occurrence.  The ternary operator is required to
+   support function pointers and bit fields in this context, and to
+   suppress the evaluation of variable length arrays.  */
+#  define assert(expr)                                                        \
+  ((void) sizeof ((expr) ? 1 : 0), __extension__ ({                        \
+      if (expr)                                                                \
+        ; /* empty */                                                        \
+      else                                                                \
+        __assert_fail (#expr, __FILE__, __LINE__, __ASSERT_FUNCTION);        \
+    }))
+# endif
+# ifdef        __USE_GNU
+#  define assert_perror(errnum)                                                \
+  (!(errnum)                                                                \
+   ? __ASSERT_VOID_CAST (0)                                                \
+   : __assert_perror_fail ((errnum), __FILE__, __LINE__, __ASSERT_FUNCTION))
+# endif
+/* Version 2.4 and later of GCC define a magical variable `__PRETTY_FUNCTION__'
+   which contains the name of the function currently being defined.
+   This is broken in G++ before version 2.6.
+   C9x has a similar variable called __func__, but prefer the GCC one since
+   it demangles C++ function names.  */
+# if defined __cplusplus ? __GNUC_PREREQ (2, 6) : __GNUC_PREREQ (2, 4)
+#   define __ASSERT_FUNCTION        __extension__ __PRETTY_FUNCTION__
+# else
+#  if defined __STDC_VERSION__ && __STDC_VERSION__ >= 199901L
+#   define __ASSERT_FUNCTION        __func__
+#  else
+#   define __ASSERT_FUNCTION        ((const char *) 0)
+#  endif
+# endif
+#endif /* NDEBUG.  */
+#if defined __USE_ISOC11 && !defined __cplusplus
+# undef static_assert
+# define static_assert _Static_assert
+#endif
+
+https://code.woboq.org/userspace/glibc/assert/assert.c.html
+
+#include <assert.h>
+#include <atomic.h>
+#include <ldsodefs.h>
+#include <libintl.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <sysdep.h>
+#include <unistd.h>
+#include <sys/mman.h>
+extern const char *__progname;
+#include <wchar.h>
+#include <libio/iolibio.h>
+#define fflush(s) _IO_fflush (s)
+/* This function, when passed a string containing an asserted
+   expression, a filename, and a line number, prints a message
+   on the standard error stream of the form:
+        a.c:10: foobar: Assertion `a == b' failed.
+   It then aborts program execution via a call to `abort'.  */
+#ifdef FATAL_PREPARE_INCLUDE
+# include FATAL_PREPARE_INCLUDE
+#endif
+void
+__assert_fail_base (const char *fmt, const char *assertion, const char *file,
+                    unsigned int line, const char *function)
+{
+  char *str;
+#ifdef FATAL_PREPARE
+  FATAL_PREPARE;
+#endif
+  int total;
+  if (__asprintf (&str, fmt,
+                  __progname, __progname[0] ? ": " : "",
+                  file, line,
+                  function ? function : "", function ? ": " : "",
+                  assertion, &total) >= 0)
+    {
+      /* Print the message.  */
+      (void) __fxprintf (NULL, "%s", str);
+      (void) fflush (stderr);
+      total = (total + 1 + GLRO(dl_pagesize) - 1) & ~(GLRO(dl_pagesize) - 1);
+      struct abort_msg_s *buf = __mmap (NULL, total, PROT_READ | PROT_WRITE,
+                                        MAP_ANON | MAP_PRIVATE, -1, 0);
+      if (__glibc_likely (buf != MAP_FAILED))
+        {
+          buf->size = total;
+          strcpy (buf->msg, str);
+          /* We have to free the old buffer since the application might
+             catch the SIGABRT signal.  */
+          struct abort_msg_s *old = atomic_exchange_acq (&__abort_msg, buf);
+          if (old != NULL)
+            __munmap (old, old->size);
+        }
+      free (str);
+    }
+  else
+    {
+      /* At least print a minimal message.  */
+      static const char errstr[] = "Unexpected error.\n";
+      __libc_write (STDERR_FILENO, errstr, sizeof (errstr) - 1);
+    }
+  abort ();
+}
+#undef __assert_fail
+void
+__assert_fail (const char *assertion, const char *file, unsigned int line,
+               const char *function)
+{
+  __assert_fail_base (_("%s%s%s:%u: %s%sAssertion `%s' failed.\n%n"),
+                      assertion, file, line, function);
+}
+hidden_def(__assert_fail)

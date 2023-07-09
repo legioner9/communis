@@ -1,0 +1,78 @@
+#!/bin/bash
+
+#! debag
+# . "$HOME/.bashrc"
+#!
+
+filename="${COMMUNIS_PATH}/Deploy_store/.qa/lib/user/00000.sh"
+
+echo -e "${HLIGHT}---start file: $filename---${NORMAL}" # start file
+
+#e_exer "Questions? See far!" "$filename" "$LINENO"
+
+#up_lib_git
+
+00000() {
+
+    # echo -e "${CYAN}--- ${FUNCNAME[0]}() $* ---${NORMAL}" #started functions
+
+    garg_ ${FUNCNAME[0]} $@ 1>/dev/null
+
+    local FNN=${FUNCNAME[0]}
+    local ORIGO_DIR="$BASH_USER"
+    local PPWD=$PWD
+    local FLN=$0
+    local ARGS=($@)
+    # local NARGS=$#
+    # last par ${!#}
+    # all param as "unied word" $*
+    # all param as "summ singl words $@"
+
+    # echo -e "${CYAN}---$FNN() $* ---${NORMAL}" #started functions
+
+    if [ "man" == "$1" ]; then
+        edit_ "$ORIGO_DIR"/"$FNN".man
+        return 0
+    fi
+
+    if [ "test" == "$1" ]; then
+        "$FNN"test
+        return 0
+    fi
+
+    if [ "lst" == "$1" ]; then
+        edit_ "$ORIGO_DIR"/"$FNN".lst
+        return 0
+    fi
+
+    if [ "_go" == "$1" ]; then
+        edit_ "$ORIGO_DIR"/"$FNN".sh
+        return 0
+    fi
+
+    if [ "-h" == "$1" ]; then
+        echo -e "${CYAN} ${FUNCNAME[0]}() help: 
+            MAIN: 
+            NAME: ${FUNCNAME[0]}()
+            ARGS:
+            TAGS:
+            FLOW:${NORMAL}"
+        return 0
+    fi
+
+    cd_h "$PPWD" 1>/dev/null
+
+    #!function body===================================================================
+    #!function body===============================================
+    #!function body======================
+    # amount_arg $# min_args max_args
+
+    #!function body======================
+    #!function body===============================================
+    #!function body===================================================================
+
+}
+
+# 00000 @
+
+unset filename

@@ -1,0 +1,320 @@
+### UP
+[getrusage](##getrusage)
+[MAIN](##MAIN)
+[MAIN_ru](##MAIN_ru)
+[ANCORS](##ANCORS)
+[ISU](##ISU)
+[inet](##A_inet)
+[inet](##books_inet)
+[inet](##examples_inet)
+[inet](##classic_inet)
+[inet](##enters_inet)
+[inet](##issue_code_inet)
+[H_FILE](##H_FILE)
+[p_SYNOPSIS](##p_SYNOPSIS)
+[p_RETURN](##p_RETURN)
+[p_RETURN_ru](##p_RETURN_ru)
+[p_BUGS](##p_BUGS)
+[p_DESCRIPTION_ru](##p_DESCRIPTION_ru)
+[p_DESCRIPTION](##p_DESCRIPTION)
+[p_MIRRORS](##p_MIRRORS)
+[p_EXAMPLES](##p_EXAMPLES)
+[p_CODE_h](##p_CODE_h)
+[p_CODE_c](##p_CODE_c)
+[p_CODE_m](##p_CODE_m)
+[p_ERRORS](##p_ERRORS)
+[p_BOOKS](##p_BOOKS)
+[p_BOOKS_ru](##p_BOOKS_ru)
+[p_CONTENT](##p_CONTENT)
+
+[cat_hfiles](../../cat_hfiles.md)
+[cat_utils](../../cat_utils.md)
+[cat_structs](../../cat_structs.md)
+[cat_param](../../cat_params.md)
+[cat_macros](../../cat_macross.md)
+[cat_const](../../cat_consts.md)
+[cat_type](../../cat_types.md)
+[cat_any](../cat_anys.md)
+
+
+[UP](###UP)
+## MAIN
+:getrusage:
+[next](##MAIN_ru)
+
+<<MAIN>>
+[MAIN](../../fills/getrusage/MAIN)
+
+
+
+[UP](###UP)
+## MAIN_ru
+:getrusage:
+[next](##ANCORS)
+
+<<MAIN_ru>>
+[MAIN_ru](../../fills/getrusage/MAIN_ru)
+
+[UP](###UP)
+## ANCORS
+:getrusage:
+[next](##ISU)
+
+<<ANCORS>>
+[ANCORS](../../fills/getrusage/ANCORS)
+
+[UP](###UP)
+## ISU
+:getrusage:
+[next](##H_FILE)
+
+----------------------------------------------------- 
+-------------------------------------- 
+file://${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_c_/_c_/_man/nbase/_Head_sis_libs_posix/36_sys_resource_h/example/study_2_cpjs/getrusage.isu
+file://${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_c_/_c_/_man/nbase/_Head_sis_libs_posix/36_sys_resource_h/example/study_3_cpjs/getrusage.isu
+-------------------------------------- 
+----------------------------------------------------- 
+<<ISU>>
+only read
+:getrusage:
+[ISU](../../contents)
+[next](##inet)
+
+
+[UP](###UP)
+## inet
+:getrusage:
+[next](##H_FILE)
+
+
+[UP](###UP)
+## A_inet
+[manpages.org](https://www.google.ru/search?q=getrusage+site%3Ahttps%3A%2F%2Fmanpages.org)
+[reposcope.com_ru](https://www.google.ru/search?q=getrusage+site%3Ahttps%3A%2F%2Freposcope.com%2Fmanpages%2Fru)
+[pubs.opengroup.org](https://www.google.com/search?q=getrusage+https%3A%2F%2Fpubs.opengroup.org)
+[manpages.debian.org](https://yandex.ru/search/?text=getrusage+site%3Ahttps%3A%2F%2Fmanpages.debian.org%2F)
+[www.opennet.ru](http://www.opennet.ru/man.shtml?category=2&topic=getrusage)
+[man7.org](https://www.google.ru/search?q=getrusage+site%3Ahttps%3A%2F%2Fman7.org%2Flinux%2Fman-pages)
+[en.cppreference.com](https://www.google.com/search?q=getrusage+en.cppreference.com)
+[www.mankier.com](https://www.mankier.com/?q=getrusage)
+[www.codecogs.com](https://www.google.ru/search?q=getrusage+https%3A%2F%2Fwww.codecogs.com%2Flibrary%2Fcomputing%2F)
+[digitalmars.com](https://www.google.ru/search?q=getrusage+https%3A%2F%2Fdigitalmars.com%2Frtl%2F)
+
+
+[UP](###UP)
+## books_inet
+[cpp.com.ru](https://yandex.ru/search/?text=getrusage+site%3Ahttps%3A%2F%2Fcpp.com.ru)
+[linuxhint.com](https://www.google.ru/search?q=getrusage+site%3Ahttps%3A%2F%2Flinuxhint.com)
+[gnu.org](https://www.google.ru/search?q=getrusage+site%3Ahttps%3A%2F%2Fwww.gnu.org%2Fsoftware%2Flibc%2Fmanual)
+
+[UP](###UP)
+## examples_inet
+[yandex:examples](https://yandex.ru/search/?text=getrusage+example+in+c)
+[docs.oracle.com](https://www.google.com/search?q=getrusage+https%3A%2F%2Fdocs.oracle.com)
+[manpages.debian.org](https://yandex.ru/search/?text=getrusage+site%3Ahttps%3A%2F%2Fmanpages.debian.org%2F)
+[osr507doc.xinuos.com](https://www.google.com/search?q=getrusage+http%3A%2F%2Fosr507doc.xinuos.com%2Fen%2Fman)
+[cpp.hotexamples.com](https://cpp.hotexamples.com/examples/-/-/getrusage/cpp-getrusage-function-examples.html)
+[all-ht.ru](https://yandex.ru/search/?text=getrusage+site%3Ahttp%3A%2F%2Fall-ht.ru%2Finf%2Fprog%2Fc%2F)
+[cppreference.com](https://yandex.ru/search/?text=getrusage+site%3Ahttps%3A%2F%2Fen.cppreference.com%2Fw%2Fc%2F)
+
+[UP](###UP)
+## classic_inet
+[bogatyrev_c_unix](https://www.google.com/search?q=getrusage+site%3Ahttps%3A%2F%2Fcpp.com.ru%2Fbogatyrev_c_unix)
+[kr_cbook](https://www.google.com/search?q=getrusage+site%3Ahttps%3A%2F%2Fcpp.com.ru%2Fkr_cbook)
+
+[UP](###UP)
+## enters_inet
+[pubs.opengroup.org](https://pubs.opengroup.org/onlinepubs/9699919799/idx/head.html)
+
+[UP](###UP)
+## issue_code_inet
+[code.woboq.org](https://www.google.com/search?h=&sitesearch=https%3A%2F%2Fcode.woboq.org%2Fuserspace%2Fglibc%2F&q=getrusage)
+
+
+[UP](###UP)
+## H_FILE 
+[sys_resource_h.md](../../hfiles/sys_resource_h.md)
+
+
+[UP](###UP)
+## p_SYNOPSIS
+:getrusage:
+[next](##p_RETURN_ru)
+
+----------------------------------------------------- 
+-------------------------------------- 
+#include <sys/time.h>
+#include <sys/resource.h>
+int getrusage(int who, struct rusage *usage);
+-------------------------------------- 
+----------------------------------------------------- 
+<<SYNOPSIS>>
+[SYNOPSIS](../../fills/getrusage/SYNOPSIS)
+
+
+[UP](###UP)
+## p_RETURN_ru
+:getrusage:
+[next](##p_RETURN)
+
+<<RETURN>>
+[RETURN_ru](../../fills/getrusage/RETURN)
+
+
+[UP](###UP)
+## p_RETURN
+:getrusage:
+[next](##p_DESCRIPTION_ru)
+
+<<RETURN_ru>>
+[RETURN](../../fills/getrusage/RETURN_ru)
+
+
+[UP](###UP)
+## p_DESCRIPTION_ru
+:getrusage:
+[next](##p_DESCRIPTION)
+
+----------------------------------------------------- 
+-------------------------------------- 
+https://ru.manpages.org/getrusage/2
+getrusage() возвращает текущие ограничения на ресурсы для значения who, которое может быть:
+RUSAGE_SELF
+Возвращает статистику по использованию ресурсов вызывающим процессом (суммируются значения всех нитей процесса).
+RUSAGE_CHILDREN
+Возвращает статистику по использованию ресурсов всех потомков вызывающего процесса, которые завершились или завершение которых ожидается. Эта статистика включает в себя ресурсы, использованные внучками и дальнейшими потомками, если все промежуточные потомки завершились или их завершение ожидается.
+RUSAGE_THREAD (начиная с Linux 2.6.26)
+Возвращает статистику по использованию ресурсов вызывающей нити. Чтобы получить определение этой константы из <sys/resource.h> должен быть определён макрос тестирования свойств _GNU_SOURCE (до включения всех заголовочных файлов).
+-------------------------------------- 
+----------------------------------------------------- 
+<<DESCRIPTION_ru>>
+[DESCRIPTION_ru](../../fills/getrusage/DESCRIPTION_ru)
+
+
+[UP](###UP)
+## p_DESCRIPTION
+:getrusage:
+[next](##p_BUGS)
+
+<<DESCRIPTION>>
+[DESCRIPTION](../../fills/getrusage/DESCRIPTION)
+
+
+[UP](###UP)
+## p_MIRRORS
+:getrusage:
+[next](##p_BUGS)
+
+<<MIRRORS>>
+[MIRRORS](../../fills/getrusage/MIRRORS)
+
+
+[UP](###UP)
+## p_BUGS
+:getrusage:
+[next](##p_EXAMPLES)
+
+<<BUGS>>
+[BUGS](../../fills/getrusage/BUGS)
+
+
+[UP](###UP)
+## p_EXAMPLES
+:getrusage:
+[next](##p_CODE)
+
+----------------------------------------------------- 
+-------------------------------------- 
+https://stackoverflow.com/questions/10509660/getting-getrusage-to-measure-system-time-in-c
+#include <sys/time.h>
+#include <sys/resource.h>
+#include <unistd.h>
+#include <stdio.h>
+int main() {
+struct rusage usage;
+struct timeval start, end;
+int i, j, k = 0;
+getrusage(RUSAGE_SELF, &usage);
+start = usage.ru_stime;
+for (i = 0; i < 10000; i++) {
+/* Double loop for more interesting results. */
+for (j = 0; j < 10000; j++) {
+k += 20; 
+}
+}
+getrusage(RUSAGE_SELF, &usage);
+end = usage.ru_stime;
+printf("Started at: %ld.%lds
+", start.tv_sec, start.tv_usec);
+printf("Ended at: %ld.%lds
+", end.tv_sec, end.tv_usec);
+return 0;
+}
+-------------------------------------- 
+----------------------------------------------------- 
+<<EXAMPLES>>
+[EXAMPLES](../../fills/getrusage/EXAMPLES)
+
+
+[UP](###UP)
+## p_CODE_h
+:getrusage:
+[next](##p_CODE_c)
+
+<<CODE_h>>
+[CODE_h](../../fills/getrusage/CODE_h)
+
+
+[UP](###UP)
+## p_CODE_c
+:getrusage:
+[next](##p_CODE_m)
+
+<<CODE_c>>
+[CODE_c](../../fills/getrusage/CODE_c)
+
+
+[UP](###UP)
+## p_CODE_m
+:getrusage:
+[next](##p_ERRORS)
+
+<<CODE_m>>
+[CODE_m](../../fills/getrusage/CODE_m)
+
+
+[UP](###UP)
+## p_ERRORS
+:getrusage:
+[next](##p_BOOKS)
+
+<<ERRORS>>
+[ERRORS](../../fills/getrusage/ERRORS)
+
+
+[UP](###UP)
+## p_BOOKS
+:getrusage:
+[next](##p_BOOKS_ru)
+
+<<BOOKS>>
+[BOOKS](../../fills/getrusage/BOOKS)
+
+
+[UP](###UP)
+## p_BOOKS_ru
+:getrusage:
+[next](##p_CONTENT)
+
+
+<<BOOKS_ru>>
+[BOOKS_ru](../../fills/getrusage/BOOKS_ru)
+
+
+[UP](###UP)
+## p_CONTENT
+:getrusage:
+[getrusage.cnt](../../contents/getrusage.cnt)
+[next](##UP)
+
+[UP](###UP)

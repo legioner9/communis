@@ -1,0 +1,5 @@
+failed in file main.c at line # 27
+from is_ist_c filename = myfile.txt, errno = 2
+exit(errno) with: No such file or directory
+ access = -1, errno = 0
+ or_ist_c = 0, errno = 2

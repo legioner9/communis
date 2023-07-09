@@ -1,0 +1,41 @@
+Когда система впервые выполняет ifинструкцию, она сохраняет среду в mark и устанавливает условие FALSEравным, потому что setjmp() возвращает 0 при сохранении среды. Программа печатает сообщение: setjmp has been called.
+
+Последующий вызов функции p проверяет наличие локальной ошибки, которая может привести к выполнению функции longjmp(). Затем управление возвращается к исходной функции setjmp(), используя среду, сохраненную в mark. На этот раз условие TRUEвызвано тем, что -1 является возвращаемым значением из функции longjmp(). Затем программа выполняет инструкции в блоке и печатает: longjmp has been called. Наконец, программа вызывает recoverфункцию и завершает работу.
+
+/* This example shows the effect of having set the stack environment.  */
+#include <stdio.h>
+#include <setjmp.h>
+
+jmp_buf mark;
+
+void p(void);
+void recover(void);
+
+int main(void)
+{
+   if (setjmp(mark) != 0) {
+      printf("longjmp has been called\n");
+      recover();
+      exit(1);
+      }
+   printf("setjmp has been called\n");
+⋮
+   p();
+⋮
+}
+
+void p(void)
+{
+   int error = 0;
+⋮
+   error = 9;
+⋮
+   if (error != 0)
+      longjmp(mark, -1);
+⋮
+}
+
+void recover(void)
+{
+⋮
+}

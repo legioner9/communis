@@ -1,0 +1,5 @@
+#>var
+
+eval src="/home/st/.config/VSCodium" 
+eval dest_d="/home/st/.config" 
+eval bag="/run/media/st/TOSHIBA_EXT/Codium_tsf"

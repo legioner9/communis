@@ -1,0 +1,5 @@
+## menu in <fn_name>
+
+    - if exec <fn_name> be menu in cli
+    - if exec <fn_name> with <num_menu> - exec point menu (res[<num_menu>]) 
+

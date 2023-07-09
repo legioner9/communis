@@ -1,0 +1,34 @@
+local FNN=${FUNCNAME[0]}
+# local ORIGO_DIR=$PATH_FN/dir_$FNN === ${FN_DIR}
+
+local FN_DIR={rts_fn} #? contane dir of function
+local FLN=$0
+
+local ARGS=($@)
+local NARGS=$#
+local ARGS1=$1
+local ARGS2=$2
+local ARGS3=$3
+local PPWD=$PWD
+#? ${FNN}mdeb function - menu for debug flows
+local RATIS_DIR=$(prs_f -d $PPWD) #? ratis is dir of generating kit function
+# $PATH_FN/dir_$FNN/ === $ORIGO_DIR === $FN_DIR
+local FN_CONT_DIR=${FN_DIR}/dir_${FNN}/_${FNN} #? dir with fn's any contant
+local FN_FN_DIR=${FN_CONT_DIR}/_fn             #? dir with fn's subfunction
+local FN_TMP_DIR=${FN_CONT_DIR}/_tmp           #? dir with fn's tmp
+local FN_TMP_DIR=${FN_CONT_DIR}/_debug         #? dir with fn's free debug flow
+local FN_TMP_DIR=${FN_CONT_DIR}/_config        #? dir with fn's config
+local FN_TMP_DIR=${FN_CONT_DIR}/_default       #? dir with fn's default behavviour
+
+local FNLOCK="fn: ${FNN}, with_args: ${ARGS[*]} , filename: ${PATH_FN}/dir_${FNN}/${FNN}.sh, line: $LINENO"
+# local FN_ERR_FILE="${FN_DIR}/_${FNN}/_out/err.res"
+# wrp_fifs1_ rm -f "${FN_ERR_FILE}" -cf1
+
+local verbose=0
+[[ " ${ARGS[*]} " =~ " -verbose " ]] || verbose=1
+
+[[ 1 -eq ${verbose} ]] || {
+    echo -e "${CYAN}---$FNN() $* ---${NORMAL}" #started functions
+    echo -e "${GREEN}\\\$FN_DIR = $FN_DIR${NORMAL}" #print variable
+    echo -e "${GREEN}\\\$PPWD = $PPWD${NORMAL}" #print variable    
+    }

@@ -1,0 +1,15 @@
+## https://dotnet.microsoft.com/en-us/learn/dotnet/hello-world-tutorial/create
+
+    cd '${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_dotnet_/_dotnet_/_examples/pr_1'
+
+    $ dotnet new console -o MyApp 
+    Шаблон "Консольное приложение" успешно создан.
+
+    Идет обработка действий после создания...
+    Выполнение "dotnet restore" для ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_dotnet_/_dotnet_/_examples/pr_1/MyApp/MyApp.csproj...
+    Determining projects to restore...
+    Restored ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_dotnet_/_dotnet_/_examples/pr_1/MyApp/MyApp.csproj (in 245 ms).
+    Восстановление выполнено.
+
+    $ dotnet run
+    Hello, World!

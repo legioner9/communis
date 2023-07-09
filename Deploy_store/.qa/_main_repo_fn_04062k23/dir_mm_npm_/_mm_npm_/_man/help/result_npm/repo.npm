@@ -1,0 +1,10 @@
+# npm repo in /home/st/REPOBARE/_repo/plt/actio/dir_mm_npm_/_mm_npm_/_man/help
+
+npm ERR! no repository
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/st/.npm/_logs/2023-03-08T07_16_56_872Z-debug.log
+
+# npm repo -h in /home/st/REPOBARE/_repo/plt/actio/dir_mm_npm_/_mm_npm_/_man/help
+
+npm repo [<pkg>]

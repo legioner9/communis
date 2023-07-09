@@ -1,0 +1,8 @@
+## <fn>
+
+    $1:
+        -h   :help
+        _go  :edit dir with <fn>
+        _tst :exec exec.tst as mane test functions
+        --_<cntl_value> <value> - that means (<cntl_value>_=<value>) in functon
+        -_<cntl_value>  - that means (<cntl_value>_=1) in functon

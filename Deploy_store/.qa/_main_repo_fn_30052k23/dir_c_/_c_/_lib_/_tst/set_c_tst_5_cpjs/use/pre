@@ -1,0 +1,6 @@
+fgetpos = 0
+ftell_c = 0
+ftell_c = 16
+ftell_c = 0
+fgetpos = 4
+ftell_c = 4

@@ -1,0 +1,4 @@
+from> DEMO struct dirent, prn_dirent_lc_1_entry_с ->
+
+do> 
+^1^ printf all part struct (entry)

@@ -1,0 +1,433 @@
+### UP
+[posix_spawn](##posix_spawn)
+[MAIN](##MAIN)
+[MAIN_ru](##MAIN_ru)
+[ANCORS](##ANCORS)
+[ISU](##ISU)
+[inet](##A_inet)
+[inet](##books_inet)
+[inet](##examples_inet)
+[inet](##classic_inet)
+[inet](##enters_inet)
+[inet](##issue_code_inet)
+[H_FILE](##H_FILE)
+[p_SYNOPSIS](##p_SYNOPSIS)
+[p_RETURN](##p_RETURN)
+[p_RETURN_ru](##p_RETURN_ru)
+[p_BUGS](##p_BUGS)
+[p_DESCRIPTION_ru](##p_DESCRIPTION_ru)
+[p_DESCRIPTION](##p_DESCRIPTION)
+[p_MIRRORS](##p_MIRRORS)
+[p_EXAMPLES](##p_EXAMPLES)
+[p_CODE_h](##p_CODE_h)
+[p_CODE_c](##p_CODE_c)
+[p_CODE_m](##p_CODE_m)
+[p_ERRORS](##p_ERRORS)
+[p_BOOKS](##p_BOOKS)
+[p_BOOKS_ru](##p_BOOKS_ru)
+[p_CONTENT](##p_CONTENT)
+
+[cat_hfiles](../../cat_hfiles.md)
+[cat_utils](../../cat_utils.md)
+[cat_structs](../../cat_structs.md)
+[cat_param](../../cat_params.md)
+[cat_macros](../../cat_macross.md)
+[cat_const](../../cat_consts.md)
+[cat_type](../../cat_types.md)
+[cat_any](../cat_anys.md)
+
+
+[UP](###UP)
+## MAIN
+:posix_spawn:
+[next](##MAIN_ru)
+
+<<MAIN>>
+[MAIN](../../fills/posix_spawn/MAIN)
+
+
+
+[UP](###UP)
+## MAIN_ru
+:posix_spawn:
+[next](##ANCORS)
+
+<<MAIN_ru>>
+[MAIN_ru](../../fills/posix_spawn/MAIN_ru)
+
+[UP](###UP)
+## ANCORS
+:posix_spawn:
+[next](##ISU)
+
+----------------------------------------------------- 
+-------------------------------------- 
+https://manpages.debian.org/bullseye/manpages-dev/posix_spawn.3.en.html
+https://manpages.org/posix_spawn/3
+https://www.systutorials.com/a-posix_spawn-example-in-c-to-create-child-process-on-linux/
+-------------------------------------- 
+----------------------------------------------------- 
+<<ANCORS>>
+[ANCORS](../../fills/posix_spawn/ANCORS)
+
+[UP](###UP)
+## ISU
+:posix_spawn:
+[next](##H_FILE)
+
+----------------------------------------------------- 
+-------------------------------------- 
+file://${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_c_/_c_/_man/nbase/_Head_sis_libs_posix/30_spawn_h/example/study_2_cpjs/posix_spawn.isu
+-------------------------------------- 
+----------------------------------------------------- 
+<<ISU>>
+only read
+:posix_spawn:
+[ISU](../../contents)
+[next](##inet)
+
+
+[UP](###UP)
+## inet
+:posix_spawn:
+[next](##H_FILE)
+
+
+[UP](###UP)
+## A_inet
+[manpages.org](https://www.google.ru/search?q=posix_spawn+site%3Ahttps%3A%2F%2Fmanpages.org)
+[reposcope.com_ru](https://www.google.ru/search?q=posix_spawn+site%3Ahttps%3A%2F%2Freposcope.com%2Fmanpages%2Fru)
+[pubs.opengroup.org](https://www.google.com/search?q=posix_spawn+https%3A%2F%2Fpubs.opengroup.org)
+[manpages.debian.org](https://yandex.ru/search/?text=posix_spawn+site%3Ahttps%3A%2F%2Fmanpages.debian.org%2F)
+[www.opennet.ru](http://www.opennet.ru/man.shtml?category=2&topic=posix_spawn)
+[man7.org](https://www.google.ru/search?q=posix_spawn+site%3Ahttps%3A%2F%2Fman7.org%2Flinux%2Fman-pages)
+[en.cppreference.com](https://www.google.com/search?q=posix_spawn+en.cppreference.com)
+[www.mankier.com](https://www.mankier.com/?q=posix_spawn)
+[www.codecogs.com](https://www.google.ru/search?q=posix_spawn+https%3A%2F%2Fwww.codecogs.com%2Flibrary%2Fcomputing%2F)
+[digitalmars.com](https://www.google.ru/search?q=posix_spawn+https%3A%2F%2Fdigitalmars.com%2Frtl%2F)
+
+
+[UP](###UP)
+## books_inet
+[cpp.com.ru](https://yandex.ru/search/?text=posix_spawn+site%3Ahttps%3A%2F%2Fcpp.com.ru)
+[linuxhint.com](https://www.google.ru/search?q=posix_spawn+site%3Ahttps%3A%2F%2Flinuxhint.com)
+[gnu.org](https://www.google.ru/search?q=posix_spawn+site%3Ahttps%3A%2F%2Fwww.gnu.org%2Fsoftware%2Flibc%2Fmanual)
+
+[UP](###UP)
+## examples_inet
+[yandex:examples](https://yandex.ru/search/?text=posix_spawn+example+in+c)
+[docs.oracle.com](https://www.google.com/search?q=posix_spawn+https%3A%2F%2Fdocs.oracle.com)
+[manpages.debian.org](https://yandex.ru/search/?text=posix_spawn+site%3Ahttps%3A%2F%2Fmanpages.debian.org%2F)
+[osr507doc.xinuos.com](https://www.google.com/search?q=posix_spawn+http%3A%2F%2Fosr507doc.xinuos.com%2Fen%2Fman)
+[cpp.hotexamples.com](https://cpp.hotexamples.com/examples/-/-/posix_spawn/cpp-posix_spawn-function-examples.html)
+[all-ht.ru](https://yandex.ru/search/?text=posix_spawn+site%3Ahttp%3A%2F%2Fall-ht.ru%2Finf%2Fprog%2Fc%2F)
+[cppreference.com](https://yandex.ru/search/?text=posix_spawn+site%3Ahttps%3A%2F%2Fen.cppreference.com%2Fw%2Fc%2F)
+
+[UP](###UP)
+## classic_inet
+[bogatyrev_c_unix](https://www.google.com/search?q=posix_spawn+site%3Ahttps%3A%2F%2Fcpp.com.ru%2Fbogatyrev_c_unix)
+[kr_cbook](https://www.google.com/search?q=posix_spawn+site%3Ahttps%3A%2F%2Fcpp.com.ru%2Fkr_cbook)
+
+[UP](###UP)
+## enters_inet
+[pubs.opengroup.org](https://pubs.opengroup.org/onlinepubs/9699919799/idx/head.html)
+
+[UP](###UP)
+## issue_code_inet
+[code.woboq.org](https://www.google.com/search?h=&sitesearch=https%3A%2F%2Fcode.woboq.org%2Fuserspace%2Fglibc%2F&q=posix_spawn)
+
+
+[UP](###UP)
+## H_FILE 
+[spawn_h.md](../../hfiles/spawn_h.md)
+
+
+[UP](###UP)
+## p_SYNOPSIS
+:posix_spawn:
+[next](##p_RETURN_ru)
+
+----------------------------------------------------- 
+-------------------------------------- 
+#include <spawn.h>
+int posix_spawn(pid_t *pid, const char *path,
+const posix_spawn_file_actions_t *file_actions,
+const posix_spawnattr_t *attrp,
+char *const argv[], char *const envp[]);
+int posix_spawnp(pid_t *pid, const char *file,
+const posix_spawn_file_actions_t *file_actions,
+const posix_spawnattr_t *attrp,
+char *const argv[], char *const envp[]);
+-------------------------------------- 
+----------------------------------------------------- 
+<<SYNOPSIS>>
+[SYNOPSIS](../../fills/posix_spawn/SYNOPSIS)
+
+
+[UP](###UP)
+## p_RETURN_ru
+:posix_spawn:
+[next](##p_RETURN)
+
+<<RETURN>>
+[RETURN_ru](../../fills/posix_spawn/RETURN)
+
+
+[UP](###UP)
+## p_RETURN
+:posix_spawn:
+[next](##p_DESCRIPTION_ru)
+
+----------------------------------------------------- 
+-------------------------------------- 
+После успешного завершения posix_spawn() и posix_spawnp() помещают PID дочернего процесса в pidи возвращают 0. Если на этапе fork() возникает ошибка, дочерний элемент не создается, содержимое *pid не указано, и эти функции возвращают номер ошибки, как описано ниже.
+Даже когда эти функции возвращают статус успешного завершения, дочерний процесс все равно может завершиться с ошибкой по множеству причин, связанных с его предварительнойинициализацией exec(). Кроме того, может произойти сбой. Во всех этих случаях дочерний процесс завершится со значением выхода 127.
+-------------------------------------- 
+----------------------------------------------------- 
+<<RETURN_ru>>
+[RETURN](../../fills/posix_spawn/RETURN_ru)
+
+
+[UP](###UP)
+## p_DESCRIPTION_ru
+:posix_spawn:
+[next](##p_DESCRIPTION)
+
+----------------------------------------------------- 
+-------------------------------------- 
+Функции posix_spawn() и posix_spawnp() используются для создания нового дочернего процесса, который выполняет указанный файл. Эти функции были определены POSIX для обеспечения стандартизированного метода создания новых процессов на машинах, которые не имеют возможности поддерживать системный вызов fork(2). Эти машины, как правило, представляют собой небольшие встроенные системы, не имеющие поддержки MMU.
+Функции posix_spawn() и posix_spawnp() обеспечивают функциональность комбинированного fork(2) и exec(3)с некоторыми необязательными шагами обслуживания в дочернем процессе перед exec(3). Эти функции не предназначены для замены системных вызовов fork(2) и execve(2). Фактически, они предоставляют только подмножество функциональных возможностей, которые могут быть достигнуты с помощью системных вызовов.
+-------------------------------------- 
+----------------------------------------------------- 
+<<DESCRIPTION_ru>>
+[DESCRIPTION_ru](../../fills/posix_spawn/DESCRIPTION_ru)
+
+
+[UP](###UP)
+## p_DESCRIPTION
+:posix_spawn:
+[next](##p_BUGS)
+
+<<DESCRIPTION>>
+[DESCRIPTION](../../fills/posix_spawn/DESCRIPTION)
+
+
+[UP](###UP)
+## p_MIRRORS
+:posix_spawn:
+[next](##p_BUGS)
+
+<<MIRRORS>>
+[MIRRORS](../../fills/posix_spawn/MIRRORS)
+
+
+[UP](###UP)
+## p_BUGS
+:posix_spawn:
+[next](##p_EXAMPLES)
+
+<<BUGS>>
+[BUGS](../../fills/posix_spawn/BUGS)
+
+
+[UP](###UP)
+## p_EXAMPLES
+:posix_spawn:
+[next](##p_CODE)
+
+----------------------------------------------------- 
+-------------------------------------- 
+https://manpages.debian.org/bullseye/manpages-dev/posix_spawn.3.en.html
+Приведенная ниже программа демонстрирует использование различных функций в POSIX spawn API. Программа принимает атрибуты командной строки, которые можно использовать для создания файловых действий и объектов атрибутов. Остальные аргументы командной строки используются в качестве имени исполняемого файла и аргументов командной строки программы, которая выполняется в дочернем.
+При первом запуске команда date(1) выполняется в дочернем элементе, а вызов posix_spawn() не использует действия с файлами или объекты атрибутов.
+$ ./a.out date
+PID of child: 7634
+Tue Feb  1 19:47:50 CEST 2011
+Child status: exited, status=0
+При следующем запуске параметр командной строки используется для создания объекта file actions, который закрывает стандартный вывод в дочернем элементе. Следовательно, date(1) завершается ошибкой при попытке выполнить вывод и завершается со статусом 1.
+$ ./a.out -c date
+PID of child: 7636
+date: write error: Bad file descriptor
+Child status: exited, status=1
+При следующем запуске параметр командной строки используется для создания объекта attributes, который указывает, что все (блокируемые) сигналы в дочернем элементе должны быть заблокированы. Следовательно, попытка убить дочерний элемент с помощью сигнала по умолчанию, отправленного kill(1) (т.Е. SIGTERM), завершается неудачей, поскольку этот сигнал заблокирован. Следовательно, для уничтожения дочернего элемента необходимо (SIGKILL не может быть заблокирован).
+$ ./a.out -s sleep 60 &
+[1] 7637
+$ PID of child: 7638
+$ kill 7638
+$ kill -KILL 7638
+$ Child status: killed by signal 9
+[1]+  Done                    ./a.out -s sleep 60
+Когда мы пытаемся выполнить несуществующую команду в дочернем элементе, exec(3) завершается с ошибкой, и дочерний элемент завершает работу со статусом 127.
+$ ./a.out xxxxx
+PID of child: 10190
+Child status: exited, status=127
+#include <spawn.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <unistd.h>
+#include <stdlib.h>
+#include <string.h>
+#include <wait.h>
+#include <errno.h>
+#define errExit(msg)    do { perror(msg); 
+exit(EXIT_FAILURE); } while (0)
+#define errExitEN(en, msg) 
+do { errno = en; perror(msg); 
+exit(EXIT_FAILURE); } while (0)
+char **environ;
+int
+main(int argc, char *argv[])
+{
+pid_t child_pid;
+int s, opt, status;
+sigset_t mask;
+posix_spawnattr_t attr;
+posix_spawnattr_t *attrp;
+posix_spawn_file_actions_t file_actions;
+posix_spawn_file_actions_t *file_actionsp;
+/* Parse command-line options, which can be used to specify an
+attributes object and file actions object for the child. */
+attrp = NULL;
+file_actionsp = NULL;
+while ((opt = getopt(argc, argv, "sc")) != -1) {
+switch (opt) {
+case 'c':       /* -c: close standard output in child */
+/* Create a file actions object and add a "close"
+action to it */
+s = posix_spawn_file_actions_init(&file_actions);
+if (s != 0)
+errExitEN(s, "posix_spawn_file_actions_init");
+s = posix_spawn_file_actions_addclose(&file_actions,
+STDOUT_FILENO);
+if (s != 0)
+errExitEN(s, "posix_spawn_file_actions_addclose");
+file_actionsp = &file_actions;
+break;
+case 's':       /* -s: block all signals in child */
+/* Create an attributes object and add a "set signal mask"
+action to it */
+s = posix_spawnattr_init(&attr);
+if (s != 0)
+errExitEN(s, "posix_spawnattr_init");
+s = posix_spawnattr_setflags(&attr, POSIX_SPAWN_SETSIGMASK);
+if (s != 0)
+errExitEN(s, "posix_spawnattr_setflags");
+sigfillset(&mask);
+s = posix_spawnattr_setsigmask(&attr, &mask);
+if (s != 0)
+errExitEN(s, "posix_spawnattr_setsigmask");
+attrp = &attr;
+break;
+}
+}
+/* Spawn the child. The name of the program to execute and the
+command-line arguments are taken from the command-line arguments
+of this program. The environment of the program execed in the
+child is made the same as the parent's environment. */
+s = posix_spawnp(&child_pid, argv[optind], file_actionsp, attrp,
+&argv[optind], environ);
+if (s != 0)
+errExitEN(s, "posix_spawn");
+/* Destroy any objects that we created earlier */
+if (attrp != NULL) {
+s = posix_spawnattr_destroy(attrp);
+if (s != 0)
+errExitEN(s, "posix_spawnattr_destroy");
+}
+if (file_actionsp != NULL) {
+s = posix_spawn_file_actions_destroy(file_actionsp);
+if (s != 0)
+errExitEN(s, "posix_spawn_file_actions_destroy");
+}
+printf("PID of child: %jd
+", (intmax_t) child_pid);
+/* Monitor status of the child until it terminates */
+do {
+s = waitpid(child_pid, &status, WUNTRACED | WCONTINUED);
+if (s == -1)
+errExit("waitpid");
+printf("Child status: ");
+if (WIFEXITED(status)) {
+printf("exited, status=%d
+", WEXITSTATUS(status));
+} else if (WIFSIGNALED(status)) {
+printf("killed by signal %d
+", WTERMSIG(status));
+} else if (WIFSTOPPED(status)) {
+printf("stopped by signal %d
+", WSTOPSIG(status));
+} else if (WIFCONTINUED(status)) {
+printf("continued
+");
+}
+} while (!WIFEXITED(status) && !WIFSIGNALED(status));
+exit(EXIT_SUCCESS);
+}
+-------------------------------------- 
+----------------------------------------------------- 
+<<EXAMPLES>>
+[EXAMPLES](../../fills/posix_spawn/EXAMPLES)
+
+
+[UP](###UP)
+## p_CODE_h
+:posix_spawn:
+[next](##p_CODE_c)
+
+<<CODE_h>>
+[CODE_h](../../fills/posix_spawn/CODE_h)
+
+
+[UP](###UP)
+## p_CODE_c
+:posix_spawn:
+[next](##p_CODE_m)
+
+<<CODE_c>>
+[CODE_c](../../fills/posix_spawn/CODE_c)
+
+
+[UP](###UP)
+## p_CODE_m
+:posix_spawn:
+[next](##p_ERRORS)
+
+<<CODE_m>>
+[CODE_m](../../fills/posix_spawn/CODE_m)
+
+
+[UP](###UP)
+## p_ERRORS
+:posix_spawn:
+[next](##p_BOOKS)
+
+<<ERRORS>>
+[ERRORS](../../fills/posix_spawn/ERRORS)
+
+
+[UP](###UP)
+## p_BOOKS
+:posix_spawn:
+[next](##p_BOOKS_ru)
+
+<<BOOKS>>
+[BOOKS](../../fills/posix_spawn/BOOKS)
+
+
+[UP](###UP)
+## p_BOOKS_ru
+:posix_spawn:
+[next](##p_CONTENT)
+
+
+<<BOOKS_ru>>
+[BOOKS_ru](../../fills/posix_spawn/BOOKS_ru)
+
+
+[UP](###UP)
+## p_CONTENT
+:posix_spawn:
+[posix_spawn.cnt](../../contents/posix_spawn.cnt)
+[next](##UP)
+
+[UP](###UP)

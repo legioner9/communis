@@ -1,0 +1,403 @@
+### UP
+[fopen](##fopen)
+[MAIN](##MAIN)
+[MAIN_ru](##MAIN_ru)
+[ANCORS](##ANCORS)
+[ISU](##ISU)
+[inet](##A_inet)
+[inet](##books_inet)
+[inet](##examples_inet)
+[inet](##classic_inet)
+[inet](##enters_inet)
+[inet](##issue_code_inet)
+[H_FILE](##H_FILE)
+[p_SYNOPSIS](##p_SYNOPSIS)
+[p_RETURN](##p_RETURN)
+[p_RETURN_ru](##p_RETURN_ru)
+[p_BUGS](##p_BUGS)
+[p_DESCRIPTION_ru](##p_DESCRIPTION_ru)
+[p_DESCRIPTION](##p_DESCRIPTION)
+[p_MIRRORS](##p_MIRRORS)
+[p_EXAMPLES](##p_EXAMPLES)
+[p_CODE_h](##p_CODE_h)
+[p_CODE_c](##p_CODE_c)
+[p_CODE_m](##p_CODE_m)
+[p_ERRORS](##p_ERRORS)
+[p_BOOKS](##p_BOOKS)
+[p_BOOKS_ru](##p_BOOKS_ru)
+[p_CONTENT](##p_CONTENT)
+
+[cat_hfiles](../../cat_hfiles.md)
+[cat_utils](../../cat_utils.md)
+[cat_structs](../../cat_structs.md)
+[cat_param](../../cat_params.md)
+[cat_macros](../../cat_macross.md)
+[cat_const](../../cat_consts.md)
+[cat_type](../../cat_types.md)
+[cat_any](../cat_anys.md)
+
+
+[UP](###UP)
+## MAIN
+:fopen:
+[next](##MAIN_ru)
+
+<<MAIN>>
+[MAIN](../../fills/fopen/MAIN)
+
+
+
+[UP](###UP)
+## MAIN_ru
+:fopen:
+[next](##ANCORS)
+
+<<MAIN_ru>>
+[MAIN_ru](../../fills/fopen/MAIN_ru)
+
+[UP](###UP)
+## ANCORS
+:fopen:
+[next](##ISU)
+
+----------------------------------------------------- 
+-------------------------------------- 
+https://linuxhint.com/fgetc-function-in-c/
+https://ru.manpages.org/fopen/3
+-------------------------------------- 
+----------------------------------------------------- 
+<<ANCORS>>
+[ANCORS](../../fills/fopen/ANCORS)
+
+[UP](###UP)
+## ISU
+:fopen:
+[next](##H_FILE)
+
+----------------------------------------------------- 
+-------------------------------------- 
+file://${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_c_/_c_/_man/nbase/_Head_sis_libs_posix/55_unistd_h/56_read/mankier_2_cpjs/fopen_c.isu
+-------------------------------------- 
+----------------------------------------------------- 
+<<ISU>>
+only read
+:fopen:
+[ISU](../../contents)
+[next](##inet)
+
+
+[UP](###UP)
+## inet
+:fopen:
+[next](##H_FILE)
+
+
+[UP](###UP)
+## A_inet
+[manpages.org](https://www.google.ru/search?q=fopen+site%3Ahttps%3A%2F%2Fmanpages.org)
+[reposcope.com_ru](https://www.google.ru/search?q=fopen+site%3Ahttps%3A%2F%2Freposcope.com%2Fmanpages%2Fru)
+[pubs.opengroup.org](https://www.google.com/search?q=fopen+https%3A%2F%2Fpubs.opengroup.org)
+[manpages.debian.org](https://yandex.ru/search/?text=fopen+site%3Ahttps%3A%2F%2Fmanpages.debian.org%2F)
+[www.opennet.ru](http://www.opennet.ru/man.shtml?category=2&topic=fopen)
+[man7.org](https://www.google.ru/search?q=fopen+site%3Ahttps%3A%2F%2Fman7.org%2Flinux%2Fman-pages)
+[en.cppreference.com](https://www.google.com/search?q=fopen+en.cppreference.com)
+[www.mankier.com](https://www.mankier.com/?q=fopen)
+[www.codecogs.com](https://www.google.ru/search?q=fopen+https%3A%2F%2Fwww.codecogs.com%2Flibrary%2Fcomputing%2F)
+[digitalmars.com](https://www.google.ru/search?q=fopen+https%3A%2F%2Fdigitalmars.com%2Frtl%2F)
+
+
+[UP](###UP)
+## books_inet
+[cpp.com.ru](https://yandex.ru/search/?text=fopen+site%3Ahttps%3A%2F%2Fcpp.com.ru)
+[linuxhint.com](https://www.google.ru/search?q=fopen+site%3Ahttps%3A%2F%2Flinuxhint.com)
+[gnu.org](https://www.google.ru/search?q=fopen+site%3Ahttps%3A%2F%2Fwww.gnu.org%2Fsoftware%2Flibc%2Fmanual)
+
+[UP](###UP)
+## examples_inet
+[yandex:examples](https://yandex.ru/search/?text=fopen+example+in+c)
+[docs.oracle.com](https://www.google.com/search?q=fopen+https%3A%2F%2Fdocs.oracle.com)
+[manpages.debian.org](https://yandex.ru/search/?text=fopen+site%3Ahttps%3A%2F%2Fmanpages.debian.org%2F)
+[osr507doc.xinuos.com](https://www.google.com/search?q=fopen+http%3A%2F%2Fosr507doc.xinuos.com%2Fen%2Fman)
+[cpp.hotexamples.com](https://cpp.hotexamples.com/examples/-/-/fopen/cpp-fopen-function-examples.html)
+[all-ht.ru](https://yandex.ru/search/?text=fopen+site%3Ahttp%3A%2F%2Fall-ht.ru%2Finf%2Fprog%2Fc%2F)
+[cppreference.com](https://yandex.ru/search/?text=fopen+site%3Ahttps%3A%2F%2Fen.cppreference.com%2Fw%2Fc%2F)
+
+[UP](###UP)
+## classic_inet
+[bogatyrev_c_unix](https://www.google.com/search?q=fopen+site%3Ahttps%3A%2F%2Fcpp.com.ru%2Fbogatyrev_c_unix)
+[kr_cbook](https://www.google.com/search?q=fopen+site%3Ahttps%3A%2F%2Fcpp.com.ru%2Fkr_cbook)
+
+[UP](###UP)
+## enters_inet
+[pubs.opengroup.org](https://pubs.opengroup.org/onlinepubs/9699919799/idx/head.html)
+
+[UP](###UP)
+## issue_code_inet
+[code.woboq.org](https://www.google.com/search?h=&sitesearch=https%3A%2F%2Fcode.woboq.org%2Fuserspace%2Fglibc%2F&q=fopen)
+
+
+[UP](###UP)
+## H_FILE 
+[stdio_h.md](../../hfiles/stdio_h.md)
+
+
+[UP](###UP)
+## p_SYNOPSIS
+:fopen:
+[next](##p_RETURN_ru)
+
+----------------------------------------------------- 
+-------------------------------------- 
+#include <stdio.h>
+FILE *fopen(const char *path, const char *mode);
+FILE *fdopen(int fd, const char *mode);
+FILE *freopen(const char *path, const char *mode, FILE *stream);
+-------------------------------------- 
+----------------------------------------------------- 
+<<SYNOPSIS>>
+[SYNOPSIS](../../fills/fopen/SYNOPSIS)
+
+
+[UP](###UP)
+## p_RETURN_ru
+:fopen:
+[next](##p_RETURN)
+
+<<RETURN>>
+[RETURN_ru](../../fills/fopen/RETURN)
+
+
+[UP](###UP)
+## p_RETURN
+:fopen:
+[next](##p_DESCRIPTION_ru)
+
+----------------------------------------------------- 
+-------------------------------------- 
+При успешном выполнении fopen(), fdopen() и freopen() возвращается указатель FILE. В противном случае возвращается NULL и errno присваивается код ошибки.
+-------------------------------------- 
+----------------------------------------------------- 
+<<RETURN_ru>>
+[RETURN](../../fills/fopen/RETURN_ru)
+
+
+[UP](###UP)
+## p_DESCRIPTION_ru
+:fopen:
+[next](##p_DESCRIPTION)
+
+----------------------------------------------------- 
+-------------------------------------- 
+r
+Открыть текстовый файл для чтения. Поток совмещается с началом файла.
+r+
+Открыть для чтения и записи. Поток совмещается с началом файла.
+w
+Обрезать файл до нулевой длины или создать текстовый файл для записи. Поток совмещается с началом файла.
+w+
+Открыть для чтения и записи. Файл создаётся, если его не существует, в противном случае он обрезается. Поток совмещается с началом файла.
+a
+Открыть для добавления (записи в конец файла). Файл создаётся, если его не существует. Поток совмещается с концом файла.
+a+
+Открыть для чтения и добавления (записи в конец файла). Файл создаётся, если не существует. Начальное положение в файле для чтения устанавливается в начало файла, но вывод всегда добавляется в конец файла
+Открытие файла в режиме дописывания (a в качестве первого символа mode) приводит к тому, что все последующие операции записи в этот поток производятся в конец файла, как если бы перед ними была вызвана:
+fseek(stream, 0, SEEK_END);
+-------------------------------------- 
+----------------------------------------------------- 
+<<DESCRIPTION_ru>>
+[DESCRIPTION_ru](../../fills/fopen/DESCRIPTION_ru)
+
+
+[UP](###UP)
+## p_DESCRIPTION
+:fopen:
+[next](##p_BUGS)
+
+<<DESCRIPTION>>
+[DESCRIPTION](../../fills/fopen/DESCRIPTION)
+
+
+[UP](###UP)
+## p_MIRRORS
+:fopen:
+[next](##p_BUGS)
+
+<<MIRRORS>>
+[MIRRORS](../../fills/fopen/MIRRORS)
+
+
+[UP](###UP)
+## p_BUGS
+:fopen:
+[next](##p_EXAMPLES)
+
+<<BUGS>>
+[BUGS](../../fills/fopen/BUGS)
+
+
+[UP](###UP)
+## p_EXAMPLES
+:fopen:
+[next](##p_CODE)
+
+----------------------------------------------------- 
+-------------------------------------- 
+---------------------
+-----
+void main()
+{  
+FILE *fp;   // Declaring a file pointer.
+fp = fopen("file.txt", "w");        // file will be opened in write mode.
+fprintf(fp, " Reading data from a file is a common feature of the file
+");
+fclose(fp);
+char ch;
+fp = fopen("file.txt", "r");  
+while((ch=fgetc(fp))!=EOF)// fgetc () function is called to read character from the file.
+{  
+printf("%c",ch);  // print the each character.
+}  
+fclose(fp);        
+}
+-----
+---------------------
+-------------------------------------- 
+----------------------------------------------------- 
+<<EXAMPLES>>
+[EXAMPLES](../../fills/fopen/EXAMPLES)
+
+
+[UP](###UP)
+## p_CODE_h
+:fopen:
+[next](##p_CODE_c)
+
+<<CODE_h>>
+[CODE_h](../../fills/fopen/CODE_h)
+
+
+[UP](###UP)
+## p_CODE_c
+:fopen:
+[next](##p_CODE_m)
+
+----------------------------------------------------- 
+-------------------------------------- 
+https://code.woboq.org/userspace/glibc/libio/iofopen.c.html
+#include "libioP.h"
+#include <fcntl.h>
+#include <stdlib.h>
+#include <stddef.h>
+#include <shlib-compat.h>
+FILE *
+__fopen_maybe_mmap (FILE *fp)
+{
+#if _G_HAVE_MMAP
+if ((fp->_flags2 & _IO_FLAGS2_MMAP) && (fp->_flags & _IO_NO_WRITES))
+{
+/* Since this is read-only, we might be able to mmap the contents
+directly.  We delay the decision until the first read attempt by
+giving it a jump table containing functions that choose mmap or
+vanilla file operations and reset the jump table accordingly.  */
+if (fp->_mode <= 0)
+_IO_JUMPS_FILE_plus (fp) = &_IO_file_jumps_maybe_mmap;
+else
+_IO_JUMPS_FILE_plus (fp) = &_IO_wfile_jumps_maybe_mmap;
+fp->_wide_data->_wide_vtable = &_IO_wfile_jumps_maybe_mmap;
+}
+#endif
+return fp;
+}
+FILE *
+__fopen_internal (const char *filename, const char *mode, int is32)
+{
+struct locked_FILE
+{
+struct _IO_FILE_plus fp;
+#ifdef _IO_MTSAFE_IO
+_IO_lock_t lock;
+#endif
+struct _IO_wide_data wd;
+} *new_f = (struct locked_FILE *) malloc (sizeof (struct locked_FILE));
+if (new_f == NULL)
+return NULL;
+#ifdef _IO_MTSAFE_IO
+new_f->fp.file._lock = &new_f->lock;
+#endif
+_IO_no_init (&new_f->fp.file, 0, 0, &new_f->wd, &_IO_wfile_jumps);
+_IO_JUMPS (&new_f->fp) = &_IO_file_jumps;
+_IO_new_file_init_internal (&new_f->fp);
+if (_IO_file_fopen ((FILE *) new_f, filename, mode, is32) != NULL)
+return __fopen_maybe_mmap (&new_f->fp.file);
+_IO_un_link (&new_f->fp);
+free (new_f);
+return NULL;
+}
+FILE *
+_IO_new_fopen (const char *filename, const char *mode)
+{
+return __fopen_internal (filename, mode, 1);
+}
+strong_alias (_IO_new_fopen, __new_fopen)
+versioned_symbol (libc, _IO_new_fopen, _IO_fopen, GLIBC_2_1);
+versioned_symbol (libc, __new_fopen, fopen, GLIBC_2_1);
+# if !defined O_LARGEFILE || O_LARGEFILE == 0
+weak_alias (_IO_new_fopen, _IO_fopen64)
+weak_alias (_IO_new_fopen, fopen64)
+# endif
+-------------------------------------- 
+----------------------------------------------------- 
+<<CODE_c>>
+[CODE_c](../../fills/fopen/CODE_c)
+
+
+[UP](###UP)
+## p_CODE_m
+:fopen:
+[next](##p_ERRORS)
+
+<<CODE_m>>
+[CODE_m](../../fills/fopen/CODE_m)
+
+
+[UP](###UP)
+## p_ERRORS
+:fopen:
+[next](##p_BOOKS)
+
+----------------------------------------------------- 
+-------------------------------------- 
+EINVAL
+Передано неверное значение mode в fopen(), fdopen() или freopen().
+-------------------------------------- 
+----------------------------------------------------- 
+<<ERRORS>>
+[ERRORS](../../fills/fopen/ERRORS)
+
+
+[UP](###UP)
+## p_BOOKS
+:fopen:
+[next](##p_BOOKS_ru)
+
+<<BOOKS>>
+[BOOKS](../../fills/fopen/BOOKS)
+
+
+[UP](###UP)
+## p_BOOKS_ru
+:fopen:
+[next](##p_CONTENT)
+
+
+<<BOOKS_ru>>
+[BOOKS_ru](../../fills/fopen/BOOKS_ru)
+
+
+[UP](###UP)
+## p_CONTENT
+:33333:
+[33333.cnt](../../contents/33333.cnt)
+[next](##UP)
+
+[UP](###UP)

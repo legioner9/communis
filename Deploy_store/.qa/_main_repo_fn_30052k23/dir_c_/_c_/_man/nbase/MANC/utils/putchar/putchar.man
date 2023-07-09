@@ -1,0 +1,308 @@
+### UP
+[putchar](##putchar)
+[MAIN](##MAIN)
+[MAIN_ru](##MAIN_ru)
+[ANCORS](##ANCORS)
+[ISU](##ISU)
+[inet](##A_inet)
+[inet](##books_inet)
+[inet](##examples_inet)
+[inet](##classic_inet)
+[inet](##enters_inet)
+[inet](##issue_code_inet)
+[H_FILE](##H_FILE)
+[p_SYNOPSIS](##p_SYNOPSIS)
+[p_RETURN](##p_RETURN)
+[p_RETURN_ru](##p_RETURN_ru)
+[p_BUGS](##p_BUGS)
+[p_DESCRIPTION_ru](##p_DESCRIPTION_ru)
+[p_DESCRIPTION](##p_DESCRIPTION)
+[p_MIRRORS](##p_MIRRORS)
+[p_EXAMPLES](##p_EXAMPLES)
+[p_CODE_h](##p_CODE_h)
+[p_CODE_c](##p_CODE_c)
+[p_CODE_m](##p_CODE_m)
+[p_ERRORS](##p_ERRORS)
+[p_BOOKS](##p_BOOKS)
+[p_BOOKS_ru](##p_BOOKS_ru)
+[p_CONTENT](##p_CONTENT)
+
+[cat_hfiles](../../cat_hfiles.md)
+[cat_utils](../../cat_utils.md)
+[cat_structs](../../cat_structs.md)
+[cat_param](../../cat_params.md)
+[cat_macros](../../cat_macross.md)
+[cat_const](../../cat_consts.md)
+[cat_type](../../cat_types.md)
+[cat_any](../cat_anys.md)
+
+
+[UP](###UP)
+## MAIN
+:putchar:
+[next](##MAIN_ru)
+
+<<MAIN>>
+[MAIN](../../fills/putchar/MAIN)
+
+
+
+[UP](###UP)
+## MAIN_ru
+:putchar:
+[next](##ANCORS)
+
+----------------------------------------------------- 
+-------------------------------------- 
+вывод символов и строк
+-------------------------------------- 
+----------------------------------------------------- 
+<<MAIN_ru>>
+[MAIN_ru](../../fills/putchar/MAIN_ru)
+
+[UP](###UP)
+## ANCORS
+:putchar:
+[next](##ISU)
+
+<<ANCORS>>
+[ANCORS](../../fills/putchar/ANCORS)
+
+[UP](###UP)
+## ISU
+:putchar:
+[next](##H_FILE)
+
+<<ISU>>
+only read
+:putchar:
+[ISU](../../contents)
+[next](##inet)
+
+
+[UP](###UP)
+## inet
+:putchar:
+[next](##H_FILE)
+
+
+[UP](###UP)
+## A_inet
+[manpages.org](https://www.google.ru/search?q=putchar+site%3Ahttps%3A%2F%2Fmanpages.org)
+[reposcope.com_ru](https://www.google.ru/search?q=putchar+site%3Ahttps%3A%2F%2Freposcope.com%2Fmanpages%2Fru)
+[pubs.opengroup.org](https://www.google.com/search?q=putchar+https%3A%2F%2Fpubs.opengroup.org)
+[manpages.debian.org](https://yandex.ru/search/?text=putchar+site%3Ahttps%3A%2F%2Fmanpages.debian.org%2F)
+[www.opennet.ru](http://www.opennet.ru/man.shtml?category=2&topic=putchar)
+[man7.org](https://www.google.ru/search?q=putchar+site%3Ahttps%3A%2F%2Fman7.org%2Flinux%2Fman-pages)
+[en.cppreference.com](https://www.google.com/search?q=putchar+en.cppreference.com)
+[www.mankier.com](https://www.mankier.com/?q=putchar)
+[www.codecogs.com](https://www.google.ru/search?q=putchar+https%3A%2F%2Fwww.codecogs.com%2Flibrary%2Fcomputing%2F)
+[digitalmars.com](https://www.google.ru/search?q=putchar+https%3A%2F%2Fdigitalmars.com%2Frtl%2F)
+
+
+[UP](###UP)
+## books_inet
+[cpp.com.ru](https://yandex.ru/search/?text=putchar+site%3Ahttps%3A%2F%2Fcpp.com.ru)
+[linuxhint.com](https://www.google.ru/search?q=putchar+site%3Ahttps%3A%2F%2Flinuxhint.com)
+[gnu.org](https://www.google.ru/search?q=putchar+site%3Ahttps%3A%2F%2Fwww.gnu.org%2Fsoftware%2Flibc%2Fmanual)
+
+[UP](###UP)
+## examples_inet
+[yandex:examples](https://yandex.ru/search/?text=putchar+example+in+c)
+[docs.oracle.com](https://www.google.com/search?q=putchar+https%3A%2F%2Fdocs.oracle.com)
+[manpages.debian.org](https://yandex.ru/search/?text=putchar+site%3Ahttps%3A%2F%2Fmanpages.debian.org%2F)
+[osr507doc.xinuos.com](https://www.google.com/search?q=putchar+http%3A%2F%2Fosr507doc.xinuos.com%2Fen%2Fman)
+[cpp.hotexamples.com](https://cpp.hotexamples.com/examples/-/-/putchar/cpp-putchar-function-examples.html)
+[all-ht.ru](https://yandex.ru/search/?text=putchar+site%3Ahttp%3A%2F%2Fall-ht.ru%2Finf%2Fprog%2Fc%2F)
+[cppreference.com](https://yandex.ru/search/?text=putchar+site%3Ahttps%3A%2F%2Fen.cppreference.com%2Fw%2Fc%2F)
+
+[UP](###UP)
+## classic_inet
+[bogatyrev_c_unix](https://www.google.com/search?q=putchar+site%3Ahttps%3A%2F%2Fcpp.com.ru%2Fbogatyrev_c_unix)
+[kr_cbook](https://www.google.com/search?q=putchar+site%3Ahttps%3A%2F%2Fcpp.com.ru%2Fkr_cbook)
+
+[UP](###UP)
+## enters_inet
+[pubs.opengroup.org](https://pubs.opengroup.org/onlinepubs/9699919799/idx/head.html)
+
+[UP](###UP)
+## issue_code_inet
+[code.woboq.org](https://www.google.com/search?h=&sitesearch=https%3A%2F%2Fcode.woboq.org%2Fuserspace%2Fglibc%2F&q=putchar)
+
+
+[UP](###UP)
+## H_FILE 
+[stdio_h.md](../../hfiles/stdio_h.md)
+
+
+[UP](###UP)
+## p_SYNOPSIS
+:putchar:
+[next](##p_RETURN_ru)
+
+----------------------------------------------------- 
+-------------------------------------- 
+#include <stdio.h>
+int fputc(int c, FILE *stream);
+int fputs(const char *s, FILE *stream);
+int putc(int c, FILE *stream);
+int putchar(int c);
+int puts(const char *s);
+-------------------------------------- 
+----------------------------------------------------- 
+<<SYNOPSIS>>
+[SYNOPSIS](../../fills/putchar/SYNOPSIS)
+
+
+[UP](###UP)
+## p_RETURN_ru
+:putchar:
+[next](##p_RETURN)
+
+<<RETURN>>
+[RETURN_ru](../../fills/putchar/RETURN)
+
+
+[UP](###UP)
+## p_RETURN
+:putchar:
+[next](##p_DESCRIPTION_ru)
+
+----------------------------------------------------- 
+-------------------------------------- 
+fputc(), putc() and putchar() возвращают записанный символ, преобразованный из unsigned char в int или EOF в случае ошибки.
+puts() и fputs() возвращают неотрицательное число в случае успеха 
+-------------------------------------- 
+----------------------------------------------------- 
+<<RETURN_ru>>
+[RETURN](../../fills/putchar/RETURN_ru)
+
+
+[UP](###UP)
+## p_DESCRIPTION_ru
+:putchar:
+[next](##p_DESCRIPTION)
+
+----------------------------------------------------- 
+-------------------------------------- 
+fputc() записывает символ c, преобразуя его в unsigned char, в stream.
+fputs() записывает строку s в stream без добавления нулевого байта ('0').
+putc() является эквивалентом fputc() за исключением того, что она может быть реализована в качестве макрокоманды, которая проверяет stream более одного раза.
+putchar(c) является эквивалентом putc(c, stdout).
+puts() записывает строку s и завершающую новую строку в stdout.
+Вызовы описанных здесь функций могут быть смешаны между собой и вызовами других функций вывода из библиотеки stdio в пределах одного и того же потока вывода.
+Для неблокирующих аналогов, см. unlocked_stdio(3).
+-------------------------------------- 
+----------------------------------------------------- 
+<<DESCRIPTION_ru>>
+[DESCRIPTION_ru](../../fills/putchar/DESCRIPTION_ru)
+
+
+[UP](###UP)
+## p_DESCRIPTION
+:putchar:
+[next](##p_BUGS)
+
+<<DESCRIPTION>>
+[DESCRIPTION](../../fills/putchar/DESCRIPTION)
+
+
+[UP](###UP)
+## p_MIRRORS
+:putchar:
+[next](##p_BUGS)
+
+<<MIRRORS>>
+[MIRRORS](../../fills/putchar/MIRRORS)
+
+
+[UP](###UP)
+## p_BUGS
+:putchar:
+[next](##p_EXAMPLES)
+
+----------------------------------------------------- 
+-------------------------------------- 
+Не рекомендуется смешивать вызовы функций вывода из библиотеки stdio с вызовами write(2) для файлового дескриптора, связанного с одним и тем же потоком вывода. Результаты могут быть непредсказуемыми и, очень вероятно, совсем не теми, что вы ожидали увидеть.
+-------------------------------------- 
+----------------------------------------------------- 
+<<BUGS>>
+[BUGS](../../fills/putchar/BUGS)
+
+
+[UP](###UP)
+## p_EXAMPLES
+:putchar:
+[next](##p_CODE)
+
+<<EXAMPLES>>
+[EXAMPLES](../../fills/putchar/EXAMPLES)
+
+
+[UP](###UP)
+## p_CODE_h
+:putchar:
+[next](##p_CODE_c)
+
+<<CODE_h>>
+[CODE_h](../../fills/putchar/CODE_h)
+
+
+[UP](###UP)
+## p_CODE_c
+:putchar:
+[next](##p_CODE_m)
+
+<<CODE_c>>
+[CODE_c](../../fills/putchar/CODE_c)
+
+
+[UP](###UP)
+## p_CODE_m
+:putchar:
+[next](##p_ERRORS)
+
+<<CODE_m>>
+[CODE_m](../../fills/putchar/CODE_m)
+
+
+[UP](###UP)
+## p_ERRORS
+:putchar:
+[next](##p_BOOKS)
+
+----------------------------------------------------- 
+-------------------------------------- 
+EOF в случае ошибки.
+-------------------------------------- 
+----------------------------------------------------- 
+<<ERRORS>>
+[ERRORS](../../fills/putchar/ERRORS)
+
+
+[UP](###UP)
+## p_BOOKS
+:putchar:
+[next](##p_BOOKS_ru)
+
+<<BOOKS>>
+[BOOKS](../../fills/putchar/BOOKS)
+
+
+[UP](###UP)
+## p_BOOKS_ru
+:putchar:
+[next](##p_CONTENT)
+
+
+<<BOOKS_ru>>
+[BOOKS_ru](../../fills/putchar/BOOKS_ru)
+
+
+[UP](###UP)
+## p_CONTENT
+:33333:
+[33333.cnt](../../contents/33333.cnt)
+[next](##UP)
+
+[UP](###UP)

@@ -1,0 +1,1 @@
+    printf("0x%o \n", umask(0700)); /*#*/ // not work umask

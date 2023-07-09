@@ -1,0 +1,21 @@
+Terminals:
+#include <sys/ioctl.h>
+
+int ioctl(int fildes int cmd, ... /* arg */);
+
+Sockets:
+#define _XOPEN_SOURCE_EXTENDED 1
+
+/**     OR      **/
+
+#define _OE_SOCKETS
+
+#include <sys/ioctl.h>
+#include <net/rtrouteh.h>
+#include <net/if.h>
+int ioctl(int fildes, int cmd, ... /* arg */);
+
+STREAMS:
+#define _XOPEN_SOURCE_EXTENDED 1
+#include <stropts.h>
+int ioctl(int fildes int cmd, ... /* arg */);

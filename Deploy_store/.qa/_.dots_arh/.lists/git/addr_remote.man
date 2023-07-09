@@ -1,0 +1,17 @@
+# github
+git@github.com:legioner9/communis.git
+
+# sourceforge
+https://sourceforge.net/p/communis/admin/
+
+## tgu
+https://sourceforge.net/u/legioner9/tgu/ref/main/
+ssh://legioner9@git.code.sf.net/u/legioner9/tgu
+
+## communis 
+ssh://legioner9@git.code.sf.net/p/communis/code
+
+# gitlab
+## communis 
+git@gitlab.com:legioner9999/communis.git
+https://gitlab.com/legioner9999/communis.git

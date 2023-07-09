@@ -1,0 +1,12 @@
+#? cr_tst_dir_ --name_dir ex"$1"_tst --ext extst
+[ -z "$1" ] && {
+    plt_exit "\$1 empty first arg mast be num ex<\$1> in ${rdir}"
+    return 1
+}
+#
+plt_pause "do that? create ex$1 tst dir in ${rdir}"
+#
+cd ${rdir}
+#
+cr_tst_dir_ --name_dir ex"$1" --ext extst
+#

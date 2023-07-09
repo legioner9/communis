@@ -1,0 +1,56 @@
+https://www.shrubbery.net/solaris9ab/SUNWdev/STREAMS/p14.html
+
+#include <stdio.h>
+#include <string.h>
+#include <stropts.h>
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <sys/types.h>
+#include <sys/socket.h>
+
+main(int argc, const char **argv)
+{
+		int	s, i;
+		unsigned int	mods;
+		struct str_list	mod_list;struct str_mlist *mlist;
+		/* Get a socket... */
+
+		if ((s = socket(AF_INET, SOCK_STREAM, 0)) <= 0) {
+			perror("socket: ");
+			exit(1);
+		}
+
+		/* Determine the number of modules in the stream */	
+		if ((mods = ioctl(s, I_LIST, 0)) < 0) {
+			perror("I_LIST ioctl");
+		}
+		if (mods == 0) {
+			printf("No modules\n");
+			exit(1);
+		} else {
+			printf("%d modules\n", mods);
+		}
+
+		/* Allocate memory for all of the module names */
+		mlist = (struct str_mlist *)
+		calloc(mods, sizeof (struct str_mlist));
+		if (mlist == 0) {
+			perror("malloc failure");
+			exit(1);
+		}
+		mod_list.sl_modlist = mlist;
+		mod_list.sl_nmods = mods;
+		/* Do the ioctl and get the module names... */
+		if (ioctl(s, I_LIST, &mod_list) < 0) {
+			exit(1);
+		}
+
+		/* Print out the name of the modules... */
+		for (i = 0; i < mods; i++) {
+			printf("s: %s\n", mod_list.sl_modlist[i].l_name);
+		}
+
+		/* Free the calloc'd structures... */
+		free(mlist);
+		return(0);
+}

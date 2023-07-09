@@ -1,0 +1,9 @@
+# my man _ch_fn_ex_
+
+## in: from env arr_name_fn[@]
+## flow:
+- choice fn in arr_name_fn[@]
+- enter args for fn
+- exec fn with args
+## out: result exec fn
+

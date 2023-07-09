@@ -1,0 +1,5 @@
+The stpcpy() function shall return a pointer to the terminating NUL character copied into the s1 buffer. [Option End]
+
+The strcpy() function shall return s1.
+
+No return values are reserved to indicate an error.

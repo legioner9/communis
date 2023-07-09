@@ -1,0 +1,13 @@
+# npm unpublish in /home/st/REPOBARE/_repo/plt/actio/dir_mm_npm_/_mm_npm_/_man/help
+
+npm ERR! Refusing to delete entire project.
+npm ERR! Run with --force to do this.
+npm ERR! 
+npm ERR! npm unpublish [<@scope>/]<pkg>@<version>
+npm ERR! npm unpublish [<@scope>/]<pkg> --force
+
+# npm unpublish -h in /home/st/REPOBARE/_repo/plt/actio/dir_mm_npm_/_mm_npm_/_man/help
+
+
+npm unpublish [<@scope>/]<pkg>@<version>
+npm unpublish [<@scope>/]<pkg> --force

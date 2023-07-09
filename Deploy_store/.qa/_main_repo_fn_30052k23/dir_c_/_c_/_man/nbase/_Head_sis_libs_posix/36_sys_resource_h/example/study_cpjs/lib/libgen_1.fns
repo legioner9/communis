@@ -1,0 +1,2 @@
+ char* basename_c_free(char* path)
+ char* dirname_c_free(char* path)

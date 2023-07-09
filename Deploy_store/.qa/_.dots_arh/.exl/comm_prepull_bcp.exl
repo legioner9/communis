@@ -1,0 +1,14 @@
+eval wrp_fifs2_ cp -fuv ${PATH_COMMUNIS}/Deploy_store/plt_bd/sh/_init_flash.sh ${dir_repo} -f1 -qq_exit
+eval wrp_fifs2_ cp -fuv ${PATH_COMMUNIS}/Deploy_store/plt_bd/sh/_re_init_flash.sh ${dir_repo} -f1 -qq_exit
+eval wrp_fifs2_ cp -fuv ${PATH_COMMUNIS}/Deploy_store/plt_bd/sh/_rbl_communis.sh ${dir_repo} -f1 -qq_exit
+eval wrp_fifs2_ cp -fuv ${PATH_COMMUNIS}/Deploy_store/plt_bd/_exa_for_first_start/dnf_for_first_start.sh ${dir_repo} -f1 -qq_exit
+eval wrp_fifs2_ cp -fuv ${PATH_COMMUNIS}/Deploy_store/plt_bd/_exa_for_first_start/prl.man ${dir_repo} -f1 -qq_exit
+#eval wrp_fifs1_ rm -frv ${PATH_MY_ONE}/ALT_store/ -cd1 -qq_exit
+#eval wrp_fifs1_ rm -frv ${PATH_TOSHIBA_EXT}/ALT_store/ -cd1 -qq_exit
+#eval wrp_fifs1_ rm -frv ${PATH_TOSH}/ALT_store/ -cd1 -qq_exit
+eval wrp_fifs2_ cp -fuv ${PATH_COMMUNIS}/Deploy_store/plt_bd/sh/_upd_all_alt.sh ${dir_repo} -f1 -qq_exit
+
+#eval wrp_fifs2_ cp -rfv ${PATH_COMMUNIS}/Store/ALT_store/ ${PATH_MY_ONE}/ -cd1 -cd2 -qq_exit 1>/dev/null
+#eval wrp_fifs2_ cp -rfv ${PATH_COMMUNIS}/Store/ALT_store/ ${PATH_TOSHIBA_EXT}/ -cd1 -cd2 -qq_exit 1>/dev/null
+#eval wrp_fifs2_ cp -rfv ${PATH_COMMUNIS}/Store/ALT_store/ ${PATH_TOSH}/ -cd1 -cd2 -qq_exit 1>/dev/null
+#eval wrp_fifs2_ cp -rfv ${PATH_COMMUNIS}/Deploy_store/plt_bd/main_store/sys_stores ${PATH_MY_ONE}/ -cd1 -cd2 -qq_exit 1>/dev/null

@@ -1,0 +1,16 @@
+
+name_repo#tgu
+
+#  fn_name#addr^remote@addr2^remote2
+
+pull_net#
+pull_local#
+
+pull_net_strong#git@github.com:legioner9/000.git^GITHUB_LEGIONER9_000
+pull_local_strong#
+
+push_net_strong#git@github.com:legioner9/000.git^GITHUB_LEGIONER9_000
+push_local_strong#
+
+push_to_net#
+# push_to_local#/run/media/

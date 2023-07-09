@@ -1,0 +1,266 @@
+### UP
+[va_list](##va_list)
+[MAIN](##MAIN)
+[MAIN_ru](##MAIN_ru)
+[ANCORS](##ANCORS)
+[ISU](##ISU)
+[inet](##A_inet)
+[inet](##books_inet)
+[inet](##examples_inet)
+[inet](##classic_inet)
+[inet](##enters_inet)
+[inet](##issue_code_inet)
+[H_FILE](##H_FILE)
+[s_SYNOPSIS](##s_SYNOPSIS)
+[s_RETURN](##s_RETURN)
+[s_RETURN_ru](##s_RETURN_ru)
+[s_BUGS](##s_BUGS)
+[s_DESCRIPTION_ru](##s_DESCRIPTION_ru)
+[s_DESCRIPTION](##s_DESCRIPTION)
+[s_MIRRORS](##s_MIRRORS)
+[s_EXAMPLES](##s_EXAMPLES)
+[s_CODE_h](##s_CODE_h)
+[s_CODE_c](##s_CODE_c)
+[s_CODE_m](##s_CODE_m)
+[s_ERRORS](##s_ERRORS)
+[s_BOOKS](##s_BOOKS)
+[s_BOOKS_ru](##s_BOOKS_ru)
+[s_CONTENT](##s_CONTENT)
+
+[cat_hfiles](../../cat_hfiles.md)
+[cat_utils](../../cat_utils.md)
+[cat_structs](../../cat_structs.md)
+[cat_param](../../cat_params.md)
+[cat_macros](../../cat_macross.md)
+[cat_const](../../cat_consts.md)
+[cat_type](../../cat_types.md)
+[cat_any](../cat_anys.md)
+
+
+[UP](###UP)
+## MAIN
+:va_list:
+[next](##MAIN_ru)
+
+<<MAIN>>
+[MAIN](../../fills/va_list/MAIN)
+
+
+
+[UP](###UP)
+## MAIN_ru
+:va_list:
+[next](##ANCORS)
+
+<<MAIN_ru>>
+[MAIN_ru](../../fills/va_list/MAIN_ru)
+
+[UP](###UP)
+## ANCORS
+:va_list:
+[next](##ISU)
+
+<<ANCORS>>
+[ANCORS](../../fills/va_list/ANCORS)
+
+[UP](###UP)
+## ISU
+:va_list:
+[next](##H_FILE)
+
+<<ISU>>
+only read
+:va_list:
+[ISU](../../contents)
+[next](##inet)
+
+
+[UP](###UP)
+## inet
+:va_list:
+[next](##H_FILE)
+
+
+[UP](###UP)
+## A_inet
+[manpages.org](https://www.google.ru/search?q=va_list+site%3Ahttps%3A%2F%2Fmanpages.org)
+[reposcope.com_ru](https://www.google.ru/search?q=va_list+site%3Ahttps%3A%2F%2Freposcope.com%2Fmanpages%2Fru)
+[pubs.opengroup.org](https://www.google.com/search?q=va_list+https%3A%2F%2Fpubs.opengroup.org)
+[manpages.debian.org](https://yandex.ru/search/?text=va_list+site%3Ahttps%3A%2F%2Fmanpages.debian.org%2F)
+[www.opennet.ru](http://www.opennet.ru/man.shtml?category=2&topic=va_list)
+[man7.org](https://www.google.ru/search?q=va_list+site%3Ahttps%3A%2F%2Fman7.org%2Flinux%2Fman-pages)
+[en.cppreference.com](https://www.google.com/search?q=va_list+en.cppreference.com)
+[www.mankier.com](https://www.mankier.com/?q=va_list)
+[www.codecogs.com](https://www.google.ru/search?q=va_list+https%3A%2F%2Fwww.codecogs.com%2Flibrary%2Fcomputing%2F)
+[digitalmars.com](https://www.google.ru/search?q=va_list+https%3A%2F%2Fdigitalmars.com%2Frtl%2F)
+
+
+[UP](###UP)
+## books_inet
+[cpp.com.ru](https://yandex.ru/search/?text=va_list+site%3Ahttps%3A%2F%2Fcpp.com.ru)
+[linuxhint.com](https://www.google.ru/search?q=va_list+site%3Ahttps%3A%2F%2Flinuxhint.com)
+[gnu.org](https://www.google.ru/search?q=va_list+site%3Ahttps%3A%2F%2Fwww.gnu.org%2Fsoftware%2Flibc%2Fmanual)
+
+[UP](###UP)
+## examples_inet
+[yandex:examples](https://yandex.ru/search/?text=va_list+example+in+c)
+[docs.oracle.com](https://www.google.com/search?q=va_list+https%3A%2F%2Fdocs.oracle.com)
+[manpages.debian.org](https://yandex.ru/search/?text=va_list+site%3Ahttps%3A%2F%2Fmanpages.debian.org%2F)
+[osr507doc.xinuos.com](https://www.google.com/search?q=va_list+http%3A%2F%2Fosr507doc.xinuos.com%2Fen%2Fman)
+[cpp.hotexamples.com](https://cpp.hotexamples.com/examples/-/-/va_list/cpp-va_list-function-examples.html)
+[all-ht.ru](https://yandex.ru/search/?text=va_list+site%3Ahttp%3A%2F%2Fall-ht.ru%2Finf%2Fprog%2Fc%2F)
+[cppreference.com](https://yandex.ru/search/?text=va_list+site%3Ahttps%3A%2F%2Fen.cppreference.com%2Fw%2Fc%2F)
+
+[UP](###UP)
+## classic_inet
+[bogatyrev_c_unix](https://www.google.com/search?q=va_list+site%3Ahttps%3A%2F%2Fcpp.com.ru%2Fbogatyrev_c_unix)
+[kr_cbook](https://www.google.com/search?q=va_list+site%3Ahttps%3A%2F%2Fcpp.com.ru%2Fkr_cbook)
+
+[UP](###UP)
+## enters_inet
+[pubs.opengroup.org](https://pubs.opengroup.org/onlinepubs/9699919799/idx/head.html)
+
+[UP](###UP)
+## issue_code_inet
+[code.woboq.org](https://www.google.com/search?h=&sitesearch=https%3A%2F%2Fcode.woboq.org%2Fuserspace%2Fglibc%2F&q=va_list)
+
+
+[UP](###UP)
+## H_FILE 
+[stdarg_h.md](../../hfiles/stdarg_h.md)
+
+
+[UP](###UP)
+## s_SYNOPSIS
+:va_list:
+[next](##s_RETURN_ru)
+
+<<SYNOPSIS>>
+[SYNOPSIS](../../fills/va_list/SYNOPSIS)
+
+
+[UP](###UP)
+## s_RETURN_ru
+:va_list:
+[next](##s_RETURN)
+
+<<RETURN>>
+[RETURN_ru](../../fills/va_list/RETURN)
+
+
+[UP](###UP)
+## s_RETURN
+:va_list:
+[next](##s_DESCRIPTION_ru)
+
+<<RETURN_ru>>
+[RETURN](../../fills/va_list/RETURN_ru)
+
+
+[UP](###UP)
+## s_DESCRIPTION_ru
+:va_list:
+[next](##s_DESCRIPTION)
+
+<<DESCRIPTION_ru>>
+[DESCRIPTION_ru](../../fills/va_list/DESCRIPTION_ru)
+
+
+[UP](###UP)
+## s_DESCRIPTION
+:va_list:
+[next](##s_BUGS)
+
+<<DESCRIPTION>>
+[DESCRIPTION](../../fills/va_list/DESCRIPTION)
+
+
+[UP](###UP)
+## s_MIRRORS
+:va_list:
+[next](##s_BUGS)
+
+<<MIRRORS>>
+[MIRRORS](../../fills/va_list/MIRRORS)
+
+
+[UP](###UP)
+## s_BUGS
+:va_list:
+[next](##s_EXAMPLES)
+
+<<BUGS>>
+[BUGS](../../fills/va_list/BUGS)
+
+
+[UP](###UP)
+## s_EXAMPLES
+:va_list:
+[next](##s_CODE)
+
+<<EXAMPLES>>
+[EXAMPLES](../../fills/va_list/EXAMPLES)
+
+
+[UP](###UP)
+## s_CODE_h
+:va_list:
+[next](##s_CODE_c)
+
+<<CODE_h>>
+[CODE_h](../../fills/va_list/CODE_h)
+
+
+[UP](###UP)
+## s_CODE_c
+:va_list:
+[next](##s_CODE_m)
+
+<<CODE_c>>
+[CODE_c](../../fills/va_list/CODE_c)
+
+
+[UP](###UP)
+## s_CODE_m
+:va_list:
+[next](##s_ERRORS)
+
+<<CODE_m>>
+[CODE_m](../../fills/va_list/CODE_m)
+
+
+[UP](###UP)
+## s_ERRORS
+:va_list:
+[next](##s_BOOKS)
+
+<<ERRORS>>
+[ERRORS](../../fills/va_list/ERRORS)
+
+
+[UP](###UP)
+## s_BOOKS
+:va_list:
+[next](##s_BOOKS_ru)
+
+<<BOOKS>>
+[BOOKS](../../fills/va_list/BOOKS)
+
+
+[UP](###UP)
+## s_BOOKS_ru
+:va_list:
+[next](##s_CONTENT)
+
+
+<<BOOKS_ru>>
+[BOOKS_ru](../../fills/va_list/BOOKS_ru)
+
+
+[UP](###UP)
+## s_CONTENT
+:33333:
+[33333.cnt](../../contents/33333.cnt)
+[next](##UP)
+
+[UP](###UP)

@@ -1,0 +1,35 @@
+#!/bin/bash
+
+#! debag
+# . "$HOME/.bashrc"
+#!
+
+filename="$PATH_FN/dir_00000/00000.sh"
+
+echo -e "${HLIGHT}--- start file: $filename with args: $@ ---${NORMAL}" # start file
+
+#e_exer "Questions? See far!" "$filename" "$LINENO"
+
+#up_lib_git
+
+00000() {
+
+    #{def_const_reciver}
+
+    #{ctrl_args_reciver}
+
+    #* echo -e "${CYAN}---$FNN() $* ---${NORMAL}" #started functions
+
+    #? c_up "$ORIGO_DIR/_$FNN/_sh/" 1>/dev/null
+
+    cd_h "$PPWD" 1>/dev/null
+
+    #{init_body_reciver}
+
+    wrp_fifs1_ cd "$PPWD" -d1 --errmes ""
+
+}
+
+# 00000 @
+
+unset filename

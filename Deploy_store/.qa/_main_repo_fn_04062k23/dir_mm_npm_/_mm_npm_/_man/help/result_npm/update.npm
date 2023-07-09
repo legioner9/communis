@@ -1,0 +1,8 @@
+# npm update in /home/st/REPOBARE/_repo/plt/actio/dir_mm_npm_/_mm_npm_/_man/help
+
+
+# npm update -h in /home/st/REPOBARE/_repo/plt/actio/dir_mm_npm_/_mm_npm_/_man/help
+
+npm update [-g] [<pkg>...]
+
+aliases: up, upgrade, udpate

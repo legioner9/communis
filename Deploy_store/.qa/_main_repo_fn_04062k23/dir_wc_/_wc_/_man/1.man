@@ -1,0 +1,20 @@
+# https://losst.ru/komanda-wc-v-linux
+
+-c	--bytes	Отобразить размер объекта в байтах
+-m	--count	Показать количесто символов в объекте
+-l	--lines	Вывести количество строк в объекте
+-w	--words	Отобразить количество слов в объекте
+
+    st@fedora ~/${PATH_MAIN_REPO_FN_DIR}/_config/agno_tag (master)$
+    $ wc *
+    1  2 11 actual.tag
+    2  3 24 app_nm.tag
+    0  1  7 _common.tag
+    2  3 18 main.tag
+    5  9 60 итого
+
+    echo "Hello World!" | wc
+          1       2      13
+
+## wc -l количество строк вывода 
+

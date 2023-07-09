@@ -1,0 +1,13 @@
+# my_one /run/media/st/MY_ONE/_git_communis/bd_bare_communis
+# tosh_ext /run/media/st/TOSHIBA EXT/_git_communis/bd_bare_communis
+# origin  git@github.com:legioner9/communis.git
+# local_alt /home/st/Bare_communis
+
+my_one^^/run/media/st/MY_ONE/_git_communis/bd_bare_communis
+tosh_ext^^/run/media/st/TOSHIBA_EXT/_git_communis/bd_bare_communis
+tosh^^/run/media/st/TOSH/_git_communis/bd_bare_communis
+origin^^git@github.com:legioner9/communis.git
+local_alt^^/home/st/Bare_communis
+gitlab^^git@gitlab.com:legioner9999/communis.git
+# gitflic^^git@gitflic.ru:legioner9/communis.git
+sfnet^^ssh://legioner9@git.code.sf.net/p/communis/code

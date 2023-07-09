@@ -1,0 +1,3 @@
+#!/bin/snap/
+
+telegram-desktop

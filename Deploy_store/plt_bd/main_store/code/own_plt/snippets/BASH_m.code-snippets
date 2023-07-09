@@ -1,0 +1,416 @@
+{
+	// Place your st workspace snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"scope": "javascript,typescript",
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+	"create file with filename": {
+		"prefix": "##",
+		"body": [
+			"#!/bin/bash",
+			"",
+			"#. \"\\$HOME/.bashrc\"",
+			"",
+			"filename=\"\\$HOME/$1\" ",
+			"",
+			"echo -e \"\\${HLIGHT}---start file://\\$filename ---\\${NORMAL}\" # start file",
+			"",
+			"idir=\\$(pwd)",
+			"",
+			"# cd \"\\$(prs_f -d \\$filename)\" || qq_exit \"\\$(prs_f -d \\$filename) not found\"",
+			"",
+			"",
+			"garg_ $(prs_f -n \\$filename) $@ 1>/dev/null",
+			"",
+			"",
+			"",
+			"cd \"\\$idir\"",
+			"",
+			"unset filename",
+		],
+		"description": "create file with filename"
+	},
+	"fi": {
+		"prefix": "fi",
+		"body": [
+			"file://"
+		],
+		"description": "fi"
+	},
+	"echo -e GREEN var": {
+		"prefix": "ev",
+		"body": [
+			"echo -e \"\\${GREEN}\\\\\\$${1:var} = \\$${1:var}\\${NORMAL}\" #print variable"
+		],
+		"description": "echo -e GREEN var"
+	},
+	"echo -e p GREEN var": {
+		"prefix": "evp",
+		"body": [
+			"echo -e \"\\${GREEN}\\\\\\$${1:var} = file://\\$${1:var} \\${NORMAL}\" #print variable"
+		],
+		"description": "echo -e GREEN var"
+	},
+	"echo -e BLUE info": {
+		"prefix": "ei",
+		"body": [
+			"echo -e \"\\${BLUE}--- ${1:message} ---\\${NORMAL}\" #sistem info mesage"
+		],
+		"description": "echo -e BLUE info"
+	},
+	"echo -e HLIGHT hint": {
+		"prefix": "eh",
+		"body": [
+			"echo -e \"\\${HLIGHT}--- ${1:hint message} ---\\${NORMAL}\" #start files"
+		],
+		"description": "echo -e HLIGHT hint"
+	},
+	"echo -e RED error": {
+		"prefix": "eer",
+		"body": [
+			"echo -e \"\\${RED}--- ${1:error message} ---\\${NORMAL}\" #exit 1"
+		],
+		"description": "echo -e RED error"
+	},
+	"err_": {
+		"prefix": "err_",
+		"body": [
+			"err_ -${1:i} \\$? \"message\""
+		],
+		"description": "echo -e RED error"
+	},
+	"echo -e CYAN started": {
+		"prefix": "es",
+		"body": [
+			"    echo -e \"\\${CYAN}--- \\${FUNCNAME[0]}() \\$* ---\\${NORMAL}\" #started functions",
+			"    ",
+			"    garg_ ${FUNCNAME[0]} $@ 1> /dev/null",
+			"    ",
+			"    d_name=\\$(dirname \"\\$HOME\"/${1:rel_path_file_with_fn})",
+			"    ",
+			"    if [ \"-h\" == \"\\$1\" ]; then",
+			"        echo -e \"\\${CYAN} \\${FUNCNAME[0]}() help: ",
+			"        MAIN: ",
+			"        NAME: \\${FUNCNAME[0]}()",
+			"        ARGS: ",
+			"        FLOW:",
+			"",
+			"        \\${NORMAL}\"",
+			"        return 0",
+			"    fi",
+			"",
+			"    if [ \"man\" == \"\\$1\" ]; then",
+			"        edit_ \"\\$d_name/${FUNCNAME[0]}\".man",
+			"        return 0",
+			"    fi",
+			"    ",
+			"    if [ \"go\" == \"\\$1\" ]; then",
+			"        edit_ \"\\$d_name/${FUNCNAME[0]}\".sh",
+			"        return 0",
+			"    fi",
+			"    ",
+			"    if [ \"lst\" == \"\\$1\" ]; then",
+			"        edit_ \"\\$d_name/${FUNCNAME[0]}\".lst",
+			"        return 0",
+			"    fi",
+			"    ",
+			"    if [ \"test\" == \"\\$1\" ]; then",
+			"        ${FUNCNAME[0]}test",
+			"        return 0",
+			"    fi",
+			"    ",
+			"    # amount_arg $# 1 1",
+			"    ",
+		],
+		"description": "echo -e CYAN started"
+	},
+	"eo": {
+		"prefix": "eo",
+		"body": [
+			"    #echo -e \"\\${CYAN}--- \\${FUNCNAME[0]}() $* ---\\${NORMAL}\" #started functions",
+			"    local FNN=\\${FUNCNAME[0]}",
+			"    local PPW=\\$(prs_f -d FILENAME) # FILENAME===\"filename\"",
+			"    path_ext=\\$PPW/\\$FNN",
+			"",
+			"    # amount_arg $# 1 1",
+			"    ",
+			"    garg_ ${FUNCNAME[0]} $@ 1>/dev/null",
+			"    ",
+			"",
+			"    if [ \"-h\" == \"\\$1\" ]; then",
+			"        echo -e \"\\${CYAN} \\${FUNCNAME[0]}() help: ",
+			"        MAIN: ",
+			"        NAME: \\${FUNCNAME[0]}()",
+			"        ARGS: ",
+			"        FLOW:",
+			"        DEBUG:\\${NORMAL}\"",
+			"",
+			"        return 0",
+			"    fi",
+			"",
+			"    if [ \"man\" == \"\\$1\" ]; then",
+			"        edit_ \"\\$path_ext\".man",
+			"        return 0",
+			"    fi",
+			"",
+			"    if [ \"tst\" == \"\\$1\" ]; then",
+			"        . \"\\$ORIGO_DIR\"/\"\\$FNN\"tst/_flow_tst.sh",
+			"        return 0",
+			"    fi",
+			"",
+			"    if [ \"lst\" == \"\\$1\" ]; then",
+			"        edit_ \"\\$path_ext\".lst",
+			"        return 0",
+			"    fi",
+			"",
+			"    if [ \"go\" == \"\\$1\" ]; then",
+			"        edit_ \"\\$PPW\"",
+			"        return 0",
+			"    fi",
+			"",
+			"    # amount_arg $# min_args max_args",
+			"",
+		],
+		"description": "eo"
+	},
+	"echo -e CYAN S started": {
+		"prefix": "eS",
+		"body": [
+			"    echo -e \"\\${CYAN}--- \\${FUNCNAME[0]}() \\$* ---\\${NORMAL}\" #started functions",
+			"    local FNN=${FUNCNAME[0]}",
+			"    if [ \"man\" == \"\\$1\" ]; then",
+			"        edit_ \"\\$PATH_FN\"/dir_\"\\$FNN\"/\"\\$FNN\".man",
+			"        return 0",
+			"    fi",
+			"    ",
+			"    if [ \"test\" == \"\\$1\" ]; then",
+			"        \"\\$FNN\"test",
+			"        return 0",
+			"    fi",
+			"    ",
+			"    if [ \"lst\" == \"\\$1\" ]; then",
+			"        edit_ \"\\$PATH_FN\"/dir_\"\\$FNN\"/\"\\$FNN\".lst",
+			"        return 0",
+			"    fi",
+			"    ",
+			"    if [ \"go\" == \"\\$1\" ]; then",
+			"        edit_ \"\\$PATH_FN\"/dir_\"\\$FNN\"/",
+			"        return 0",
+			"    fi",
+			"    ",
+		],
+		"description": "echo -e CYAN S started"
+	},
+	"echo -e ULINE dubled_command": {
+		"prefix": "edc",
+		"body": [
+			"echo -e \"\\${ULINE}${1:dubled_command}\\${NORMAL}\" #repit commands",
+		],
+		"description": "echo -e ULINE dubled_command"
+	},
+	"e_exer standart": {
+		"prefix": "e_e",
+		"body": [
+			"e_exer \"${1:err_message}\" \"\\$filename\" \"\\$LINENO\""
+		],
+		"description": "e_exer standart"
+	},
+	"qq_3 standart": {
+		"prefix": "qq_3",
+		"body": [
+			"\"${1:fons}\" \"\\$filename\" \"\\$LINENO\""
+		],
+		"description": "qq_3 standart"
+	},
+	"qq_4 standart": {
+		"prefix": "qq_4",
+		"body": [
+			"\"${1:fons}\" \"${2:finis}\" \"\\$filename\" \"\\$LINENO\""
+		],
+		"description": "qq_4 standart"
+	},
+	"qq_ars_arr_2": {
+		"prefix": "qq_arr_2",
+		"body": [
+			"\"${#array_1[@]}\" \"${array_1[@]}\" \"${#array_2[@]}\" \"${array_2[@]}\""
+		],
+		"description": "qq_arr_2"
+	},
+	"subtraction_arr_2": {
+		"prefix": "qq_subtraction_arr_2",
+		"body": [
+			"subtraction_arr_2 \"${#sub[@]}\" \"${sub[@]}\" \"${#min[@]}\" \"${min[@]}\""
+		],
+		"description": "subtraction_arr_2"
+	},
+	"echo -e GREEN arr": {
+		"prefix": "earr",
+		"body": [
+			"echo -e \"\\${GREEN}\\\\${${1:array}[@]} = \\${${1:array}[*]}\\${NORMAL}\" #print variable"
+		],
+		"description": "echo -e GREEN arr"
+	},
+	"cp_s": {
+		"prefix": "cp_s_",
+		"body": [
+			"cp_s \"${1:fons}\" \"${2:finis}\" \"\\$filename\" \"\\$LINENO\""
+		],
+		"description": "cp_s"
+	},
+	"cp_h": {
+		"prefix": "cp_h_",
+		"body": [
+			"cp_h \"${1:fons}\" \"${2:finis}\" \"\\$filename\" \"\\$LINENO\""
+		],
+		"description": "cp_h"
+	},
+	"rm_s": {
+		"prefix": "rm_s_",
+		"body": [
+			"rm_s \"${1:fons}\" \"\\$filename\" \"\\$LINENO\""
+		],
+		"description": "rm_s"
+	},
+	"rm_h": {
+		"prefix": "rm_h_",
+		"body": [
+			"rm_h \"${1:fons}\" \"\\$filename\" \"\\$LINENO\""
+		],
+		"description": "rm_h"
+	},
+	"cp_rm_s": {
+		"prefix": "cp_rm_s_",
+		"body": [
+			"cp_rm_s \"${1:fons}\" \"${2:finis}\" \"\\$filename\" \"\\$LINENO\""
+		],
+		"description": "cp_rm_s"
+	},
+	"cp_rm_h": {
+		"prefix": "cp_rm_h_",
+		"body": [
+			"cp_rm_h \"${1:fons}\" \"${2:finis}\" \"\\$filename\" \"\\$LINENO\""
+		],
+		"description": "cp_rm_h"
+	},
+	"mkdir_rm_s": {
+		"prefix": "mkdir_rm_s_",
+		"body": [
+			"mkdir_rm_s \"${1:fons}\" \"\\$filename\" \"\\$LINENO\""
+		],
+		"description": "mkdir_rm_s"
+	},
+	"mkdir_rm_h": {
+		"prefix": "mkdir_rm_h_",
+		"body": [
+			"mkdir_rm_h \"${1:fons}\" \"\\$filename\" \"\\$LINENO\""
+		],
+		"description": "mkdir_rm_h"
+	},
+	"cd_s": {
+		"prefix": "cd_s_",
+		"body": [
+			"cd_s \"${1:fons}\" \"\\$filename\" \"\\$LINENO\""
+		],
+		"description": "cd_s"
+	},
+	"cd_h": {
+		"prefix": "cd_h_",
+		"body": [
+			"cd_h \"${1:fons}\" \"\\$filename\" \"\\$LINENO\""
+		],
+		"description": "cd_h"
+	},
+	"cd_mkdir_s": {
+		"prefix": "cd_mkdir_s_",
+		"body": [
+			"cd_mkdir_s \"${1:fons}\" \"\\$filename\" \"\\$LINENO\""
+		],
+		"description": "cd_mkdir_s"
+	},
+	"cd_mkdir_h": {
+		"prefix": "cd_mkdir_h_",
+		"body": [
+			"cd_mkdir_h \"${1:fons}\" \"\\$filename\" \"\\$LINENO\""
+		],
+		"description": "cd_mkdir_h"
+	},
+	"mkdir_h": {
+		"prefix": "mkdir_h_",
+		"body": [
+			"mkdir_h \"${1:fons}\" \"\\$filename\" \"\\$LINENO\""
+		],
+		"description": "mkdir_h"
+	},
+	"if_git_exist": {
+		"prefix": "if_git_exist_",
+		"body": [
+			"if_git_exist \"\\$filename\" \"\\$LINENO\""
+		],
+		"description": "if_git_exist"
+	},
+	"sel_": {
+		"prefix": "sel_",
+		"body": [
+			"    PS3=\"eligendi actiones: \"",
+			"",
+			"select item in \"${arr[@]}\";do",
+			"    ",
+			"    dilectus=\\$item",
+			"    break",
+			"    ",
+			"done"
+		],
+		"description": "sel_"
+	},
+	"forb": {
+		"prefix": "forb",
+		"body": [
+			"for item in \\$(${1:ls});do",
+			"  if [ -z \\$item ]; then",
+			"    break",
+			"  fi",
+			"",
+			"${2: ev}",
+			"",
+			"done",
+		],
+		"description": "forb"
+	},
+	"forbc": {
+		"prefix": "forbc",
+		"body": [
+			"#start safe_space loop",
+			"IFS='",
+			"'",
+			"",
+			"for item in \\$(${1:ls});do",
+			"  if [ -z \\$item ]; then",
+			"    break",
+			"  fi",
+			"var=\"\\$(is_space_01 \"\\$item\")\"",
+			"",
+			"if [ \"\\$var\" -eq 0 ]; then",
+			"# safe_space code:",
+			"  ${2: ev}",
+			"",
+			"fi",
+			"",
+			"done",
+			"",
+			"IFS=\\$IIFS",
+			"# end safe_space loop",
+		],
+		"description": "forbc"
+	},
+}

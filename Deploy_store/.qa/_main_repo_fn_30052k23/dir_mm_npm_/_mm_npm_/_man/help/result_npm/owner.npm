@@ -1,0 +1,15 @@
+# npm owner in ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_mm_npm_/_mm_npm_/_man/help
+
+npm ERR! npm owner add <user> [<@scope>/]<pkg>
+npm ERR! npm owner rm <user> [<@scope>/]<pkg>
+npm ERR! npm owner ls [<@scope>/]<pkg>
+npm ERR! 
+npm ERR! alias: author
+
+# npm owner -h in ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_mm_npm_/_mm_npm_/_man/help
+
+npm owner add <user> [<@scope>/]<pkg>
+npm owner rm <user> [<@scope>/]<pkg>
+npm owner ls [<@scope>/]<pkg>
+
+alias: author

@@ -1,0 +1,84 @@
+### UP
+[msqid_ds](##msqid_ds)
+[H_FILE](##H_FILE)
+[U_SYNOPSIS](##U_SYNOPSIS)
+[U_DESCRIPTION_ru](##U_DESCRIPTION)
+[U_DESCRIPTION](##U_DESCRIPTION_ru)
+[U_EXAMPLES](##U_EXAMPLES)
+[U_EXAMPLES_ru](##U_EXAMPLES_ru)
+[U_ERRORS](##U_ERRORS)
+[U_BOOKS](##U_BOOKS)
+[U_BOOKS_ru](##U_BOOKS_ru)
+
+[cat_hfiles](../../cat_hfiles.md)
+[cat_utils](../../cat_utils.md)
+[cat_structs](../../cat_structs.md)
+
+
+[UP](###UP)
+# msqid_ds
+MAIN :msqid_ds:
+[ru.manpages.org](https://www.google.ru/search?q=struct+msqid_ds+site%3Ahttps%3A%2F%2Fru.manpages.org)
+
+
+
+[UP](###UP)
+## H_FILE 
+[sys_msg_h.md](../../hfiles/sys_msg_h.md)
+## U_SYNOPSIS
+:msqid_ds:
+
+
+
+[UP](###UP)
+## U_DESCRIPTION_ru
+:msqid_ds:
+[ru.manpages.org](https://www.google.ru/search?q=struct+msqid_ds+site%3Ahttps%3A%2F%2Fru.manpages.org)
+[man7.org](https://www.google.ru/search?q=msqid_ds+site%3Ahttps%3A%2F%2Fman7.org%2Flinux%2Fman-pages)
+[next](##U_DESCRIPTION)
+
+
+
+[UP](###UP)
+## U_DESCRIPTION
+:msqid_ds:
+[ru.manpages.org](https://www.google.ru/search?q=struct+msqid_ds+site%3Ahttps%3A%2F%2Fru.manpages.org)
+[cplusplus.com](https://www.cplusplus.com/reference/)
+[next](##U_EXAMPLES)
+
+
+
+[UP](###UP)
+## U_EXAMPLES
+:msqid_ds:
+[cpp.hotexamples.com](https://cpp.hotexamples.com/examples/-/-/struct+msqid_ds/cpp-close-function-examples.html)
+[linuxhint.com](https://www.google.ru/search?q=struct+msqid_ds+site%3Ahttps%3A%2F%2Flinuxhint.com)
+[next](##U_EXAMPLES_ru)
+
+
+
+[UP](###UP)
+## U_EXAMPLES_ru
+:msqid_ds:
+[next](##U_ERRORS)
+
+
+
+[UP](###UP)
+## U_BOOKS
+:msqid_ds:
+[linuxhint.com](https://www.google.ru/search?q=struct+msqid_ds+site%3Ahttps%3A%2F%2Flinuxhint.com)
+[gnu.org](https://www.google.ru/search?q=struct+msqid_ds+site%3Ahttps%3A%2F%2Fwww.gnu.org%2Fsoftware%2Flibc%2Fmanual)
+[next](##U_BOOKS_ru)
+
+
+
+[UP](###UP)
+## U_BOOKS_ru
+:msqid_ds:
+[cpp.com.ru](https://www.google.ru/search?q=struct+msqid_ds+site%3Ahttps%3A%2F%2Fcpp.com.ru)
+[next](##STRUCTS)
+
+
+
+[UP](###UP)

@@ -1,0 +1,7 @@
+eval wrp_fifs1_ ls $HOME/TMP  -d1 -qq_exit
+eval wrp_fifs1_ rm -fv ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_exl_/_exl_/_debug/ancor_file -cf1 -qq_exit
+eval wrp_fifs2_ cp ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_exl_/_exl_/_debug/ancor_dir/ancor_file ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_exl_/_exl_/_debug/ancor_file -f1 -qq_exit
+eval wrp_fifs1_ file ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_exl_/_exl_/_debug/ancor_file -f1 -qq_exit
+eval wrp_fifs2_ cp ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_exl_/_exl_/_debug/ancor_dir/ancor_filex ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_exl_/_exl_/_debug/ancor_file -f1 -qq_exit
+
+eval wrp_fifs1_ ls $HOME/TMPx -d1 -qq_exit

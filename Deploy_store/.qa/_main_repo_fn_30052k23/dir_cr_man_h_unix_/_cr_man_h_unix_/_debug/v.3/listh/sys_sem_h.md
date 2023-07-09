@@ -1,0 +1,12 @@
+p@semctl
+p@semget
+p@semop
+s@semid_ds
+s@sembuf
+c@GETNCNT
+c@GETPID
+c@GETVAL
+c@GETALL
+c@GETZCNT
+#c@SETVAL
+#c@SETALL

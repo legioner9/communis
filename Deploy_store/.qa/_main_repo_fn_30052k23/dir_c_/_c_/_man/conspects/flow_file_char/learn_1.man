@@ -1,0 +1,113 @@
+## FROM: start/communis/Deploy_store/.qa/main_repo_fn/dir_c_/_c_/_man/nbase/_Head_sis_libs_v.cplus/17_stdio_h/1_functions/18_ftell/ftell_cpjs
+
+### ftell [main.c.v2]
+
+```cpp
+int main(int argc, char const *argv[])
+{
+    char c;
+    long posR = 0;
+    long posW = 0;
+
+    FILE *pFr = fopen_s("r.tx", "r");
+    FILE *pFw = fopen_s("w.tx", "w");
+    while (1)
+    {
+
+        if ((c = getc(pFr)) != EOF)
+        {
+
+            posR = ftell(pFr);
+            posW = ftell(pFw);
+            fprintf(pFw, "%c : %d : %d\n", c, posR, posW);
+        }
+        else if (c == EOF)
+        {
+            fprintf(pFw, "\nc = %d : exit while(), posR = %d, posW = %d\n", c, posR, posW); // c = -72538984
+            break;
+        }
+    }
+}
+```
+
+r.tx:
+
+    Afrfe3#$@#
+
+w.tx:
+
+    A : 1 : 0
+    f : 2 : 10
+    r : 3 : 21
+    f : 4 : 32
+    e : 5 : 43
+    3 : 6 : 54
+    # : 7 : 65
+    $ : 8 : 76
+    @ : 9 : 87
+    # : 10 : 98
+
+    c = -1 : exit while(), posR = 10, posW = 98
+
+### reread and position flow [main.c.v3]
+
+```cpp
+int main(int argc, char const *argv[])
+{
+    char c;
+    long posR = 0;
+    long posW = 0;
+    long posD = 0;
+
+    FILE *pFr = fopen_s("r.tx", "r");
+    FILE *pFw = fopen_s("w.tx", "w");
+    FILE *pFd = fopen_s("d.tx", "w");
+    while (1)
+    {
+
+        if ((c = getc(pFr)) != EOF)
+        {
+
+            posR = ftell(pFr);
+            posW = ftell(pFw);
+            fprintf(pFw, "%c : %d : %d\n", c, posR, posW);
+        }
+        else if (c == EOF)
+        {
+            fprintf(pFw, "\nc = %d : exit while(), posR = %d, posW = %d\n", c, posR, posW); // c = -72538984
+            break;
+        }
+    }
+    fprintf(pFd, "posR = %d\n", ftell(pFr));
+    char d = getc(pFr);
+    fputc(d, pFd);
+    fprintf(pFd, "\nposR = %d\n", ftell(pFr));
+}
+```
+
+d.tx:
+
+    posR = 10
+    �
+    posR = 10
+
+#### rewind [main.c.rewind]
+
+```cpp
+    fprintf(pFd, "posR = %d\n", ftell(pFr));
+    fprintf(pFd, "rewind(pFr)\n");
+    rewind(pFr);
+    fprintf(pFd, "posR = %d\n", ftell(pFr));
+    char d = getc(pFr);
+    fputc(d, pFd);
+    fprintf(pFd, "\nposR = %d\n", ftell(pFr));
+```
+
+d.tx:
+
+    posR = 10
+    rewind(pFr)
+    posR = 0
+    A
+    posR = 1
+

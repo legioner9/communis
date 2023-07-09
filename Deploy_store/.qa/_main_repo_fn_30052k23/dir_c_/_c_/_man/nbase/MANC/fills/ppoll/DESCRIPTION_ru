@@ -1,0 +1,23 @@
+Отношения между poll() и ppoll() аналогичны родству select(2) и pselect(2): как pselect(2), ppoll() позволяет приложению безопасно ждать, пока файловый дескриптор не станет готов или пока не будет получен сигнал.
+Кроме различия в точности аргумента timeout вызов ppoll()
+
+    ready = ppoll(&fds, nfds, tmo_p, &sigmask);
+эквивалентен атомарному выполнению следующих вызовов:
+    sigset_t origmask;
+    int timeout;
+    timeout = (tmo_p == NULL) ? -1 :
+              (tmo_p->tv_sec * 1000 + tmo_p->tv_nsec / 1000000);
+    pthread_sigmask(SIG_SETMASK, &sigmask, &origmask);
+    ready = poll(&fds, nfds, timeout);
+    pthread_sigmask(SIG_SETMASK, &origmask, NULL);
+Смотрите в pselect(2) пояснения о необходимости ppoll().
+
+Если значение аргумента sigmask равно NULL, то изменение маски сигналов не происходит (и поэтому ppoll() отличается от poll() только в точности аргумента timeout).
+
+В аргументе tmo_p указывается верхняя граница промежутка времени, на который будет заблокирован ppoll(). Этот аргумент представляет собой указатель на структуру следующего вида:
+
+struct timespec {
+    long    tv_sec;         /* секунды */
+    long    tv_nsec;        /* наносекунды */
+};
+Если значение tmo_p равно NULL, то ppoll() может оставаться заблокированным бесконечно.

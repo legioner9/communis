@@ -1,0 +1,27 @@
+#>exl
+# ${PATH_EXL_DIR}/cr_tst_sys_/create_start_exec.exl
+#? create /dir_1/start_exec._tst
+eval path_name=${root_dir}/${name_dir}/start_exec._tst
+eval tml=${PATH_TML_DIR}/cr_sh_/for_tst_1/sh_for_tst_1.tml
+
+eval cr_f_ "${path_name}" --tml ${tml}
+
+# eval header=${PATH_INSERT_DIR}/cr_sh_/header.insert
+
+# eval cr_f_ "${path_name}" --fi0 ${header} --fr0 {header}
+
+eval body=${PATH_INSERT_DIR}/cr_sh_/for_tst_1/body.insert
+
+eval cr_f_ "${path_name}" --fi0 ${body} --fr0 {body}
+
+eval cr_f_ "${path_name}" --vi0 ${path_name} --vr0 {path_name}
+
+eval list=${root_dir}/${name_dir}/start_exec.list
+
+eval cr_f_ "${path_name}" --vi0 ${list} --vr0 {list}
+
+eval upg_path_ "${path_name}"
+
+#? create dir_1/start_exec.list
+eval echo ${root_dir}/${name_dir} >${list}
+# eval upg_path_ ${list}

@@ -1,0 +1,1 @@
+        prn_dirent_lc_1_entry_с(entry, __FILE__, __LINE__, STMO_PRN, 0, STRE_EXI); /*#*/ //^1^

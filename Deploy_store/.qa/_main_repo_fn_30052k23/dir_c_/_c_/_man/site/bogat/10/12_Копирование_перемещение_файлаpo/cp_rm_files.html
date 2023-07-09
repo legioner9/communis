@@ -1,0 +1,512 @@
+
+<!-- saved from url=(0046)https://cpp.com.ru/bogatyrev_c_unix/ex_12.html -->
+<html m_init="2259300202204070759"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+
+<title>Примеры. Хрестоматия по программированию на Си в Unix</title>
+
+
+
+<!-- head begin -->
+
+	<script async="" src="./cp_rm_files_files/async-ads.js"></script><script src="./cp_rm_files_files/cb=gapi.loaded_1" async=""></script><script src="./cp_rm_files_files/cb=gapi.loaded_0" async=""></script><script async="" type="text/javascript" src="https://openstat.net/cnt.js"></script><script type="text/javascript" async="" src="./cp_rm_files_files/plusone.js" gapi_processed="true"></script><script type="text/javascript" async="" src="./cp_rm_files_files/f.txt"></script><script type="text/javascript" async="" src="./cp_rm_files_files/ga.js"></script><script type="text/javascript">
+
+          	var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-22695535-1']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+
+	</script>
+
+	<!-- Put the following javascript before the closing </head> tag. -->
+	<script>
+	  (function() {
+	    var cx = 'partner-pub-5771899961401791:8114144010';
+	    var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+	    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+		'//www.google.ru/cse/cse.js?cx=' + cx;
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+	  })();
+	</script>
+
+	<!-- vk like begin -->
+	<!-- Put this script tag to the <head> of your page -->
+	<script type="text/javascript" src="./cp_rm_files_files/openapi.js"></script>
+
+	<script type="text/javascript">
+	  VK.init({apiId: 3153833, onlyWidgets: true});
+	</script>
+	<!-- vk like end -->
+
+<!-- head end -->
+<script type="text/javascript" async="" src="./cp_rm_files_files/rotaban.js"></script><script src="./cp_rm_files_files/cse_element__ru.js" type="text/javascript"></script><link type="text/css" rel="stylesheet" href="./cp_rm_files_files/default+ru.css"><link type="text/css" rel="stylesheet" href="./cp_rm_files_files/default.css"><style type="text/css">.gsc-control-cse{font-family:arial, sans-serif}.gsc-control-cse .gsc-table-result{font-family:arial, sans-serif}.gsc-refinementsGradient{background:linear-gradient(to left,rgba(255,255,255,1),rgba(255,255,255,0))}</style><style type="text/css">.gscb_a{display:inline-block;font:27px/13px arial,sans-serif}.gsst_a .gscb_a{color:#a1b9ed;cursor:pointer}.gsst_a:hover .gscb_a,.gsst_a:focus .gscb_a{color:#36c}.gsst_a{display:inline-block}.gsst_a{cursor:pointer;padding:0 4px}.gsst_a:hover{text-decoration:none!important}.gsst_b{font-size:16px;padding:0 2px;position:relative;user-select:none;-webkit-user-select:none;white-space:nowrap}.gsst_e{vertical-align:middle;opacity:0.55;}.gsst_a:hover .gsst_e,.gsst_a:focus .gsst_e{opacity:0.72;}.gsst_a:active .gsst_e{opacity:1;}.gsst_f{background:white;text-align:left}.gsst_g{background-color:white;border:1px solid #ccc;border-top-color:#d9d9d9;box-shadow:0 2px 4px rgba(0,0,0,0.2);-webkit-box-shadow:0 2px 4px rgba(0,0,0,0.2);margin:-1px -3px;padding:0 6px}.gsst_h{background-color:white;height:1px;margin-bottom:-1px;position:relative;top:-1px}.gsib_a{width:100%;padding:4px 6px 0}.gsib_a,.gsib_b{vertical-align:top}.gssb_c{border:0;position:absolute;z-index:989}.gssb_e{border:1px solid #ccc;border-top-color:#d9d9d9;box-shadow:0 2px 4px rgba(0,0,0,0.2);-webkit-box-shadow:0 2px 4px rgba(0,0,0,0.2);cursor:default}.gssb_f{visibility:hidden;white-space:nowrap}.gssb_k{border:0;display:block;position:absolute;top:0;z-index:988}.gsdd_a{border:none!important}.gsq_a{padding:0}.gssb_a{padding:0 7px}.gssb_a,.gssb_a td{white-space:nowrap;overflow:hidden;line-height:22px}#gssb_b{font-size:11px;color:#36c;text-decoration:none}#gssb_b:hover{font-size:11px;color:#36c;text-decoration:underline}.gssb_g{text-align:center;padding:8px 0 7px;position:relative}.gssb_h{font-size:15px;height:28px;margin:0.2em;-webkit-appearance:button}.gssb_i{background:#eee}.gss_ifl{visibility:hidden;padding-left:5px}.gssb_i .gss_ifl{visibility:visible}a.gssb_j{font-size:13px;color:#36c;text-decoration:none;line-height:100%}a.gssb_j:hover{text-decoration:underline}.gssb_l{height:1px;background-color:#e5e5e5}.gssb_m{color:#000;background:#fff}.gssb_a{padding:0 9px}.gsib_a{padding:5px 9px 4px 9px}.gscb_a{line-height:27px}.gssb_e{border:0}.gssb_l{margin:5px 0}input.gsc-input::-webkit-input-placeholder{font-size:14px}input.gsc-input:-moz-placeholder{font-size:14px}input.gsc-input::-moz-placeholder{font-size:14px}input.gsc-input:-ms-input-placeholder{font-size:14px}input.gsc-input:focus::-webkit-input-placeholder{color:transparent}input.gsc-input:focus:-moz-placeholder{color:transparent}input.gsc-input:focus::-moz-placeholder{color:transparent}input.gsc-input:focus:-ms-input-placeholder{color:transparent}.gssb_c .gsc-completion-container{position:static}.gssb_c{z-index:5000}.gsc-completion-container table{background:transparent;font-size:inherit;font-family:inherit}.gssb_c > tbody > tr,.gssb_c > tbody > tr > td,.gssb_d,.gssb_d > tbody > tr,.gssb_d > tbody > tr > td,.gssb_e,.gssb_e > tbody > tr,.gssb_e > tbody > tr > td{padding:0;margin:0;border:0}.gssb_a table,.gssb_a table tr,.gssb_a table tr td{padding:0;margin:0;border:0}</style></head>
+<body>
+<!-- body_header begin -->
+
+<!-- RotaBan.ru Ad Code -->
+<script type="text/javascript">
+(function(){
+    var rb = document.createElement('script');
+        d = new Date();
+    d.setHours(0);
+    d.setMinutes(0);
+    d.setSeconds(0);
+    d.setMilliseconds(0);
+    rb.type = 'text/javascript';
+    rb.async = true;
+    rb.src = '//s1.rotaban.ru/rotaban.js?v=' + d.getTime();
+    (document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(rb);
+})();
+</script>
+<!-- END RotaBan.ru Ad Code -->
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tbody><tr>
+	<td>
+	<p align="left">
+<!-- RotaBan.ru Zone Code -->
+</p><div id="rotaban_218286" class="rbrocks rotaban_0136f42239f2400dadf98977553229e1"></div>
+<!-- END RotaBan.ru Zone Code -->
+	<p></p>
+	</td><td>
+	<p align="right">
+
+<!-- Place this tag where you want both of the search box and the search results to render -->
+<div id="___gcse_0"><div class="gsc-control-cse gsc-control-cse-ru"><div class="gsc-control-wrapper-cse" dir="ltr"><form class="gsc-search-box gsc-search-box-tools" accept-charset="utf-8"><table cellspacing="0" cellpadding="0" class="gsc-search-box"><tbody><tr><td class="gsc-input"><div class="gsc-input-box" id="gsc-iw-id1"><table cellspacing="0" cellpadding="0" id="gs_id50" class="gstl_50 gsc-input" style="width: 100%; padding: 0px;"><tbody><tr><td id="gs_tti50" class="gsib_a"><input autocomplete="off" type="text" size="10" class="gsc-input" name="search" title="поиск" id="gsc-i-id1" dir="ltr" spellcheck="false" style="width: 100%; padding: 0px; border: none; margin: 0px; height: auto; background: url(&quot;https://www.google.com/cse/static/images/1x/ru/branding.png&quot;) left center no-repeat rgb(255, 255, 255); outline: none;"></td><td class="gsib_b"><div class="gsst_b" id="gs_st50" dir="ltr"><a class="gsst_a" href="javascript:void(0)" title="Очистить окно поиска" role="button" style="display: none;"><span class="gscb_a" id="gs_cb50" aria-hidden="true">&#215;</span></a></div></td></tr></tbody></table></div></td><td class="gsc-search-button"><button class="gsc-search-button gsc-search-button-v2"><svg width="13" height="13" viewBox="0 0 13 13"><title>поиск</title><path d="m4.8495 7.8226c0.82666 0 1.5262-0.29146 2.0985-0.87438 0.57232-0.58292 0.86378-1.2877 0.87438-2.1144 0.010599-0.82666-0.28086-1.5262-0.87438-2.0985-0.59352-0.57232-1.293-0.86378-2.0985-0.87438-0.8055-0.010599-1.5103 0.28086-2.1144 0.87438-0.60414 0.59352-0.8956 1.293-0.87438 2.0985 0.021197 0.8055 0.31266 1.5103 0.87438 2.1144 0.56172 0.60414 1.2665 0.8956 2.1144 0.87438zm4.4695 0.2115 3.681 3.6819-1.259 1.284-3.6817-3.7 0.0019784-0.69479-0.090043-0.098846c-0.87973 0.76087-1.92 1.1413-3.1207 1.1413-1.3553 0-2.5025-0.46363-3.4417-1.3909s-1.4088-2.0686-1.4088-3.4239c0-1.3553 0.4696-2.4966 1.4088-3.4239 0.9392-0.92727 2.0864-1.3969 3.4417-1.4088 1.3553-0.011889 2.4906 0.45771 3.406 1.4088 0.9154 0.95107 1.379 2.0924 1.3909 3.4239 0 1.2126-0.38043 2.2588-1.1413 3.1385l0.098834 0.090049z"></path></svg></button></td><td class="gsc-clear-button"><div class="gsc-clear-button" title="удалить результаты">&nbsp;</div></td></tr></tbody></table></form><div class="gsc-results-wrapper-nooverlay"><div class="gsc-positioningWrapper"><div class="gsc-tabsAreaInvisible"><div aria-label="refinement" role="tab" class="gsc-tabHeader gsc-inline-block gsc-tabhActive">Система пользовательского поиска</div><span class="gs-spacer"> </span></div></div><div class="gsc-positioningWrapper"><div class="gsc-refinementsAreaInvisible"></div></div><div class="gsc-above-wrapper-area-invisible"><table cellspacing="0" cellpadding="0" class="gsc-above-wrapper-area-container"><tbody><tr><td class="gsc-result-info-container"><div class="gsc-result-info-invisible"></div></td></tr></tbody></table></div><div class="gsc-adBlockInvisible"></div><div class="gsc-wrapper"><div class="gsc-adBlockInvisible"></div><div class="gsc-resultsbox-invisible"><div class="gsc-resultsRoot gsc-tabData gsc-tabdActive"><div><div class="gsc-expansionArea"></div></div></div></div></div></div></div></div></div>
+	</p>
+
+	</td>
+
+</tr>
+</tbody></table>
+<hr>
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tbody><tr>
+	<td>
+	<p>
+	    <a href="http://cpp.com.ru/">[ Главная ]</a>
+	    <a href="http://cpp.com.ru/guest/index.php">[ Гостевая ]</a>
+	</p>
+	</td>
+	<td align="right"> 
+
+		<!-- vk like begin -->
+		<!-- Put this div tag to the place, where the Like block will be -->
+		<div id="vk_like" style="width: 115px; height: 24px; background: none; position: relative; clear: both;"><iframe name="fXD83ddb" frameborder="0" src="./cp_rm_files_files/widget_like.html" width="100%" height="24" scrolling="no" id="vkwidget1" style="overflow: hidden; height: 24px; width: 115px; z-index: 150;"></iframe></div>
+		<script type="text/javascript">
+		VK.Widgets.Like("vk_like", {type: "mini", height: 24});
+		</script>
+		<!-- vk like end -->
+
+	</td>
+	<td align="right" width="1"> 
+
+		<!-- begin google +1 -->
+		<!-- Place this tag where you want the +1 button to render. -->
+		<div id="___plusone_0" style="position: absolute; width: 450px; left: -10000px;"><iframe ng-non-bindable="" frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position:absolute;top:-10000px;width:450px;margin:0px;border-style:none" tabindex="0" vspace="0" width="100%" id="I0_1649582385361" name="I0_1649582385361" src="./cp_rm_files_files/fastbutton.html" data-gapiattached="true"></iframe></div><div class="g-plusone" data-gapiscan="true" data-onload="true" data-gapistub="true"></div>
+
+		<!-- Place this tag after the last +1 button tag. -->
+		<script type="text/javascript">
+		  window.___gcfg = {lang: 'ru'};
+
+		  (function() {
+		    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+		    po.src = 'https://apis.google.com/js/plusone.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+		  })();
+		</script>
+		<!-- end google +1 -->
+	</td>
+</tr>
+</tbody></table>
+
+<!-- body_header end -->
+
+<a name="top"></a>
+
+
+<p></p><center><p>
+<font size="-1">
+<a href="https://cpp.com.ru/bogatyrev_c_unix/ex_11.html">Назад</a> | <a href="https://cpp.com.ru/bogatyrev_c_unix/index.html">Содержание</a> | <a href="https://cpp.com.ru/bogatyrev_c_unix/ex_13.html">Вперед</a></font></p></center><p></p>
+
+ <!--minimal-->
+
+
+<h3>Пример 12     </h3>
+<pre>/* Программа, совмещающая команды mv и cp. Иллюстрация работы с файлами.
+ * Пример того, как программа может выбирать род работы
+ * по своему названию.
+ * Компиляция:
+ *              cc cpmv.c -o copy ; ln copy move
+ * По мотивам книги М.Дансмура и Г.Дейвиса.
+ */
+
+#include &lt;stdio.h&gt;              /* буферизованный ввод/вывод */
+#include &lt;sys/types.h&gt;          /* системные типы данных */
+#include &lt;sys/stat.h&gt;           /* struct stat           */
+#include &lt;fcntl.h&gt;              /* O_RDONLY              */
+#include &lt;errno.h&gt;              /* системные коды ошибок */
+
+/* #define strrchr rindex           /* для версии ДЕМОС (BSD)    */
+extern char *strrchr(char *, char); /* из библиотеки libc.a      */
+extern int   errno;
+char    MV[] = "move"; char CP[] = "copy";
+#define OK      1       /* success - успех   */
+#define FAILED  0       /* failure - неудача */
+#define YES     OK
+#define NO      0
+
+/* Выделить базовое имя файла:
+ *     ../wawa/xxx  --&gt;   xxx
+ *     zzz          --&gt;   zzz
+ *     /            --&gt;   /
+ */
+char *basename( char *name ){
+	char *s      = strrchr( name , '/' );
+	return (s    == NULL) ? name : /* нет слэшей       */
+	       (s[1] == '\0') ? name : /* корневой каталог */
+				s + 1;
+}
+#define ECANTSTAT (-1)  /* файл не существует */
+struct ftype {
+       unsigned type;  /* тип файла */
+       dev_t    dev;   /* код устройства, содержащего файл */
+       ino_t    ino;   /* индексный узел файла на этом устройстве */
+};
+/* Получение типа файла */
+struct ftype filetype( char *name /* имя файла */   )
+{
+	struct stat st; struct ftype f;
+
+	if( stat( name, &amp;st ) &lt; 0 ){
+		 f.type = ECANTSTAT; f.dev = f.ino = 0;
+	} else { f.type = st.st_mode &amp; S_IFMT;
+		 f.dev  = st.st_dev; f.ino = st.st_ino;
+	}
+	return f;
+}
+/* Удаляет файлы, кроме устройств */
+int unlinkd( char *name, unsigned type )
+{
+	if( type == S_IFBLK || type == S_IFCHR || type == S_IFDIR)
+		return 0;
+	return unlink( name );
+}
+/* Функция нижнего уровня: копирование информации большими порциями */
+int copyfile( int from, int to )
+	/* from - дескриптор откуда */
+	/* to   - дескриптор куда   */
+{
+	char buffer[ BUFSIZ ];
+	int n; /* число прочитанных байт */
+
+	while(( n = read( from, buffer, BUFSIZ )) &gt; 0 )
+	/* read возвращает число прочитанных байт,
+	 * 0 в конце файла
+	 */
+		    if( write( to,  buffer, n ) != n ){
+			printf( "Write error.\n" );
+			return FAILED;
+		    }
+	return OK;
+}
+/* Копирование файла */
+int docopy(char *src, char *dst, unsigned typefrom, unsigned typeto)
+{       int retc; int fdin, fdout;
+	printf( "copy %s --&gt; %s\n", src, dst );
+
+	if((fdin = open( src, O_RDONLY )) &lt; 0 ){
+		printf( "Сan't read %s\n", src );
+		return FAILED;
+	}
+	if((fdout = creat( dst, 0644 )) &lt; 0 ){  /* rw-r--r-- */
+		printf( "Can't create %s\n", dst );
+		return FAILED;
+	}
+	retc = copyfile( fdin, fdout );
+	close( fdin ); close( fdout );
+	return retc;
+}
+/* Переименование файла. Вернуть OK, если удачно, FAILED - неудачно */
+int mlink(char *src, char *dst, unsigned typefrom, unsigned typeto)
+{
+	switch( typefrom ){
+	case S_IFDIR:           /* переименование каталога */
+		printf( "rename directory %s --&gt; %s\n", src, dst );
+
+		if( access( dst, 0 ) == 0 ){
+		/* 0 - проверить существование файла */
+			printf( "%s exists already\n", dst );
+			/* файл уже существует */
+			return FAILED;
+		}
+		if( link( src, dst ) &lt; 0 ){
+		    printf( "Can't link to directory %s\n", dst );
+		    perror( "link" );
+		 /* Возможно, что для выполнения link() для каталогов,
+		  * программа должна обладать правами суперпользователя.
+		  */
+		    return FAILED;
+		}
+		unlink( src );
+		return OK;
+
+	default:   /* dst - не существует или обычный файл */
+		printf( "move %s --&gt; %s\n", src, dst );
+		unlinkd( dst, typeto );
+		/* зачищаем место, т.к. link()
+		 * отказывается выполняться, если
+		 * файл dst уже существует (errno==EEXIST).
+		 */
+		if( link( src, dst ) &lt; 0 ) return FAILED;
+		unlinkd( src, typefrom );  /* удаляем старый файл */
+		return OK;
+	}
+}
+/* Если не получилось связать файл при помощи link() - следует
+ * скопировать файл в указанное место, а затем уничтожить старый файл.
+ */
+int mcopy(char *src, char *dst, unsigned typefrom, unsigned typeto)
+{
+	if( typefrom == S_IFDIR )
+		return FAILED;
+	/* каталог не копируем, поскольку непосредственная запись
+	 * в каталог (как целевой файл) разрешена только ядру ОС.
+	 */
+	return docopy( src, dst, typefrom, typeto );
+}
+/* Переименование файла */
+int domove(char *src, char *dst, unsigned typefrom, unsigned typeto)
+{
+	switch( typefrom ){
+	default:
+	   if( ! mlink( src, dst, typefrom, typeto)){
+		 if( ! mcopy( src, dst, typefrom, typeto)){
+		       printf( "Can't move %s\n", src );
+		       return FAILED;
+		 } else unlinkd( src, typefrom ); /* стереть старый */
+	   }
+	   break;
+
+	case S_IFDIR: /* каталог переименовываем в каталог */
+	   if( ! strcmp( ".", basename(src))){
+		 printf( "impossible to move directory \".\"\n" );
+		 return FAILED;
+	   }
+	   if( ! mlink( src, dst, typefrom, typeto )){
+		 if( errno == EXDEV )
+		     printf( "No cross device directory links\n" );
+		 return FAILED;
+	   }
+	   break;
+
+	case ECANTSTAT:
+	   printf( "%s does not exist\n", src );
+	   return FAILED;
+	}
+	return OK;    /* okay */
+}
+int docpmv( char *src,   /* файл-источник   */
+	    char *dst,   /* файл-получатель */
+	    struct ftype typeto, /* тип файла-получателя              */
+	    int cp,      /* 0 - переименование, 1 - копирование       */
+	    int *confirm /* запрашивать подтверждение на перезапись ? */
+){
+	struct ftype typefrom;  /* тип источника       */
+	char namebuf[BUFSIZ];   /* новое имя получателя (если надо)   */
+
+	typefrom = filetype(src);
+	if(typefrom.type == ECANTSTAT){ /* не существует */
+	   printf("%s does not exist.\n", src);
+	   return FAILED;
+	}
+	if( typefrom.type != S_IFDIR &amp;&amp; typeto.type == S_IFDIR ){
+		/* файл в каталоге dst */
+		sprintf(namebuf, "%s/%s", dst, basename(src));
+		typeto = filetype(dst = namebuf);
+	}
+	if(typefrom.dev == typeto.dev &amp;&amp; typefrom.ino == typeto.ino){
+	/* Нельзя копировать файл сам в себя */
+	   printf("%s and %s are identical.\n", src, dst);
+	   return OK;  /* так как файл уже есть - считаем это удачей */
+	}
+	/* если получатель уже существует, то
+	 * запросить подтверждение на перезапись */
+	if(*confirm &amp;&amp; typeto.type == S_IFREG){
+	   char answer[40];
+	   printf("%s already exists. Overwrite (y/n/all) ? ", dst);
+	   fflush(stdout);
+	   switch( *gets(answer)){
+	   case 'n': default:  return OK; /* ничего не делать */
+	   case 'y':           break;
+	   case 'a': *confirm = NO; /* дальше - без запросов */
+		     break;
+	   }
+	}
+	return cp ? docopy(src, dst, typefrom.type, typeto.type) :
+		    domove(src, dst, typefrom.type, typeto.type) ;
+}
+void main(int argc, char *argv[]) {
+	char *cmd; int cp, i, err, confirm = YES;
+	struct ftype typeto;  /* тип файла-получателя */
+
+	if( argc &lt; 3 ) {
+		printf( "Usage: %s source... destination\n", argv[0] );
+		exit(1);
+		/* ненулевой код возврата сигнализирует об ошибке */
+	}
+	/* выделяем базовое имя программы. */
+	cmd = basename( argv[0] );
+
+	if     ( !strcmp( cmd, CP )) cp = 1;
+	else if( !strcmp( cmd, MV )) cp = 0;
+	else{
+		printf( "%s - wrong program name.\n", cmd );
+		exit(2);
+	}
+	typeto = filetype( argv[argc-1] );
+	if(cp &amp;&amp; typeto.type != S_IFDIR &amp;&amp; typeto.type != S_IFBLK
+	      &amp;&amp; typeto.type != S_IFCHR &amp;&amp; argc &gt; 3){
+		printf("Group of files can be copied "
+		       "to the directory or device only.\n"); exit(3);
+	}
+	if(!cp &amp;&amp; typeto.type != S_IFDIR &amp;&amp; argc &gt; 3){
+		printf("Group of files can be moved "
+		       "to the directory only.\n");           exit(4);
+	}
+	for(err=0, i=1; i &lt; argc-1; i++)
+		err += ! docpmv(argv[i], argv[argc-1], typeto,
+				cp, &amp;confirm);
+	exit(err);  /* 0, если не было ошибок */
+}
+</pre>
+<p align="right"><i>© Copyright А. Богатырев, 1992-95  <br>     Си в UNIX</i>
+</p><p></p><center><p>
+<font size="-1">
+<a href="https://cpp.com.ru/bogatyrev_c_unix/ex_11.html">Назад</a> | <a href="https://cpp.com.ru/bogatyrev_c_unix/index.html">Содержание</a> | <a href="https://cpp.com.ru/bogatyrev_c_unix/ex_13.html">Вперед</a></font></p></center><p></p>
+
+
+
+<!-- footer begin -->
+
+<noindex>
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tbody><tr>
+	<td>
+	<p>
+	    <a href="http://cpp.com.ru/">[ Главная ]</a>
+	    <a href="http://cpp.com.ru/guest/index.php">[ Гостевая ]</a>
+	</p>
+	</td>
+
+	<td align="right">
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-5771899961401791";
+/* links-block-horizontal-medium */
+google_ad_slot = "3283180390";
+google_ad_width = 468;
+google_ad_height = 15;
+//-->
+</script>
+<script type="text/javascript" src="./cp_rm_files_files/f(1).txt">
+</script>
+	</td>
+</tr>
+</tbody></table>
+
+<hr>
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tbody><tr>
+	<td>
+
+		<script type="text/javascript"><!--
+			google_ad_client = "ca-pub-5771899961401791";
+			/* banned-bottom */
+			google_ad_slot = "0990189094";
+			google_ad_width = 728;
+			google_ad_height = 90;
+			//-->
+		</script>
+			<script type="text/javascript" src="./cp_rm_files_files/f(1).txt">
+		</script>
+	</td>
+	<td>
+		<p align="right">
+
+		    <!--Openstat-->
+			<span id="openstat2172937"></span>
+			<script type="text/javascript">
+			var openstat = { counter: 2172937, image: 93, color: "828282", next: openstat };
+			(function(d, t, p) {
+			var j = d.createElement(t); j.async = true; j.type = "text/javascript";
+			j.src = ("https:" == p ? "https:" : "http:") + "//openstat.net/cnt.js";
+			var s = d.getElementsByTagName(t)[0]; s.parentNode.insertBefore(j, s);
+			})(document, "script", document.location.protocol);
+		    </script>
+		    <!--/Openstat-->
+		
+			<!-- begin of Top100 code -->
+			  <script id="top100Counter" type="text/javascript" src="./cp_rm_files_files/top100.jcn"></script>
+			  <noscript>
+			 <a href="http://top100.rambler.ru/navi/2453376/">
+			     <img src="http://counter.rambler.ru\/top100.cnt?2453376" alt="Rambler's Top100" border="0" />
+			 </a>
+			</noscript>
+			<!-- end of Top100 code -->
+
+
+			<!--LiveInternet counter--><script type="text/javascript"><!--
+			document.write("<a href='http://www.liveinternet.ru/click' "+
+			"target=_blank><img src='//counter.yadro.ru/hit?t44.6;r"+
+			escape(document.referrer)+((typeof(screen)=="undefined")?"":
+			";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+			screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+			";"+Math.random()+
+			"' alt='' title='LiveInternet' "+
+			"border='0' width='31' height='31'><\/a>")
+			//--></script><a href="http://www.liveinternet.ru/click" target="_blank"><img src="https://counter.yadro.ru/hit?t44.6;rhttps%3A//cpp.com.ru/bogatyrev_c_unix/index.html;s1366*768*24;uhttps%3A//cpp.com.ru/bogatyrev_c_unix/ex_12.html;0.12381916113694946" alt="" title="LiveInternet" border="0" width="31" height="31"></a><!--/LiveInternet-->
+
+			<!--Rating@Mail.ru counter-->
+			<script language="javascript"><!--
+			d=document;var a='';a+=';r='+escape(d.referrer);js=10;//--></script>
+			<script language="javascript1.1"><!--
+			a+=';j='+navigator.javaEnabled();js=11;//--></script>
+			<script language="javascript1.2"><!--
+			s=screen;a+=';s='+s.width+'*'+s.height;
+			a+=';d='+(s.colorDepth?s.colorDepth:s.pixelDepth);js=12;//--></script>
+			<script language="javascript1.3"><!--
+			js=13;//--></script><script language="javascript" type="text/javascript"><!--
+			d.write('<a href="http://top.mail.ru/jump?from=2034329" target="_top">'+
+			'<img src="http://da.c0.bf.a1.top.mail.ru/counter?id=2034329;t=69;js='+js+
+			a+';rand='+Math.random()+'" alt="Рейтинг@Mail.ru" border="0" '+
+			'height="31" width="38"><\/a>');if(11<js)d.write('<'+'!-- ');//--></script><a href="http://top.mail.ru/jump?from=2034329" target="_top"><img src="http://da.c0.bf.a1.top.mail.ru/counter?id=2034329;t=69;js=13;r=https%3A//cpp.com.ru/bogatyrev_c_unix/index.html;j=false;s=1366*768;d=24;rand=0.5572046210136574" alt="Рейтинг@Mail.ru" border="0" height="31" width="38"></a><!-- 
+			<noscript><a target="_top" href="http://top.mail.ru/jump?from=2034329">
+			<img src="http://da.c0.bf.a1.top.mail.ru/counter?js=na;id=2034329;t=69" 
+			height="31" width="38" border="0" alt="Рейтинг@Mail.ru"></a></noscript>
+			<script language="javascript" type="text/javascript"><!--
+			if(11<js)d.write('--'+'>');//-->
+			<!--// Rating@Mail.ru counter-->
+
+			<a href="http://www.gamedev.ru/top/">
+			<img src="./cp_rm_files_files/saved_resource" width="88" height="31" style="border: 0;" alt="Топ Разработка игр">
+			</a>
+		</p>
+	</td>
+</tr>
+</tbody></table>
+
+</noindex>
+
+<!-- footer end -->
+
+
+<iframe name="oauth2relay1553176962" id="oauth2relay1553176962" src="./cp_rm_files_files/postmessageRelay.html" tabindex="-1" aria-hidden="true" style="width: 1px; height: 1px; position: absolute; top: -100px;"></iframe><table cellspacing="0" cellpadding="0" class="gstl_50 gssb_c" style="width: 165px; display: none; top: 39px; left: 1043px; position: absolute;"><tbody><tr><td class="gssb_f"></td><td class="gssb_e" style="width: 100%;"></td></tr></tbody></table></body><style id="stylus-1" type="text/css" class="stylus">body {
+    font-family: 'pragmata pro mono regular';
+}</style></html>

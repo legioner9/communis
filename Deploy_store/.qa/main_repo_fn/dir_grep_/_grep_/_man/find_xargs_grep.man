@@ -1,0 +1,15 @@
+# https://unix.stackexchange.com/questions/26461/bash-find-xargs-grep-only-single-occurence
+
+# find . -type f | xargs grep "something"
+
+## bash найти xargs grep только единственное вхождение
+
+Просто оставьте это в пределах области поиска:
+
+    find . -type f -exec grep "something" {} \; -quit
+Вот как это работает:
+
+-exec Будет работать , если -type f будет верно. И поскольку grepвозвращает 0(успех / истина), когда -exec grep "something"есть совпадение, -quitбудет срабатывать.
+
+    find -type f | xargs grep e | head -1
+делает именно это: когда headзавершается, средний элемент канала уведомляется сигналом «сломанный канал», завершается, в свою очередь, и уведомляет find. Вы должны увидеть такое уведомление, как

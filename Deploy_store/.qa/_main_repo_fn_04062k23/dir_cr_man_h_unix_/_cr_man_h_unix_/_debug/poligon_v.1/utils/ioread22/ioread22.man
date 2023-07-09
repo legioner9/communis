@@ -1,0 +1,88 @@
+### UP
+[ioread22](##ioread22)
+[H_FILE](##H_FILE)
+[SYNOPSIS](##SYNOPSIS)
+[DESCRIPTION_ru](##DESCRIPTION)
+[DESCRIPTION](##DESCRIPTION_ru)
+[RETURN](##RETURN)
+[RETURN_ru](##RETURN_ru)
+[EXAMPLES](##EXAMPLES)
+[EXAMPLES_ru](##EXAMPLES_ru)
+[ERRORS](##ERRORS)
+[BOOKS](##BOOKS)
+[BOOKS_ru](##BOOKS_ru)
+
+[UP](###UP)
+# ioread22
+[ru.manpages.org](https://www.google.ru/search?q=ioread22+site%3Ahttps%3A%2F%2Fru.manpages.org)
+
+
+
+[UP](###UP)
+## H_FILE [io22_h.md](../../hfiles/io22_h.md)
+## SYNOPSIS
+
+
+
+
+[UP](###UP)
+## DESCRIPTION_ru
+[ru.manpages.org](https://www.google.ru/search?q=ioread22+site%3Ahttps%3A%2F%2Fru.manpages.org)
+[man7.org](https://www.google.ru/search?q=ioread22+site%3Ahttps%3A%2F%2Fman7.org%2Flinux%2Fman-pages)
+
+
+
+[UP](###UP)
+## DESCRIPTION
+[ru.manpages.org](https://www.google.ru/search?q=ioread22+site%3Ahttps%3A%2F%2Fru.manpages.org)
+[cplusplus.com](https://www.cplusplus.com/reference/)
+
+
+[UP](###UP)
+## RETURN
+[man7.org](https://www.google.ru/search?q=ioread22+site%3Ahttps%3A%2F%2Fman7.org%2Flinux%2Fman-pages)
+
+
+
+[UP](###UP)
+## RETURN_ru
+[ru.manpages.org](https://www.google.ru/search?q=ioread22+site%3Ahttps%3A%2F%2Fru.manpages.org)
+
+
+
+[UP](###UP)
+## EXAMPLES
+[cpp.hotexamples.com](https://cpp.hotexamples.com/examples/-/-/ioread22/cpp-close-function-examples.html)
+[linuxhint.com](https://www.google.ru/search?q=ioread22+site%3Ahttps%3A%2F%2Flinuxhint.com)
+
+
+
+[UP](###UP)
+## EXAMPLES_ru
+
+
+
+[UP](###UP)
+## ERRORS
+[man7.org](https://www.google.ru/search?q=ioread22+site%3Ahttps%3A%2F%2Fman7.org%2Flinux%2Fman-pages)
+
+
+## ERRORS_ru
+[ru.manpages.org](https://www.google.ru/search?q=ioread22+site%3Ahttps%3A%2F%2Fru.manpages.org)
+
+
+
+[UP](###UP)
+## BOOKS
+[linuxhint.com](https://www.google.ru/search?q=ioread22+site%3Ahttps%3A%2F%2Flinuxhint.com)
+[gnu.org](https://www.google.ru/search?q=ioread22+site%3Ahttps%3A%2F%2Fwww.gnu.org%2Fsoftware%2Flibc%2Fmanual)
+
+
+
+[UP](###UP)
+## BOOKS_ru
+[cpp.com.ru](https://www.google.ru/search?q=ioread22+site%3Ahttps%3A%2F%2Fcpp.com.ru)
+
+
+
+[UP](###UP)

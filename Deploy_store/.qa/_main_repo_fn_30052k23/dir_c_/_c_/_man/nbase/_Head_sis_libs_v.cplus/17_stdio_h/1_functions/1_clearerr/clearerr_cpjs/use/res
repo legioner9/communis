@@ -1,0 +1,9 @@
+before clearerr: : Bad file descriptor
+after clearerr: : Invalid argument
+after fseek_s: : Invalid argument
+after fgetc: Invalid argument
+ ftell_c(pFile) = 0,ferror(pFile) = 1, errno = 9
+ ftell_c(pFile) = 0,ferror(pFile) = 0, errno = 22
+ ftell_c(pFile) = 6,ferror(pFile) = 0, errno = 22
+ ftell_c(pFile) = 6,ferror(pFile) = 0, errno = 22
+No errors reading myfile.txt

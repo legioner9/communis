@@ -1,0 +1,7 @@
+## in function
+
+```c
+int fn(int n){
+    int arr[n]; # only initial
+}
+```

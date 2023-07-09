@@ -1,0 +1,324 @@
+### UP
+[if_nameindex](##if_nameindex)
+[MAIN](##MAIN)
+[MAIN_ru](##MAIN_ru)
+[ANCORS](##ANCORS)
+[ISU](##ISU)
+[inet](##A_inet)
+[inet](##books_inet)
+[inet](##examples_inet)
+[inet](##classic_inet)
+[inet](##enters_inet)
+[inet](##issue_code_inet)
+[H_FILE](##H_FILE)
+[p_SYNOPSIS](##p_SYNOPSIS)
+[p_RETURN](##p_RETURN)
+[p_RETURN_ru](##p_RETURN_ru)
+[p_BUGS](##p_BUGS)
+[p_DESCRIPTION_ru](##p_DESCRIPTION_ru)
+[p_DESCRIPTION](##p_DESCRIPTION)
+[p_MIRRORS](##p_MIRRORS)
+[p_EXAMPLES](##p_EXAMPLES)
+[p_CODE_h](##p_CODE_h)
+[p_CODE_c](##p_CODE_c)
+[p_CODE_m](##p_CODE_m)
+[p_ERRORS](##p_ERRORS)
+[p_BOOKS](##p_BOOKS)
+[p_BOOKS_ru](##p_BOOKS_ru)
+[p_CONTENT](##p_CONTENT)
+
+[cat_hfiles](../../cat_hfiles.md)
+[cat_utils](../../cat_utils.md)
+[cat_structs](../../cat_structs.md)
+[cat_param](../../cat_params.md)
+[cat_macros](../../cat_macross.md)
+[cat_const](../../cat_consts.md)
+[cat_type](../../cat_types.md)
+[cat_any](../cat_anys.md)
+
+
+[UP](###UP)
+## MAIN
+:if_nameindex:
+[next](##MAIN_ru)
+
+<<MAIN>>
+[MAIN](../../fills/if_nameindex/MAIN)
+
+
+
+[UP](###UP)
+## MAIN_ru
+:if_nameindex:
+[next](##ANCORS)
+
+----------------------------------------------------- 
+-------------------------------------- 
+получает имена сетевых интерфейсов 
+-------------------------------------- 
+----------------------------------------------------- 
+<<MAIN_ru>>
+[MAIN_ru](../../fills/if_nameindex/MAIN_ru)
+
+[UP](###UP)
+## ANCORS
+:if_nameindex:
+[next](##ISU)
+
+<<ANCORS>>
+[ANCORS](../../fills/if_nameindex/ANCORS)
+
+[UP](###UP)
+## ISU
+:if_nameindex:
+[next](##H_FILE)
+
+<<ISU>>
+only read
+:if_nameindex:
+[ISU](../../contents)
+[next](##inet)
+
+
+[UP](###UP)
+## inet
+:if_nameindex:
+[next](##H_FILE)
+
+
+[UP](###UP)
+## A_inet
+[manpages.org](https://www.google.ru/search?q=if_nameindex+site%3Ahttps%3A%2F%2Fmanpages.org)
+[reposcope.com_ru](https://www.google.ru/search?q=if_nameindex+site%3Ahttps%3A%2F%2Freposcope.com%2Fmanpages%2Fru)
+[pubs.opengroup.org](https://www.google.com/search?q=if_nameindex+https%3A%2F%2Fpubs.opengroup.org)
+[manpages.debian.org](https://yandex.ru/search/?text=if_nameindex+site%3Ahttps%3A%2F%2Fmanpages.debian.org%2F)
+[www.opennet.ru](http://www.opennet.ru/man.shtml?category=2&topic=if_nameindex)
+[man7.org](https://www.google.ru/search?q=if_nameindex+site%3Ahttps%3A%2F%2Fman7.org%2Flinux%2Fman-pages)
+[en.cppreference.com](https://www.google.com/search?q=if_nameindex+en.cppreference.com)
+[www.mankier.com](https://www.mankier.com/?q=if_nameindex)
+[www.codecogs.com](https://www.google.ru/search?q=if_nameindex+https%3A%2F%2Fwww.codecogs.com%2Flibrary%2Fcomputing%2F)
+[digitalmars.com](https://www.google.ru/search?q=if_nameindex+https%3A%2F%2Fdigitalmars.com%2Frtl%2F)
+
+
+[UP](###UP)
+## books_inet
+[cpp.com.ru](https://yandex.ru/search/?text=if_nameindex+site%3Ahttps%3A%2F%2Fcpp.com.ru)
+[linuxhint.com](https://www.google.ru/search?q=if_nameindex+site%3Ahttps%3A%2F%2Flinuxhint.com)
+[gnu.org](https://www.google.ru/search?q=if_nameindex+site%3Ahttps%3A%2F%2Fwww.gnu.org%2Fsoftware%2Flibc%2Fmanual)
+
+[UP](###UP)
+## examples_inet
+[yandex:examples](https://yandex.ru/search/?text=if_nameindex+example+in+c)
+[docs.oracle.com](https://www.google.com/search?q=if_nameindex+https%3A%2F%2Fdocs.oracle.com)
+[manpages.debian.org](https://yandex.ru/search/?text=if_nameindex+site%3Ahttps%3A%2F%2Fmanpages.debian.org%2F)
+[osr507doc.xinuos.com](https://www.google.com/search?q=if_nameindex+http%3A%2F%2Fosr507doc.xinuos.com%2Fen%2Fman)
+[cpp.hotexamples.com](https://cpp.hotexamples.com/examples/-/-/if_nameindex/cpp-if_nameindex-function-examples.html)
+[all-ht.ru](https://yandex.ru/search/?text=if_nameindex+site%3Ahttp%3A%2F%2Fall-ht.ru%2Finf%2Fprog%2Fc%2F)
+[cppreference.com](https://yandex.ru/search/?text=if_nameindex+site%3Ahttps%3A%2F%2Fen.cppreference.com%2Fw%2Fc%2F)
+
+[UP](###UP)
+## classic_inet
+[bogatyrev_c_unix](https://www.google.com/search?q=if_nameindex+site%3Ahttps%3A%2F%2Fcpp.com.ru%2Fbogatyrev_c_unix)
+[kr_cbook](https://www.google.com/search?q=if_nameindex+site%3Ahttps%3A%2F%2Fcpp.com.ru%2Fkr_cbook)
+
+[UP](###UP)
+## enters_inet
+[pubs.opengroup.org](https://pubs.opengroup.org/onlinepubs/9699919799/idx/head.html)
+
+[UP](###UP)
+## issue_code_inet
+[code.woboq.org](https://www.google.com/search?h=&sitesearch=https%3A%2F%2Fcode.woboq.org%2Fuserspace%2Fglibc%2F&q=if_nameindex)
+
+
+[UP](###UP)
+## H_FILE 
+[net_if_h.md](../../hfiles/net_if_h.md)
+
+
+[UP](###UP)
+## p_SYNOPSIS
+:if_nameindex:
+[next](##p_RETURN_ru)
+
+----------------------------------------------------- 
+-------------------------------------- 
+#include <net/if.h>
+struct if_nameindex *if_nameindex(void);
+void if_freenameindex(struct if_nameindex *ptr);
+-------------------------------------- 
+----------------------------------------------------- 
+<<SYNOPSIS>>
+[SYNOPSIS](../../fills/if_nameindex/SYNOPSIS)
+
+
+[UP](###UP)
+## p_RETURN_ru
+:if_nameindex:
+[next](##p_RETURN)
+
+<<RETURN>>
+[RETURN_ru](../../fills/if_nameindex/RETURN)
+
+
+[UP](###UP)
+## p_RETURN
+:if_nameindex:
+[next](##p_DESCRIPTION_ru)
+
+<<RETURN_ru>>
+[RETURN](../../fills/if_nameindex/RETURN_ru)
+
+
+[UP](###UP)
+## p_DESCRIPTION_ru
+:if_nameindex:
+[next](##p_DESCRIPTION)
+
+----------------------------------------------------- 
+-------------------------------------- 
+Функция if_nameindex() возвращает массив структур if_nameindex, каждая из которых содержит информацию об одном из сетевых интерфейсов системы. Структура if_nameindex содержит по крайней мере следующие данные:
+unsigned int if_index; /* индекс интерфейса (1, 2, …) */
+char        *if_name;  /* имя с Null в конце («eth0», и т. д.) */
+В поле if_index содержится индекс интерфейса. Значение поля ifa_name указывает на имя интерфейса (завершается null). Конец массива определяется по записи if_index с нулевым значением и по записи ifa_name со значением NULL.
+Память под структуру данных, возвращаемая if_nameindex(), выделяется динамически и должна освобождаться с помощью if_freenameindex(), когда больше не нужна.
+-------------------------------------- 
+----------------------------------------------------- 
+<<DESCRIPTION_ru>>
+[DESCRIPTION_ru](../../fills/if_nameindex/DESCRIPTION_ru)
+
+
+[UP](###UP)
+## p_DESCRIPTION
+:if_nameindex:
+[next](##p_BUGS)
+
+<<DESCRIPTION>>
+[DESCRIPTION](../../fills/if_nameindex/DESCRIPTION)
+
+
+[UP](###UP)
+## p_MIRRORS
+:if_nameindex:
+[next](##p_BUGS)
+
+----------------------------------------------------- 
+-------------------------------------- 
+if_freenameindex
+-------------------------------------- 
+----------------------------------------------------- 
+<<MIRRORS>>
+[MIRRORS](../../fills/if_nameindex/MIRRORS)
+
+
+[UP](###UP)
+## p_BUGS
+:if_nameindex:
+[next](##p_EXAMPLES)
+
+<<BUGS>>
+[BUGS](../../fills/if_nameindex/BUGS)
+
+
+[UP](###UP)
+## p_EXAMPLES
+:if_nameindex:
+[next](##p_CODE)
+
+----------------------------------------------------- 
+-------------------------------------- 
+https://ru.manpages.org/if_nameindex/3
+$ ./a.out
+1: lo
+2: eno1
+#include <net/if.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+int
+main(int argc, char *argv[])
+{
+struct if_nameindex *if_ni, *i;
+if_ni = if_nameindex();
+if (if_ni == NULL) {
+perror("if_nameindex");
+exit(EXIT_FAILURE);
+}
+for (i = if_ni; ! (i->if_index == 0 && i->if_name == NULL); i++)
+printf("%u: %s
+", i->if_index, i->if_name);
+if_freenameindex(if_ni);
+exit(EXIT_SUCCESS);
+}
+-------------------------------------- 
+----------------------------------------------------- 
+<<EXAMPLES>>
+[EXAMPLES](../../fills/if_nameindex/EXAMPLES)
+
+
+[UP](###UP)
+## p_CODE_h
+:if_nameindex:
+[next](##p_CODE_c)
+
+----------------------------------------------------- 
+-------------------------------------- 
+https://code.woboq.org/userspace/glibc/sysdeps/unix/sysv/linux/if_index.c.html
+-------------------------------------- 
+----------------------------------------------------- 
+<<CODE_h>>
+[CODE_h](../../fills/if_nameindex/CODE_h)
+
+
+[UP](###UP)
+## p_CODE_c
+:if_nameindex:
+[next](##p_CODE_m)
+
+<<CODE_c>>
+[CODE_c](../../fills/if_nameindex/CODE_c)
+
+
+[UP](###UP)
+## p_CODE_m
+:if_nameindex:
+[next](##p_ERRORS)
+
+<<CODE_m>>
+[CODE_m](../../fills/if_nameindex/CODE_m)
+
+
+[UP](###UP)
+## p_ERRORS
+:if_nameindex:
+[next](##p_BOOKS)
+
+<<ERRORS>>
+[ERRORS](../../fills/if_nameindex/ERRORS)
+
+
+[UP](###UP)
+## p_BOOKS
+:if_nameindex:
+[next](##p_BOOKS_ru)
+
+<<BOOKS>>
+[BOOKS](../../fills/if_nameindex/BOOKS)
+
+
+[UP](###UP)
+## p_BOOKS_ru
+:if_nameindex:
+[next](##p_CONTENT)
+
+
+<<BOOKS_ru>>
+[BOOKS_ru](../../fills/if_nameindex/BOOKS_ru)
+
+
+[UP](###UP)
+## p_CONTENT
+:33333:
+[33333.cnt](../../contents/33333.cnt)
+[next](##UP)
+
+[UP](###UP)

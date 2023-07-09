@@ -1,0 +1,10 @@
+main: define masks for search files
+exec:
+
+using global:
+    1 - all files in (ls -A) dirs without (., ..)
+    2 - all files in (ls) dirs without (., .., .*)
+    3 - all files in (ls) dirs without (., .., .*, _*)
+parsing params:
+arg: 
+flow_chars: 

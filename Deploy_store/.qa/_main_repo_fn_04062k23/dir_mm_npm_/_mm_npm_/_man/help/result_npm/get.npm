@@ -1,0 +1,16 @@
+# npm get in /home/st/REPOBARE/_repo/plt/actio/dir_mm_npm_/_mm_npm_/_man/help
+
+; cli configs
+metrics-registry = "https://registry.npmjs.org/"
+scope = ""
+user-agent = "npm/6.14.17 node/v14.21.1 linux x64"
+
+; node bin location = /usr/bin/node
+; cwd = /home/st/REPOBARE/_repo/plt/actio/dir_mm_npm_/_mm_npm_/_man/help
+; HOME = /home/st
+; "npm config ls -l" to show all defaults.
+
+
+# npm get -h in /home/st/REPOBARE/_repo/plt/actio/dir_mm_npm_/_mm_npm_/_man/help
+
+npm get <key> <value> (See `npm config`)

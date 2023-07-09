@@ -1,0 +1,4 @@
+cntl echo_deb_ mode in wrp_fifs2_
+dist not older src wrp_fifs2_
+cntl echo_deb_ mode in wrp_fifs2_
+cp -r -f src dist

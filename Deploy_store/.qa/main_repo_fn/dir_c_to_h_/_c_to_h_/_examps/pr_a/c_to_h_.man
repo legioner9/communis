@@ -1,0 +1,4 @@
+## c_to_h_ man
+
+take  : list of all inner .qa clang lib from all_c_lib.lst
+arg -u: update all clang lib in .qa

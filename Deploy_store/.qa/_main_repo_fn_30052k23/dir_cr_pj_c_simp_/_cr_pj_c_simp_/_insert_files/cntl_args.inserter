@@ -1,0 +1,33 @@
+    if (argc > 1)
+    {
+        if (strcmp("-h", argv[1]) == 0)
+        {
+            system(". {path_help}");
+            return 0;
+        };
+        if (strcmp("_go", argv[1]) == 0)
+        {
+            system(". {path_go}");
+            return 0;
+        };
+        if (strcmp("_rbl", argv[1]) == 0)
+        {
+            system(". {path_rbl}");
+            return 0;
+        };
+        if (strcmp("_man", argv[1]) == 0)
+        {
+            system(". {path_man}");
+            return 0;
+        };
+        if (strcmp("_tst", argv[1]) == 0)
+        {
+            system(". {path_tst}");
+            return 0;
+        };
+        if (strcmp("_map", argv[1]) == 0)
+        {
+        system(". {path_map}");
+            return 0;
+        };
+    }

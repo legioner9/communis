@@ -1,0 +1,355 @@
+### UP
+[strcat](##strcat)
+[MAIN](##MAIN)
+[MAIN_ru](##MAIN_ru)
+[ANCORS](##ANCORS)
+[ISU](##ISU)
+[inet](##A_inet)
+[inet](##books_inet)
+[inet](##examples_inet)
+[inet](##classic_inet)
+[inet](##enters_inet)
+[inet](##issue_code_inet)
+[H_FILE](##H_FILE)
+[p_SYNOPSIS](##p_SYNOPSIS)
+[p_RETURN](##p_RETURN)
+[p_RETURN_ru](##p_RETURN_ru)
+[p_BUGS](##p_BUGS)
+[p_DESCRIPTION_ru](##p_DESCRIPTION_ru)
+[p_DESCRIPTION](##p_DESCRIPTION)
+[p_MIRRORS](##p_MIRRORS)
+[p_EXAMPLES](##p_EXAMPLES)
+[p_CODE_h](##p_CODE_h)
+[p_CODE_c](##p_CODE_c)
+[p_CODE_m](##p_CODE_m)
+[p_ERRORS](##p_ERRORS)
+[p_BOOKS](##p_BOOKS)
+[p_BOOKS_ru](##p_BOOKS_ru)
+[p_CONTENT](##p_CONTENT)
+
+[cat_hfiles](../../cat_hfiles.md)
+[cat_utils](../../cat_utils.md)
+[cat_structs](../../cat_structs.md)
+[cat_param](../../cat_params.md)
+[cat_macros](../../cat_macross.md)
+[cat_const](../../cat_consts.md)
+[cat_type](../../cat_types.md)
+[cat_any](../cat_anys.md)
+
+
+[UP](###UP)
+## MAIN
+:strcat:
+[next](##MAIN_ru)
+
+<<MAIN>>
+[MAIN](../../fills/strcat/MAIN)
+
+
+
+[UP](###UP)
+## MAIN_ru
+:strcat:
+[next](##ANCORS)
+
+----------------------------------------------------- 
+-------------------------------------- 
+объединяет две строки
+-------------------------------------- 
+----------------------------------------------------- 
+<<MAIN_ru>>
+[MAIN_ru](../../fills/strcat/MAIN_ru)
+
+[UP](###UP)
+## ANCORS
+:strcat:
+[next](##ISU)
+
+----------------------------------------------------- 
+-------------------------------------- 
+https://ru.manpages.org/strcat/3
+-------------------------------------- 
+----------------------------------------------------- 
+<<ANCORS>>
+[ANCORS](../../fills/strcat/ANCORS)
+
+[UP](###UP)
+## ISU
+:strcat:
+[next](##H_FILE)
+
+<<ISU>>
+only read
+:strcat:
+[ISU](../../contents)
+[next](##inet)
+
+
+[UP](###UP)
+## inet
+:strcat:
+[next](##H_FILE)
+
+
+[UP](###UP)
+## A_inet
+[manpages.org](https://www.google.ru/search?q=strcat+site%3Ahttps%3A%2F%2Fmanpages.org)
+[reposcope.com_ru](https://www.google.ru/search?q=strcat+site%3Ahttps%3A%2F%2Freposcope.com%2Fmanpages%2Fru)
+[pubs.opengroup.org](https://www.google.com/search?q=strcat+https%3A%2F%2Fpubs.opengroup.org)
+[manpages.debian.org](https://yandex.ru/search/?text=strcat+site%3Ahttps%3A%2F%2Fmanpages.debian.org%2F)
+[www.opennet.ru](http://www.opennet.ru/man.shtml?category=2&topic=strcat)
+[man7.org](https://www.google.ru/search?q=strcat+site%3Ahttps%3A%2F%2Fman7.org%2Flinux%2Fman-pages)
+[en.cppreference.com](https://www.google.com/search?q=strcat+en.cppreference.com)
+[www.mankier.com](https://www.mankier.com/?q=strcat)
+[www.codecogs.com](https://www.google.ru/search?q=strcat+https%3A%2F%2Fwww.codecogs.com%2Flibrary%2Fcomputing%2F)
+[digitalmars.com](https://www.google.ru/search?q=strcat+https%3A%2F%2Fdigitalmars.com%2Frtl%2F)
+
+
+[UP](###UP)
+## books_inet
+[cpp.com.ru](https://yandex.ru/search/?text=strcat+site%3Ahttps%3A%2F%2Fcpp.com.ru)
+[linuxhint.com](https://www.google.ru/search?q=strcat+site%3Ahttps%3A%2F%2Flinuxhint.com)
+[gnu.org](https://www.google.ru/search?q=strcat+site%3Ahttps%3A%2F%2Fwww.gnu.org%2Fsoftware%2Flibc%2Fmanual)
+
+[UP](###UP)
+## examples_inet
+[yandex:examples](https://yandex.ru/search/?text=strcat+example+in+c)
+[docs.oracle.com](https://www.google.com/search?q=strcat+https%3A%2F%2Fdocs.oracle.com)
+[manpages.debian.org](https://yandex.ru/search/?text=strcat+site%3Ahttps%3A%2F%2Fmanpages.debian.org%2F)
+[osr507doc.xinuos.com](https://www.google.com/search?q=strcat+http%3A%2F%2Fosr507doc.xinuos.com%2Fen%2Fman)
+[cpp.hotexamples.com](https://cpp.hotexamples.com/examples/-/-/strcat/cpp-strcat-function-examples.html)
+[all-ht.ru](https://yandex.ru/search/?text=strcat+site%3Ahttp%3A%2F%2Fall-ht.ru%2Finf%2Fprog%2Fc%2F)
+[cppreference.com](https://yandex.ru/search/?text=strcat+site%3Ahttps%3A%2F%2Fen.cppreference.com%2Fw%2Fc%2F)
+
+[UP](###UP)
+## classic_inet
+[bogatyrev_c_unix](https://www.google.com/search?q=strcat+site%3Ahttps%3A%2F%2Fcpp.com.ru%2Fbogatyrev_c_unix)
+[kr_cbook](https://www.google.com/search?q=strcat+site%3Ahttps%3A%2F%2Fcpp.com.ru%2Fkr_cbook)
+
+[UP](###UP)
+## enters_inet
+[pubs.opengroup.org](https://pubs.opengroup.org/onlinepubs/9699919799/idx/head.html)
+
+[UP](###UP)
+## issue_code_inet
+[code.woboq.org](https://www.google.com/search?h=&sitesearch=https%3A%2F%2Fcode.woboq.org%2Fuserspace%2Fglibc%2F&q=strcat)
+
+
+[UP](###UP)
+## H_FILE 
+[string_h.md](../../hfiles/string_h.md)
+
+
+[UP](###UP)
+## p_SYNOPSIS
+:strcat:
+[next](##p_RETURN_ru)
+
+----------------------------------------------------- 
+-------------------------------------- 
+#include <string.h>
+char *strcat(char *dest, const char *src);
+char *strncat(char *dest, const char *src, size_t n);
+-------------------------------------- 
+----------------------------------------------------- 
+<<SYNOPSIS>>
+[SYNOPSIS](../../fills/strcat/SYNOPSIS)
+
+
+[UP](###UP)
+## p_RETURN_ru
+:strcat:
+[next](##p_RETURN)
+
+<<RETURN>>
+[RETURN_ru](../../fills/strcat/RETURN)
+
+
+[UP](###UP)
+## p_RETURN
+:strcat:
+[next](##p_DESCRIPTION_ru)
+
+<<RETURN_ru>>
+[RETURN](../../fills/strcat/RETURN_ru)
+
+
+[UP](###UP)
+## p_DESCRIPTION_ru
+:strcat:
+[next](##p_DESCRIPTION)
+
+----------------------------------------------------- 
+-------------------------------------- 
+Функция strcat() добавляет строку src к строке dest, перезаписывая байт null ('0') в конце dest и добавляет завершающий байт null. Строки не могут перекрываться, а в строке dest должно хватать свободного места для размещения объединённой строки. Если размер dest мал, то поведение программы непредсказуемо; переполнение буфера — любимое средство для атаки защищённых программ.
+Функция strncat() работает аналогичным образом, но
+anys
+cat_anys.md
+cat_consts.md
+cat_hfiles.md
+cat_macross.md
+cat_params.md
+cat_structs.md
+cat_types.md
+cat_utils.md
+consts
+contents
+file.word
+fills
+hfiles
+listh
+_lists
+man_7.man
+params
+readme.man
+src
+structs
+types
+utils
+задействует не более n первых байт строки src и
+anys
+cat_anys.md
+cat_consts.md
+cat_hfiles.md
+cat_macross.md
+cat_params.md
+cat_structs.md
+cat_types.md
+cat_utils.md
+consts
+contents
+file.word
+fills
+hfiles
+listh
+_lists
+man_7.man
+params
+readme.man
+src
+structs
+types
+utils
+строка src может не завершаться байтом null, если в ней содержится n или более байт.
+Как и strcat(), строка-результат в dest всегда заканчивается байтом null.
+Если в src содержится n или более байт, то strncat() записывает n+1 байт в dest (n из src плюс завершающий байт null). Поэтому размер dest должен быть не менее strlen(dest)+n+1.
+-------------------------------------- 
+----------------------------------------------------- 
+<<DESCRIPTION_ru>>
+[DESCRIPTION_ru](../../fills/strcat/DESCRIPTION_ru)
+
+
+[UP](###UP)
+## p_DESCRIPTION
+:strcat:
+[next](##p_BUGS)
+
+<<DESCRIPTION>>
+[DESCRIPTION](../../fills/strcat/DESCRIPTION)
+
+
+[UP](###UP)
+## p_MIRRORS
+:strcat:
+[next](##p_BUGS)
+
+<<MIRRORS>>
+[MIRRORS](../../fills/strcat/MIRRORS)
+
+
+[UP](###UP)
+## p_BUGS
+:strcat:
+[next](##p_EXAMPLES)
+
+<<BUGS>>
+[BUGS](../../fills/strcat/BUGS)
+
+
+[UP](###UP)
+## p_EXAMPLES
+:strcat:
+[next](##p_CODE)
+
+----------------------------------------------------- 
+-------------------------------------- 
+https://ru.manpages.org/strcat/3
+Простейшей реализацией strncat() может быть:
+char *
+strncat(char *dest, const char *src, size_t n)
+{
+size_t dest_len = strlen(dest);
+size_t i;
+for (i = 0 ; i < n && src[i] != '0' ; i++)
+dest[dest_len + i] = src[i];
+dest[dest_len + i] = '0';
+return dest;
+}
+-------------------------------------- 
+----------------------------------------------------- 
+<<EXAMPLES>>
+[EXAMPLES](../../fills/strcat/EXAMPLES)
+
+
+[UP](###UP)
+## p_CODE_h
+:strcat:
+[next](##p_CODE_c)
+
+<<CODE_h>>
+[CODE_h](../../fills/strcat/CODE_h)
+
+
+[UP](###UP)
+## p_CODE_c
+:strcat:
+[next](##p_CODE_m)
+
+<<CODE_c>>
+[CODE_c](../../fills/strcat/CODE_c)
+
+
+[UP](###UP)
+## p_CODE_m
+:strcat:
+[next](##p_ERRORS)
+
+<<CODE_m>>
+[CODE_m](../../fills/strcat/CODE_m)
+
+
+[UP](###UP)
+## p_ERRORS
+:strcat:
+[next](##p_BOOKS)
+
+<<ERRORS>>
+[ERRORS](../../fills/strcat/ERRORS)
+
+
+[UP](###UP)
+## p_BOOKS
+:strcat:
+[next](##p_BOOKS_ru)
+
+<<BOOKS>>
+[BOOKS](../../fills/strcat/BOOKS)
+
+
+[UP](###UP)
+## p_BOOKS_ru
+:strcat:
+[next](##p_CONTENT)
+
+
+<<BOOKS_ru>>
+[BOOKS_ru](../../fills/strcat/BOOKS_ru)
+
+
+[UP](###UP)
+## p_CONTENT
+:33333:
+[33333.cnt](../../contents/33333.cnt)
+[next](##UP)
+
+[UP](###UP)

@@ -1,0 +1,265 @@
+# tasks: Maj=^^ Min=^ Patch=
+# *=done or not actual @=to archiv &=to future
+# -< cancel that
+# ! dont forget
+v.1.0.0
+# complete git_init.sh 
+# ?*-> fix push in all bare (_bare Bare_1 Bare_2)
+# *^-> add refresh_repo
+v.1.0.1
+# complete add _bare  
+# *-> not init git in $repo_path
+v.1.0.2
+# complete not init git in $repo_path
+# *-> fix push in all bare (_bare Bare_1 Bare_2)
+# ?*-> fix ${HOME}/Bare_1 to ${HOME}/Bare_1/$name_repo in init Bare
+v.1.0.3
+# complete fix push in all bare (_bare Bare_1 Bare_2)
+# *^-> add refresh_repo
+# @-> now_arr_bare
+v.1.1.0
+# cross platform add
+# @-> add add_to_now_repo from reserv_repo (mark # in .gitrepo)
+# @-> get_reserv_repo resulting reserv_repo in up_git_memory.sh
+# *-> communis Bat/sis as entre point 
+v.1.2.0
+# add git_comands_lib.sh reduce Bat/sis
+# -> deploy v1
+v.1.2.1
+# deploy v1
+v.1.2.2
+# start refact day
+# ?-> ready all?
+v.1.2.3
+# ready all 
+# start refactoring
+# *-> carryover first level func from git_init.sh to git_utils.sh
+# *&-> libero from lib
+v.2.0.0
+# ready init_gst in sis_git.2
+# *-> do git_update_all.sh
+v.2.0.1
+# done arg2arr methods
+# -> do git_update_all.sh
+v.2.1.0
+# done qqq_enter
+v.2.2.0
+# condition to win10
+# -> recwin10_after_start_communis
+v.3.0.0
+# struct menu done
+# -> far creater local menu file
+v.3.1.0
+# c_f c_l c_up done
+v.3.1.1
+# fix EOF in c_l - ibo c_f recursive
+v.3.1.2
+# bind f_m_arg to $2 is rel path to template
+# f_m_text_to_console is done 
+# examp f_m_text_to_console cat_
+v.3.1.2
+# done f_m_text_to_console : call in Any Dir for create in 
+# .qa/include_libs/_incl_lib_1/common/text_to_console
+v.3.2.0
+# _0 magic args kk_
+# -> translate to tmpl
+v.3.2.1
+# translate to tmpl jj_ done
+v.3.2.2
+# done search_f_with_t.sh recurs_
+# -> translate to tmpl jj_
+v.3.2.3
+# translate to tmpl jj_
+v.3.3.0
+# !-> up hh_ _sh function to .qa/lib/user/tags
+v.3.3.1
+# -> fix f_f without cp _sh
+v.3.3.2
+# fix f_f without cp _sh
+# !-> f_f migrate to f_f_ in .qa/main_repo_fn
+v.3.3.3
+# f_f migrate to f_f_ in .qa/main_repo_fn
+# -> fill f_f_ man_1
+v.4.0.0
+# 01112k21 age of plt
+# search_f_with_t migrate s(search)_s(to search)_ => menu: s_c(code)_t(tag) or s_c_w(word) s_n(note)_ s_a_
+v.4.0.1
+# -> bag in pp_ _0 tag add_tag
+v.4.1.1
+# without .os in root
+# -> fix gvim -v if errors (in windows) to (vs)code
+v.4.1.2
+# fix gvim -v if errors (in windows) to (vs)code
+# add grep -w global
+v.4.1.3
+# f_f_ fix handover arr from _in files to function body
+v.4.1.4
+# f_f_ fix handover arr , fix mmenu_
+# -> singl file .tag in
+v.4.1.4
+# singl files .tag in
+# -> add mane.tag during create (f_f_ "arg")
+v.4.1.5
+# add mane.tag during create (f_f_ "arg")
+v.4.1.6
+# fix recurce add tag during create (f_f_ "arg")
+# -> man_is like fs menu
+v.4.1.7
+# man_is like fs menu
+v.4.1.8
+# edit_ fix ques_ , exec $2 after exit
+# -> fs_ use edit_
+v.4.1.9
+# fs_ use edit_
+# -> ques_ up to main pull func add $2
+v.4.1.10
+# ques_arg_ : ques_ up to main pull func add $2
+# -> use ques_arg_ as mkdir, touch in fs_ menu
+v.4.1.11
+# use ques_arg_ as mkdir, touch in fs_ menu
+# -> fix dir for mkdir
+v.4.2.0
+# fix dir for mkdir
+# fs_ done without delit commands
+# -> fs_ add -c mode
+v.4.2.1
+# fs_ add -c mode
+# -> use fs_ -c in choice_tag_file.sh
+v.4.2.2
+# use fs_ -c in choice_tag_file.sh
+# ^-> s_s_ add bootmenu search tag, md, word
+# -> s_s_ use s_t_
+v.4.2.3
+# s_s_ use s_t_
+# ^-> s_s_ add bootmenu search tag, md, word
+# -> add s_t_ $1 (f_tag)
+v.4.2.4
+# add s_t_ $1 (f_tag)
+# ^-> s_s_ add bootmenu search tag, md, word
+# -> fix magic_nm_ to use edit_ fs_ 
+v.4.2.5
+# fix magic_nm_ to use edit_ fs_ 
+# -< ^-> add fsx_ <udef>, <dir entry>, -dx(at dir-> xscr), -dc(at dir-> command), -fx(at file-> xscr), -fc(at file-> command)
+# -< -> fix main_fn tml up variables from _in dir
+# -< -> imposible fix
+# -< -> add fs_ less
+# -> create mane_fn ch_arg_ 
+v.4.2.6
+# create mane_fn ch_arg_
+# -> use find grep 
+# -> s_w_ rename g_s_m_  as get_struct_man ($file_name"%@"$num"%@"$str) 
+v.4.2.7
+# s_w_ rename g_s_m_  as get_struct_man ($file_name"%@"$num"%@"$str)
+# -<-> shifter as ch_w -> shift g_s_m_
+# -> md as serch for ANY wo
+v.4.2.8
+# g_s_m_ $1 with word (^# : md!)
+# -<-> s_t_ include all search s_a_ (enter in all search)
+# -> fix to using s_t_ s_w_
+# !-> add cr_for_fn_ in magic_mn
+v.4.2.9
+# add gittag_ search by .gittag files
+# fix to using s_w_
+# -> fix to using s_t_
+v.4.2.10
+# fix to using s_t_
+# -> add setkey.key
+v.4.2.11
+# add setkey.key
+# -> cr_dir_from_file_
+v.4.2.12
+# cr_dir_from_file_
+# -> clear_symbols_
+# -> cr_dir_from_file_ with 4 point
+v.4.2.13
+# clear_symbols_
+# cr_dir_from_file_ with 4 point
+# -> cr_0
+v.4.2.14
+# cr_0
+# cpp_ simple g++
+v.5.0.0
+# pre_push <- prs_f "test"
+# &^^ pre_push <- tst_bash <- c_test ... <- such as stl.tst <- prs_f "test"
+# -> pre_push <- such as stl.tst <- prs_f "test"
+# -> add stl_tmp for debag any fiches
+v.5.0.1
+# add stl_tmp for debag any fiches
+# -> add prs_f_tmp_2.sh to process tst all file of dir
+v.5.0.2
+# -> fixbag in run stl_tmp.tst
+v.5.0.3
+# fixbag in run stl_tmp.tst
+# -< -> return from tmp_check_dir_tis contract return true-fail(echo >&1 - echo >&2)
+# -> create in stl check_dir_tst with contract return true-fail(echo >&1 - echo >&2)
+v.5.0.4
+# create in stl check_dir_tst with contract return true-fail(echo >&1 - echo >&2)
+# -> create check_all_tst run All searched .tst files return true-fail(echo >&1 - echo >&2)
+v.5.0.5
+# create check_all_tst run All searched .tst files return true-fail(echo >&1 - echo >&2)
+# free , file , dir AUTO_TST done
+# -> in pre_push more than one dir for tst create check_all_tst_arr
+v.5.0.6
+# in pre_push more than one dir for tst create check_all_tst_arr
+# done check_all_tst_arr contane arr_dir_for_check_all_tst with tst_dirs
+# -> problems d_a_stl not hand to glob error
+v.5.0.7
+# problems d_a_stl not hand to glob error
+# -> bag escalation from stl d_a_stl to pre-push
+v.5.0.8
+# fix bag escalation from stl d_a_stl to pre-push
+# -> far c_to_h_ (c_to_h_lib)
+v.5.0.9
+# -> construct .h file from strings c_to_h_lib_dir_.sh ln 37 col 43
+v.5.0.10
+# done c_to_h_lib_dir_ with .man
+# -> c_to_h_ -u arg is update 
+# -> add_near c_to_h_ all_c_lib.lst
+v.5.0.11
+# c_to_h_ -u arg is update 
+# add_near c_to_h_ all_c_lib.lst
+# -> in c_to_h_lib_dir_.sh :45 :13 add if [ .h -ot .c ]
+v.5.0.12
+# done c_to_h_ with [ .h -ot .c ]
+# -> refctoring c_.sh :379 :29
+# -> create list lib fn as .fns files
+v.5.0.13
+# create list lib fn as .fns files
+# -> refactoring c_.sh :379 :29
+v.5.0.14
+# refactoring c_.sh :379 :29
+# -> create tst file fo lc_0 lib
+v.5.0.15
+# create tst file fo lc_0 lib
+# -> create ${PATH_CONFIG_DIR}/.tst with PATH for tst_flow .qa
+v.5.0.16
+# create ${PATH_CONFIG_DIR}/.tst with PATH for tst_flow .qa as tst_ and pre_push hooks
+# -> add lc_1 to c lib
+v.5.0.17
+# add lc_1 to c lib
+# -> fix only lc_0 to h watched
+v.5.0.18
+# fix only lc_0 to h watched
+# -> include start/communis/Deploy_store/.qa/main_repo_fn/dir_c_/_c_/_lib/_tst/c_stl.tst to pre-push git hook
+v.5.0.19
+# include start/communis/Deploy_store/.qa/main_repo_fn/dir_c_/_c_/_lib/_tst/c_stl.tst to pre-push git hook
+v.5.0.20
+# fix cr_pj_c_simp_ to ANY ._tst
+# -> .tst in start/communis/Deploy_store/.qa/main_repo_fn/dir_c_/_c_/_man/nbase/_Head_sis_libs_posix/0_3p_free/stdio_fileno/mankier_cpjs
+v.5.0.21
+# .tst in start/communis/Deploy_store/.qa/main_repo_fn/dir_c_/_c_/_man/nbase/_Head_sis_libs_posix/0_3p_free/stdio_fileno/mankier_cpjs
+# -> do bash::main_to_dotfns where .fns contane all fn from main.c mark as /*#*/
+v.5.0.22
+# cr_man_h_unix_ v.1.0.0
+v.5.0.23
+# -> test bd_communis_ into fed_1 host
+v.5.0.24
+# -> mancc_ add to search
+v.5.0.25
+# mancc_ grep search in mancc_.list tail_path all entety and hfiles
+v.5.0.26
+# -> add MANC cludes/ .inc files with ancors -examp -tst -research parts 
+v.5.0.27
+# cr_man_h_unix_ v.1.0.1 (v8)
+v.5.1.0
+# -> MAN1

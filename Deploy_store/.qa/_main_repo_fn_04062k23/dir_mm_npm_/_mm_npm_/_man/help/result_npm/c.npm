@@ -1,0 +1,24 @@
+# npm c in /home/st/REPOBARE/_repo/plt/actio/dir_mm_npm_/_mm_npm_/_man/help
+
+npm ERR! Usage:
+npm ERR! npm config set <key> <value>
+npm ERR! npm config get [<key>]
+npm ERR! npm config delete <key>
+npm ERR! npm config list [--json]
+npm ERR! npm config edit
+npm ERR! npm set <key> <value>
+npm ERR! npm get [<key>]
+npm ERR! 
+npm ERR! alias: c
+
+# npm c -h in /home/st/REPOBARE/_repo/plt/actio/dir_mm_npm_/_mm_npm_/_man/help
+
+npm config set <key> <value>
+npm config get [<key>]
+npm config delete <key>
+npm config list [--json]
+npm config edit
+npm set <key> <value>
+npm get [<key>]
+
+alias: c

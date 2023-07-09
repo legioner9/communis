@@ -1,0 +1,1 @@
+ int i_str_lc_io(char *s, int lim)

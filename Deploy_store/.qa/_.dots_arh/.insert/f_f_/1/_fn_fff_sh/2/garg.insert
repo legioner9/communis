@@ -1,0 +1,47 @@
+local echo_
+local debug_
+local verbose_
+local develop1_
+local errmes_
+local outmes_
+local ptr_if_
+local ptr_sem_
+
+unset_autoargs_{name_fn_}() {
+    echo_=0
+    debug_=0
+    develop1_=0
+
+    unset errmes_
+    unset outmes_
+    unset ptr_if_
+    unset ptr_sem_
+
+    # any1_=0
+    # unset any2_
+}
+
+unset_autoargs_{name_fn_}
+
+# [[ 1 -eq ${verbose} ]] || {
+#     garg_ ${FNN} $@
+# } && {
+#     garg_ ${FNN} $@ 1>/dev/null
+# }
+
+if ! garg2e2_ "${ARGS[@]}" 1>/dev/null; then
+    plt_exit " ${FNN} return 1: ${FNLOCK}"
+    return 1
+fi
+
+#? g_args with cntl=value
+local g_args=($(garg2e2_ "${ARGS[@]}"))
+#? e_args is {ARGS[\@]} without cntl and cmtl_value - as it's free
+local e_args=($(earg2e2_ "${ARGS[@]}"))
+
+[[ 1 -eq ${verbose} ]] || echo -e "${GREEN}\\\${g_args[@]}: ${g_args[*]}${NORMAL}" #print variable
+
+for strex in $(garg2e2_ "${ARGS[@]}"); do
+    [[ 1 -eq ${verbose} ]] || echo "local $strex"
+    eval local $strex
+done

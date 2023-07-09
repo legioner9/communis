@@ -1,0 +1,290 @@
+### UP
+[strspn](##strspn)
+[MAIN](##MAIN)
+[MAIN_ru](##MAIN_ru)
+[ANCORS](##ANCORS)
+[ISU](##ISU)
+[inet](##A_inet)
+[inet](##books_inet)
+[inet](##examples_inet)
+[inet](##classic_inet)
+[inet](##enters_inet)
+[inet](##issue_code_inet)
+[H_FILE](##H_FILE)
+[p_SYNOPSIS](##p_SYNOPSIS)
+[p_RETURN](##p_RETURN)
+[p_RETURN_ru](##p_RETURN_ru)
+[p_BUGS](##p_BUGS)
+[p_DESCRIPTION_ru](##p_DESCRIPTION_ru)
+[p_DESCRIPTION](##p_DESCRIPTION)
+[p_MIRRORS](##p_MIRRORS)
+[p_EXAMPLES](##p_EXAMPLES)
+[p_CODE_h](##p_CODE_h)
+[p_CODE_c](##p_CODE_c)
+[p_CODE_m](##p_CODE_m)
+[p_ERRORS](##p_ERRORS)
+[p_BOOKS](##p_BOOKS)
+[p_BOOKS_ru](##p_BOOKS_ru)
+[p_CONTENT](##p_CONTENT)
+
+[cat_hfiles](../../cat_hfiles.md)
+[cat_utils](../../cat_utils.md)
+[cat_structs](../../cat_structs.md)
+[cat_param](../../cat_params.md)
+[cat_macros](../../cat_macross.md)
+[cat_const](../../cat_consts.md)
+[cat_type](../../cat_types.md)
+[cat_any](../cat_anys.md)
+
+
+[UP](###UP)
+## MAIN
+:strspn:
+[next](##MAIN_ru)
+
+<<MAIN>>
+[MAIN](../../fills/strspn/MAIN)
+
+
+
+[UP](###UP)
+## MAIN_ru
+:strspn:
+[next](##ANCORS)
+
+----------------------------------------------------- 
+-------------------------------------- 
+определение длины префикса подстроки
+-------------------------------------- 
+----------------------------------------------------- 
+<<MAIN_ru>>
+[MAIN_ru](../../fills/strspn/MAIN_ru)
+
+[UP](###UP)
+## ANCORS
+:strspn:
+[next](##ISU)
+
+<<ANCORS>>
+[ANCORS](../../fills/strspn/ANCORS)
+
+[UP](###UP)
+## ISU
+:strspn:
+[next](##H_FILE)
+
+<<ISU>>
+only read
+:strspn:
+[ISU](../../contents)
+[next](##inet)
+
+
+[UP](###UP)
+## inet
+:strspn:
+[next](##H_FILE)
+
+
+[UP](###UP)
+## A_inet
+[manpages.org](https://www.google.ru/search?q=strspn+site%3Ahttps%3A%2F%2Fmanpages.org)
+[reposcope.com_ru](https://www.google.ru/search?q=strspn+site%3Ahttps%3A%2F%2Freposcope.com%2Fmanpages%2Fru)
+[pubs.opengroup.org](https://www.google.com/search?q=strspn+https%3A%2F%2Fpubs.opengroup.org)
+[manpages.debian.org](https://yandex.ru/search/?text=strspn+site%3Ahttps%3A%2F%2Fmanpages.debian.org%2F)
+[www.opennet.ru](http://www.opennet.ru/man.shtml?category=2&topic=strspn)
+[man7.org](https://www.google.ru/search?q=strspn+site%3Ahttps%3A%2F%2Fman7.org%2Flinux%2Fman-pages)
+[en.cppreference.com](https://www.google.com/search?q=strspn+en.cppreference.com)
+[www.mankier.com](https://www.mankier.com/?q=strspn)
+[www.codecogs.com](https://www.google.ru/search?q=strspn+https%3A%2F%2Fwww.codecogs.com%2Flibrary%2Fcomputing%2F)
+[digitalmars.com](https://www.google.ru/search?q=strspn+https%3A%2F%2Fdigitalmars.com%2Frtl%2F)
+
+
+[UP](###UP)
+## books_inet
+[cpp.com.ru](https://yandex.ru/search/?text=strspn+site%3Ahttps%3A%2F%2Fcpp.com.ru)
+[linuxhint.com](https://www.google.ru/search?q=strspn+site%3Ahttps%3A%2F%2Flinuxhint.com)
+[gnu.org](https://www.google.ru/search?q=strspn+site%3Ahttps%3A%2F%2Fwww.gnu.org%2Fsoftware%2Flibc%2Fmanual)
+
+[UP](###UP)
+## examples_inet
+[yandex:examples](https://yandex.ru/search/?text=strspn+example+in+c)
+[docs.oracle.com](https://www.google.com/search?q=strspn+https%3A%2F%2Fdocs.oracle.com)
+[manpages.debian.org](https://yandex.ru/search/?text=strspn+site%3Ahttps%3A%2F%2Fmanpages.debian.org%2F)
+[osr507doc.xinuos.com](https://www.google.com/search?q=strspn+http%3A%2F%2Fosr507doc.xinuos.com%2Fen%2Fman)
+[cpp.hotexamples.com](https://cpp.hotexamples.com/examples/-/-/strspn/cpp-strspn-function-examples.html)
+[all-ht.ru](https://yandex.ru/search/?text=strspn+site%3Ahttp%3A%2F%2Fall-ht.ru%2Finf%2Fprog%2Fc%2F)
+[cppreference.com](https://yandex.ru/search/?text=strspn+site%3Ahttps%3A%2F%2Fen.cppreference.com%2Fw%2Fc%2F)
+
+[UP](###UP)
+## classic_inet
+[bogatyrev_c_unix](https://www.google.com/search?q=strspn+site%3Ahttps%3A%2F%2Fcpp.com.ru%2Fbogatyrev_c_unix)
+[kr_cbook](https://www.google.com/search?q=strspn+site%3Ahttps%3A%2F%2Fcpp.com.ru%2Fkr_cbook)
+
+[UP](###UP)
+## enters_inet
+[pubs.opengroup.org](https://pubs.opengroup.org/onlinepubs/9699919799/idx/head.html)
+
+[UP](###UP)
+## issue_code_inet
+[code.woboq.org](https://www.google.com/search?h=&sitesearch=https%3A%2F%2Fcode.woboq.org%2Fuserspace%2Fglibc%2F&q=strspn)
+
+
+[UP](###UP)
+## H_FILE 
+[string_h.md](../../hfiles/string_h.md)
+
+
+[UP](###UP)
+## p_SYNOPSIS
+:strspn:
+[next](##p_RETURN_ru)
+
+----------------------------------------------------- 
+-------------------------------------- 
+#include <string.h>
+size_t strspn(const char *s, const char *accept);
+size_t strcspn(const char *s, const char *reject);
+-------------------------------------- 
+----------------------------------------------------- 
+<<SYNOPSIS>>
+[SYNOPSIS](../../fills/strspn/SYNOPSIS)
+
+
+[UP](###UP)
+## p_RETURN_ru
+:strspn:
+[next](##p_RETURN)
+
+<<RETURN>>
+[RETURN_ru](../../fills/strspn/RETURN)
+
+
+[UP](###UP)
+## p_RETURN
+:strspn:
+[next](##p_DESCRIPTION_ru)
+
+----------------------------------------------------- 
+-------------------------------------- 
+Функция strspn() возвращает количество байт в начальном сегменте s, который составляют байты из accept.
+Функция strcspn() возвращает количество байт в начальном сегменте s, состоящем только из символов, не указанных в reject.
+-------------------------------------- 
+----------------------------------------------------- 
+<<RETURN_ru>>
+[RETURN](../../fills/strspn/RETURN_ru)
+
+
+[UP](###UP)
+## p_DESCRIPTION_ru
+:strspn:
+[next](##p_DESCRIPTION)
+
+----------------------------------------------------- 
+-------------------------------------- 
+Функция strspn() вычисляет длину (в байтах) начального сегмента строки s, состоящего только из байт строки accept.
+Функция strcspn() вычисляет длину начального сегмента строки s, состоящего только из байт, не указанных в строке reject.
+-------------------------------------- 
+----------------------------------------------------- 
+<<DESCRIPTION_ru>>
+[DESCRIPTION_ru](../../fills/strspn/DESCRIPTION_ru)
+
+
+[UP](###UP)
+## p_DESCRIPTION
+:strspn:
+[next](##p_BUGS)
+
+<<DESCRIPTION>>
+[DESCRIPTION](../../fills/strspn/DESCRIPTION)
+
+
+[UP](###UP)
+## p_MIRRORS
+:strspn:
+[next](##p_BUGS)
+
+<<MIRRORS>>
+[MIRRORS](../../fills/strspn/MIRRORS)
+
+
+[UP](###UP)
+## p_BUGS
+:strspn:
+[next](##p_EXAMPLES)
+
+<<BUGS>>
+[BUGS](../../fills/strspn/BUGS)
+
+
+[UP](###UP)
+## p_EXAMPLES
+:strspn:
+[next](##p_CODE)
+
+<<EXAMPLES>>
+[EXAMPLES](../../fills/strspn/EXAMPLES)
+
+
+[UP](###UP)
+## p_CODE_h
+:strspn:
+[next](##p_CODE_c)
+
+<<CODE_h>>
+[CODE_h](../../fills/strspn/CODE_h)
+
+
+[UP](###UP)
+## p_CODE_c
+:strspn:
+[next](##p_CODE_m)
+
+<<CODE_c>>
+[CODE_c](../../fills/strspn/CODE_c)
+
+
+[UP](###UP)
+## p_CODE_m
+:strspn:
+[next](##p_ERRORS)
+
+<<CODE_m>>
+[CODE_m](../../fills/strspn/CODE_m)
+
+
+[UP](###UP)
+## p_ERRORS
+:strspn:
+[next](##p_BOOKS)
+
+<<ERRORS>>
+[ERRORS](../../fills/strspn/ERRORS)
+
+
+[UP](###UP)
+## p_BOOKS
+:strspn:
+[next](##p_BOOKS_ru)
+
+<<BOOKS>>
+[BOOKS](../../fills/strspn/BOOKS)
+
+
+[UP](###UP)
+## p_BOOKS_ru
+:strspn:
+[next](##p_CONTENT)
+
+
+<<BOOKS_ru>>
+[BOOKS_ru](../../fills/strspn/BOOKS_ru)
+
+
+[UP](###UP)
+## p_CONTENT
+:33333:
+[33333.cnt](../../contents/33333.cnt)
+[next](##UP)
+
+[UP](###UP)

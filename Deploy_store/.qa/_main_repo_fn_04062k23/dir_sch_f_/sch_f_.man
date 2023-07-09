@@ -1,0 +1,15 @@
+ARG
+    $1 name_file for search in pwd  or extend files [, param once after $1] 
+
+PARAM
+    single mode:
+        [name.ext] search exactly name
+        [name] search all files ( with any extends )
+    param mode:
+        -g grep in name files (return : menu with path_names)
+        -e search for extend files (return : menu with path_names)
+
+RET
+    NUL (if result empty)
+    path_to_file (in single mode)
+    menu path_to_file (in param mode)

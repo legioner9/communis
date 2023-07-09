@@ -1,0 +1,17 @@
+## prs_f - parsing path fs with extesion files
+prs_f -h help
+
+## d_a_stl - contane root_dir file_name to arr -> echo
+d_a_stl [ext_file] only with .ext_file to arr -> echo
+
+## dr_a_stl - recurcive contane root_dir file_full_path to arr -> echo
+dr_a_stl <root_dir> [ext_file] only with .ext_file to arr -> echo
+
+## check_all_tst_arr @@tst
+
+## check_all_tst - @@tst
+
+## check_dir_tst - return stdout/err when &1/&2 :: . (all in_root_dir && file && ext=.sh && pref!=_ && pref!=.) "test"
+
+## find_ext - return arr all in root_dir="$1"  with ext="$2"
+

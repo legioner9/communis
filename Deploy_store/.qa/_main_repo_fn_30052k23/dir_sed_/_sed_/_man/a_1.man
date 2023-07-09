@@ -1,0 +1,7 @@
+# https://habr.com/ru/company/ruvds/blog/327530/
+
+
+
+$ sed 's/test/another test' ./myfile
+
+sed -i '8i8 This is Line 8' FILE

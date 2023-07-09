@@ -1,0 +1,4 @@
+chdir_с = 0 , current dir = ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_c_/_c_/_man/nbase/_Head_sis_libs_posix/55_unistd_h/3_chdir/mankier_cpjs/use
+failed in file main.c at line # 51
+from chdir_с pathname = tmp_, errno = 2
+exit(errno) with: No such file or directory

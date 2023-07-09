@@ -1,0 +1,266 @@
+### UP
+[iswlower](##iswlower)
+[MAIN](##MAIN)
+[MAIN_ru](##MAIN_ru)
+[ANCORS](##ANCORS)
+[ISU](##ISU)
+[inet](##A_inet)
+[inet](##books_inet)
+[inet](##examples_inet)
+[inet](##classic_inet)
+[inet](##enters_inet)
+[inet](##issue_code_inet)
+[H_FILE](##H_FILE)
+[p_SYNOPSIS](##p_SYNOPSIS)
+[p_RETURN](##p_RETURN)
+[p_RETURN_ru](##p_RETURN_ru)
+[p_BUGS](##p_BUGS)
+[p_DESCRIPTION_ru](##p_DESCRIPTION_ru)
+[p_DESCRIPTION](##p_DESCRIPTION)
+[p_MIRRORS](##p_MIRRORS)
+[p_EXAMPLES](##p_EXAMPLES)
+[p_CODE_h](##p_CODE_h)
+[p_CODE_c](##p_CODE_c)
+[p_CODE_m](##p_CODE_m)
+[p_ERRORS](##p_ERRORS)
+[p_BOOKS](##p_BOOKS)
+[p_BOOKS_ru](##p_BOOKS_ru)
+[p_CONTENT](##p_CONTENT)
+
+[cat_hfiles](../../cat_hfiles.md)
+[cat_utils](../../cat_utils.md)
+[cat_structs](../../cat_structs.md)
+[cat_param](../../cat_params.md)
+[cat_macros](../../cat_macross.md)
+[cat_const](../../cat_consts.md)
+[cat_type](../../cat_types.md)
+[cat_any](../cat_anys.md)
+
+
+[UP](###UP)
+## MAIN
+:iswlower:
+[next](##MAIN_ru)
+
+<<MAIN>>
+[MAIN](../../fills/iswlower/MAIN)
+
+
+
+[UP](###UP)
+## MAIN_ru
+:iswlower:
+[next](##ANCORS)
+
+<<MAIN_ru>>
+[MAIN_ru](../../fills/iswlower/MAIN_ru)
+
+[UP](###UP)
+## ANCORS
+:iswlower:
+[next](##ISU)
+
+<<ANCORS>>
+[ANCORS](../../fills/iswlower/ANCORS)
+
+[UP](###UP)
+## ISU
+:iswlower:
+[next](##H_FILE)
+
+<<ISU>>
+only read
+:iswlower:
+[ISU](../../contents)
+[next](##inet)
+
+
+[UP](###UP)
+## inet
+:iswlower:
+[next](##H_FILE)
+
+
+[UP](###UP)
+## A_inet
+[manpages.org](https://www.google.ru/search?q=iswlower+site%3Ahttps%3A%2F%2Fmanpages.org)
+[reposcope.com_ru](https://www.google.ru/search?q=iswlower+site%3Ahttps%3A%2F%2Freposcope.com%2Fmanpages%2Fru)
+[pubs.opengroup.org](https://www.google.com/search?q=iswlower+https%3A%2F%2Fpubs.opengroup.org)
+[manpages.debian.org](https://yandex.ru/search/?text=iswlower+site%3Ahttps%3A%2F%2Fmanpages.debian.org%2F)
+[www.opennet.ru](http://www.opennet.ru/man.shtml?category=2&topic=iswlower)
+[man7.org](https://www.google.ru/search?q=iswlower+site%3Ahttps%3A%2F%2Fman7.org%2Flinux%2Fman-pages)
+[en.cppreference.com](https://www.google.com/search?q=iswlower+en.cppreference.com)
+[www.mankier.com](https://www.mankier.com/?q=iswlower)
+[www.codecogs.com](https://www.google.ru/search?q=iswlower+https%3A%2F%2Fwww.codecogs.com%2Flibrary%2Fcomputing%2F)
+[digitalmars.com](https://www.google.ru/search?q=iswlower+https%3A%2F%2Fdigitalmars.com%2Frtl%2F)
+
+
+[UP](###UP)
+## books_inet
+[cpp.com.ru](https://yandex.ru/search/?text=iswlower+site%3Ahttps%3A%2F%2Fcpp.com.ru)
+[linuxhint.com](https://www.google.ru/search?q=iswlower+site%3Ahttps%3A%2F%2Flinuxhint.com)
+[gnu.org](https://www.google.ru/search?q=iswlower+site%3Ahttps%3A%2F%2Fwww.gnu.org%2Fsoftware%2Flibc%2Fmanual)
+
+[UP](###UP)
+## examples_inet
+[yandex:examples](https://yandex.ru/search/?text=iswlower+example+in+c)
+[docs.oracle.com](https://www.google.com/search?q=iswlower+https%3A%2F%2Fdocs.oracle.com)
+[manpages.debian.org](https://yandex.ru/search/?text=iswlower+site%3Ahttps%3A%2F%2Fmanpages.debian.org%2F)
+[osr507doc.xinuos.com](https://www.google.com/search?q=iswlower+http%3A%2F%2Fosr507doc.xinuos.com%2Fen%2Fman)
+[cpp.hotexamples.com](https://cpp.hotexamples.com/examples/-/-/iswlower/cpp-iswlower-function-examples.html)
+[all-ht.ru](https://yandex.ru/search/?text=iswlower+site%3Ahttp%3A%2F%2Fall-ht.ru%2Finf%2Fprog%2Fc%2F)
+[cppreference.com](https://yandex.ru/search/?text=iswlower+site%3Ahttps%3A%2F%2Fen.cppreference.com%2Fw%2Fc%2F)
+
+[UP](###UP)
+## classic_inet
+[bogatyrev_c_unix](https://www.google.com/search?q=iswlower+site%3Ahttps%3A%2F%2Fcpp.com.ru%2Fbogatyrev_c_unix)
+[kr_cbook](https://www.google.com/search?q=iswlower+site%3Ahttps%3A%2F%2Fcpp.com.ru%2Fkr_cbook)
+
+[UP](###UP)
+## enters_inet
+[pubs.opengroup.org](https://pubs.opengroup.org/onlinepubs/9699919799/idx/head.html)
+
+[UP](###UP)
+## issue_code_inet
+[code.woboq.org](https://www.google.com/search?h=&sitesearch=https%3A%2F%2Fcode.woboq.org%2Fuserspace%2Fglibc%2F&q=iswlower)
+
+
+[UP](###UP)
+## H_FILE 
+[wchar_h.md](../../hfiles/wchar_h.md)
+
+
+[UP](###UP)
+## p_SYNOPSIS
+:iswlower:
+[next](##p_RETURN_ru)
+
+<<SYNOPSIS>>
+[SYNOPSIS](../../fills/iswlower/SYNOPSIS)
+
+
+[UP](###UP)
+## p_RETURN_ru
+:iswlower:
+[next](##p_RETURN)
+
+<<RETURN>>
+[RETURN_ru](../../fills/iswlower/RETURN)
+
+
+[UP](###UP)
+## p_RETURN
+:iswlower:
+[next](##p_DESCRIPTION_ru)
+
+<<RETURN_ru>>
+[RETURN](../../fills/iswlower/RETURN_ru)
+
+
+[UP](###UP)
+## p_DESCRIPTION_ru
+:iswlower:
+[next](##p_DESCRIPTION)
+
+<<DESCRIPTION_ru>>
+[DESCRIPTION_ru](../../fills/iswlower/DESCRIPTION_ru)
+
+
+[UP](###UP)
+## p_DESCRIPTION
+:iswlower:
+[next](##p_BUGS)
+
+<<DESCRIPTION>>
+[DESCRIPTION](../../fills/iswlower/DESCRIPTION)
+
+
+[UP](###UP)
+## p_MIRRORS
+:iswlower:
+[next](##p_BUGS)
+
+<<MIRRORS>>
+[MIRRORS](../../fills/iswlower/MIRRORS)
+
+
+[UP](###UP)
+## p_BUGS
+:iswlower:
+[next](##p_EXAMPLES)
+
+<<BUGS>>
+[BUGS](../../fills/iswlower/BUGS)
+
+
+[UP](###UP)
+## p_EXAMPLES
+:iswlower:
+[next](##p_CODE)
+
+<<EXAMPLES>>
+[EXAMPLES](../../fills/iswlower/EXAMPLES)
+
+
+[UP](###UP)
+## p_CODE_h
+:iswlower:
+[next](##p_CODE_c)
+
+<<CODE_h>>
+[CODE_h](../../fills/iswlower/CODE_h)
+
+
+[UP](###UP)
+## p_CODE_c
+:iswlower:
+[next](##p_CODE_m)
+
+<<CODE_c>>
+[CODE_c](../../fills/iswlower/CODE_c)
+
+
+[UP](###UP)
+## p_CODE_m
+:iswlower:
+[next](##p_ERRORS)
+
+<<CODE_m>>
+[CODE_m](../../fills/iswlower/CODE_m)
+
+
+[UP](###UP)
+## p_ERRORS
+:iswlower:
+[next](##p_BOOKS)
+
+<<ERRORS>>
+[ERRORS](../../fills/iswlower/ERRORS)
+
+
+[UP](###UP)
+## p_BOOKS
+:iswlower:
+[next](##p_BOOKS_ru)
+
+<<BOOKS>>
+[BOOKS](../../fills/iswlower/BOOKS)
+
+
+[UP](###UP)
+## p_BOOKS_ru
+:iswlower:
+[next](##p_CONTENT)
+
+
+<<BOOKS_ru>>
+[BOOKS_ru](../../fills/iswlower/BOOKS_ru)
+
+
+[UP](###UP)
+## p_CONTENT
+:33333:
+[33333.cnt](../../contents/33333.cnt)
+[next](##UP)
+
+[UP](###UP)

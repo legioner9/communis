@@ -1,0 +1,10 @@
+s@__res_state
+p@res_ninit
+p@res_nclose
+p@res_nquery
+p@res_nsearch
+p@res_nquerydomain
+p@res_nmkquery
+p@res_nsend
+p@dn_comp
+p@dn_expand

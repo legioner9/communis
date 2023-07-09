@@ -1,0 +1,5 @@
+#>var
+
+eval src="/home/${USER}/.config/VSCodium" 
+eval dest_d="/home/${USER}/.config" 
+eval bag="/run/media/${USER}/${name_flash}/Codium_tsf"

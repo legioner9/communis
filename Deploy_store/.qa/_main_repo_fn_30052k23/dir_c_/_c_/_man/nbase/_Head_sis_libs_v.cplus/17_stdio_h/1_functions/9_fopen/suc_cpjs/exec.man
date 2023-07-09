@@ -1,0 +1,5 @@
++ io_1::fopen_c
++ l3p_1::fileno_c
++ uni_1::dup_с
++ uni_1::read_с
++ uni_1::close_с

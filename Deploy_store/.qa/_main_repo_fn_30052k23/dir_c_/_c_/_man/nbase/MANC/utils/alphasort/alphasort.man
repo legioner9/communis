@@ -1,0 +1,336 @@
+### UP
+[alphasort](##alphasort)
+[MAIN](##MAIN)
+[MAIN_ru](##MAIN_ru)
+[ANCORS](##ANCORS)
+[ISU](##ISU)
+[inet](##A_inet)
+[inet](##books_inet)
+[inet](##examples_inet)
+[inet](##classic_inet)
+[inet](##enters_inet)
+[inet](##issue_code_inet)
+[H_FILE](##H_FILE)
+[p_SYNOPSIS](##p_SYNOPSIS)
+[p_RETURN](##p_RETURN)
+[p_RETURN_ru](##p_RETURN_ru)
+[p_BUGS](##p_BUGS)
+[p_DESCRIPTION_ru](##p_DESCRIPTION_ru)
+[p_DESCRIPTION](##p_DESCRIPTION)
+[p_MIRRORS](##p_MIRRORS)
+[p_EXAMPLES](##p_EXAMPLES)
+[p_CODE_h](##p_CODE_h)
+[p_CODE_c](##p_CODE_c)
+[p_CODE_m](##p_CODE_m)
+[p_ERRORS](##p_ERRORS)
+[p_BOOKS](##p_BOOKS)
+[p_BOOKS_ru](##p_BOOKS_ru)
+[p_CONTENT](##p_CONTENT)
+
+[cat_hfiles](../../cat_hfiles.md)
+[cat_utils](../../cat_utils.md)
+[cat_structs](../../cat_structs.md)
+[cat_param](../../cat_params.md)
+[cat_macros](../../cat_macross.md)
+[cat_const](../../cat_consts.md)
+[cat_type](../../cat_types.md)
+[cat_any](../cat_anys.md)
+
+
+[UP](###UP)
+## MAIN
+:alphasort:
+[next](##MAIN_ru)
+
+<<MAIN>>
+[MAIN](../../fills/alphasort/MAIN)
+
+
+
+[UP](###UP)
+## MAIN_ru
+:alphasort:
+[next](##ANCORS)
+
+----------------------------------------------------- 
+-------------------------------------- 
+ищет записи в каталоге
+-------------------------------------- 
+----------------------------------------------------- 
+<<MAIN_ru>>
+[MAIN_ru](../../fills/alphasort/MAIN_ru)
+
+[UP](###UP)
+## ANCORS
+:alphasort:
+[next](##ISU)
+
+<<ANCORS>>
+[ANCORS](../../fills/alphasort/ANCORS)
+
+[UP](###UP)
+## ISU
+:alphasort:
+[next](##H_FILE)
+
+----------------------------------------------------- 
+-------------------------------------- 
+file://${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_c_/_c_/_man/nbase/_Head_sis_libs_posix/4_dirent_h/1_alphasort/man7_2_cpjs/alphasort.isu
+-------------------------------------- 
+----------------------------------------------------- 
+<<ISU>>
+only read
+:alphasort:
+[ISU](../../contents)
+[next](##inet)
+
+
+[UP](###UP)
+## inet
+:alphasort:
+[next](##H_FILE)
+
+
+[UP](###UP)
+## A_inet
+[manpages.org](https://www.google.ru/search?q=alphasort+site%3Ahttps%3A%2F%2Fmanpages.org)
+[reposcope.com_ru](https://www.google.ru/search?q=alphasort+site%3Ahttps%3A%2F%2Freposcope.com%2Fmanpages%2Fru)
+[pubs.opengroup.org](https://www.google.com/search?q=alphasort+https%3A%2F%2Fpubs.opengroup.org)
+[manpages.debian.org](https://yandex.ru/search/?text=alphasort+site%3Ahttps%3A%2F%2Fmanpages.debian.org%2F)
+[www.opennet.ru](http://www.opennet.ru/man.shtml?category=2&topic=alphasort)
+[man7.org](https://www.google.ru/search?q=alphasort+site%3Ahttps%3A%2F%2Fman7.org%2Flinux%2Fman-pages)
+[en.cppreference.com](https://www.google.com/search?q=alphasort+en.cppreference.com)
+[www.mankier.com](https://www.mankier.com/?q=alphasort)
+[www.codecogs.com](https://www.google.ru/search?q=alphasort+https%3A%2F%2Fwww.codecogs.com%2Flibrary%2Fcomputing%2F)
+[digitalmars.com](https://www.google.ru/search?q=alphasort+https%3A%2F%2Fdigitalmars.com%2Frtl%2F)
+
+
+[UP](###UP)
+## books_inet
+[cpp.com.ru](https://yandex.ru/search/?text=alphasort+site%3Ahttps%3A%2F%2Fcpp.com.ru)
+[linuxhint.com](https://www.google.ru/search?q=alphasort+site%3Ahttps%3A%2F%2Flinuxhint.com)
+[gnu.org](https://www.google.ru/search?q=alphasort+site%3Ahttps%3A%2F%2Fwww.gnu.org%2Fsoftware%2Flibc%2Fmanual)
+
+[UP](###UP)
+## examples_inet
+[yandex:examples](https://yandex.ru/search/?text=alphasort+example+in+c)
+[docs.oracle.com](https://www.google.com/search?q=alphasort+https%3A%2F%2Fdocs.oracle.com)
+[manpages.debian.org](https://yandex.ru/search/?text=alphasort+site%3Ahttps%3A%2F%2Fmanpages.debian.org%2F)
+[osr507doc.xinuos.com](https://www.google.com/search?q=alphasort+http%3A%2F%2Fosr507doc.xinuos.com%2Fen%2Fman)
+[cpp.hotexamples.com](https://cpp.hotexamples.com/examples/-/-/alphasort/cpp-alphasort-function-examples.html)
+[all-ht.ru](https://yandex.ru/search/?text=alphasort+site%3Ahttp%3A%2F%2Fall-ht.ru%2Finf%2Fprog%2Fc%2F)
+[cppreference.com](https://yandex.ru/search/?text=alphasort+site%3Ahttps%3A%2F%2Fen.cppreference.com%2Fw%2Fc%2F)
+
+[UP](###UP)
+## classic_inet
+[bogatyrev_c_unix](https://www.google.com/search?q=alphasort+site%3Ahttps%3A%2F%2Fcpp.com.ru%2Fbogatyrev_c_unix)
+[kr_cbook](https://www.google.com/search?q=alphasort+site%3Ahttps%3A%2F%2Fcpp.com.ru%2Fkr_cbook)
+
+[UP](###UP)
+## enters_inet
+[pubs.opengroup.org](https://pubs.opengroup.org/onlinepubs/9699919799/idx/head.html)
+
+[UP](###UP)
+## issue_code_inet
+[code.woboq.org](https://www.google.com/search?h=&sitesearch=https%3A%2F%2Fcode.woboq.org%2Fuserspace%2Fglibc%2F&q=alphasort)
+
+
+[UP](###UP)
+## H_FILE 
+[dirent_h.md](../../hfiles/dirent_h.md)
+
+
+[UP](###UP)
+## p_SYNOPSIS
+:alphasort:
+[next](##p_RETURN_ru)
+
+----------------------------------------------------- 
+-------------------------------------- 
+#include <dirent.h>
+int alphasort(const struct dirent **d1, const struct dirent **d2);
+int scandir(const char *dir, struct dirent ***namelist,
+int (*sel)(const struct dirent *),
+int (*compar)(const struct dirent **, const struct dirent **));
+-------------------------------------- 
+----------------------------------------------------- 
+<<SYNOPSIS>>
+[SYNOPSIS](../../fills/alphasort/SYNOPSIS)
+
+
+[UP](###UP)
+## p_RETURN_ru
+:alphasort:
+[next](##p_RETURN)
+
+<<RETURN>>
+[RETURN_ru](../../fills/alphasort/RETURN)
+
+
+[UP](###UP)
+## p_RETURN
+:alphasort:
+[next](##p_DESCRIPTION_ru)
+
+----------------------------------------------------- 
+-------------------------------------- 
+При успешном выполнении scandir() возвращается количество выбранных записей каталога. При ошибке возвращается -1, а в errno содержится код ошибки.
+Функции alphasort() и versionsort() возвращают целое, меньшее, равное или большее нуля, если первый аргумент считается меньшим, равным или большим чем второй, соответственно.
+-------------------------------------- 
+----------------------------------------------------- 
+<<RETURN_ru>>
+[RETURN](../../fills/alphasort/RETURN_ru)
+
+
+[UP](###UP)
+## p_DESCRIPTION_ru
+:alphasort:
+[next](##p_DESCRIPTION)
+
+----------------------------------------------------- 
+-------------------------------------- 
+Функция scandir() обходит каталог dirp, вызывая filter() для каждой записи каталога. Записи, для которых filter() возвращает не ноль, сохраняются в строках, выделяемых с помощью malloc(3), сортируются qsort(3) с помощью функции сравнения compar() и собираются в массиве namelist, который выделяется с помощью malloc(3). Если filter равно NULL, то выбираются все записи.
+В качестве функции сравнения compar() можно использовать alphasort() и versionsort(). Первая сортирует записи (строки (*a)->d_name и (*b)->d_name) каталога с помощью strcoll(3), а последняя с помощью strverscmp(3).
+-------------------------------------- 
+----------------------------------------------------- 
+<<DESCRIPTION_ru>>
+[DESCRIPTION_ru](../../fills/alphasort/DESCRIPTION_ru)
+
+
+[UP](###UP)
+## p_DESCRIPTION
+:alphasort:
+[next](##p_BUGS)
+
+<<DESCRIPTION>>
+[DESCRIPTION](../../fills/alphasort/DESCRIPTION)
+
+
+[UP](###UP)
+## p_MIRRORS
+:alphasort:
+[next](##p_BUGS)
+
+<<MIRRORS>>
+[MIRRORS](../../fills/alphasort/MIRRORS)
+
+
+[UP](###UP)
+## p_BUGS
+:alphasort:
+[next](##p_EXAMPLES)
+
+<<BUGS>>
+[BUGS](../../fills/alphasort/BUGS)
+
+
+[UP](###UP)
+## p_EXAMPLES
+:alphasort:
+[next](##p_CODE)
+
+----------------------------------------------------- 
+-------------------------------------- 
+#define _SVID_SOURCE
+/* печатает файлы текущего каталога в обратном порядке */
+#include <dirent.h>
+int
+main(void)
+{
+struct dirent **namelist;
+int n;
+n = scandir(".", &namelist, NULL, alphasort);
+if (n < 0)
+perror("scandir");
+else {
+while (n--) {
+printf("%s
+", namelist[n]->d_name);
+free(namelist[n]);
+}
+free(namelist);
+}
+}
+-------------------------------------- 
+----------------------------------------------------- 
+<<EXAMPLES>>
+[EXAMPLES](../../fills/alphasort/EXAMPLES)
+
+
+[UP](###UP)
+## p_CODE_h
+:alphasort:
+[next](##p_CODE_c)
+
+<<CODE_h>>
+[CODE_h](../../fills/alphasort/CODE_h)
+
+
+[UP](###UP)
+## p_CODE_c
+:alphasort:
+[next](##p_CODE_m)
+
+<<CODE_c>>
+[CODE_c](../../fills/alphasort/CODE_c)
+
+
+[UP](###UP)
+## p_CODE_m
+:alphasort:
+[next](##p_ERRORS)
+
+<<CODE_m>>
+[CODE_m](../../fills/alphasort/CODE_m)
+
+
+[UP](###UP)
+## p_ERRORS
+:alphasort:
+[next](##p_BOOKS)
+
+----------------------------------------------------- 
+-------------------------------------- 
+ENOENT
+Путь в dirp не существует.
+ENOMEM
+Недостаточно памяти для завершения операции.
+ENOTDIR
+Путь в dirp не является каталогом.
+В scandirat() дополнительно могут возникнуть следующие ошибки:
+EBADF
+Значение dirfd не является правильным файловым дескриптором.
+ENOTDIR
+Значение dirp содержит относительный путь и dirfd содержит файловый дескриптор, указывающий на файл, а не на каталог.
+-------------------------------------- 
+----------------------------------------------------- 
+<<ERRORS>>
+[ERRORS](../../fills/alphasort/ERRORS)
+
+
+[UP](###UP)
+## p_BOOKS
+:alphasort:
+[next](##p_BOOKS_ru)
+
+<<BOOKS>>
+[BOOKS](../../fills/alphasort/BOOKS)
+
+
+[UP](###UP)
+## p_BOOKS_ru
+:alphasort:
+[next](##p_CONTENT)
+
+
+<<BOOKS_ru>>
+[BOOKS_ru](../../fills/alphasort/BOOKS_ru)
+
+
+[UP](###UP)
+## p_CONTENT
+:alphasort:
+[alphasort.cnt](../../contents/alphasort.cnt)
+[next](##UP)
+
+[UP](###UP)

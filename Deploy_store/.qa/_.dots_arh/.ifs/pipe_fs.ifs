@@ -1,0 +1,7 @@
+main: share files by coping selected directories
+exec: exl_flow during git push
+
+using global:
+parsing params:
+arg: 
+flow_chars: 

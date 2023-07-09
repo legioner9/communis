@@ -1,0 +1,11 @@
+p@feclearexcept
+p@fegetenv
+p@fegetexceptflag
+p@fegetround
+p@feholdexcept
+p@feraiseexcept
+p@fesetenv
+p@fesetexceptflag
+p@fesetround
+p@fetestexcept
+p@feupdateenv

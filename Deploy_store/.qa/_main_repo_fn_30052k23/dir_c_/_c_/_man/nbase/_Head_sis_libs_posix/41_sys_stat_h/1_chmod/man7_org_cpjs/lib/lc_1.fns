@@ -1,0 +1,3 @@
+ int npt_lc_1_IntPt(int *pt)
+ int ndpt_lc_1_IntPt(int **pt)
+ int _tmpp(int t)

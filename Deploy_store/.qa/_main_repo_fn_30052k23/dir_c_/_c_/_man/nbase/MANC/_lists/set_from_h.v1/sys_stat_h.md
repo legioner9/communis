@@ -1,0 +1,16 @@
+chmod
+fchmod
+fchmodat
+fstat
+fstatat
+futimens
+lstat
+mkdir
+mkdirat
+mkfifo
+mkfifoat
+mknod
+mknodat
+stat
+umask
+utimensat

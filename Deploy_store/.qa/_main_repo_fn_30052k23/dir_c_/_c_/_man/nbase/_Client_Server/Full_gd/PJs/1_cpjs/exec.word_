@@ -1,0 +1,11 @@
+from>  UDP peer ->
+
+do> 
+^1^ inet_addr("192.168.0.1")
+^2^ prn_addr_from_socket_с
+test>
+
+to> -> <NOW DO> ----------> FULL gamedev cource examples 1 https://gamedev.ru/code/articles/?id=4260
+
+!todo!:
+DEMO

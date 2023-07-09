@@ -1,0 +1,26 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+[remote "origin"]
+	url = git@github.com:legioner9/communis.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "master"]
+	remote = origin
+	merge = refs/heads/master
+[remote "flash_alt"]
+	url = /run/media/st/MY_ONE/_git_alt_communis/
+	fetch = +refs/heads/*:refs/remotes/flash_alt/*
+[remote "flash_one"]
+	url = /run/media/st/MY_ONE/Repo_commnunis/
+	fetch = +refs/heads/*:refs/remotes/flash_one/*
+[remote "local_alt"]
+	url = /home/st/Bare_communis/
+	fetch = +refs/heads/*:refs/remotes/local_alt/*
+[remote "my_one"]
+	url = /run/media/st/MY_ONE/_git_communis/bd_bare_communis
+	fetch = +refs/heads/*:refs/remotes/my_one/*
+[remote "tosh_ext"]
+	url = /run/media/st/TOSHIBA_EXT/_git_communis/bd_bare_communis
+	fetch = +refs/heads/*:refs/remotes/tosh_ext/*

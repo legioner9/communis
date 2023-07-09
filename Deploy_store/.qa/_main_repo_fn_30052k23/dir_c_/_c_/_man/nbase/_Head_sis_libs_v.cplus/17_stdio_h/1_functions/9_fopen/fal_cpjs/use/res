@@ -1,0 +1,4 @@
+failed in file main.c at line # 115
+from fopen_c path = a, mode = r, errno = 2
+Error is: : No such file or directory
+exit(errno): 

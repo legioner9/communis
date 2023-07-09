@@ -1,0 +1,252 @@
+[1m---start file:///home/st/REPOBARE/_repo/plt/actio/dir_cr_f_/cr_f_tst/_wtf_vi_iter_value.sh ---[0m
+[1m---start file:///home/st/REPOBARE/_repo/plt/actio/dir_cr_f_/cr_f_tst/_start_deb_a.sh with args: # ---[0m
+#
+vi0_cr_f_=weqwe
+vr0_cr_f_=#
+weqwe
+[1m---start file:///home/st/REPOBARE/_repo/plt/actio/dir_cr_f_/cr_f_tst/_start_deb_a.sh with args: ~ ---[0m
+~
+vi0_cr_f_=weqwe
+vr0_cr_f_=~
+~
+[1m---start file:///home/st/REPOBARE/_repo/plt/actio/dir_cr_f_/cr_f_tst/_start_deb_a.sh with args: ! ---[0m
+!
+vi0_cr_f_=weqwe
+vr0_cr_f_=!
+weqwe
+[1m---start file:///home/st/REPOBARE/_repo/plt/actio/dir_cr_f_/cr_f_tst/_start_deb_a.sh with args: @ ---[0m
+@
+vi0_cr_f_=weqwe
+vr0_cr_f_=@
+weqwe
+[1m---start file:///home/st/REPOBARE/_repo/plt/actio/dir_cr_f_/cr_f_tst/_start_deb_a.sh with args: $ ---[0m
+$
+vi0_cr_f_=weqwe
+vr0_cr_f_=$
+$weqwe
+[1m---start file:///home/st/REPOBARE/_repo/plt/actio/dir_cr_f_/cr_f_tst/_start_deb_a.sh with args: % ---[0m
+%
+vi0_cr_f_=weqwe
+vr0_cr_f_=%
+weqwe
+[1m---start file:///home/st/REPOBARE/_repo/plt/actio/dir_cr_f_/cr_f_tst/_start_deb_a.sh with args: ^ ---[0m
+^
+vi0_cr_f_=weqwe
+vr0_cr_f_=^
+weqwe^
+[1m---start file:///home/st/REPOBARE/_repo/plt/actio/dir_cr_f_/cr_f_tst/_start_deb_a.sh with args: & ---[0m
+&
+vi0_cr_f_=weqwe
+vr0_cr_f_=&
+[1]+  Завершён        vr0_cr_f_=
+&
+[1m---start file:///home/st/REPOBARE/_repo/plt/actio/dir_cr_f_/cr_f_tst/_start_deb_a.sh with args: * ---[0m
+b dat exec.tst _flow_tst.sh into_b pre recommended_symbols.man res _start_deb_a.sh _start_deb_b.sh _start_wtf.sh stop_symbols_for_cr_f_.man tml_b _wtf_vi_iter_value.result _wtf_vi_iter_value.sh
+vi0_cr_f_=weqwe
+vr0_cr_f_=a
+b dweqwet exec.tst _flow_tst.sh into_b pre recommended_symbols.mweqwen res _stweqwert_deb_weqwe.sh _stweqwert_deb_b.sh _stweqwert_wtf.sh stop_symbols_for_cr_f_.mweqwen tml_b _wtf_vi_iter_vweqwelue.result _wtf_vi_iter_vweqwelue.sh
+[1m---start file:///home/st/REPOBARE/_repo/plt/actio/dir_cr_f_/cr_f_tst/_start_deb_a.sh with args: ( ---[0m
+(
+vi0_cr_f_=weqwe
+bash: eval: строка 132: неожиданный конец файла во время поиска «)»
+vr0_cr_f_=(
+(
+[1m---start file:///home/st/REPOBARE/_repo/plt/actio/dir_cr_f_/cr_f_tst/_start_deb_a.sh with args: ) ---[0m
+)
+vi0_cr_f_=weqwe
+bash: eval: строка 132: синтаксическая ошибка рядом с неожиданным маркером «)»
+bash: eval: строка 132: `vr0_cr_f_=)'
+vr0_cr_f_=)
+)
+[1m---start file:///home/st/REPOBARE/_repo/plt/actio/dir_cr_f_/cr_f_tst/_start_deb_a.sh with args: - ---[0m
+bash: [: !=: ожидается унарный оператор
+-
+vi0_cr_f_=weqwe
+[0;36m---qq_exit() $.1=_data.sh not value - that flow_symbol $.2= $.3=---[0m
+[0;31m---message: _data.sh not value - that flow_symbol---[0m
+[0;31m---file: ---[0m
+[0;31m---line: ---[0m
+[1m---start file:///home/st/REPOBARE/_repo/plt/actio/dir_cr_f_/cr_f_tst/_start_deb_a.sh with args: _ ---[0m
+_
+vi0_cr_f_=weqwe
+vr0_cr_f_=_
+weqwe
+[1m---start file:///home/st/REPOBARE/_repo/plt/actio/dir_cr_f_/cr_f_tst/_start_deb_a.sh with args: + ---[0m
++
+vi0_cr_f_=weqwe
+vr0_cr_f_=+
+weqwe
+[1m---start file:///home/st/REPOBARE/_repo/plt/actio/dir_cr_f_/cr_f_tst/_start_deb_a.sh with args: = ---[0m
+=
+vi0_cr_f_=weqwe
+vr0_cr_f_==
+weqwe
+[1m---start file:///home/st/REPOBARE/_repo/plt/actio/dir_cr_f_/cr_f_tst/_start_deb_a.sh with args: { ---[0m
+{
+vi0_cr_f_=weqwe
+vr0_cr_f_={
+weqwe
+[1m---start file:///home/st/REPOBARE/_repo/plt/actio/dir_cr_f_/cr_f_tst/_start_deb_a.sh with args: { ---[0m
+{
+vi0_cr_f_=weqwe
+vr0_cr_f_={
+weqwe
+[1m---start file:///home/st/REPOBARE/_repo/plt/actio/dir_cr_f_/cr_f_tst/_start_deb_a.sh with args: [ ---[0m
+[
+vi0_cr_f_=weqwe
+vr0_cr_f_=[
+sed: -e выражение #1, символ 11: незавершенная команда `s'
+[
+[1m---start file:///home/st/REPOBARE/_repo/plt/actio/dir_cr_f_/cr_f_tst/_start_deb_a.sh with args: } ---[0m
+}
+vi0_cr_f_=weqwe
+vr0_cr_f_=}
+weqwe
+[1m---start file:///home/st/REPOBARE/_repo/plt/actio/dir_cr_f_/cr_f_tst/_start_deb_a.sh with args: ] ---[0m
+]
+vi0_cr_f_=weqwe
+vr0_cr_f_=]
+weqwe
+[1m---start file:///home/st/REPOBARE/_repo/plt/actio/dir_cr_f_/cr_f_tst/_start_deb_a.sh with args: ; ---[0m
+;
+vi0_cr_f_=weqwe
+vr0_cr_f_=;
+;
+[1m---start file:///home/st/REPOBARE/_repo/plt/actio/dir_cr_f_/cr_f_tst/_start_deb_a.sh with args: : ---[0m
+:
+vi0_cr_f_=weqwe
+vr0_cr_f_=:
+weqwe
+[1m---start file:///home/st/REPOBARE/_repo/plt/actio/dir_cr_f_/cr_f_tst/_start_deb_a.sh with args: " ---[0m
+"
+vi0_cr_f_=weqwe
+bash: eval: строка 132: неожиданный конец файла во время поиска «"»
+bash: eval: строка 133: синтаксическая ошибка: неожиданный конец файла
+vr0_cr_f_="
+"
+[1m---start file:///home/st/REPOBARE/_repo/plt/actio/dir_cr_f_/cr_f_tst/_start_deb_a.sh with args: ' ---[0m
+'
+vi0_cr_f_=weqwe
+bash: eval: строка 132: неожиданный конец файла во время поиска «'»
+bash: eval: строка 133: синтаксическая ошибка: неожиданный конец файла
+vr0_cr_f_='
+'
+[1m---start file:///home/st/REPOBARE/_repo/plt/actio/dir_cr_f_/cr_f_tst/_start_deb_a.sh with args: \ ---[0m
+\
+vi0_cr_f_=weqwe
+vr0_cr_f_=\
+sed: -e выражение #1, символ 11: незавершенная команда `s'
+\
+[1m---start file:///home/st/REPOBARE/_repo/plt/actio/dir_cr_f_/cr_f_tst/_start_deb_a.sh with args: | ---[0m
+|
+vi0_cr_f_=weqwe
+bash: eval: строка 133: синтаксическая ошибка: неожиданный конец файла
+vr0_cr_f_=|
+|
+[1m---start file:///home/st/REPOBARE/_repo/plt/actio/dir_cr_f_/cr_f_tst/_start_deb_a.sh with args: < ---[0m
+<
+vi0_cr_f_=weqwe
+bash: eval: строка 132: синтаксическая ошибка рядом с неожиданным маркером «newline»
+bash: eval: строка 132: `vr0_cr_f_=<'
+vr0_cr_f_=<
+<
+[1m---start file:///home/st/REPOBARE/_repo/plt/actio/dir_cr_f_/cr_f_tst/_start_deb_a.sh with args: > ---[0m
+>
+vi0_cr_f_=weqwe
+bash: eval: строка 132: синтаксическая ошибка рядом с неожиданным маркером «newline»
+bash: eval: строка 132: `vr0_cr_f_=>'
+vr0_cr_f_=>
+>
+[1m---start file:///home/st/REPOBARE/_repo/plt/actio/dir_cr_f_/cr_f_tst/_start_deb_a.sh with args: , ---[0m
+,
+vi0_cr_f_=weqwe
+vr0_cr_f_=,
+weqwe
+[1m---start file:///home/st/REPOBARE/_repo/plt/actio/dir_cr_f_/cr_f_tst/_start_deb_a.sh with args: . ---[0m
+.
+vi0_cr_f_=weqwe
+vr0_cr_f_=.
+weqwe
+[1m---start file:///home/st/REPOBARE/_repo/plt/actio/dir_cr_f_/cr_f_tst/_start_deb_a.sh with args: ? ---[0m
+b
+vi0_cr_f_=weqwe
+vr0_cr_f_=a
+b
+[1m---start file:///home/st/REPOBARE/_repo/plt/actio/dir_cr_f_/cr_f_tst/_start_deb_a.sh with args: / ---[0m
+/
+vi0_cr_f_=weqwe
+vr0_cr_f_=/
+weqwe
+[1m---start file:///home/st/REPOBARE/_repo/plt/actio/dir_cr_f_/cr_f_tst/_start_deb_a.sh with args: ; ---[0m
+;
+vi0_cr_f_=weqwe
+vr0_cr_f_=;
+;
+[1m---start file:///home/st/REPOBARE/_repo/plt/actio/dir_cr_f_/cr_f_tst/_start_deb_a.sh with args: ` ---[0m
+`
+vi0_cr_f_=weqwe
+bash: eval: строка 132: неожиданный конец файла во время поиска «`»
+bash: eval: строка 133: синтаксическая ошибка: неожиданный конец файла
+vr0_cr_f_=`
+`
+[1m---start file:///home/st/REPOBARE/_repo/plt/actio/dir_cr_f_/cr_f_tst/_start_deb_a.sh with args: № ---[0m
+№
+vi0_cr_f_=weqwe
+vr0_cr_f_=№
+weqwe
+[1m---start file:///home/st/REPOBARE/_repo/plt/actio/dir_cr_f_/cr_f_tst/_start_deb_a.sh with args: [dqd] ---[0m
+[dqd]
+vi0_cr_f_=weqwe
+vr0_cr_f_=[dqd]
+[weqweweqweweqwe]
+[1m---start file:///home/st/REPOBARE/_repo/plt/actio/dir_cr_f_/cr_f_tst/_start_deb_a.sh with args: {erverf} ---[0m
+{erverf}
+vi0_cr_f_=weqwe
+vr0_cr_f_={erverf}
+weqwe
+[1m---start file:///home/st/REPOBARE/_repo/plt/actio/dir_cr_f_/cr_f_tst/_start_deb_a.sh with args: <cascsd> ---[0m
+<cascsd>
+vi0_cr_f_=weqwe
+bash: eval: строка 132: синтаксическая ошибка рядом с неожиданным маркером «newline»
+bash: eval: строка 132: `vr0_cr_f_=<cascsd>'
+vr0_cr_f_=<cascsd>
+<cascsd>
+[1m---start file:///home/st/REPOBARE/_repo/plt/actio/dir_cr_f_/cr_f_tst/_start_deb_a.sh with args: ;cascsd; ---[0m
+;cascsd;
+vi0_cr_f_=weqwe
+bash: cascsd: команда не найдена
+vr0_cr_f_=;cascsd;
+;cascsd;
+[1m---start file:///home/st/REPOBARE/_repo/plt/actio/dir_cr_f_/cr_f_tst/_start_deb_a.sh with args: 'cascsd' ---[0m
+'cascsd'
+vi0_cr_f_=weqwe
+vr0_cr_f_='cascsd'
+'weqwe'
+[1m---start file:///home/st/REPOBARE/_repo/plt/actio/dir_cr_f_/cr_f_tst/_start_deb_a.sh with args: &cascsd& ---[0m
+&cascsd&
+vi0_cr_f_=weqwe
+bash: cascsd: команда не найдена
+vr0_cr_f_=&cascsd&
+[1]-  Завершён        vr0_cr_f_=
+[2]+  Выход 127          cascsd
+&cascsd&
+[1m---start file:///home/st/REPOBARE/_repo/plt/actio/dir_cr_f_/cr_f_tst/_start_deb_a.sh with args: !cascsd! ---[0m
+!cascsd!
+vi0_cr_f_=weqwe
+vr0_cr_f_=!cascsd!
+weqwe
+[1m---start file:///home/st/REPOBARE/_repo/plt/actio/dir_cr_f_/cr_f_tst/_start_deb_a.sh with args: ::cascsd:: ---[0m
+::cascsd::
+vi0_cr_f_=weqwe
+vr0_cr_f_=::cascsd::
+weqwe
+[1m---start file:///home/st/REPOBARE/_repo/plt/actio/dir_cr_f_/cr_f_tst/_start_deb_a.sh with args: /cascsd/ ---[0m
+/cascsd/
+vi0_cr_f_=weqwe
+vr0_cr_f_=/cascsd/
+weqwe
+[1m---start file:///home/st/REPOBARE/_repo/plt/actio/dir_cr_f_/cr_f_tst/_start_deb_a.sh with args: #cascsd# ---[0m
+#cascsd#
+vi0_cr_f_=weqwe
+vr0_cr_f_=#cascsd#
+weqwe

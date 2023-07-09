@@ -1,0 +1,52 @@
+[[ 1 -eq ${verbose} ]] || echo -e "${HLIGHT}--- wrp_fifs1_ cd $PPWD -d1 1>/dev/null ---${NORMAL}" #start files
+
+wrp_fifs1_ cd "$PPWD" -d1 1>/dev/null
+
+#!function body===================================================================
+#!function body===============================================
+#!function body======================
+#? amount_arg $# min_args max_args "in $FNN :: $*"
+#? USE {name_fn_}() -echo -deb
+
+#{garg}
+#
+#? cd "$1" || {
+#?    read -p "\$1: $1 not dir - enter for exit 1, ^C for interrapt in ${FNLOCK}"
+#?    exit 1
+#?}
+
+#{ptr_if}
+
+#{see_cntl}
+
+#{def_exit}
+
+#{hints}
+# -----------------------------------------------------------------------------------------
+# ------------------------------------------
+# ------------------------------------------
+# -----------------------------------------------------------------------------------------
+
+# altlinux_{name_fn_}() {
+#     :
+# }
+
+# fedora_{name_fn_}() {
+#     :
+# }
+
+# if [ $PLT_COGOS == "altlinux" ]; then
+#     altlinux_{name_fn_}
+# fi
+
+# if [ $PLT_COGOS == "fedora" ]; then
+#     fedora_{name_fn_}
+# fi
+
+unset_autoargs_{name_fn_}
+
+#!function body======================
+#!function body===============================================
+#!function body===================================================================
+
+wrp_fifs1_ cd "$PPWD" -d1 1>/dev/null

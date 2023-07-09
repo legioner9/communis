@@ -1,0 +1,10 @@
+#{pre_fn}
+
+{fn_name}(){
+    #{intro_fn}
+    #{help_cntl_fn}
+    #{default_cntl_fn}
+    #{body_fn}
+}
+
+#{post_fn}

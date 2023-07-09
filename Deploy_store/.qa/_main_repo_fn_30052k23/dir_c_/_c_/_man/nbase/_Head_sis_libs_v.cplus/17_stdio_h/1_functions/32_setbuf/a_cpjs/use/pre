@@ -1,0 +1,8 @@
+
+info:1, ftell(stream) = 15
+
+info:2, ftell(stream) = 0
+
+info:3, ftell(stream) = 15
+before flush: str = Buffered stream, fflush(pF_1) = 0
+info:4, ftell(stream) = 15

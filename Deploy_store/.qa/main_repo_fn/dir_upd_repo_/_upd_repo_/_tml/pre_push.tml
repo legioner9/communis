@@ -1,0 +1,88 @@
+#!/bin/bash
+
+#. "$HOME/.bashrc"
+
+filename=repo/.git/hooks/pre-push
+
+echo -e "${HLIGHT}---start file: $filename---${NORMAL}" # start file
+
+# ${COMMUNIS_PATH}
+
+c_up_() {
+    echo -e "${CYAN}---c_up() \$1 = $1---${NORMAL}" #started functions
+    # IFS=$IIFS
+    
+    # cd_h "$1" "$filename" "$LINENO"
+    cd "$1" || echo -e "${BLUE}---NOT FOUND $1 ---${NORMAL}" #sistem info mesage
+    
+    local dir
+    dir=$(pwd)
+    
+    for item in *; do
+        # echo -e "${GREEN}\$item = $item${NORMAL}"             #print variable
+        # echo -e "${GREEN}\${item:0:1} = ${item:0:1}${NORMAL}" #print variable
+        local item_path=$dir/$item
+        if [ -f "$item_path" ] && [ "${item:0:1}" != "_" ]; then
+            . "$item_path"
+            elif [ -d "$item_path" ] && [ "${item:0:1}" != "_" ]; then
+            
+            c_up_ "$item_path"
+            
+        fi
+        
+    done
+}
+
+c_test_() {
+    echo -e "${CYAN}---c_test_() \$1 = $1---${NORMAL}" #started functions
+    # IFS=$IIFS
+
+    # cd_h "$1" "$filename" "$LINENO"
+    cd "$1"
+
+    local dir
+    dir=$(pwd)
+
+    for item in *; do
+
+        local item_path=$dir/$item
+
+        if [ -f "$item_path" ] && [ "${item:0:1}" != "_" ] && [ "${item##*.}" = "tst" ]; then
+
+            . "$item_path"
+        elif [ -d "$item_path" ] && [ "${item:0:1}" != "_" ]; then
+
+            c_test_ "$item_path"
+
+        fi
+
+    done
+}
+
+#------------------------------------------------------
+#----------------------------
+#----------
+
+. "${COMMUNIS_PATH}/Deploy_store/.qa/sis_apps/sis_git.2/git_pre_push_fns.sh"
+
+git_pre_push_bck_hooks
+
+# c_up_ "$(pwd)"/.git/test/
+c_test_ "$(pwd)"
+
+# echo -e "${GREEN}\$(all_test) = $(all_test)${NORMAL}" #print variable
+
+# if [ "$(all_test)" -ne 0 ];then
+#     echo -e "${BLUE}---true all_test---${NORMAL}" #sistem info mesage
+#     exit 0
+# else
+#     echo -e "${BLUE}---false all_test---${NORMAL}" #sistem info mesage
+#     exit 1
+# fi
+
+#----------
+#----------------------------
+#------------------------------------------------------
+unset filename
+
+# exit 0

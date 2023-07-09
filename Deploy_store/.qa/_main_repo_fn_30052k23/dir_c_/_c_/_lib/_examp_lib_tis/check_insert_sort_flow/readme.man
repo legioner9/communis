@@ -1,0 +1,1 @@
+## [Сортировка массива вставками на Си](https://www.youtube.com/watch?v=ZxpcEQcqHWU&list=PLRDzFCPr95fLjzcv6nNdjMu_9RcZgIM9U&index=25)

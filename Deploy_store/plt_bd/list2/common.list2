@@ -1,0 +1,47 @@
+# MAIN_PATH start/communis/Deploy_store/plt_bd/main_store
+## code store
+##! start/communis -> REPOBARE/_repo/communis
+
+### snippets -> /code
+#.config/Code/User/snippets@REPOBARE/_repo/communis/Deploy_store/plt_bd/main_store/code
+#.config/Code/User/keybindings.json@REPOBARE/_repo/communis/Deploy_store/plt_bd/main_store/code
+#.vscode/launch.json@REPOBARE/_repo/communis/Deploy_store/plt_bd/main_store/code
+#.vscode/settings.json@REPOBARE/_repo/communis/Deploy_store/plt_bd/main_store/code
+#.vscode/tasks.json@REPOBARE/_repo/communis/Deploy_store/plt_bd/main_store/code
+
+### snippets -> /codium
+.config/VSCodium/User/snippets@REPOBARE/_repo/communis/Deploy_store/plt_bd/main_store/codium
+.config/VSCodium/User/keybindings.json@REPOBARE/_repo/communis/Deploy_store/plt_bd/main_store/codium
+.config/VSCodium/User/settings.json@REPOBARE/_repo/communis/Deploy_store/plt_bd/main_store/codium
+.vscode-oss/launch.json@REPOBARE/_repo/communis/Deploy_store/plt_bd/main_store/codium
+#.vscode-oss/settings.json@REPOBARE/_repo/communis/Deploy_store/plt_bd/main_store/codium
+.vscode-oss/tasks.json@REPOBARE/_repo/communis/Deploy_store/plt_bd/main_store/codium
+
+## .dot_home_files
+
+### -> dot_home_files/
+.bashrc@REPOBARE/_repo/communis/Deploy_store/plt_bd/main_store/dot_home_files
+.bashlib@REPOBARE/_repo/communis/Deploy_store/plt_bd/main_store/dot_home_files
+#.gitconfig@REPOBARE/_repo/communis/Deploy_store/plt_bd/main_store/dot_home_files
+#.gituid@REPOBARE/_repo/communis/Deploy_store/plt_bd/main_store/dot_home_files
+#.gitrepo@REPOBARE/_repo/communis/Deploy_store/plt_bd/main_store/dot_home_files
+.vimrc@REPOBARE/_repo/communis/Deploy_store/plt_bd/main_store/dot_home_files
+#.config/procps/toprc@REPOBARE/_repo/communis/Deploy_store/plt_bd/main_store/dot_home_files
+.bash_profile@REPOBARE/_repo/communis/Deploy_store/plt_bd/main_store/dot_home_files
+.profile@REPOBARE/_repo/communis/Deploy_store/plt_bd/main_store/dot_home_files
+.clang-format@REPOBARE/_repo/communis/Deploy_store/plt_bd/main_store/dot_home_files
+
+### -> dot_home_dirs/
+#.ssh@REPOBARE/_repo/communis/Deploy_store/plt_bd/main_store/dot_home_dirs
+.vim@REPOBARE/_repo/communis/Deploy_store/plt_bd/main_store/dot_home_dirs
+
+### -> dot_git_communis/
+REPOBARE/_repo/communis/.git/hooks@REPOBARE/_repo/communis/Deploy_store/plt_bd/main_store/dot_git_communis
+REPOBARE/_repo/communis/.git/config@REPOBARE/_repo/communis/Deploy_store/plt_bd/main_store/dot_git_communis
+#REPOBARE/_repo/communis/.git/path@REPOBARE/_repo/communis/Deploy_store/plt_bd/main_store/dot_git_communis
+
+### -> any_files
+## dnf_.sh
+#REPOBARE/_repo/communis/Deploy_store/.qa/menus/_set_menu/_mm_flow_/_mm_0_start_sys_/dnf_.sh@/REPOBARE/_repo/communis/Deploy_store/plt_bd/main_store/any_files
+
+### -> any_dirs

@@ -1,0 +1,263 @@
+## Поддержка содержимого каталога. Часть проекта uxcom.
+
+Пример 18
+```cpp
+/* _______________________ файл glob.h ___________________________*/
+/* ПОДДЕРЖКА СПИСКА ИМЕН ФАЙЛОВ ЗАДАННОГО КАТАЛОГА                */
+/* ______________________________________________________________ */
+#define FILF
+
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <dirent.h>
+# define DIR_SIZE 14
+extern char *malloc(unsigned); char *strdup(const char *str);
+extern char *getenv();
+extern char *strchr(char *, char),  *strrchr(char *, char);
+#define ISDIR(mode) ((mode & S_IFMT) == S_IFDIR)
+#define ISDEV(mode) ((mode & S_IFMT) & (S_IFCHR|S_IFBLK))
+#define ISREG(mode) ((mode & S_IFMT) == S_IFREG)
+#define ISEXE(mode) ((mode & S_IFMT) == S_IFREG && (mode & 0111))
+#define isdir(st)   ISDIR(st.st_mode)
+#define isdev(st)   ISDEV(st.st_mode)
+#define isreg(st)   ISREG(st.st_mode)
+#define isexe(st)   ISEXE(st.st_mode)
+#define YES      1
+#define NO       0
+#define I_DIR    0x01     /* это имя каталога      */
+#define I_EXE    0x02     /* это выполняемый файл  */
+#define I_NOSEL  0x04     /* строку нельзя выбрать */
+#define I_SYS    (I_DIR | I_EXE | I_NOSEL)
+/* Скопировано из treemk.c
+ * Лучше просто написать #include "glob.h" в файле treemk.c
+ */
+#define FAILURE (-1)            /* код неудачи */
+#define SUCCESS   1             /* код успеха  */
+#define WARNING   0             /* нефатальная ошибка */
+
+typedef struct _info {    /* структура элемента каталога */
+	char *s;          /* имя файла                   */
+	short fl;         /* флаг                        */
+	union _any{
+	   int (*act)();     /* возможно связанное действие */
+	   char *note;       /* или комментарий             */
+	   unsigned i;       /* или еще какой-то параметр   */
+	   struct _info *inf;
+	} any;            /* вспомогательное поле        */
+#ifdef FILF
+/* дополнительные необязательные параметры, получаемые из stat(); */
+	long size;
+	int uid, gid;
+	unsigned short mode;
+#endif
+} Info;
+typedef union _any Any;
+
+extern Info NullInfo;
+#define MAX_ARGV 256      /* Максимальное число имен в каталоге */
+typedef struct {          /* Содержимое каталога name */
+	time_t lastRead;  /* время последнего чтения каталога  */
+	Info *files;      /* содержимое каталога               */
+	char *name;       /* имя каталога                      */
+	ino_t ino; dev_t dev; /* I-узел и устройство           */
+	char valid;       /* существует ли этот каталог вообще */
+	short readErrors; /* != 0, если каталог не читается    */
+} DirContents;
+     /* Виды сортировки имен в каталоге */
+typedef enum { SORT_ASC, SORT_DESC, SORT_SUFX,
+	       SORT_NOSORT, SORT_SIZE }         Sort;
+extern Sort sorttype; extern int in_the_root;
+
+int   gcmps (const void *p1, const void *p2);
+Info *blkcpy(Info *v); void blkfree(Info *v);
+Info *glob(char **patvec,  char *dirname);
+Info *glb(char   *pattern, char *dirname);
+int ReadDir(char *dirname, DirContents *d);
+
+struct savech{ char *s, c; };
+#define SAVE(sv, str) (sv).s = (str); (sv).c = *(str)
+#define RESTORE(sv) if((sv).s)   *(sv).s = (sv).c
+
+/* _______________________ файл glob.c __________________________ */
+#include "glob.h"
+int in_the_root = NO;        /* читаем корневой каталог ?     */
+Sort sorttype = SORT_SUFX;   /* сортировка имен по суффиксу   */
+Info NullInfo = { NULL, 0 }; /* и прочие поля = 0 (если есть) */
+
+char *strdup(const char *s){
+   char *p = malloc(strlen(s)+1); if(p)strcpy(p, s); return p; }
+
+/* Содержится ли любой из символов в строке ? */
+int any(register char *s, register char *p){
+   while( *s ){ if( strchr(p, *s)) return YES; s++; }
+   return NO;
+}
+/* Найти последнюю точку в имени */
+static char *lastpoint (char *s)
+{   register char *last; static char no[] = "";
+    if((last = strchr(s, '.')) == NULL) return no;
+    /* если имя начинается с точки - не считать ее */
+    return( last == s ? no : last );
+}
+/* Сравнение строк с учетом их суффиксов */
+int strsfxcmp (register char *s1, register char *s2){
+    char *p1, *p2, c1, c2; int code;
+    p1 = lastpoint (s1); p2 = lastpoint (s2);
+    if (code = strcmp (p1, p2)) return code; /* суффиксы разные */
+    /* иначе: суффиксы равны. Сортируем по головам              */
+    c1 = *p1; c2 = *p2; *p1 = '\0'; *p2 = '\0'; /* временно     */
+    code = strcmp (s1, s2);
+    *p1 = c1; *p2 = c2; return code;
+}
+/* Функция сортировки */
+int gcmps(const void *p1, const void *p2){
+    Info *s1 = (Info *) p1, *s2 = (Info *) p2;
+    switch( sorttype ){
+    default:
+    case SORT_ASC:    return    strcmp(s1->s, s2->s);
+    case SORT_DESC:   return   -strcmp(s1->s, s2->s);
+    case SORT_SUFX:   return strsfxcmp(s1->s, s2->s);
+    case SORT_NOSORT: return (-1);
+#ifdef FILF
+    case SORT_SIZE:   return (s1->size <  s2->size ? -1 :
+			      s1->size == s2->size ? 0 : 1 );
+#endif
+    }
+}
+/* Копирование блока */
+Info *blkcpy(Info *v){
+    register i, len;
+    Info *vect = (Info *) malloc(((len=blklen(v)) + 1) * sizeof(Info));
+    for(i=0; i < len; i++ ) vect[i] = v[i];
+    vect[len] = NullInfo;   return vect;
+}
+/* Измерение длины блока */
+int blklen(Info *v){
+    int i = 0;
+    while( v->s ) i++, v++;
+    return i;
+}
+/* Очистка блока (уничтожение) */
+void blkfree(Info *v){
+     Info *all = v;
+     while( v->s )
+	    free((char *) v->s ), v++;
+     free((char *) all );
+}
+/* Сравнение двух блоков */
+int blkcmp( register Info *p, register Info *q ){
+    while( p->s && q->s && !strcmp(p->s, q->s) &&
+	  (p->fl & I_SYS) == (q->fl & I_SYS)){ p++; q++; }
+    if( p->s == NULL && q->s == NULL )
+	return 0;       /* совпадают   */
+    return 1;           /* различаются */
+}
+char   globchars [] = "*?[";
+Info gargv[MAX_ARGV]; int gargc;
+static short readErrors;
+void greset() { gargc = 0; readErrors = 0; }
+
+/* Расширить шаблон имен файлов в сами имена */
+static void globone(char *pattern, char dirname[]){
+     extern char *strdup(); struct stat st;
+     DIR *dirf; struct dirent *d;
+     if( any(pattern, globchars) == NO ){  /* no glob */
+	     gargv[gargc]   = NullInfo;
+	     gargv[gargc].s = strdup(pattern);
+	     gargc++;
+	     gargv[gargc]   = NullInfo;
+	     return;
+     }
+     if((dirf = opendir(dirname)) == NULL){ readErrors++; goto out; }
+     while(d = readdir(dirf)){
+       if(match(d->d_name, pattern)){
+	  char fullname[512];
+	  if( sorttype != SORT_NOSORT && !strcmp(d->d_name, "."))
+	      continue;
+	  /* В корневом каталоге имя ".." следует пропускать */
+	  if( in_the_root && !strcmp(d->d_name, "..")) continue;
+	  /* Проверка на переполнение */
+	  if( gargc == MAX_ARGV - 1){
+	      free(gargv[gargc-1].s);
+	      gargv[gargc-1].s  = strdup(" Слишком много файлов!!!");
+	      gargv[gargc-1].fl = I_SYS;
+	      break;
+	  }
+	  gargv[gargc]     = NullInfo;
+	  gargv[gargc].s   = strdup(d->d_name);
+	  sprintf(fullname, "%s/%s", dirname, d->d_name);
+	  if(stat(fullname, &st) < 0) gargv[gargc].fl |= I_NOSEL;
+	  else if(isdir(st))          gargv[gargc].fl |= I_DIR;
+	  else if(isexe(st))          gargv[gargc].fl |= I_EXE;
+#ifdef FILF
+	  gargv[gargc].size = st.st_size;
+	  gargv[gargc].uid  = st.st_uid;
+	  gargv[gargc].gid  = st.st_gid;
+	  gargv[gargc].mode = st.st_mode;
+#endif
+	  gargc++;
+       }
+     }
+     closedir(dirf);
+out: gargv[ gargc ] = NullInfo;
+}
+/* Расширить несколько шаблонов */
+Info *glob(char **patvec, char *dirname){
+      greset();
+      while(*patvec){ globone(*patvec, dirname); patvec++; }
+      qsort(gargv, gargc, sizeof(Info), gcmps);
+      return blkcpy(gargv);
+}
+Info *glb(char *pattern, char *dirname){ char *pv[2];
+      pv[0] = pattern; pv[1] = NULL; return glob(pv, dirname);
+}
+/* Прочесть содержимое каталога, если оно изменилось:
+ * Вернуть: 0  - каталог не менялся;
+ *          1  - изменился;
+ *       1000  - изменился рабочий каталог (chdir);
+ *          -1 - каталог не существует;
+ */
+int ReadDir(char *dirname, DirContents *d){
+    struct stat st; Info *newFiles;
+    int save = YES; /* сохранять метки у файлов ? */
+    int dirchanged = NO; /* сделан chdir() ? */
+
+    /* каталог мог быть удален, а мы об этом не извещены */
+    if( stat(dirname, &st) < 0 ){
+	d->valid = NO; d->lastRead = 0L;
+	if(d->files) blkfree(d->files);
+	d->files = blkcpy( &NullInfo );
+	return (-1); /* не существует */
+    } else d->valid = YES;
+    /* не изменился ли адрес каталога, хранимого в *d ? */
+    if(d->ino != st.st_ino || d->dev != st.st_dev){ /* изменился */
+       d->ino  = st.st_ino;   d->dev  = st.st_dev;
+       save = NO; d->lastRead = 0L; dirchanged = YES;
+    }
+    /* не изменилось ли имя каталога ? */
+    if( !d->name || strcmp(d->name, dirname)){
+	if(d->name) free(d->name); d->name = strdup(dirname);
+	/* save=NO; d->lastRead = 0; */
+    }
+    /* проверим, был ли модифицирован каталог ? */
+    if( save==YES && d->files && st.st_mtime == d->lastRead )
+	return 0;       /* содержимое каталога не менялось */
+    d->lastRead = st.st_mtime;
+    newFiles = glb("*", d->name);  /* прочесть содержимое каталога */
+    if(save == YES && d->files){
+	register Info *p, *q;
+	if( !blkcmp(newFiles, d->files)){
+	     blkfree(newFiles); return 0;  /* не изменилось */
+	} /* иначе сохранить пометки */
+	for(p= d->files; p->s; p++)
+	  for(q= newFiles; q->s; ++q)
+	    if( !strcmp(p->s, q->s)){
+		q->fl |= p->fl & ~I_SYS;   break;
+	    }
+    }
+    if(d->files) blkfree(d->files);
+    d->files = newFiles; d->readErrors = readErrors;
+    return 1 + (dirchanged ? 999:0);
+    /* каталог изменился */
+}
+```

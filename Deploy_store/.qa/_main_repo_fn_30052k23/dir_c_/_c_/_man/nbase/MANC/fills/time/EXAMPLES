@@ -1,0 +1,30 @@
+https : // pubs.opengroup.org/onlinepubs/9699919799/functions/time.html
+
+#include <stdio.h>
+#include <time.h>
+
+        int
+        main(void)
+{
+    time_t result;
+
+    result = time(NULL);
+    printf("%s%ju secs since the Epoch\n", asctime(localtime(&result)), (uintmax_t)result);
+    return (0);
+}
+
+Следующий пример получает текущее время, выводит его в формате пользователя и выводит количество минут до события,
+    которое приурочено.
+
+#include <stdio.h>
+#include <time.h>
+... 
+time_t now;
+int minutes_to_event;
+... 
+time(&now);
+minutes_to_event = ...;
+printf("The time is ");
+puts(asctime(localtime(&now)));
+printf("There are %d minutes to the event.\n", minutes_to_event);
+...

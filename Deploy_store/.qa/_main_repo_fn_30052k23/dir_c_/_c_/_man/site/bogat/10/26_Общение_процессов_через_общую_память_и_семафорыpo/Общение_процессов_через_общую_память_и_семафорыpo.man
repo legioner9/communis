@@ -1,0 +1,310 @@
+## Общение процессов через общую память и семафоры.
+
+Пример 26
+```cpp
+/* Общение процессов при помощи общей памяти и семафоров.
+ * Вызов:       shms &
+ *              shmc a & shmc b & shmc c &
+ */
+/* --------------------------- файл shm.h ----------------------- */
+#include <stdio.h>
+#include <sys/types.h>
+#include <sys/ipc.h>
+#include <sys/shm.h>
+#include <sys/sem.h>
+#include <signal.h>
+#include <errno.h>
+extern errno;           /* Системный код ошибки */
+struct connect {        /* Структура почтового ящика */
+	int pid; int msgnum; int max;
+	char message[128];      /* текст сообщения */
+};
+#define NSEMS   3       /* число семафоров */
+	/* Имена семафоров */
+#define EMPTY    0       /* 1 - ящик пуст; 0 - содержит письмо */
+#define NOTEMPTY 1       /* негатив для EMPTY                  */
+#define ACCESS   2       /* 1 - ящик доступен (закрыт);
+			  * 0 - ящик уже открыт кем-то еще     */
+	/* Значения семафоров */
+#define YES     1
+#define NO      0
+	/* Операции */
+#define OPEN    1
+#define CLOSE  (-1)
+#define TEST_NO 0
+
+#ifdef COMMENT
+Алгоритм одновременного изменения семафоров: semop
+   Дано:
+аргумент: число семафоров                         : nsems
+аргумент: величины изменения                      : sem_op[i]
+в ядре:   текущие значения семафоров группы sem_id: sem[i]
+   Алгоритм:
+
+     again:  Сохранить значения всех семафоров (для отмены изменений);
+	     for(i=0; i<nsems; i++)
+     /* OPEN */  if( sem_op[i] > 0 ){
+		     sem[i] += sem_op[i];
+		     разбудитьЖдущихСобытие( "sem[i]++" );
+     /* CLOSE */ }else if( sem_op[i] < 0 ){
+		     if((newsm = sem[i] + sem_op[i]) >= 0 ){
+			 sem[i] = newsm;
+			 if( sem[i] == 0 )
+			     разбудитьЖдущихСобытие( "sem[i]==0" );
+		     }else{
+			 восстановитьВсеСемафоры;
+			 ждатьСобытие( "sem[i]++" );
+			 goto again;
+		     }
+     /* TEST0 */ }else{   /* sem_op[i] == 0 */
+			 if( sem[i] != 0 ){
+			     восстановитьВсеСемафоры;
+			     ждатьСобытие( "sem[i]==0" );
+			     goto again;
+			  }
+		 }
+
+   Алгоритм синхронизации в нашей схеме КЛИЕНТ-СЕРВЕР:
+|----------------------------------------------------------------|
+|семафоры:           EMPTY               ACCESS                  |
+|----------------------------------------------------------------|
+|начальное значение:  YES                  YES                   |
+|----------------------------------------------------------------|
+
+			     СЕРВЕР
+|================================================================|
+|loop:                                                           |
+|----------------------------------------------------------------|
+|ждать:               NO                   YES                   |
+|сделать:             NO(test0)            NO(close)             |
+|----------------------------------------------------------------|
+|                     прочесть почту;                            |
+|----------------------------------------------------------------|
+|из:                  NO                   NO                    |
+|сделать:             YES(open)            YES(open)             |
+|----------------------------------------------------------------|
+|                     goto loop;                                 |
+|================================================================|
+
+			     КЛИЕНТ
+|================================================================|
+|loop:                                                           |
+|----------------------------------------------------------------|
+|ждать:              YES                   YES                   |
+|сделать:            YES(test!=0)          NO(close)             |
+|----------------------------------------------------------------|
+|                    записать почту;                             |
+|----------------------------------------------------------------|
+|из:                  YES                  NO                    |
+|сделать:             NO(close)            YES(open)             |
+|----------------------------------------------------------------|
+|                     goto loop;                                 |
+|================================================================|
+
+ К сожалению, операции test!=0 не существует - приходится вводить
+ дополнительный семафор NOTEMPTY, негативный для EMPTY:
+|----------------------------------------------------------------|
+|семафоры:           EMPTY    NOTEMPTY   ACCESS                  |
+|----------------------------------------------------------------|
+|начальное значение:  YES       NO         YES                   |
+|----------------------------------------------------------------|
+
+			     СЕРВЕР
+|================================================================|
+|loop:                                                           |
+|----------------------------------------------------------------|
+|ждать:               NO         -         YES                   |
+|сделать:             NO(test0)  -         NO(close)             |
+|----------------------------------------------------------------|
+|                     прочесть почту;                            |
+|----------------------------------------------------------------|
+|из:                  NO         YES       NO                    |
+|сделать:             YES(open)  NO(close) YES(open)             |
+|----------------------------------------------------------------|
+|                     goto loop;                                 |
+|================================================================|
+
+			     КЛИЕНТ
+|================================================================|
+|loop:                                                           |
+|----------------------------------------------------------------|
+|ждать:              -           NO        YES                   |
+|сделать:            -           NO(test0) NO(close)             |
+|----------------------------------------------------------------|
+|                    записать почту;                             |
+|----------------------------------------------------------------|
+|из:                  YES        NO        NO                    |
+|сделать:             NO(close)  YES(open) YES(open)             |
+|----------------------------------------------------------------|
+|                     goto loop;                                 |
+|================================================================|
+#endif /*COMMENT*/
+
+/* Общая часть сервера и клиента ------------------------------- */
+key_t key = 1917;       /* Уникальный ключ для доступа           */
+int   shm_id;           /* Дескриптор для доступа к общей памяти */
+int   sem_id;           /* Дескриптор для доступа к семафорам    */
+char  name[40];         /* имя программы                         */
+
+char far *addr;
+struct connect far *caddr;
+struct sembuf ops[NSEMS];
+			/* EMPTY   NOTEMPTY   ACCESS */
+short values[NSEMS] = {    YES,    NO,        YES     };
+
+void semtell(msg, name) char *msg, *name; { int i;
+	semctl(sem_id, NSEMS, GETALL, values);
+	printf( "%s %-10s: значения семафоров:", name, msg);
+	for(i=0; i < NSEMS; i++) printf( " %d", values[i]);
+	putchar('\n');
+}
+
+void inisem(){
+	register i;
+	for(i=0; i < NSEMS; i++ ) ops[i].sem_flg = 0;
+}
+/* --------------------------- файл shms.c ----------------------- */
+/* Shared memory server */
+#include "shm.h"
+int npack;              /* номер сообщения */
+void cleanup(sig){
+	/* Уничтожить сегмент общей памяти (это нужно делать явно) */
+	shmctl( shm_id, IPC_RMID, NULL );
+	/* Уничтожить семафоры */
+	semctl( sem_id, NSEMS, IPC_RMID, NULL );
+	if( npack ) printf( "\t** Всего было %d сообщений **\n", npack+1);
+	exit(0);
+}
+void main(){
+	register i; int pid = getpid();
+	FILE *fout;
+
+	sprintf( name, "Server-%03d", pid );
+	for( i = 1; i <= SIGTERM; i++ )
+		signal( i, cleanup );
+
+	/* Создать разделяемый сегмент */
+	if((shm_id = shmget( key, sizeof(struct connect),
+			     0644 | IPC_CREAT )) < 0 ){
+		perror( "shmget" ) ; exit(1);
+	}
+
+	/* Подключить общий сегмент к произвольному адресу */
+	if((addr = (char far *) shmat( shm_id, NULL, 0 )) == NULL ){
+		perror( "shmat" ); cleanup();
+	}
+	caddr = (struct connect far *) addr;
+
+	/* Создать группу из NSEMS семафоров */
+	if((sem_id = semget( key, NSEMS, 0644 |IPC_CREAT |IPC_EXCL)) < 0){
+	  if(errno == EEXIST){ printf( "Сервер уже запущен\n");exit(2); }
+	  else{                perror( "semget" ); cleanup();           }
+	}
+	/* Загрузить начальные значения семафоров */
+	semctl( sem_id, NSEMS, SETALL, values );
+
+	setbuf(stdout, NULL);
+	inisem(); printf( "Server is up now. Читай файл MESSAGES.\n");
+
+	fout = fopen( "MESSAGES", "w");
+	for(;;npack++){
+		printf( "%s: ждет почты\n", name );
+		semtell("Вход", name);
+		ops[0].sem_num = EMPTY;    ops[0].sem_op = TEST_NO;
+		ops[1].sem_num = ACCESS;   ops[1].sem_op = CLOSE;
+		semop( sem_id, ops, 2      /* сразу два семафора */);
+
+		printf( "%s: GOT-%02d/%02d от %d \"%s\"\n", name,
+		  caddr->msgnum, caddr->max, caddr->pid, caddr->message);
+		fprintf( fout, "#%03d %02d/%02d от %d \"%s\"\n", npack,
+		  caddr->msgnum, caddr->max, caddr->pid, caddr->message);
+		if( ! strcmp(caddr->message, "-exit" )){
+			printf( "%s: завершает работу.\n", name );
+			cleanup();
+		}
+
+		semtell("Выход", name);
+		ops[0].sem_num = EMPTY   ; ops[0].sem_op = OPEN;
+		ops[1].sem_num = NOTEMPTY; ops[1].sem_op = CLOSE;
+		ops[2].sem_num = ACCESS  ; ops[2].sem_op = OPEN;
+		semop( sem_id, ops, 3 /* сразу три семафора */);
+	}
+	/*NOTREACHED*/
+}
+
+/* --------------------------- файл shmc.c ----------------------- */
+/* Shared memory client */
+#include "shm.h"
+
+void ignsigs(sig){
+	register i;
+	for( i = 1; i <= SIGTERM; i++ )
+		signal( i, ignsigs );
+	printf( "Клиент игнорирует сигналы,\n\
+чтобы не оставлять закрытых семафоров в случае своей смерти.\n" );
+}
+
+void main(argc, argv) char **argv; {
+	int pid = getpid();
+	int i, ntimes = 60;
+
+	if( argc < 2 ){
+    fprintf( stderr, "Вызов: %s сообщение [числоПовторов]\n", argv[0] );
+    fprintf( stderr, "сообщение \"-exit\" завершает сервер\n");
+    fprintf( stderr, "сообщение \"-info\" выдает значения семафоров\n");
+		exit(1);
+	}
+	if( argc > 2 ) ntimes = atoi(argv[2]);
+	sprintf( name, "Client-%03d", pid);
+	ignsigs(); srand( pid );
+
+	/* Получить доступ к разделяемому сегменту */
+	if((shm_id = shmget( key, sizeof(struct connect), 0644)) < 0 ){
+		perror( "shmget" ); exit(2);
+	}
+
+	/* Подключить общий сегмент к произвольному адресу */
+	if((addr = (char far *) shmat( shm_id, NULL, 0 )) == NULL ){
+		perror( "shmat" ); exit(3);
+	}
+	caddr = (struct connect far *) addr;
+
+	/* Получить доступ к семафорам */
+	if((sem_id = semget( key, NSEMS, 0644)) < 0 ){
+		perror( "semget" ); exit(4);
+	}
+	setbuf(stdout, NULL);
+	inisem();
+
+	if( !strcmp(argv[1], "-info")){
+		semtell("Информация", name); exit(0);
+	}
+
+	for( i=0; i < ntimes; i++ ){
+		printf( "%s: ждет пустого ящика\n", name);
+		semtell("Вход", name);
+		ops[0].sem_num = NOTEMPTY; ops[0].sem_op = TEST_NO;
+		ops[1].sem_num = ACCESS  ; ops[1].sem_op = CLOSE;
+		if( semop( sem_id, ops, 2 /* сразу два семафора */) < 0)
+			goto err;
+
+		caddr->pid = pid; caddr->msgnum = i; caddr->max = ntimes;
+		strncpy( caddr->message, argv[1],
+			 sizeof(caddr->message) - 1);
+		printf( "%s: PUT-%02d \"%s\"\n", name, i, argv[1]);
+
+		semtell("Выход", name);
+		ops[0].sem_num = EMPTY   ; ops[0].sem_op = CLOSE;
+		ops[1].sem_num = NOTEMPTY; ops[1].sem_op = OPEN;
+		ops[2].sem_num = ACCESS  ; ops[2].sem_op = OPEN;
+		if( semop( sem_id, ops, 3 /* сразу три семафора */) < 0)
+			goto err;
+		if( rand()%2 ) sleep(2);  /* пауза */
+
+	}
+	shmdt( addr );  /* Отключиться от общего сегмента */
+	exit(0);
+err:
+	perror("semop");
+	exit(5);
+}

@@ -1,0 +1,9 @@
+# npm ping in ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_mm_npm_/_mm_npm_/_man/help
+
+npm notice PING https://registry.npmjs.org/
+npm notice PONG 0.539ms
+
+# npm ping -h in ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_mm_npm_/_mm_npm_/_man/help
+
+npm ping
+ping registry

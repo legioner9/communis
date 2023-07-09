@@ -1,0 +1,59 @@
+-b (--bytes=LIST) — номер байта, набор или диапазон байтов, подлежащих вырезанию.
+-c (--characters=LIST) — символ, который следует вырезать. Также можно указывать набор либо диапазон символов.
+-d (--delimiter=DELIM) — с помощью этой опции пользователь устанавливает свой разделитель вместо стандартного TAB.
+-f (--fields=LIST) — перечень полей для вырезания.
+-s (--only-delimited) — если была применена эта опция, cut не выводит строки, где нет разделителя.
+--complement — задает байты, символы или поля, которые останутся в файле или тексте из стандартного ввода. Все остальное будет вырезано.
+--output-delimiter=STRING — по умолчанию выходной разделитель соответствует входному. Эта опция позволяет задать другой выходной разделитель.
+-z, --zero-terminated — вместо символа новой строки разделителем будет NULL.\
+
+Чтобы вырезать из текста, напечатанного через стандартный ввод, первый символ, команда cut должна иметь вид:
+echo "The sky was yellow as brass." | cut -b 1
+
+echo "Still I opened the gate, and put the petrol pump in readiness." | cut -b 38-43
+petrol
+
+
+Если же необходимо вырезать  несколько символов, их номера указывают через запятую:
+echo "I looked at my watch; not eight o'clock." | cut -b 5,8,17
+echo "Still I opened the gate, and put the petrol pump in readiness." | cut -b 38-43
+
+cut_command_example.txt
+
+Winter: white: snow: frost
+Spring: green: grass: warm
+Summer: colorful: blossom: hot
+Autumn: yellow: leaves: cool
+
+Теперь рассмотрим те варианты использования команды, где нужно вырезать символы из текста, который находится в файле. Стандартная запись в терминале выглядит так:
+cut -b 1,9 cut_command_example.txt
+
+echo "Still I opened the gate, and put the petrol pump in readiness." | cut -b 38-43
+petrol
+
+cut -b 1,9 cut_command_example.txt
+Ww
+Sg
+Sc
+Ay
+
+cut -b 12-20 cut_command_example.txt
+te: snow:
+en: grass
+orful: bl
+low: leav
+
+cut -b 1-7 cut_command_example.txt | sort
+Autumn:
+Spring:
+Summer:
+Winter:
+
+начиная с пятого и заканчивая последним, нужно поставить дефис справа от числа:
+
+cut -b 5- cut_command_example.txt
+cut -b 5- cut_command_example.txt
+
+начиная с первого байта и заканчивая шестнадцатым, дефис должен находиться справа от числа:
+
+cut -b -25 cut_command_example.txt

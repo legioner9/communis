@@ -1,0 +1,5 @@
+# https://www.cyberciti.biz/faq/linux-unix-bsd-xargs-construct-argument-lists-utility/
+
+# Чтобы скопировать все медиафайлы в другое место
+
+# $ find  / share / media / mp3 /  -type f -name  "* .mp3"  -print0  |  xargs  -0  -r  -I  file  cp  -v  -p  file  --target-directory = / bakup / iscsi / mp3

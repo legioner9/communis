@@ -1,0 +1,28 @@
+## [введение в асинхронный ввод-вывод POSIX](https://ru.manpages.org/aio/7)
+
+Представленная далее программа открывает все файлы, указанные в параметрах командной строки и ставит в очередь запрос на полученные файловые дескрипторы с помощью aio_read(3). Затем программа входит в цикл, в котором периодически следит за всеми выполняемыми операциями ввода-вывода с помощью aio_error(3). Для каждого запроса ввода-вывода настроено получение уведомления посредством сигнала. После завершения всех запросов ввода-вывода, программа возвращает их состояние с помощью aio_return(3).
+Сигнал SIGQUIT (генерируемый нажатием control-\) заставляет программу отменить все невыполненные запросы с помощью aio_cancel(3).
+
+Вот результат работы программы. В этом примере программа ставит в очередь два запроса для стандартного ввода, и они отрабатываются двумя введёнными строками «abc» и «x».
+
+    $ ./a.out /dev/stdin /dev/stdin
+    opened /dev/stdin on descriptor 3
+    opened /dev/stdin on descriptor 4
+    aio_error():
+        for request 0 (descriptor 3): In progress
+        for request 1 (descriptor 4): In progress
+    abc
+    I/O completion signal received
+    aio_error():
+        for request 0 (descriptor 3): I/O succeeded
+        for request 1 (descriptor 4): In progress
+    aio_error():
+        for request 1 (descriptor 4): In progress
+    x
+    I/O completion signal received
+    aio_error():
+        for request 1 (descriptor 4): I/O succeeded
+    All I/O requests completed
+    aio_return():
+        for request 0 (descriptor 3): 4
+        for request 1 (descriptor 4): 2 

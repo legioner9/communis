@@ -1,0 +1,15 @@
+@startuml
+
+garg2e2_ -> wrp2_ 
+farg2e2_ -> wrp2_
+echo_deb_ -> wrp2_
+wrp2_ -> wrp2_:is_num
+wrp2_ -> wrp2_:exit_err_wrp2_
+wrp2_ -> wrp2_:exit_reg_wrp2_
+wrp2_ -> wrp2_:unset_autoargs_wrp2_
+garg2e2_ o-> wrp2_ 
+plt_exit o-> wrp2_
+wrp2_ o-> wrp2_:do_n_wrp2_
+is_est_ o-> wrp2_
+
+@enduml

@@ -1,0 +1,4 @@
+#include <sys/time.h>
+#include <sys/resource.h>
+int getpriority(int which, id_t who);
+int setpriority(int which, id_t who, int prio);

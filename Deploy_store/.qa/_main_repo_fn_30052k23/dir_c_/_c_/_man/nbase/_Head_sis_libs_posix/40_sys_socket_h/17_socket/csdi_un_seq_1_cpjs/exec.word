@@ -1,0 +1,2 @@
+from>[extexa] csdi {un,seq} from https://ru.manpages.org/unix/7->main.server_summ._c 
+do> main.server_summ._c, main.server_concat._c => csdi{un,seq}[sum], csdi{un,seq}[concat] 

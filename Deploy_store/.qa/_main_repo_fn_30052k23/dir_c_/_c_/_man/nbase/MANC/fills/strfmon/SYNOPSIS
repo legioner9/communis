@@ -1,0 +1,6 @@
+#include <monetary.h>
+
+ssize_t strfmon(char *s, size_t max, const char *format,
+...);
+ssize_t strfmon_l(char *s, size_t max, locale_t locale,
+const char *" format , ...);

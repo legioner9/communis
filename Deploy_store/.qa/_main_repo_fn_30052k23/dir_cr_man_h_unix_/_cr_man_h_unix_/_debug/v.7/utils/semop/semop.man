@@ -1,0 +1,155 @@
+### UP
+[semop](##semop)
+[H_FILE](##H_FILE)
+[U_SYNOPSIS](##U_SYNOPSIS)
+[U_DESCRIPTION_ru](##U_DESCRIPTION)
+[U_DESCRIPTION](##U_DESCRIPTION_ru)
+[U_RETURN](##U_RETURN)
+[U_RETURN_ru](##U_RETURN_ru)
+[U_EXAMPLES](##U_EXAMPLES)
+[U_EXAMPLES_ru](##U_EXAMPLES_ru)
+[U_ERRORS](##U_ERRORS)
+[U_BOOKS](##U_BOOKS)
+[U_BOOKS_ru](##U_BOOKS_ru)
+[U_COMPIL_ARG](##U_COMPIL_ARG)
+[U_CONTENT](##U_CONTENT)
+
+[cat_hfiles](../../cat_hfiles.md)
+[cat_utils](../../cat_utils.md)
+[cat_structs](../../cat_structs.md)
+[cat_param](../../cat_params.md)
+[cat_macros](../../cat_macross.md)
+[cat_const](../../cat_consts.md)
+[cat_type](../../cat_types.md)
+
+<<DESCRIPTION>>
+
+[UP](###UP)
+# semop
+MAIN :semop:
+[manpages.org](https://www.google.ru/search?q=semop+site%3Ahttps%3A%2F%2Fmanpages.org)
+[pubs.opengroup.org](https://www.google.com/search?q=semop+https%3A%2F%2Fpubs.opengroup.org)
+[www.opennet.ru](http://www.opennet.ru/man.shtml?category=2&topic=semop)
+[man7.org](https://www.google.ru/search?q=semop+site%3Ahttps%3A%2F%2Fman7.org%2Flinux%2Fman-pages)
+[en.cppreference.com](https://www.google.com/search?q=semop+en.cppreference.com)
+[www.mankier.com](https://www.mankier.com/?q=semop)
+
+books
+[cpp.com.ru](https://yandex.ru/search/?text=semop+site%3Ahttps%3A%2F%2Fcpp.com.ru)
+[linuxhint.com](https://www.google.ru/search?q=semop+site%3Ahttps%3A%2F%2Flinuxhint.com)
+[gnu.org](https://www.google.ru/search?q=semop+site%3Ahttps%3A%2F%2Fwww.gnu.org%2Fsoftware%2Flibc%2Fmanual)
+
+examples
+[cpp.hotexamples.com](https://cpp.hotexamples.com/examples/-/-/semop/cpp-semop-function-examples.html)
+
+classic
+[bogatyrev_c_unix](https://www.google.com/search?q=semop+site%3Ahttps%3A%2F%2Fcpp.com.ru%2Fbogatyrev_c_unix)
+[kr_cbook](https://www.google.com/search?q=semop+site%3Ahttps%3A%2F%2Fcpp.com.ru%2Fkr_cbook)
+
+eners
+[pubs.opengroup.org](https://pubs.opengroup.org/onlinepubs/9699919799/idx/head.html)
+
+
+
+
+[UP](###UP)
+## H_FILE [sys_sem_h.md](../../hfiles/sys_sem_h.md)
+## U_SYNOPSIS
+:semop:
+
+
+
+[UP](###UP)
+## U_DESCRIPTION_ru
+:semop:
+[ru.manpages.org](https://www.google.ru/search?q=semop+site%3Ahttps%3A%2F%2Fru.manpages.org)
+[man7.org](https://www.google.ru/search?q=semop+site%3Ahttps%3A%2F%2Fman7.org%2Flinux%2Fman-pages)
+[next](##U_DESCRIPTION)
+
+
+
+[UP](###UP)
+## U_DESCRIPTION
+:semop:
+[ru.manpages.org](https://www.google.ru/search?q=semop+site%3Ahttps%3A%2F%2Fru.manpages.org)
+[cplusplus.com](https://www.cplusplus.com/reference/)
+[next](##U_RETURN)
+
+
+
+[UP](###UP)
+## U_RETURN
+:semop:
+[man7.org](https://www.google.ru/search?q=semop+site%3Ahttps%3A%2F%2Fman7.org%2Flinux%2Fman-pages)
+[next](##U_RETURN_ru)
+
+
+
+[UP](###UP)
+## U_RETURN_ru
+:semop:
+[ru.manpages.org](https://www.google.ru/search?q=semop+site%3Ahttps%3A%2F%2Fru.manpages.org)
+[next](##U_EXAMPLES)
+
+
+
+[UP](###UP)
+## U_EXAMPLES
+:semop:
+[cpp.hotexamples.com](https://cpp.hotexamples.com/examples/-/-/semop/cpp-semop-function-examples.html)
+[linuxhint.com](https://www.google.ru/search?q=semop+site%3Ahttps%3A%2F%2Flinuxhint.com)
+[next](##U_EXAMPLES_ru)
+
+
+
+[UP](###UP)
+## U_EXAMPLES_ru
+:semop:
+[next](##U_ERRORS)
+
+
+
+[UP](###UP)
+## U_ERRORS
+:semop:
+[man7.org](https://www.google.ru/search?q=semop+site%3Ahttps%3A%2F%2Fman7.org%2Flinux%2Fman-pages)
+[next](##U_ERRORS_ru)
+
+
+## U_ERRORS_ru
+:semop:
+[ru.manpages.org](https://www.google.ru/search?q=semop+site%3Ahttps%3A%2F%2Fru.manpages.org)
+[next](##U_BOOKS)
+
+
+
+[UP](###UP)
+## U_BOOKS
+:semop:
+[linuxhint.com](https://www.google.ru/search?q=semop+site%3Ahttps%3A%2F%2Flinuxhint.com)
+[gnu.org](https://www.google.ru/search?q=semop+site%3Ahttps%3A%2F%2Fwww.gnu.org%2Fsoftware%2Flibc%2Fmanual)
+[next](##U_BOOKS_ru)
+
+
+
+[UP](###UP)
+## U_BOOKS_ru
+:semop:
+[cpp.com.ru](https://www.google.ru/search?q=semop+site%3Ahttps%3A%2F%2Fcpp.com.ru)
+[next](##STRUCTS)
+
+
+
+[UP](###UP)
+## U_COMPIL_ARG [<^>]
+:semop:
+[ru.manpages.org](https://www.google.ru/search?q=semop+site%3Ahttps%3A%2F%2Fru.manpages.org)
+[UP](###UP)
+
+[UP](###UP)
+## U_CONTENT
+:33333:
+[33333.cnt](../../contents/33333.cnt)
+[next](##UP)
+
+[UP](###UP)

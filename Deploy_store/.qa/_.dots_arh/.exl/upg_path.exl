@@ -1,0 +1,49 @@
+#! ${path_file} global path to file
+#! 'w' "w" - single word
+
+eval cr_f_ ${path_file} --vi0 '\${PATH_TOSHIBA_EXT}' --vr0 "${PATH_TOSHIBA_EXT}"
+eval cr_f_ ${path_file} --vi0 '\${PATH_MY_ONE}' --vr0 "${PATH_MY_ONE}"
+eval cr_f_ ${path_file} --vi0 '\${PATH_TOSH}' --vr0 "${PATH_TOSH}"
+
+eval cr_f_ ${path_file} --vi0 "${HOME}" --vr0 '\${HOME}'
+eval cr_f_ ${path_file} --vi0 "${PATH_COMMUNIS}" --vr0 '\${PATH_COMMUNIS}'
+eval cr_f_ ${path_file} --vi0 "${PATH_CURR_REPO}" --vr0 '\${PATH_CURR_REPO}'
+
+eval cr_f_ ${path_file} --vi0 "${HOME}" --vr0 '\$HOME'
+eval cr_f_ ${path_file} --vi0 "${PATH_COMMUNIS}" --vr0 '\$PATH_COMMUNIS'
+eval cr_f_ ${path_file} --vi0 "${PATH_CURR_REPO}" --vr0 '\$PATH_CURR_REPO'
+
+
+eval cr_f_ ${path_file} --vi0 '\${PLT_PATH}' --vr0 "${PLT_PATH}"
+eval cr_f_ ${path_file} --vi0 '\${FONSH_PATH}' --vr0 "${FONSH_PATH}"
+eval cr_f_ ${path_file} --vi0 '\${PATH_CURR_REPO}' --vr0 "${PATH_CURR_REPO}"
+
+#? .args .canons  .config .exl .flumen_tempus .ifs .insert .lists .man .pullsh  .puml .tml  .tst  .var .vexillum  .warg
+eval cr_f_ ${path_file} --vi0 '\${PATH_ARGS_DIR}' --vr0 "${PATH_ARGS_DIR}"
+eval cr_f_ ${path_file} --vi0 '\${PATH_CANONS_DIR}' --vr0 "${PATH_CANONS_DIR}"
+eval cr_f_ ${path_file} --vi0 '\${PATH_CONFIG_DIR}' --vr0 "${PATH_CONFIG_DIR}"
+eval cr_f_ ${path_file} --vi0 '\${PATH_EXL_DIR}' --vr0 "${PATH_EXL_DIR}"
+eval cr_f_ ${path_file} --vi0 '\${PATH_FLUMEN_TEMPUS_DIR}' --vr0 "${PATH_FLUMEN_TEMPUS_DIR}"
+eval cr_f_ ${path_file} --vi0 '\${PATH_IFS_DIR}' --vr0 "${PATH_IFS_DIR}"
+eval cr_f_ ${path_file} --vi0 '\${PATH_INSERT_DIR}' --vr0 "${PATH_INSERT_DIR}"
+eval cr_f_ ${path_file} --vi0 '\${PATH_LISTS_DIR}' --vr0 "${PATH_LISTS_DIR}"
+eval cr_f_ ${path_file} --vi0 '\${PATH_MAN_DIR}' --vr0 "${PATH_MAN_DIR}"
+eval cr_f_ ${path_file} --vi0 '\${PATH_PULLSH_DIR}' --vr0 "${PATH_PULLSH_DIR}"
+eval cr_f_ ${path_file} --vi0 '\${PATH_PUML_DIR}' --vr0 "${PATH_PUML_DIR}"
+eval cr_f_ ${path_file} --vi0 '\${PATH_TML_DIR}' --vr0 "${PATH_TML_DIR}"
+eval cr_f_ ${path_file} --vi0 '\${PATH_TST_DIR}' --vr0 "${PATH_TST_DIR}"
+eval cr_f_ ${path_file} --vi0 '\${PATH_VAR_DIR}' --vr0 "${PATH_VAR_DIR}"
+eval cr_f_ ${path_file} --vi0 '\${PATH_VEXILLUM_DIR}' --vr0 "${PATH_VEXILLUM_DIR}"
+eval cr_f_ ${path_file} --vi0 '\${PATH_WARG_DIR}' --vr0 "${PATH_WARG_DIR}"
+
+eval cr_f_ ${path_file} --vi0 '\${PATH_MAIN_REPO_FN_DIR}' --vr0 "${PATH_MAIN_REPO_FN_DIR}"
+
+eval cr_f_ ${path_file} --vi0 '\${PATH_COMMUNIS}' --vr0 "${PATH_COMMUNIS}"
+eval cr_f_ ${path_file} --vi0 '\${HOME}' --vr0 "${HOME}"
+
+eval cr_f_ ${path_file} --vi0 '\${PATH_IFS_DIR}' --vr0 'start/communis/Deploy_store/.qa/.ifs'
+eval cr_f_ ${path_file} --vi0 '\${PATH_CONFIG_DIR}' --vr0 'start/communis/Deploy_store/.qa/.config'
+eval cr_f_ ${path_file} --vi0 '\${PATH_INSERT_DIR}' --vr0 'start/communis/Deploy_store/.qa/.insert'
+eval cr_f_ ${path_file} --vi0 '\${PATH_VEXILLUM_DIR}' --vr0 'start/communis/Deploy_store/.qa/.vexillum'
+
+

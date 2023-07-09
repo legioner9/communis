@@ -1,0 +1,22 @@
+#!/bin/bash
+
+#. "$HOME/.bashrc"
+
+filename="${COMMUNIS_PATH}/Deploy_store/.qa/_Bash_Projects/_UpErrLevels/v3_up_2_level/truncus_tst/virga_tsa/tsa_files/a.tsa" 
+
+# echo -e "${HLIGHT}---start file://$filename ---${NORMAL}" # start file
+
+idir=$(pwd)
+
+# cd "$(prs_f -d $filename)" || qq_exit "$(prs_f -d $filename) not found"
+
+
+garg_ $(prs_f -n $filename) $@ 1>/dev/null
+
+ret_true_fail_ 1 "$filename"
+
+
+
+cd "$idir"
+
+unset filename

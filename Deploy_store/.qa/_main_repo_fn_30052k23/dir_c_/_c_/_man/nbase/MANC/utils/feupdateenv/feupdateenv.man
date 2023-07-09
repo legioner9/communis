@@ -1,0 +1,266 @@
+### UP
+[feupdateenv](##feupdateenv)
+[MAIN](##MAIN)
+[MAIN_ru](##MAIN_ru)
+[ANCORS](##ANCORS)
+[ISU](##ISU)
+[inet](##A_inet)
+[inet](##books_inet)
+[inet](##examples_inet)
+[inet](##classic_inet)
+[inet](##enters_inet)
+[inet](##issue_code_inet)
+[H_FILE](##H_FILE)
+[p_SYNOPSIS](##p_SYNOPSIS)
+[p_RETURN](##p_RETURN)
+[p_RETURN_ru](##p_RETURN_ru)
+[p_BUGS](##p_BUGS)
+[p_DESCRIPTION_ru](##p_DESCRIPTION_ru)
+[p_DESCRIPTION](##p_DESCRIPTION)
+[p_MIRRORS](##p_MIRRORS)
+[p_EXAMPLES](##p_EXAMPLES)
+[p_CODE_h](##p_CODE_h)
+[p_CODE_c](##p_CODE_c)
+[p_CODE_m](##p_CODE_m)
+[p_ERRORS](##p_ERRORS)
+[p_BOOKS](##p_BOOKS)
+[p_BOOKS_ru](##p_BOOKS_ru)
+[p_CONTENT](##p_CONTENT)
+
+[cat_hfiles](../../cat_hfiles.md)
+[cat_utils](../../cat_utils.md)
+[cat_structs](../../cat_structs.md)
+[cat_param](../../cat_params.md)
+[cat_macros](../../cat_macross.md)
+[cat_const](../../cat_consts.md)
+[cat_type](../../cat_types.md)
+[cat_any](../cat_anys.md)
+
+
+[UP](###UP)
+## MAIN
+:feupdateenv:
+[next](##MAIN_ru)
+
+<<MAIN>>
+[MAIN](../../fills/feupdateenv/MAIN)
+
+
+
+[UP](###UP)
+## MAIN_ru
+:feupdateenv:
+[next](##ANCORS)
+
+<<MAIN_ru>>
+[MAIN_ru](../../fills/feupdateenv/MAIN_ru)
+
+[UP](###UP)
+## ANCORS
+:feupdateenv:
+[next](##ISU)
+
+<<ANCORS>>
+[ANCORS](../../fills/feupdateenv/ANCORS)
+
+[UP](###UP)
+## ISU
+:feupdateenv:
+[next](##H_FILE)
+
+<<ISU>>
+only read
+:feupdateenv:
+[ISU](../../contents)
+[next](##inet)
+
+
+[UP](###UP)
+## inet
+:feupdateenv:
+[next](##H_FILE)
+
+
+[UP](###UP)
+## A_inet
+[manpages.org](https://www.google.ru/search?q=feupdateenv+site%3Ahttps%3A%2F%2Fmanpages.org)
+[reposcope.com_ru](https://www.google.ru/search?q=feupdateenv+site%3Ahttps%3A%2F%2Freposcope.com%2Fmanpages%2Fru)
+[pubs.opengroup.org](https://www.google.com/search?q=feupdateenv+https%3A%2F%2Fpubs.opengroup.org)
+[manpages.debian.org](https://yandex.ru/search/?text=feupdateenv+site%3Ahttps%3A%2F%2Fmanpages.debian.org%2F)
+[www.opennet.ru](http://www.opennet.ru/man.shtml?category=2&topic=feupdateenv)
+[man7.org](https://www.google.ru/search?q=feupdateenv+site%3Ahttps%3A%2F%2Fman7.org%2Flinux%2Fman-pages)
+[en.cppreference.com](https://www.google.com/search?q=feupdateenv+en.cppreference.com)
+[www.mankier.com](https://www.mankier.com/?q=feupdateenv)
+[www.codecogs.com](https://www.google.ru/search?q=feupdateenv+https%3A%2F%2Fwww.codecogs.com%2Flibrary%2Fcomputing%2F)
+[digitalmars.com](https://www.google.ru/search?q=feupdateenv+https%3A%2F%2Fdigitalmars.com%2Frtl%2F)
+
+
+[UP](###UP)
+## books_inet
+[cpp.com.ru](https://yandex.ru/search/?text=feupdateenv+site%3Ahttps%3A%2F%2Fcpp.com.ru)
+[linuxhint.com](https://www.google.ru/search?q=feupdateenv+site%3Ahttps%3A%2F%2Flinuxhint.com)
+[gnu.org](https://www.google.ru/search?q=feupdateenv+site%3Ahttps%3A%2F%2Fwww.gnu.org%2Fsoftware%2Flibc%2Fmanual)
+
+[UP](###UP)
+## examples_inet
+[yandex:examples](https://yandex.ru/search/?text=feupdateenv+example+in+c)
+[docs.oracle.com](https://www.google.com/search?q=feupdateenv+https%3A%2F%2Fdocs.oracle.com)
+[manpages.debian.org](https://yandex.ru/search/?text=feupdateenv+site%3Ahttps%3A%2F%2Fmanpages.debian.org%2F)
+[osr507doc.xinuos.com](https://www.google.com/search?q=feupdateenv+http%3A%2F%2Fosr507doc.xinuos.com%2Fen%2Fman)
+[cpp.hotexamples.com](https://cpp.hotexamples.com/examples/-/-/feupdateenv/cpp-feupdateenv-function-examples.html)
+[all-ht.ru](https://yandex.ru/search/?text=feupdateenv+site%3Ahttp%3A%2F%2Fall-ht.ru%2Finf%2Fprog%2Fc%2F)
+[cppreference.com](https://yandex.ru/search/?text=feupdateenv+site%3Ahttps%3A%2F%2Fen.cppreference.com%2Fw%2Fc%2F)
+
+[UP](###UP)
+## classic_inet
+[bogatyrev_c_unix](https://www.google.com/search?q=feupdateenv+site%3Ahttps%3A%2F%2Fcpp.com.ru%2Fbogatyrev_c_unix)
+[kr_cbook](https://www.google.com/search?q=feupdateenv+site%3Ahttps%3A%2F%2Fcpp.com.ru%2Fkr_cbook)
+
+[UP](###UP)
+## enters_inet
+[pubs.opengroup.org](https://pubs.opengroup.org/onlinepubs/9699919799/idx/head.html)
+
+[UP](###UP)
+## issue_code_inet
+[code.woboq.org](https://www.google.com/search?h=&sitesearch=https%3A%2F%2Fcode.woboq.org%2Fuserspace%2Fglibc%2F&q=feupdateenv)
+
+
+[UP](###UP)
+## H_FILE 
+[fenv_h.md](../../hfiles/fenv_h.md)
+
+
+[UP](###UP)
+## p_SYNOPSIS
+:feupdateenv:
+[next](##p_RETURN_ru)
+
+<<SYNOPSIS>>
+[SYNOPSIS](../../fills/feupdateenv/SYNOPSIS)
+
+
+[UP](###UP)
+## p_RETURN_ru
+:feupdateenv:
+[next](##p_RETURN)
+
+<<RETURN>>
+[RETURN_ru](../../fills/feupdateenv/RETURN)
+
+
+[UP](###UP)
+## p_RETURN
+:feupdateenv:
+[next](##p_DESCRIPTION_ru)
+
+<<RETURN_ru>>
+[RETURN](../../fills/feupdateenv/RETURN_ru)
+
+
+[UP](###UP)
+## p_DESCRIPTION_ru
+:feupdateenv:
+[next](##p_DESCRIPTION)
+
+<<DESCRIPTION_ru>>
+[DESCRIPTION_ru](../../fills/feupdateenv/DESCRIPTION_ru)
+
+
+[UP](###UP)
+## p_DESCRIPTION
+:feupdateenv:
+[next](##p_BUGS)
+
+<<DESCRIPTION>>
+[DESCRIPTION](../../fills/feupdateenv/DESCRIPTION)
+
+
+[UP](###UP)
+## p_MIRRORS
+:feupdateenv:
+[next](##p_BUGS)
+
+<<MIRRORS>>
+[MIRRORS](../../fills/feupdateenv/MIRRORS)
+
+
+[UP](###UP)
+## p_BUGS
+:feupdateenv:
+[next](##p_EXAMPLES)
+
+<<BUGS>>
+[BUGS](../../fills/feupdateenv/BUGS)
+
+
+[UP](###UP)
+## p_EXAMPLES
+:feupdateenv:
+[next](##p_CODE)
+
+<<EXAMPLES>>
+[EXAMPLES](../../fills/feupdateenv/EXAMPLES)
+
+
+[UP](###UP)
+## p_CODE_h
+:feupdateenv:
+[next](##p_CODE_c)
+
+<<CODE_h>>
+[CODE_h](../../fills/feupdateenv/CODE_h)
+
+
+[UP](###UP)
+## p_CODE_c
+:feupdateenv:
+[next](##p_CODE_m)
+
+<<CODE_c>>
+[CODE_c](../../fills/feupdateenv/CODE_c)
+
+
+[UP](###UP)
+## p_CODE_m
+:feupdateenv:
+[next](##p_ERRORS)
+
+<<CODE_m>>
+[CODE_m](../../fills/feupdateenv/CODE_m)
+
+
+[UP](###UP)
+## p_ERRORS
+:feupdateenv:
+[next](##p_BOOKS)
+
+<<ERRORS>>
+[ERRORS](../../fills/feupdateenv/ERRORS)
+
+
+[UP](###UP)
+## p_BOOKS
+:feupdateenv:
+[next](##p_BOOKS_ru)
+
+<<BOOKS>>
+[BOOKS](../../fills/feupdateenv/BOOKS)
+
+
+[UP](###UP)
+## p_BOOKS_ru
+:feupdateenv:
+[next](##p_CONTENT)
+
+
+<<BOOKS_ru>>
+[BOOKS_ru](../../fills/feupdateenv/BOOKS_ru)
+
+
+[UP](###UP)
+## p_CONTENT
+:33333:
+[33333.cnt](../../contents/33333.cnt)
+[next](##UP)
+
+[UP](###UP)

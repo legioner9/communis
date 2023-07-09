@@ -1,0 +1,5 @@
++ 3p_free::fileno_c
++ unistd::fopen_c
++ unistd::dup_с
++ unistd::read_c
++ unistd::close_с

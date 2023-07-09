@@ -1,0 +1,10 @@
+## interpretator exl_ --list <full_path_to_exl_list>.exl
+
+- execute string by string <full_path_to_exl_list>.exl 
+    - ^# comment string
+    - string contane eval {eval local home=${HOME}}
+    - execute string as it's
+    - if errno after execute string !=(0|2) - return 1
+      - errno 0 : success
+      - errno 2 : signal inner check process execute string, not error
+          - check semaphore may be inner check process 

@@ -1,0 +1,266 @@
+### UP
+[posix_trace_attr_getmaxsystemeventsize](##posix_trace_attr_getmaxsystemeventsize)
+[MAIN](##MAIN)
+[MAIN_ru](##MAIN_ru)
+[ANCORS](##ANCORS)
+[ISU](##ISU)
+[inet](##A_inet)
+[inet](##books_inet)
+[inet](##examples_inet)
+[inet](##classic_inet)
+[inet](##enters_inet)
+[inet](##issue_code_inet)
+[H_FILE](##H_FILE)
+[p_SYNOPSIS](##p_SYNOPSIS)
+[p_RETURN](##p_RETURN)
+[p_RETURN_ru](##p_RETURN_ru)
+[p_BUGS](##p_BUGS)
+[p_DESCRIPTION_ru](##p_DESCRIPTION_ru)
+[p_DESCRIPTION](##p_DESCRIPTION)
+[p_MIRRORS](##p_MIRRORS)
+[p_EXAMPLES](##p_EXAMPLES)
+[p_CODE_h](##p_CODE_h)
+[p_CODE_c](##p_CODE_c)
+[p_CODE_m](##p_CODE_m)
+[p_ERRORS](##p_ERRORS)
+[p_BOOKS](##p_BOOKS)
+[p_BOOKS_ru](##p_BOOKS_ru)
+[p_CONTENT](##p_CONTENT)
+
+[cat_hfiles](../../cat_hfiles.md)
+[cat_utils](../../cat_utils.md)
+[cat_structs](../../cat_structs.md)
+[cat_param](../../cat_params.md)
+[cat_macros](../../cat_macross.md)
+[cat_const](../../cat_consts.md)
+[cat_type](../../cat_types.md)
+[cat_any](../cat_anys.md)
+
+
+[UP](###UP)
+## MAIN
+:posix_trace_attr_getmaxsystemeventsize:
+[next](##MAIN_ru)
+
+<<MAIN>>
+[MAIN](../../fills/posix_trace_attr_getmaxsystemeventsize/MAIN)
+
+
+
+[UP](###UP)
+## MAIN_ru
+:posix_trace_attr_getmaxsystemeventsize:
+[next](##ANCORS)
+
+<<MAIN_ru>>
+[MAIN_ru](../../fills/posix_trace_attr_getmaxsystemeventsize/MAIN_ru)
+
+[UP](###UP)
+## ANCORS
+:posix_trace_attr_getmaxsystemeventsize:
+[next](##ISU)
+
+<<ANCORS>>
+[ANCORS](../../fills/posix_trace_attr_getmaxsystemeventsize/ANCORS)
+
+[UP](###UP)
+## ISU
+:posix_trace_attr_getmaxsystemeventsize:
+[next](##H_FILE)
+
+<<ISU>>
+only read
+:posix_trace_attr_getmaxsystemeventsize:
+[ISU](../../contents)
+[next](##inet)
+
+
+[UP](###UP)
+## inet
+:posix_trace_attr_getmaxsystemeventsize:
+[next](##H_FILE)
+
+
+[UP](###UP)
+## A_inet
+[manpages.org](https://www.google.ru/search?q=posix_trace_attr_getmaxsystemeventsize+site%3Ahttps%3A%2F%2Fmanpages.org)
+[reposcope.com_ru](https://www.google.ru/search?q=posix_trace_attr_getmaxsystemeventsize+site%3Ahttps%3A%2F%2Freposcope.com%2Fmanpages%2Fru)
+[pubs.opengroup.org](https://www.google.com/search?q=posix_trace_attr_getmaxsystemeventsize+https%3A%2F%2Fpubs.opengroup.org)
+[manpages.debian.org](https://yandex.ru/search/?text=posix_trace_attr_getmaxsystemeventsize+site%3Ahttps%3A%2F%2Fmanpages.debian.org%2F)
+[www.opennet.ru](http://www.opennet.ru/man.shtml?category=2&topic=posix_trace_attr_getmaxsystemeventsize)
+[man7.org](https://www.google.ru/search?q=posix_trace_attr_getmaxsystemeventsize+site%3Ahttps%3A%2F%2Fman7.org%2Flinux%2Fman-pages)
+[en.cppreference.com](https://www.google.com/search?q=posix_trace_attr_getmaxsystemeventsize+en.cppreference.com)
+[www.mankier.com](https://www.mankier.com/?q=posix_trace_attr_getmaxsystemeventsize)
+[www.codecogs.com](https://www.google.ru/search?q=posix_trace_attr_getmaxsystemeventsize+https%3A%2F%2Fwww.codecogs.com%2Flibrary%2Fcomputing%2F)
+[digitalmars.com](https://www.google.ru/search?q=posix_trace_attr_getmaxsystemeventsize+https%3A%2F%2Fdigitalmars.com%2Frtl%2F)
+
+
+[UP](###UP)
+## books_inet
+[cpp.com.ru](https://yandex.ru/search/?text=posix_trace_attr_getmaxsystemeventsize+site%3Ahttps%3A%2F%2Fcpp.com.ru)
+[linuxhint.com](https://www.google.ru/search?q=posix_trace_attr_getmaxsystemeventsize+site%3Ahttps%3A%2F%2Flinuxhint.com)
+[gnu.org](https://www.google.ru/search?q=posix_trace_attr_getmaxsystemeventsize+site%3Ahttps%3A%2F%2Fwww.gnu.org%2Fsoftware%2Flibc%2Fmanual)
+
+[UP](###UP)
+## examples_inet
+[yandex:examples](https://yandex.ru/search/?text=posix_trace_attr_getmaxsystemeventsize+example+in+c)
+[docs.oracle.com](https://www.google.com/search?q=posix_trace_attr_getmaxsystemeventsize+https%3A%2F%2Fdocs.oracle.com)
+[manpages.debian.org](https://yandex.ru/search/?text=posix_trace_attr_getmaxsystemeventsize+site%3Ahttps%3A%2F%2Fmanpages.debian.org%2F)
+[osr507doc.xinuos.com](https://www.google.com/search?q=posix_trace_attr_getmaxsystemeventsize+http%3A%2F%2Fosr507doc.xinuos.com%2Fen%2Fman)
+[cpp.hotexamples.com](https://cpp.hotexamples.com/examples/-/-/posix_trace_attr_getmaxsystemeventsize/cpp-posix_trace_attr_getmaxsystemeventsize-function-examples.html)
+[all-ht.ru](https://yandex.ru/search/?text=posix_trace_attr_getmaxsystemeventsize+site%3Ahttp%3A%2F%2Fall-ht.ru%2Finf%2Fprog%2Fc%2F)
+[cppreference.com](https://yandex.ru/search/?text=posix_trace_attr_getmaxsystemeventsize+site%3Ahttps%3A%2F%2Fen.cppreference.com%2Fw%2Fc%2F)
+
+[UP](###UP)
+## classic_inet
+[bogatyrev_c_unix](https://www.google.com/search?q=posix_trace_attr_getmaxsystemeventsize+site%3Ahttps%3A%2F%2Fcpp.com.ru%2Fbogatyrev_c_unix)
+[kr_cbook](https://www.google.com/search?q=posix_trace_attr_getmaxsystemeventsize+site%3Ahttps%3A%2F%2Fcpp.com.ru%2Fkr_cbook)
+
+[UP](###UP)
+## enters_inet
+[pubs.opengroup.org](https://pubs.opengroup.org/onlinepubs/9699919799/idx/head.html)
+
+[UP](###UP)
+## issue_code_inet
+[code.woboq.org](https://www.google.com/search?h=&sitesearch=https%3A%2F%2Fcode.woboq.org%2Fuserspace%2Fglibc%2F&q=posix_trace_attr_getmaxsystemeventsize)
+
+
+[UP](###UP)
+## H_FILE 
+[trace_h.md](../../hfiles/trace_h.md)
+
+
+[UP](###UP)
+## p_SYNOPSIS
+:posix_trace_attr_getmaxsystemeventsize:
+[next](##p_RETURN_ru)
+
+<<SYNOPSIS>>
+[SYNOPSIS](../../fills/posix_trace_attr_getmaxsystemeventsize/SYNOPSIS)
+
+
+[UP](###UP)
+## p_RETURN_ru
+:posix_trace_attr_getmaxsystemeventsize:
+[next](##p_RETURN)
+
+<<RETURN>>
+[RETURN_ru](../../fills/posix_trace_attr_getmaxsystemeventsize/RETURN)
+
+
+[UP](###UP)
+## p_RETURN
+:posix_trace_attr_getmaxsystemeventsize:
+[next](##p_DESCRIPTION_ru)
+
+<<RETURN_ru>>
+[RETURN](../../fills/posix_trace_attr_getmaxsystemeventsize/RETURN_ru)
+
+
+[UP](###UP)
+## p_DESCRIPTION_ru
+:posix_trace_attr_getmaxsystemeventsize:
+[next](##p_DESCRIPTION)
+
+<<DESCRIPTION_ru>>
+[DESCRIPTION_ru](../../fills/posix_trace_attr_getmaxsystemeventsize/DESCRIPTION_ru)
+
+
+[UP](###UP)
+## p_DESCRIPTION
+:posix_trace_attr_getmaxsystemeventsize:
+[next](##p_BUGS)
+
+<<DESCRIPTION>>
+[DESCRIPTION](../../fills/posix_trace_attr_getmaxsystemeventsize/DESCRIPTION)
+
+
+[UP](###UP)
+## p_MIRRORS
+:posix_trace_attr_getmaxsystemeventsize:
+[next](##p_BUGS)
+
+<<MIRRORS>>
+[MIRRORS](../../fills/posix_trace_attr_getmaxsystemeventsize/MIRRORS)
+
+
+[UP](###UP)
+## p_BUGS
+:posix_trace_attr_getmaxsystemeventsize:
+[next](##p_EXAMPLES)
+
+<<BUGS>>
+[BUGS](../../fills/posix_trace_attr_getmaxsystemeventsize/BUGS)
+
+
+[UP](###UP)
+## p_EXAMPLES
+:posix_trace_attr_getmaxsystemeventsize:
+[next](##p_CODE)
+
+<<EXAMPLES>>
+[EXAMPLES](../../fills/posix_trace_attr_getmaxsystemeventsize/EXAMPLES)
+
+
+[UP](###UP)
+## p_CODE_h
+:posix_trace_attr_getmaxsystemeventsize:
+[next](##p_CODE_c)
+
+<<CODE_h>>
+[CODE_h](../../fills/posix_trace_attr_getmaxsystemeventsize/CODE_h)
+
+
+[UP](###UP)
+## p_CODE_c
+:posix_trace_attr_getmaxsystemeventsize:
+[next](##p_CODE_m)
+
+<<CODE_c>>
+[CODE_c](../../fills/posix_trace_attr_getmaxsystemeventsize/CODE_c)
+
+
+[UP](###UP)
+## p_CODE_m
+:posix_trace_attr_getmaxsystemeventsize:
+[next](##p_ERRORS)
+
+<<CODE_m>>
+[CODE_m](../../fills/posix_trace_attr_getmaxsystemeventsize/CODE_m)
+
+
+[UP](###UP)
+## p_ERRORS
+:posix_trace_attr_getmaxsystemeventsize:
+[next](##p_BOOKS)
+
+<<ERRORS>>
+[ERRORS](../../fills/posix_trace_attr_getmaxsystemeventsize/ERRORS)
+
+
+[UP](###UP)
+## p_BOOKS
+:posix_trace_attr_getmaxsystemeventsize:
+[next](##p_BOOKS_ru)
+
+<<BOOKS>>
+[BOOKS](../../fills/posix_trace_attr_getmaxsystemeventsize/BOOKS)
+
+
+[UP](###UP)
+## p_BOOKS_ru
+:posix_trace_attr_getmaxsystemeventsize:
+[next](##p_CONTENT)
+
+
+<<BOOKS_ru>>
+[BOOKS_ru](../../fills/posix_trace_attr_getmaxsystemeventsize/BOOKS_ru)
+
+
+[UP](###UP)
+## p_CONTENT
+:33333:
+[33333.cnt](../../contents/33333.cnt)
+[next](##UP)
+
+[UP](###UP)

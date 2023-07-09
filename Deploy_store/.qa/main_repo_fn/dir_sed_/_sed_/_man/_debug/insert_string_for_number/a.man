@@ -1,0 +1,27 @@
+## sed insert
+
+    sed '3 a new line content' my.txt   - после 3 строки
+    sed '3 i new line content' my.txt   - до 3 строки
+
+Sed умеет очень круто обрабатывать файлы. Давайте рассмотрим несколько примеров. Например, нужно вставить новую строку в файл после определённой линии:
+
+sed '3 a new line content' my.txt
+Copy
+Данная команда добавит новую строку в файл my.txt с содержимым new line content усразу после текущей третей строки в файле.
+
+Чтобы добавить строку в конец вместо её номера нужно указать символ $:
+
+sed '$ a new line content' my.txt
+Copy
+Усложняем задачу. Нужно вставить линию не после определённого номера строки, а после строки с определённым содержанием:
+
+sed '/PATTERN/ a new line content' my.txt
+Copy
+А что если нужно новую линию вставить не после, а до? Тогда вместо параметра a нужно указать параметр i:
+
+sed '3 i new line content' my.txt
+
+sed '$ i new line content' my.txt
+
+sed '/PATTERN/ i new line content' my.txt
+

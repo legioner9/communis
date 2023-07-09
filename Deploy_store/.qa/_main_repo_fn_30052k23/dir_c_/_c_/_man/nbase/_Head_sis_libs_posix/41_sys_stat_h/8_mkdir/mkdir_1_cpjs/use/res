@@ -1,0 +1,4 @@
+failed in file main.c at line # 91
+from remove_с filename = dir_a/dir_b, errno = 39
+Error is: : Directory not empty
+exit(errno): 

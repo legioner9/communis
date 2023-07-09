@@ -1,0 +1,7 @@
+eval QQ_EXIT=1
+
+eval wrp_fifs2_ cp -rfuv ${HOME}/up_to_toshiba_ext/. ${PATH_TOSHIBA_EXT}/up_from_home -cd1 -cd2 -qq_exit    
+eval wrp_fifs2_ cp -rfuv ${PATH_TOSHIBA_EXT}/up_to_home/. ${HOME}/up_from_toshiba_ext -cd1 -cd2 -qq_exit
+
+eval wrp_fifs2_ cp -rfuv ${PATH_COMMUNIS}/up_to_toshiba_ext/. ${PATH_TOSHIBA_EXT}/up_from_communis -cd1 -cd2 -qq_exit    
+eval wrp_fifs2_ cp -rfuv ${PATH_TOSHIBA_EXT}/up_to_communis/. ${PATH_COMMUNIS}/up_from_toshiba_ext -cd1 -cd2 -qq_exit

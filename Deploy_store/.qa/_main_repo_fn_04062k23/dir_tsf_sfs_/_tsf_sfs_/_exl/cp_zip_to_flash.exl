@@ -1,0 +1,22 @@
+#>exl
+eval [ ${develop1_tsf_sfs_} -eq 1 ] || exl_pause "___ Copy zip files from sys to bag=${bag} name_flash=${name_flash} alt? ___ CNTL-C to exit, ENTR to continue"
+
+eval echo "${name_flash}"
+eval echo "${src_d}"
+eval echo "${src_ne}"
+eval echo "${dest_d}"
+eval echo "${dest_ne}"
+eval echo "${bag}"
+
+# prp
+
+eval wrp_fifs1_ mkdir -p "${bag}" -cnd1
+eval wrp_fifs1_ cd "${bag}" -d1
+
+# .vscode-oss.zip
+
+eval wrp_fifs1_ rm ${bag}/${dest_ne}.zip -cf1
+eval wrp_fifs1_ file ${bag}/${dest_ne}.zip -cnf1
+
+eval wrp_fifs2_ cp "${src_d}"/${dest_ne}.zip ${bag} -f1 -d2
+eval wrp_fifs1_ file ${bag}/${dest_ne}.zip -cf1

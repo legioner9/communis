@@ -1,0 +1,17 @@
+# 11111 name account
+# 00000 name 
+
+# https://github.com/legioner9
+# git@github.com:legioner9/00000.git
+
+# https://gitlab.com/legioner9
+# git@gitlab.com:legioner9999/tgu.git only communis
+# https://gitlab.com/legioner9999/00000.git
+
+# https://sourceforge.net/p/communis/admin/ 
+# ssh://legioner9@git.code.sf.net/u/legioner9/tgu
+
+pull#pull_path
+push#push_path_1^push_path_2
+to_bare#to_bare_path1^to_bare_path2
+to_repo#

@@ -1,0 +1,6 @@
+# my man mmenu_ (multy menu)
+
+in: $PATH_FN/dir_mmenu_/_mmenu_/_in/_arr_.var (first second)
+fliow:
+multy choice items (recurs) from in_file -> multy exec _case_ with each from items set
+out: result execs

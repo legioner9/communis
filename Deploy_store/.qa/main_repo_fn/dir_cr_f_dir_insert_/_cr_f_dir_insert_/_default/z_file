@@ -1,0 +1,30 @@
+echo -e "${BLUE}--- exec ${FNN} (num_menu) ---${NORMAL}" #started functions
+arr=()
+res=()
+arr+=("leave menu")
+res+=("echo bye)))")
+# arr+=("aaaaaaaaa")
+# res+=("bbbbbbbbb")
+# arr+=("aaaaaaaaa")
+# res+=("bbbbbbbbb")
+# arr+=("aaaaaaaaa")
+# res+=("bbbbbbbbb")
+# arr+=("aaaaaaaaa")
+# res+=("bbbbbbbbb")
+if [ $(num_01 $1) -eq 1 ] && [ $1 -le ${#arr[@]} ]; then
+num_res=$(($1 - 1))
+${res[${num_res}]}
+return 0
+fi
+PS3="eligendi actiones: "
+select item in "${arr[@]}"; do
+for ((i = 0; i < 1000; i++)); do
+if [[ ${item} == ${arr[$i]} ]]; then
+${res[$i]}
+correct_ $@
+fi
+done
+done
+{zzz20}
+z_file
+${PATH_MAIN_REPO_FN_DIR}/dir_cr_f_dir_insert_/_cr_f_dir_insert_/_default

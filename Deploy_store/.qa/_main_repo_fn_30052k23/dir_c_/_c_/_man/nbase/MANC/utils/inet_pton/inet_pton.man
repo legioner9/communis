@@ -1,0 +1,266 @@
+### UP
+[inet_pton](##inet_pton)
+[MAIN](##MAIN)
+[MAIN_ru](##MAIN_ru)
+[ANCORS](##ANCORS)
+[ISU](##ISU)
+[inet](##A_inet)
+[inet](##books_inet)
+[inet](##examples_inet)
+[inet](##classic_inet)
+[inet](##enters_inet)
+[inet](##issue_code_inet)
+[H_FILE](##H_FILE)
+[p_SYNOPSIS](##p_SYNOPSIS)
+[p_RETURN](##p_RETURN)
+[p_RETURN_ru](##p_RETURN_ru)
+[p_BUGS](##p_BUGS)
+[p_DESCRIPTION_ru](##p_DESCRIPTION_ru)
+[p_DESCRIPTION](##p_DESCRIPTION)
+[p_MIRRORS](##p_MIRRORS)
+[p_EXAMPLES](##p_EXAMPLES)
+[p_CODE_h](##p_CODE_h)
+[p_CODE_c](##p_CODE_c)
+[p_CODE_m](##p_CODE_m)
+[p_ERRORS](##p_ERRORS)
+[p_BOOKS](##p_BOOKS)
+[p_BOOKS_ru](##p_BOOKS_ru)
+[p_CONTENT](##p_CONTENT)
+
+[cat_hfiles](../../cat_hfiles.md)
+[cat_utils](../../cat_utils.md)
+[cat_structs](../../cat_structs.md)
+[cat_param](../../cat_params.md)
+[cat_macros](../../cat_macross.md)
+[cat_const](../../cat_consts.md)
+[cat_type](../../cat_types.md)
+[cat_any](../cat_anys.md)
+
+
+[UP](###UP)
+## MAIN
+:inet_pton:
+[next](##MAIN_ru)
+
+<<MAIN>>
+[MAIN](../../fills/inet_pton/MAIN)
+
+
+
+[UP](###UP)
+## MAIN_ru
+:inet_pton:
+[next](##ANCORS)
+
+<<MAIN_ru>>
+[MAIN_ru](../../fills/inet_pton/MAIN_ru)
+
+[UP](###UP)
+## ANCORS
+:inet_pton:
+[next](##ISU)
+
+<<ANCORS>>
+[ANCORS](../../fills/inet_pton/ANCORS)
+
+[UP](###UP)
+## ISU
+:inet_pton:
+[next](##H_FILE)
+
+<<ISU>>
+only read
+:inet_pton:
+[ISU](../../contents)
+[next](##inet)
+
+
+[UP](###UP)
+## inet
+:inet_pton:
+[next](##H_FILE)
+
+
+[UP](###UP)
+## A_inet
+[manpages.org](https://www.google.ru/search?q=inet_pton+site%3Ahttps%3A%2F%2Fmanpages.org)
+[reposcope.com_ru](https://www.google.ru/search?q=inet_pton+site%3Ahttps%3A%2F%2Freposcope.com%2Fmanpages%2Fru)
+[pubs.opengroup.org](https://www.google.com/search?q=inet_pton+https%3A%2F%2Fpubs.opengroup.org)
+[manpages.debian.org](https://yandex.ru/search/?text=inet_pton+site%3Ahttps%3A%2F%2Fmanpages.debian.org%2F)
+[www.opennet.ru](http://www.opennet.ru/man.shtml?category=2&topic=inet_pton)
+[man7.org](https://www.google.ru/search?q=inet_pton+site%3Ahttps%3A%2F%2Fman7.org%2Flinux%2Fman-pages)
+[en.cppreference.com](https://www.google.com/search?q=inet_pton+en.cppreference.com)
+[www.mankier.com](https://www.mankier.com/?q=inet_pton)
+[www.codecogs.com](https://www.google.ru/search?q=inet_pton+https%3A%2F%2Fwww.codecogs.com%2Flibrary%2Fcomputing%2F)
+[digitalmars.com](https://www.google.ru/search?q=inet_pton+https%3A%2F%2Fdigitalmars.com%2Frtl%2F)
+
+
+[UP](###UP)
+## books_inet
+[cpp.com.ru](https://yandex.ru/search/?text=inet_pton+site%3Ahttps%3A%2F%2Fcpp.com.ru)
+[linuxhint.com](https://www.google.ru/search?q=inet_pton+site%3Ahttps%3A%2F%2Flinuxhint.com)
+[gnu.org](https://www.google.ru/search?q=inet_pton+site%3Ahttps%3A%2F%2Fwww.gnu.org%2Fsoftware%2Flibc%2Fmanual)
+
+[UP](###UP)
+## examples_inet
+[yandex:examples](https://yandex.ru/search/?text=inet_pton+example+in+c)
+[docs.oracle.com](https://www.google.com/search?q=inet_pton+https%3A%2F%2Fdocs.oracle.com)
+[manpages.debian.org](https://yandex.ru/search/?text=inet_pton+site%3Ahttps%3A%2F%2Fmanpages.debian.org%2F)
+[osr507doc.xinuos.com](https://www.google.com/search?q=inet_pton+http%3A%2F%2Fosr507doc.xinuos.com%2Fen%2Fman)
+[cpp.hotexamples.com](https://cpp.hotexamples.com/examples/-/-/inet_pton/cpp-inet_pton-function-examples.html)
+[all-ht.ru](https://yandex.ru/search/?text=inet_pton+site%3Ahttp%3A%2F%2Fall-ht.ru%2Finf%2Fprog%2Fc%2F)
+[cppreference.com](https://yandex.ru/search/?text=inet_pton+site%3Ahttps%3A%2F%2Fen.cppreference.com%2Fw%2Fc%2F)
+
+[UP](###UP)
+## classic_inet
+[bogatyrev_c_unix](https://www.google.com/search?q=inet_pton+site%3Ahttps%3A%2F%2Fcpp.com.ru%2Fbogatyrev_c_unix)
+[kr_cbook](https://www.google.com/search?q=inet_pton+site%3Ahttps%3A%2F%2Fcpp.com.ru%2Fkr_cbook)
+
+[UP](###UP)
+## enters_inet
+[pubs.opengroup.org](https://pubs.opengroup.org/onlinepubs/9699919799/idx/head.html)
+
+[UP](###UP)
+## issue_code_inet
+[code.woboq.org](https://www.google.com/search?h=&sitesearch=https%3A%2F%2Fcode.woboq.org%2Fuserspace%2Fglibc%2F&q=inet_pton)
+
+
+[UP](###UP)
+## H_FILE 
+[arpa_inet_h.md](../../hfiles/arpa_inet_h.md)
+
+
+[UP](###UP)
+## p_SYNOPSIS
+:inet_pton:
+[next](##p_RETURN_ru)
+
+<<SYNOPSIS>>
+[SYNOPSIS](../../fills/inet_pton/SYNOPSIS)
+
+
+[UP](###UP)
+## p_RETURN_ru
+:inet_pton:
+[next](##p_RETURN)
+
+<<RETURN>>
+[RETURN_ru](../../fills/inet_pton/RETURN)
+
+
+[UP](###UP)
+## p_RETURN
+:inet_pton:
+[next](##p_DESCRIPTION_ru)
+
+<<RETURN_ru>>
+[RETURN](../../fills/inet_pton/RETURN_ru)
+
+
+[UP](###UP)
+## p_DESCRIPTION_ru
+:inet_pton:
+[next](##p_DESCRIPTION)
+
+<<DESCRIPTION_ru>>
+[DESCRIPTION_ru](../../fills/inet_pton/DESCRIPTION_ru)
+
+
+[UP](###UP)
+## p_DESCRIPTION
+:inet_pton:
+[next](##p_BUGS)
+
+<<DESCRIPTION>>
+[DESCRIPTION](../../fills/inet_pton/DESCRIPTION)
+
+
+[UP](###UP)
+## p_MIRRORS
+:inet_pton:
+[next](##p_BUGS)
+
+<<MIRRORS>>
+[MIRRORS](../../fills/inet_pton/MIRRORS)
+
+
+[UP](###UP)
+## p_BUGS
+:inet_pton:
+[next](##p_EXAMPLES)
+
+<<BUGS>>
+[BUGS](../../fills/inet_pton/BUGS)
+
+
+[UP](###UP)
+## p_EXAMPLES
+:inet_pton:
+[next](##p_CODE)
+
+<<EXAMPLES>>
+[EXAMPLES](../../fills/inet_pton/EXAMPLES)
+
+
+[UP](###UP)
+## p_CODE_h
+:inet_pton:
+[next](##p_CODE_c)
+
+<<CODE_h>>
+[CODE_h](../../fills/inet_pton/CODE_h)
+
+
+[UP](###UP)
+## p_CODE_c
+:inet_pton:
+[next](##p_CODE_m)
+
+<<CODE_c>>
+[CODE_c](../../fills/inet_pton/CODE_c)
+
+
+[UP](###UP)
+## p_CODE_m
+:inet_pton:
+[next](##p_ERRORS)
+
+<<CODE_m>>
+[CODE_m](../../fills/inet_pton/CODE_m)
+
+
+[UP](###UP)
+## p_ERRORS
+:inet_pton:
+[next](##p_BOOKS)
+
+<<ERRORS>>
+[ERRORS](../../fills/inet_pton/ERRORS)
+
+
+[UP](###UP)
+## p_BOOKS
+:inet_pton:
+[next](##p_BOOKS_ru)
+
+<<BOOKS>>
+[BOOKS](../../fills/inet_pton/BOOKS)
+
+
+[UP](###UP)
+## p_BOOKS_ru
+:inet_pton:
+[next](##p_CONTENT)
+
+
+<<BOOKS_ru>>
+[BOOKS_ru](../../fills/inet_pton/BOOKS_ru)
+
+
+[UP](###UP)
+## p_CONTENT
+:33333:
+[33333.cnt](../../contents/33333.cnt)
+[next](##UP)
+
+[UP](###UP)

@@ -1,0 +1,5 @@
+# my man edit_
+
+exec gvim or code or vim
+$1 path_to_edit (default $PWD)
+$2 after_command (default ques_ "edit_ $1")

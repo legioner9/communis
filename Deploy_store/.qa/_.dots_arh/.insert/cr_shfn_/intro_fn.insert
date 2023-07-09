@@ -1,0 +1,11 @@
+local FNN=${FUNCNAME[0]}
+local PPWD=$PWD
+local ARGS=($@)
+local NARGS=$#
+local verbose=0
+[[ " ${ARGS[*]} " =~ " -verbose " ]] || verbose=1
+[[ 1 -eq ${verbose} ]] || echo -e "${CYAN}---$FNN() $* ---${NORMAL}" #started functions
+
+local d_name=$(dirname {root_path}/{fn_name}.sh)
+
+# wrp_fifs1_ cd ${d_name} -d

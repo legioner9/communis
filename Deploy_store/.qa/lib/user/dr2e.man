@@ -1,0 +1,9 @@
+## dr2e
+{ls recurce files without (_) exclude .dot_files  [ , only that extend_file] }
+PATH
+file://${COMMUNIS_PATH}/Deploy_store/.qa/lib/user/dr2e.sh
+ARGS
+$1 start recurce dir for echo
+$2 exend for search
+FLOW
+echo ls files in dir=$1 without (_) prefix files [ , only with extend files = $2 ]

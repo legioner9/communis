@@ -1,0 +1,1 @@
+// Список инициализации std::initializer_list

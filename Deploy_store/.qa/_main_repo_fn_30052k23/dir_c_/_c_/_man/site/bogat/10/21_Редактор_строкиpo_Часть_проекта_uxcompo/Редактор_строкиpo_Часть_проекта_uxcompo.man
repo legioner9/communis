@@ -1,0 +1,563 @@
+## Редактор строки. Часть проекта uxcom.
+
+Пример 21
+```cpp
+/* РЕДАКТОР СТРОКИ И ИСТОРИЯ РЕДАКТИРУЕМЫХ СТРОК                  */
+/* _______________________ файл hist.h __________________________ */
+/* ИСТОРИЯ. ЗАПОМИНАНИЕ СТРОК И ВЫДАЧА ИХ НАЗАД ПО ТРЕБОВАНИЮ.    */
+/* ______________________________________________________________ */
+typedef struct {        /* Паспорт истории        */
+	Info *list;     /* запомненные строки     */
+	int sz;         /* размер истории (макс.) */
+	int len;        /* текущее число строк    */
+	Menu mnu;       /* меню для выборки из истории */
+} Hist;
+void HistInit(Hist *h, int n);
+void HistAdd (Hist *h, char *s, int fl);
+Info *HistSelect(Hist *h, int x, int y);
+
+/* _______________________ файл hist.c __________________________ */
+#include "w.h"
+#include "glob.h"
+#include "menu.h"
+#include "hist.h"
+/* Проинициализировать новую "историю" емкостью n строк */
+void HistInit(Hist *h, int n){
+	register i;
+	if( h->list ){ blkfree( h->list ); h->list = NULL; }
+	h->len = 0;
+	h->mnu.title      = "History";
+	h->mnu.bg_attrib  = A_NORMAL;
+	h->mnu.sel_attrib = A_REVERSE;
+	h->list = (Info *) malloc( (n+1) * sizeof(Info));
+	if( ! h->list ){
+		h->sz = 0; return;
+	}else   h->sz = n;
+	for( i=0; i < n+1 ; i++ )
+		h->list[i] = NullInfo;
+}
+/* Добавить строку s с меткой fl в историю */
+void HistAdd (Hist *h, char *s, int fl){
+	register i, j; Info tmp;
+
+	if( h->sz == 0 ) return;
+	/* А нет ли уже такой строки ? */
+	for( i=0; i < h->len; i++ )
+		if( !strcmp(s, h->list[i].s )){   /* есть ! */
+			if( i == 0 ) return;      /* первая */
+			/* сделать ее первой строкой */
+			tmp = h->list[i];
+			for( j=i-1; j >= 0; --j )
+				h->list[j+1] = h->list[j];
+			h->list[0] = tmp;
+			return;
+		}
+	if( h->len < h->sz ){
+		for( i=h->len-1; i>= 0; i-- )
+			h->list[i+1] = h->list[i];
+		h->len ++ ;
+	}else{
+	/* выкинуть самую старую строку из истории */
+		free( h->list[ h->sz - 1 ].s );
+		for( i=h->sz - 2; i >= 0; i-- )
+			h->list[i+1] = h->list[i];
+	}
+	(h->list)[0].s = strdup(s); (h->list)[0].fl = fl;
+}
+/* Выборка строки из истории */
+Info *HistSelect(Hist *h, int x, int y){
+	if( h->len == 0 ) return (Info *) NULL;
+	h->mnu.top = y;
+	h->mnu.left = x;
+	h->mnu.items = h->list;
+	MnuInit( & h->mnu );
+	if( h->mnu.hotkeys ){
+		register i;
+		for(i=0 ; i < h->mnu.nitems; i++ )
+		    h->mnu.hotkeys[i] = h->list[i].s[0] & 0377;
+	}
+	MnuUsualSelect( & h->mnu, 0 );
+	MnuDeinit     ( & h->mnu );
+	if( M_REFUSED ( & h->mnu ))
+		return (Info *) NULL;
+	return & h->list[ h->mnu.current ];
+}
+
+/* _______________________ файл line.h __________________________ */
+/* РЕДАКТОР ДЛИННЫХ СТРОК (ВОЗМОЖНО ШИРЕ ЭКРАНА)                  */
+/* ______________________________________________________________ */
+typedef struct _LineEdit { /* Паспорт редактора строки        */
+    WINDOW *win;         /* окно для редактирования           */
+    int     width;       /* ширина поля редактирования        */
+    int     left, top;   /* координаты поля редактирования в окне */
+    int     pos;         /* позиция в строке                  */
+    int     shift;       /* число символов скрытых левее поля */
+    char   *line;        /* строка которая редактируется      */
+    int     maxlen;      /* максимальная длина строки         */
+    int     len;         /* текущая длина строки              */
+    int     insert;      /* 1 - режим вставки; 0 - замены */
+    int     nc;          /* 1 - стирать строку по первому нажатию */
+    int     cursorOn;    /* курсор включен (для графики)  */
+    int     bg_attrib;   /* цвет текста                   */
+    int     fr_attrib;   /* цвет пустого места в поле     */
+    int     wl_attrib;   /* цвет краев строки             */
+    int     sel_attrib;  /* цвет символа под курсором     */
+    Hist    *histIn;     /* история для выборки строк     */
+    Hist    *histOut;    /* история для запоминания строк */
+    int      key;        /* кнопка, завершившая редактирование */
+    Point    savep;
+    /* функции проявки и убирания окна (если надо)        */
+    int  (*showMe)(struct _LineEdit *le); /* 1 при успехе */
+    void (*hideMe)(struct _LineEdit *le);
+    void (*posMe) (struct _LineEdit *le); /* установка позиции */
+/* Функция рисования scroll bar-а (если надо)         */
+void (*scrollBar)(struct _LineEdit *le, int whichbar, int n, int among);
+    /* Специальная обработка клавиш (если надо)           */
+    int *hitkeys;
+    int (*handler)(struct _LineEdit *le, int c, HandlerReply *reply);
+}   LineEdit;
+
+void LePutChar( LineEdit *le, int at);
+void LeCursorHide( LineEdit *le );
+void LeCursorShow( LineEdit *le );
+void LePointAt( LineEdit *le, int at );
+void LePoint( LineEdit *le, int x, int eraseOld );
+void LeDraw( LineEdit *le );
+void LeReport( LineEdit *le );
+void LeDelCh ( LineEdit *le );
+void LeInsCh ( LineEdit *le, int c );
+void LeRepCh ( LineEdit *le, int c );
+int  LeInsStr( LineEdit *le, char *s);
+int  LeWerase( LineEdit *le, char *to );
+int  LeEdit( LineEdit *le );
+#define LINE_DX 1
+#define LE_REFUSED(m)    ((m)->key < 0 || (m)->key == ESC )
+
+/* _______________________ файл line.c __________________________ */
+/* Редактор строки. Эта версия была изначально написана           *
+ * для графики, поэтому здесь не совсем CURSES-ные алгоритмы      */
+#include "w.h"
+#include "glob.h"
+#include "menu.h"
+#include "hist.h"
+#include "line.h"
+
+/* Удалить букву из строки */
+static char cdelete(register char *s, int at) { char c;
+    s += at; if((c = *s) == '\0') return c;
+    while( s[0] = s[1] ) s++;     return c;
+}
+/* Вставить букву в строку */
+static void insert(char *s, int at, int c){
+	register char *p;
+	s += at; p = s;
+	while(*p) p++;  /* найти конец строки */
+	p[1] = '\0';    /* закрыть строку     */
+	for( ; p != s; p-- )
+		p[0] = p[-1];
+	*s = c;
+}
+/* Нарисовать видимую часть строки с позиции from */
+static void LeDrawLine( LineEdit *le, int from ){
+	LeCursorHide( le );
+	for( ; from < le->width; from++ )
+		LePutChar(le, from);
+	/* курсор остается спрятанным */
+}
+/* Выдать символ строки в позиции at */
+void LePutChar( LineEdit *le, int at){
+     int off = le->shift + at;
+     int bgcolor = le->bg_attrib, wall;
+wall =  /* символ на краю поля и строка выходит за этот край ? */
+   ( at == 0 && le->shift    ||
+   ( at >= le->width - 1 && le->shift + le->width < le->len ));
+bgcolor =
+   ( off < le->len ) ?                         le->bg_attrib   :
+   ( at >= le->width || off >= le->maxlen ) ? (le->bg_attrib | A_ITALICS):
+    /* чистое место в поле */                  le->fr_attrib   ;
+	wattrset( le->win, wall? le->wl_attrib|A_BOLD|A_ITALICS: bgcolor);
+	mvwaddch( le->win, le->top, le->left + at,
+		  off < le->len ? le->line[off] : ' ' );
+	wattrset( le->win, le->bg_attrib);
+}
+/* Спрятать курсор. x в интервале 0..le->width */
+void LeCursorHide( LineEdit *le ){
+	int x = le->pos - le->shift;
+	if( x < 0 || x > le->width || le->cursorOn == NO )
+		return;
+	LePutChar( le, x ); le->cursorOn = NO;
+}
+/* Проявить курсор */
+void LeCursorShow( LineEdit *le ){
+     int x = le->pos - le->shift, saveattr = le->bg_attrib;
+
+     if( x < 0 || x >  le->width      || le->cursorOn == YES ) return;
+     le->bg_attrib =   le->sel_attrib | (le->insert==NO ? A_BOLD : 0);
+     LePutChar(le, x); le->bg_attrib  =  saveattr;
+     wmove(le->win, le->top, le->left + x); le->cursorOn = YES;
+     SetPoint(le->savep, le->top, le->left+x);
+}
+/* Функция прокрутки длинной строки через окошко */
+static void LeRoll( LineEdit *ptr,
+	  int aid, int *cur, int *shift,
+	  int width,    /* ширина окна */
+	  int len, int maxlen,
+	  void (*go)  (LineEdit *p, int x, int eraseOld),
+	  void (*draw)(LineEdit *p), /* перерисовщик поля */
+	  int LDX
+){
+	int x = *cur - *shift, oldshift = *shift, newshift = oldshift;
+	int AID_LFT, AID_RGT,  drawn = NO;
+
+	if( aid < 0 || aid > len   ) return;       /* incorrect */
+	if( x   < 0 || x   > width ) return;       /* incorrect */
+
+	AID_LFT = MIN(LDX, maxlen);
+	AID_RGT = MAX(0,  MIN(maxlen, width-1 - LDX));
+
+	if( aid < *cur && x <= AID_LFT && oldshift > 0 )
+		goto Scroll;
+	else if( aid > *cur && x >= AID_RGT && oldshift + width < maxlen )
+		goto Scroll;
+	if( oldshift <= aid && aid < oldshift + width )
+		/* прокрутка не нужна - символ уже видим */
+		goto Position;
+Scroll:
+	if( aid >= *cur )
+		newshift = aid - AID_RGT;
+	else    newshift = aid - AID_LFT;
+	if( newshift + width > maxlen || (len == maxlen && aid == len))
+		newshift = maxlen - width;
+	if( newshift < 0 )
+		newshift = 0;
+	if( newshift != oldshift ){
+		*shift = newshift; (*draw)(ptr); drawn = YES;
+	}
+Position:
+	if((x = aid - newshift) >= width && len != maxlen )
+		beep();      /* ERROR */
+	(*go)(ptr, x, !drawn ); *cur = aid;
+}
+/* Поставить курсор на at-тый символ строки */
+void LePointAt( LineEdit *le, int at ){
+	/* at == len допустимо */
+	if( at < 0 || at > le->len ) return;
+	if( le->pos == at ) return;  /* уже на месте */
+	LeCursorHide( le );
+	LeRoll( le, at, & le->pos, & le->shift,
+		    le->width, le->len, le->maxlen,
+		    LePoint,   LeDraw,
+		    LINE_DX);
+	le->pos = at;
+	LeCursorShow( le );
+}
+/* Нарисовать подходящий scroll bar */
+void LePoint( LineEdit *le, int x, int eraseOld ){
+     if(le->scrollBar)
+      (*le->scrollBar)(le, BAR_HOR, x + le->shift, le->maxlen+1 );
+     GetBack( le->savep, le->win);
+}
+/* Нарисовать подходящий scroll bar            */
+/* Вызывай это каждый раз, когда len изменится */
+void LeReport( LineEdit *le ){
+     if(le->scrollBar)
+      le->scrollBar (le, BAR_VER, le->len, le->maxlen+1 );
+     GetBack( le->savep, le->win);
+}
+/* Нарисовать видимую часть строки */
+void LeDraw( LineEdit *le ){
+     LeDrawLine( le, 0);
+}
+/* Удаление буквы из строки */
+void LeDelCh( LineEdit *le ){
+     if( le->len <= 0 || le->pos < 0 || le->pos >= le->len ) return;
+     LeCursorHide( le );
+     (void) cdelete( le->line, le->pos );
+     le->len --;
+     LeDrawLine( le, le->pos - le->shift );
+     LeReport( le );
+}
+/* Вставка буквы в строку */
+void LeInsCh( LineEdit *le, int c ){
+     if( le->len < 0 || le->pos < 0 || le->pos > le->len ) return;
+     LeCursorHide( le );
+     insert( le->line, le->pos, c );
+     le->len++;
+     LeDrawLine( le, le->pos - le->shift );
+     LeReport( le );
+}
+/* Замена буквы в строке */
+void LeRepCh( LineEdit *le, int c ){
+     if( le->len <= 0 || le->pos < 0 || le->pos >= le->len ) return;
+     LeCursorHide( le );
+     le->line[ le->pos ] = c;
+     LePutChar( le, le->pos - le-> shift );
+}
+/* Вставка подстроки в строку редактирования */
+int LeInsStr( LineEdit *le, char *s){
+    int len = le->len, slen = strlen(s);
+    register i;
+
+    if( len + slen > le->maxlen )
+	      slen = le->maxlen - len;
+    if( ! slen ) return 0;
+
+    for( i=0; i < slen ; i ++ )
+	 insert( le->line, le->pos+i, s[i] );
+    le->len += slen;
+    LeCursorHide( le );
+    LeDrawLine( le, le->pos - le->shift );
+    LePointAt( le, le->pos + slen );
+    LeReport( le );
+    return slen ;
+}
+/* Стирание слова */
+int LeWerase( LineEdit *le, char *to ){
+	register i;
+	register char *s = le->line;
+	char c;
+
+	if( to ) *to = '\0';
+	i = le->pos;
+	if( s[i] == ' ' || s[i] == '\0' ){
+		/* найти конец слова */
+		for( --i; i >= 0 ; i-- )
+			if( s[i] != ' ' ) break;
+		if( i < 0 || le->len == 0 ){
+			beep(); return NO; }
+	}
+	/* найти начало слова */
+	for( ; i >= 0 && s[i] != ' ' ; i-- );
+	i++;  /* i < 0 || s[i] == ' ' */
+	LeCursorHide( le );  LePointAt( le, i );
+	while( s[i] != ' ' && s[i] != '\0' ){
+		c = cdelete( s, i );
+		if( to ) *to++ = c;
+		le->len --;
+	}
+	/* удалить пробелы после слова */
+	while( s[i] == ' ' ){
+		c = cdelete( s, i );
+		le->len --;
+	}
+	if( to ) *to = '\0';
+	LeDrawLine( le, i - le->shift );
+	LeReport( le );
+	return YES;
+}
+/* Редактор строки
+	le->line                что редактировать.
+	le->maxlen              макс. длина строки.
+	le->win                 окно, содержащее поле редактирования.
+	le->width               ширина поля редактирования.
+	le->top                 коорд-ты поля редактирования
+	le->left                  в окне win.
+	le->insert = YES        режим вставки.
+	le->nc     = YES        стирать строку при первом нажатии.
+	le->histIn              входная история  или NULL.
+	le->histOut             выходная история или NULL.
+	le->showMe              функция проявки окна или NULL.
+	le->hideMe              функция спрятывания окна или NULL.
+	le->hitkeys             специальные клавиши или NULL.
+	le->handler             обработчик специальных клавиш или NULL.
+	le->scrollBar           рисовалка scroll bar-ов или NULL.
+	le->posMe               установка позиции в строке при входе.
+	le->bg_attrib           цвет поля.
+	le->fr_attrib           цвет незаполненной части поля.
+	le->wl_attrib           цвет краев поля при продолжении.
+	le->sel_attrib          цвет символа под курсором.
+*/
+int LeEdit( LineEdit *le ){
+    int    c;
+    int nchar = 0;  /* счетчик нажатых клавиш */
+    Info *inf;
+
+ /* проявить окно */
+    if( le->showMe )
+	if( (*le->showMe) (le) <= 0 )
+		return (-1);
+    if( !le->win ) return (le->key = -1);
+Again:
+    le -> pos = 0;
+    le -> len = strlen( le->line );
+    le -> shift = 0;
+    le -> cursorOn = NO;
+    le->key = (-1);
+
+    LeDraw( le );
+    if(le->posMe) (*le->posMe)(le);
+    LePointAt(le, le->pos );
+    LePoint( le,  le->pos - le->shift, NO );
+    LeReport( le );
+
+    for (;;) {
+	LeCursorShow( le );
+
+	c = WinGetch(le->win); /* прочесть символ с клавиатуры */
+	nchar++;               /* число нажатых клавиш         */
+INP:
+	if( le->hitkeys && le->handler ){
+		HandlerReply reply;
+		if( is_in(c, le->hitkeys)){ /* спецсимвол ? */
+			c = (*le->handler)(le, c, &reply);
+			/* Восстановить scroll bars */
+			LePoint( le, le->pos - le->shift, NO );
+			LeReport( le );
+
+			switch( reply ){
+			case HANDLER_CONTINUE:  continue;
+			case HANDLER_NEWCHAR:   goto INP;
+			case HANDLER_OUT:       goto out;
+			case HANDLER_AGAIN:     /* reset */
+			     LeCursorHide(le);  goto Again;
+			case HANDLER_SWITCH:
+			default:        break;  /* goto switch(c) */
+			}
+		}
+	}
+sw:
+	switch (c) {
+	    case KEY_RIGHT:     /* курсор вправо */
+		if (le->pos != le->len && le->len > 0)
+		    LePointAt( le, le->pos + 1);
+		break;
+
+	    case KEY_LEFT:      /* курсор влево */
+		if (le->pos > 0)
+		    LePointAt(le, le->pos - 1);
+		break;
+
+	    case '\t':          /* табуляция вправо */
+		if (le->pos + 8 > le->len)
+		    LePointAt(le, le->len);
+		else
+		    LePointAt(le, le->pos + 8);
+		break;
+
+	    case KEY_BACKTAB:   /* табуляция влево */
+	    case ctrl('X'):
+		if( le->pos - 8 < 0 )
+			LePointAt(le, 0);
+		else    LePointAt(le, le->pos - 8 );
+		break;
+
+	    case KEY_HOME:      /* в начало строки */
+		LePointAt(le, 0); break;
+
+	    case KEY_END:       /* в конец строки KEY_LL */
+		if( le->len > 0 )
+			 LePointAt(le, le->len);
+		break;
+
+	    case 0177:          /* стереть символ перед курсором */
+	    case KEY_BACKSPACE:
+	    case '\b':
+		if (le->pos == 0) break;
+		LePointAt(le, le->pos - 1);   /* налево */
+		/* и провалиться в DC ... */
+
+	    case KEY_F (6):     /* стереть символ над курсором */
+	    case KEY_DC:
+		if (! le->len || le->pos == le->len)
+		    break;
+		LeDelCh(le);
+		break;
+
+	    case KEY_UP:        /* вызвать историю */
+	    case KEY_DOWN:
+	    case KEY_NPAGE:
+	    case KEY_PPAGE:
+	    case KEY_F(4):
+		if( ! le->histIn ) break;
+		/* иначе позвать историю */
+		inf = HistSelect( le->histIn,
+	  wbegx(le->win) + le->pos - le->shift + 2, le->top + 1);
+		if( inf == (Info *) NULL )
+			break;
+		LeCursorHide( le );
+		strncpy( le->line, inf->s, le->maxlen );
+		goto Again;
+
+out:        case '\r': case '\n': case ESC:
+	    /* ввод завершен - выйти */
+		LeCursorHide( le );
+		if( c != ESC && le->histOut && *le->line )
+		/* запомнить строку в историю */
+			HistAdd( le->histOut, le->line, 0);
+		if( le->hideMe ) /* спрятать окно */
+			(*le->hideMe)(le);
+		return (le->key = c);
+
+	    case KEY_F (8):     /* стереть всю строку */
+	    case ctrl('U'):
+		le->line[0] = '\0';
+		le->len = le->pos = le->shift = 0;
+		LeCursorHide( le );
+		LeReport( le );
+		goto REWRITE;
+
+	    case KEY_F(0):      /* F10: стереть до конца строки */
+		if( le->pos == le->len ) break;
+		le->line[ le->pos ] = '\0';
+		le->len = strlen( le->line );
+		LeCursorHide( le );
+		LeDrawLine( le, le->pos - le->shift );
+		LeReport( le );
+		break;
+
+	    case ctrl('W'): /* стереть слово */
+		LeWerase( le, NULL );
+		break;
+
+	    case ctrl('A'): /* перерисовка */
+		LeCursorHide(le); /* RedrawScreen(); */
+REWRITE:        LeDraw(le);
+		break;
+
+	    case KEY_F(7):  /* переключить режим вставки/замены */
+		le->insert = ! le->insert;
+		LeCursorHide( le );
+		break;
+#ifndef M_UNIX
+	    case ctrl('V'): /* ввод заэкранированного символа */
+		nchar--;
+		c = WinGetch(le->win);
+		nchar++;
+		if( c >= 0400 ) goto sw;
+		goto Input;
+#endif
+	    case 0: break;
+	    default:        /* ввод обычного символа */
+		if (c >= 0400 || ! isprint(c)) break;
+	Input:  if( le->nc && nchar == 1 && le->insert &&
+		      /*le->pos == 0 &&*/ le->len != 0 ){
+	    /* если это первая нажатая кнопка, то
+	    /* удалить все содержимое строки
+	    /* и заменить ее нажатой буквой */
+		       le->shift = 0;
+		       le->len = le->pos = 1;
+		       le->line[0] = c;
+		       le->line[1] = '\0';
+		       LeCursorHide( le );
+		       LeReport( le );
+		       goto REWRITE;
+		}
+		if (!le->insert) {
+		/* REPLACE - режим замены */
+		    if (le->pos == le->len)
+			goto AddChar;  /* временный INSERT */
+		    LeRepCh( le, c );
+		    LePointAt( le, le->pos + 1 );
+		} else {
+		/* INSERT - режим вставки */
+AddChar:
+		    if( le->len >= le->maxlen ){
+			beep();      /* строка переполнена */
+			break;
+		    }
+		    LeInsCh( le, c );
+		    LePointAt( le, le->pos + 1 );
+		}               /* endif */
+	}                       /* endswitch */
+    }                           /* endfor */
+}                               /* endfunc */

@@ -1,0 +1,2 @@
+- system interfaces .ifs
+- create .ifs for fs standart bash functions fifs_bash { args is path_fs }

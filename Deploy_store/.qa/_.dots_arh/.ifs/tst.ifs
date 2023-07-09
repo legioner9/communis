@@ -1,0 +1,7 @@
+main: test all files in dirs in file_ list
+exec:
+
+using global:
+parsing params:
+arg: 
+flow_chars: 

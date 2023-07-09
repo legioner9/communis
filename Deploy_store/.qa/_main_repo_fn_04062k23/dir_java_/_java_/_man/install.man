@@ -1,0 +1,13 @@
+## https://docs.fedoraproject.org/en-US/quick-docs/installing-java/
+
+Run the following command to list available versions:
+
+    dnf search openjdk
+
+Copy the version of OpenJDK you want to install.
+
+    sudo dnf install <openjdk-package-name>
+
+## easy dnf
+
+    sudo dnf install

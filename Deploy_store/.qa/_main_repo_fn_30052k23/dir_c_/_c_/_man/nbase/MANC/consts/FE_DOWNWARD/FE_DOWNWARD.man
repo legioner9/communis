@@ -1,0 +1,266 @@
+### UP
+[FE_DOWNWARD](##FE_DOWNWARD)
+[MAIN](##MAIN)
+[MAIN_ru](##MAIN_ru)
+[ANCORS](##ANCORS)
+[ISU](##ISU)
+[inet](##A_inet)
+[inet](##books_inet)
+[inet](##examples_inet)
+[inet](##classic_inet)
+[inet](##enters_inet)
+[inet](##issue_code_inet)
+[H_FILE](##H_FILE)
+[c_SYNOPSIS](##c_SYNOPSIS)
+[c_RETURN](##c_RETURN)
+[c_RETURN_ru](##c_RETURN_ru)
+[c_BUGS](##c_BUGS)
+[c_DESCRIPTION_ru](##c_DESCRIPTION_ru)
+[c_DESCRIPTION](##c_DESCRIPTION)
+[c_MIRRORS](##c_MIRRORS)
+[c_EXAMPLES](##c_EXAMPLES)
+[c_CODE_h](##c_CODE_h)
+[c_CODE_c](##c_CODE_c)
+[c_CODE_m](##c_CODE_m)
+[c_ERRORS](##c_ERRORS)
+[c_BOOKS](##c_BOOKS)
+[c_BOOKS_ru](##c_BOOKS_ru)
+[c_CONTENT](##c_CONTENT)
+
+[cat_hfiles](../../cat_hfiles.md)
+[cat_utils](../../cat_utils.md)
+[cat_structs](../../cat_structs.md)
+[cat_param](../../cat_params.md)
+[cat_macros](../../cat_macross.md)
+[cat_const](../../cat_consts.md)
+[cat_type](../../cat_types.md)
+[cat_any](../cat_anys.md)
+
+
+[UP](###UP)
+## MAIN
+:FE_DOWNWARD:
+[next](##MAIN_ru)
+
+<<MAIN>>
+[MAIN](../../fills/FE_DOWNWARD/MAIN)
+
+
+
+[UP](###UP)
+## MAIN_ru
+:FE_DOWNWARD:
+[next](##ANCORS)
+
+<<MAIN_ru>>
+[MAIN_ru](../../fills/FE_DOWNWARD/MAIN_ru)
+
+[UP](###UP)
+## ANCORS
+:FE_DOWNWARD:
+[next](##ISU)
+
+<<ANCORS>>
+[ANCORS](../../fills/FE_DOWNWARD/ANCORS)
+
+[UP](###UP)
+## ISU
+:FE_DOWNWARD:
+[next](##H_FILE)
+
+<<ISU>>
+only read
+:FE_DOWNWARD:
+[ISU](../../contents)
+[next](##inet)
+
+
+[UP](###UP)
+## inet
+:FE_DOWNWARD:
+[next](##H_FILE)
+
+
+[UP](###UP)
+## A_inet
+[manpages.org](https://www.google.ru/search?q=FE_DOWNWARD+site%3Ahttps%3A%2F%2Fmanpages.org)
+[reposcope.com_ru](https://www.google.ru/search?q=FE_DOWNWARD+site%3Ahttps%3A%2F%2Freposcope.com%2Fmanpages%2Fru)
+[pubs.opengroup.org](https://www.google.com/search?q=FE_DOWNWARD+https%3A%2F%2Fpubs.opengroup.org)
+[manpages.debian.org](https://yandex.ru/search/?text=FE_DOWNWARD+site%3Ahttps%3A%2F%2Fmanpages.debian.org%2F)
+[www.opennet.ru](http://www.opennet.ru/man.shtml?category=2&topic=FE_DOWNWARD)
+[man7.org](https://www.google.ru/search?q=FE_DOWNWARD+site%3Ahttps%3A%2F%2Fman7.org%2Flinux%2Fman-pages)
+[en.cppreference.com](https://www.google.com/search?q=FE_DOWNWARD+en.cppreference.com)
+[www.mankier.com](https://www.mankier.com/?q=FE_DOWNWARD)
+[www.codecogs.com](https://www.google.ru/search?q=FE_DOWNWARD+https%3A%2F%2Fwww.codecogs.com%2Flibrary%2Fcomputing%2F)
+[digitalmars.com](https://www.google.ru/search?q=FE_DOWNWARD+https%3A%2F%2Fdigitalmars.com%2Frtl%2F)
+
+
+[UP](###UP)
+## books_inet
+[cpp.com.ru](https://yandex.ru/search/?text=FE_DOWNWARD+site%3Ahttps%3A%2F%2Fcpp.com.ru)
+[linuxhint.com](https://www.google.ru/search?q=FE_DOWNWARD+site%3Ahttps%3A%2F%2Flinuxhint.com)
+[gnu.org](https://www.google.ru/search?q=FE_DOWNWARD+site%3Ahttps%3A%2F%2Fwww.gnu.org%2Fsoftware%2Flibc%2Fmanual)
+
+[UP](###UP)
+## examples_inet
+[yandex:examples](https://yandex.ru/search/?text=FE_DOWNWARD+example+in+c)
+[docs.oracle.com](https://www.google.com/search?q=FE_DOWNWARD+https%3A%2F%2Fdocs.oracle.com)
+[manpages.debian.org](https://yandex.ru/search/?text=FE_DOWNWARD+site%3Ahttps%3A%2F%2Fmanpages.debian.org%2F)
+[osr507doc.xinuos.com](https://www.google.com/search?q=FE_DOWNWARD+http%3A%2F%2Fosr507doc.xinuos.com%2Fen%2Fman)
+[cpp.hotexamples.com](https://cpp.hotexamples.com/examples/-/-/FE_DOWNWARD/cpp-FE_DOWNWARD-function-examples.html)
+[all-ht.ru](https://yandex.ru/search/?text=FE_DOWNWARD+site%3Ahttp%3A%2F%2Fall-ht.ru%2Finf%2Fprog%2Fc%2F)
+[cppreference.com](https://yandex.ru/search/?text=FE_DOWNWARD+site%3Ahttps%3A%2F%2Fen.cppreference.com%2Fw%2Fc%2F)
+
+[UP](###UP)
+## classic_inet
+[bogatyrev_c_unix](https://www.google.com/search?q=FE_DOWNWARD+site%3Ahttps%3A%2F%2Fcpp.com.ru%2Fbogatyrev_c_unix)
+[kr_cbook](https://www.google.com/search?q=FE_DOWNWARD+site%3Ahttps%3A%2F%2Fcpp.com.ru%2Fkr_cbook)
+
+[UP](###UP)
+## enters_inet
+[pubs.opengroup.org](https://pubs.opengroup.org/onlinepubs/9699919799/idx/head.html)
+
+[UP](###UP)
+## issue_code_inet
+[code.woboq.org](https://www.google.com/search?h=&sitesearch=https%3A%2F%2Fcode.woboq.org%2Fuserspace%2Fglibc%2F&q=FE_DOWNWARD)
+
+
+[UP](###UP)
+## H_FILE 
+[fenv_h.md](../../hfiles/fenv_h.md)
+
+
+[UP](###UP)
+## c_SYNOPSIS
+:FE_DOWNWARD:
+[next](##c_RETURN_ru)
+
+<<SYNOPSIS>>
+[SYNOPSIS](../../fills/FE_DOWNWARD/SYNOPSIS)
+
+
+[UP](###UP)
+## c_RETURN_ru
+:FE_DOWNWARD:
+[next](##c_RETURN)
+
+<<RETURN>>
+[RETURN_ru](../../fills/FE_DOWNWARD/RETURN)
+
+
+[UP](###UP)
+## c_RETURN
+:FE_DOWNWARD:
+[next](##c_DESCRIPTION_ru)
+
+<<RETURN_ru>>
+[RETURN](../../fills/FE_DOWNWARD/RETURN_ru)
+
+
+[UP](###UP)
+## c_DESCRIPTION_ru
+:FE_DOWNWARD:
+[next](##c_DESCRIPTION)
+
+<<DESCRIPTION_ru>>
+[DESCRIPTION_ru](../../fills/FE_DOWNWARD/DESCRIPTION_ru)
+
+
+[UP](###UP)
+## c_DESCRIPTION
+:FE_DOWNWARD:
+[next](##c_BUGS)
+
+<<DESCRIPTION>>
+[DESCRIPTION](../../fills/FE_DOWNWARD/DESCRIPTION)
+
+
+[UP](###UP)
+## c_MIRRORS
+:FE_DOWNWARD:
+[next](##c_BUGS)
+
+<<MIRRORS>>
+[MIRRORS](../../fills/FE_DOWNWARD/MIRRORS)
+
+
+[UP](###UP)
+## c_BUGS
+:FE_DOWNWARD:
+[next](##c_EXAMPLES)
+
+<<BUGS>>
+[BUGS](../../fills/FE_DOWNWARD/BUGS)
+
+
+[UP](###UP)
+## c_EXAMPLES
+:FE_DOWNWARD:
+[next](##c_CODE)
+
+<<EXAMPLES>>
+[EXAMPLES](../../fills/FE_DOWNWARD/EXAMPLES)
+
+
+[UP](###UP)
+## c_CODE_h
+:FE_DOWNWARD:
+[next](##c_CODE_c)
+
+<<CODE_h>>
+[CODE_h](../../fills/FE_DOWNWARD/CODE_h)
+
+
+[UP](###UP)
+## c_CODE_c
+:FE_DOWNWARD:
+[next](##c_CODE_m)
+
+<<CODE_c>>
+[CODE_c](../../fills/FE_DOWNWARD/CODE_c)
+
+
+[UP](###UP)
+## c_CODE_m
+:FE_DOWNWARD:
+[next](##c_ERRORS)
+
+<<CODE_m>>
+[CODE_m](../../fills/FE_DOWNWARD/CODE_m)
+
+
+[UP](###UP)
+## c_ERRORS
+:FE_DOWNWARD:
+[next](##c_BOOKS)
+
+<<ERRORS>>
+[ERRORS](../../fills/FE_DOWNWARD/ERRORS)
+
+
+[UP](###UP)
+## c_BOOKS
+:FE_DOWNWARD:
+[next](##c_BOOKS_ru)
+
+<<BOOKS>>
+[BOOKS](../../fills/FE_DOWNWARD/BOOKS)
+
+
+[UP](###UP)
+## c_BOOKS_ru
+:FE_DOWNWARD:
+[next](##c_CONTENT)
+
+
+<<BOOKS_ru>>
+[BOOKS_ru](../../fills/FE_DOWNWARD/BOOKS_ru)
+
+
+[UP](###UP)
+## c_CONTENT
+:33333:
+[33333.cnt](../../contents/33333.cnt)
+[next](##UP)
+
+[UP](###UP)

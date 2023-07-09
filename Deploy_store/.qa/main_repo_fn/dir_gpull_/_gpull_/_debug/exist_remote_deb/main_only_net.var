@@ -1,0 +1,32 @@
+# keyword_substring for sieve:
+## clone pull push
+## net local
+## strong
+
+# git identificator: name_repo 
+# eval name_repo="tgu"
+
+# fs contaner: dir_repo
+eval dir_contaner=${HOME}/REPOBARE
+
+# repo lockation: dir_repo
+eval dir_repo=${dir_contaner}/_repo
+# bare lockation: dir_repo
+eval dir_bare=${dir_contaner}/_bare
+
+#  fn_name#addr^remote@addr2^remote2
+
+eval clone_net="git@github.com:legioner9/${name_repo}.git<>GITHUB_LEGIONER9_${name_repo}"
+eval clone_local=
+
+eval pull_net_strong="git@github.com:legioner9/${name_repo}.git<>GITHUB_LEGIONER9_${name_repo}"
+eval pull_local_strong=
+
+eval push_net_strong="git@github.com:legioner9/${name_repo}.git<>GITHUB_LEGIONER9_${name_repo}"
+eval push_local_strong="${dir_bare}<>HOME_PULSH_BARE_${name_repo}"
+
+eval push_net=
+eval push_local="/run/media/st/MY_ONE/PULLSH/REPO<>MY_ONE_PULLSH_REPO_${name_repo}></run/media/st/TOSHIBA_EXT/PULLSH/REPO<>TOSHIBA_EXT_PULLSH_REPO_${name_repo}"
+
+eval wrp_fifs1_ mkdir -p ${dir_repo}/ -cnd1
+eval wrp_fifs1_ mkdir -p ${dir_bare}/ -cnd1

@@ -1,0 +1,7 @@
+failed in file main.c at line # 49
+from opendir_с dirname = tmp_1, errno = 2
+Error is: : No such file or directory
+failed in file main.c at line # 50
+from opendir_с dirname = tmp_2, errno = 2
+Error is: : No such file or directory
+return original errorexit(errno): 

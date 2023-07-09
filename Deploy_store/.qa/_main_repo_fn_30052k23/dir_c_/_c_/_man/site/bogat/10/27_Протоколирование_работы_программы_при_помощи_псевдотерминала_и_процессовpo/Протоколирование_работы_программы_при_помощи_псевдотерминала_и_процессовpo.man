@@ -1,0 +1,271 @@
+## Протоколирование работы программы при помощи псевдотерминала и процессов.
+
+Пример 27
+```cpp
+/* Коммуникация процессов при помощи псевдо-терминала.
+ *   Данная программа позволяет сохранять полный протокол работы
+ *   экранной программы в файл.
+ *   Не экранные программы данная версия НЕ трассирует,
+ *   поскольку сама работает в "прозрачном" режиме.
+ *
+ * Вариацией данной программы может служить использование
+ * системного вызова select() вместо запуска нескольких процессов.
+ *
+ * Программа также иллюстрирует "дерево" из 5 процессов.
+ *            Данная версия написана для UNIX System V.
+ *      TRACE__
+ *  \          \           master    slave
+ *  |экран<======\(Reader)=======!~!<====(целевая  )
+ *  /     <==\      |            ! !====>(программа)
+ *             \    |            !P!         |
+ *              |   |            !T!         |
+ *    . . . .   |   |            !Y!      (Slave)-->Управляет
+ *   клавиатура=|===|=>(Writer)=>!_!         | \    семафором
+ *              |   |       |                |   \
+ *              |  #####starter##################  \
+ *              |...................................|
+ *                                ftty
+ */
+#include <stdio.h>
+#include <sys/types.h>
+#include <sys/signal.h>
+#include <termio.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+
+extern int  exit ();
+extern char *ttyname ();
+extern  FILE * fopen ();
+extern errno;
+
+#define SEMAPHORE "/tmp/+++"            /* семафорный файл */
+#define TRACE     "./TRACE"             /* файл с протоколом */
+
+	     /* псевдотерминал связи */
+/* master - это часть, которая ведет себя как ФАЙЛ и умеет
+ * реагировать на некоторые специальные ioctl()-и */
+#define PTY       "/dev/ptyp0"          /* master */
+/* slave - это часть, которая ведет себя как драйвер терминалов */
+#define TTYP      "/dev/ttyp0"          /* slave  */
+
+int     ptyfd;
+FILE * ftrace = NULL;
+
+/* при прерывании завершить работу процесса "писателя" */
+onintr () {
+    closeVisual ();
+    fprintf (stderr, "\rwriter finished\r\n");
+    exit (0);
+}
+
+/* завершение работы процесса-"читателя" */
+bye () {
+    if (ftrace)
+	fclose (ftrace);
+    fprintf (stderr, "\rreader finished\r\n");
+    exit (0);
+}
+
+int     visual = 0;
+struct termio   old,
+		new;
+
+/* настроить режимы работы терминала на "прозрачный" режим */
+initVisual () {
+    ioctl (0, TCGETA, &old);
+    new = old;
+    new.c_iflag &= ~ICRNL;
+    new.c_lflag &= ~(ECHO | ICANON);
+    new.c_oflag &= ~(TAB3 | ONLCR);
+    new.c_cc[VMIN] = 1;
+    new.c_cc[VTIME] = 0;
+
+ /* new.c_cc[VINTR] = ctrl('C');   */
+    new.c_cc[VQUIT] = 0;
+    new.c_cc[VERASE] = 0;
+    new.c_cc[VKILL] = 0;
+}
+
+/* включить прозрачный режим */
+openVisual () {
+    if (visual) return;
+    visual = 1;
+    ioctl (0, TCSETAW, &new);
+}
+
+/* выключить прозрачный режим */
+closeVisual () {
+    if (!visual) return;
+    visual = 0;
+    ioctl (0, TCSETAW, &old);
+}
+
+struct stat st;
+
+main (argc, argv) char **argv; {
+    int     r,          /* pid процесса-"читателя" */
+	    w;          /* pid процесса-"писателя" */
+
+    if (argc == 1) {
+	fprintf (stderr, "pty CMD ...\n");
+	exit (1);
+    }
+
+    initVisual ();
+
+    if((ptyfd = open ( PTY , O_RDWR)) < 0){
+	fprintf(stderr, "Cannot open pty\n"); exit(2);
+    }
+
+    /* запустить процесс чтения с псевдодисплея */
+    r = startReader ();
+
+    /* запустить процесс чтения с клавиатуры */
+    w = startWriter ();
+
+    sleep (2);
+    /* запустить протоколируемый процесс */
+    startSlave (argv + 1, r, w);
+
+    /* дождаться окончания всех потомков */
+    while (wait (NULL) > 0);
+    exit (0);
+}
+
+/* запуск протоколируемого процесса */
+startSlave (argv, r, w) char  **argv; {
+    FILE * ftty;
+    int     pid;
+    int     tfd;
+    char   *tty = ttyname (1);   /* полное имя нашего терминала */
+
+    if (!(pid = fork ())) {
+
+    /* PTY SLAVE process */
+	ftty = fopen (tty, "w"); /* Для выдачи сообщений */
+	setpgrp ();       /* образовать новую группу процессов ;
+			   * лишиться управляющего терминала */
+
+	/* закрыть стандартные ввод, вывод, вывод ошибок */
+	close (0);
+	close (1);
+	close (2);
+
+	/* первый открытый терминал станет управляющим для процесса,
+	 * не имеющего управляющего терминала.
+	 * Открываем псевдотерминал (slave) в качестве стандартных
+	 * ввода, вывода и вывода ошибок
+	 */
+	open ( TTYP, O_RDWR);
+	open ( TTYP, O_RDWR);
+	tfd = open ( TTYP, O_RDWR);
+
+	if (tfd < 0) {
+	    fprintf (ftty, "\rSlave: can't read/write pty\r\n");
+	    kill(r, SIGKILL); kill(w, SIGKILL); exit (1);
+	}
+
+	/* запускаем целевую программу */
+	if (!(pid = fork ())) {
+
+	    fprintf (ftty, "\rCreating %s\r\n", SEMAPHORE);
+	    fflush (ftty);
+
+	    /* создаем семафорный файл */
+	    close (creat (SEMAPHORE, 0644));
+
+	    fprintf (ftty, "\rStart %s\r\n", argv[0]);
+	    fclose(ftty);
+
+	    /* заменить ответвившийся процесс программой,
+	     * указанной в аргументах
+	     */
+	    execvp (argv[0], argv);
+	    exit (errno);
+	}
+
+	/* дожидаться окончания целевой программы */
+	while (wait (NULL) != pid);
+
+	/* уничтожить семафор, что является признаком завершения
+	 * для процессов чтения и записи
+	 */
+	unlink (SEMAPHORE);
+
+	fprintf (ftty, "\rDied.\r\n");
+	fflush (ftty);
+
+    /* убить процессы чтения и записи */
+    /* terminate reader & writer */
+	kill (r, SIGINT); kill (w, SIGINT);
+
+	exit (0);
+    }
+    return pid;
+}
+
+ /* Пара master-процессов чтения и записи */
+
+/* запуск процесса чтения с псевдотерминала (из master-части) */
+startReader () {
+    char    c[512];
+    int     pid;
+    int n;
+
+    if (!(pid = fork ())) {
+    /* читать данные с ptyp на экран и в файл трассировки */
+
+	signal (SIGINT, bye);
+
+	/* ожидать появления семафора */
+	while (stat (SEMAPHORE, &st) < 0);
+
+	fprintf (stderr, "\rReader: Hello\r\n");
+	ftrace = fopen (TRACE, "w");
+
+	/* работать, пока существует семафорный файл */
+	while (stat (SEMAPHORE, &st) >= 0) {
+
+	    /* прочесть очередные данные */
+	    n = read (ptyfd, c, 512);
+
+	    if( n > 0 ) {
+	       /* записать их на настоящий терминал */
+	       fwrite( c, sizeof(char), n, stdout );
+	       /* и в файл протокола */
+	       fwrite( c, sizeof(char), n, ftrace );
+
+	       fflush (stdout);
+	    }
+	}
+	bye ();
+    }
+    return pid;
+}
+
+/* запуск процесса чтения данных с клавиатуры и записи
+ * их на "псевдоклавиатуру". Эти данные протоколировать не надо,
+ * так как их эхо-отобразит сам псевдотерминал
+ */
+startWriter () {
+    char    c;
+    int     pid;
+
+    if (!(pid = fork ())) {
+    /* читать клавиатуру моего терминала и выдавать это в ptyp */
+
+	openVisual (); /* наш терминал - в прозрачный режим */
+	signal (SIGINT, onintr);
+
+	while (stat (SEMAPHORE, &st) < 0);
+	fprintf (stderr, "\rWriter: Hello\r\n");
+
+	/* работать, пока существует семафорный файл */
+	while (stat (SEMAPHORE, &st) >= 0) {
+	    read (0, &c, 1);            /* читать букву с клавиатуры */
+	    write (ptyfd, &c, 1);       /* записать ее на master-pty */
+	}
+	onintr ();      /* завершиться */
+    }
+    return pid;
+}

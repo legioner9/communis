@@ -1,0 +1,1 @@
+    if (mknod_с(NAMEDPIPE_NAME, S_IFIFO | S_IRUSR | S_IWUSR, 0, __FILE__, __LINE__, STMO_PRN, STIF_ONE, STRE_EXI)) /*#*/ // work exa

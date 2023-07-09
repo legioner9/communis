@@ -1,0 +1,7 @@
+FNN=${FUNCNAME[0]}
+
+echo -e "${CYAN}--- ${FNN}}() $* ---${NORMAL}" #started functions
+
+garg_ ${FNN} $@ 1>/dev/null
+
+d_name=$(dirname ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_cr_shfn_/_cr_shfn_/_tml/_deb/sh.sh)

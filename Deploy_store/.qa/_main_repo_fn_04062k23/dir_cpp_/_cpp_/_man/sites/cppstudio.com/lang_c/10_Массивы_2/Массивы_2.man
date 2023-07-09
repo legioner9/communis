@@ -1,0 +1,3 @@
+## Массивы 2
+
+## http://cppstudio.com/post/9407/

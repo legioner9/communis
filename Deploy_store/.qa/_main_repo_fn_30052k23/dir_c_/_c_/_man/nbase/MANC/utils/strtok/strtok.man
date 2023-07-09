@@ -1,0 +1,515 @@
+### UP
+[strtok](##strtok)
+[MAIN](##MAIN)
+[MAIN_ru](##MAIN_ru)
+[ANCORS](##ANCORS)
+[ISU](##ISU)
+[inet](##A_inet)
+[inet](##books_inet)
+[inet](##examples_inet)
+[inet](##classic_inet)
+[inet](##enters_inet)
+[inet](##issue_code_inet)
+[H_FILE](##H_FILE)
+[p_SYNOPSIS](##p_SYNOPSIS)
+[p_RETURN](##p_RETURN)
+[p_RETURN_ru](##p_RETURN_ru)
+[p_BUGS](##p_BUGS)
+[p_DESCRIPTION_ru](##p_DESCRIPTION_ru)
+[p_DESCRIPTION](##p_DESCRIPTION)
+[p_MIRRORS](##p_MIRRORS)
+[p_EXAMPLES](##p_EXAMPLES)
+[p_CODE_h](##p_CODE_h)
+[p_CODE_c](##p_CODE_c)
+[p_CODE_m](##p_CODE_m)
+[p_ERRORS](##p_ERRORS)
+[p_BOOKS](##p_BOOKS)
+[p_BOOKS_ru](##p_BOOKS_ru)
+[p_CONTENT](##p_CONTENT)
+
+[cat_hfiles](../../cat_hfiles.md)
+[cat_utils](../../cat_utils.md)
+[cat_structs](../../cat_structs.md)
+[cat_param](../../cat_params.md)
+[cat_macros](../../cat_macross.md)
+[cat_const](../../cat_consts.md)
+[cat_type](../../cat_types.md)
+[cat_any](../cat_anys.md)
+
+
+[UP](###UP)
+## MAIN
+:strtok:
+[next](##MAIN_ru)
+
+<<MAIN>>
+[MAIN](../../fills/strtok/MAIN)
+
+
+
+[UP](###UP)
+## MAIN_ru
+:strtok:
+[next](##ANCORS)
+
+----------------------------------------------------- 
+-------------------------------------- 
+извлечение элементов (токенов) из строки
+-------------------------------------- 
+----------------------------------------------------- 
+<<MAIN_ru>>
+[MAIN_ru](../../fills/strtok/MAIN_ru)
+
+[UP](###UP)
+## ANCORS
+:strtok:
+[next](##ISU)
+
+----------------------------------------------------- 
+-------------------------------------- 
+https://manpages.org/strtok
+http://all-ht.ru/inf/prog/c/func/strtok.html
+-------------------------------------- 
+----------------------------------------------------- 
+<<ANCORS>>
+[ANCORS](../../fills/strtok/ANCORS)
+
+[UP](###UP)
+## ISU
+:strtok:
+[next](##H_FILE)
+
+----------------------------------------------------- 
+-------------------------------------- 
+file://${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_c_/_c_/_man/nbase/_Head_sis_libs_posix/31_1_string_h/30_strtok/study_cpjs/strtok.isu
+-------------------------------------- 
+----------------------------------------------------- 
+<<ISU>>
+only read
+:strtok:
+[ISU](../../contents)
+[next](##inet)
+
+
+[UP](###UP)
+## inet
+:strtok:
+[next](##H_FILE)
+
+
+[UP](###UP)
+## A_inet
+[manpages.org](https://www.google.ru/search?q=strtok+site%3Ahttps%3A%2F%2Fmanpages.org)
+[reposcope.com_ru](https://www.google.ru/search?q=strtok+site%3Ahttps%3A%2F%2Freposcope.com%2Fmanpages%2Fru)
+[pubs.opengroup.org](https://www.google.com/search?q=strtok+https%3A%2F%2Fpubs.opengroup.org)
+[manpages.debian.org](https://yandex.ru/search/?text=strtok+site%3Ahttps%3A%2F%2Fmanpages.debian.org%2F)
+[www.opennet.ru](http://www.opennet.ru/man.shtml?category=2&topic=strtok)
+[man7.org](https://www.google.ru/search?q=strtok+site%3Ahttps%3A%2F%2Fman7.org%2Flinux%2Fman-pages)
+[en.cppreference.com](https://www.google.com/search?q=strtok+en.cppreference.com)
+[www.mankier.com](https://www.mankier.com/?q=strtok)
+[www.codecogs.com](https://www.google.ru/search?q=strtok+https%3A%2F%2Fwww.codecogs.com%2Flibrary%2Fcomputing%2F)
+[digitalmars.com](https://www.google.ru/search?q=strtok+https%3A%2F%2Fdigitalmars.com%2Frtl%2F)
+
+
+[UP](###UP)
+## books_inet
+[cpp.com.ru](https://yandex.ru/search/?text=strtok+site%3Ahttps%3A%2F%2Fcpp.com.ru)
+[linuxhint.com](https://www.google.ru/search?q=strtok+site%3Ahttps%3A%2F%2Flinuxhint.com)
+[gnu.org](https://www.google.ru/search?q=strtok+site%3Ahttps%3A%2F%2Fwww.gnu.org%2Fsoftware%2Flibc%2Fmanual)
+
+[UP](###UP)
+## examples_inet
+[yandex:examples](https://yandex.ru/search/?text=strtok+example+in+c)
+[docs.oracle.com](https://www.google.com/search?q=strtok+https%3A%2F%2Fdocs.oracle.com)
+[manpages.debian.org](https://yandex.ru/search/?text=strtok+site%3Ahttps%3A%2F%2Fmanpages.debian.org%2F)
+[osr507doc.xinuos.com](https://www.google.com/search?q=strtok+http%3A%2F%2Fosr507doc.xinuos.com%2Fen%2Fman)
+[cpp.hotexamples.com](https://cpp.hotexamples.com/examples/-/-/strtok/cpp-strtok-function-examples.html)
+[all-ht.ru](https://yandex.ru/search/?text=strtok+site%3Ahttp%3A%2F%2Fall-ht.ru%2Finf%2Fprog%2Fc%2F)
+[cppreference.com](https://yandex.ru/search/?text=strtok+site%3Ahttps%3A%2F%2Fen.cppreference.com%2Fw%2Fc%2F)
+
+[UP](###UP)
+## classic_inet
+[bogatyrev_c_unix](https://www.google.com/search?q=strtok+site%3Ahttps%3A%2F%2Fcpp.com.ru%2Fbogatyrev_c_unix)
+[kr_cbook](https://www.google.com/search?q=strtok+site%3Ahttps%3A%2F%2Fcpp.com.ru%2Fkr_cbook)
+
+[UP](###UP)
+## enters_inet
+[pubs.opengroup.org](https://pubs.opengroup.org/onlinepubs/9699919799/idx/head.html)
+
+[UP](###UP)
+## issue_code_inet
+[code.woboq.org](https://www.google.com/search?h=&sitesearch=https%3A%2F%2Fcode.woboq.org%2Fuserspace%2Fglibc%2F&q=strtok)
+
+
+[UP](###UP)
+## H_FILE 
+[string_h.md](../../hfiles/string_h.md)
+
+
+[UP](###UP)
+## p_SYNOPSIS
+:strtok:
+[next](##p_RETURN_ru)
+
+----------------------------------------------------- 
+-------------------------------------- 
+#include <string.h>
+char *strtok(char *str, const char *delim);
+char *strtok_r(char *str, const char *delim, char **saveptr);
+-------------------------------------- 
+----------------------------------------------------- 
+<<SYNOPSIS>>
+[SYNOPSIS](../../fills/strtok/SYNOPSIS)
+
+
+[UP](###UP)
+## p_RETURN_ru
+:strtok:
+[next](##p_RETURN)
+
+<<RETURN>>
+[RETURN_ru](../../fills/strtok/RETURN)
+
+
+[UP](###UP)
+## p_RETURN
+:strtok:
+[next](##p_DESCRIPTION_ru)
+
+----------------------------------------------------- 
+-------------------------------------- 
+Функции strtok() и strtok_r() возвращают указатель на следующий токен или NULL, если больше токенов нет.
+-------------------------------------- 
+----------------------------------------------------- 
+<<RETURN_ru>>
+[RETURN](../../fills/strtok/RETURN_ru)
+
+
+[UP](###UP)
+## p_DESCRIPTION_ru
+:strtok:
+[next](##p_DESCRIPTION)
+
+----------------------------------------------------- 
+-------------------------------------- 
+Функция strtok() разделяет строку на последовательность нуля или более непустых токенов. При первом вызове strtok() анализируемую строку нужно указывать в аргументе str. В каждом последующем вызове, в котором анализируется эта же строка, значение str должно быть NULL.
+В аргументе delim задаётся набор байт, которые считаются разделителями токенов в анализируемой строке. Вызывающий может указывать разные строки в delim в последующих вызовах при анализе той же строки.
+Каждый вызов strtok() возвращает указатель на строку, завершающуюся null, которая содержит следующий токен. Эта строка не включает байт-разделитель. Если больше токенов нет, то strtok() возвращает NULL.
+Последовательность вызовов strtok(), оперирующих одной строкой, поддерживает указатель, который определяет точку, с которой начинается поиск следующего токена. Первый вызов strtok() назначает этому указателю ссылку на первый байт строки. Начало следующего токена определяется поиском вперёд в str следующего байта не разделителя. Если байт найден, то он берётся в качестве начала следующего токена. Если такой байт не найден, то токенов больше нет и strtok() возвращает NULL (для пустой строки или состоящей только из разделителей в этом случае NULL вернётся при первом вызове strtok()).
+Конец каждого токена находится поиском вперёд, длящемся до тех пор, пока не будет найден байт-разделитель или завершающий байт null ('0'). Если найден байт-разделитель, то он заменяется байтом null для завершения текущего токена, и strtok() сохраняет указатель на следующий байт; этот указатель будет использован в качестве начальной точки при поиске следующего токена. В этом случае strtok() возвращает указатель на начало найденного токена.
+Из описания выше следует, что последовательность из двух и более непрерывных байтов-разделителей в просматриваемой строке считается одним разделителем, а байты-разделители в начале или конце строки игнорируются. Другими словами, токены, возвращаемые strtok() — всегда не пустые строки. То есть, например, если есть строка «aaa;;bbb,», то последующие вызовы strtok() с заданными разделителями строк «;,» вернули бы строки «aaa» и «bbb», а затем указатель null.
+Функция strtok_r() является реентерабельной версией strtok(). Аргумент saveptr является указателем на переменную char *, которая используется внутри strtok_r() для учёта контекста между последующими вызовами при анализе одной и той же строки.
+При первом вызове strtok_r() значение str должно указывать на анализируемую строку, а значение saveptr игнорируется. При последующих вызовах значение str должно быть NULL, а значение saveptr не должно изменяться с момента предыдущего вызова.
+Одновременно могут анализироваться разные строки при нескольких запусках strtok_r() с различными аргументами saveptr.
+-------------------------------------- 
+----------------------------------------------------- 
+<<DESCRIPTION_ru>>
+[DESCRIPTION_ru](../../fills/strtok/DESCRIPTION_ru)
+
+
+[UP](###UP)
+## p_DESCRIPTION
+:strtok:
+[next](##p_BUGS)
+
+<<DESCRIPTION>>
+[DESCRIPTION](../../fills/strtok/DESCRIPTION)
+
+
+[UP](###UP)
+## p_MIRRORS
+:strtok:
+[next](##p_BUGS)
+
+----------------------------------------------------- 
+-------------------------------------- 
+strtok
+strtok_r
+-------------------------------------- 
+----------------------------------------------------- 
+<<MIRRORS>>
+[MIRRORS](../../fills/strtok/MIRRORS)
+
+
+[UP](###UP)
+## p_BUGS
+:strtok:
+[next](##p_EXAMPLES)
+
+----------------------------------------------------- 
+-------------------------------------- 
+Используйте данные функции с осторожностью. Учитывайте, что:
+anys
+cat_anys.md
+cat_consts.md
+cat_hfiles.md
+cat_macross.md
+cat_params.md
+cat_structs.md
+cat_types.md
+cat_utils.md
+consts
+contents
+file.word
+fills
+hfiles
+listh
+_lists
+man_7.man
+params
+readme.man
+src
+structs
+types
+utils
+Эти функции изменяют свой первый аргумент.
+anys
+cat_anys.md
+cat_consts.md
+cat_hfiles.md
+cat_macross.md
+cat_params.md
+cat_structs.md
+cat_types.md
+cat_utils.md
+consts
+contents
+file.word
+fills
+hfiles
+listh
+_lists
+man_7.man
+params
+readme.man
+src
+structs
+types
+utils
+Эти функции не могут использоваться со строками-константами.
+anys
+cat_anys.md
+cat_consts.md
+cat_hfiles.md
+cat_macross.md
+cat_params.md
+cat_structs.md
+cat_types.md
+cat_utils.md
+consts
+contents
+file.word
+fills
+hfiles
+listh
+_lists
+man_7.man
+params
+readme.man
+src
+structs
+types
+utils
+Теряется идентичность байта-разделителя.
+anys
+cat_anys.md
+cat_consts.md
+cat_hfiles.md
+cat_macross.md
+cat_params.md
+cat_structs.md
+cat_types.md
+cat_utils.md
+consts
+contents
+file.word
+fills
+hfiles
+listh
+_lists
+man_7.man
+params
+readme.man
+src
+structs
+types
+utils
+При анализе функция strtok() использует статический буфер, поэтому не является безопасной для нитей. Используйте strtok_r() в этом случае.
+-------------------------------------- 
+----------------------------------------------------- 
+<<BUGS>>
+[BUGS](../../fills/strtok/BUGS)
+
+
+[UP](###UP)
+## p_EXAMPLES
+:strtok:
+[next](##p_CODE)
+
+----------------------------------------------------- 
+-------------------------------------- 
+https://ru.manpages.org/strtok_r/3
+В программе, представленной далее, используются вложенные циклы, которые вызывают strtok_r() для разделения строки на составляющие её токены. В первом параметре командной строки задаётся анализируемая строка. Во втором параметре задаётся байт(ы)- разделитель, который используется для деления строки на «составные» токены. В третьем параметре указывается байт(ы)- разделитель, который используется для разделения «составных» токенов на подтокены.
+Пример результата вывода программы:
+$ ./a.out 'a/bbb///cc;xxx:yyy:' ':;' '/'
+1: a/bbb///cc
+--> a
+--> bbb
+--> cc
+2: xxx
+--> xxx
+3: yyy
+--> yyy
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+int
+main(int argc, char *argv[])
+{
+char *str1, *str2, *token, *subtoken;
+char *saveptr1, *saveptr2;
+int j;
+if (argc != 4) {
+fprintf(stderr, "Использование: %s string delim subdelim
+",
+argv[0]);
+exit(EXIT_FAILURE);
+}
+for (j = 1, str1 = argv[1]; ; j++, str1 = NULL) {
+token = strtok_r(str1, argv[2], &saveptr1);
+if (token == NULL)
+break;
+printf("%d: %s
+", j, token);
+for (str2 = token; ; str2 = NULL) {
+subtoken = strtok_r(str2, argv[3], &saveptr2);
+if (subtoken == NULL)
+break;
+printf("	 --> %s
+", subtoken);
+}
+}
+exit(EXIT_SUCCESS);
+}
+https://manpages.org/strtok
+The following example searches for tokens separated by <space>s.
+#include <string.h>
+...
+char *token;
+char *line = "LINE TO BE SEPARATED";
+char *search = " ";
+/* Token will point to "LINE". */
+token = strtok(line, search);
+/* Token will point to "TO". */
+token = strtok(NULL, search);
+The following example uses strtok() to break a line into two character strings separated by any combination of <space>s, <tab>s, or <newline>s.
+#include <string.h>
+...
+struct element {
+char *key;
+char *data;
+};
+...
+char line[LINE_MAX];
+char *key, *data;
+...
+key = strtok(line, "    
+");
+data = strtok(NULL, "   
+");
+...
+В примере, в строка «test1/test2/test3/test4» разбивается на части по разделителю “/” с помощью функции strtok. Результат разбиения выводится на консоль.
+int main (void)
+{    
+// Массив со строкой для поиска
+char str [24]=” test1/test2/test3/test4”;
+// Набор символов, которые должны входить в искомый сегмент
+char sep [10]=”/”;
+// Переменная, в которую будут заноситься начальные адреса частей
+// строки str
+char *istr;
+printf (“Исходная строка: %s
+“, str);
+printf (“Результат разбиения:
+“);
+// Выделение первой части строки
+istr = strtok (str,sep);
+// Выделение последующих частей
+while (istr != NULL)
+{
+// Вывод очередной выделенной части
+printf (“%s
+”,istr);
+// Выделение очередной части строки
+istr = strtok (NULL,sep);
+}
+return 0;
+}
+-------------------------------------- 
+----------------------------------------------------- 
+<<EXAMPLES>>
+[EXAMPLES](../../fills/strtok/EXAMPLES)
+
+
+[UP](###UP)
+## p_CODE_h
+:strtok:
+[next](##p_CODE_c)
+
+<<CODE_h>>
+[CODE_h](../../fills/strtok/CODE_h)
+
+
+[UP](###UP)
+## p_CODE_c
+:strtok:
+[next](##p_CODE_m)
+
+<<CODE_c>>
+[CODE_c](../../fills/strtok/CODE_c)
+
+
+[UP](###UP)
+## p_CODE_m
+:strtok:
+[next](##p_ERRORS)
+
+<<CODE_m>>
+[CODE_m](../../fills/strtok/CODE_m)
+
+
+[UP](###UP)
+## p_ERRORS
+:strtok:
+[next](##p_BOOKS)
+
+<<ERRORS>>
+[ERRORS](../../fills/strtok/ERRORS)
+
+
+[UP](###UP)
+## p_BOOKS
+:strtok:
+[next](##p_BOOKS_ru)
+
+<<BOOKS>>
+[BOOKS](../../fills/strtok/BOOKS)
+
+
+[UP](###UP)
+## p_BOOKS_ru
+:strtok:
+[next](##p_CONTENT)
+
+
+<<BOOKS_ru>>
+[BOOKS_ru](../../fills/strtok/BOOKS_ru)
+
+
+[UP](###UP)
+## p_CONTENT
+:strtok:
+[strtok.cnt](../../contents/strtok.cnt)
+[next](##UP)
+
+[UP](###UP)

@@ -1,0 +1,12 @@
+# my man s_e_ (enter point word md tag searching)
+
+use: all_man_files_
+
+in: 
+ 
+flow: 
+    menu:
+        word -> file man or name_fn
+        md -> file man or name_fn
+        tag -> name_fn
+out:

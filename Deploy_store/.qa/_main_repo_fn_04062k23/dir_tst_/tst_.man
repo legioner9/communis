@@ -1,0 +1,6 @@
+tst_ echo - all actual checked .tst files 
+tst_ word - all actual cat .word files
+
+tst_ echo > all_tst_files.list 
+
+start/communis/Deploy_store/.qa/lib/stl/prepeared_to_tst/all_tst_files.list

@@ -1,0 +1,25 @@
+i < N/2 
+
+i_max = N/2 - 1
+
+Task: 2*i+1 < N ?
+
+Solution: 2*i_max + 1 < N ?
+
+2*(N/2 - 1) + 1 < N ?
+
+N - 2 + 1 < N ?
+
+N - 1 < N true !
+
+Answer: true
+
+even / odd solution
+
+Task odd:
+
+
+
+(i < N / 2 + N % 2) and (2*i_max == N - 1)
+
+(i < N / 2) and (2*i_max + 1 == N - 1) 

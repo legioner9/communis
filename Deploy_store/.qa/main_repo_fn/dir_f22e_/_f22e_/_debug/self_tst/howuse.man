@@ -1,0 +1,3 @@
+# create tst flow at dis_tst and dis2_tst
+# rename exec._{ext} to exec.{ext}
+# . start_check_distst.sh for tst all files

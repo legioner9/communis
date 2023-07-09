@@ -1,0 +1,11 @@
+# my man ques_
+
+in: 
+$1 exec command (necessary)
+$2 arg for exec
+fliow:
+after answer "y"
+
+    $1 $2 
+
+out: exec result

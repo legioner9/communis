@@ -1,0 +1,20 @@
+## [Brian W. Kernighan, Dennis M. Ritchie](https://cpp.com.ru/kr_cbook/index.html#content)
+
+body {
+    background: #404244;
+    color: #f9f8f8;
+}
+
+A {
+    color: #f7f6f6; /* Цвет ссылок */
+}
+A:visited {
+    color: #f7f6f6; /* Цвет посещенных ссылок */
+}
+A:active {
+    color: #f7f6f6; /* Цвет активных ссылок */
+}
+
+body {
+    font-family: 'pragmata pro mono regular';
+}

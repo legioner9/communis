@@ -1,0 +1,43 @@
+# check date to update 31012k23
+# https://code-vault.net/
+
+# The C programming language made simple(The_C_made simple)
+# https://www.youtube.com/playlist?list=PLfqABt5AS4FmErobw8YyTwXDUE5nPH5lH
+
+Macros in C
+https://www.youtube.com/playlist?list=PLfqABt5AS4FmedTu7qARJ6REL7Y_dX-4A
+
+Functions in C
+https://www.youtube.com/playlist?list=PLfqABt5AS4FkbQ0bvuCfgj6ClVi-GGDSi
+
+Random numbers in C
+https://www.youtube.com/playlist?list=PLfqABt5AS4Fm0ur1GUC0QF2jg4opaf9sF
+
+Unix Processes in C
+https://www.youtube.com/playlist?list=PLfqABt5AS4FkW5mOn2Tn9ZZLLDwA3kZUY
+
+Tools and IDEs
+https://www.youtube.com/playlist?list=PLfqABt5AS4FnOR4oUXE_WDf1k0COTRee_
+
+Operators in C
+https://www.youtube.com/playlist?list=PLfqABt5AS4Flv0N9y6WVnbk_UjwYyC3T1
+
+File and terminal input/output operations in C
+https://www.youtube.com/playlist?list=PLfqABt5AS4Fmv8DszqJjIjmCjvTtTVslT
+
+Pointers and Memory Management in C
+https://www.youtube.com/playlist?list=PLfqABt5AS4FkIiyvV8mnZmf3p6PxbAtc8
+
+Arrays in C
+https://www.youtube.com/playlist?list=PLfqABt5AS4FlE_0SxzpkslkQBmtX7zre9
+
+String operations in C
+https://www.youtube.com/playlist?list=PLfqABt5AS4FmSwyvP5a3mYsaksq6yR3-Z
+
+Struct and other data types in C
+https://www.youtube.com/playlist?list=PLfqABt5AS4FnjfBE30pdyN47YdFiEkux8
+
+Header files in C
+https://www.youtube.com/playlist?list=PLfqABt5AS4FnI5vg_s_f4Cv4Mpfu5PmYG
+
+

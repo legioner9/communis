@@ -1,0 +1,5 @@
+eval QQ_EXIT=1
+wrp_fifs2_ cp -frvu /run/media/st/TOSHIBA_EXT/soft/ /run/media/st/TOSH -d1 -d2 -qq_exit
+wrp_fifs2_ cp -frvu /run/media/st/TOSHIBA_EXT/IDEA_store_gz/ /run/media/st/TOSH -d1 -d2 -qq_exit
+wrp_fifs2_ cp -frvu /run/media/st/TOSHIBA_EXT/Codium_store_gz/ /run/media/st/TOSH -d1 -d2 -qq_exit
+wrp_fifs2_ cp -frvu /run/media/st/MY_ONE/ /run/media/st/TOSH/ -d1 -d2 -qq_exit

@@ -1,0 +1,365 @@
+### UP
+[getdate](##getdate)
+[MAIN](##MAIN)
+[MAIN_ru](##MAIN_ru)
+[ANCORS](##ANCORS)
+[ISU](##ISU)
+[inet](##A_inet)
+[inet](##books_inet)
+[inet](##examples_inet)
+[inet](##classic_inet)
+[inet](##enters_inet)
+[inet](##issue_code_inet)
+[H_FILE](##H_FILE)
+[p_SYNOPSIS](##p_SYNOPSIS)
+[p_RETURN](##p_RETURN)
+[p_RETURN_ru](##p_RETURN_ru)
+[p_BUGS](##p_BUGS)
+[p_DESCRIPTION_ru](##p_DESCRIPTION_ru)
+[p_DESCRIPTION](##p_DESCRIPTION)
+[p_MIRRORS](##p_MIRRORS)
+[p_EXAMPLES](##p_EXAMPLES)
+[p_CODE_h](##p_CODE_h)
+[p_CODE_c](##p_CODE_c)
+[p_CODE_m](##p_CODE_m)
+[p_ERRORS](##p_ERRORS)
+[p_BOOKS](##p_BOOKS)
+[p_BOOKS_ru](##p_BOOKS_ru)
+[p_CONTENT](##p_CONTENT)
+
+[cat_hfiles](../../cat_hfiles.md)
+[cat_utils](../../cat_utils.md)
+[cat_structs](../../cat_structs.md)
+[cat_param](../../cat_params.md)
+[cat_macros](../../cat_macross.md)
+[cat_const](../../cat_consts.md)
+[cat_type](../../cat_types.md)
+[cat_any](../cat_anys.md)
+
+
+[UP](###UP)
+## MAIN
+:getdate:
+[next](##MAIN_ru)
+
+<<MAIN>>
+[MAIN](../../fills/getdate/MAIN)
+
+
+
+[UP](###UP)
+## MAIN_ru
+:getdate:
+[next](##ANCORS)
+
+<<MAIN_ru>>
+[MAIN_ru](../../fills/getdate/MAIN_ru)
+
+[UP](###UP)
+## ANCORS
+:getdate:
+[next](##ISU)
+
+<<ANCORS>>
+[ANCORS](../../fills/getdate/ANCORS)
+
+[UP](###UP)
+## ISU
+:getdate:
+[next](##H_FILE)
+
+<<ISU>>
+only read
+:getdate:
+[ISU](../../contents)
+[next](##inet)
+
+
+[UP](###UP)
+## inet
+:getdate:
+[next](##H_FILE)
+
+
+[UP](###UP)
+## A_inet
+[manpages.org](https://www.google.ru/search?q=getdate+site%3Ahttps%3A%2F%2Fmanpages.org)
+[reposcope.com_ru](https://www.google.ru/search?q=getdate+site%3Ahttps%3A%2F%2Freposcope.com%2Fmanpages%2Fru)
+[pubs.opengroup.org](https://www.google.com/search?q=getdate+https%3A%2F%2Fpubs.opengroup.org)
+[manpages.debian.org](https://yandex.ru/search/?text=getdate+site%3Ahttps%3A%2F%2Fmanpages.debian.org%2F)
+[www.opennet.ru](http://www.opennet.ru/man.shtml?category=2&topic=getdate)
+[man7.org](https://www.google.ru/search?q=getdate+site%3Ahttps%3A%2F%2Fman7.org%2Flinux%2Fman-pages)
+[en.cppreference.com](https://www.google.com/search?q=getdate+en.cppreference.com)
+[www.mankier.com](https://www.mankier.com/?q=getdate)
+[www.codecogs.com](https://www.google.ru/search?q=getdate+https%3A%2F%2Fwww.codecogs.com%2Flibrary%2Fcomputing%2F)
+[digitalmars.com](https://www.google.ru/search?q=getdate+https%3A%2F%2Fdigitalmars.com%2Frtl%2F)
+
+
+[UP](###UP)
+## books_inet
+[cpp.com.ru](https://yandex.ru/search/?text=getdate+site%3Ahttps%3A%2F%2Fcpp.com.ru)
+[linuxhint.com](https://www.google.ru/search?q=getdate+site%3Ahttps%3A%2F%2Flinuxhint.com)
+[gnu.org](https://www.google.ru/search?q=getdate+site%3Ahttps%3A%2F%2Fwww.gnu.org%2Fsoftware%2Flibc%2Fmanual)
+
+[UP](###UP)
+## examples_inet
+[yandex:examples](https://yandex.ru/search/?text=getdate+example+in+c)
+[docs.oracle.com](https://www.google.com/search?q=getdate+https%3A%2F%2Fdocs.oracle.com)
+[manpages.debian.org](https://yandex.ru/search/?text=getdate+site%3Ahttps%3A%2F%2Fmanpages.debian.org%2F)
+[osr507doc.xinuos.com](https://www.google.com/search?q=getdate+http%3A%2F%2Fosr507doc.xinuos.com%2Fen%2Fman)
+[cpp.hotexamples.com](https://cpp.hotexamples.com/examples/-/-/getdate/cpp-getdate-function-examples.html)
+[all-ht.ru](https://yandex.ru/search/?text=getdate+site%3Ahttp%3A%2F%2Fall-ht.ru%2Finf%2Fprog%2Fc%2F)
+[cppreference.com](https://yandex.ru/search/?text=getdate+site%3Ahttps%3A%2F%2Fen.cppreference.com%2Fw%2Fc%2F)
+
+[UP](###UP)
+## classic_inet
+[bogatyrev_c_unix](https://www.google.com/search?q=getdate+site%3Ahttps%3A%2F%2Fcpp.com.ru%2Fbogatyrev_c_unix)
+[kr_cbook](https://www.google.com/search?q=getdate+site%3Ahttps%3A%2F%2Fcpp.com.ru%2Fkr_cbook)
+
+[UP](###UP)
+## enters_inet
+[pubs.opengroup.org](https://pubs.opengroup.org/onlinepubs/9699919799/idx/head.html)
+
+[UP](###UP)
+## issue_code_inet
+[code.woboq.org](https://www.google.com/search?h=&sitesearch=https%3A%2F%2Fcode.woboq.org%2Fuserspace%2Fglibc%2F&q=getdate)
+
+
+[UP](###UP)
+## H_FILE 
+[time_h.md](../../hfiles/time_h.md)
+
+
+[UP](###UP)
+## p_SYNOPSIS
+:getdate:
+[next](##p_RETURN_ru)
+
+----------------------------------------------------- 
+-------------------------------------- 
+#include <time.h>
+struct tm *getdate(const char *string);
+extern int getdate_err;
+#include <time.h>
+int getdate_r(const char *string, struct tm *res);
+-------------------------------------- 
+----------------------------------------------------- 
+<<SYNOPSIS>>
+[SYNOPSIS](../../fills/getdate/SYNOPSIS)
+
+
+[UP](###UP)
+## p_RETURN_ru
+:getdate:
+[next](##p_RETURN)
+
+<<RETURN>>
+[RETURN_ru](../../fills/getdate/RETURN)
+
+
+[UP](###UP)
+## p_RETURN
+:getdate:
+[next](##p_DESCRIPTION_ru)
+
+<<RETURN_ru>>
+[RETURN](../../fills/getdate/RETURN_ru)
+
+
+[UP](###UP)
+## p_DESCRIPTION_ru
+:getdate:
+[next](##p_DESCRIPTION)
+
+----------------------------------------------------- 
+-------------------------------------- 
+Функция getdate() преобразует строковое представление даты и времени из буфера, на который указывает string в разделённое на компоненты время. Разделённое время сохраняется в структуре tm и указатель на неё возвращается в качестве результата. Структура tm находится в статической области и, таким образом, будет перезаписана при следующих вызовах getdate().
+В отличие от strptime(3), (которая имеет аргумент format), функция getdate() использует форматы, содержащиеся в файле, полный путь к которому содержится в переменной окружения DATEMSK. Первая строка файла, которая совпадает с полученной входной строкой, будет использована для преобразования.
+-------------------------------------- 
+----------------------------------------------------- 
+<<DESCRIPTION_ru>>
+[DESCRIPTION_ru](../../fills/getdate/DESCRIPTION_ru)
+
+
+[UP](###UP)
+## p_DESCRIPTION
+:getdate:
+[next](##p_BUGS)
+
+<<DESCRIPTION>>
+[DESCRIPTION](../../fills/getdate/DESCRIPTION)
+
+
+[UP](###UP)
+## p_MIRRORS
+:getdate:
+[next](##p_BUGS)
+
+<<MIRRORS>>
+[MIRRORS](../../fills/getdate/MIRRORS)
+
+
+[UP](###UP)
+## p_BUGS
+:getdate:
+[next](##p_EXAMPLES)
+
+<<BUGS>>
+[BUGS](../../fills/getdate/BUGS)
+
+
+[UP](###UP)
+## p_EXAMPLES
+:getdate:
+[next](##p_CODE)
+
+----------------------------------------------------- 
+-------------------------------------- 
+Программа, представленная далее, вызывает getdate() для каждого своего аргумента командной строки и при каждом вызове печатаются значения полей полученной структуры tm. Следующий сеанс показывает работу программы:
+$ TFILE=$PWD/tfile
+$ echo '%A' > $TFILE       # полное название дня недели
+$ echo '%T' >> $TFILE      # дата ISO (YYYY-MM-DD)
+$ echo '%F' >> $TFILE      # время (HH:MM:SS)
+$ date
+$ export DATEMSK=$TFILE
+$ ./a.out Tuesday '2009-12-28' '12:22:33'
+Sun Sep  7 06:03:36 CEST 2008
+Call 1 ("Tuesday"):
+tm_sec   = 36
+tm_min   = 3
+tm_hour  = 6
+tm_mday  = 9
+tm_mon   = 8
+tm_year  = 108
+tm_wday  = 2
+tm_yday  = 252
+tm_isdst = 1
+Call 2 ("2009-12-28"):
+tm_sec   = 36
+tm_min   = 3
+tm_hour  = 6
+tm_mday  = 28
+tm_mon   = 11
+tm_year  = 109
+tm_wday  = 1
+tm_yday  = 361
+tm_isdst = 0
+Call 3 ("12:22:33"):
+tm_sec   = 33
+tm_min   = 22
+tm_hour  = 12
+tm_mday  = 7
+tm_mon   = 8
+tm_year  = 108
+tm_wday  = 0
+tm_yday  = 250
+tm_isdst = 1
+Исходный код программы
+#define _GNU_SOURCE
+#include <time.h>
+#include <stdio.h>
+#include <stdlib.h>
+int
+main(int argc, char *argv[])
+{
+struct tm *tmp;
+int j;
+for (j = 1; j < argc; j++) {
+tmp = getdate(argv[j]);
+if (tmp == NULL) {
+printf("Ошибка вызова %d; getdate_err = %d
+",
+j, getdate_err);
+continue;
+}
+printf("Вызов %d ("%s"):
+", j, argv[j]);
+printf("    tm_sec   = %d
+", tmp->tm_sec);
+printf("    tm_min   = %d
+", tmp->tm_min);
+printf("    tm_hour  = %d
+", tmp->tm_hour);
+printf("    tm_mday  = %d
+", tmp->tm_mday);
+printf("    tm_mon   = %d
+", tmp->tm_mon);
+printf("    tm_year  = %d
+", tmp->tm_year);
+printf("    tm_wday  = %d
+", tmp->tm_wday);
+printf("    tm_yday  = %d
+", tmp->tm_yday);
+printf("    tm_isdst = %d
+", tmp->tm_isdst);
+}
+exit(EXIT_SUCCESS);
+}
+-------------------------------------- 
+----------------------------------------------------- 
+<<EXAMPLES>>
+[EXAMPLES](../../fills/getdate/EXAMPLES)
+
+
+[UP](###UP)
+## p_CODE_h
+:getdate:
+[next](##p_CODE_c)
+
+<<CODE_h>>
+[CODE_h](../../fills/getdate/CODE_h)
+
+
+[UP](###UP)
+## p_CODE_c
+:getdate:
+[next](##p_CODE_m)
+
+<<CODE_c>>
+[CODE_c](../../fills/getdate/CODE_c)
+
+
+[UP](###UP)
+## p_CODE_m
+:getdate:
+[next](##p_ERRORS)
+
+<<CODE_m>>
+[CODE_m](../../fills/getdate/CODE_m)
+
+
+[UP](###UP)
+## p_ERRORS
+:getdate:
+[next](##p_BOOKS)
+
+<<ERRORS>>
+[ERRORS](../../fills/getdate/ERRORS)
+
+
+[UP](###UP)
+## p_BOOKS
+:getdate:
+[next](##p_BOOKS_ru)
+
+<<BOOKS>>
+[BOOKS](../../fills/getdate/BOOKS)
+
+
+[UP](###UP)
+## p_BOOKS_ru
+:getdate:
+[next](##p_CONTENT)
+
+
+<<BOOKS_ru>>
+[BOOKS_ru](../../fills/getdate/BOOKS_ru)
+
+
+[UP](###UP)
+## p_CONTENT
+:33333:
+[33333.cnt](../../contents/33333.cnt)
+[next](##UP)
+
+[UP](###UP)

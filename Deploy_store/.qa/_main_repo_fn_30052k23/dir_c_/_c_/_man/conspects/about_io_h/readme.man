@@ -1,0 +1,2403 @@
+## clearerr
+
+`INTRF` void clearerr ( FILE * stream )
+
+`PARAMS` stream
+Pointer to a FILE object that identifies the stream.
+
+`FLOW`
+ 
+Resets both the error and the eof indicators of the stream.
+
+When a i/o function fails either because of an error or because the end of the file has been reached, one of these internal indicators may be set for the stream. The state of these indicators is cleared by a call to this function, or by a call to any of: rewind, fseek, fsetpos and freopen.
+
+Сбрасывает как индикаторы error, так и индикаторы eof потока.
+
+Когда функция ввода-вывода выходит из строя либо из-за ошибки, либо из-за достижения конца файла, для потока может быть установлен один из этих внутренних индикаторов. Состояние этих индикаторов очищается вызовом этой функции или вызовом любого из них: rewind, fseek, fsetpos и freopen.
+
+`ERROR` None
+
+`ALLOW` `NOT`
+
+`RET` 
+
+`DO`
+
+## fclose
+
+`INTRF` int fclose ( FILE * stream )
+
+`PARAMS` stream
+Pointer to a FILE object that specifies the stream to be closed.
+
+`FLOW` Closes the file associated with the stream and disassociates it.
+
+All internal buffers associated with the stream are disassociated from it and flushed: the content of any unwritten output buffer is written and the content of any unread input buffer is discarded.
+
+Even if the call fails, the stream passed as parameter will no longer be associated with the file nor its buffers.
+
+Закрывает файл, связанный с потоком, и разъединяет его.
+
+Все внутренние буферы, связанные с потоком, разъединяются от него и очищаются: содержимое любого неписаного выходного буфера записывается, а содержимое любого непрочитанного входного буфера отбрасывается.
+
+Даже если вызов завершится неудачно, поток, переданный как параметр, больше не будет связан ни с файлом, ни с его буферами.
+
+`ERROR` If the stream is successfully closed, a zero value is returned.
+On failure, EOF is returned.
+
+
+`ALLOW` `NOT`
+
+`RET` 
+
+`DO`
+
+## feof
+
+`INTRF` int feof ( FILE * stream )
+
+`PARAMS` stream
+Pointer to a FILE object that identifies the stream.
+
+`FLOW` Checks whether the end-of-File indicator associated with stream is set, returning a value different from zero if it is.
+
+This indicator is generally set by a previous operation on the stream that attempted to read at or past the end-of-file.
+
+Notice that stream's internal position indicator may point to the end-of-file for the next operation, but still, the end-of-file indicator may not be set until an operation attempts to read at that point.
+
+This indicator is cleared by a call to clearerr, rewind, fseek, fsetpos or freopen. Although if the position indicator is not repositioned by such a call, the next i/o operation is likely to set the indicator again.
+
+Проверяет, установлен ли индикатор конца файла, связанный с потоком, и возвращает значение, отличное от нуля, если оно установлено.
+
+Этот индикатор обычно устанавливается предыдущей операцией в потоке, которая пыталась прочитать в конце файла или после него.
+
+Обратите внимание, что внутренний индикатор положения потока может указывать на конец файла для следующей операции, но все же индикатор конца файла может быть установлен только тогда, когда операция попытается прочитать его в этой точке.
+
+Этот индикатор очищается вызовом clearerr, rewind, fseek, fsetpos или freopen. Хотя если индикатор положения если такой вызов не будет изменен, то следующая операция ввода-вывода, скорее всего, снова установит индикатор.
+
+`ERROR` A non-zero value is returned in the case that the end-of-file indicator associated with the stream is set.
+Otherwise, zero is returned.
+
+
+`ALLOW` `NOT`
+
+`RET` 
+
+`DO`
+
+## ferror
+
+`INTRF` int ferror ( FILE * stream )
+
+`PARAMS` stream
+Pointer to a FILE object that identifies the stream.
+
+`FLOW` Checks if the error indicator associated with stream is set, returning a value different from zero if it is.
+
+This indicator is generally set by a previous operation on the stream that failed, and is cleared by a call to clearerr, rewind or freopen.
+
+Проверяет, установлен ли индикатор ошибки, связанный с потоком, и возвращает значение, отличное от нуля, если да.
+
+Этот индикатор обычно устанавливается предыдущей операцией в потоке, которая завершилась неудачей, и очищается вызовом clearerr, rewind или freopen.
+
+`ERROR` A non-zero value is returned in the case that the error indicator associated with the stream is set.
+Otherwise, zero is returned.
+
+`ALLOW` `NOT`
+
+`RET` 
+
+`DO`
+
+## fflush
+
+`INTRF` int fflush ( FILE * stream )
+
+`PARAMS` stream
+Pointer to a FILE object that specifies a buffered stream. 
+
+`FLOW` If the given stream was open for writing (or if it was open for updating and the last i/o operation was an output operation) any unwritten data in its output buffer is written to the file.
+
+If stream is a null pointer, all such streams are flushed.
+
+In all other cases, the behavior depends on the specific library implementation. In some implementations, flushing a stream open for reading causes its input buffer to be cleared (but this is not portable expected behavior).
+
+The stream remains open after this call.
+
+When a file is closed, either because of a call to fclose or because the program terminates, all the buffers associated with it are automatically flushed.
+
+
+`ERROR` A zero value indicates success.
+If an error occurs, EOF is returned and the error indicator is set (see ferror).
+
+`ALLOW` `NOT`
+
+`RET` 
+
+`DO`
+
+## fgetc
+
+`INTRF` int fgetpos ( FILE * stream, fpos_t * pos )
+
+`PARAMS` stream
+Pointer to a FILE object that identifies an input stream.
+
+`FLOW` Returns the character currently pointed by the internal file position indicator of the specified stream. The internal file position indicator is then advanced to the next character.
+
+If the stream is at the end-of-file when called, the function returns EOF and sets the end-of-file indicator for the stream (feof).
+
+If a read error occurs, the function returns EOF and sets the error indicator for the stream (ferror).
+
+fgetc and getc are equivalent, except that getc may be implemented as a macro in some libraries.
+
+Возвращает символ, на который в данный момент указывает внутренний индикатор положения файла указанного потока. Внутренний индикатор положения файла затем перемещается к следующему символу.
+
+Если поток находится в конце файла при вызове, функция возвращает EOF и устанавливает индикатор конца файла для потока (feof).
+
+Если возникает ошибка чтения, функция возвращает EOF и устанавливаетиндикатор ошибок для потока (ferror).
+
+fgetc и getc эквивалентны, за исключением того, что getc может быть реализован как макрос в некоторых библиотеках.
+
+
+`ERROR` On success, the character read is returned (promoted to an int value).
+The return type is int to accommodate for the special value EOF, which indicates failure:
+If the position indicator was at the end-of-file, the function returns EOF and sets the eof indicator (feof) of stream.
+If some other reading error happens, the function also returns EOF, but sets its error indicator (ferror) instead.
+
+При успешном выполнении символ read возвращается (повышается до значения int).
+Возвращаемый тип - int для размещения специального значения EOF, которое указывает на сбой:
+если индикатор позиции находился в конце файла, функция возвращает EOF и устанавливает индикатор eof (feof) потока.
+Если происходит какая-то другая ошибка чтения, функция также возвращает EOF, но устанавливает вместо этого используется его индикатор ошибок (ferror).
+
+`ALLOW` `NOT`
+
+`RET` 
+
+`DO`
+
+## fgetpos
+
+`INTRF` int fgetpos ( FILE * stream, fpos_t * pos )
+
+`PARAMS` stream
+Pointer to a FILE object that identifies the stream.
+pos
+Pointer to a fpos_t object.
+This should point to an object already allocated.
+
+поток
+Указатель на ФАЙЛОВЫЙ объект, идентифицирующий поток.
+позиция
+Указатель на объект fpos_t.
+Это должно указывать на уже выделенный объек
+
+`FLOW` Retrieves the current position in the stream.
+
+The function fills the fpos_t object pointed by pos with the information needed from the stream's position indicator to restore the stream to its current position (and multibyte state, if wide-oriented) with a call to fsetpos.
+
+The ftell function can be used to retrieve the current position in the stream as an integer value.
+
+Извлекает текущую позицию в потоке.
+
+Функция заполняет объект fpos_t, на который указывает pos, информацией, необходимой из индикатора положения потока, чтобы восстановить поток в его текущую позицию (и многобайтовое состояние, если оно широко ориентировано) с вызовом fsetpos.
+
+Функция ftell может быть использована для получения текущей позиции в потоке в виде целочисленного значения.
+
+`ERROR` On success, the function returns zero.
+In case of error, errno is set to a platform-specific positive value and the function returns a non-zero value.
+
+
+`ALLOW` `NOT`
+
+`RET` 
+
+`DO`
+
+## fgets
+
+`INTRF` char * fgets ( char * str, int num, FILE * stream )
+
+`PARAMS` str
+Pointer to an array of chars where the string read is copied.
+num
+Maximum number of characters to be copied into str (including the terminating null-character).
+stream
+Pointer to a FILE object that identifies an input stream.
+stdin can be used as argument to read from the standard input.
+
+str
+Указатель на массив символов, в который копируется прочитанная строка.
+num
+Максимальное количество символов, копируемых в str (включая завершающий нулевой символ).
+стрим
+Указатель на файловый объект, идентифицирующий входной поток.
+stdin
+
+
+
+`FLOW` Reads characters from stream and stores them as a C string into str until (num-1) characters have been read or either a newline or the end-of-file is reached, whichever happens first.
+
+A newline character makes fgets stop reading, but it is considered a valid character by the function and included in the string copied to str.
+
+A terminating null character is automatically appended after the characters copied to str.
+
+Notice that fgets is quite different from gets: not only fgets accepts a stream argument, but also allows to specify the maximum size of str and includes in the string any ending newline character.
+
+Считывает символы из потока и сохраняет их в виде строки C в str до тех пор, пока небудут прочитаны символы (num-1) или не будет достигнута новая строка или конец файла, в зависимости от того, что произойдет раньше.
+
+Символ новой строки останавливает чтение fgets, но функция считает его допустимым символом ивключенный в строку, скопированную в str.
+
+Завершающий нулевой символ автоматически добавляется после символов, скопированных в str.
+
+Обратите внимание, что fgets сильно отличается от gets: fgets не только принимает аргумент stream , но и позволяет указать максимальный размер str и включает в строку любой заканчивающийся символ новой строки.
+
+
+`ERROR` On success, the function returns str.
+If the end-of-file is encountered while attempting to read a character, the eof indicator is set (feof). If this happens before any characters could be read, the pointer returned is a null pointer (and the contents of str remain unchanged).
+If a read error occurs, the error indicator (ferror) is set and a null pointer is also returned (but the contents pointed by str may have changed).
+
+При успешном выполнении функция возвращает str.
+Если при попытке чтения символа встречается конец файла, то устанавливается индикатор eof (feof). Если это происходит до того, как какие-либо символы могут быть прочитаны, возвращаемый указатель является нулевым указателем (и содержимое str остается неизменным).
+При возникновении ошибки чтения устанавливается индикатор ошибки (ferror) и также возвращается нулевой указатель (но содержимое, указанное str, возможно, изменилось)
+
+`ALLOW` `NOT`
+
+`RET` 
+
+`DO`
+
+## fopen
+
+`INTRF` FILE * fopen ( const char * filename, const char * mode )
+
+`PARAMS` filename
+C string containing the name of the file to be opened.
+Its value shall follow the file name specifications of the running environment and can include a path (if supported by the system).
+mode
+C string containing a file access mode. It can be:
+"r"	read: Open file for input operations. The file must exist.
+"w"	write: Create an empty file for output operations. If a file with the same name already exists, its contents are discarded and the file is treated as a new empty file.
+"a"	append: Open file for output at the end of a file. Output operations always write data at the end of the file, expanding it. Repositioning operations (fseek, fsetpos, rewind) are ignored. The file is created if it does not exist.
+"r+"	read/update: Open a file for update (both for input and output). The file must exist.
+"w+"	write/update: Create an empty file and open it for update (both for input and output). If a file with the same name already exists its contents are discarded and the file is treated as a new empty file.
+"a+"	append/update: Open a file for update (both for input and output) with all output operations writing data at the end of the file. Repositioning operations (fseek, fsetpos, rewind) affects the next input operations, but output operations move the position back to the end of file. The file is created if it does not exist.
+With the mode specifiers above the file is open as a text file. In order to open a file as a binary file, a "b" character has to be included in the mode string. This additional "b" character can either be appended at the end of the string (thus making the following compound modes: "rb", "wb", "ab", "r+b", "w+b", "a+b") or be inserted between the letter and the "+" sign for the mixed modes ("rb+", "wb+", "ab+").
+
+The new C standard (C2011, which is not part of C++) adds a new standard subspecifier ("x"), that can be appended to any "w" specifier (to form "wx", "wbx", "w+x" or "w+bx"/"wb+x"). This subspecifier forces the function to fail if the file exists, instead of overwriting it.
+
+If additional characters follow the sequence, the behavior depends on the library implementation: some implementations may ignore additional characters so that for example an additional "t" (sometimes used to explicitly state a text file) is accepted.
+
+On some library implementations, opening or creating a text file with update mode may treat the stream instead as a binary file.
+
+Text files are files containing sequences of lines of text. Depending on the environment where the application runs, some special character conversion may occur in input/output operations in text mode to adapt them to a system-specific text file format. Although on some environments no conversions occur and both text files and binary files are treated the same way, using the appropriate mode improves portability.
+
+For files open for update (those which include a "+" sign), on which both input and output operations are allowed, the stream shall be flushed (fflush) or repositioned (fseek, fsetpos, rewind) before a reading operation that follows a writing operation. The stream shall be repositioned (fseek, fsetpos, rewind) before a writing operation that follows a reading operation (whenever that operation did not reach the end-of-file).
+
+
+`FLOW` Opens the file whose name is specified in the parameter filename and associates it with a stream that can be identified in future operations by the FILE pointer returned.
+
+The operations that are allowed on the stream and how these are performed are defined by the mode parameter.
+
+The returned stream is fully buffered by default if it is known to not refer to an interactive device (see setbuf).
+
+The returned pointer can be disassociated from the file by calling fclose or freopen. All opened files are automatically closed on normal program termination.
+
+The running environment supports at least FOPEN_MAX files open simultaneously.
+
+Открывает файл, имя которого указано в параметре filename, и связывает его с потоком, который может быть идентифицирован в будущих операциях по возвращаемому указателю ФАЙЛА.
+
+Операции, разрешенные в потоке, и способ их выполнения определяются параметром mode .
+
+Возвращаемый поток по умолчанию полностью буферизуется, если известно, что он не ссылается на интерактивное устройство (см. setbuf).
+
+Возвращаемый указатель может быть отделен от файла с помощью вызова fclose или freopen. Все открытые файлы автоматически закрываются при обычном завершении программы.
+
+Рабочая среда поддерживает, по крайней мере Файлы FOPEN_MAX открываются одновременно.
+
+
+
+`ERROR` If the file is successfully opened, the function returns a pointer to a FILE object that can be used to identify the stream on future operations.
+Otherwise, a null pointer is returned.
+On most library implementations, the errno variable is also set to a system-specific error code on failure.
+
+Если файл успешно открыт, функция возвращает указатель на файловый объект, который можно использовать для идентификации потока при будущих операциях.
+В противном случае возвращается нулевой указатель.
+В большинстве реализаций библиотек переменная errno также устанавливается в системный код ошибки при сбое.
+
+`ALLOW` `NOT`
+
+`RET` 
+
+`DO`
+
+## fprintf
+
+`INTRF` int fprintf ( FILE * stream, const char * format, ... )
+
+`PARAMS` stream
+Pointer to a FILE object that identifies an output stream.
+format
+C string that contains the text to be written to the stream.
+It can optionally contain embedded format specifiers that are replaced by the values specified in subsequent additional arguments and formatted as requested.
+
+A format specifier follows this prototype:
+
+%[flags][width][.precision][length]specifier
+
+Where the specifier character at the end is the most significant component, since it defines the type and the interpretation of its corresponding argument:
+specifier	Output	Example
+d or i	Signed decimal integer	392
+u	Unsigned decimal integer	7235
+o	Unsigned octal	610
+x	Unsigned hexadecimal integer	7fa
+X	Unsigned hexadecimal integer (uppercase)	7FA
+f	Decimal floating point, lowercase	392.65
+F	Decimal floating point, uppercase	392.65
+e	Scientific notation (mantissa/exponent), lowercase	3.9265e+2
+E	Scientific notation (mantissa/exponent), uppercase	3.9265E+2
+g	Use the shortest representation: %e or %f	392.65
+G	Use the shortest representation: %E or %F	392.65
+a	Hexadecimal floating point, lowercase	-0xc.90fep-2
+A	Hexadecimal floating point, uppercase	-0XC.90FEP-2
+c	Character	a
+s	String of characters	sample
+p	Pointer address	b8000000
+n	Nothing printed.
+The corresponding argument must be a pointer to a signed int.
+The number of characters written so far is stored in the pointed location.	
+%	A % followed by another % character will write a single % to the stream.	%
+
+The format specifier can also contain sub-specifiers: flags, width, .precision and modifiers (in that order), which are optional and follow these specifications:
+
+flags	description
+-	Left-justify within the given field width; Right justification is the default (see width sub-specifier).
++	Forces to preceed the result with a plus or minus sign (+ or -) even for positive numbers. By default, only negative numbers are preceded with a - sign.
+(space)	If no sign is going to be written, a blank space is inserted before the value.
+\#	Used with o, x or X specifiers the value is preceeded with 0, 0x or 0X respectively for values different than zero.
+Used with a, A, e, E, f, F, g or G it forces the written output to contain a decimal point even if no more digits follow. By default, if no digits follow, no decimal point is written.
+0	Left-pads the number with zeroes (0) instead of spaces when padding is specified (see width sub-specifier).
+
+width	description
+(number)	Minimum number of characters to be printed. If the value to be printed is shorter than this number, the result is padded with blank spaces. The value is not truncated even if the result is larger.
+*	The width is not specified in the format string, but as an additional integer value argument preceding the argument that has to be formatted.
+
+.precision	description
+.number	For integer specifiers (d, i, o, u, x, X): precision specifies the minimum number of digits to be written. If the value to be written is shorter than this number, the result is padded with leading zeros. The value is not truncated even if the result is longer. A precision of 0 means that no character is written for the value 0.
+For a, A, e, E, f and F specifiers: this is the number of digits to be printed after the decimal point (by default, this is 6).
+For g and G specifiers: This is the maximum number of significant digits to be printed.
+For s: this is the maximum number of characters to be printed. By default all characters are printed until the ending null character is encountered.
+If the period is specified without an explicit value for precision, 0 is assumed.
+.*	The precision is not specified in the format string, but as an additional integer value argument preceding the argument that has to be formatted.
+
+The length sub-specifier modifies the length of the data type. This is a chart showing the types used to interpret the corresponding arguments with and without length specifier (if a different type is used, the proper type promotion or conversion is performed, if allowed):
+specifiers
+length	d i	u o x X	f F e E g G a A	c	s	p	n
+(none)	int	unsigned int	double	int	char*	void*	int*
+hh	signed char	unsigned char					signed char*
+h	short int	unsigned short int					short int*
+l	long int	unsigned long int		wint_t	wchar_t*		long int*
+ll	long long int	unsigned long long int					long long int*
+j	intmax_t	uintmax_t					intmax_t*
+z	size_t	size_t					size_t*
+t	ptrdiff_t	ptrdiff_t					ptrdiff_t*
+L			long double				
+Note that the c specifier takes an int (or wint_t) as argument, but performs the proper conversion to a char value (or a wchar_t) before formatting it for output.
+
+Note: Yellow rows indicate specifiers and sub-specifiers introduced by C99. See <cinttypes> for the specifiers for extended types.
+... (additional arguments)
+Depending on the format string, the function may expect a sequence of additional arguments, each containing a value to be used to replace a format specifier in the format string (or a pointer to a storage location, for n).
+There should be at least as many of these arguments as the number of values specified in the format specifiers. Additional arguments are ignored by the function.
+
+
+
+`FLOW` Writes the C string pointed by format to the stream. If format includes format specifiers (subsequences beginning with %), the additional arguments following format are formatted and inserted in the resulting string replacing their respective specifiers.
+
+After the format parameter, the function expects at least as many additional arguments as specified by format
+
+Записывает строку C, указанную форматом, в поток. Если формат содержит спецификаторы формата (подпоследовательности, начинающиеся с %), дополнительные аргументы, следующие за форматом, форматируются и вставляются в результирующую строку, заменяя соответствующие спецификаторы.
+
+После параметра format функция ожидает по крайней мере столько дополнительных аргументов, сколько указано форматом.
+
+`ERROR` On success, the total number of characters written is returned.
+
+If a writing error occurs, the error indicator (ferror) is set and a negative number is returned.
+
+If a multibyte character encoding error occurs while writing wide characters, errno is set to EILSEQ and a negative number is returned.
+
+При успешном выполнении возвращается общее количество написанных символов.
+
+При возникновении ошибки записи устанавливается индикатор ошибки (ferror) и возвращается отрицательное число.
+
+Если при записи широких символов возникает ошибка многобайтовой кодировки символов, errno устанавливается в EILSEQ и возвращается отрицательное число.
+
+
+`ALLOW` `NOT`
+
+`RET` 
+
+`DO`
+
+## fputc
+
+`INTRF` int fputc ( int character, FILE * stream )
+
+`PARAMS` character
+The int promotion of the character to be written.
+The value is internally converted to an unsigned char when written.
+stream
+Pointer to a FILE object that identifies an output stream.
+
+характер
+Int продвижение символа, который будет написан.
+При записи значение внутренне преобразуется в символ без знака.
+стрим
+Указатель на файловый объект, идентифицирующий выходной поток.
+
+`FLOW` Writes a character to the stream and advances the position indicator.
+
+The character is written at the position indicated by the internal position indicator of the stream, which is then automatically advanced by one.
+
+Записывает символ в поток и продвигает индикатор положения.
+
+Символ записывается в положении, указанном внутренним индикатором положения потока, который затем автоматически продвигается на единицу.
+
+
+`ERROR` On success, the character written is returned.
+If a writing error occurs, EOF is returned and the error indicator (ferror) is set.
+
+
+`ALLOW` `NOT`
+
+`RET` 
+
+`DO`
+
+## fputs
+
+`INTRF` int fputs ( const char * str, FILE * stream )
+
+`PARAMS` str
+C string with the content to be written to stream.
+stream
+Pointer to a FILE object that identifies an output stream.
+
+`FLOW` Writes the C string pointed by str to the stream.
+
+The function begins copying from the address specified (str) until it reaches the terminating null character ('\0'). This terminating null-character is not copied to the stream.
+
+Notice that fputs not only differs from puts in that the destination stream can be specified, but also fputs does not write additional characters, while puts appends a newline character at the end automatically.
+
+Записывает строку C, на которую указывает str, в поток.
+
+Функция начинает копирование с указанного адреса (str) до тех пор, пока не достигнет завершающего нулевого символа ('\0'). Этот завершающий нулевой символ не копируется в поток.
+
+Обратите внимание, что fputs отличается от puts не только тем, что можно указать конечный поток, но и тем, что fputs не записывает дополнительные символы, в то время как puts автоматически добавляет символ новой строки в конце.
+
+
+`ERROR` On success, a non-negative value is returned.
+On error, the function returns EOF and sets the error indicator (ferror).
+
+
+`ALLOW` `NOT`
+
+`RET` 
+
+`DO`
+
+## fread
+
+`INTRF` size_t fread ( void * ptr, size_t size, size_t count, FILE * stream )
+
+`PARAMS` ptr
+Pointer to a block of memory with a size of at least (size*count) bytes, converted to a void*.
+size
+Size, in bytes, of each element to be read.
+size_t is an unsigned integral type.
+count
+Number of elements, each one with a size of size bytes.
+size_t is an unsigned integral type.
+stream
+Pointer to a FILE object that specifies an input stream.
+
+ptr
+Указатель на блок памяти размером не менее (size*count) байтов, преобразованный в void*.
+размер
+Размер каждого считываемого элемента в байтах.
+size_t - это интегральный тип без знака.
+считать
+Количество элементов, каждый из которых имеет размер байта.
+size_t - это интегральный тип без знака.
+стрим
+Указатель на ФАЙЛОВЫЙ объект, указывающий входной поток.
+
+`FLOW` Reads an array of count elements, each one with a size of size bytes, from the stream and stores them in the block of memory specified by ptr.
+
+The position indicator of the stream is advanced by the total amount of bytes read.
+
+The total amount of bytes read if successful is (size*count).
+
+Считывает массив элементов count, каждый из которых имеет размер байтов размера, из потока и сохраняет их в блоке памяти, указанном ptr.
+
+Индикатор положения потока расширяется на общее количество прочитанных байтов.
+
+Общее количество прочитанных байтов в случае успеха равно (size *count).
+
+`ERROR` The total number of elements successfully read is returned.
+If this number differs from the count parameter, either a reading error occurred or the end-of-file was reached while reading. In both cases, the proper indicator is set, which can be checked with ferror and feof, respectively.
+If either size or count is zero, the function returns zero and both the stream state and the content pointed by ptr remain unchanged.
+size_t is an unsigned integral type.
+
+Возвращается общее количество успешно прочитанных элементов.
+Если это число отличается от параметра count, то либо произошла ошибка чтения, либо во время чтения был достигнут конец файла. В обоих случаях устанавливается соответствующий индикатор, который можно проверить с помощью ferror и feofсоответственно.
+Если размер или количество равны нулю, функция возвращает ноль, и как состояние потока, так и содержимое, указанное ptr, остаются неизменными.
+size_t - это интегральный тип без знака.
+
+
+`ALLOW` `NOT`
+
+`RET` 
+
+`DO`
+
+## freopen
+
+`INTRF` FILE * freopen ( const char * filename, const char * mode, FILE * stream )
+
+`PARAMS` filename
+C string containing the name of the file to be opened.
+Its value shall follow the file name specifications of the running environment and can include a path (if supported by the system).
+If this parameter is a null pointer, the function attempts to change the mode of the stream, as if the file name currently associated with that stream had been used.
+mode
+C string containing a file access mode. It can be:
+"r"	read: Open file for input operations. The file must exist.
+"w"	write: Create an empty file for output operations. If a file with the same name already exists, its contents are discarded and the file is treated as a new empty file.
+"a"	append: Open file for output at the end of a file. Output operations always write data at the end of the file, expanding it. Repositioning operations (fseek, fsetpos, rewind) are ignored. The file is created if it does not exist.
+"r+"	read/update: Open a file for update (both for input and output). The file must exist.
+"w+"	write/update: Create an empty file and open it for update (both for input and output). If a file with the same name already exists its contents are discarded and the file is treated as a new empty file.
+"a+"	append/update: Open a file for update (both for input and output) with all output operations writing data at the end of the file. Repositioning operations (fseek, fsetpos, rewind) affects the next input operations, but output operations move the position back to the end of file. The file is created if it does not exist.
+With the mode specifiers above the file is open as a text file. In order to open a file as a binary file, a "b" character has to be included in the mode string. This additional "b" character can either be appended at the end of the string (thus making the following compound modes: "rb", "wb", "ab", "r+b", "w+b", "a+b") or be inserted between the letter and the "+" sign for the mixed modes ("rb+", "wb+", "ab+").
+
+The new C standard (C2011, which is not part of C++) adds a new standard subspecifier ("x"), that can be appended to any "w" specifier (to form "wx", "wbx", "w+x" or "w+bx"/"wb+x"). This subspecifier forces the function to fail if the file exists, instead of overwriting it.
+
+If additional characters follow the sequence, the behavior depends on the library implementation: some implementations may ignore additional characters so that for example an additional "t" (sometimes used to explicitly state a text file) is accepted.
+
+On some library implementations, opening or creating a text file with update mode may treat the stream instead as a binary file.
+stream
+pointer to a FILE object that identifies the stream to be reopened.
+
+`FLOW` Reuses stream to either open the file specified by filename or to change its access mode.
+
+If a new filename is specified, the function first attempts to close any file already associated with stream (third parameter) and disassociates it. Then, independently of whether that stream was successfuly closed or not, freopen opens the file specified by filename and associates it with the stream just as fopen would do using the specified mode.
+
+If filename is a null pointer, the function attempts to change the mode of the stream. Although a particular library implementation is allowed to restrict the changes permitted, and under which circumstances.
+
+The error indicator and eof indicator are automatically cleared (as if clearerr was called).
+
+This function is especially useful for redirecting predefined streams like stdin, stdout and stderr to specific files (see the example below).
+
+Если указано новое имя файла, функция сначала пытается закрыть любой файл, уже связанный с stream (третий параметр), и разъединяет его. Затем, независимо от того, был ли этот поток успешно закрыт или нет, freopen открывает файл, указанный именем файла, и связывает его с потоком так же, как это сделал бы fopen, используя указанный режим.
+
+Если имя файла является нулевым указателем, функция пытается изменить режим потока. Хотя конкретной реализации библиотеки разрешено ограничивать разрешенные изменения и при каких обстоятельствах.
+
+Индикатор ошибки и индикатор eof автоматически очищаются (как если бы был вызван clearerr).
+
+Эта функция особенно полезна для перенаправления предопределенных потоков, таких как stdin, stdout и stderr, в определенные файлы (см. Пример ниже).
+
+
+`ERROR` If the file is successfully reopened, the function returns the pointer passed as parameter stream, which can be used to identify the reopened stream.
+Otherwise, a null pointer is returned.
+On most library implementations, the errno variable is also set to a system-specific error code on failure.
+
+Если файл успешно открыт повторно, функция возвращает указатель, переданный в качестве параметра stream, который можно использовать для идентификации вновь открытого потока.
+В противном случае возвращается нулевой указатель.
+В большинстве реализаций библиотек переменная errno также устанавливается в системный код ошибки при сбое.
+
+
+`ALLOW` `NOT`
+
+`RET` 
+
+`DO`
+
+## fscanf
+
+`INTRF` Reads data from the stream and stores them according to the parameter format into the locations pointed by the additional arguments.
+
+The additional arguments should point to already allocated objects of the type specified by their corresponding format specifier within the format string.
+
+`PARAMS` stream
+Pointer to a FILE object that identifies the input stream to read data from.
+format
+C string that contains a sequence of characters that control how characters extracted from the stream are treated:
+Whitespace character: the function will read and ignore any whitespace characters encountered before the next non-whitespace character (whitespace characters include spaces, newline and tab characters -- see isspace). A single whitespace in the format string validates any quantity of whitespace characters extracted from the stream (including none).
+Non-whitespace character, except format specifier (%): Any character that is not either a whitespace character (blank, newline or tab) or part of a format specifier (which begin with a % character) causes the function to read the next character from the stream, compare it to this non-whitespace character and if it matches, it is discarded and the function continues with the next character of format. If the character does not match, the function fails, returning and leaving subsequent characters of the stream unread.
+Format specifiers: A sequence formed by an initial percentage sign (%) indicates a format specifier, which is used to specify the type and format of the data to be retrieved from the stream and stored into the locations pointed by the additional arguments.
+
+A format specifier for fscanf follows this prototype:
+
+%[*][width][length]specifier
+
+Where the specifier character at the end is the most significant component, since it defines which characters are extracted, their interpretation and the type of its corresponding argument:
+specifier	Description	Characters extracted
+i, u	Integer	Any number of digits, optionally preceded by a sign (+ or -).
+Decimal digits assumed by default (0-9), but a 0 prefix introduces octal digits (0-7), and 0x hexadecimal digits (0-f).
+d	Decimal integer	Any number of decimal digits (0-9), optionally preceded by a sign (+ or -).
+o	Octal integer	Any number of octal digits (0-7), optionally preceded by a sign (+ or -).
+x	Hexadecimal integer	Any number of hexadecimal digits (0-9, a-f, A-F), optionally preceded by 0x or 0X, and all optionally preceded by a sign (+ or -).
+f, e, g	Floating point number	A series of decimal digits, optionally containing a decimal point, optionally preceeded by a sign (+ or -) and optionally followed by the e or E character and a decimal integer (or some of the other sequences supported by strtod).
+Implementations complying with C99 also support hexadecimal floating-point format when preceded by 0x or 0X.
+a
+c	Character	The next character. If a width other than 1 is specified, the function reads exactly width characters and stores them in the successive locations of the array passed as argument. No null character is appended at the end.
+s	String of characters	Any number of non-whitespace characters, stopping at the first whitespace character found. A terminating null character is automatically added at the end of the stored sequence.
+p	Pointer address	A sequence of characters representing a pointer. The particular format used depends on the system and library implementation, but it is the same as the one used to format %p in fprintf.
+[characters]	Scanset	Any number of the characters specified between the brackets.
+A dash (-) that is not the first character may produce non-portable behavior in some library implementations.
+[^characters]	Negated scanset	Any number of characters none of them specified as characters between the brackets.
+n	Count	No input is consumed.
+The number of characters read so far from stream is stored in the pointed location.
+%	%	A % followed by another % matches a single %.
+Except for n, at least one character shall be consumed by any specifier. Otherwise the match fails, and the scan ends there.
+
+The format specifier can also contain sub-specifiers: asterisk (*), width and length (in that order), which are optional and follow these specifications:
+sub-specifier	description
+*	An optional starting asterisk indicates that the data is to be read from the stream but ignored (i.e. it is not stored in the location pointed by an argument).
+width	Specifies the maximum number of characters to be read in the current reading operation (optional).
+length	One of hh, h, l, ll, j, z, t, L (optional).
+This alters the expected type of the storage pointed by the corresponding argument (see below).
+
+This is a chart showing the types expected for the corresponding arguments where input is stored (both with and without a length sub-specifier):
+specifiers
+length	d i	u o x	f e g a	c s [] [^]	p	n
+(none)	int*	unsigned int*	float*	char*	void**	int*
+hh	signed char*	unsigned char*				signed char*
+h	short int*	unsigned short int*				short int*
+l	long int*	unsigned long int*	double*	wchar_t*		long int*
+ll	long long int*	unsigned long long int*				long long int*
+j	intmax_t*	uintmax_t*				intmax_t*
+z	size_t*	size_t*				size_t*
+t	ptrdiff_t*	ptrdiff_t*				ptrdiff_t*
+L			long double*			
+Note: Yellow rows indicate specifiers and sub-specifiers introduced by C99.
+... (additional arguments)
+Depending on the format string, the function may expect a sequence of additional arguments, each containing a pointer to allocated storage where the interpretation of the extracted characters is stored with the appropriate type.
+There should be at least as many of these arguments as the number of values stored by the format specifiers. Additional arguments are ignored by the function.
+These arguments are expected to be pointers: to store the result of a fscanf operation on a regular variable, its name should be preceded by the reference operator (&) (see example).
+
+`FLOW` Reads data from the stream and stores them according to the parameter format into the locations pointed by the additional arguments.
+
+The additional arguments should point to already allocated objects of the type specified by their corresponding format specifier within the format string.
+
+Считывает данные из потока и сохраняет их в соответствии с форматом параметра в местах, указанных дополнительными аргументами.
+
+Дополнительные аргументы должны указывать на уже выделенные объекты типа, указанного соответствующим спецификатором формата в строке формата.
+
+`ERROR` On success, the function returns the number of items of the argument list successfully filled. This count can match the expected number of items or be less (even zero) due to a matching failure, a reading error, or the reach of the end-of-file.
+
+If a reading error happens or the end-of-file is reached while reading, the proper indicator is set (feof or ferror). And, if either happens before any data could be successfully read, EOF is returned.
+
+If an encoding error happens interpreting wide characters, the function sets errno to EILSEQ.
+
+При успешном выполнении функция возвращает количество успешно заполненных элементов списка аргументов. Этот счетчик может соответствовать ожидаемому количеству элементов или быть меньше (даже нулевым) из-за сбоя сопоставления, ошибки чтения или достижения конца файла.
+
+Если происходит ошибка чтения или конец файла достигнут во время чтения, устанавливается соответствующий индикатор (feof или ferror). И, если либо происходит до того, как какие-либо данные могут быть успешно прочитаны, возвращается EOF .
+
+Если при интерпретации широких символов возникает ошибка кодирования, функция устанавливает errno в EILSEQ.
+
+
+`ALLOW` `NOT`
+
+`RET` 
+
+`DO`
+
+## fseek
+
+`INTRF` int fseek ( FILE * stream, long int offset, int origin )
+
+`PARAMS` stream
+Pointer to a FILE object that identifies the stream.
+offset
+Binary files: Number of bytes to offset from origin.
+Text files: Either zero, or a value returned by ftell.
+origin
+Position used as reference for the offset. It is specified by one of the following constants defined in <cstdio> exclusively to be used as arguments for this function:
+Constant	Reference position
+SEEK_SET	Beginning of file
+SEEK_CUR	Current position of the file pointer
+SEEK_END	End of file *
+* Library implementations are allowed to not meaningfully support SEEK_END (therefore, code using it has no real standard portability).
+
+стрим
+Указатель на ФАЙЛОВЫЙ объект, идентифицирующий поток.
+смещение
+Двоичные файлы: количество байтов, смещаемых от источника.
+Текстовые файлы: либо ноль, либо значение, возвращаемое ftell.
+происхождение
+Позиция, используемая в качестве эталона для смещения. Он задается одной из следующих констант, определенных в <cstdio> исключительно для использования в качестве аргументов для этой функции:
+Постоянная	Исходное положение
+SEEK_SET	Начало файла
+SEEK_CUR	Текущее положение указателя файла
+SEEK_END	Конец файла *
+* Библиотечным реализациям разрешено не поддерживать SEEK_END (поэтому код, использующий его, не имеет реальной стандартной переносимости).
+
+`FLOW` Sets the position indicator associated with the stream to a new position.
+
+For streams open in binary mode, the new position is defined by adding offset to a reference position specified by origin.
+
+For streams open in text mode, offset shall either be zero or a value returned by a previous call to ftell, and origin shall necessarily be SEEK_SET.
+
+If the function is called with other values for these arguments, support depends on the particular system and library implementation (non-portable).
+
+The end-of-file internal indicator of the stream is cleared after a successful call to this function, and all effects from previous calls to ungetc on this stream are dropped.
+
+On streams open for update (read+write), a call to fseek allows to switch between reading and writing.
+
+Устанавливает индикатор положения, связанный с потоком, в новое положение.
+
+Для потоков, открытых в двоичном режиме, новая позиция определяется путем добавления смещения к опорной позиции, указанной источником.
+
+Для потоков, открытых в текстовом режиме, смещение должно быть либо нулевым, либо значением, возвращаемым предыдущим вызовом ftell, а источником обязательно должен быть SEEK_SET.
+
+значения для этих аргументов поддержка зависит от конкретной системы и реализации библиотеки (непереносимой).
+
+Внутренний индикатор конца файла потока очищается после успешного вызова этой функции, и все эффекты от предыдущих вызовов ungetc в этом потоке отбрасываются.
+
+В потоках, открытых для обновления (чтение + запись), вызов fseek позволяет переключаться между чтением и записью.
+
+`ERROR` If successful, the function returns zero.
+Otherwise, it returns non-zero value.
+If a read or write error occurs, the error indicator (ferror) is set.
+
+В случае успеха функция возвращает ноль
+, в противном случае - ненулевое значение.
+При возникновении ошибки чтения или записи устанавливается индикатор ошибки (ferror).
+
+
+`ALLOW` `NOT`
+
+`RET` 
+
+`DO`
+
+## fsetpos
+
+`INTRF` int fsetpos ( FILE * stream, const fpos_t * pos )
+
+`PARAMS` stream
+Pointer to a FILE object that identifies the stream.
+position
+Pointer to a fpos_t object containing a position previously obtained with fgetpos.
+
+стрим
+Указатель на ФАЙЛОВЫЙ объект, идентифицирующий поток.
+должность
+Указатель на объект fpos_t, содержащий позицию, ранее полученную с помощью fgetpos.
+
+`FLOW` Restores the current position in the stream to pos.
+
+The internal file position indicator associated with stream is set to the position represented by pos, which is a pointer to an fpos_t object whose value shall have been previously obtained by a call to fgetpos.
+
+The end-of-file internal indicator of the stream is cleared after a successful call to this function, and all effects from previous calls to ungetc on this stream are dropped.
+
+On streams open for update (read+write), a call to fsetpos allows to switch between reading and writing.
+
+A similar function, fseek, can be used to set arbitrary positions on streams open in binary mode.
+
+Восстанавливает текущую позицию в потоке до pos.
+
+Внутренний индикатор положения файла, связанный с stream, устанавливается в положение, представленное pos, которое является указателем на объект fpos_t, значение которого должно быть ранее получено вызовом fgetpos.
+
+Внутренний индикатор конца файла потока очищается после успешного вызова этой функции, и все эффекты от предыдущих вызовов ungetc в этом потоке отбрасываются.
+
+В потоках, открытых для обновления (чтение + запись), вызов fsetpos позволяет переключаться между чтением и записью.
+
+Аналогичная функция, fseek, может использоваться для установки произвольных позиций на потоках, открытых в двоичном режиме.
+
+
+`ERROR` If successful, the function returns zero.
+On failure, a non-zero value is returned and errno is set to a system-specific positive value.
+
+`ALLOW` `NOT`
+
+`RET` 
+
+`DO`
+
+## ftell
+
+`INTRF` long int ftell ( FILE * stream )
+
+`PARAMS` stream
+Pointer to a FILE object that identifies the stream.
+
+`FLOW` Returns the current value of the position indicator of the stream.
+
+For binary streams, this is the number of bytes from the beginning of the file.
+
+For text streams, the numerical value may not be meaningful but can still be used to restore the position to the same position later using fseek (if there are characters put back using ungetc still pending of being read, the behavior is undefined).
+
+Возвращает текущее значение индикатора позиции потока.
+
+Для двоичных потоков это количество байтов от начала файла.
+
+Для текстовых потоков числовое значение может не иметь смысла, но все равно может быть использовано для восстановления позиции в ту же позицию позже с помощью fseek (если есть символы, возвращенные с помощью ungetc, все еще ожидающие чтения, поведение не определено).
+
+
+`ERROR` On success, the current value of the position indicator is returned.
+On failure, -1L is returned, and errno is set to a system-specific positive value.
+
+
+`ALLOW` `NOT`
+
+`RET` 
+
+`DO`
+
+## fwrite
+
+`INTRF` size_t fwrite ( const void * ptr, size_t size, size_t count, FILE * stream )
+
+`PARAMS` ptr
+Pointer to the array of elements to be written, converted to a const void*.
+size
+Size in bytes of each element to be written.
+size_t is an unsigned integral type.
+count
+Number of elements, each one with a size of size bytes.
+size_t is an unsigned integral type.
+stream
+Pointer to a FILE object that specifies an output stream.
+
+ptr
+Указатель на массив записываемых элементов, преобразованный в const void*.
+размер
+Размер в байтах каждого записываемого элемента.
+size_t - это интегральный тип без знака.
+количество
+Количество элементов, каждый из которых имеет размер байтов размера.
+size_t - это интегральный тип без знака.
+поток
+Указатель на файловый объект, указывающий выходной поток. 
+
+`FLOW` Write block of data to stream
+Writes an array of count elements, each one with a size of size bytes, from the block of memory pointed by ptr to the current position in the stream.
+
+The position indicator of the stream is advanced by the total number of bytes written.
+
+Internally, the function interprets the block pointed by ptr as if it was an array of (size*count) elements of type unsigned char, and writes them sequentially to stream as if fputc was called for each byte.
+
+Запись блока данных в поток
+Записывает массив количество элементы, каждый из которых имеет размер размер байт, из блока памяти, на который указывает ptr на текущую позицию в поток.
+
+В индикатор положения потока опережается на общее количество записанных байтов.
+
+Внутренне функция интерпретирует блок, на который указывает ptr как если бы это был массив (size*count) элементы типа unsigned char, и записывает их последовательно в stream как будто fputc вызывался для каждого байта.
+
+
+
+`ERROR` 
+The total number of elements successfully written is returned.
+If this number differs from the count parameter, a writing error prevented the function from completing. In this case, the error indicator (ferror) will be set for the stream.
+If either size or count is zero, the function returns zero and the error indicator remains unchanged.
+size_t is an unsigned integral type.
+
+Возвращается общее количество успешно записанных элементов.
+Если это число отличается от параметра count, ошибка записи не позволила выполнить функцию. В этом случае для потока будет установлен индикатор ошибки (ferror).
+Если размер или количество равно нулю, функция возвращает ноль, а индикатор ошибки остается неизменным.
+size_t - это интегральный тип без знака.
+
+
+`ALLOW` `NOT`
+
+`RET` 
+
+`DO`
+
+## getc
+
+`INTRF` int getc ( FILE * stream )
+
+`PARAMS` stream
+Pointer to a FILE object that identifies an input stream.
+Because some libraries may implement this function as a macro, and this may evaluate the stream expression more than once, this should be an expression without side effects.
+
+стрим
+Указатель на ФАЙЛ объект, идентифицирующий входной поток.
+Поскольку некоторые библиотеки могут реализовать эту функцию как макрос, и это может оценить потоковое выражение более одного раза, это должно быть выражение без побочных эффектов.
+
+
+`FLOW` Get character from stream
+Returns the character currently pointed by the internal file position indicator of the specified stream. The internal file position indicator is then advanced to the next character.
+
+If the stream is at the end-of-file when called, the function returns EOF and sets the end-of-file indicator for the stream (feof).
+
+If a read error occurs, the function returns EOF and sets the error indicator for the stream (ferror).
+
+getc and fgetc are equivalent, except that getc may be implemented as a macro in some libraries. See getchar for a similar function that reads directly from stdin.
+
+Получить символ из потока
+Возвращает символ, на который в данный момент указывает внутренний индикатор положения файла указанного потока. Затем внутренний индикатор положения файла перемещается к следующему символу.
+
+Если при вызове поток находится в конце файла, функция возвращает EOF и устанавливает индикатор конца файла для потока (feof).
+
+Если возникает ошибка чтения, функция возвращает EOF и устанавливает индикатор ошибок для потока (ferror).
+
+getc и fgetc эквивалентны, за исключением того, что getc может быть реализован как макрос в некоторых библиотеках. См. getchar для аналогичной функции, которая читает непосредственно из stdin.
+
+
+`ERROR` On success, the character read is returned (promoted to an int value).
+The return type is int to accommodate for the special value EOF, which indicates failure:
+If the position indicator was at the end-of-file, the function returns EOF and sets the eof indicator (feof) of stream.
+If some other reading error happens, the function also returns EOF, but sets its error indicator (ferror) instead.
+
+стрим
+Указатель на файловый объект, идентифицирующий входной поток.
+поскольку некоторые библиотеки могут реализовать эту функцию как макрос, и это может вычислять выражение потока более одного раза, это должно быть выражение без побочных эффектов.
+
+
+`ALLOW` `NOT`
+
+`RET` 
+
+`DO`
+
+## getchar
+
+`INTRF` int getchar ( void )
+
+`PARAMS` (none)
+
+`FLOW` Get character from stdin
+Returns the next character from the standard input (stdin).
+
+It is equivalent to calling getc with stdin as argument.
+
+Получить символ из stdin
+Возвращает следующий символ из стандартного ввода (stdin).
+
+Это эквивалентно вызову getc с stdin в качестве аргумента.
+
+
+
+
+`ERROR` On success, the character read is returned (promoted to an int value).
+The return type is int to accommodate for the special value EOF, which indicates failure:
+If the standard input was at the end-of-file, the function returns EOF and sets the eof indicator (feof) of stdin.
+If some other reading error happens, the function also returns EOF, but sets its error indicator (ferror) instead.
+
+В случае успеха символ read возвращается (повышается до значения int).
+Возвращаемый тип - int для размещения специального значения EOF, которое указывает на сбой:
+если стандартный ввод был в конце файла, функция возвращает EOF и устанавливает индикатор eof (feof) stdin.
+Если происходит какая-либо другая ошибка чтения, функция также возвращает EOF, но устанавливаетвместо этого его индикатор ошибок (ferror).
+
+`ALLOW` `NOT`
+
+`RET` 
+
+`DO`
+
+## gets
+
+`INTRF` char * gets ( char * str )
+
+`PARAMS` str
+Pointer to a block of memory (array of char) where the string read is copied as a C string.
+
+`FLOW` Get string from stdin
+Reads characters from the standard input (stdin) and stores them as a C string into str until a newline character or the end-of-file is reached.
+
+The newline character, if found, is not copied into str.
+
+A terminating null character is automatically appended after the characters copied to str.
+
+Notice that gets is quite different from fgets: not only gets uses stdin as source, but it does not include the ending newline character in the resulting string and does not allow to specify a maximum size for str (which can lead to buffer overflows).
+
+
+`ERROR` On success, the function returns str.
+If the end-of-file is encountered while attempting to read a character, the eof indicator is set (feof). If this happens before any characters could be read, the pointer returned is a null pointer (and the contents of str remain unchanged).
+If a read error occurs, the error indicator (ferror) is set and a null pointer is also returned (but the contents pointed by str may have changed).
+
+
+`ALLOW` `NOT`
+
+`RET` 
+
+`DO`
+
+## perror
+
+`INTRF` void perror ( const char * str )
+
+`PARAMS` str
+C string containing a custom message to be printed before the error message itself.
+If it is a null pointer, no preceding custom message is printed, but the error message is still printed.
+By convention, the name of the application itself is generally used as parameter.
+
+str
+Строка C, содержащая пользовательское сообщение, которое должно быть напечатано перед самим сообщением об ошибке.
+Если это нулевой указатель, то предыдущее пользовательское сообщение не печатается, но сообщение об ошибке все равно печатается.
+По соглашению в качестве параметра обычно используется имя самого приложения.
+
+
+`FLOW` Print error message
+Interprets the value of errno as an error message, and prints it to stderr (the standard error output stream, usually the console), optionally preceding it with the custom message specified in str.
+
+errno is an integral variable whose value describes the error condition or diagnostic information produced by a call to a library function (any function of the C standard library may set a value for errno, even if not explicitly specified in this reference, and even if no error happened), see errno for more info.
+
+The error message produced by perror is platform-depend.
+
+If the parameter str is not a null pointer, str is printed followed by a colon (:) and a space. Then, whether str was a null pointer or not, the generated error description is printed followed by a newline character ('\n').
+
+perror should be called right after the error was produced, otherwise it can be overwritten by calls to other functions.
+
+Сообщение об ошибке печати
+Интерпретирует значение errno как сообщение об ошибке и печатает его в stderr (стандартный поток вывода ошибок, обычно консоль), необязательно предшествуя ему пользовательским сообщением, указанным в str.
+
+errno - это интегральная переменная, значение которой описывает состояние ошибки или диагностическую информацию, создаваемую вызовом библиотечной функции(любая функция стандартной библиотеки C может установить значение для errno, даже если оно явно не указано в этой ссылке, и даже если ошибка не произошла), см. errno для получения дополнительной информации.
+
+Сообщение об ошибке, создаваемое perror, зависит от платформы.
+
+Если параметр str не является нулевым указателем, str печатается после двоеточия (:) и пробела. Затем, независимо от того, был ли str нулевым указателем или нет, печатается сгенерированное описание ошибки, за которым следует символ новой строки ('\n').
+
+perror следует вызывать сразу после появления ошибки, иначе она может быть перезаписана вызовами других функций.
+
+`ERROR` none
+
+
+`ALLOW` `NOT`
+
+`RET` 
+
+`DO`
+
+## printf
+
+`INTRF` int printf ( const char * format, ... )
+
+`PARAMS` format
+C string that contains the text to be written to stdout.
+It can optionally contain embedded format specifiers that are replaced by the values specified in subsequent additional arguments and formatted as requested.
+
+A format specifier follows this prototype: [see compatibility note below]
+%[flags][width][.precision][length]specifier
+
+Where the specifier character at the end is the most significant component, since it defines the type and the interpretation of its corresponding argument:
+specifier	Output	Example
+d or i	Signed decimal integer	392
+u	Unsigned decimal integer	7235
+o	Unsigned octal	610
+x	Unsigned hexadecimal integer	7fa
+X	Unsigned hexadecimal integer (uppercase)	7FA
+f	Decimal floating point, lowercase	392.65
+F	Decimal floating point, uppercase	392.65
+e	Scientific notation (mantissa/exponent), lowercase	3.9265e+2
+E	Scientific notation (mantissa/exponent), uppercase	3.9265E+2
+g	Use the shortest representation: %e or %f	392.65
+G	Use the shortest representation: %E or %F	392.65
+a	Hexadecimal floating point, lowercase	-0xc.90fep-2
+A	Hexadecimal floating point, uppercase	-0XC.90FEP-2
+c	Character	a
+s	String of characters	sample
+p	Pointer address	b8000000
+n	Nothing printed.
+The corresponding argument must be a pointer to a signed int.
+The number of characters written so far is stored in the pointed location.	
+%	A % followed by another % character will write a single % to the stream.	%
+
+The format specifier can also contain sub-specifiers: flags, width, .precision and modifiers (in that order), which are optional and follow these specifications:
+
+flags	description
+-	Left-justify within the given field width; Right justification is the default (see width sub-specifier).
++	Forces to preceed the result with a plus or minus sign (+ or -) even for positive numbers. By default, only negative numbers are preceded with a - sign.
+(space)	If no sign is going to be written, a blank space is inserted before the value.
+#	Used with o, x or X specifiers the value is preceeded with 0, 0x or 0X respectively for values different than zero.
+Used with a, A, e, E, f, F, g or G it forces the written output to contain a decimal point even if no more digits follow. By default, if no digits follow, no decimal point is written.
+0	Left-pads the number with zeroes (0) instead of spaces when padding is specified (see width sub-specifier).
+
+width	description
+(number)	Minimum number of characters to be printed. If the value to be printed is shorter than this number, the result is padded with blank spaces. The value is not truncated even if the result is larger.
+*	The width is not specified in the format string, but as an additional integer value argument preceding the argument that has to be formatted.
+
+.precision	description
+.number	For integer specifiers (d, i, o, u, x, X): precision specifies the minimum number of digits to be written. If the value to be written is shorter than this number, the result is padded with leading zeros. The value is not truncated even if the result is longer. A precision of 0 means that no character is written for the value 0.
+For a, A, e, E, f and F specifiers: this is the number of digits to be printed after the decimal point (by default, this is 6).
+For g and G specifiers: This is the maximum number of significant digits to be printed.
+For s: this is the maximum number of characters to be printed. By default all characters are printed until the ending null character is encountered.
+If the period is specified without an explicit value for precision, 0 is assumed.
+.*	The precision is not specified in the format string, but as an additional integer value argument preceding the argument that has to be formatted.
+
+The length sub-specifier modifies the length of the data type. This is a chart showing the types used to interpret the corresponding arguments with and without length specifier (if a different type is used, the proper type promotion or conversion is performed, if allowed):
+specifiers
+length	d i	u o x X	f F e E g G a A	c	s	p	n
+(none)	int	unsigned int	double	int	char*	void*	int*
+hh	signed char	unsigned char					signed char*
+h	short int	unsigned short int					short int*
+l	long int	unsigned long int		wint_t	wchar_t*		long int*
+ll	long long int	unsigned long long int					long long int*
+j	intmax_t	uintmax_t					intmax_t*
+z	size_t	size_t					size_t*
+t	ptrdiff_t	ptrdiff_t					ptrdiff_t*
+L			long double				
+Note regarding the c specifier: it takes an int (or wint_t) as argument, but performs the proper conversion to a char value (or a wchar_t) before formatting it for output.
+
+Note: Yellow rows indicate specifiers and sub-specifiers introduced by C99. See <cinttypes> for the specifiers for extended types.
+... (additional arguments)
+Depending on the format string, the function may expect a sequence of additional arguments, each containing a value to be used to replace a format specifier in the format string (or a pointer to a storage location, for n).
+There should be at least as many of these arguments as the number of values specified in the format specifiers. Additional arguments are ignored by the function.
+
+`FLOW` Print formatted data to stdout
+Writes the C string pointed by format to the standard output (stdout). If format includes format specifiers (subsequences beginning with %), the additional arguments following format are formatted and inserted in the resulting string replacing their respective specifiers.
+
+Печать отформатированных данных в stdout
+Записывает строку C, указанную форматом, в стандартный вывод (stdout). Если формат содержит спецификаторы формата (подпоследовательности, начинающиеся с %), дополнительные аргументы, следующие за форматом, форматируются и вставляются в результирующую строку, заменяя соответствующие спецификаторы.
+
+
+`ERROR` On success, the total number of characters written is returned.
+
+If a writing error occurs, the error indicator (ferror) is set and a negative number is returned.
+
+If a multibyte character encoding error occurs while writing wide characters, errno is set to EILSEQ and a negative number is returned.
+
+При успешном выполнении возвращается общее количество написанных символов.
+
+При возникновении ошибки записи устанавливается индикатор ошибки (ferror) и возвращается отрицательное число.
+
+Если при записи широких символов возникает ошибка многобайтовой кодировки символов, errno устанавливается в EILSEQ и возвращается отрицательное число.
+
+
+`ALLOW` `NOT`
+
+`RET` 
+
+`DO`
+
+## putc
+
+`INTRF` int putc ( int character, FILE * stream )
+
+`PARAMS` character
+The int promotion of the character to be written.
+The value is internally converted to an unsigned char when written.
+Because some libraries may implement this function as a macro, and this may evaluate the stream expression more than once, this should be an expression without side effects.
+stream
+Pointer to a FILE object that identifies an output stream.
+
+символ
+Продвижение int символа, который будет записан.
+При записи значение внутренне преобразуется в символ без знака.
+Поскольку некоторые библиотеки могут реализовать эту функцию как макрос, и это может оценивать выражение потока более одного раза, это должно быть выражение без побочных эффектов.
+поток
+Указатель на файловый объект, идентифицирующий выходной поток.
+
+
+`FLOW` Write character to stream
+Writes a character to the stream and advances the position indicator.
+
+The character is written at the position indicated by the internal position indicator of the stream, which is then automatically advanced by one.
+
+putc and fputc are equivalent, except that putc may be implemented as a macro in some libraries. See putchar for a similar function that writes directly to stdout.
+
+Запись символа в поток
+Записывает символ в поток и продвигает индикатор положения.
+
+Символ записывается в положении, указанном внутренним индикатором положения потока, который затем автоматически продвигается на единицу.
+
+putc и fputc эквивалентны, за исключением того, что putc может быть реализован как макрос в некоторых библиотеках. См. putchar для аналогичной функции, которая записывает непосредственно в stdout.
+
+
+
+`ERROR` On success, the character written is returned.
+If a writing error occurs, EOF is returned and the error indicator (ferror) is set.
+
+При успешном выполнении возвращается записанный символ.
+При возникновении ошибки записи возвращается EOF и устанавливается индикатор ошибки (ferror).
+
+
+`ALLOW` `NOT`
+
+`RET` 
+
+`DO`
+
+## putchar
+
+`INTRF` int putchar ( int character )
+
+`PARAMS` character
+The int promotion of the character to be written.
+The value is internally converted to an unsigned char when written.
+
+характер
+Int продвижение символа, который будет написан.
+При записи значение внутренне преобразуется в символ без знака.
+
+
+`FLOW` Write character to stdout
+Writes a character to the standard output (stdout).
+
+It is equivalent to calling putc with stdout as second argument.
+
+Запись символа в stdout
+Записывает символ в стандартный вывод (stdout).
+
+Это эквивалентно вызову putc с stdout в качестве второго аргумента.
+
+
+`ERROR` On success, the character written is returned.
+If a writing error occurs, EOF is returned and the error indicator (ferror) is set.
+
+
+`ALLOW` `NOT`
+
+`RET` 
+
+`DO`
+
+## puts
+
+`INTRF` int puts ( const char * str )
+
+`PARAMS` str
+C string to be printed.
+
+`FLOW` Write string to stdout
+Writes the C string pointed by str to the standard output (stdout) and appends a newline character ('\n').
+
+The function begins copying from the address specified (str) until it reaches the terminating null character ('\0'). This terminating null-character is not copied to the stream.
+
+Notice that puts not only differs from fputs in that it uses stdout as destination, but it also appends a newline character at the end automatically (which fputs does not).
+
+Запись строки в stdout
+Записывает строку C, на которую указывает str, в стандартный вывод (stdout) и добавляет символ новой строки ('\n').
+
+Функция начинает копирование с указанного адреса (str) до тех пор, пока не достигнет завершающего нулевого символа ('\0').
+
+Обратите внимание, что puts не только отличается от fputs тем, что он использует stdout в качестве пункта назначения, но и автоматически добавляет символ новой строки в конце (чего не делает fputs).
+
+
+`ERROR` On success, a non-negative value is returned.
+On error, the function returns EOF and sets the error indicator (ferror).
+
+
+`ALLOW` `NOT`
+
+`RET` 
+
+`DO`
+
+## remove
+
+`INTRF` int remove ( const char * filename )
+
+`PARAMS` filename
+C string containing the name of the file to be deleted.
+Its value shall follow the file name specifications of the running environment and can include a path (if supported by the system).
+
+имя файла
+Строка C, содержащая имя удаляемого файла.
+Его значение должно соответствовать спецификациям имени файла запущенной среды и может включать путь (если поддерживается системой).
+
+`FLOW` Remove file
+Deletes the file whose name is specified in filename.
+
+This is an operation performed directly on a file identified by its filename; No streams are involved in the operation.
+
+Proper file access shall be available.
+
+Удалить файл
+Удаляет файл, имя которого указано в filename.
+
+Это операция, выполняемая непосредственно над файлом, идентифицированным его именемфайла; никакие потоки не участвуют в операции.
+
+Должен быть обеспечен надлежащий доступ к файлам.
+
+
+`ERROR` If the file is successfully deleted, a zero value is returned.
+On failure, a nonzero value is returned.
+On most library implementations, the errno variable is also set to a system-specific error code on failure.
+
+Если файл успешно удален, возвращается нулевое значение.
+При сбое возвращается ненулевое значение.
+В большинстве реализаций библиотек переменная errno также устанавливается в системный код ошибки при сбое.
+
+`ALLOW` `NOT`
+
+`RET` 
+
+`DO`
+
+## rename
+
+`INTRF` int rename ( const char * oldname, const char * newname )
+
+`PARAMS` oldname
+C string containing the name of an existing file to be renamed and/or moved.
+Its value shall follow the file name specifications of the running environment and can include a path (if supported by the system).
+newname
+C string containing the new name for the file.
+Its value shall follow the file name specifications of the running environment and can include a path (if supported by the system).
+
+старое имя
+Строка C, содержащая имя существующего файла, который нужно переименовать и / или переместить.
+Его значение должно соответствовать спецификациям имени файла запущенной среды и может включать путь (если поддерживается системой).
+новое имя
+Строка C, содержащая новое имя файла.
+Его значение должно соответствовать спецификациям имени файла запущенной среды и может включать путь (если поддерживается системой).
+
+`FLOW` Rename file
+Changes the name of the file or directory specified by oldname to newname.
+
+This is an operation performed directly on a file; No streams are involved in the operation.
+
+If oldname and newname specify different paths and this is supported by the system, the file is moved to the new location.
+
+If newname names an existing file, the function may either fail or override the existing file, depending on the specific system and library implementation.
+
+Proper file access shall be available.
+
+Переименовать файл
+Изменяет имя файла или каталога, указанного oldname, на newname.
+
+Это операция, выполняемая непосредственно над файлом; никакие потоки не участвуют в операции.
+
+Если oldname и newname указывают разные пути и это поддерживается системой, файл перемещается в новое место.
+
+Если newname называет существующий файл, функция может либо выйти из строя, либо переопределить существующий файл, в зависимости от конкретной реализации системы и библиотеки.
+
+Должен быть обеспечен надлежащий доступ к файла
+
+
+`ERROR` If the file is successfully renamed, a zero value is returned.
+On failure, a nonzero value is returned.
+On most library implementations, the errno variable is also set to a system-specific error code on fai
+
+Если файл успешно переименован, возвращается нулевое значение.
+При сбое возвращается ненулевое значение.
+В большинстве реализаций библиотек переменная errno также устанавливается в системный код ошибки при сбое.
+
+
+`ALLOW` `NOT`
+
+`RET` 
+
+`DO`
+
+## rewind
+
+`INTRF` void rewind ( FILE * stream )
+
+`PARAMS` stream
+Pointer to a FILE object that identifies the stream.
+
+`FLOW` Set position of stream to the beginning
+Sets the position indicator associated with stream to the beginning of the file.
+
+The end-of-file and error internal indicators associated to the stream are cleared after a successful call to this function, and all effects from previous calls to ungetc on this stream are dropped.
+
+On streams open for update (read+write), a call to rewind allows to switch between reading and writing.
+
+Установите положение потока в начало
+Устанавливает индикатор положения, связанный с stream, в начало файла.
+
+Внутренние индикаторы конца файла и ошибки, связанные с потоком, очищаются после успешного вызова этой функции, и все эффекты от предыдущих вызовов ungetc в этом потоке отбрасываются.
+
+В потоках, открытых для обновления (чтение + запись), вызов rewind позволяет переключаться между чтением и записью.
+
+
+`ERROR` none
+
+
+`ALLOW` `NOT`
+
+`RET` 
+
+`DO`
+
+## scanf
+
+`INTRF` int scanf ( const char * format, ... )
+
+`PARAMS` format
+C string that contains a sequence of characters that control how characters extracted from the stream are treated:
+Whitespace character: the function will read and ignore any whitespace characters encountered before the next non-whitespace character (whitespace characters include spaces, newline and tab characters -- see isspace). A single whitespace in the format string validates any quantity of whitespace characters extracted from the stream (including none).
+Non-whitespace character, except format specifier (%): Any character that is not either a whitespace character (blank, newline or tab) or part of a format specifier (which begin with a % character) causes the function to read the next character from the stream, compare it to this non-whitespace character and if it matches, it is discarded and the function continues with the next character of format. If the character does not match, the function fails, returning and leaving subsequent characters of the stream unread.
+Format specifiers: A sequence formed by an initial percentage sign (%) indicates a format specifier, which is used to specify the type and format of the data to be retrieved from the stream and stored into the locations pointed by the additional arguments.
+
+A format specifier for scanf follows this prototype:
+
+%[*][width][length]specifier
+
+Where the specifier character at the end is the most significant component, since it defines which characters are extracted, their interpretation and the type of its corresponding argument:
+specifier	Description	Characters extracted
+i	Integer	Any number of digits, optionally preceded by a sign (+ or -).
+Decimal digits assumed by default (0-9), but a 0 prefix introduces octal digits (0-7), and 0x hexadecimal digits (0-f).
+Signed argument.
+d or u	Decimal integer	Any number of decimal digits (0-9), optionally preceded by a sign (+ or -).
+d is for a signed argument, and u for an unsigned.
+o	Octal integer	Any number of octal digits (0-7), optionally preceded by a sign (+ or -).
+Unsigned argument.
+x	Hexadecimal integer	Any number of hexadecimal digits (0-9, a-f, A-F), optionally preceded by 0x or 0X, and all optionally preceded by a sign (+ or -).
+Unsigned argument.
+f, e, g	Floating point number	A series of decimal digits, optionally containing a decimal point, optionally preceeded by a sign (+ or -) and optionally followed by the e or E character and a decimal integer (or some of the other sequences supported by strtod).
+Implementations complying with C99 also support hexadecimal floating-point format when preceded by 0x or 0X.
+a
+c	Character	The next character. If a width other than 1 is specified, the function reads exactly width characters and stores them in the successive locations of the array passed as argument. No null character is appended at the end.
+s	String of characters	Any number of non-whitespace characters, stopping at the first whitespace character found. A terminating null character is automatically added at the end of the stored sequence.
+p	Pointer address	A sequence of characters representing a pointer. The particular format used depends on the system and library implementation, but it is the same as the one used to format %p in fprintf.
+[characters]	Scanset	Any number of the characters specified between the brackets.
+A dash (-) that is not the first character may produce non-portable behavior in some library implementations.
+[^characters]	Negated scanset	Any number of characters none of them specified as characters between the brackets.
+n	Count	No input is consumed.
+The number of characters read so far from stdin is stored in the pointed location.
+%	%	A % followed by another % matches a single %.
+Except for n, at least one character shall be consumed by any specifier. Otherwise the match fails, and the scan ends there.
+
+The format specifier can also contain sub-specifiers: asterisk (*), width and length (in that order), which are optional and follow these specifications:
+sub-specifier	description
+*	An optional starting asterisk indicates that the data is to be read from the stream but ignored (i.e. it is not stored in the location pointed by an argument).
+width	Specifies the maximum number of characters to be read in the current reading operation (optional).
+length	One of hh, h, l, ll, j, z, t, L (optional).
+This alters the expected type of the storage pointed by the corresponding argument (see below).
+
+This is a chart showing the types expected for the corresponding arguments where input is stored (both with and without a length sub-specifier):
+specifiers
+length	d i	u o x	f e g a	c s [] [^]	p	n
+(none)	int*	unsigned int*	float*	char*	void**	int*
+hh	signed char*	unsigned char*				signed char*
+h	short int*	unsigned short int*				short int*
+l	long int*	unsigned long int*	double*	wchar_t*		long int*
+ll	long long int*	unsigned long long int*				long long int*
+j	intmax_t*	uintmax_t*				intmax_t*
+z	size_t*	size_t*				size_t*
+t	ptrdiff_t*	ptrdiff_t*				ptrdiff_t*
+L			long double*			
+Note: Yellow rows indicate specifiers and sub-specifiers introduced by C99.
+... (additional arguments)
+Depending on the format string, the function may expect a sequence of additional arguments, each containing a pointer to allocated storage where the interpretation of the extracted characters is stored with the appropriate type.
+There should be at least as many of these arguments as the number of values stored by the format specifiers. Additional arguments are ignored by the function.
+These arguments are expected to be pointers: to store the result of a scanf operation on a regular variable, its name should be preceded by the reference operator (&) (see example).
+
+`FLOW` Read formatted data from stdin
+Reads data from stdin and stores them according to the parameter format into the locations pointed by the additional arguments.
+
+The additional arguments should point to already allocated objects of the type specified by their corresponding format specifier within the format string.
+
+Чтение отформатированных данных из stdin
+Считывает данные из stdin и сохраняет их в соответствии с форматом параметра в местах, указанных дополнительными аргументами.
+
+Дополнительные аргументы должны указывать на уже выделенные объекты типа, указанного соответствующим спецификатором формата в строке формата.
+
+
+`ERROR` On success, the function returns the number of items of the argument list successfully filled. This count can match the expected number of items or be less (even zero) due to a matching failure, a reading error, or the reach of the end-of-file.
+
+If a reading error happens or the end-of-file is reached while reading, the proper indicator is set (feof or ferror). And, if either happens before any data could be successfully read, EOF is returned.
+
+If an encoding error happens interpreting wide characters, the function sets errno to EILSEQ.
+
+On success, the function returns the number of items of the argument list successfully filled. This count can match the expected number of items or be less (even zero) due to a matching failure, a reading error, or the reach of the end-of-file.
+
+If a reading error happens or the end-of-file is reached while reading, the proper indicator is set (feof or ferror). And, if either happens before any data could be successfully read, EOF is returned.
+
+If an encoding error happens interpreting wide characters, the function sets errno to EILSEQ.
+
+
+`ALLOW` `NOT`
+
+`RET` 
+
+`DO`
+
+## setbuf
+
+`INTRF` void setbuf ( FILE * stream, char * buffer )
+
+`PARAMS` stream
+Pointer to a FILE object that identifies an open stream.
+buffer
+User allocated buffer. Shall be at least BUFSIZ bytes long.
+Alternatively, a null pointer can be specified to disable buffering
+
+`FLOW` Set stream buffer
+Specifies the buffer to be used by the stream for I/O operations, which becomes a fully buffered stream. Or, alternatively, if buffer is a null pointer, buffering is disabled for the stream, which becomes an unbuffered stream.
+
+Установить буфер потока
+Указывает буфер, используемый потоком для операций ввода-вывода, который становится полностью буферизованным потоком. Или, альтернативно, если буфер является нулевым указателем, буферизация отключается для потока, который становится небуферизованным потоком.
+
+This function should be called once the stream has been associated with an open file, but before any input or output operation is performed with it.
+
+Эта функция должна вызываться после того, как поток был связан с открытым файлом, но до того, как с ним будет выполнена какая-либо операция ввода или вывода.
+
+The buffer is assumed to be at least BUFSIZ bytes in size (see setvbuf to specify a size of the buffer).
+
+Предполагается, что размер буфера составляет не менее BUFSIZ байтов (см. setvbuf для указания размера буфера).
+
+A stream buffer is a block of data that acts as intermediary between the i/o operations and the physical file associated to the stream: For output buffers, data is output to the buffer until its maximum capacity is reached, then it is flushed (i.e.: all data is sent to the physical file at once and the buffer cleared). Likewise, input buffers are filled from the physical file, from which data is sent to the operations until exhausted, at which point new data is acquired from the file to fill the buffer again.
+
+Буфер потока является блоком данных, который действует как посредник между операциями ввода-вывода и физическим файлом, связанным с потоком: для выходных буферов данные выводятся в буфер до тех пор, пока не будет достигнута его максимальная емкость, затем он сбрасывается (т.Е. Все данные отправляются в физический файл сразу, и потокбуфер очищен). Аналогично, входные буферы заполняются из физического файла, из которого данные отправляются в операции до тех пор, пока не будут исчерпаны, после чего из файла извлекаются новые данные для повторного заполнения буфера.
+
+Stream buffers can be explicitly flushed by calling fflush. They are also automatically flushed by fclose and freopen, or when the program terminates normally.
+
+Потоковые буферы могут быть явно очищены путем вызова fflush. Они также автоматически сбрасываются fclose и freopen, или когда программа завершается нормально.
+
+A full buffered stream uses the entire size of the buffer as buffer whenever enough data is available (see setvbuf for other buffer modes).
+
+Полный буферизованный поток использует весь размер буфера в качестве буфера всякий раз, когда доступно достаточно данных (см. setvbuf для других режимов буфера).
+
+All files are opened with a default allocated buffer (fully buffered) if they are known to not refer to an interactive device. This function can be used to either set a specific memory block to be used as buffer or to disable buffering for the stream.
+
+Все файлы открываются с выделенным буфером по умолчанию (полностью буферизованным), если известно, что они не ссылаются на интерактивное устройство. Эта функция может использоваться для установки определенного блока памяти в качестве буфера или для отключения буферизации потока.
+
+The default streams stdin and stdout are fully buffered by default if they are known to not refer to an interactive device. Otherwise, they may either be line buffered or unbuffered by default, depending on the system and library implementation. The same is true for stderr, which is always either line buffered or unbuffered by default.
+
+Потоки по умолчанию stdin и stdout полностью буферизованы по умолчанию, если известно, что они не относятся к интерактивному устройству. В противном случае они могут быть либо буферизованы, либо небуферизованы по умолчанию, в зависимости от реализации системы и библиотеки. То же самое верно и для stderr, который по умолчанию всегда либо буферизован, либо небуферизован.
+
+A call to this function is equivalent to calling setvbuf with _IOFBF as mode and BUFSIZ as size (when buffer is not a null pointer), or equivalent to calling it with _IONBF as mode (when it is a null pointer).
+
+Вызов этой функции эквивалентен вызову setvbuf с _IOFBF в качестве режима и BUFSIZ в качестве размера (когда буфер не является нулевым указателем) или эквивалентен вызову его с _IONBF в качестве режима (когда он является нулевым указателем).
+
+`ERROR` none.
+
+
+`ALLOW` `NOT`
+
+`RET` 
+
+`DO`
+
+## setvbuf
+
+`INTRF` int setvbuf ( FILE * stream, char * buffer, int mode, size_t size )
+
+`PARAMS` stream
+Pointer to a FILE object that identifies an open stream.
+buffer
+User allocated buffer. Shall be at least size bytes long.
+If set to a null pointer, the function automatically allocates a buffer.
+mode
+Specifies a mode for file buffering. Three special macro constants (_IOFBF, _IOLBF and _IONBF) are defined in <cstdio> to be used as the value for this parameter:
+_IOFBF	Full buffering: On output, data is written once the buffer is full (or flushed). On Input, the buffer is filled when an input operation is requested and the buffer is empty.
+_IOLBF	Line buffering: On output, data is written when a newline character is inserted into the stream or when the buffer is full (or flushed), whatever happens first. On Input, the buffer is filled up to the next newline character when an input operation is requested and the buffer is empty.
+_IONBF	No buffering: No buffer is used. Each I/O operation is written as soon as possible. In this case, the buffer and size parameters are ignored.
+size
+Buffer size, in bytes.
+If the buffer argument is a null pointer, this value may determine the size automatically allocated by the function for the buffer.
+
+поток
+Указатель на файловый объект, идентифицирующий открытый поток.
+буфер
+Буфер, выделенный пользователем. Должен быть размером не менее байта.
+Если установлен нулевой указатель, функция автоматически выделяет буфер.
+режим
+Задает режим буферизации файлов. В <cstdio> определены три специальные макроконстанты (_IOFBF, _IOLBF и _IONBF), которые будут использоваться в качестве значения этого параметра:
+_IOFBF	Полная буферизация: при выводе данные записываются после того, как буфер заполнен (или очищен). При вводе буфер заполняется, когда запрашивается операция ввода и буфер пуст.
+_ИОЛБФ	Буферизация строк: при выводе данные записываются, когда символ новой строки вставляется в поток или когда буфер заполнен (или очищен), что бы ни произошло первым. При вводе буфер заполняется до следующего символа новой строки, когда запрашивается операция ввода и буфер пуст.
+_IONBF	Нет буферизации: буфер не используется. Каждая операция ввода-вывода записывается как можно скорее. В этом случае параметры буфера и размера игнорируются.
+размер
+Размер буфера, в байтах.
+Если аргумент buffer является нулевым указателем, это значение может определять размер, автоматически выделяемый функцией для буфера.
+
+
+`FLOW` Change stream buffering
+Specifies a buffer for stream. The function allows to specify the mode and size of the buffer (in bytes).
+
+Указывает буфер для потока. Функция позволяет указать режим и размер буфера (в байтах).
+
+If buffer is a null pointer, the function automatically allocates a buffer (using size as a hint on the size to use). Otherwise, the array pointed by buffer may be used as a buffer of size bytes.
+
+Если buffer является нулевым указателем, функция автоматически выделяет буфер (используя size в качестве подсказки на размер для использования). В противном случае массив, на который указывает буфер, может использоваться как буфер размером в байты.
+
+This function should be called once the stream has been associated with an open file, but before any input or output operation is performed with it.
+
+Эта функция должна вызываться после того, как поток был связан с открытым файлом, но до того, как с ним будет выполнена какая-либо операция ввода или вывода.
+
+A stream buffer is a block of data that acts as intermediary between the i/o operations and the physical file associated to the stream: For output buffers, data is output to the buffer until its maximum capacity is reached, then it is flushed (i.e.: all data is sent to the physical file at once and the buffer cleared). Likewise, input buffers are filled from the physical file, from which data is sent to the operations until exhausted, at which point new data is acquired from the file to fill the buffer again.
+
+Буфер потока является блоком данных, который действует как посредник между операциями ввода-вывода и физическим файлом, связанным с потоком: для выходных буферов данные выводятся в буфер до тех пор, пока не будет достигнута его максимальная емкость, затем он сбрасывается (т.Е. Все данные отправляются в физический файл сразу, и потокбуфер очищен). Аналогично, входные буферы заполняются из физического файла, из которого данные отправляются в операции до тех пор, пока не будут исчерпаны, и в этот момент из файла извлекаются новые данные для повторного заполнения буфера.
+
+Stream buffers can be explicitly flushed by calling fflush. They are also automatically flushed by fclose and freopen, or when the program terminates normally.
+
+Потоковые буферы могут быть явно очищены путем вызова fflush. Они также автоматически сбрасываются fclose и freopen, или когда программа завершается нормально.
+
+All files are opened with a default allocated buffer (fully buffered) if they are known to not refer to an interactive device. This function can be used to either redefine the buffer size or mode, to define a user-allocated buffer or to disable buffering for the stream.
+
+Все файлы открываются с выделенным буфером по умолчанию (полностью буферизованным), если известно, что они не ссылаются на интерактивное устройство. Эта функция может использоваться для переопределения размера или режима буфера, определения выделенного пользователем буфера или отключения буферизации потока.
+
+The default streams stdin and stdout are fully buffered by default if they are known to not refer to an interactive device. Otherwise, they may either be line buffered or unbuffered by default, depending on the system and library implementation. The same is true for stderr, which is always either line buffered or unbuffered by default.
+
+Потоки по умолчанию stdin и stdout полностью буферизуются по умолчанию, если известно, что они не относятся к интерактивному устройству. В противном случае они могут быть либо буферизованы, либо небуферизованы по умолчанию, в зависимости от реализации системы и библиотеки. То же самое верно и для stderr, который по умолчанию всегда либо буферизован, либо небуферизован.
+
+
+`ERROR` If the buffer is correctly assigned to the file, a zero value is returned.
+Otherwise, a non-zero value is returned; This may be due to an invalid mode parameter or to some other error allocating or assigning the buffer.
+
+Если буфер правильно присвоен файлу, возвращается нулевое значение.
+В противном случае возвращается ненулевое значение; это может быть связано с недопустимым параметром режима или какой-либо другой ошибкой выделения или назначения буфера.
+
+
+
+`ALLOW` `NOT`
+
+`RET` 
+
+`DO`
+
+## snprintf
+
+`INTRF` int snprintf ( char * s, size_t n, const char * format, ... )
+
+`PARAMS` s
+Pointer to a buffer where the resulting C-string is stored.
+The buffer should have a size of at least n characters.
+n
+Maximum number of bytes to be used in the buffer.
+The generated string has a length of at most n-1, leaving space for the additional terminating null character.
+size_t is an unsigned integral type.
+format
+C string that contains a format string that follows the same specifications as format in printf (see printf for details).
+... (additional arguments)
+Depending on the format string, the function may expect a sequence of additional arguments, each containing a value to be used to replace a format specifier in the format string (or a pointer to a storage location, for n).
+There should be at least as many of these arguments as the number of values specified in the format specifiers. Additional arguments are ignored by the function.
+
+s
+Указатель на буфер, в котором хранится результирующая C-строка.
+Буфер должен иметь размер не менее n символов.
+n
+Максимальное количество байтов, используемых в буфере.
+Сгенерированная строка имеет длину не более n-1, оставляя место для дополнительного завершающего нулевого символа.
+size_t - это интегральный тип без знака.
+формат
+Строка C, содержащая строку формата, которая соответствует тем же спецификациям, что и формат в printf (подробнее см. printf ).
+... (дополнительные аргументы)
+В зависимости от строки формата функция может ожидать последовательность дополнительных аргументов, каждый из которых содержит значение, используемое для замены спецификатора формата в строке формата (или указателя на место хранения, например n).
+Этих аргументов должно быть как минимум столько же, сколько и значенийуказывается в спецификаторах формата. Дополнительные аргументы игнорируются функцией.
+
+`FLOW` Write formatted output to sized buffer
+Composes a string with the same text that would be printed if format was used on printf, but instead of being printed, the content is stored as a C string in the buffer pointed by s (taking n as the maximum buffer capacity to fill).
+
+If the resulting string would be longer than n-1 characters, the remaining characters are discarded and not stored, but counted for the value returned by the function.
+
+A terminating null character is automatically appended after the content written.
+
+After the format parameter, the function expects at least as many additional arguments as needed for format.
+
+Запись отформатированного вывода в размерный буфер
+Создает строку с тем же текстом, который был бы напечатан, если бы формат использовался в printf, но вместо печати содержимое хранится в виде строки C в буфере, указанном s (принимая n в качестве максимальной емкости буфера для заполнения).
+
+Если результирующая строка будет длиннее n-1 символов, остальные символы отбрасываются и не сохраняются, а учитываются для значения, возвращаемого функцией.
+
+Завершающий нулевой символ автоматически добавляется после написанного содержимого.
+
+После параметра format функция ожидает как минимум столько дополнительных аргументов, сколько необходимо для format.
+
+`ERROR` The number of characters that would have been written if n had been sufficiently large, not counting the terminating null character.
+If an encoding error occurs, a negative number is returned.
+Notice that only when this returned value is non-negative and less than n, the string has been completely written.
+
+Количество символов, которое было бы записано, если бы было достаточно большим, не считая завершающего нулевого символа.n
+
+Обратите внимание, что только тогда, когда это возвращаемое значение неотрицательно и меньшеn, строка была полностью записана.
+
+
+
+`ALLOW` `NOT`
+
+`RET` 
+
+`DO`
+
+## sprintf
+
+`INTRF` int sprintf ( char * str, const char * format, ... )
+
+`PARAMS` str
+Pointer to a buffer where the resulting C-string is stored.
+The buffer should be large enough to contain the resulting string.
+format
+C string that contains a format string that follows the same specifications as format in printf (see printf for details).
+... (additional arguments)
+Depending on the format string, the function may expect a sequence of additional arguments, each containing a value to be used to replace a format specifier in the format string (or a pointer to a storage location, for n).
+There should be at least as many of these arguments as the number of values specified in the format specifiers. Additional arguments are ignored by the function.
+
+str
+Указатель на буфер, в котором хранится результирующая C-строка.
+Буфер должен быть достаточно большим, чтобы содержать результирующую строку.
+формат
+Строка C, содержащая строку формата, которая соответствует тем же спецификациям, что и формат в printf (подробнее см. printf ).
+... (дополнительные аргументы)
+В зависимости от строки формата функция может ожидать последовательность дополнительных аргументов, каждый из которых содержит значение, которое будет использоваться для замены спецификатора формата в строке формата (или указателя на место хранения, например n).
+Этих аргументов должно быть как минимум столько же, сколько и значенийуказывается в спецификаторах формата. Дополнительные аргументы игнорируются функцией.
+
+`FLOW` Write formatted data to string
+Composes a string with the same text that would be printed if format was used on printf, but instead of being printed, the content is stored as a C string in the buffer pointed by str.
+
+The size of the buffer should be large enough to contain the entire resulting string (see snprintf for a safer version).
+
+A terminating null character is automatically appended after the content.
+
+After the format parameter, the function expects at least as many additional arguments as needed for format.
+
+
+Запись отформатированных данных в строку
+Создает строку с тем же текстом, который был бы напечатан, если бы формат использовался в printf, но вместо печати содержимое хранится в виде строки C в буфере, указанном str.
+
+Размер буфера должен быть достаточно большим, чтобы содержать всю результирующую строку (см. snprintf для более безопасной версии).
+
+После содержимого автоматически добавляется завершающий нулевой символ.
+
+После параметра format функция ожидает как минимум столько дополнительных аргументов, сколько необходимо для format.
+
+
+`ERROR` On success, the total number of characters written is returned. This count does not include the additional null-character automatically appended at the end of the string.
+On failure, a negative number is returned.
+
+При успешном выполнении возвращается общее количество написанных символов. Этот счетчик не включает дополнительный нулевой символ, автоматически добавляемый в конце строки.
+При сбое возвращается отрицательное число
+
+
+`ALLOW` `NOT`
+
+`RET` 
+
+`DO`
+
+## sscanf
+
+`INTRF` int sscanf ( const char * s, const char * format, ...)
+
+`PARAMS` s
+C string that the function processes as its source to retrieve the data.
+format
+C string that contains a format string that follows the same specifications as format in scanf (see scanf for details).
+... (additional arguments)
+Depending on the format string, the function may expect a sequence of additional arguments, each containing a pointer to allocated storage where the interpretation of the extracted characters is stored with the appropriate type.
+There should be at least as many of these arguments as the number of values stored by the format specifiers. Additional arguments are ignored by the function.
+
+s
+Строка C, которую функция обрабатывает в качестве источника для извлечения данных.
+формат
+Строка C, содержащая строку формата, которая соответствует тем же спецификациям, что и формат в scanf (подробнее см. scanf ).
+... (дополнительные аргументы)
+В зависимости от строки формата функция может ожидать последовательность дополнительных аргументов, каждый из которых содержит указатель на выделенное хранилище, где интерпретация извлеченных символов хранится с соответствующим типом.
+Этих аргументов должно быть как минимум столько же, сколько значений, хранящихся спецификаторами формата. Дополнительные аргументы игнорируются функцией.
+
+`FLOW` Read formatted data from string
+Reads data from s and stores them according to parameter format into the locations given by the additional arguments, as if scanf was used, but reading from s instead of the standard input (stdin).
+
+The additional arguments should point to already allocated objects of the type specified by their corresponding format specifier within the format string.
+
+Чтение отформатированных данных из строки
+Считывает данные из s и сохраняет их в соответствии с форматом параметров в местах, заданных дополнительными аргументами, как если бы scanf использовался, но считывал из s вместо стандартного ввода (stdin).
+
+Дополнительные аргументы должны указывать на уже выделенные объекты типа, указанного соответствующим спецификатором формата в строке формата.
+
+
+
+`ERROR` On success, the function returns the number of items in the argument list successfully filled. This count can match the expected number of items or be less (even zero) in the case of a matching failure.
+In the case of an input failure before any data could be successfully interpreted, EOF is returned.
+
+При успешном выполнении функция возвращает количество успешно заполненных элементов в списке аргументов. Это число может соответствовать ожидаемому количеству элементов или быть меньше (даже равно нулю) в случае сбоя сопоставления.
+В случае сбоя ввода до того, как какие-либо данные могут быть успешно интерпретированы, возвращается EOF.
+
+
+`ALLOW` `NOT`
+
+`RET` 
+
+`DO`
+
+## tmpfile
+
+`INTRF` FILE * tmpfile ( void )
+
+`PARAMS` none
+
+`FLOW` Open a temporary file
+Creates a temporary binary file, open for update ("wb+" mode, see fopen for details) with a filename guaranteed to be different from any other existing file.
+
+The temporary file created is automatically deleted when the stream is closed (fclose) or when the program terminates normally. If the program terminates abnormally, whether the file is deleted depends on the specific system and library implementation.
+
+Открыть временный файл
+Создает временный двоичный файл, открытый для обновления (режим "wb +", подробнее см. fopen) с именем файла, гарантированно отличным от любого другого существующего файла.
+
+Созданный временный файл автоматически удаляется при закрытии потока (fclose) или при обычном завершении программы. Если программа завершается ненормально, удаление файла зависит от конкретной реализации системы и библиотеки.
+
+
+`ERROR` If successful, the function returns a stream pointer to the temporary file created.
+On failure, NULL is returned.
+
+В случае успеха функция возвращает указатель потока на созданный временный файл.
+При сбое возвращается значение NULL.
+
+
+`ALLOW` `NOT`
+
+`RET` 
+
+`DO`
+
+## tmpnam
+
+`INTRF` char * tmpnam ( char * str )
+
+`PARAMS` str
+Pointer to an array of characters where the proposed temporary name will be stored as a C string. The suggested size of this array is at least L_tmpnam characters.
+Alternativelly, a null pointer can be specified to use an internal static array to store the proposed temporary name, whose pointer is returned by the functi
+
+str
+Указатель на массив символов, в котором предлагаемое временное имя будет сохранено в виде строки C. Предлагаемый размер этого массива составляет не менее символов L_tmpnam.
+Альтернативно, можно указать нулевой указатель, чтобы использовать внутренний статический массив для хранения предлагаемого временного имени, указатель которого возвращается функцией.
+
+`FLOW` Generate temporary filename
+Returns a string containing a file name different from the name of any existing file, and thus suitable to safely create a temporary file without risking to overwrite an existing file.
+
+If str is a null pointer, the resulting string is stored in an internal static array that can be accessed by the return value. The content of this string is preserved at least until a subsequent call to this same function, which may overwrite it.
+
+If str is not a null pointer, it shall point to an array of at least L_tmpnam characters that will be filled with the proposed temporary file name.
+
+The file name returned by this function can be used to create a regular file using fopen to be used as a temporary file. The file created this way, unlike those created with tmpfile is not automatically deleted when closed; A program shall call remove to delete this file once closed.
+
+Сгенерировать временное имя файла
+Возвращает строку, содержащую имя файла, отличное от имени любого существующего файла, и, таким образом, подходящее для безопасного создания временного файла, не рискуя перезаписать существующий файл.
+
+Если str является нулевым указателем, то результирующая строка хранится во внутреннем статическом массиве, доступ к которому можно получить по возвращаемому значению. Содержимое этой строки сохраняется по крайней мере до последующего вызова этой же функции, которая может перезаписать ее.
+
+Если str не является нулевым указателем, он должен указывать на массив не менее L_tmpnam символов, который будет заполнен предлагаемым временным именем файла.
+
+Имя файла, возвращаемое этой функцией, можно использовать для создания обычного файла с помощью fopen, который будет использоваться как временный файл. Файл, созданный таким образом, в отличие от файлов, созданных с помощью tmpfile, не удаляется автоматически при закрытии; Программа должна вызвать remove, чтобы удалить этот файл после закрытия.
+
+
+
+`ERROR` On success, a pointer to the C string containing the proposed name for a temporary file:
+If str was a null pointer, this points to an internal buffer (whose content is preserved at least until the next call to this function).
+If str was not a null pointer, str is returned.
+If the function fails to create a suitable filename, it returns a null pointer.
+
+При успешном выполнении указатель на строку C, содержащую предлагаемое имя временного файла:
+Если str был нулевым указателем, это указывает на внутренний буфер (содержимое которого сохраняется по крайней мере до следующего вызова этой функции).
+Если str не был нулевым указателем, возвращается str.
+Если функции не удается создать подходящее имя файла, она возвращает нулевой указатель.
+
+
+`ALLOW` `NOT`
+
+`RET` 
+
+`DO`
+
+## ungetc
+
+`INTRF` int ungetc ( int character, FILE * stream )
+
+`PARAMS` character
+The int promotion of the character to be put back.
+The value is internally converted to an unsigned char when put back.
+stream
+Pointer to a FILE object that identifies an input stream.
+
+характер
+Int продвижение персонажа, которого нужно вернуть обратно.
+При возврате значение внутренне преобразуется в символ без знака.
+стрим
+Указатель на ФАЙЛОВЫЙ объект, идентифицирующий входной поток.
+
+`FLOW` Unget character from stream
+A character is virtually put back into an input stream, decreasing its internal file position as if a previous getc operation was undone.
+
+This character may or may not be the one read from the stream in the preceding input operation. In any case, the next character retrieved from stream is the character passed to this function, independently of the original one.
+
+Notice though, that this only affects further input operations on that stream, and not the content of the physical file associated with it, which is not modified by any calls to this function.
+
+Some library implementations may support this function to be called multiple times, making the characters available in the reverse order in which they were put back. Although this behavior has no standard portability guarantees, and further calls may simply fail after any number of calls beyond the first.
+
+If successful, the function clears the end-of-file indicator of stream (if it was currently set), and decrements its internal file position indicator if it operates in binary mode; In text mode, the position indicator has unspecified value until all characters put back with ungetc have been read or discarded.
+
+A call to fseek, fsetpos or rewind on stream will discard any characters previously put back into it with this function.
+
+If the argument passed for the character parameter is EOF, the operation fails and the input stream remains unchanged.
+
+Удалить символ из потока
+Символ фактически помещается обратно во входной поток, уменьшая его внутреннюю позицию в файле, как если бы предыдущая операция getc была отменена.
+
+Этот символ может быть или не быть тем, который считывался из потока в предыдущей операции ввода. Однако обратите внимание,
+
+что это влияет только на дальнейшие операции ввода в этом потоке, а не на содержимое связанного с ним физического файла, который не изменяется никакими вызовами этой функции.
+
+Некоторые реализации библиотек могут поддерживать многократный вызов этой функции, делая символы доступными в обратном порядке, в котором они были возвращены. Хотя такое поведение не имеет стандартных гарантий переносимости, и дальнейшие вызовы могут просто завершиться неудачно после любого количества вызовов после первого.
+
+В случае успеха функция очищает индикатор конца файла от потока (если он был установлен в данный момент) и уменьшает свой внутренний индикатор положения файла, если он работает в двоичном режиме; В текстовом режиме индикатор позиции имеет неопределенное значение до тех пор, пока все символы не будут возвращены с помощью ungetc были прочитаны или отброшены.
+
+Вызов fseek, fsetpos или rewind on stream отбросит все символы, ранее помещенные в него с помощью этой функции.
+
+Если аргумент, передаваемый для символьного параметра, равен EOF, операция завершается неудачно, и входной поток остается неизменным.
+
+
+`ERROR` On success, the character put back is returned.
+If the operation fails, EOF is returned.
+
+
+`ALLOW` `NOT`
+
+`RET` 
+
+`DO`
+
+## vfprintf
+
+`INTRF` int vfprintf ( FILE * stream, const char * format, va_list arg )
+
+`PARAMS` stream
+Pointer to a FILE object that identifies an output stream.
+format
+C string that contains a format string that follows the same specifications as format in printf (see printf for details).
+arg
+A value identifying a variable arguments list initialized with va_start.
+va_list is a special type defined in <cstdarg>.
+
+стрим
+Указатель на файловый объект, идентифицирующий выходной поток.
+формат
+Строка C, содержащая строку формата, которая соответствует тем же спецификациям, что и формат в printf (подробнее см. printf ).
+арг
+Значение, идентифицирующее список аргументов переменной, инициализированный с помощью va_start.
+va_list, является специальным типом, определенным в <cstdarg>.
+
+`FLOW` Write formatted data from variable argument list to stream
+Writes the C string pointed by format to the stream, replacing any format specifier in the same way as printf does, but using the elements in the variable argument list identified by arg instead of additional function arguments.
+
+Internally, the function retrieves arguments from the list identified by arg as if va_arg was used on it, and thus the state of arg is likely altered by the call.
+
+In any case, arg should have been initialized by va_start at some point before the call, and it is expected to be released by va_end at some point after the call.
+
+Запись отформатированных данных из списка аргументов переменной в поток
+Записывает строку C, указанную форматом, в поток, заменяя любой спецификатор формата так же, как это делает printf , но используя элементы в списке аргументов переменных, идентифицированных arg, вместо дополнительных аргументов функции.
+
+Внутренне функция извлекает аргументы из списка, идентифицированного arg, как если бы в нем использовался va_arg , и, таким образом, состояние arg, вероятно, изменяется вызовом.
+
+В любом случае, arg должен был быть инициализирован va_start в какой-то момент перед вызовом, и ожидается, что он будет выпущен va_end в какой-то момент после вызова.
+
+
+
+`ERROR` On success, the total number of characters written is returned.
+
+If a writing error occurs, the error indicator (ferror) is set and a negative number is returned.
+
+If a multibyte character encoding error occurs while writing wide characters, errno is set to EILSEQ and a negative number is returned.
+
+При успешном выполнении возвращается общее количество записанных символов.
+
+При возникновении ошибки записи устанавливается индикатор ошибки (ferror) и возвращается отрицательное число.
+
+Если при записи широких символов возникает ошибка многобайтовой кодировки символов, errno устанавливается в EILSEQ и возвращается отрицательное число.
+
+
+
+`ALLOW` `NOT`
+
+`RET` 
+
+`DO`
+
+## vfscanf
+
+`INTRF` int vfscanf ( FILE * stream, const char * format, va_list arg )
+
+`PARAMS` stream
+Pointer to a FILE object that identifies an input stream.
+format
+C string that contains a format string that follows the same specifications as format in scanf (see scanf for details).
+arg
+A value identifying a variable arguments list initialized with va_start.
+va_list is a special type defined in <cstdarg>.
+
+поток
+Указатель на файловый объект, идентифицирующий входной поток.
+формат
+Строка C, содержащая строку формата, которая соответствует тем же спецификациям, что и формат в scanf (подробнее см. scanf).
+arg
+Значение, идентифицирующее список аргументов переменной, инициализированный с помощью va_start.
+va_list , является специальным типом, определенным в <cstdarg>.
+
+`FLOW` Read formatted data from stream into variable argument list
+Reads data from the stream and stores them according to parameter format into the locations pointed by the elements in the variable argument list identified by arg.
+
+Internally, the function retrieves arguments from the list identified by arg as if va_arg was used on it, and thus the state of arg is likely to be altered by the call.
+
+In any case, arg should have been initialized by va_start at some point before the call, and it is expected to be released by va_end at some point after the call.
+
+Чтение отформатированных данных из потока в список аргументов переменной
+Считывает данные из потока и сохраняет их в соответствии с форматом параметров в местах, указанных элементами в списке аргументов переменной, идентифицированном arg.
+
+Внутренне функция извлекает аргументы из списка, идентифицированного arg, как если бы в нем использовался va_arg, и, таким образом, состояние arg, вероятно, будет измененовызов.
+
+В любом случае, arg должен был быть инициализирован va_start в какой-то момент перед вызовом, и ожидается, что он будет выпущен va_end в какой-то момент после вызова.
+
+
+`ERROR` On success, the function returns the number of items of the argument list successfully filled. This count can match the expected number of items or be less (even zero) due to a matching failure, a reading error, or the reach of the end-of-file.
+
+If a reading error happens or the end-of-file is reached while reading, the proper indicator is set (feof or ferror). And, if either happens before any data could be successfully read, EOF is returned.
+
+If an encoding error happens interpreting wide characters, the function sets errno to EILSEQ.
+
+При успешном выполнении функция возвращает количество успешно заполненных элементов списка аргументов. Этот счетчик может соответствовать ожидаемому количеству элементов или быть меньше (даже нулевым) из-за сбоя сопоставления, ошибки чтения или достижения конца файла.
+
+Если происходит ошибка чтения или конец файла достигнут во время чтения, устанавливается соответствующий индикатор (feof или ferror). И, если это произойдет до того, как какие-либо данные могут быть успешно прочитаны, возвращается EOF.
+
+Если при интерпретации широких символов возникает ошибка кодирования, функция устанавливает errno в EILSEQ.
+
+
+`ALLOW` `NOT`
+
+`RET` 
+
+`DO`
+
+## vprintf
+
+`INTRF` int vprintf ( const char * format, va_list arg )
+
+`PARAMS` format
+C string that contains a format string that follows the same specifications as format in printf (see printf for details).
+arg
+A value identifying a variable arguments list initialized with va_start.
+va_list is a special type defined in <cstdarg>.
+
+формат
+Строка C, содержащая строку формата, которая соответствует тем же спецификациям, что и формат в printf (подробнее см. printf ).
+арг
+Значение, идентифицирующее список аргументов переменной, инициализированный с помощью va_start.
+va_list, является специальным типом, определенным в <cstdarg>.
+
+
+`FLOW` Print formatted data from variable argument list to stdout
+Writes the C string pointed by format to the standard output (stdout), replacing any format specifier in the same way as printf does, but using the elements in the variable argument list identified by arg instead of additional function arguments.
+
+Internally, the function retrieves arguments from the list identified by arg as if va_arg was used on it, and thus the state of arg is likely altered by the call.
+
+In any case, arg should have been initialized by va_start at some point before the call, and it is expected to be released by va_end at some point after the call.
+
+Печать отформатированных данных из списка аргументов переменной в stdout
+Записывает строку C, указанную форматом, в стандартный вывод (stdout), заменяя любой спецификатор формата так же, как это делает printf , но используя элементы в списке аргументов переменных, идентифицированных arg, вместо дополнительных аргументов функции.
+
+Внутренне функция извлекает аргументы из списка, идентифицированного arg, как если бы в нем использовался va_arg , и, таким образом, состояние arg, вероятно, изменяется вызовом.
+
+В любом случае, arg должен был быть инициализирован va_start в какой-то момент перед вызовом, и ожидается, что он будет выпущен va_end в какой-то момент после вызова.
+
+
+`ERROR` On success, the total number of characters written is returned.
+
+If a writing error occurs, the error indicator (ferror) is set and a negative number is returned.
+
+If a multibyte character encoding error occurs while writing wide characters, errno is set to EILSEQ and a negative number is returned.
+
+При успешном выполнении возвращается общее количество записанных символов.
+
+При возникновении ошибки записи устанавливается индикатор ошибки (ferror) и возвращается отрицательное число.
+
+Если при записи широких символов возникает ошибка многобайтовой кодировки символов, errno устанавливается в EILSEQ и возвращается отрицательное число.
+
+
+`ALLOW` `NOT`
+
+`RET` 
+
+`DO`
+
+## vscanf
+
+`INTRF` int vscanf ( const char * format, va_list arg )
+
+`PARAMS` format
+C string that contains a format string that follows the same specifications as format in scanf (see scanf for details).
+arg
+A value identifying a variable arguments list initialized with va_start.
+va_list is a special type defined in <cstdarg>.
+
+формат
+Строка C, содержащая строку формата, которая соответствует тем же спецификациям, что и формат в scanf (подробнее см. scanf).
+арг
+Значение, идентифицирующее список аргументов переменной, инициализированный с помощью va_start.
+va_list, является специальным типом, определенным в <cstdarg>.
+
+`FLOW` Read formatted data into variable argument list
+Reads data from the standard input (stdin) and stores them according to parameter format into the locations pointed by the elements in the variable argument list identified by arg.
+
+Internally, the function retrieves arguments from the list identified by arg as if va_arg was used on it, and thus the state of arg is likely to be altered by the call.
+
+In any case, arg should have been initialized by va_start at some point before the call, and it is expected to be released by va_end at some point after the call.
+
+Считывает данные из стандартного ввода (stdin) и сохраняет их в соответствии с форматом параметров в местах, указанных элементами в списке аргументов переменной, идентифицированном arg.
+
+Внутренне функция извлекает аргументы из списка, идентифицированного arg, как если бы в нем использовался va_arg, и, таким образом, состояние arg является вероятным быть измененным вызовом.
+
+В любом случае, arg должен был быть инициализирован va_start в какой-то момент перед вызовом, и ожидается, что он будет выпущен va_end в какой-то момент после вызова.
+
+
+`ERROR` On success, the function returns the number of items of the argument list successfully filled. This count can match the expected number of items or be less (even zero) due to a matching failure, a reading error, or the reach of the end-of-file.
+
+If a reading error happens or the end-of-file is reached while reading, the proper indicator is set (feof or ferror). And, if either happens before any data could be successfully read, EOF is returned.
+
+If an encoding error happens interpreting wide characters, the function sets errno to EILSEQ.
+
+При успешном выполнении функция возвращает количество успешно заполненных элементов списка аргументов. Этот счетчик может соответствовать ожидаемому количеству элементов или быть меньше (даже нулевым) из-за сбоя сопоставления, ошибки чтения или достижения конца файла.
+
+Если происходит ошибка чтения или конец файла достигнут во время чтения, устанавливается соответствующий индикатор (feof или ferror). И, если это произойдет до того, как какие-либо данные могут быть успешно прочитаны, возвращается EOF .
+
+Если при интерпретации широких символов возникает ошибка кодирования, функция устанавливает errno в EILSEQ.
+
+
+`ALLOW` `NOT`
+
+`RET` 
+
+`DO`
+
+## vsnprintf
+
+`INTRF` int vsnprintf (char * s, size_t n, const char * format, va_list arg )
+
+`PARAMS` s
+Pointer to a buffer where the resulting C-string is stored.
+The buffer should have a size of at least n characters.
+n
+Maximum number of bytes to be used in the buffer.
+The generated string has a length of at most n-1, leaving space for the additional terminating null character.
+size_t is an unsigned integral type.
+format
+C string that contains a format string that follows the same specifications as format in printf (see printf for details).
+arg
+A value identifying a variable arguments list initialized with va_start.
+va_list is a special type defined in <cstdarg>.
+
+s
+Указатель на буфер, в котором хранится результирующая C-строка.
+Буфер должен иметь размер не менее n символов.
+n
+Максимальное количество байтов, используемых в буфере.
+Сгенерированная строка имеет длину не более n-1, оставляя место для дополнительного завершающего нулевого символа.
+size_t - это интегральный тип без знака.
+формат
+Строка C, содержащая строку формата, которая соответствует тем же спецификациям, что и формат в printf (подробнее см. printf ).
+arg
+Значение, идентифицирующее список аргументов переменной, инициализированный с помощью va_start.
+va_list , является специальным типом, определенным в <cstdarg>.
+
+
+`FLOW` Write formatted data from variable argument list to sized buffer
+Composes a string with the same text that would be printed if format was used on printf, but using the elements in the variable argument list identified by arg instead of additional function arguments and storing the resulting content as a C string in the buffer pointed by s (taking n as the maximum buffer capacity to fill).
+
+If the resulting string would be longer than n-1 characters, the remaining characters are discarded and not stored, but counted for the value returned by the function.
+
+Internally, the function retrieves arguments from the list identified by arg as if va_arg was used on it, and thus the state of arg is likely to be altered by the call.
+
+In any case, arg should have been initialized by va_start at some point before the call, and it is expected to be released by va_end at some point after the call.
+
+Создает строку с тем же текстом, который был бы напечатан, если бы формат использовался в printf, но используя элементы в списке аргументов переменной, идентифицированном arg, вместо дополнительных аргументов функции и сохраняя результирующее содержимое в виде строки C в буфере, указанном s (принимая n в качестве максимальной емкости буфера для заполнения).
+
+Если результирующая строка будет длиннее n-1 символов, остальные символы отбрасываются и не сохраняются, а учитываются для значения, возвращаемого функцией.
+
+Внутренне функция извлекает аргументы из списка, идентифицированного arg, как если бы va_arg был использован на нем, и, таким образом, состояние arg, скорее всего, будет изменено вызовом.
+
+В любом случае, arg должен был быть инициализирован va_start в какой-то момент перед вызовом, и ожидается, что он будет выпущен va_end в какой-то момент после вызова.
+
+
+`ERROR` The number of characters that would have been written if n had been sufficiently large, not counting the terminating null character.
+If an encoding error occurs, a negative number is returned.
+Notice that only when this returned value is non-negative and less than n, the string has been completely written.
+
+Количество символов, которое было бы записано, если бы было достаточно большим, не считая завершающего нулевого символа.n
+
+Обратите внимание, что только когда это возвращаемое значение неотрицательно и меньшеn, строка была полностью записана.
+
+
+`ALLOW` `NOT`
+
+`RET` 
+
+`DO`
+
+## vsprintf
+
+`INTRF` int vsprintf (char * s, const char * format, va_list arg )
+
+`PARAMS` s
+Pointer to a buffer where the resulting C-string is stored.
+The buffer should be large enough to contain the resulting string.
+format
+C string that contains a format string that follows the same specifications as format in printf (see printf for details).
+arg
+A value identifying a variable arguments list initialized with va_start.
+va_list is a special type defined in <cstdarg>.
+
+s
+Указатель на буфер, в котором хранится результирующая C-строка.
+Буфер должен быть достаточно большим, чтобы содержать результирующую строку.
+формат
+Строка C, содержащая строку формата, которая соответствует тем же спецификациям, что и формат в printf (подробнее см. printf ).
+арг
+Значение, идентифицирующее список аргументов переменной, инициализированный с помощью va_start.
+va_list, является специальным типом, определенным в <cstdarg>.
+
+`FLOW` Write formatted data from variable argument list to string
+Composes a string with the same text that would be printed if format was used on printf, but using the elements in the variable argument list identified by arg instead of additional function arguments and storing the resulting content as a C string in the buffer pointed by s.
+
+Internally, the function retrieves arguments from the list identified by arg as if va_arg was used on it, and thus the state of arg is likely to be altered by the call.
+
+In any case, arg should have been initialized by va_start at some point before the call, and it is expected to be released by va_end at some point after the call.
+
+Запись отформатированных данных из списка аргументов переменной в строку
+Создает строку с тем же текстом, который был бы напечатан, если бы формат использовался в printf, но используя элементы в списке аргументов переменной, идентифицированном arg, вместо дополнительных аргументов функции и сохраняя результирующее содержимое в виде строки C в буфере, указанном s.
+
+Внутренне функция извлекает аргументы из списка идентифицируется arg так, как если бы на нем использовался va_arg, и, таким образом, состояние arg, скорее всего, будет изменено вызовом.
+
+В любом случае, arg должен был быть инициализирован va_start в какой-то момент перед вызовом, и ожидается, что он будет выпущен va_end в какой-то момент после звонка.
+
+
+`ERROR` On success, the total number of characters written is returned.
+On failure, a negative number is returned.
+
+При успешном выполнении возвращается общее количество написанных символов.
+При сбое возвращается отрицательное число.
+
+
+`ALLOW` `NOT`
+
+`RET` 
+
+`DO`
+
+## vsscanf
+
+`INTRF` int vsscanf ( const char * s, const char * format, va_list arg )
+
+`PARAMS` s
+C string that the function processes as its source to retrieve the data.
+format
+C string that contains a format string that follows the same specifications as format in scanf (see scanf for details).
+arg
+A value identifying a variable arguments list initialized with va_start.
+va_list is a special type defined in <cstdarg>.
+
+s
+Строка C, которую функция обрабатывает в качестве источника для извлечения данных.
+формат
+Строка C, содержащая строку формата, которая соответствует тем же спецификациям, что и формат в scanf (подробнее см. scanf).
+арг
+Значение, идентифицирующее список аргументов переменной, инициализированный с помощью va_start.
+va_list , является специальным типом, определенным в <cstdarg>.
+
+`FLOW` Read formatted data from string into variable argument list
+Reads data from s and stores them according to parameter format into the locations pointed by the elements in the variable argument list identified by arg.
+
+Internally, the function retrieves arguments from the list identified by arg as if va_arg was used on it, and thus the state of arg is likely to be altered by the call.
+
+In any case, arg should have been initialized by va_start at some point before the call, and it is expected to be released by va_end at some point after the call.
+
+Чтение отформатированных данных из строки в список аргументов переменной
+Считывает данные из s и сохраняет их в соответствии с форматом параметров в местах, указанных элементами в списке аргументов переменной, идентифицированном arg.
+
+Внутренне функция извлекает аргументы из списка, идентифицированного arg, как если бы в нем использовался va_arg, и, таким образом, состояние arg, скорее всего, будет изменено переменной. позвони.
+
+В любом случае, arg должен был быть инициализирован va_start в какой-то момент перед вызовом, и ожидается, что он будет выпущен va_end в какой-то момент после вызова.
+
+
+`ERROR` On success, the function returns the number of items in the argument list successfully filled. This count can match the expected number of items or be less -even zero- in the case of a matching failure.
+In the case of an input failure before any data could be successfully interpreted, EOF is returned.
+
+При успешном выполнении функция возвращает количество успешно заполненных элементов в списке аргументов. Это число может соответствовать ожидаемому количеству элементов или быть меньше - даже равно нулю - в случае сбоя сопоставления.
+В случае сбоя ввода до того, как какие-либо данные могут быть успешно интерпретированы, возвращается EOF.
+
+
+`ALLOW` `NOT`
+
+`RET` 
+
+`DO`
+
+
+
+## stderr
+
+Standard error stream
+The standard error stream is the default destination for error messages and other diagnostic warnings. Like stdout, it is usually also directed by default to the text console (generally, on the screen).
+
+stderr can be used as an argument for any function that takes an argument of type FILE* expecting an output stream, like fputs or fprintf.
+
+Although in many cases both stdout and stderr are associated with the same output device (like the console), applications may differentiate between what is sent to stdout and what to stderr for the case that one of them is redirected. For example, it is frequent to redirect the regular output of a console program (stdout) to a file while expecting the error messages to keep appearing in the console.
+
+It is also possible to redirect stderr to some other destination from within a program using the freopen function.
+
+stderr is is never fully buffered on startup. It is library-dependent whether the stream is line buffered or not buffered by default (see setvbuf).
+
+Стандартный поток ошибок
+Стандартный поток ошибок является местом назначения по умолчанию для сообщений об ошибках и других диагностических предупреждений. Как и stdout, он обычно также направляется по умолчанию в текстовую консоль (как правило, на экране).
+
+stderr можно использовать в качестве аргумента для любой функции, которая принимает аргумент типа FILE*, ожидающий выходного потока, например fputs или fprintf.
+
+Хотя во многих случаях и stdout, и stderr связаны с одним и тем же устройством вывода (например, консолью), приложения могут различать, что отправляется в stdout и что в стдерр для случая, когда один из них перенаправляется. Например, часто приходится перенаправлять обычный вывод консольной программы (stdout) в файл, ожидая, что сообщения об ошибках будут продолжать появляться в консоли.
+
+Также можно перенаправить stderr в какое-то другое место назначения из программы, используя функцию freopen.
+
+stderr никогда не полностью буферизуется при запуске. Зависит от библиотеки, является ли поток буферизованным или не буферизованным по умолчанию (см. setvbuf).
+
+## stdin
+
+Standard input stream
+The standard input stream is the default source of data for applications. In most systems, it is usually directed by default to the keyboard.
+
+stdin can be used as an argument for any function that expects an input stream (FILE*) as one of its parameters, like fgets or fscanf.
+
+Although it is commonly assumed that the source of data for stdin is going to be a keyboard, this may not be the case even in regular console systems, since stdin can generally be redirected on most operating systems at the time of invoking the application. For example, many systems, among them DOS/Windows and most UNIX shells, support the following command syntax:
+
+myapplication < example.txt
+
+to use the content of the file example.txt as the primary source of data for myapplication instead of the console keyboard.
+
+It is also possible to redirect stdin to some other source of data from within a program by using the freopen function.
+
+If stdin is known to not refer to an interactive device, the stream is fully buffered. Otherwise, it is library-dependent whether the stream is line buffered or not buffered by default (see setvbuf).
+
+Стандартный входной поток
+Стандартный входной поток является источником данных по умолчанию для приложений. В большинстве систем он обычно направляется по умолчанию на клавиатуру.
+
+stdin можно использовать в качестве аргумента для любой функции, которая ожидает входной поток (ФАЙЛ*) в качестве одного из своих параметров, например fgets или fscanf.
+
+Хотя обычно предполагается, что источником данных для stdin будет клавиатура, это может быть не так даже в обычных консольных системах, так как stdin обычно может быть перенаправлен в большинстве операционных систем во время вызова приложения. Например, многие системы, среди которых DOS / Windows и большинство оболочек UNIX, поддерживают следующий синтаксис команды:
+
+myapplication < example.txt
+
+чтобы использовать содержимое файла example.txt в качестве основного источника данных для myapplication вместо консольной клавиатуры.
+
+Также можно перенаправить stdin на какой-либо другой источник данных из программы с помощью функции freopen .
+
+Если известно, что stdin не ссылается на интерактивное устройство, поток полностью буферизуется В противном случае зависит от библиотеки, является ли поток буферизованным по умолчанию или нет (см. setvbuf).
+
+## stdout
+
+Standard output stream
+The standard output stream is the default destination of output for applications. In most systems, it is usually directed by default to the text console (generally, on the screen).
+
+stdout can be used as an argument for any function that takes an argument of type FILE* expecting an output stream, like fputs or fprintf.
+
+Although it is commonly assumed that the default destination for stdout is going to be the screen, this may not be the case even in regular console systems, since stdout can generally be redirected on most operating systems at the time of invoking the application. For example, many systems, among them DOS/Windows and most UNIX shells, support the following command syntax:
+
+myapplication > example.txt
+to redirect the output of myapplication to the file example.txt instead of the console.
+
+It is also possible to redirect stdout to some other source of data from within a program using the freopen function.
+
+If stdout is known to not refer to an interactive device, the stream is fully buffered. Otherwise, it is library-dependent whether the stream is line buffered or not buffered by default (see setvbuf).
+
+Стандартный выходной поток
+Стандартный выходной поток является назначением вывода по умолчанию для приложений. В большинстве систем он обычно направляется по умолчанию в текстовую консоль (как правило, на экран).
+
+stdout может использоваться в качестве аргумента для любой функции, которая принимает аргумент типа FILE*, ожидая выходной поток, например fputs или fprintf.
+
+Хотя обычно предполагается, что местом назначения по умолчанию для stdout будет экран, это может быть не так даже в обычных консольных системах, так как stdout обычно может быть перенаправлен в большинстве операционных систем во время вызова приложения. Например, многие системы, среди которых DOS / Windows и большинство оболочек UNIX, поддерживают следующий синтаксис команды:
+
+myapplication > example.txt
+чтобы перенаправить вывод myapplication в файл example.txt вместо консоли.
+
+Также можно перенаправить stdout на какой-либо другой источник данных из программы с помощью функции freopen .
+
+Если известно, что stdout не ссылается на интерактивное устройство, поток полностью буферизуется. В противном случае зависит от библиотеки, является ли поток буферизованным или не буферизуется по умолчанию (см. setvbuf).

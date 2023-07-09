@@ -1,0 +1,26 @@
+# npm view in ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_mm_npm_/_mm_npm_/_man/help
+
+
+[4m[1m[32mhelp[39m@[32m3.0.2[39m[22m[24m | [32mMIT[39m | deps: [32mnone[39m | versions: [33m9[39m
+substack way of --help
+[36mhttps://github.com/evanlucas/help[39m
+
+dist
+.tarball: [36mhttps://registry.npmjs.org/help/-/help-3.0.2.tgz[39m
+.shasum: [33m96e190d4a0a453b89c2cb4b05ab38e3a8f9fdadd[39m
+.integrity: [33msha512-jDd0MU+9xzvOQRC6CIzdjvb+agCvpzQY/Fp11quDnugDO4QQzh134EsLkRQMvFIJBleFkvnXagHFm4MTefkkpA==[39m
+
+maintainers:
+- [33meh[39m <[36mevanlucas@me.com[39m>
+- [33mevanlucas[39m <[36mevanlucas@me.com[39m>
+
+dist-tags:
+[1m[32mlatest[39m[22m: 3.0.2
+
+published [33mover a year ago[39m by [33mevanlucas[39m <[36mevanlucas@me.com[39m>
+
+# npm view -h in ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_mm_npm_/_mm_npm_/_man/help
+
+npm view [<@scope>/]<pkg>[@<version>] [<field>[.subfield]...]
+
+aliases: v, info, show

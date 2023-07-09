@@ -1,0 +1,17 @@
+## Строим лабораторную
+https://www.youtube.com/playlist?list=PLisqB92_b4TmaJ0Accw0qxLp9SqHLAqCx
+## Администрирование_инфраструктуры на GNU/Linux
+https://www.youtube.com/playlist?list=PLisqB92_b4TlPVUnmIpXLOSgDuT6JB0XN
+## Ни о чём
+https://www.youtube.com/playlist?list=PLisqB92_b4Tkyr7iYq5OYfogUm7h3kmdH
+## bash
+https://www.youtube.com/playlist?list=PLisqB92_b4TnsWzfIHTTqkso-rXQIkPFv
+## Диски_и_файловые_системы
+https://www.youtube.com/playlist?list=PLisqB92_b4Tmd-KztKWBvqyOP817ssQCc
+## Основы_GNU_Linux_и_подготовка_к_RHCSA
+https://www.youtube.com/playlist?list=PLisqB92_b4TlQH3jVGf6lrFMVqalCTjAQ
+## Шифрование
+https://www.youtube.com/playlist?list=PLisqB92_b4Tn4EkZOghGFYaLirDGSn_ot
+## Электронная_почта
+https://www.youtube.com/playlist?list=PLisqB92_b4TnHQ4n00DZHHRgCiKI57CtD
+

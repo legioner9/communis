@@ -1,0 +1,2 @@
+ int wal_lc_pipe(void)
+ int plrt_s_lc_pipe(void)

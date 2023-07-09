@@ -1,0 +1,39 @@
+## Приоритет операций
+
+## http://cppstudio.com/post/302/
+
+| Приоритет                                | Операция                                 | Ассоциативность | Описание                                 |
+|------------------------------------------|------------------------------------------|-----------------|------------------------------------------|
+| 1                                        | <strong style="box-sizing: border-box; font-weight: bold;">::</strong> | слева направо   | унарная операция разрешения области действия |
+| <strong style="box-sizing: border-box; font-weight: bold;">[ ]</strong> | операция индексирования                  |                 |                                          |
+| <strong style="box-sizing: border-box; font-weight: bold;">()</strong> | круглые скобки                           |                 |                                          |
+| <strong style="box-sizing: border-box; font-weight: bold;">.</strong> | обращение к члену структуры или класса   |                 |                                          |
+| <strong style="box-sizing: border-box; font-weight: bold;">-&gt;</strong> | обращение к члену структуры или класса через указатель |                 |                                          |
+| 2                                        | <strong style="box-sizing: border-box; font-weight: bold;">++</strong> | слева направо   | постфиксный инкремент                    |
+| —                                        | постфиксный декремент                    |                 |                                          |
+| 3                                        | <strong style="box-sizing: border-box; font-weight: bold;">++</strong> | справа налево   | префиксный инкремент                     |
+| <strong style="box-sizing: border-box; font-weight: bold;">—</strong> | префиксный декремент                     |                 |                                          |
+| 4                                        | <strong style="box-sizing: border-box; font-weight: bold;">*</strong> | слева направо   | умножение                                |
+| <strong style="box-sizing: border-box; font-weight: bold;">/</strong> | деление                                  |                 |                                          |
+| <strong style="box-sizing: border-box; font-weight: bold;">%</strong> | остаток от деления                       |                 |                                          |
+| 5                                        | <strong style="box-sizing: border-box; font-weight: bold;">+</strong> | слева направо   | сложение                                 |
+| <strong style="box-sizing: border-box; font-weight: bold;">—</strong> | вычитание                                |                 |                                          |
+| 6                                        | <strong style="box-sizing: border-box; font-weight: bold;">&gt;&gt;</strong> | слева направо   | сдвиг вправо                             |
+| <strong style="box-sizing: border-box; font-weight: bold;">&lt;&lt;</strong> | сдвиг влево                              |                 |                                          |
+| 7                                        | <strong style="box-sizing: border-box; font-weight: bold;">&lt;</strong> | слева направо   | меньше                                   |
+| <strong style="box-sizing: border-box; font-weight: bold;">&lt;=</strong> | меньше либо равно                        |                 |                                          |
+| <strong style="box-sizing: border-box; font-weight: bold;">&gt;</strong> | больше                                   |                 |                                          |
+| <strong style="box-sizing: border-box; font-weight: bold;">&gt;=</strong> | больше либо равно                        |                 |                                          |
+| 8                                        | <strong style="box-sizing: border-box; font-weight: bold;">==</strong> | слева направо   | равно                                    |
+| <strong style="box-sizing: border-box; font-weight: bold;">!=</strong> | не равно                                 |                 |                                          |
+| 9                                        | <strong style="box-sizing: border-box; font-weight: bold;">&amp;&amp;</strong> | слева направо   | логическое<span> </span><strong style="box-sizing: border-box; font-weight: bold;"><span class="label label-info" style="box-sizing: border-box; background-color: rgb(91, 192, 222); display: inline; padding: 0.2em 0.6em 0.3em; font-size: 10.5px; font-weight: bold; line-height: 1; color: rgb(255, 255, 255); text-align: center; white-space: nowrap; vertical-align: baseline; border-radius: 0.25em;">И</span></strong> |
+| 10                                       | <strong style="box-sizing: border-box; font-weight: bold;">||</strong> | слева направо   | логическое<span> </span><strong style="box-sizing: border-box; font-weight: bold;"><span class="label label-info" style="box-sizing: border-box; background-color: rgb(91, 192, 222); display: inline; padding: 0.2em 0.6em 0.3em; font-size: 10.5px; font-weight: bold; line-height: 1; color: rgb(255, 255, 255); text-align: center; white-space: nowrap; vertical-align: baseline; border-radius: 0.25em;">ИЛИ</span></strong> |
+| 11                                       | <strong style="box-sizing: border-box; font-weight: bold;">?:</strong> | справа налево   | условная операция (тернарная операция)   |
+| 12                                       | <strong style="box-sizing: border-box; font-weight: bold;">=</strong> | справа налево   | присваивание                             |
+| <strong style="box-sizing: border-box; font-weight: bold;">*=</strong> | умножение с присваиванием                |                 |                                          |
+| <strong style="box-sizing: border-box; font-weight: bold;">/=</strong> | деление с присваиванием                  |                 |                                          |
+| <strong style="box-sizing: border-box; font-weight: bold;">%=</strong> | остаток от деления с присваиванием       |                 |                                          |
+| <strong style="box-sizing: border-box; font-weight: bold;">+=</strong> | сложение с присваиванием                 |                 |                                          |
+| <strong style="box-sizing: border-box; font-weight: bold;">-=</strong> | вычитание с присваиванием                |                 |                                          |
+| 13                                       | <strong style="box-sizing: border-box; font-weight: bold;">,</strong> | слева направо   | запятая                                  |
+

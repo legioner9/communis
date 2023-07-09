@@ -1,0 +1,7 @@
+up_err_ extst {list} 1>/dev/null
+errno=$?
+if [ 1 -eq "${errno}" ]; then
+    echo "ANY in file://$rdir fail" >&2
+else
+    echo "ALL in file://$rdir true"
+fi

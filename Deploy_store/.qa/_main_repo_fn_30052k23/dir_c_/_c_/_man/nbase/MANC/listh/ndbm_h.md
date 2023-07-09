@@ -1,0 +1,10 @@
+p@dbm_clearerr
+p@dbm_close
+p@dbm_delete
+p@dbm_error
+p@dbm_fetch
+p@dbm_firstkey
+p@dbm_nextkey
+p@dbm_open
+p@dbm_store
+s@datum

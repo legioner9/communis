@@ -1,0 +1,3 @@
+pipe Open Files lsof -P -p %d 2>&1
+file NUMA Info /proc/%d/numa_maps
+pipe Log tail -n200 /var/log/syslog | sort -Mr

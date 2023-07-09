@@ -1,0 +1,24 @@
+#>exl
+eval [ ${develop1_tsf_sfs_} -eq 1 ] || exl_pause "___ Create zip files inplace FS? ___ CNTL-C to exit, ENTR to continue"
+
+# /home/st/.vscode-oss
+eval echo "${name_flash}"
+eval echo "${src_d}"
+eval echo "${src_ne}"
+eval echo "${dest_d}"
+eval echo "${dest_ne}"
+eval echo "${bag}"
+
+eval wrp_fifs1_ cd "${src_d}" -d1
+
+eval wrp_fifs1_ rm -f "${dest_ne}".zip -cf1
+
+eval wrp_fifs1_ file "${dest_ne}".zip -nf1
+
+eval echo wrp_fifs2_ zip -r "${dest_ne}".zip "${src_ne}" -nf1 -e2
+eval exec 6>&1
+eval exec >/dev/null
+eval wrp_fifs2_ zip -r "${dest_ne}".zip "${src_ne}" -nf1 -e2
+eval exec 1>&6 6>&-
+
+eval wrp_fifs1_ file "${dest_ne}".zip -f1

@@ -1,0 +1,7 @@
+from> skill st_mode_1.h ->
+
+do> 
+^1^ ST_DEB without exit(errno) 
+^2^ ST_PRN prn diagnostic error
+
+to> -> opendir_с look done mode3

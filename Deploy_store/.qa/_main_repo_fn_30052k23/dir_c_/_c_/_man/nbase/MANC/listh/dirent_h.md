@@ -1,0 +1,12 @@
+p@alphasort
+p@closedir
+p@dirfd
+p@fdopendir
+p@opendir
+p@readdir
+p@readdir_r
+p@rewinddir
+p@scandir
+p@seekdir
+p@telldir
+s@dirent

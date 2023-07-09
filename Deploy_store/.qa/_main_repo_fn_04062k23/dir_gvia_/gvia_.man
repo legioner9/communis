@@ -1,0 +1,7 @@
+# this function is the main entry point and reference for the gish framework
+
+- gish is all git functions ( name is g... )
+
+## input for different function testing models
+## search engine for gish
+## 

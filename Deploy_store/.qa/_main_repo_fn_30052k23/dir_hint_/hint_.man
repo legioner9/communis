@@ -1,0 +1,5 @@
+.word in .tst PATH (correct_ [4]) start/communis/Deploy_store/.qa/lib/stl/prepeared_to_tst/all_tst_files.list
+.fnm  in .tst PATH (correct_ [4]) start/communis/Deploy_store/.qa/lib/stl/prepeared_to_tst/all_tst_files.list
+.tst  in .tst PATH (correct_ [4]) start/communis/Deploy_store/.qa/lib/stl/prepeared_to_tst/all_tst_files.list
+
+.word in manclang_tailpath (correct_ [11]]) start/communis/Deploy_store/.qa/main_repo_fn/dir_hint_/_hint_/_lists/manclang_tailpath.list 

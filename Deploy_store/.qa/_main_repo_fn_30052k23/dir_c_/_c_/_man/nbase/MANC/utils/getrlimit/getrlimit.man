@@ -1,0 +1,291 @@
+### UP
+[getrlimit](##getrlimit)
+[MAIN](##MAIN)
+[MAIN_ru](##MAIN_ru)
+[ANCORS](##ANCORS)
+[ISU](##ISU)
+[inet](##A_inet)
+[inet](##books_inet)
+[inet](##examples_inet)
+[inet](##classic_inet)
+[inet](##enters_inet)
+[inet](##issue_code_inet)
+[H_FILE](##H_FILE)
+[p_SYNOPSIS](##p_SYNOPSIS)
+[p_RETURN](##p_RETURN)
+[p_RETURN_ru](##p_RETURN_ru)
+[p_BUGS](##p_BUGS)
+[p_DESCRIPTION_ru](##p_DESCRIPTION_ru)
+[p_DESCRIPTION](##p_DESCRIPTION)
+[p_MIRRORS](##p_MIRRORS)
+[p_EXAMPLES](##p_EXAMPLES)
+[p_CODE_h](##p_CODE_h)
+[p_CODE_c](##p_CODE_c)
+[p_CODE_m](##p_CODE_m)
+[p_ERRORS](##p_ERRORS)
+[p_BOOKS](##p_BOOKS)
+[p_BOOKS_ru](##p_BOOKS_ru)
+[p_CONTENT](##p_CONTENT)
+
+[cat_hfiles](../../cat_hfiles.md)
+[cat_utils](../../cat_utils.md)
+[cat_structs](../../cat_structs.md)
+[cat_param](../../cat_params.md)
+[cat_macros](../../cat_macross.md)
+[cat_const](../../cat_consts.md)
+[cat_type](../../cat_types.md)
+[cat_any](../cat_anys.md)
+
+
+[UP](###UP)
+## MAIN
+:getrlimit:
+[next](##MAIN_ru)
+
+<<MAIN>>
+[MAIN](../../fills/getrlimit/MAIN)
+
+
+
+[UP](###UP)
+## MAIN_ru
+:getrlimit:
+[next](##ANCORS)
+
+<<MAIN_ru>>
+[MAIN_ru](../../fills/getrlimit/MAIN_ru)
+
+[UP](###UP)
+## ANCORS
+:getrlimit:
+[next](##ISU)
+
+----------------------------------------------------- 
+-------------------------------------- 
+https://ru.manpages.org/getrlimit/2
+-------------------------------------- 
+----------------------------------------------------- 
+<<ANCORS>>
+[ANCORS](../../fills/getrlimit/ANCORS)
+
+[UP](###UP)
+## ISU
+:getrlimit:
+[next](##H_FILE)
+
+<<ISU>>
+only read
+:getrlimit:
+[ISU](../../contents)
+[next](##inet)
+
+
+[UP](###UP)
+## inet
+:getrlimit:
+[next](##H_FILE)
+
+
+[UP](###UP)
+## A_inet
+[manpages.org](https://www.google.ru/search?q=getrlimit+site%3Ahttps%3A%2F%2Fmanpages.org)
+[reposcope.com_ru](https://www.google.ru/search?q=getrlimit+site%3Ahttps%3A%2F%2Freposcope.com%2Fmanpages%2Fru)
+[pubs.opengroup.org](https://www.google.com/search?q=getrlimit+https%3A%2F%2Fpubs.opengroup.org)
+[manpages.debian.org](https://yandex.ru/search/?text=getrlimit+site%3Ahttps%3A%2F%2Fmanpages.debian.org%2F)
+[www.opennet.ru](http://www.opennet.ru/man.shtml?category=2&topic=getrlimit)
+[man7.org](https://www.google.ru/search?q=getrlimit+site%3Ahttps%3A%2F%2Fman7.org%2Flinux%2Fman-pages)
+[en.cppreference.com](https://www.google.com/search?q=getrlimit+en.cppreference.com)
+[www.mankier.com](https://www.mankier.com/?q=getrlimit)
+[www.codecogs.com](https://www.google.ru/search?q=getrlimit+https%3A%2F%2Fwww.codecogs.com%2Flibrary%2Fcomputing%2F)
+[digitalmars.com](https://www.google.ru/search?q=getrlimit+https%3A%2F%2Fdigitalmars.com%2Frtl%2F)
+
+
+[UP](###UP)
+## books_inet
+[cpp.com.ru](https://yandex.ru/search/?text=getrlimit+site%3Ahttps%3A%2F%2Fcpp.com.ru)
+[linuxhint.com](https://www.google.ru/search?q=getrlimit+site%3Ahttps%3A%2F%2Flinuxhint.com)
+[gnu.org](https://www.google.ru/search?q=getrlimit+site%3Ahttps%3A%2F%2Fwww.gnu.org%2Fsoftware%2Flibc%2Fmanual)
+
+[UP](###UP)
+## examples_inet
+[yandex:examples](https://yandex.ru/search/?text=getrlimit+example+in+c)
+[docs.oracle.com](https://www.google.com/search?q=getrlimit+https%3A%2F%2Fdocs.oracle.com)
+[manpages.debian.org](https://yandex.ru/search/?text=getrlimit+site%3Ahttps%3A%2F%2Fmanpages.debian.org%2F)
+[osr507doc.xinuos.com](https://www.google.com/search?q=getrlimit+http%3A%2F%2Fosr507doc.xinuos.com%2Fen%2Fman)
+[cpp.hotexamples.com](https://cpp.hotexamples.com/examples/-/-/getrlimit/cpp-getrlimit-function-examples.html)
+[all-ht.ru](https://yandex.ru/search/?text=getrlimit+site%3Ahttp%3A%2F%2Fall-ht.ru%2Finf%2Fprog%2Fc%2F)
+[cppreference.com](https://yandex.ru/search/?text=getrlimit+site%3Ahttps%3A%2F%2Fen.cppreference.com%2Fw%2Fc%2F)
+
+[UP](###UP)
+## classic_inet
+[bogatyrev_c_unix](https://www.google.com/search?q=getrlimit+site%3Ahttps%3A%2F%2Fcpp.com.ru%2Fbogatyrev_c_unix)
+[kr_cbook](https://www.google.com/search?q=getrlimit+site%3Ahttps%3A%2F%2Fcpp.com.ru%2Fkr_cbook)
+
+[UP](###UP)
+## enters_inet
+[pubs.opengroup.org](https://pubs.opengroup.org/onlinepubs/9699919799/idx/head.html)
+
+[UP](###UP)
+## issue_code_inet
+[code.woboq.org](https://www.google.com/search?h=&sitesearch=https%3A%2F%2Fcode.woboq.org%2Fuserspace%2Fglibc%2F&q=getrlimit)
+
+
+[UP](###UP)
+## H_FILE 
+[sys_resource_h.md](../../hfiles/sys_resource_h.md)
+
+
+[UP](###UP)
+## p_SYNOPSIS
+:getrlimit:
+[next](##p_RETURN_ru)
+
+----------------------------------------------------- 
+-------------------------------------- 
+#include <sys/time.h>
+#include <sys/resource.h>
+int getrlimit(int resource, struct rlimit *rlim);
+int setrlimit(int resource, const struct rlimit *rlim);
+int prlimit(pid_t pid, int resource, const struct rlimit *new_limit,
+struct rlimit *old_limit);
+-------------------------------------- 
+----------------------------------------------------- 
+<<SYNOPSIS>>
+[SYNOPSIS](../../fills/getrlimit/SYNOPSIS)
+
+
+[UP](###UP)
+## p_RETURN_ru
+:getrlimit:
+[next](##p_RETURN)
+
+<<RETURN>>
+[RETURN_ru](../../fills/getrlimit/RETURN)
+
+
+[UP](###UP)
+## p_RETURN
+:getrlimit:
+[next](##p_DESCRIPTION_ru)
+
+<<RETURN_ru>>
+[RETURN](../../fills/getrlimit/RETURN_ru)
+
+
+[UP](###UP)
+## p_DESCRIPTION_ru
+:getrlimit:
+[next](##p_DESCRIPTION)
+
+----------------------------------------------------- 
+-------------------------------------- 
+Системные вызовы getrlimit() и setrlimit(), соответственно, получают и устанавливают ограничения использования ресурсов. Каждому ресурсу назначается мягкое и жёсткое ограничение, определяемое структурой rlimit:
+struct rlimit {
+rlim_t rlim_cur;  /* мягкое ограничение */
+rlim_t rlim_max;  /* жёсткое ограничение (максимум для rlim_cur) */
+};
+Мягким ограничением является значение, принудительно устанавливаемое ядром для соответствующего ресурса. Жёсткое ограничение работает как максимальное значение для мягкого ограничения: непривилегированные процессы могут определять только свои мягкие ограничения в диапазоне от 0 до жёсткого ограничения, то есть однозначно меньше жёсткого ограничения. Привилегированные процессы (в Linux: имеющие мандат CAP_SYS_RESOURCE) могут устанавливать произвольные значения в любых пределах.
+-------------------------------------- 
+----------------------------------------------------- 
+<<DESCRIPTION_ru>>
+[DESCRIPTION_ru](../../fills/getrlimit/DESCRIPTION_ru)
+
+
+[UP](###UP)
+## p_DESCRIPTION
+:getrlimit:
+[next](##p_BUGS)
+
+<<DESCRIPTION>>
+[DESCRIPTION](../../fills/getrlimit/DESCRIPTION)
+
+
+[UP](###UP)
+## p_MIRRORS
+:getrlimit:
+[next](##p_BUGS)
+
+<<MIRRORS>>
+[MIRRORS](../../fills/getrlimit/MIRRORS)
+
+
+[UP](###UP)
+## p_BUGS
+:getrlimit:
+[next](##p_EXAMPLES)
+
+<<BUGS>>
+[BUGS](../../fills/getrlimit/BUGS)
+
+
+[UP](###UP)
+## p_EXAMPLES
+:getrlimit:
+[next](##p_CODE)
+
+<<EXAMPLES>>
+[EXAMPLES](../../fills/getrlimit/EXAMPLES)
+
+
+[UP](###UP)
+## p_CODE_h
+:getrlimit:
+[next](##p_CODE_c)
+
+<<CODE_h>>
+[CODE_h](../../fills/getrlimit/CODE_h)
+
+
+[UP](###UP)
+## p_CODE_c
+:getrlimit:
+[next](##p_CODE_m)
+
+<<CODE_c>>
+[CODE_c](../../fills/getrlimit/CODE_c)
+
+
+[UP](###UP)
+## p_CODE_m
+:getrlimit:
+[next](##p_ERRORS)
+
+<<CODE_m>>
+[CODE_m](../../fills/getrlimit/CODE_m)
+
+
+[UP](###UP)
+## p_ERRORS
+:getrlimit:
+[next](##p_BOOKS)
+
+<<ERRORS>>
+[ERRORS](../../fills/getrlimit/ERRORS)
+
+
+[UP](###UP)
+## p_BOOKS
+:getrlimit:
+[next](##p_BOOKS_ru)
+
+<<BOOKS>>
+[BOOKS](../../fills/getrlimit/BOOKS)
+
+
+[UP](###UP)
+## p_BOOKS_ru
+:getrlimit:
+[next](##p_CONTENT)
+
+
+<<BOOKS_ru>>
+[BOOKS_ru](../../fills/getrlimit/BOOKS_ru)
+
+
+[UP](###UP)
+## p_CONTENT
+:33333:
+[33333.cnt](../../contents/33333.cnt)
+[next](##UP)
+
+[UP](###UP)

@@ -1,0 +1,772 @@
+
+<!-- saved from url=(0045)https://cpp.com.ru/bogatyrev_c_unix/gl_2.html -->
+<html m_init="2259300202204070759"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+
+<title>Массивы, строки, указатели. Хрестоматия по программированию на Си в Unix</title>
+
+
+
+<!-- head begin -->
+
+	<script async="" src="./Массивы, строки, указатели. Хрестоматия по программированию на Си в Unix_files/async-ads.js"></script><script src="./Массивы, строки, указатели. Хрестоматия по программированию на Си в Unix_files/cb=gapi.loaded_1" async=""></script><script src="./Массивы, строки, указатели. Хрестоматия по программированию на Си в Unix_files/cb=gapi(1).loaded_0" async=""></script><script async="" type="text/javascript" src="https://openstat.net/cnt.js"></script><script type="text/javascript" async="" src="./Массивы, строки, указатели. Хрестоматия по программированию на Си в Unix_files/plusone.js" gapi_processed="true"></script><script type="text/javascript" async="" src="./Массивы, строки, указатели. Хрестоматия по программированию на Си в Unix_files/f.txt"></script><script type="text/javascript" async="" src="./Массивы, строки, указатели. Хрестоматия по программированию на Си в Unix_files/ga.js"></script><script type="text/javascript">
+
+          	var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-22695535-1']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+
+	</script>
+
+	<!-- Put the following javascript before the closing </head> tag. -->
+	<script>
+	  (function() {
+	    var cx = 'partner-pub-5771899961401791:8114144010';
+	    var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+	    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+		'//www.google.ru/cse/cse.js?cx=' + cx;
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+	  })();
+	</script>
+
+	<!-- vk like begin -->
+	<!-- Put this script tag to the <head> of your page -->
+	<script type="text/javascript" src="./Массивы, строки, указатели. Хрестоматия по программированию на Си в Unix_files/openapi.js"></script>
+
+	<script type="text/javascript">
+	  VK.init({apiId: 3153833, onlyWidgets: true});
+	</script>
+	<!-- vk like end -->
+
+<!-- head end -->
+<script type="text/javascript" async="" src="./Массивы, строки, указатели. Хрестоматия по программированию на Си в Unix_files/rotaban.js"></script><script src="./Массивы, строки, указатели. Хрестоматия по программированию на Си в Unix_files/cse_element__ru.js" type="text/javascript"></script><link type="text/css" rel="stylesheet" href="./Массивы, строки, указатели. Хрестоматия по программированию на Си в Unix_files/default+ru.css"><link type="text/css" rel="stylesheet" href="./Массивы, строки, указатели. Хрестоматия по программированию на Си в Unix_files/default.css"><script type="text/javascript" id="_rotaban_js_0136f42239f2400dadf98977553229e1" src="./Массивы, строки, указатели. Хрестоматия по программированию на Си в Unix_files/0136f42239f2400dadf98977553229e1.js" referrerpolicy="strict-origin-when-cross-origin" async="async"></script><style type="text/css">.gsc-control-cse{font-family:arial, sans-serif}.gsc-control-cse .gsc-table-result{font-family:arial, sans-serif}.gsc-refinementsGradient{background:linear-gradient(to left,rgba(255,255,255,1),rgba(255,255,255,0))}</style><style type="text/css">.gscb_a{display:inline-block;font:27px/13px arial,sans-serif}.gsst_a .gscb_a{color:#a1b9ed;cursor:pointer}.gsst_a:hover .gscb_a,.gsst_a:focus .gscb_a{color:#36c}.gsst_a{display:inline-block}.gsst_a{cursor:pointer;padding:0 4px}.gsst_a:hover{text-decoration:none!important}.gsst_b{font-size:16px;padding:0 2px;position:relative;user-select:none;-webkit-user-select:none;white-space:nowrap}.gsst_e{vertical-align:middle;opacity:0.55;}.gsst_a:hover .gsst_e,.gsst_a:focus .gsst_e{opacity:0.72;}.gsst_a:active .gsst_e{opacity:1;}.gsst_f{background:white;text-align:left}.gsst_g{background-color:white;border:1px solid #ccc;border-top-color:#d9d9d9;box-shadow:0 2px 4px rgba(0,0,0,0.2);-webkit-box-shadow:0 2px 4px rgba(0,0,0,0.2);margin:-1px -3px;padding:0 6px}.gsst_h{background-color:white;height:1px;margin-bottom:-1px;position:relative;top:-1px}.gsib_a{width:100%;padding:4px 6px 0}.gsib_a,.gsib_b{vertical-align:top}.gssb_c{border:0;position:absolute;z-index:989}.gssb_e{border:1px solid #ccc;border-top-color:#d9d9d9;box-shadow:0 2px 4px rgba(0,0,0,0.2);-webkit-box-shadow:0 2px 4px rgba(0,0,0,0.2);cursor:default}.gssb_f{visibility:hidden;white-space:nowrap}.gssb_k{border:0;display:block;position:absolute;top:0;z-index:988}.gsdd_a{border:none!important}.gsq_a{padding:0}.gssb_a{padding:0 7px}.gssb_a,.gssb_a td{white-space:nowrap;overflow:hidden;line-height:22px}#gssb_b{font-size:11px;color:#36c;text-decoration:none}#gssb_b:hover{font-size:11px;color:#36c;text-decoration:underline}.gssb_g{text-align:center;padding:8px 0 7px;position:relative}.gssb_h{font-size:15px;height:28px;margin:0.2em;-webkit-appearance:button}.gssb_i{background:#eee}.gss_ifl{visibility:hidden;padding-left:5px}.gssb_i .gss_ifl{visibility:visible}a.gssb_j{font-size:13px;color:#36c;text-decoration:none;line-height:100%}a.gssb_j:hover{text-decoration:underline}.gssb_l{height:1px;background-color:#e5e5e5}.gssb_m{color:#000;background:#fff}.gssb_a{padding:0 9px}.gsib_a{padding:5px 9px 4px 9px}.gscb_a{line-height:27px}.gssb_e{border:0}.gssb_l{margin:5px 0}input.gsc-input::-webkit-input-placeholder{font-size:14px}input.gsc-input:-moz-placeholder{font-size:14px}input.gsc-input::-moz-placeholder{font-size:14px}input.gsc-input:-ms-input-placeholder{font-size:14px}input.gsc-input:focus::-webkit-input-placeholder{color:transparent}input.gsc-input:focus:-moz-placeholder{color:transparent}input.gsc-input:focus::-moz-placeholder{color:transparent}input.gsc-input:focus:-ms-input-placeholder{color:transparent}.gssb_c .gsc-completion-container{position:static}.gssb_c{z-index:5000}.gsc-completion-container table{background:transparent;font-size:inherit;font-family:inherit}.gssb_c > tbody > tr,.gssb_c > tbody > tr > td,.gssb_d,.gssb_d > tbody > tr,.gssb_d > tbody > tr > td,.gssb_e,.gssb_e > tbody > tr,.gssb_e > tbody > tr > td{padding:0;margin:0;border:0}.gssb_a table,.gssb_a table tr,.gssb_a table tr td{padding:0;margin:0;border:0}</style><style type="text/css">div.rotaban_218286{width:100%;display:block;}div.rotaban_218286 a{width:728px;}div.rotaban_218286 a img{padding:0;}div.rotaban_218286 a em{font-style:normal;}html>body div.rotaban_218286 a{display:block;font-size:11px;color:#888;font-family:verdana,sans-serif;margin:0 4px 10px 0;text-align:center;text-decoration:none;overflow:hidden;}html>body div.rotaban_218286 img{border:0;clear:right;}html>body div.rotaban_218286 a.rb_adhere{color:#666;font-weight:bold;font-size:12px;border:1px solid #ccc;background:#e7e7e7;text-align:center;}html>body div.rotaban_218286 a.rb_adhere:hover{border:1px solid #999;background:#ddd;color:#333;}html>body div.rotaban_218286 a{display:inline-block;position:relative;vertical-align:top;}div.rotaban_218286 a.rb_adhere{width:728px;height:90px;line-height:720%;}div.rotaban_218286 a.rb_adhere{width:726px;height:88px;border:1px solid #ccc;background:#e7e7e7;color:#444;}div.rotaban_218286 a.rb_adhere:hover{border:1px solid #999;background:#ddd;color:#222;}div.rotaban_218286 img.s{height:0;width:0;}</style></head>
+<body>
+<!-- body_header begin -->
+
+<!-- RotaBan.ru Ad Code -->
+<script type="text/javascript">
+(function(){
+    var rb = document.createElement('script');
+        d = new Date();
+    d.setHours(0);
+    d.setMinutes(0);
+    d.setSeconds(0);
+    d.setMilliseconds(0);
+    rb.type = 'text/javascript';
+    rb.async = true;
+    rb.src = '//s1.rotaban.ru/rotaban.js?v=' + d.getTime();
+    (document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(rb);
+})();
+</script>
+<!-- END RotaBan.ru Ad Code -->
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tbody><tr>
+	<td>
+	<p align="left">
+<!-- RotaBan.ru Zone Code -->
+</p><div id="rotaban_218286" class="rotaban_218286 rotaban"><iframe width="728" height="90" src="./Массивы, строки, указатели. Хрестоматия по программированию на Си в Unix_files/rotaban_218286.html" frameborder="0" hspace="0" vspace="0" marginheight="0" marginwidth="0" scrolling="no" allowtransparency="true" style="left:0;top:0;"></iframe></div>
+<!-- END RotaBan.ru Zone Code -->
+	<p></p>
+	</td><td>
+	<p align="right">
+
+<!-- Place this tag where you want both of the search box and the search results to render -->
+<div id="___gcse_0"><div class="gsc-control-cse gsc-control-cse-ru"><div class="gsc-control-wrapper-cse" dir="ltr"><form class="gsc-search-box gsc-search-box-tools" accept-charset="utf-8"><table cellspacing="0" cellpadding="0" class="gsc-search-box"><tbody><tr><td class="gsc-input"><div class="gsc-input-box" id="gsc-iw-id1"><table cellspacing="0" cellpadding="0" id="gs_id50" class="gstl_50 gsc-input" style="width: 100%; padding: 0px;"><tbody><tr><td id="gs_tti50" class="gsib_a"><input autocomplete="off" type="text" size="10" class="gsc-input" name="search" title="поиск" id="gsc-i-id1" dir="ltr" spellcheck="false" style="width: 100%; padding: 0px; border: none; margin: 0px; height: auto; background: url(&quot;https://www.google.com/cse/static/images/1x/ru/branding.png&quot;) left center no-repeat rgb(255, 255, 255); outline: none;"></td><td class="gsib_b"><div class="gsst_b" id="gs_st50" dir="ltr"><a class="gsst_a" href="javascript:void(0)" title="Очистить окно поиска" role="button" style="display: none;"><span class="gscb_a" id="gs_cb50" aria-hidden="true">&#215;</span></a></div></td></tr></tbody></table></div></td><td class="gsc-search-button"><button class="gsc-search-button gsc-search-button-v2"><svg width="13" height="13" viewBox="0 0 13 13"><title>поиск</title><path d="m4.8495 7.8226c0.82666 0 1.5262-0.29146 2.0985-0.87438 0.57232-0.58292 0.86378-1.2877 0.87438-2.1144 0.010599-0.82666-0.28086-1.5262-0.87438-2.0985-0.59352-0.57232-1.293-0.86378-2.0985-0.87438-0.8055-0.010599-1.5103 0.28086-2.1144 0.87438-0.60414 0.59352-0.8956 1.293-0.87438 2.0985 0.021197 0.8055 0.31266 1.5103 0.87438 2.1144 0.56172 0.60414 1.2665 0.8956 2.1144 0.87438zm4.4695 0.2115 3.681 3.6819-1.259 1.284-3.6817-3.7 0.0019784-0.69479-0.090043-0.098846c-0.87973 0.76087-1.92 1.1413-3.1207 1.1413-1.3553 0-2.5025-0.46363-3.4417-1.3909s-1.4088-2.0686-1.4088-3.4239c0-1.3553 0.4696-2.4966 1.4088-3.4239 0.9392-0.92727 2.0864-1.3969 3.4417-1.4088 1.3553-0.011889 2.4906 0.45771 3.406 1.4088 0.9154 0.95107 1.379 2.0924 1.3909 3.4239 0 1.2126-0.38043 2.2588-1.1413 3.1385l0.098834 0.090049z"></path></svg></button></td><td class="gsc-clear-button"><div class="gsc-clear-button" title="удалить результаты">&nbsp;</div></td></tr></tbody></table></form><div class="gsc-results-wrapper-nooverlay"><div class="gsc-positioningWrapper"><div class="gsc-tabsAreaInvisible"><div aria-label="refinement" role="tab" class="gsc-tabHeader gsc-inline-block gsc-tabhActive">Система пользовательского поиска</div><span class="gs-spacer"> </span></div></div><div class="gsc-positioningWrapper"><div class="gsc-refinementsAreaInvisible"></div></div><div class="gsc-above-wrapper-area-invisible"><table cellspacing="0" cellpadding="0" class="gsc-above-wrapper-area-container"><tbody><tr><td class="gsc-result-info-container"><div class="gsc-result-info-invisible"></div></td></tr></tbody></table></div><div class="gsc-adBlockInvisible"></div><div class="gsc-wrapper"><div class="gsc-adBlockInvisible"></div><div class="gsc-resultsbox-invisible"><div class="gsc-resultsRoot gsc-tabData gsc-tabdActive"><div><div class="gsc-expansionArea"></div></div></div></div></div></div></div></div></div>
+	</p>
+
+	</td>
+
+</tr>
+</tbody></table>
+<hr>
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tbody><tr>
+	<td>
+	<p>
+	    <a href="http://cpp.com.ru/">[ Главная ]</a>
+	    <a href="http://cpp.com.ru/guest/index.php">[ Гостевая ]</a>
+	</p>
+	</td>
+	<td align="right"> 
+
+		<!-- vk like begin -->
+		<!-- Put this div tag to the place, where the Like block will be -->
+		<div id="vk_like" style="width: 115px; height: 24px; background: none; position: relative; clear: both;"><iframe name="fXD25a5c" frameborder="0" src="./Массивы, строки, указатели. Хрестоматия по программированию на Си в Unix_files/widget_like.html" width="100%" height="24" scrolling="no" id="vkwidget1" style="overflow: hidden; height: 24px; width: 115px; z-index: 150;"></iframe></div>
+		<script type="text/javascript">
+		VK.Widgets.Like("vk_like", {type: "mini", height: 24});
+		</script>
+		<!-- vk like end -->
+
+	</td>
+	<td align="right" width="1"> 
+
+		<!-- begin google +1 -->
+		<!-- Place this tag where you want the +1 button to render. -->
+		<div id="___plusone_0" style="position: absolute; width: 450px; left: -10000px;"><iframe ng-non-bindable="" frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position:absolute;top:-10000px;width:450px;margin:0px;border-style:none" tabindex="0" vspace="0" width="100%" id="I0_1649574053640" name="I0_1649574053640" src="./Массивы, строки, указатели. Хрестоматия по программированию на Си в Unix_files/fastbutton.html" data-gapiattached="true"></iframe></div><div class="g-plusone" data-gapiscan="true" data-onload="true" data-gapistub="true"></div>
+
+		<!-- Place this tag after the last +1 button tag. -->
+		<script type="text/javascript">
+		  window.___gcfg = {lang: 'ru'};
+
+		  (function() {
+		    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+		    po.src = 'https://apis.google.com/js/plusone.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+		  })();
+		</script>
+		<!-- end google +1 -->
+	</td>
+</tr>
+</tbody></table>
+
+<!-- body_header end -->
+
+<a name="top"></a>
+
+
+<p></p><center><p>
+<font size="-1">
+<a href="https://cpp.com.ru/bogatyrev_c_unix/gl_1_8.html">Назад</a> | <a href="https://cpp.com.ru/bogatyrev_c_unix/index.html">Содержание</a> | <a href="https://cpp.com.ru/bogatyrev_c_unix/gl_2_1.html">Вперед</a></font></p></center><p></p>
+ <!--minimal-->
+
+
+<a name="3"></a><h3>2.  Массивы, строки, указатели.</h3>
+<p align="justify">Массив представляет собой агрегат из нескольких  переменных  одного  и  того  же типа. Массив с именем <b>a</b> из <b>LENGTH</b> элементов типа <i>TYPE</i> объявляется так:
+</p><pre>    <i>TYPE</i> <b>a</b>[<b>LENGTH</b>];
+</pre>
+<p align="justify">Это соответствует тому, что объявляются переменные типа <i>TYPE</i> со специальными  именами
+<b>a</b>[0],  <b>a</b>[1],  ...,  <b>a</b>[<b>LENGTH</b>-<b>1</b>].   Каждый  элемент массива имеет свой номер - <b>индекс</b>.
+Доступ к <b>x</b>-ому элементу массива осуществляется при помощи операции индексации:
+</p><pre>    int <b>x</b> = ... ;      /* целочисленный индекс   */
+    <i>TYPE</i> <b>value</b> = <b>a</b>[<b>x</b>]; /* чтение <b>x</b>-ого элемента  */
+         <b>a</b>[<b>x</b>] = <b>value</b>; /* запись в <b>x</b>-тый элемент */
+</pre>
+<p align="justify">В качестве индекса может использоваться любое  выражение,  выдающее  значение  <b>целого</b>
+типа:  <i>char</i>, <i>short</i>, <i>int</i>, <i>long</i>.  Индексы элементов массива в Си начинаются с <i>0</i> (а не с
+1), и индекс последнего элемента массива из <b>LENGTH</b> элементов -  это  <b>LENGTH</b>-1  (а  не
+<b>LENGTH</b>).  Поэтому цикл по всем элементам массива - это
+</p><pre>    <i>TYPE</i> <b>a</b>[<b>LENGTH</b>]; int <b>indx</b>;
+    <i>for</i>(<b>indx</b>=0; <b>indx</b> <i>&lt;</i> <b>LENGTH</b>; <b>indx</b>++)
+       ...<b>a</b>[<b>indx</b>]...;
+</pre>
+<p align="justify"><b>indx</b> &lt; <b>LENGTH</b>  равнозначно  <b>indx</b> &lt;= <b>LENGTH</b>-1.   Выход  за  границы  массива  (попытка
+чтения/записи  несуществующего элемента) может привести к непредсказуемым результатам
+и поведению программы.  Отметим, что это одна из самых распространенных ошибок.
+</p><p align="justify"><b>Статические</b> массивы можно объявлять с  <b>инициализацией</b>,  перечисляя  значения  их
+элементов  в  {}  через  запятую.   Если задано меньше элементов, чем длина массива остальные элементы считаются нулями:
+</p><pre>    int <b>a10</b>[10] = { 1, 2, 3, 4 }; /* и 6 нулей */
+</pre>
+<p align="justify">Если при описании массива с инициализацией не указать его размер, он будет  подсчитан
+компилятором:
+</p><pre>    int <b>a3</b>[] = { 1, 2, 3 }; /* как бы <b>a3</b>[3] */
+</pre>
+<p align="justify">В большинстве современных компьютеров (с фон-Неймановской  архитектурой)  память
+представляет  собой <b>массив байт</b>.  Когда мы описываем некоторую переменную или массив, в памяти выделяется непрерывная область для  хранения  этой  переменной.   Все  байты памяти  компьютера  пронумерованы.   <b>Номер байта</b>, с которого начинается в памяти наша переменная, называется <b>адресом</b> этой переменной (адрес может  иметь  и  более  сложную структуру,  чем  просто  целое  число - например состоять из номера <b>сегмента</b> памяти и
+номера байта в этом сегменте).  В Си адрес переменной можно получить с помощью операции  взятия  адреса <i>&amp;</i>. Пусть у нас есть переменная <b>var</b>, тогда <i>&amp;</i><b>var</b> - ее адрес.  Адрес <b>нельзя</b> присваивать целой переменной;  для  хранения  адресов  используются  указатели (смотри ниже).
+</p><p align="justify">Данное может занимать <b>несколько</b> подряд идущих байт.   Размер  в  байтах  участка
+памяти,  требуемого для хранения значения типа <i>TYPE</i>, можно узнать при помощи операции <i>sizeof</i>(<b>TYPE</b>), а размер  переменной  -  при  помощи  <i>sizeof</i>(<b>var</b>).  Всегда  выполняется
+<i>sizeof</i>(<i>char</i>)==1.   В  некоторых машинах адреса переменных (а также агрегатов данных массивов и структур) кратны <i>sizeof</i>(<b>int</b>)  или  <i>sizeof</i>(<b>double</b>)  -  это  так  называемое
+"выравнивание (<b>align</b>ment) данных на границу типа <i>int</i>".  Это позволяет делать доступ к данным более быстрым (аппаратура работает эффективнее).
+</p><p align="justify">Язык Си предоставляет нам средство для работы  с  адресами  данных  -  <b>указатели</b>
+(<b>pointer</b>)<i>|</i> -.  Указатель физически - это адрес некоторой переменной ("указуемой"  переменной).   Отличие  указателей от машинных адресов состоит в том, что указатель может
+содержать адреса данных только <b>определенного типа</b>.  Указатель <b>ptr</b>, который может указывать на данные типа <i>TYPE</i>, описывается так:
+</p><pre>    <i>TYPE</i>  <b>var</b>;     /* переменная       */
+    <i>TYPE *</i><b>ptr</b>;     /* объявление ук-ля */
+          <b>ptr</b> = <i>&amp;</i> <b>var</b>;
+</pre>
+<p align="justify">В данном случае мы занесли в указательную переменную <b>ptr</b> адрес переменной <b>var</b>.  Будем
+говорить,  что  указатель <b>ptr</b> указывает на переменную <b>var</b> (или, что <b>ptr</b> установлен на
+<b>var</b>).  Пусть <i>TYPE</i> равно <i>int</i>, и у нас есть массив и указатели:
+</p><pre>    int  <b>array</b>[<b>LENGTH</b>], <b>value</b>;
+    int *<b>ptr</b>, *<b>ptr1</b>;
+</pre>
+Установим указатель на <b>x</b>-ый элемент массива
+<pre>    <b>ptr</b> = &amp; <b>array</b>[<b>x</b>];
+</pre>
+<p align="justify">Указателю можно присвоить значение другого указателя <b>на такой же  тип</b>.  В  результате
+оба указателя будут указывать на одно и то же место в памяти: <b>ptr1</b> = <b>ptr</b>;
+</p><p align="justify">Мы можем изменять указуемую переменную при помощи операции <i>*</i>
+</p><pre>    *<b>ptr</b> = 128;   /* занести 128 в указуемую перем. */
+    <b>value</b> = *<b>ptr</b>; /* прочесть указуемую переменную  */
+</pre>
+<p align="justify">В данном случае мы заносим и затем читаем значение переменной  <b>array</b>[<b>x</b>],  на  которую
+поставлен указатель, то есть
+</p><pre>    *<b>ptr</b>  означает сейчас  <b>array</b>[<b>x</b>]
+</pre>
+<p align="justify">Таким образом, операция <i>*</i> (значение по адресу)  оказывается  обратной  к  операции  <i>&amp;</i> (взятие адреса):
+</p><pre>    &amp; (*<b>ptr</b>) == <b>ptr</b>    и    * (&amp;<b>value</b>) == <b>value</b>
+</pre>
+<p align="justify">Операция <i>*</i> объясняет смысл описания <i>TYPE *</i><b>ptr</b>; оно означает, что  значение  выражения
+<i>*</i><b>ptr</b>  будет иметь тип <i>TYPE</i>. Название же типа самого указателя - это <i>(TYPE *)</i>. В частности, <i>TYPE</i> может сам быть указательным типом - можно объявить  указатель  на  указатель, вроде <i>char</i> **<b>ptrptr</b>;
+</p><p align="justify">Имя массива - это константа, представляющая собой указатель на 0-ой элемент массива.   Этот указатель отличается от обычных тем, что его нельзя изменить (установить
+на другую переменную), поскольку он сам хранится не в переменной, а  является  просто некоторым постоянным адресом.
+</p><pre>        массив           указатель
+           ____________       _____
+    <i>array</i>: | array[0] |   <i>ptr</i>:| * |
+           | array[1] |         |
+           | array[2] |&lt;--------- сейчас равен &amp;array[2]
+           |  ...     |
+</pre>
+Следствием такой интерпретации имен массивов является то, что для того  чтобы  поставить указатель на начало массива, надо писать
+<pre>    <b>ptr</b> = <b>array</b>;  или  <b>ptr</b> = &amp;<b>array</b>[0];
+            но не
+    <b>ptr</b> = &amp;<b>array</b>;
+</pre>
+Операция <i>&amp;</i> перед одиноким именем массива не нужна и недопустима!
+<p align="justify">Такое родство указателей и массивов позволяет нам применять операцию <i>*</i>  к  имени
+массива: <b>value</b> = <i>*</i><b>array</b>; означает то же самое, что и <b>value</b> = <b>array</b>[0];
+</p><p align="justify"><i>Указатели - не целые числа!</i>  Хотя физически это и <b>номера</b> байтов, адресная  арифметика  отличается  от  обычной.  Так,  если  дан  указатель <i>TYPE</i> *<b>ptr</b>; и номер байта
+(адрес), на который указывает <b>ptr</b>, равен <b>byteaddr</b>, то
+</p><pre>    <b>ptr</b> = <b>ptr</b> + <b>n</b>; /* n - целое, может быть и &lt; 0 */
+</pre>
+заставит <b>ptr</b> указывать не на байт номер <b>byteaddr</b> + <b>n</b>, а на байт номер
+<pre>    <b>byteaddr</b> + (<b>n</b> * <i>sizeof</i>(<b>TYPE</b>))
+</pre>
+<p align="justify">то есть прибавление единицы к указателю продвигает адрес не на 1 байт,  а  на  размер
+указываемого  указателем  типа данных!  Пусть указатель <b>ptr</b> указывает на <b>x</b>-ый элемент массива <b>array</b>.  Тогда после
+</p><pre>    <i>TYPE</i> *<b>ptr2</b> = <b>array</b> + <b>L</b>;  /* L - целое */
+    <i>TYPE</i> *<b>ptr1</b> = <b>ptr</b>   + <b>N</b>;  /* N - целое */
+          <b>ptr</b> += <b>M</b>;          /* M - целое */
+</pre>
+указатели указывают на
+<pre>    <b>ptr1</b> == &amp;<b>array</b>[<b>x</b>+<b>N</b>]   и   <b>ptr</b>  == &amp;<b>array</b>[<b>x</b>+<b>M</b>]
+    <b>ptr2</b> == &amp;<b>array</b>[<b>L</b>]
+</pre>
+Если мы теперь рассмотрим цепочку равенств
+<pre>    *<b>ptr2</b> = *(<b>array</b> + <b>L</b>) = *(&amp;<b>array</b>[<b>L</b>]) =
+              <b>array</b>[<b>L</b>]
+</pre>
+<p align="justify">то получим <i>ОСНОВНОЕ ПРАВИЛО</i>: пусть <b>ptr</b> - указатель или имя массива. Тогда  операции  индексации, взятия  значения  по  адресу,  взятия адреса и прибавления целого к указателю связаны соотношениями:
+</p><pre>     <b>ptr</b>[<b>x</b>]  тождественно <i>*</i>(<b>ptr</b>+<b>x</b>)
+    <i>&amp;</i><b>ptr</b>[<b>x</b>]  тождественно   <b>ptr</b>+<b>x</b>
+</pre>
+(тождества верны в обе стороны), в том числе при <b>x</b>==0 и <b>x</b> &lt; 0. Так что, например,
+<pre>    <b>ptr</b>[-1] означает  *(<b>ptr</b>-1)
+    <b>ptr</b>[0]  означает  *<b>ptr</b>
+</pre>
+Указатели можно индексировать подобно массивам.  Рассмотрим пример:
+<pre>            /* индекс:     0    1    2    3    4   */
+    double  <b>numbers</b>[5] = { 0.0, 1.0, 2.0, 3.0, 4.0 };
+    double *<b>dptr</b>   = &amp;<b>numbers</b>[2];
+    double  <b>number</b> =  <b>dptr</b>[2];  /* равно 4.0 */
+    <i>numbers</i>: [0]   [1]   [2]   [3]   [4]
+                          |
+            [-2]  [-1]   [0]   [1]   [2]
+                         <i>dptr</i>
+</pre>
+поскольку
+<pre>    если <i>dptr</i>    = &amp;<i>numbers</i>[<b>x</b>] = <i>numbers</i> + <b>x</b>
+    то   <i>dptr</i>[<b>i</b>] = *(<i>dptr</i> + <b>i</b>) =
+                 = *(<i>numbers</i> + <b>x</b> + <b>i</b>) = <i>numbers</i>[<b>x</b> + <b>i</b>]
+</pre>
+<p align="justify">Указатель на один тип можно преобразовать в указатель на другой тип: такое  преобразование  не вызывает генерации каких-либо машинных команд, но заставляет компилятор изменить параметры адресной арифметики, а также операции выборки данного по  указателю (собственно, разница в указателях на данные разных типов состоит только в <b>размерах</b> указуемых типов; а также в генерации команд `<i>-&gt;</i>' для  выборки  полей  <b>структур</b>,
+если указатель - на структурный тип).
+</p><p align="justify">Целые (<i>int</i> или <i>long</i>) числа иногда можно преобразовывать в указатели.  Этим пользуются  при написании драйверов устройств для доступа к регистрам по физическим адресам, например:
+</p><pre>    unsigned short *<i>KISA5</i> = (unsigned short *) 0172352;
+</pre>
+Здесь возникают два тонких момента:
+<ol>
+<li>   Как уже было сказано, адреса данных часто выравниваются  на  границу  некоторого типа.   Мы  же  можем  задать  невыровненное  целое значение.  Такой адрес будет некорректен.
+</li><li> Структура адреса, поддерживаемая процессором, может не  соответствовать  формату целых (или длинных целых) чисел. Так обстоит дело с <i>IBM PC 8086/80286</i>, где адрес состоит из пары <i>short int</i> чисел, хранящихся в памяти подряд.  Однако <b>весь</b>  адрес (если  рассматривать  эти  два числа как одно длинное целое) не является обычным <i>long</i>-числом, а вычисляется более сложным способом: адресная пара  <b>SEGMENT</b>:<b>OFFSET</b> преобразуется так
+<pre>    unsigned short <b>SEGMENT</b>, <b>OFFSET</b>; /*16 бит: [0..65535]*/
+    unsigned long  <b>ADDRESS</b> = (<b>SEGMENT</b> &lt;&lt; 4) + <b>OFFSET</b>;
+      получается 20-и битный физический адрес <b>ADDRESS</b>
+</pre>
+<p align="justify">Более того, на машинах с <b>диспетчером памяти</b>, адрес, хранимый в указателе,  является "виртуальным" (т.е. воображаемым, ненастоящим) и может не совпадать с физическим адресом, по которому данные хранятся в памяти компьютера.  В памяти может одновременно  находиться  несколько программ, в каждой из них будет <b>своя</b> система адресации ("<b>адресное пространство</b>"), отсчитывающая виртуальные адреса с нуля  от начала  области  памяти, выделенной данной программе. Преобразование виртуальных адресов в физические выполняется аппаратно.
+</p></li></ol>
+<p align="justify">В Си принято соглашение, что указатель (<b>TYPE</b> *)<i>0</i> означает "указатель ни на  что".  Он
+является  просто  признаком,  используемым для обозначения несуществующего адреса или конца цепочки указателей, и имеет специальное обозначение <i>NULL</i>.   Обращение  (выборка или  запись данных) по этому указателю считается некорректным (кроме случая, когда вы пишете машинно-зависимую программу и работаете с <b>физическими</b> адресами).
+</p><p align="justify">Отметим, что указатель можно направить в неправильное место - на участок памяти, содержащий  данные  не  того  типа,  который  задан в описании указателя; либо вообще содержащий неизвестно что:
+</p><pre>    int i = 2, *iptr = &amp;i;
+    double x = 12.76;
+      iptr += 7;  /* куда же он указал ?! */
+      iptr = (int *) &amp;x;  i = *iptr;
+</pre>
+<p align="justify">Само присваивание указателю некорректного значения еще не  является  ошибкой.  Ошибка возникнет  лишь  при  обращении  к  данным  по этому указателю (такие ошибки довольно тяжело искать!).
+</p><p align="justify">При передаче имени массива в качестве параметра функции, как аргумент передается
+не  копия  САМОГО  МАССИВА  (это заняло бы слишком много места), а копия АДРЕСА 0-ого элемента этого массива (т.е. указатель на начало массива).
+</p><pre>    <i>f</i>(int <b>x</b>   ){ <b>x</b>++;     }
+    <i>g</i>(int <b>xa</b>[]){ <b>xa</b>[0]++; }
+    int <b>a</b>[2] = { 1, 1 }; /* объявление с инициализацией */
+    main(){
+     <i>f</i>(<b>a</b>[0]); printf("%d\n",<b>a</b>[0]); /* <b>a</b>[0] осталось равно 1*/
+     <i>g</i>(<b>a</b>   ); printf("%d\n",<b>a</b>[0]); /* <b>a</b>[0] стало равно 2   */
+    }
+</pre>
+<p align="justify">В <i>f</i>() в качестве аргумента передается копия элемента <b>a</b>[0] (и изменение этой копии  не
+приводит  к  изменению  самого  массива  - аргумент <b>x</b> является локальной переменной в <i>f</i>()), а в <i>g</i>() таким локалом является АДРЕС массива <b>a</b> -  но  не  сам  массив,  поэтому
+<b>xa</b>[0]++  изменяет  сам  массив  <b>a</b>  (зато,  например, <b>xa</b>++ внутри <i>g</i>() изменило бы лишь
+локальную указательную переменную <b>xa</b>, но не адрес массива <b>a</b>).
+</p><p align="justify">Заметьте, что поскольку массив передается как <b>указатель</b> на его начало, то <b>размер</b>
+массива  в  объявлении  аргумента  можно  не указывать.  Это позволяет одной функцией обрабатывать массивы разной длины:
+</p><pre>    вместо    <i>Fun</i>(int <b>xa</b>[5]) { ... }
+    можно     <i>Fun</i>(int <b>xa</b>[] ) { ... }
+    или даже  <i>Fun</i>(int *<b>xa</b>  ) { ... }
+</pre>
+Если функция должна знать длину массива - передавайте ее как дополнительный аргумент:
+<pre>     int <i>sum</i>( int a[], int len ){
+       int s=0, i;
+       for(i=0; i &lt; len; i++) s += a[i];
+       return( s );
+     }
+     ... int arr[10] = { ... };
+     ... int sum10 = <i>sum</i>(arr, 10); ...
+</pre>
+Количество элементов в массиве <i>TYPE</i> <b>arr</b>[<b>N</b>]; можно вычислить специальным образом, как
+<pre>    #define <b>LENGTH</b> (<i>sizeof</i>(<b>arr</b>) / <i>sizeof</i>(<b>arr</b>[0]))
+</pre>или<pre>    #define <b>LENGTH</b> (<i>sizeof</i>(<b>arr</b>) / <i>sizeof</i>(<i>TYPE</i>))
+</pre>
+Оба способа выдадут число, равное <b>N</b>.  Эти конструкции обычно употребляются для вычисления длины массивов, задаваемых в виде
+<pre>    <i>TYPE</i> <b>arr</b>[] = { ....... };
+</pre>
+без явного указания размера.  <i>sizeof</i>(<b>arr</b>)  выдает  размер  всего  массива  в  байтах.
+<p align="justify"><i>sizeof</i>(<b>arr</b>[0])  выдает размер одного элемента.  И все это не зависит от типа элемента
+(просто потому, что все элементы массивов имеют <b>одинаковый</b> размер).
+</p><p align="justify"><b>Строка</b> в Си - это последовательность байт (букв,  символов,  литер,  <b>character</b>), завершающаяся  в  конце специальным признаком - байтом '<i>\0</i>'. Этот признак добавляется
+компилятором автоматически, когда мы задаем строку в  виде  <i>"</i><b>строка</b><i>"</i>.   Длина  строки
+(т.е.  число литер, предшествующих '\0') нигде <b>явно</b> не хранится. Длина строки ограничена лишь размером массива, в котором сохранена строка, и может изменяться в процессе работы  программы в пределах от <b>0</b> до <b>длины массива</b>-<b>1</b>.  При передаче строки в качестве
+аргумента в функцию, функции не требуется знать длину строки, т.к. передается  указатель на <b>начало</b> массива, а наличие ограничителя '\0' позволяет обнаружить <b>конец</b> строки при ее просмотре.
+</p><p align="justify">С массивами байт можно  использовать  следующую  конструкцию,  задающую  массивы (строки) одинакового размера:
+</p><pre>    char <b>stringA</b> [<b>ITSSIZE</b>];
+    char <b>stringB</b> [<i>sizeof</i> <b>stringA</b>];
+</pre>
+В данном разделе мы в основном будем рассматривать строки и указатели на символы.
+
+<a name="2_1"></a>
+<h4>2.1.</h4>
+Операции взятия адреса объекта и разыменования указателя - взаимно обратны.
+<pre>    <i>TYPE</i>  <b>objx</b>;
+    <i>TYPE</i> *<b>ptrx</b> = &amp;<b>objx</b>;  /* инициализируем адресом <b>objx</b> */
+    *(&amp;<b>objx</b>) = <b>objx</b>;
+
+    &amp;(*<b>ptrx</b>) = <b>ptrx</b>;
+</pre>
+Вот пример того, как  можно  заменить  условный  оператор  условным  выражением  (это удастся не всегда):
+<pre>    if(c) a = 1;
+    else  b = 1;
+</pre>
+Предупреждение: такой стиль <i>не</i> способствует понятности программы и даже  компактности ее кода.
+<pre>    #include &lt;stdio.h&gt;
+    int main(int ac, char *av[]){
+            int a, b, c;
+            a = b = c = 0;
+            if(av[1])  c = atoi(av[1]);
+            *(c ? &amp;a : &amp;b) = 1;     /* !!! */
+            printf("cond=%d a=%d b=%d\n", c, a, b);
+            return 0;
+    }
+</pre>
+<a name="2_2"></a>
+<h4>2.2.</h4>
+<p align="justify"> Каким образом инициализируются по умолчанию внешние и статические массивы? Инициализируются  ли  по умолчанию автоматические массивы?  Каким образом можно присваивать значения элементам массива, относящегося к любому классу памяти?
+
+<a name="2_3"></a>
+</p><h4>2.3.</h4>  Пусть задан массив int <b>arr</b>[10]; что тогда означают выражения:
+<pre>      arr[0]        *arr            *arr + 2
+      arr[2]        *(arr + 2)       arr
+     &amp;arr[2]         arr+2
+</pre>
+<a name="2_4"></a>
+<h4>2.4.</h4>  Правильно ли написано увеличение величины, на которую указывает указатель <b>a</b>, на единицу?
+<pre>    *<b>a</b>++;
+</pre>
+Ответ: нет, надо:
+<pre>    (*<b>a</b>)++;   или    *<b>a</b> += 1;
+</pre>
+<a name="2_5"></a>
+<h4>2.5.</h4>  Дан фрагмент текста:
+<pre>    char <b>a</b>[] = "xyz";
+    char *<b>b</b>  = <b>a</b> + 1;
+</pre>
+Чему равны
+<pre>    <b>b</b>[-1]       <b>b</b>[2]      "abcd"[3]
+</pre>
+(Ответ: 'x', '\0', 'd' )
+<p align="justify">Можно ли написать <b>a</b>++ ? То же про <b>b</b>++ ?  Можно ли написать <b>b</b>=<b>a</b> ?  <b>a</b>=<b>b</b>  ?   (нет,
+да, да, нет)
+
+<a name="2_6"></a>
+</p><h4>2.6.</h4>  Ниже приведена программа, вычисляющая среднее значение элементов массива
+<pre>      int arr [] = {1, 7, 4, 45, 31, 20, 57, 11};
+      main () {
+         int i; long sum;
+         for ( i = 0, sum = 0L;
+               i &lt; (sizeof(arr)/sizeof(int)); i++ )
+                    sum += arr[i];
+         printf ("Среднее значение = %ld\n", sum/8)
+      }
+</pre>
+Перепишите указанную программу с применением указателей.
+
+<a name="2_7"></a>
+<h4>2.7.</h4>  Что напечатается в результате работы программы?
+<pre>         char arr[] = {'С', 'Л', 'А', 'В', 'А'};
+         main () {
+            char *pt; int i;
+            pt = arr + sizeof(arr) - 1;
+            for( i = 0; i &lt; 5; i++, pt--  )
+                 printf("%c %c\n", arr[i], *pt);
+         }
+</pre>
+<p align="justify">Почему массив <b>arr</b>[] описан вне функции <i>main</i>()?  Как внести его  в  функцию  <i>main</i>()  ? 
+</p><p align="justify">Ответ: написать внутри <i>main</i>
+</p><pre>     <i>static</i> char <b>arr</b>[]=...
+</pre>
+<a name="2_8"></a>
+<h4>2.8.</h4>  Можно ли писать на Си так:
+<pre>            f( n, m ){
+                    int x[n]; int y[n*2];
+                    int z[n * m];
+                    ...
+            }
+</pre>
+<p align="justify">Ответ: к сожалению нельзя (<i>Си</i> - это не <i>Algol</i>).  При отведении памяти  для  массива  в качестве  размера должна быть указана <b>константа</b> или выражение, которое может быть еще
+во время компиляции вычислено до целочисленной константы, т.е. массивы имеют <b>фиксированную</b> длину.
+
+<a name="2_9"></a>
+</p><h4>2.9.</h4>  Предположим, что у нас есть описание массива
+<pre>            static int mas[30][100];
+</pre>
+<ol type="a">
+<li>   выразите адрес mas[22][56] иначе
+</li><li> выразите адрес mas[22][0] двумя способами
+</li><li> выразите адрес mas[0][0] тремя способами
+</li></ol>
+<a name="2_10"></a>
+<h4>2.10.</h4>
+<p align="justify">Составьте программу инициализации двумерного массива a[10][10],  выборки  элементов  с a[5][5] до a[9][9] и их распечатки.  Используйте доступ к элементам по указателю.
+
+<a name="2_11"></a>
+</p><h4>2.11.</h4>
+<p align="justify">Составьте функцию вычисления скалярного  произведения  двух  векторов.   Длина векторов задается в качестве одного из аргументов.
+
+<a name="2_12"></a>
+</p><h4>2.12.</h4>  Составьте функцию умножения двумерных матриц <i>a</i>[][] * <i>b</i>[][].
+
+<a name="2_13"></a>
+<h4>2.13.</h4>  Составьте функцию умножения трехмерных матриц <i>a</i>[][][] * <i>b</i>[][][].
+
+<a name="2_14"></a>
+<h4>2.14.</h4>  Для тех, кто программировал на языке <i>Pascal</i>: какая допущена ошибка?
+<pre>            char a[10][20];
+            char c;
+            int x,y;
+              ...
+            c = a[x,y];
+</pre>
+Ответ: многомерные массивы в Си надо индексировать так:
+<pre>            c = a[x][y];
+</pre>
+<p align="justify">В написанном же примере мы имеем в качестве индекса выражение  <b>x</b>,<b>y</b>  (оператор  "запятая") со значением <b>y</b>, т.е.
+</p><pre>            c = a[y];
+</pre>
+Синтаксической ошибки нет, но смысл совершенно изменился!
+
+<a name="2_15"></a>
+<h4>2.15.</h4>  Двумерные массивы в памяти представляются как одномерные. Например, если
+<pre>    int <b>a</b>[N][M];
+</pre>
+то конструкция <b>a</b>[<b>y</b>][<b>x</b>] превращается при компиляции в одномерную конструкцию, подобную такой:
+<pre>    int <b>a</b>[N * M]; /* массив развернут построчно */
+    #define <i>a</i><b>_</b><i>yx</i>(<b>y</b>, <b>x</b>)   <b>a</b>[(<b>x</b>) + (<b>y</b>) * M]
+</pre>
+то есть
+<pre>    <b>a</b>[<b>y</b>][<b>x</b>] есть *(&amp;<b>a</b>[0][0] + <b>y</b> * M + <b>x</b>)
+</pre>
+<p align="justify">Следствием этого является то, что компилятор для генерации  индексации  двумерных  (и более)  массовов  должен  знать M - размер массива по 2-ому измерению (а также 3-ему, 4-ому, и.т.д.).  В частности, при передаче многомерного массива в функцию
+</p><pre>    f(arr) int arr[N][M]; { ... }   /* годится    */
+    f(arr) int arr[] [M]; { ... }   /* годится    */
+    f(arr) int arr[] [];  { ... }   /* не годится */
+    f(arr) int (*arr)[M]; { ... }   /* годится    */
+    f(arr) int  *arr [M]; { ... }   /* не годится:
+                  это уже не двумерный массив,
+                  а одномерный массив указателей  */
+</pre>
+А также при описании внешних массивов:
+<pre>    extern int a[N][M];     /* годится */
+    extern int a[ ][M];     /* годится */
+    extern int a[ ][ ];     /* не годится: компилятор
+              не сможет сгенерить операцию индексации */
+</pre>
+Вот как, к примеру, должна выглядеть работа  с  двумерным  массивом  arr[ROWS][COLS], отведенным при помощи <i>malloc</i>();
+<pre>    void f(int array[][COLS]){
+            int x, y;
+            for(y=0; y &lt; ROWS; y++)
+                for(x=0; x &lt; COLS; x++)
+                    array[y][x] = 1;
+    }
+    void main(){
+            int *ptr = (int *) malloc(sizeof(int) * ROWS * COLS);
+            f( (int (*) [COLS]) ptr);
+    }
+</pre>
+<a name="2_16"></a>
+<h4>2.16.</h4>  Как описывать ссылки (указатели) на двумерные массивы?  Рассмотрим такую программу:
+<pre>    #include &lt;stdio.h&gt;
+    #define First  3
+    #define Second 5
+    char arr[First][Second] = {
+            "ABC.",
+            { 'D', 'E', 'F', '?', '\0' },
+            { 'G', 'H', 'Z', '!', '\0' }
+    };
+    char (*ptr)[Second];
+    main(){
+            int i;
+            ptr = arr;      /* arr и ptr теперь взаимозаменимы */
+            for(i=0; i &lt; First; i++)
+                    printf("%s\t%s\t%c\n", arr[i], ptr[i], ptr[i][2]);
+    }
+</pre>
+<p align="justify">Указателем здесь является <b>ptr</b>. Отметим, что у  него  задана  размерность  по  второму
+измерению:  <b>Second</b>, именно для того, чтобы компилятор мог правильно вычислить двумерные индексы.
+</p><p align="justify">Попробуйте сами объявить
+</p><pre>    char (*ptr)[4];
+    char (*ptr)[6];
+    char **ptr;
+</pre>
+<p align="justify">и увидеть, к  каким  невеселым  эффектам  это  приведет  (компилятор,  кстати,  будет ругаться;  но  есть вероятность, что он все же странслирует это для вас.  Но работать оно будет плачевно).  Попробуйте также использовать ptr[x][y].
+</p><p align="justify">Обратите также внимание на инициализацию строк в нашем примере.   Строка  "ABC." равносильна объявлению
+</p><pre>            { 'A', 'B', 'C', '.', '\0' },
+</pre>
+<a name="2_17"></a>
+<h4>2.17.</h4>
+<p align="justify">Массив <b>s</b> моделирует двумерный  массив  char  <b>s</b>[<b>H</b>][<b>W</b>];  Перепишите  пример  при
+помощи     указателей,    избавьтесь    от    операции    умножения.    Прямоугольник (<b>x0</b>,<b>y0</b>,<b>width</b>,<b>height</b>) лежит целиком внутри (<b>0</b>,<b>0</b>,<b>W</b>,<b>H</b>).
+</p><pre>    char s[W*H]; int x,y; int x0,y0,width,height;
+    for(x=0; x &lt; W*H; x++) s[x] = '.';
+         ...
+    for(y=y0; y &lt; y0+height; y++)
+      for(x=x0; x &lt; x0+width; x++)
+          s[x + W*y] = '*';
+</pre>
+Ответ:
+<pre>    char s[W*H]; int i,j; int x0,y0,width,height;
+    char *curs;
+         ...
+    for(curs = s + x0 + W*y0, i=0;
+        i &lt; height; i++, curs += W-width)
+      for(j=0; j &lt; width; j++)
+            *curs++ = '*';
+</pre>
+Такая оптимизация возможна в некоторых функциях из главы "Работа с видеопамятью".
+<a name="2_18"></a>
+<h4>2.18.</h4>  Что означают описания?
+<pre>    int i;            // целое.
+    int *pi;          // указатель на целое.
+    int *api[3];      // массив из 3х ук-лей на целые.
+    int (*pai)[3];    // указатель на массив из 3х целых.
+                      // можно описать как    int **pai;
+    int fi();         // функция, возвращающая целое.
+    int *fpi();       // ф-ция, возвр. ук-ль на целое.
+    int (*pfi)();     // ук-ль на ф-цию, возвращающую целое.
+    int *(*pfpi)();   // ук-ль на ф-цию, возвр. ук-ль на int.
+    int (*pfpfi())(); // ф-ция, возвращающая указатель на
+                      // "функцию, возвращающую целое".
+    int (*fai())[3];  // ф-ция, возвр. ук-ль на массив
+                      // из 3х целых. иначе ее
+                      // можно описать как    int **fai();
+    int (*apfi[3])(); // массив из 3х ук-лей на функции,
+                      // возвращающие целые.
+</pre>
+Переменные в Си описываются в формате их использования.  Так описание
+<pre>    int (*f)();
+</pre>
+означает, что f можно использовать в виде
+<pre>    int value;
+    value = (*f)(1, 2, 3 /* список аргументов */);
+</pre>
+<p align="justify">Однако из такого способа описания  тип  самой  описываемой  переменной  и  его  смысл довольно  неочевидны.  Приведем прием (позаимствованный из журнала "<b>Communications of</b>
+<b>the ACM</b>"), позволяющий прояснить смысл описания.  Описание на Си переводится в описание в стиле языка <i>Algol-68</i>.  Далее
+</p><pre>    <i>ref</i>      <b>ТИП</b>    означает  "указатель на <b>ТИП</b>"
+    <i>proc</i>()   <b>ТИП</b>              "функция, возвращающая <b>ТИП</b>"
+    <i>array of</i> <b>ТИП</b>              "массив из элементов <b>ТИП</b>а"
+    <b>x</b>:       <b>ТИП</b>              "<b>x</b> имеет тип <b>ТИП</b>"
+</pre>
+Приведем несколько примеров, из которых ясен и способ преобразования:
+<pre>    int (*f())();     означает
+            (*f())()  :                    int
+             *f()     :             proc() int
+              f()     :         ref proc() int
+              f       :  proc() ref proc() int
+</pre>
+то есть <i>f</i> - функция, возвращающая указатель на функцию, возвращающую целое.
+<pre>    int (*f[3])();    означает
+            (*f[])()  :                      int
+             *f[]     :               proc() int
+              f[]     :           ref proc() int
+              f       :  array of ref proc() int
+</pre>
+<i>f</i> - массив указателей на функции, возвращающие целые.  Обратно: опишем <br><i>g</i>  как  указатель  на функцию, возвращающую указатель на массив из 5и указателей на функции, возвращающие указатели на целые.
+<pre>           g          : ref p() ref array of ref p() ref int
+          *g          :     p() ref array of ref p() ref int
+         (*g)()       :         ref array of ref p() ref int
+        *(*g)()       :             array of ref p() ref int
+       (*(*g)())[5]   :                      ref p() ref int
+      *(*(*g)())[5]   :                          p() ref int
+     (*(*(*g)())[5])():                              ref int
+    *(*(*(*g)())[5])():                                  int
+                         int *(*(*(*g)())[5])();
+</pre>
+В Си невозможны функции, возвращающие массив:
+<pre>    proc() array of ...
+            а только
+    proc() ref array of ...
+</pre>
+Само название типа (например, для использования в операции приведения  типа)  получается вычеркиванием имени переменной (а также можно опустить размер массива):
+<pre>            g = ( int *(*(*(*)())[])() ) 0;
+</pre>
+<a name="2_19"></a>
+<h4>2.19.</h4>
+<p align="justify">  Напишите функцию <i>strcat</i>(<b>d</b>,<b>s</b>), приписывающую строку <b>s</b> к концу строки <b>d</b>.
+</p><p align="justify">Ответ:
+</p><pre>     char *<i>strcat</i>(d,s) register char *d, *s;
+     {  while( *d ) d++;      /* ищем конец строки d */
+        while( *d++ = *s++ ); /* strcpy(d, s)        */
+        return (d-1);         /* конец строки        */
+     }
+</pre>
+Цикл, помеченный "<i>strcpy</i>" - это наиболее краткая запись операторов
+<pre>        do{ char c;
+            c = (*d = *s); s++; d++;
+        } while(c != '\0');
+</pre>
+На самом деле <i>strcat</i> должен по стандарту возвращать свой первый аргумент, как и функция <i>strcpy</i>:
+<pre>     char *<i>strcat</i>(d,s) register char *d, *s;
+     {  char *p = d;
+        while( *d ) d++;
+        strcpy(d, s); return p;
+     }
+</pre>
+<p align="justify">Эти два варианта демонстрируют, что функция может быть реализована разными способами. Кроме  того  видно,  что  вместо стандартной библиотечной функции мы можем определить <b>свою</b> одноименную функцию, несколько отличающуюся поведением от стандартной (как возвращаемое значение в 1-ом варианте).
+</p><p align="right"><i>© Copyright А. Богатырев, 1992-95  <br>     Си в UNIX</i>
+</p><p></p><center><p>
+<font size="-1">
+<a href="https://cpp.com.ru/bogatyrev_c_unix/gl_1_8.html">Назад</a> | <a href="https://cpp.com.ru/bogatyrev_c_unix/index.html">Содержание</a> | <a href="https://cpp.com.ru/bogatyrev_c_unix/gl_2_1.html">Вперед</a></font></p></center><p></p>
+
+
+
+<!-- footer begin -->
+
+<noindex>
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tbody><tr>
+	<td>
+	<p>
+	    <a href="http://cpp.com.ru/">[ Главная ]</a>
+	    <a href="http://cpp.com.ru/guest/index.php">[ Гостевая ]</a>
+	</p>
+	</td>
+
+	<td align="right">
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-5771899961401791";
+/* links-block-horizontal-medium */
+google_ad_slot = "3283180390";
+google_ad_width = 468;
+google_ad_height = 15;
+//-->
+</script>
+<script type="text/javascript" src="./Массивы, строки, указатели. Хрестоматия по программированию на Си в Unix_files/f(1).txt">
+</script>
+	</td>
+</tr>
+</tbody></table>
+
+<hr>
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tbody><tr>
+	<td>
+
+		<script type="text/javascript"><!--
+			google_ad_client = "ca-pub-5771899961401791";
+			/* banned-bottom */
+			google_ad_slot = "0990189094";
+			google_ad_width = 728;
+			google_ad_height = 90;
+			//-->
+		</script>
+			<script type="text/javascript" src="./Массивы, строки, указатели. Хрестоматия по программированию на Си в Unix_files/f(1).txt">
+		</script>
+	</td>
+	<td>
+		<p align="right">
+
+		    <!--Openstat-->
+			<span id="openstat2172937"></span>
+			<script type="text/javascript">
+			var openstat = { counter: 2172937, image: 93, color: "828282", next: openstat };
+			(function(d, t, p) {
+			var j = d.createElement(t); j.async = true; j.type = "text/javascript";
+			j.src = ("https:" == p ? "https:" : "http:") + "//openstat.net/cnt.js";
+			var s = d.getElementsByTagName(t)[0]; s.parentNode.insertBefore(j, s);
+			})(document, "script", document.location.protocol);
+		    </script>
+		    <!--/Openstat-->
+		
+			<!-- begin of Top100 code -->
+			  <script id="top100Counter" type="text/javascript" src="./Массивы, строки, указатели. Хрестоматия по программированию на Си в Unix_files/top100.jcn"></script>
+			  <noscript>
+			 <a href="http://top100.rambler.ru/navi/2453376/">
+			     <img src="http://counter.rambler.ru\/top100.cnt?2453376" alt="Rambler's Top100" border="0" />
+			 </a>
+			</noscript>
+			<!-- end of Top100 code -->
+
+
+			<!--LiveInternet counter--><script type="text/javascript"><!--
+			document.write("<a href='http://www.liveinternet.ru/click' "+
+			"target=_blank><img src='//counter.yadro.ru/hit?t44.6;r"+
+			escape(document.referrer)+((typeof(screen)=="undefined")?"":
+			";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+			screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+			";"+Math.random()+
+			"' alt='' title='LiveInternet' "+
+			"border='0' width='31' height='31'><\/a>")
+			//--></script><a href="http://www.liveinternet.ru/click" target="_blank"><img src="./Массивы, строки, указатели. Хрестоматия по программированию на Си в Unix_files/hit" alt="" title="LiveInternet" border="0" width="31" height="31"></a><!--/LiveInternet-->
+
+			<!--Rating@Mail.ru counter-->
+			<script language="javascript"><!--
+			d=document;var a='';a+=';r='+escape(d.referrer);js=10;//--></script>
+			<script language="javascript1.1"><!--
+			a+=';j='+navigator.javaEnabled();js=11;//--></script>
+			<script language="javascript1.2"><!--
+			s=screen;a+=';s='+s.width+'*'+s.height;
+			a+=';d='+(s.colorDepth?s.colorDepth:s.pixelDepth);js=12;//--></script>
+			<script language="javascript1.3"><!--
+			js=13;//--></script><script language="javascript" type="text/javascript"><!--
+			d.write('<a href="http://top.mail.ru/jump?from=2034329" target="_top">'+
+			'<img src="http://da.c0.bf.a1.top.mail.ru/counter?id=2034329;t=69;js='+js+
+			a+';rand='+Math.random()+'" alt="Рейтинг@Mail.ru" border="0" '+
+			'height="31" width="38"><\/a>');if(11<js)d.write('<'+'!-- ');//--></script><a href="http://top.mail.ru/jump?from=2034329" target="_top"><img src="./Массивы, строки, указатели. Хрестоматия по программированию на Си в Unix_files/counter" alt="Рейтинг@Mail.ru" border="0" height="31" width="38"></a><!-- 
+			<noscript><a target="_top" href="http://top.mail.ru/jump?from=2034329">
+			<img src="http://da.c0.bf.a1.top.mail.ru/counter?js=na;id=2034329;t=69" 
+			height="31" width="38" border="0" alt="Рейтинг@Mail.ru"></a></noscript>
+			<script language="javascript" type="text/javascript"><!--
+			if(11<js)d.write('--'+'>');//-->
+			<!--// Rating@Mail.ru counter-->
+
+			<a href="http://www.gamedev.ru/top/">
+			<img src="./Массивы, строки, указатели. Хрестоматия по программированию на Си в Unix_files/saved_resource" width="88" height="31" style="border: 0;" alt="Топ Разработка игр">
+			</a>
+		</p>
+	</td>
+</tr>
+</tbody></table>
+
+</noindex>
+
+<!-- footer end -->
+
+
+<table cellspacing="0" cellpadding="0" class="gstl_50 gssb_c" style="width: 169px; display: none; top: 39px; left: 1043px; position: absolute;"><tbody><tr><td class="gssb_f"></td><td class="gssb_e" style="width: 100%;"></td></tr></tbody></table><iframe name="oauth2relay908407920" id="oauth2relay908407920" src="./Массивы, строки, указатели. Хрестоматия по программированию на Си в Unix_files/postmessageRelay.html" tabindex="-1" aria-hidden="true" style="width: 1px; height: 1px; position: absolute; top: -100px;"></iframe></body><style id="stylus-1" type="text/css" class="stylus">body {
+    font-family: 'pragmata pro mono regular';
+}</style></html>

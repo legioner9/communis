@@ -1,0 +1,9 @@
+# 
+
+    .
+    ├── var.list        : contaner list all variables name
+    ├── hsc_alt         : var_lists for git_flow for [h]ome [s]tatic [c]omputer with [alt]linux
+    │   └── _readme.man : RMe for this dir
+    ├── nb_alt          : var_lists for git_flow for [n]ote[b]ook with [alt]linux
+    │   └── _readme.man : RMe for this dir
+    └── _readme.man

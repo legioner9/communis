@@ -1,0 +1,62 @@
+# npm pack in /home/st/REPOBARE/_repo/plt/actio/dir_mm_npm_/_mm_npm_/_man/help
+
+npm notice 
+npm notice 📦  help@1.0.0
+npm notice === Tarball Contents === 
+npm notice 30.4kB npm-shrinkwrap.json              
+npm notice 249B   package.json                     
+npm notice 498B   help copy.man                    
+npm notice 514B   help.man                         
+npm notice 2.3kB  result_npm/_home_st.npm          
+npm notice 657B   result_npm/audit.npm             
+npm notice 324B   result_npm/bin.npm               
+npm notice 625B   result_npm/c.npm                 
+npm notice 612B   result_npm/cache.npm             
+npm notice 304B   result_npm/ci.npm                
+npm notice 586B   result_npm/cit.npm               
+npm notice 616B   result_npm/clean-install-test.npm
+npm notice 326B   result_npm/clean-install.npm     
+npm notice 2.0kB  result_npm/completion.npm        
+npm notice 635B   result_npm/config.npm            
+npm notice 361B   result_npm/ddp.npm               
+npm notice 367B   result_npm/dedupe.npm            
+npm notice 436B   result_npm/deprecate.npm         
+npm notice 337B   result_npm/dist-tag.npm          
+npm notice 1.8kB  result_npm/doctor.npm            
+npm notice 271B   result_npm/edit.npm              
+npm notice 287B   result_npm/explore.npm           
+npm notice 1.6kB  result_npm/fund.npm              
+npm notice 560B   result_npm/get.npm               
+npm notice 273B   result_npm/help-search.npm       
+npm notice 2.3kB  result_npm/help.npm              
+npm notice 383B   result_npm/hook.npm              
+npm notice 610B   result_npm/install-ci-test.npm   
+npm notice 706B   result_npm/install-test.npm      
+npm notice 887B   result_npm/install.npm           
+npm notice 687B   result_npm/it.npm                
+npm notice 1.6kB  result_npm/link.npm              
+npm notice 4.6kB  result_npm/list.npm              
+npm notice 1.6kB  result_npm/ln.npm                
+npm notice 4.6kB  result_npm/ls.npm                
+npm notice 463B   result_npm/org.npm               
+npm notice 248B   result_npm/outdated.npm          
+npm notice 491B   result_npm/owner.npm             
+npm notice 100B   result_npm/pack.npm              
+npm notice 2.9kB  npm_all_help.sh                  
+npm notice 1.1kB  start_cr.sh                      
+npm notice 16.1kB help-1.0.0.tgz                   
+npm notice === Tarball Details === 
+npm notice name:          help                                    
+npm notice version:       1.0.0                                   
+npm notice filename:      help-1.0.0.tgz                          
+npm notice package size:  35.2 kB                                 
+npm notice unpacked size: 86.3 kB                                 
+npm notice shasum:        583b561b3197a372d36e2b57e3434e09a0011ef0
+npm notice integrity:     sha512-Ejq2Y+fXouFeo[...]yM+qwkfdOY4ow==
+npm notice total files:   42                                      
+npm notice 
+help-1.0.0.tgz
+
+# npm pack -h in /home/st/REPOBARE/_repo/plt/actio/dir_mm_npm_/_mm_npm_/_man/help
+
+npm pack [[<@scope>/]<pkg>...] [--dry-run]

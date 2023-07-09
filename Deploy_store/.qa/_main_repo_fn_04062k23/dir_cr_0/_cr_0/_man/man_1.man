@@ -1,0 +1,7 @@
+# man cr_0
+
+in: void
+ 
+flow: choice cr_ function
+
+out: exec cr_ function

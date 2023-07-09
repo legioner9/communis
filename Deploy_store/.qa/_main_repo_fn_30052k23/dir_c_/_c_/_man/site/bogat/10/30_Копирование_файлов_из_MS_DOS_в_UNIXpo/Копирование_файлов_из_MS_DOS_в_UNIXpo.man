@@ -1,0 +1,1048 @@
+## Копирование файлов из MS DOS в UNIX.
+
+Пример 30
+```cpp
+/* /bin/cc -M2 -Ml -DMATCHONLY -LARGE dosfs.c match.c -o dosfs
+ * Копирование файлов с дискеты, записанной в MS DOS, в UNIX.
+ * Предполагается, что ваша UNIX-машина имеет соответствующий драйвер
+ * для чтения дискет, сформатированных на IBM PC.
+ * match.c - файл, содержащий текст функции match().
+ */
+#include <stdio.h>
+#include <fcntl.h>
+#include <ctype.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <errno.h>
+
+extern char *malloc();  /* выделитель памяти */
+extern char *strrchr(); /* поиск последнего вхождения буквы */
+extern long lseek();
+void readBoot(), readFAT(), readRootDir(), main(), line(), getFile(),
+     doDirectory(), mkname(), enterDir(), countFree(), traceclu();
+
+int fd;         /* дескриптор файла - дисковода */
+
+FILE *mapfp;     /* файл трассировки  */
+int trace = 0;   /* трассировка пока выключена */
+int ask = 1;     /* спрашивать ли подтверждение на перезапись файлов */
+int dironly = 0; /* 1: только показывать имена, файлы не скидывать   */
+
+typedef unsigned char  uchar;
+/*typedef unsigned short ushort; Есть в sys/types.h */
+
+/* Формат сектора загрузки */
+struct boot {
+	char jmp[3];      /* команда jmp */
+	char label[8];    /* название системы */
+	char bfs[2];      /* размер boot-сектора */
+	uchar sectorsPerCluster; /* число секторов в кластере */
+	char fatoff[2];   /* смещение до начала FAT */
+	uchar copies;     /* число копий FAT  */
+	char dirsize[2];  /* число записей в корневом каталоге */
+	char sectors[2];  /* размер дискеты в секторах */
+	uchar desc;       /* описатель типа дискеты */
+	char FATsize[2];  /* размер FAT в секторах */
+	char sectorsPerTrack[2]; /* число секторов на трек */
+	char sides[2];    /* число сторон (1, 2) */
+	char hidden[2];   /* число спрятанных секторов */
+} *boot;
+
+#define SECTOR 512      /* Размер сектора в байтах   */
+int CLU;        /* Размер кластера в байтах          */
+int SPC;        /* Размер кластера в секторах        */
+int SECT;       /* Число секторов на дискете         */
+long capacity;  /* емкость дискеты в байтах          */
+ushort MAXCLU;  /* максимальный номер кластера + 1   */
+
+int NDIR;       /* Число слотов в корневом каталоге  */
+int DIRSIZE;    /* Длина корневого каталога в байтах */
+int ENTRperCLUSTER;  /* Количество слотов в одном кластере каталога */
+
+int SPF;        /* Размер FAT в секторах             */
+int FATSIZE;    /* Размер FAT в байтах               */
+int FATSTART;   /* Смещение до FAT в байтах          */
+int NFAT;       /* Количество копий FAT              */
+
+uchar DESC;     /* Описатель типа дискеты            */
+int DATACLU;    /* Начало области данных (номер физич. кластера) */
+int bit16 = 0;  /* 1 если FAT использует 16-битные поля, а не 12 */
+
+/* Преобразование char[] в integer */
+#define INT(s)  ( * (short *)s)
+#define LONG(s) ( * (long  *)s)
+
+/* Формат одной записи каталога. */
+struct dir{
+	char name[8];   /* имя файла            */
+	char ext[3];    /* расширение (суффикс) */
+	uchar attrib;   /* атрибуты файла       */
+	char unused[10];
+	char creat_time[2];     /* время создания */
+	char creat_date[2];     /* дата создания  */
+	char firstCluster[2];   /* начальный кластер */
+	char size[4];           /* размер в байтах */
+};
+#define isdir(attr)     (attr & 0x10)     /* Является ли каталогом ? */
+#define islabel(attr)   (attr & 0x08)     /* Метка тома ?            */
+
+#define eq(s1, s2)      (!strcmp(s1, s2)) /* сравнение строк на ==   */
+
+struct dir *droot;  /* Содержимое корневого каталога */
+char *FAT1;         /* File Allocation Table, копия 1 */
+char *FAT2;         /*                        копия 2 */
+char cwd[256] = "";     /* Текущий каталог в DOS. "" - корневой  */
+char *root = "/tmp";    /* Каталог в UNIX, куда копируются файлы */
+
+char *pattern = NULL;   /* шаблон базового имени */
+char *dirpattern;       /* каталог (не шаблон)   */
+
+char newname[256];      /* буфер дла генерации имен */
+char cluster[4098];     /* буфер для чтения кластера */
+
+/* Чтение n байт по адресу s */
+Read(fd, s, n) char *s;
+{
+	int nn = read(fd, s, n);
+	if(nn != n ){
+		fprintf(stderr, "Ошибка чтения: %d вместо %d\n", nn, n);
+		perror( "read" ); exit(1);
+	}
+	return nn;
+}
+
+/* Позиционирование головок */
+long Lseek(fd, off, how) long off;
+{
+	long offf;
+	if((offf = lseek(fd, off, how)) < 0){
+		fprintf(stderr, "Ошибка lseek(%ld,%d)\n", off, how);
+	}
+	return offf;
+}
+
+/* Отведение памяти и ее зачистка */
+char *Malloc(n) unsigned n;{
+	char *ptr = malloc(n);
+	register unsigned i;
+	if( !ptr){
+		fprintf(stderr, "Не могу malloc(%u)\n", n ); exit(2);
+	}
+	for(i=0; i < n ; i++ ) ptr[i] = 0;
+	/* Можно было бы использовать ptr = calloc(1,n); эта функция
+	 * как раз отводит и очищает память */
+	return ptr;
+}
+
+/* Нарисовать горизонтальную черту */
+void line(c) char c;{
+	register i;
+	for(i=0; i < 78; i++) putchar(c);
+	putchar('\n');
+}
+
+/* Обработка псевдо-имен устройств. Используются имена для XENIX */
+char *drive(name) char *name;
+{
+	if( eq(name, "360")) return "/dev/fd048ds9";
+	if( eq(name, "720")) return "/dev/fd096ds9";
+	if( eq(name, "1.2")) return "/dev/fd096ds15";
+	return name;
+}
+
+/* Создать каталог */
+char command[512];      /* буфер дла формирования команд */
+mkdir(name, mode) char *name;
+{
+   int retcode;    struct stat st;
+
+   if( stat(name, &st) >= 0 &&
+       (st.st_mode & S_IFMT) == S_IFDIR ) return 0; /* уже есть */
+   sprintf(command, "mkdir \"%s\"", name );
+   retcode = system(command); /* выполнить команду, записанную в command */
+   chmod(name, mode & 0777);  /* установить коды доступа */
+   return retcode;            /* 0 - успешно */
+}
+
+/* Открыть файл, создавая (если надо) недостаюшие каталоги */
+FILE *fmdopen(name, mode)
+	char *name, *mode;
+{
+	extern errno;   char *s;    FILE *fp;
+	if( fp = fopen(name, mode)) return fp;  /* OK */
+	/* иначе файл не смог создаться */
+	/* if( errno != ENOENT ) return NULL; /* из-за недостатка прав */
+	/* Пробуем создать все каталоги по пути к файлу */
+	if((s = strrchr(name, '/' )) == NULL ) return NULL;
+	*s = '\0'; md(name); *s = '/';
+	return fopen(name, mode);
+}
+
+/* Рекурсивный mkdir */
+md(path)        char *path;
+{       struct stat st; char *s; int code;
+	if( !*path) return 0;     /* корневой каталог "/" */
+	if( stat(path, &st) >= 0 ){     /* существует */
+	    if((st.st_mode & S_IFMT) == S_IFDIR) return 0; /* OK */
+	    printf( "%s - не каталог\n", path ); return 1; /* FAIL */
+	}
+	if( s = strrchr(path, '/')){
+	    *s = '\0'; code = md(path); *s = '/';
+	    if( code ) return code;     /* Облом */
+	}
+	sprintf(command, "mkdir \"%s\"", path );
+	return system(command); /* 0 если OK */
+}
+
+/* Сконструировать имя файла в стиле UNIX.
+ * В MS DOS все буквы в именах - большие */
+void mkname( res, n, e ) char *res, *n, *e;
+{ /* res - результат, n - имя, e - суффикс */
+	register i; char *start = res;
+
+	if( n[0] == 0x05 ) n[0] = 0xE5;  /* подставной символ */
+	for(i=0; i < 8 && n[i] && n[i] != ' ' ; i++)
+		*res++ = n[i];
+	if( e[0] != ' ')
+		*res++ = '.';
+	for(i=0; i < 3 && e[i] && e[i] != ' ' ; i++)
+		*res++ = e[i];
+	*res = '\0';
+
+	while( *start ){
+		if( isalpha(*start) && isupper(*start))
+			*start = tolower(*start);
+		start++;
+	}
+}
+/* ------------------------------------------------------- */
+/* Получить запись из FAT для кластера clu */
+ushort numCluster(clu) ushort clu;
+{       ushort n;
+
+	if( clu >= MAXCLU )
+	  printf( "Слишком большой номер кластера %03X >= %03X\n",
+						  clu,    MAXCLU );
+	if( bit16 ){    /* 16 бит на номер кластера */
+		n = INT( &FAT1[ 2*clu ]);
+		n &= 0xFFFF;
+		return n;
+	} /* иначе 12 бит на номер кластера */
+	n = clu + clu/2 ;
+	n = INT( &FAT1[n] );
+	if( clu % 2 ){  /* нечетный */
+		n >>= 4;
+	}
+	n &= 0xFFF;
+	return n;
+}
+
+/* Узнать следующий кластер файла. 0 если последний */
+ushort nextCluster(clu) ushort clu;
+{
+	clu = numCluster(clu);
+	if( clu >= (bit16 ? 0xFFF8 : 0xFF8 ))
+		return 0;       /* EOF */
+	return clu;
+}
+
+/* Прочесть кластер и сохранить его в файле и буфере */
+getCluster(clu, fp, size, buffer)
+	ushort clu;     /* логический кластер (2..) */
+	FILE *fp;       /* файл для спасения  */
+	long size;      /* осталось дописать  */
+	char *buffer;   /* буфер для кластера */
+{
+	long offset;
+	int rd, howmuchtoread;
+
+	if( size <= 0L ){
+		printf( "CLUSTER %03X лишний\n", clu ); exit(3);
+	}
+	/* Вычислить смещение. Кластеры нумеруются начиная с #2 */
+	offset = (clu - 2 + DATACLU) * (long) CLU;
+	Lseek(fd, offset, 0);
+
+	/* Сколько байт прочесть ? */
+	howmuchtoread = (size > CLU) ? CLU : size;
+	rd = Read(fd, buffer, howmuchtoread);
+	if( fp != NULL )
+	    fwrite(buffer, 1, rd, fp);
+	return ( rd < 0 ) ? 0 : rd;
+}
+/* ----------------------------------------------------------------- *      dosfs -rPATH    файлы скидываются в каталог PATH, а не в /tmp
+ *      dosfs ... "шаблон"    сбрасываются только файлы с подходящими
+ *        именами, например:
+ *              dosfs 1.2  "/*.c"        *.c из корня дискеты
+ *              dosfs 1.2  "/dir1/*.c"   *.c из каталога /dir1
+ *              dosfs 1.2  "*.c"         *.c из всех каталогов
+ *      dosfs -d        только просмотр каталогов, без сброса файлов
+ *      Пример: dosfs -qr. 360
+ */
+void main(argc, argv) char *argv[];
+{
+	if( argc < 2 ) goto usage;
+	if( *argv[1] == '-' ){  /* разбор ключей */
+	    char *keys = &argv[1][1];
+	    while(*keys){
+	       switch(*keys){
+	       case 't':  /* включить трассировку */
+		   trace++;
+		   if((mapfp = fopen( ".Map", "w" )) == NULL )
+		       trace = 0;
+		   break;
+	       case 'q':  /* без запросов (quiet) */
+		   ask = 0; break;
+	       case 'r':  /* переназначить root */
+		   root = keys+1; goto breakwhile;
+	       case 'd':  /* dosfs -d == команда dir */
+		   dironly++; break;
+	       }
+	       keys++;
+	    }
+	breakwhile:
+	    argc--; argv++;
+	}
+	if( argc < 2 ) goto usage;
+	if( pattern = argv[2] ){   /* может быть NULL */
+		char *s = strrchr(pattern, '/');
+		if(s){  /*      PATH/PATTERN                */
+		    dirpattern  = pattern;       /* PATH    */
+		    *s = '\0';    pattern = s+1; /* PATTERN */
+		}else{  /*      просто PATTERN              */
+		    dirpattern = NULL;
+		}
+	}
+	setbuf(stdout, NULL);   /* отменить буферизацию */
+	readBoot(drive(argv[1]));
+	readFAT();
+	countFree();
+	readRootDir();
+	exit(0);
+usage:
+	printf( "Вызов:  dosfs  [-dqtrDIR]  устройство [\"шаблон\"]\n" );
+	exit(4);
+}
+
+/* Прочесть boot-sector, вычислить разные параметры дискеты */
+void readBoot(dsk) char *dsk;
+{
+	char BOOT[SECTOR];
+	int skips, sides;
+
+	if((fd = open( dsk, O_RDONLY)) < 0 ){
+		fprintf(stderr, "Не могу читать %s\n", dsk); exit(5);
+	}
+	/* нулевой сектор дискеты - boot */
+	Read(fd, BOOT, SECTOR);
+	boot = (struct boot *) BOOT;
+
+	line('-');
+	printf( "Сформатировано \"%8.8s\"\n", boot->label );
+	printf( "Размер boot-сектора %d байт\n", INT(boot->bfs));
+	printf( "Кластер содержит %d секторов\n",
+		SPC = boot->sectorsPerCluster );
+	printf( "Дискета содержит %d секторов ",
+		SECT = INT(boot->sectors));
+	capacity = SECT * (long) SECTOR;
+	printf( "(%ld KB)\n", capacity / 1024L );
+	printf( "На треке %d секторов\n", INT(boot->sectorsPerTrack));
+	sides = INT(boot->sides);
+	printf( "Диск имеет %d сторон%c\n\n", sides, sides==1? 'у':'ы');
+
+	printf( "Смещение до FAT %d сектор\n",
+		skips = INT(boot->fatoff));
+	printf( "Имеется %d копии FAT\n", NFAT = boot->copies );
+	printf( "FAT занимает %d секторов\n\n", SPF = INT(boot->FATsize));
+
+	printf( "Корневой каталог содержит %d записей\n\n",
+		NDIR = INT(boot->dirsize));
+
+	printf( "Описатель дискеты = %02X\t(", DESC = boot->desc );
+	switch( DESC ){
+	case 0xFF: printf( "double sided, 8 sectors per track" ); break;
+	case 0xFE: printf( "single sided, 8 sectors per track" ); break;
+	case 0xFD: printf( "double sided, 9 sectors per track" ); break;
+	case 0xFC: printf( "single sided, 9 sectors per track" ); break;
+	case 0xF9: printf( "double sided, 15 sectors per track"); break;
+	case 0xF8: printf( "Winchester" ); bit16++; break;
+	default:   printf( "неизвестный тип" ); break;
+	}
+	printf( ")\n");
+	printf( "На диске %d спрятанных секторов\n", INT(boot->hidden));
+
+	/* Вычислить характеристики */
+	CLU      = SECTOR * SPC;   /* размер кластера в байтах */
+	FATSIZE  = SECTOR * SPF;   /* длина FAT в байтах       */
+	FATSTART = SECTOR * skips; /* смещение в байтах до FAT */
+	/* длина корневого каталога в байтах */
+	DIRSIZE  = NDIR   * sizeof(struct dir);
+	/* физический номер первого кластера данных */
+	DATACLU  = ((long) FATSTART +
+		    (long) FATSIZE * NFAT +
+		    (long) DIRSIZE ) / CLU;
+	printf( "Первый кластер данных (физ.) = %d\n", DATACLU );
+	/* число записей каталога в кластере */
+	ENTRperCLUSTER = CLU / sizeof(struct dir);
+
+	/* число секторов для данных */
+	MAXCLU = (SECT - DATACLU * SPC);
+	/* число кластеров для данных */
+	MAXCLU = MAXCLU / SPC;
+	/* логические номера кластеров идут с #2 */
+	MAXCLU += 2;
+}
+
+/* Прочесть File Allocation Table (таблицу размещения файлов) */
+void readFAT(){
+	register int i;
+
+	FAT1 = Malloc(FATSIZE);
+
+	Lseek(fd, (long) FATSTART, 0);
+	Read(fd, FAT1, FATSIZE);
+	if(NFAT > 1){
+		FAT2 = Malloc(FATSIZE);
+		Read(fd, FAT2, FATSIZE);
+
+		/* Сравнить копии FAT */
+		for(i=0; i < FATSIZE; i++ )
+			if(FAT1[i] != FAT2[i]){
+			   printf( "копии FAT различаются в %d/%d\n",
+				    i, FATSIZE );
+			   break;
+			}
+		free( FAT2 );
+	}
+	if( DESC != FAT1[0] )
+	    printf( "У FAT другой описатель: %02X\n", FAT1[0] & 0xFF );
+}
+
+/* Прочесть корневой каталог дискеты.
+ * Он расположен сразу же после копий FAT
+ */
+void readRootDir(){
+	if( DIRSIZE % SECTOR )
+		printf( "Размер каталога не кратен сектору\n" );
+	Lseek(fd, (long)FATSTART + (long)FATSIZE * NFAT, 0);
+	droot = (struct dir *) Malloc(DIRSIZE);
+	Read(fd, droot, DIRSIZE );
+	/* NDIR должно быть 112 для 360K и 720K
+	 *                  224 для 1.2 Mb
+	 */
+	if( !dironly ) mkdir( root, 0755 );
+	line('-');
+	doDirectory(0, NDIR, droot);
+}
+
+/* Обработать каталог (напечатать, спасти файлы, обойти подкаталоги) */
+#define PRINT  \
+  for(j=0; j < level; j++ ) printf( "  " ); /* отступ */                \
+  printf( "%02d\t%s/%-14s   %12ld   %s\n",                              \
+	   strt + i,                                                    \
+		 cwd,                                                   \
+		    basename,                                           \
+			    size,                                       \
+				    isdir(dd[i].attrib) ?    "<DIR>"  : \
+				    islabel(dd[i].attrib) ?  "<LAB>"  : "" )
+
+void doDirectory(strt, entries, dd)
+	struct dir dd[];
+{
+	register i, j;
+	char basename[40];
+	static int level = 0;
+	int need_to_get;        /* надо ли сбрасывать */
+
+	/* line('-'); */
+	for(i=0; i < entries; i++ ){
+	   uchar c; long size;
+
+	   if((c = *dd[i].name) == 0xE5 || !c)
+		   continue;        /* файл стерт (дыра) */
+	   mkname(basename, dd[i].name, dd[i].ext);
+	   size = LONG(dd[i].size); /* размер файла */
+
+	   /* проверить шаблон имени, если нужно */
+	   if( !pattern          || /* pattern задан и */
+	       (   (!dirpattern  || eq(cwd, dirpattern)) &&
+		   match(basename, pattern)
+	       )
+	   ){  PRINT; need_to_get = !dironly; }
+	   else       need_to_get = 0;
+
+	   if(isdir(dd[i].attrib)){
+	       /* себя и родителя проигнорировать */
+	      if( eq(basename, "." ) || eq(basename, ".."))
+		   continue;
+	       level++; /* У каталогов почему-то size == 0 */
+		enterDir( basename, INT(dd[i].firstCluster), need_to_get);
+	       level--;
+	   } else if( islabel(dd[i].attrib)){
+	       printf( "Volume label:%11.11s\n", dd[i].name );
+	   } else if( need_to_get )
+	       getFile ( basename, INT(dd[i].firstCluster), size);
+	}
+	/* line('#'); */
+}
+
+/* Прочесть файл в UNIX-ную файловую систему */
+void getFile(name, clu, size)
+	char *name;     /* имя файла */
+	ushort clu;     /* начальный кластер */
+	long size;      /* размер */
+{
+	FILE *fp;       /* файл куда сохранять */
+	struct stat st;
+	ushort nclu = 0;/* порядковый номер кластера */
+
+	sprintf(newname, "%s%s/%s", root, cwd, name );
+
+	if( ask && stat(newname, &st) >= 0 ){
+		char answer[30];
+		fprintf(stderr, "%s уже существует, перезаписать? ",
+				 newname);
+		gets(answer);
+		if( *answer != 'y' ) return;
+		fprintf( stderr, "\tOK\n" );
+	}
+	if((fp = fmdopen( newname, "w" )) == NULL){
+		printf( "Не могу создать %s\n", newname );
+		return;
+	}
+	if( trace ) fprintf( mapfp, "\n%s/%s:", cwd, name );
+
+	while( clu ){
+		if( trace ) traceclu(nclu++, clu);
+		size -= getCluster(clu, fp, size, cluster);
+		clu = nextCluster(clu);
+	}
+	fclose(fp);
+}
+
+/* Обработать подкаталог */
+void enterDir(name, clu, create)
+	char *name;     /* имя */
+	ushort clu;     /* начальный кластер */
+{
+	char *tail, *myCluster;
+	struct dir *dsub;
+	ushort nclu;
+	int nentries;   /* число записей в каталоге */
+
+	/* Коррекция cwd */
+	tail = cwd + strlen(cwd);
+	*tail = '/'; strcpy(tail+1, name);
+
+	if( create ){   /* создать */
+	    sprintf( newname, "%s%s", root, cwd );
+	    mkdir  ( newname, 0755);
+	}
+	if( trace ) fprintf( mapfp, "\nDIR %s:", cwd);
+
+	myCluster = Malloc( sizeof cluster );
+	dsub = (struct dir *) myCluster;
+
+	nentries = nclu = 0;
+	while( clu ){
+		if( trace ) traceclu(nclu++, clu);
+		/* Прочесть очередной кластер каталога */
+		getCluster(clu, NULL,(long) CLU, myCluster);
+		/* Обработать имена в этом кластере */
+		doDirectory(nentries, ENTRperCLUSTER, dsub);
+		nentries += ENTRperCLUSTER;
+		/* Взять следующий кластер */
+		clu = nextCluster(clu);
+	}
+	*tail = '\0';   free(myCluster);
+}
+
+/* Подсчет свободных и плохих кластеров. */
+void countFree(){
+	int isFree = 0;       /* свободные кластеры */
+	int isBad  = 0;       /* сбойные кластеры   */
+	int isReserved = 0;   /* спрятанные кластеры */
+
+	register ushort n = 0;
+	register ushort clu;  /* текущий анализируемый кластер */
+	int nline = 300;
+
+	if( trace ) fprintf(mapfp, "\t\tFAT chart\n");
+	for(clu=0; clu < MAXCLU; clu++){
+		if( clu >= 2 ){
+		    n = numCluster(clu);
+		    if( n == 0 ) isFree++;
+		    if( n == (bit16 ? 0xFFF7 : 0xFF7)) isBad++;
+		    if( n >= (bit16 ? 0xFFF0 : 0xFF0 ) &&
+			n <  (bit16 ? 0xFFF7 : 0xFF7 )) isReserved++;
+		}
+		if( trace ){
+		  if( nline >= 8){
+			nline = 0; fprintf( mapfp, "\n%03X:\t", clu );
+		  } else  nline++;
+		  fprintf( mapfp, "%03X ", n );
+		}
+	}
+	line('=');
+	printf( "Свободно %ld, испорчено %ld, резерв %d кластеров\n",
+		      (long)isFree * CLU,  /* в байтах */
+			       (long)isBad * CLU,   isReserved );
+}
+
+void traceclu(nclu, clu) ushort nclu, clu;
+{
+	if( nclu % 16 == 0 )
+	    fprintf( mapfp, "\n\t" );
+	fprintf( mapfp, "%03X ", clu );
+}
+
+#ifdef LOCAL_MALLOC
+/*
+Обратите внимание, что в этой программе память отводится malloc()
+и освобождается free() по принципу стека (LIFO).
+Мы могли бы переопределить стандартные функции malloc() и free(),
+заставив их работать со статической памятью! (Если мы напишем
+свою функцию с именем, как у стандартной, то будет использоваться
+НАША функция).
+*/
+static char allocArena[32 * 1024];
+static char *top = allocArena;
+char *malloc(n){        char *ptr;
+	/* округлить до целого числа слов */  /* деление с остатком */
+	/* число int-ов: */  n = (n + (sizeof(int)-1)) / sizeof(int);
+	/* число char-ов:*/  n *= sizeof(int);
+	ptr = top; top += n; return ptr;
+}
+free(ptr) char *ptr; { top = ptr; }
+#endif /*LOCAL_MALLOC*/
+
+ 
+	/*      Пример 31      */
+/* Интроспективная программа: печатает сама себя */
+
+#include <stdio.h>
+char *text[] = {
+	"#include <stdio.h>",
+	"char *text[] = {",
+	"        NULL};",
+	"/* Программа, печатающая свой собственный текст */",
+	"main(){ int i;",
+	"  puts(text[0]); puts(text[1]);",
+	"  for(i=0; text[i]; i++) putq(text[i]);",
+	"  for(i=2; text[i]; i++) puts(text[i]);",
+	"}",
+	"putq(s) char *s; {",
+	"  printf(\"\\t\\\"\");",
+	"  while(*s){",
+	"    if(*s == '\"')       printf(\"\\\\\\\"\");",
+	"    else if(*s == '\\\\') printf(\"\\\\\\\\\");",
+	"    else putchar(*s);",
+	"    s++;",
+	"  }",
+	"  printf(\"\\\",\\n\");",
+	"}",
+        NULL};
+/* Программа, печатающая свой собственный текст */
+main(){ int i;
+  puts(text[0]); puts(text[1]);
+  for(i=0; text[i]; i++) putq(text[i]);
+  for(i=2; text[i]; i++) puts(text[i]);
+}
+putq(s) char *s; {
+  printf("\t\"");
+  while(*s){
+    if(*s == '"')       printf("\\\"");
+    else if(*s == '\\') printf("\\\\");
+    else putchar(*s);
+    s++;
+  }
+  printf("\",\n");
+}
+ 
+	/*      Пример 32     */
+/* C beautify: программа cb.c, форматирующая исходный
+ * текст программы на Си. Текст взят из дистрибутива UNIX */
+#include <stdio.h>
+#include <stdlib.h>
+
+#define gets    getlex
+#define puts    putlex
+
+	/* прототипы */
+void main(int argc, char *argv[]);
+void ptabs( void );
+int getch( void );
+void puts( void );
+int lookup( char *tab[] );
+int gets( void );
+void gotelse( void );
+int getnl( void );
+void comment( void );
+
+int     slevel[10];
+int     clevel  = 0;
+int     spflg[20][10];
+int     sind [20][10];
+int     siflev[10];
+int     sifflg[10];
+int     iflev   = 0;
+int     ifflg   = -1;
+int     level   = 0;
+int     ind[10] = { 0,0,0,0,0,0,0,0,0,0 };
+int     eflg    = 0;
+int     paren   = 0;
+int     pflg[10] = { 0,0,0,0,0,0,0,0,0,0 };
+char    lchar;
+char    pchar;
+int     aflg    = 0;
+int     ct;
+int     stabs[20][10];
+int     qflg    = 0;
+char    *wif[] = { "if",NULL};
+char    *welse[] = { "else", NULL};
+char    *wfor[] =  { "for" , NULL};
+char    *wds[] =   { "case","default", NULL};
+int     j       = 0;
+char    string[200];
+char    cc;
+int     sflg    = 1;
+int     peek    = -1;
+int     tabs    = 0;
+int     lastchar;
+int     c;
+
+void main(int argc, char *argv[])
+{
+	if( argc > 1 ){
+		if( freopen( argv[1], "r", stdin ) == NULL ){
+			fprintf(stderr, "Can't open %s\n", argv[1] );
+			exit(1);
+		}
+	}
+	if( argc > 2 ){
+		if( freopen( argv[2], "w", stdout ) == NULL ){
+			fprintf(stderr, "Can't create %s\n", argv[2] );
+			exit(1);
+		}
+	}
+	while((c = getch()) != EOF){
+		switch(c){
+		case ' ':
+		case '\t':
+			if(lookup(welse) == 1){
+				gotelse();
+				if(sflg == 0 || j > 0) string[j++] = c;
+				puts();
+				sflg = 0;
+				if(getnl() == 1){
+					puts();
+					printf("\n");
+					sflg = 1;
+					pflg[level]++;
+					tabs++;
+				}
+				continue;
+			}
+			if(sflg == 0 || j > 0) string[j++] = c;
+			continue;
+		case '\n':
+			if((eflg = lookup(welse)) == 1) gotelse();
+			puts();
+			printf("\n");
+			sflg = 1;
+			if(eflg == 1){
+				pflg[level]++;
+				tabs++;
+			}
+			else
+				if(pchar == lchar)
+					aflg = 1;
+			continue;
+		case '{':
+			if(lookup(welse) == 1) gotelse();
+			siflev[clevel] = iflev;
+			sifflg[clevel] = ifflg;
+			iflev = ifflg = 0;
+			clevel++;
+			if(sflg == 1 && pflg[level] != 0){
+				pflg[level]--;
+				tabs--;
+			}
+			string[j++] = c;
+			puts(); getnl(); puts(); printf("\n");
+			tabs++;
+			sflg = 1;
+			if(pflg[level] > 0){
+				ind[level] = 1;
+				level++;
+				slevel[level] = clevel;
+			}
+			continue;
+		case '}':
+			clevel--;
+			if((iflev = siflev[clevel]-1) < 0) iflev = 0;
+			ifflg = sifflg[clevel];
+			if(pflg[level] >0 && ind[level] == 0){
+				tabs -= pflg[level];
+				pflg[level] = 0;
+			}
+			puts();
+			tabs--;
+			ptabs();
+			if((peek = getch()) == ';'){
+				printf("%c;", c);
+				peek = -1;
+			}
+			else printf("%c", c);
+			getnl(); puts(); printf("\n");
+			sflg = 1;
+			if(clevel < slevel[level])if(level > 0) level--;
+			if(ind[level] != 0){
+				tabs -= pflg[level];
+				pflg[level] = 0;
+				ind[level] = 0;
+			}
+			continue;
+		case '"':
+		case '\'':
+			string[j++] = c;
+			while((cc = getch()) != c){
+				string[j++] = cc;
+				if(cc == '\\'){
+					string[j++] = getch();
+				}
+				if(cc == '\n'){
+					puts();
+					sflg = 1;
+				}
+			}
+			string[j++] = cc;
+			if(getnl() == 1){
+				lchar = cc;
+				peek = '\n';
+			}
+			continue;
+		case ';':
+			string[j++] = c;
+			puts();
+			if(pflg[level] > 0 && ind[level] == 0){
+				tabs -= pflg[level];
+				pflg[level] = 0;
+			}
+			getnl(); puts(); printf("\n");
+			sflg = 1;
+			if(iflev > 0)
+				if(ifflg == 1){
+					iflev--; ifflg = 0;
+				}
+				else iflev = 0;
+			continue;
+		case '\\':
+			string[j++] = c;
+			string[j++] = getch();
+			continue;
+		case '?':
+			qflg = 1;
+			string[j++] = c;
+			continue;
+		case ':':
+			string[j++] = c;
+			if(qflg == 1){
+				qflg = 0;
+				continue;
+			}
+			if(lookup(wds) == 0){
+				sflg = 0;
+				puts();
+			}
+			else{
+				tabs--; puts(); tabs++;
+			}
+			if((peek = getch()) == ';'){
+				printf(";");
+				peek = -1;
+			}
+			getnl(); puts(); printf("\n");
+			sflg = 1;
+			continue;
+		case '/':
+			string[j++] = c;
+			if((peek = getch()) != '*') continue;
+			string[j++] = peek;
+			peek = -1;
+			comment();
+			continue;
+		case ')':
+			paren--;
+			string[j++] = c;
+			puts();
+			if(getnl() == 1){
+				peek = '\n';
+				if(paren != 0) aflg = 1;
+				else if(tabs > 0){
+					pflg[level]++;
+					tabs++;
+					ind[level] = 0;
+				}
+			}
+			continue;
+		case '#':
+			string[j++] = c;
+			while((cc = getch()) != '\n') string[j++] = cc;
+			string[j++] = cc;
+			sflg = 0;
+			puts();
+			sflg = 1;
+			continue;
+		case '(':
+			string[j++] = c;
+			paren++;
+			if(lookup(wfor) == 1){
+				while((c = gets()) != ';');
+				ct=0;
+cont:
+				while((c = gets()) != ')'){
+					if(c == '(') ct++;
+				}
+				if(ct != 0){
+					ct--; goto cont;
+				}
+				paren--;
+				puts();
+				if(getnl() == 1){
+					peek = '\n';
+					pflg[level]++;
+					tabs++;
+					ind[level] = 0;
+				}
+				continue;
+			}
+			if(lookup(wif) == 1){
+				puts();
+				stabs[clevel][iflev] = tabs;
+				spflg[clevel][iflev] = pflg[level];
+				sind[clevel][iflev]  = ind[level];
+				iflev++;
+				ifflg = 1;
+			}
+			continue;
+		default:
+			string[j++] = c;
+			if(c != ',') lchar = c;
+		}
+	}
+}
+
+void ptabs( void ){
+	int i;
+	for(i=0; i < tabs; i++) printf("\t");
+}
+
+int getch( void ){
+	if(peek < 0 && lastchar != ' ' && lastchar != '\t')
+	   pchar = lastchar;
+	lastchar = (peek<0) ? getc(stdin) : peek;
+	peek = -1;
+	return(lastchar);
+}
+
+void puts( void ){
+	if(j > 0){
+		if(sflg != 0){
+			ptabs();
+			sflg = 0;
+			if(aflg == 1){
+				aflg = 0;
+				if(tabs > 0) printf("    ");
+			}
+		}
+		string[j] = '\0';
+		printf("%s",string);
+		j = 0;
+	}
+	else{
+		if(sflg != 0){
+			sflg = 0; aflg = 0;
+		}
+	}
+}
+
+int lookup( char *tab[] )
+{
+	char r;
+	int l,kk,k,i;
+	if(j < 1) return(0);
+	kk=0;
+	while(string[kk] == ' ') kk++;
+	for(i=0; tab[i] != 0; i++){
+		l=0;
+		for(k=kk;(r = tab[i][l++]) == string[k] && r != '\0';k++);
+		if(r == '\0' &&
+		   (string[k] < 'a' || string[k] > 'z' || k >= j))
+		      return(1);
+	}
+	return(0);
+}
+
+int gets( void ){
+	char ch;
+beg:
+	if((ch = string[j++] = getch()) == '\\'){
+		string[j++] = getch();
+		goto beg;
+	}
+	if(ch == '\'' || ch == '"'){
+		while((cc = string[j++] = getch()) != ch)
+		     if(cc == '\\') string[j++] = getch();
+		goto beg;
+	}
+	if(ch == '\n'){
+		puts();
+		aflg = 1;
+		goto beg;
+	}
+	else return(ch);
+}
+
+void gotelse( void ){
+	tabs = stabs[clevel][iflev];
+	pflg[level] = spflg[clevel][iflev];
+	ind[level]  = sind [clevel][iflev];
+	ifflg = 1;
+}
+
+int getnl( void ){
+	while((peek = getch()) == '\t' || peek == ' '){
+		string[j++] = peek;
+		peek = -1;
+	}
+	if((peek = getch()) == '/'){
+		peek = -1;
+		if((peek = getch()) == '*'){
+			string[j++] = '/';
+			string[j++] = '*';
+			peek = -1;
+			comment();
+		}
+		else string[j++] = '/';
+	}
+	if((peek = getch()) == '\n'){
+		peek = -1;
+		return(1);
+	}
+	return(0);
+}
+
+void comment( void ){
+rep:
+	while((c = string[j++] = getch()) != '*')
+		if(c == '\n'){
+			puts();
+			sflg = 1;
+		}
+gotstar:
+	if((c = string[j++] = getch()) != '/'){
+		if(c == '*') goto gotstar;
+		goto rep;
+	}
+}

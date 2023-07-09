@@ -1,0 +1,30 @@
+ac
+dat
+exec.tst
+_flow_tst.sh
+pre
+res
+cntl echo_deb_ mode in wrp_fifs1_
+rm ac
+dat
+exec.tst
+_flow_tst.sh
+pre
+res
+ac
+dat
+exec.tst
+_flow_tst.sh
+pre
+res
+cntl echo_deb_ mode in wrp_fifs1_
+rm ac
+dat
+exec.tst
+_flow_tst.sh
+pre
+res
+cntl echo_deb_ mode in wrp_fifs1_
+cntl echo_deb_ mode in wrp_fifs1_
+rm ac
+rm: невозможно удалить 'ac': Нет такого файла или каталога

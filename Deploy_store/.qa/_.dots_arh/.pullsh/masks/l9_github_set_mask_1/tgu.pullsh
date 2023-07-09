@@ -1,0 +1,4 @@
+pull#git@github.com:legioner9/tgu.git
+push#git@github.com:legioner9/tgu.git^git@gitlab.com:legioner9999/tgu.git
+to_bare#to_bare_path1^to_bare_path2
+to_repo#

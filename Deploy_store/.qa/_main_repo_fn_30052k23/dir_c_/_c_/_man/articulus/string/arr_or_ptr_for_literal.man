@@ -1,0 +1,68 @@
+## [В чем разница между char* и char[]](http://dkhramov.dp.ua/Comp.CharLiteralsAndArrays#.YuCv0eXP1QJ)
+
+Рассмотрим следующий пример:
+
+char * strA = "somestring";
+strA является указателем (char *) на место в памяти, содержащее строковую константу (литерал) "somestring″.
+
+Обычно компиляторы размещают такие константы в области памяти, доступной только для чтения — сегменте данных. Поэтому попытка изменить strA приведет к ошибке времени выполнения:
+
+char * strA = "somestring";
+strA[0] = 'x'; //runtime error
+Заметим также, что strA, как указатель, хранится в стеке.
+
+Следующий пример, напротив, будет скомпилирован и выполнен без ошибок:
+
+char strB[] = "somestring";
+strB[0] = 'x';
+strB является массивом символов (char []). По команде char strB[] = "somestring"; компилятор резервирует буфер достаточного для хранения "somestring" размера в области памяти доступной для чтения и записи, и копирует в этот буфер инициализирующее выражение ("somestring").
+
+Поскольку память под strB выделена в области, доступной как для чтения, так и для записи, то strB можно изменять.
+
+Путаница между char* и char[] возникает, поскольку допустима запись вида:
+
+void some_func(char * strSomeString)
+{
+    return;
+}
+
+int main()
+{
+    char * strA = "somestring";
+    char strB[] = "somestring";
+
+    some_func(strA);
+    some_func(strB);
+
+    return 0;
+}
+В some_func() пользователь получает доступ к содержимому буфера, на который указывает strSomeString. Если пользователь захочет изменить содержимое этого буфера, когда в some_func() передается strA, то он получит ошибку времени выполнения.
+
+Вместо char * в качестве типа параметра функции можно указать char [], однако проблемы это не решит: по-прежнему при передаче в функцию strA будем получать ошибку времени выполнения
+
+void some_func(char strSomeString[])
+{
+    strSomeString[0] = 'x';
+    return;
+}
+
+int main()
+{
+    char * strA = "somestring";
+    char strB[] = "somestring";
+
+    some_func(strA);
+    some_func(strB);
+
+    return 0;
+}
+Разница между char* и char[] видна и при использовании sizeof():
+
+char * strA = "somestring";  //sizeof(strA) = 4
+char strB[] = "somestring";  //sizeof(strB) = 11
+Так как strA — указатель, то sizeof() и возвращает размер указателя. strB, напротив, является массивом из 10 символов "somestring" и '\0', обозначающего конец строки.
+
+Таким образом sizeof() — плохое решение для подсчета числа символов в строке, с этой целью лучше использовать strlen():
+
+char * strA = "somestring";  //strlen(strA) = 10
+char strB[] = "somestring";  //strlen(strB) = 10

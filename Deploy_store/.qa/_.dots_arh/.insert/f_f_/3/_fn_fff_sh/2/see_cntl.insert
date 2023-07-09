@@ -1,0 +1,11 @@
+echo_deb_ ${echo_} "cntl echo_deb_ mode in ${FNLOCK}"
+
+if [ -n ${debug_} ] && [ ${debug_} -eq 1 ]; then
+    echo "DEBUG MODE in ${FNLOCK}"
+    echo "\\\${errmes_}: ${errmes_}"
+    echo "\\\${outmes_}: ${outmes_}"
+fi
+
+if [ -n ${develop1_} ] && [ ${develop1_} -eq 1 ]; then
+    echo "develop1 MODE in ${FNLOCK}"
+fi

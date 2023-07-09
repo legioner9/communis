@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<!-- saved from url=(0030)https://ru.manpages.org/unix/7 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com/">
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+  <link rel="dns-prefetch" href="https://www.google-analytics.com/">
+  <title>man unix (7): сокеты для локального межпроцессного взаимодействия</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="description" content="man unix (7): Семейство сокетов AF_UNIX (также известное, как AF_LOCAL) используется для эффективного взаимодействия между процессами на одной машине. Доменные сокеты UNIX могут быть как безымянными, так и иметь имя файла в файловой системе (типизированный сокет). В Li">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <link href="./man unix (7)_ сокеты для локального межпроцессного взаимодействия_files/css" rel="stylesheet" type="text/css">
+  <link href="./man unix (7)_ сокеты для локального межпроцессного взаимодействия_files/css(1)" rel="stylesheet" type="text/css">
+  <link href="./man unix (7)_ сокеты для локального межпроцессного взаимодействия_files/css(2)" rel="stylesheet" type="text/css">
+  <link data-turbolinks-track="true" href="./man unix (7)_ сокеты для локального межпроцессного взаимодействия_files/application-f7897fbdd67c6822d0a0ff57b3ffc02f.css" media="all" rel="stylesheet">
+  <script async="" src="./man unix (7)_ сокеты для локального межпроцессного взаимодействия_files/analytics.js"></script><script async="async" data-turbolinks-track="true" src="./man unix (7)_ сокеты для локального межпроцессного взаимодействия_files/application-b47bf462822a1e5557c375def5c1aa58.js"></script>
+
+  <!--[if IE]>
+        
+    <![endif]-->
+<script type="text/javascript">
+//<![CDATA[
+      var LANG = 'ru';
+//]]>
+</script>
+  
+  <meta content="authenticity_token" name="csrf-param">
+<meta content="eR+ecn3USp1Yn8F04UQ7cH2qmsxrQBr8A58efSt8hg8=" name="csrf-token">
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-56225390-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<body>
+  <div class="header-container">
+    <header class="clearfix">
+      <div class="logo"><a href="https://ru.manpages.org/"><img src="./man unix (7)_ сокеты для локального межпроцессного взаимодействия_files/logo-01e8ca9d4868e2e64bed82dde5c62d60.png" alt="logo"></a></div>
+       <!--
+        <nav>
+    <ul>
+        <li class="ОБЗОР selected"><a title="" href="#">ОБЗОР</a></li>
+        <li class="ОПИСАНИЕ"><a title="" href="#">ОПИСАНИЕ</a></li>
+        <li class="ОШИБКИ"><a title="" href="#">ОШИБКИ</a></li>
+        <li class="ДЕФЕКТЫ"><a title="" href="#">ДЕФЕКТЫ</a></li>
+        <li class="ПРИМЕР"><a title="" href="#">ПРИМЕР</a></li>
+    </ul>
+  </nav>
+  -->
+      <div class="search">
+        <form accept-charset="UTF-8" action="https://ru.manpages.org/pagenames/autocomplete_page_name_name" method="post"><div style="display:none"><input name="utf8" type="hidden" value="✓" class="ui-autocomplete-input" autocomplete="off"><input name="authenticity_token" type="hidden" value="eR+ecn3USp1Yn8F04UQ7cH2qmsxrQBr8A58efSt8hg8=" class="ui-autocomplete-input" autocomplete="off"></div>
+            <input data-autocomplete="/pagenames/autocomplete_page_name_name" id="page_name_name" name="page_name[name]" placeholder="Поиск в MAN файлах..." type="text" class="ui-autocomplete-input" autocomplete="off">
+            <button type="submit" onclick="return false">
+              <img src="./man unix (7)_ сокеты для локального межпроцессного взаимодействия_files/search_-5f10690007ebc2fbfce6cf9b1f687474.svg">
+            </button>
+</form>      </div>
+      <a class="mcat"><img src="./man unix (7)_ сокеты для локального межпроцессного взаимодействия_files/menu-533ee2b7609b0e242c51d7f42ca18b7f.png"></a>
+    </header>
+  </div>
+  <div id="core">
+    <div class="main-wrapper">
+      <link rel="stylesheet" href="./man unix (7)_ сокеты для локального межпроцессного взаимодействия_files/default.min.css">
+<script src="./man unix (7)_ сокеты для локального межпроцессного взаимодействия_files/highlight.min.js"></script>
+
+<div class="manpages-show">
+
+
+<div class="main-container">
+  <main>
+
+    <div class="article-container">
+        <div class="article_table">
+            <span>unix<i>(7)</i></span>
+            <span>сокеты для локального межпроцессного взаимодействия</span>
+        </div>
+      <article>
+        <a name=""></a><div class="section">
+<h2>ОБЗОР</h2>
+
+<b>#include &lt;sys/socket.h&gt;</b>
+<br>
+
+<b>#include &lt;sys/un.h&gt;</b>
+<p>
+<i>unix_socket</i><b> = socket(AF_UNIX, type, 0);</b>
+<br>
+
+<i>error</i><b> = socketpair(AF_UNIX, type, 0, int *</b><i>sv</i><b>);</b>
+
+</p></div>
+<a name=""></a><div class="section">
+<h2>ОПИСАНИЕ</h2>
+Семейство сокетов <b>AF_UNIX</b> (также известное, как <b>AF_LOCAL</b>) используется
+для эффективного взаимодействия между процессами на одной машине. Доменные
+сокеты UNIX могут быть как безымянными, так и иметь имя файла в файловой
+системе (типизированный сокет). В Linux также поддерживается абстрактное
+пространство имён, которое не зависит от файловой системы.
+<p>
+Допустимые типы сокета для домена UNIX: потоковый сокет <b>SOCK_STREAM</b>,
+датаграмный сокет <b>SOCK_DGRAM</b>, сохраняющий границы сообщений (в
+большинстве реализаций UNIX, доменные датаграмные сокеты UNIX всегда надёжны
+и не меняют порядок датаграмм); и (начиная с Linux 2.6.4)  ориентированный
+на соединение задающий последовательность пакетам сокет <b>SOCK_SEQPACKET</b>,
+сохраняющий границы сообщений и доставляющий сообщения в том же порядке, в
+каком они были отправлены.
+</p><p>
+Доменные сокеты UNIX поддерживают передачу файловых дескрипторов или
+информацию (credentials) о процессе другим процессам, используя
+вспомогательные (ancillary) данные.
+</p></div>
+<div class="section">
+<h2>Формат адреса</h2>
+Адрес доменного сокета UNIX представляет собой следующую структуру:
+<pre class="hljs cpp"><span class="hljs-keyword">struct</span> sockaddr_un {
+    sa_family_t sun_family;               <span class="hljs-comment">/* AF_UNIX */</span>
+    <span class="hljs-keyword">char</span>        sun_path[<span class="hljs-number">108</span>];            <span class="hljs-comment">/* имя пути */</span>
+};
+</pre>
+
+
+<p>
+Поле <i>sun_family</i> всегда содержит <b>AF_UNIX</b>. В Linux размер <i>sun_path</i>
+равен 108 байтам; также смотрите ЗАМЕЧАНИЯ ниже.
+</p><p>
+В различных системных вызовах (например, <b><a class="man" category="2" href="https://ru.manpages.org/bind/2">bind</a></b>(2), <b><a class="man" category="2" href="https://ru.manpages.org/connect/2">connect</a></b>(2) и
+<b><a class="man" category="2" href="https://ru.manpages.org/sendto/2">sendto</a></b>(2)) в качестве входных данных используется параметр
+<i>sockaddr_un</i>. Другие системные вызовы (например, <b><a class="man" category="2" href="https://ru.manpages.org/getsockname/2">getsockname</a></b>(2),
+<b><a class="man" category="2" href="https://ru.manpages.org/getpeername/2">getpeername</a></b>(2), <b><a class="man" category="2" href="https://ru.manpages.org/recvfrom/2">recvfrom</a></b>(2) и <b><a class="man" category="2" href="https://ru.manpages.org/accept/2">accept</a></b>(2)) возвращают результат в
+параметре этого типа.
+</p><p>
+В <i>sockaddr_un</i> структуре различают три типа адресов:
+</p><dl compact="compact">
+<dt>*</dt><dd>
+<i>с именем пути</i>: доменный сокет UNIX может быть привязан к имени пути (с
+завершающимся null) в файловой системе с помощью <b><a class="man" category="2" href="https://ru.manpages.org/bind/2">bind</a></b>(2). При возврате
+адреса имени пути сокета (одним и системных вызовов, упомянутых выше), его
+длина равна
+<p>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;offsetof(struct&nbsp;sockaddr_un,&nbsp;sun_path)&nbsp;+&nbsp;strlen(sun_path)&nbsp;+&nbsp;1
+</p><p>
+и <i>sun_path</i> содержит путь, оканчивающийся null (в Linux, указанное выше
+выражение <b>offsetof</b>() равно <i>sizeof(sa_family_t)</i>, но в некоторых
+реализациях включаются другие поля перед <i>sun_path</i>, поэтому выражение
+<b>offsetof</b>() описывает размер адресной структуры более переносимым
+способом).
+</p></dd><dt></dt><dd>
+Дополнительную информацию о путях сокета смотрите далее.
+</dd><dt>*</dt><dd>
+
+
+<i>безымянный</i>: Потоковый сокет, который не привязан к имени пути с помощью
+<b>bind</b>(), не имеет имени. Аналогично, два сокета, создаваемые
+<b>socketpair</b>(), также не имеют имён.  При возврате адреса сокета его длина
+равна <i>sizeof(sa_family_t)</i>, а значение <i>sun_path</i> не используется.
+</dd><dt>*</dt><dd>
+<i>абстрактный</i>: абстрактный адрес сокета отличается (от имени пути сокета)
+тем, что значением <i>sun_path[0]</i> является байт null ('\0'). Адрес
+сокета в этом пространстве имён определяется дополнительными байтами в
+<i>sun_path</i>, количество которых определяется длиной указанной структуры
+адреса. Байты null в имени не имеют специального значения. Имя не связано с
+именем пути в файловой системе. При возврате адреса абстрактного сокета
+возвращаемое значение <i>addrlen</i> больше чем <i>sizeof(sa_family_t)</i>
+(т.е. больше 2), а имя сокета содержится в первых <i>(addrlen -
+sizeof(sa_family_t))</i> байтах <i>sun_path</i>. Пространство имён абстрактных
+сокетов является непереносимым расширением Linux.
+</dd></dl>
+
+</div>
+<div class="section">
+<h2>Путевые сокеты</h2>
+При привязке сокета к пути для максимальной переносимости и простоте
+кодирования нужно учесть несколько правил:
+<dl compact="compact">
+<dt>*</dt><dd>
+Имя пути в <i>sun_path</i> должно завершаться null.
+</dd><dt>*</dt><dd>
+Длина имени пути, включая завершающий байт null, не должна превышать размер
+<i>sun_path</i>.
+</dd><dt>*</dt><dd>
+Аргумент <i>addrlen</i>, описывающий включаемую структуру <i>sockaddr_un</i>, должен
+содержать значение, как минимум:
+<p>
+</p><pre class="hljs cpp">    offsetof(<span class="hljs-keyword">struct</span> sockaddr_un, sun_path)+<span class="hljs-built_in">strlen</span>(addr.sun_path)+<span class="hljs-number">1</span>
+</pre>
+
+</dd><dt></dt><dd>
+или, проще говоря, для <i>addrlen</i> можно использовать <i>sizeof(struct
+sockaddr_un)</i>.
+</dd></dl>
+<p>
+Есть несколько реализаций по работе с адресами доменных сокетов UNIX,
+которые не следуют данным правилам. Например, в некоторых реализациях (но не
+во всех) добавляется конечный null, если если его нет в <i>sun_path</i>.
+</p><p>
+При написании переносимых приложений учтите, что в некоторых реализациях
+размер <i>sun_path</i>равен 92 байтам.
+</p><p>
+Различные системные вызовы (например, <b><a class="man" category="2" href="https://ru.manpages.org/accept/2">accept</a></b>(2), <b><a class="man" category="2" href="https://ru.manpages.org/recvfrom/2">recvfrom</a></b>(2),
+<b><a class="man" category="2" href="https://ru.manpages.org/getsockname/2">getsockname</a></b>(2), <b><a class="man" category="2" href="https://ru.manpages.org/getpeername/2">getpeername</a></b>(2)) возвращают адресные структуры
+сокета. В случае с доменными сокетами UNIX аргумент значение-результат
+<i>addrlen</i>, передаваемый вызову, должен быть инициализирован как описано
+выше. При возврате в аргументе содержится <i>реальный</i> размер адресной
+структуры. Вызывающий должен проверить полученное значение этого аргумента:
+если оно превышает значение до вызова, то не гарантируется наличие конечного
+null в <i>sun_path</i> (смотрите ДЕФЕКТЫ).
+</p></div>
+<div class="section">
+<h2>Параметры сокета</h2>
+В силу исторических причин эти параметры сокетов относятся к типу
+<b>SOL_SOCKET</b>, даже если они относятся к <b>AF_UNIX</b>. Они могут быть
+установлены с помощью <b><a class="man" category="2" href="https://ru.manpages.org/setsockopt/2">setsockopt</a></b>(2) и прочитаны с помощью
+<b><a class="man" category="2" href="https://ru.manpages.org/getsockopt/2">getsockopt</a></b>(2); тип <b>SOL_SOCKET</b> указывается в качестве семейства сокета.
+<dl compact="compact">
+<dt><b>SO_PASSCRED</b></dt><dd>
+Разрешает приём информационных данных (credentials) посылающего процесса во
+вспомогательном сообщении. Если при включении этого параметра сокет пока ещё
+не соединён, то в абстрактном пространстве имён будет автоматически создано
+уникальное имя. Ожидается целочисленный логический флаг.
+</dd></dl>
+
+</div>
+<div class="section">
+<h2>Свойство автоматической привязки</h2>
+Если в вызов <b><a class="man" category="2" href="https://ru.manpages.org/bind/2">bind</a></b>(2) передано значение <i>addrlen</i> равное
+<i>sizeof(sa_family_t)</i>, или для сокета, который не привязан к адресу явно,
+был указан параметр сокета <b>SO_PASSCRED</b>, то сокет автоматически
+привязывается к абстрактному адресу. Адрес состоит из байта null и 5 байтов
+символов из набора <i>[0-9a-f]</i>. Таким образом, максимальное количество
+автоматически привязываемых адресов равно 2^20 (в Linux 2.1.15, когда была
+добавлена автоматическая привязка, использовалось 8 байт, и, таким образом,
+ограничение было 2^32 адресов. В Linux 2.3.15 количество байт сократили до
+5).
+</div>
+<div class="section">
+<h2>Программный интерфейс сокетов</h2>
+В следующих параграфах описываются специфичные тонкости доменов и
+неподдерживаемые возможности программного интерфейса сокетов для доменных
+сокетов UNIX в Linux.
+<p>
+Доменные сокеты UNIX не поддерживают передачу внеполосных данных (флаг
+<b>MSG_OOB</b> у <b><a class="man" category="2" href="https://ru.manpages.org/send/2">send</a></b>(2) и <b><a class="man" category="2" href="https://ru.manpages.org/recv/2">recv</a></b>(2)).
+</p><p>
+Флаг <b>MSG_MORE</b> у <b><a class="man" category="2" href="https://ru.manpages.org/send/2">send</a></b>(2) не поддерживается доменными сокетами UNIX.
+</p><p>
+Использование <b>MSG_TRUNC</b> в аргументе <i>flags</i> у <b><a class="man" category="2" href="https://ru.manpages.org/recv/2">recv</a></b>(2) не
+поддерживается доменными сокетами UNIX.
+</p><p>
+Параметр сокета <b>SO_SNDBUF</b> учитывается в доменных сокетах UNIX, а параметр
+<b>SO_RCVBUF</b> --- нет. Для датаграмных сокетов значение <b>SO_SNDBUF</b>
+считается максимальным размером для исходящих датаграмм. Это ограничение,
+вычисляемое как удвоенное значение (см. <b><a class="man" category="7" href="https://ru.manpages.org/socket/7">socket</a></b>(7))  параметра, содержит
+меньше 32 байт накладных расходов.
+</p></div>
+<div class="section">
+<h2>Вспомогательные сообщения</h2>
+Вспомогательные данные отправляются и принимаются с помощью <b><a class="man" category="2" href="https://ru.manpages.org/sendmsg/2">sendmsg</a></b>(2) и
+<b><a class="man" category="2" href="https://ru.manpages.org/recvmsg/2">recvmsg</a></b>(2). В силу исторических причин перечисленные типы вспомогательных
+сообщений относятся к типу <b>SOL_SOCKET</b>, даже если они относятся к
+<b>AF_UNIX</b>. Для того, чтобы отправить их, установите значение поля
+<i>cmsg_level</i> структуры <i>cmsghdr</i> равным <b>SOL_SOCKET</b>, а в значении поля
+<i>cmsg_type</i> укажите его тип. Дополнительная информация приведена в
+<b><a class="man" category="3" href="https://ru.manpages.org/cmsg/3">cmsg</a></b>(3).
+<dl compact="compact">
+<dt><b>SCM_RIGHTS</b></dt><dd>
+Передать или принять набор открытых файловых дескрипторов из другого
+процесса. Часть с данными содержит целочисленный массив файловых
+дескрипторов. Переданные файловые дескрипторы действуют так, как если бы они
+были созданы <b><a class="man" category="2" href="https://ru.manpages.org/dup/2">dup</a></b>(2).
+</dd><dt><b>SCM_CREDENTIALS</b></dt><dd>
+Передать или принять информацию о UNIX. Может быть использовано для
+аутентификации. Информация передаётся в виде структуры <i>struct ucred</i>
+вспомогательного сообщения. Эта структура определена в
+<i>&lt;sys/socket.h&gt;</i> следующим образом:
+<p>
+
+</p><pre class="hljs cpp"><span class="hljs-keyword">struct</span> ucred {
+    pid_t pid;    <span class="hljs-comment">/* идентификатор посылающего процесса */</span>
+    uid_t uid;    <span class="hljs-comment">/* идентификатор пользователя посылающего процесса */</span>
+    gid_t gid;    <span class="hljs-comment">/* идентификатор группы посылающего процесса */</span>
+};
+</pre>
+
+
+<p>
+Начиная с glibc 2.8, чтобы получить определение данной структуры должен быть
+определён макрос тестирования свойств <b>_GNU_SOURCE</b> (до включения
+<i>каких-либо</i> заголовочных файлов).
+</p><p>
+Информация (credentials), указываемая отправителем, проверяется
+ядром. Процесс с идентификатором эффективного пользователя 0 может указывать
+значения, отличные от его собственных. Отправитель должен указать
+идентификатор своего процесса (если только он не имеет мандата
+<b>CAP_SYS_ADMIN</b>), свой идентификатор пользователя, эффективный
+идентификатор или сохранённый set-user-ID (если только он не имеет
+<b>CAP_SETUID</b>) и идентификатор своей группы, эффективный идентификатор
+группы или сохранённый set-group-ID (если только он не имеет
+<b>CAP_SETGID</b>). Для получения сообщения со структурой <i>struct ucred</i> для
+сокета нужно включить параметр <b>SO_PASSCRED</b>.
+</p></dd></dl>
+
+</div>
+<div class="section">
+<h2>Вызовы ioctl</h2>
+Следующие вызовы <b><a class="man" category="2" href="https://ru.manpages.org/ioctl/2">ioctl</a></b>(2) возвращают информацию в аргументе
+<i>value</i>. Корректный синтаксис:
+<p>
+
+</p><dl compact="compact"><dt></dt><dd>
+<pre class="hljs cs"><b><span class="hljs-keyword">int</span></b><i> <span class="hljs-keyword">value</span></i><b>;</b>
+<i>error</i><b> = ioctl(</b><i>unix_socket</i><b>, </b><i>ioctl_type</i><b>, &amp;</b><i><span class="hljs-keyword">value</span></i><b>);</b>
+</pre>
+
+</dd></dl>
+
+<p>
+Значением <i>ioctl_type</i> может быть:
+</p><dl compact="compact">
+<dt><b>SIOCINQ</b></dt><dd>
+Для сокета <b>SOCK_STREAM</b> функция возвращает количество непрочитанных данных
+в очереди в приёмном буфере. Сокет не должен быть в состоянии LISTEN, иначе
+возвращается ошибка (<b>EINVAL</b>). Значение <b>SIOCINQ</b> определено в
+<i>&lt;linux/sockios.h&gt;</i>. В качестве альтернативы вы можете использовать
+синоним <b>FIONREAD</b>, определённый в <i>&lt;sys/ioctl.h&gt;</i>. Для сокета
+<b>SOCK_DGRAM</b> возвращаемое значение совпадает с датаграммным сокетом домена
+Интернета; смотрите <b><a class="man" category="7" href="https://ru.manpages.org/udp/7">udp</a></b>(7).
+</dd></dl>
+
+</div>
+<a name=""></a><div class="section errors">
+<h2>ОШИБКИ</h2>
+
+<dl compact="compact">
+<dt><b>EADDRINUSE</b></dt><dd>
+Заданный локальный адрес уже используется, или сокетный объект файловой
+системы уже существует.
+</dd><dt><b>ECONNREFUSED</b></dt><dd>
+Удалённый адрес, указанный <b><a class="man" category="2" href="https://ru.manpages.org/connect/2">connect</a></b>(2) не является слушающим сокетом. Эта
+ошибка также может возникнуть, если путь назначения не является сокетом.
+</dd><dt><b>ECONNRESET</b></dt><dd>
+Удалённый сокет был неожиданно закрыт.
+</dd><dt><b>EFAULT</b></dt><dd>
+Некорректный адрес пользовательской памяти.
+</dd><dt><b>EINVAL</b></dt><dd>
+Передан неправильный аргумент. Основная причина --- не задано значение
+<b>AF_UNIX</b> в поле <i>sun_type</i> передаваемых адресов или сокет находится в
+некорректном состоянии для производимой операции.
+</dd><dt><b>EISCONN</b></dt><dd>
+Вызов <b><a class="man" category="2" href="https://ru.manpages.org/connect/2">connect</a></b>(2) запущен для уже соединённого сокета, или адрес
+назначения указывает на соединённый сокет.
+</dd><dt><b>ENOENT</b></dt><dd>
+Путь, указанный в удалённом адресе для <b><a class="man" category="2" href="https://ru.manpages.org/connect/2">connect</a></b>(2), не существует.
+</dd><dt><b>ENOMEM</b></dt><dd>
+Не хватает памяти.
+</dd><dt><b>ENOTCONN</b></dt><dd>
+Для операции над сокетом требуется адрес назначения, а сокет не соединён.
+</dd><dt><b>EOPNOTSUPP</b></dt><dd>
+Вызвана потоковая операция для непотокового сокета, или произведена попытка
+использования параметра для внеполосных данных.
+</dd><dt><b>EPERM</b></dt><dd>
+Отправитель указал неправильную информацию (credentials) в структуре
+<i>struct ucred</i>.
+</dd><dt><b>EPIPE</b></dt><dd>
+Удалённый сокет был закрыт в потоковом сокете. Если разрешено, также будет
+послан сигнал <b>SIGPIPE</b>. Этого можно избежать, передав флаг <b>MSG_NOSIGNAL</b>
+при вызове <b><a class="man" category="2" href="https://ru.manpages.org/sendmsg/2">sendmsg</a></b>(2)  или <b><a class="man" category="2" href="https://ru.manpages.org/recvmsg/2">recvmsg</a></b>(2).
+</dd><dt><b>EPROTONOSUPPORT</b></dt><dd>
+Указанный протокол не является <b>AF_UNIX</b>.
+</dd><dt><b>EPROTOTYPE</b></dt><dd>
+Удалённый сокет не совпадает с типом локального сокета (<b>SOCK_DGRAM</b> против
+<b>SOCK_STREAM</b>).
+</dd><dt><b>ESOCKTNOSUPPORT</b></dt><dd>
+Неизвестный тип сокета.
+</dd></dl>
+<p>
+При создании сокетного объекта на уровне сокетов или файловой системы могут
+генерироваться другие ошибки. За дополнительной информацией обращайтесь к
+соответствующей справочной странице.
+</p></div>
+<div class="section">
+<h2>ВЕРСИИ</h2>
+
+<b>SCM_CREDENTIALS</b> и абстрактное пространство имён появились в Linux 2.2 и
+не должны использоваться в переносимых программах. Некоторые клоны BSD также
+поддерживают передачу дополнительной информации (credential), но методы
+реализации передачи могут серьезно отличаться на разных системах.
+</div>
+<div class="section">
+<h2>ЗАМЕЧАНИЯ</h2>
+В реализации Linux учитываются права доступа к каталогу, в котором находятся
+сокеты, видимые в файловой системе. Владелец, группа и права могут быть
+изменены. Если процесс не имеет прав на запись и поиск (запуск) в каталоге,
+то создать новый сокет в нём не удастся. Соединение сокетных объектов
+требует права на запись/чтение. Это действие отличается от действий
+большинства клонов BSD, игнорирующих права доменных сокетов
+UNIX. Переносимые программы не должны полагаться на эту возможность для
+обеспечения безопасности.
+<p>
+Привязка сокета к имени файла создаёт сокет в файловой системе, который
+должен быть удалён создателем, когда необходимость в нём отпадёт (с помощью
+<b><a class="man" category="2" href="https://ru.manpages.org/unlink/2">unlink</a></b>(2)). Обычная система ссылок UNIX также подходит для работы с
+сокетами; сокет может быть удалён в любое время, а реальное удаление из
+файловой системы будет произведено при закрытии последней на него ссылки.
+</p><p>
+Для передачи файловых дескрипторов или информации (credentials) через
+<b>SOCK_STREAM</b> необходимо передать/принять, по меньшей мере, один байт
+недополнительных данных в одном из вызовов: <b><a class="man" category="2" href="https://ru.manpages.org/sendmsg/2">sendmsg</a></b>(2) или <b><a class="man" category="2" href="https://ru.manpages.org/recvmsg/2">recvmsg</a></b>(2).
+</p><p>
+В потоковых доменных сокетах UNIX отсутствует такое понятие как внеполосные
+данные.
+</p></div>
+<a name=""></a><div class="section bugs">
+<h2>ДЕФЕКТЫ</h2>
+При привязке сокета к адресу Linux является одной из реализаций, которые
+добавляют конечный null, если он отсутствует в <i>sun_path</i>. В большинстве
+случаев в этом нет проблемы: когда адрес сокета возвращается, он будет на
+один байт длиннее чем был перед привязкой сокета. Однако такое неожиданное
+поведение может привести к следующему: если передаётся 108 не-null байтов
+при привязке сокета, то с дополнительным конечным null  пути превышает длину
+<i>sizeof(sun_path)</i>. В последствии при возврате адреса сокета (например, из
+<b><a class="man" category="2" href="https://ru.manpages.org/accept/2">accept</a></b>(2)), если входной аргумент <i>addrlen</i> перед вызовом был равен
+<i>sizeof(struct sockaddr_un)</i>, то в <i>sun_path</i> возвращаемой структуры
+адреса <i>будет отсутствовать</i> конечный null.
+<p>
+Также, некоторые реализации не требуют наличия конечного null при привязке
+сокета (для определения длины <i>sun_path</i> используется аргумент <i>addrlen</i>)
+и когда в этих реализациях возвращается адрес сокета, то в <i>sun_path</i> также
+отсутствует конечный null.
+</p><p>
+Приложения, которые получают адрес сокета могут содержать код (переносимый)
+для обработки случая, когда нет конечного null в <i>sun_path</i>, учитывая
+фактическое количество пригодных байт в пути:
+</p><p>
+
+
+
+
+
+
+
+
+
+
+<br>&nbsp;&nbsp;&nbsp;&nbsp;strnlen(addr.sun_path,&nbsp;addrlen&nbsp;-&nbsp;offsetof(sockaddr_un,&nbsp;sun_path))
+</p><p>
+Или же приложение может перед получением адреса сокета выделить буфер
+размера <i>sizeof(struct sockaddr_un)+1</i>, который будет обнулён перед
+возвращением. Возвращающий вызов может задать в <i>addrlen</i> значение
+<i>sizeof(struct sockaddr_un)</i>, и дополнительный нулевой байт здесь будет
+конечным null в строке, возвращаемой в <i>sun_path</i>:
+</p><p>
+</p><pre class="hljs cpp"><span class="hljs-keyword">void</span> *addrp;
+addrlen = <span class="hljs-keyword">sizeof</span>(<span class="hljs-keyword">struct</span> sockaddr_un);
+addrp = <span class="hljs-built_in">malloc</span>(addrlen + <span class="hljs-number">1</span>);
+<span class="hljs-keyword">if</span> (addrp == NULL)
+    <span class="hljs-comment">/* обработка ошибки */</span> ;
+<span class="hljs-built_in">memset</span>(addrp, <span class="hljs-number">0</span>, addrlen + <span class="hljs-number">1</span>);
+<span class="hljs-keyword">if</span> (getsockname(sfd, (<span class="hljs-keyword">struct</span> sockaddr *) addrp, &amp;addrlen)) == -<span class="hljs-number">1</span>)
+    <span class="hljs-comment">/* обработка ошибки */</span> ;
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"sun_path = %s\n"</span>, ((<span class="hljs-keyword">struct</span> sockaddr_un *) addrp)-&gt;sun_path);
+</pre>
+
+<p>
+Данного беспорядка можно избежать, если гарантировать, что приложения,
+<i>создающие</i> путевые сокеты, следуют правилам, описанным в общих чертах выше
+в <i>Путевые сокеты</i>.
+</p></div>
+<a name=""></a><div class="section">
+<h2>ПРИМЕР</h2>
+В следующем коде демонстрируется использование пакето-упорядочивающих
+сокетов для локального межпроцессного обмена. Он состоит из двух
+программ. Программа-сервер ждёт подключения программы-клиента. Клиент
+посылает свой каждый аргумент командной строки в виде отдельного
+сообщения. Сервер считает входящие сообщения как целые числа и складывает
+их. Клиент посылает строку-команду «END». Сервер посылает ответное
+сообщение, содержащее сумму чисел клиента. Клиент печатает сумму и завершает
+работу. Сервер ждёт подключение следующего клиента. Для остановки сервера,
+клиент вызывается с аргументом командной строки «DOWN».
+<p>
+Следующий вывод был записан при работе сервера в фоновом режиме и
+повторяющемся запуске клиента. Выполнение программы-сервера завершилось
+после получения им команды «DOWN».
+</p></div>
+<div class="section">
+<h2>Пример вывода</h2>
+
+
+<pre class="hljs ruby"><span class="hljs-variable">$ </span><b>./server &amp;</b>
+[<span class="hljs-number">1</span>] <span class="hljs-number">25887</span>
+<span class="hljs-variable">$ </span><b>./client <span class="hljs-number">3</span> <span class="hljs-number">4</span></b>
+Результат = <span class="hljs-number">7</span>
+<span class="hljs-variable">$ </span><b>./client <span class="hljs-number">11</span> -<span class="hljs-number">5</span></b>
+Результат = <span class="hljs-number">6</span>
+<span class="hljs-variable">$ </span><b>./client <span class="hljs-constant">DOWN</span></b>
+Результат = <span class="hljs-number">0</span>
+[<span class="hljs-number">1</span>]+  <span class="hljs-constant">Done</span>                    ./server
+<span class="hljs-variable">$
+</span></pre>
+
+
+
+</div>
+<div class="section">
+<h2>Исходный код программы</h2>
+
+<pre class="hljs cpp"><span class="hljs-comment">/*
+ * Файл connection.h
+ */</span>
+<span class="hljs-preprocessor">#<span class="hljs-keyword">define</span> SOCKET_NAME "/tmp/9Lq7BNBnBycd6nxy.socket"</span>
+<span class="hljs-preprocessor">#<span class="hljs-keyword">define</span> BUFFER_SIZE 12</span>
+<span class="hljs-comment">/*
+ * Файл server.c
+ */</span>
+<span class="hljs-preprocessor">#<span class="hljs-keyword">include</span> &lt;stdio.h&gt;</span>
+<span class="hljs-preprocessor">#<span class="hljs-keyword">include</span> &lt;stdlib.h&gt;</span>
+<span class="hljs-preprocessor">#<span class="hljs-keyword">include</span> &lt;string.h&gt;</span>
+<span class="hljs-preprocessor">#<span class="hljs-keyword">include</span> &lt;sys/socket.h&gt;</span>
+<span class="hljs-preprocessor">#<span class="hljs-keyword">include</span> &lt;sys/un.h&gt;</span>
+<span class="hljs-preprocessor">#<span class="hljs-keyword">include</span> &lt;unistd.h&gt;</span>
+<span class="hljs-preprocessor">#<span class="hljs-keyword">include</span> "connection.h"</span>
+<span class="hljs-keyword">int</span>
+main(<span class="hljs-keyword">int</span> argc, <span class="hljs-keyword">char</span> *argv[])
+{
+    <span class="hljs-keyword">struct</span> sockaddr_un name;
+    <span class="hljs-keyword">int</span> down_flag = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">int</span> ret;
+    <span class="hljs-keyword">int</span> connection_socket;
+    <span class="hljs-keyword">int</span> data_socket;
+    <span class="hljs-keyword">int</span> result;
+    <span class="hljs-keyword">char</span> buffer[BUFFER_SIZE];
+    <span class="hljs-comment">/*
+     * Удалить сокет, оставшийся после последнего
+     * некорректного завершения программы.
+     */</span>
+    unlink(SOCKET_NAME);
+    <span class="hljs-comment">/* Создание локального сокета. */</span>
+    connection_socket = socket(AF_UNIX, SOCK_SEQPACKET, <span class="hljs-number">0</span>);
+    <span class="hljs-keyword">if</span> (connection_socket == -<span class="hljs-number">1</span>) {
+        perror(<span class="hljs-string">"socket"</span>);
+        <span class="hljs-built_in">exit</span>(EXIT_FAILURE);
+    }
+    <span class="hljs-comment">/*
+     * Для переносимости очищаем всю структуру, так как в некоторых
+     * реализациях имеются дополнительные (нестандартные) поля.
+     */</span>
+    <span class="hljs-built_in">memset</span>(&amp;name, <span class="hljs-number">0</span>, <span class="hljs-keyword">sizeof</span>(<span class="hljs-keyword">struct</span> sockaddr_un));
+    <span class="hljs-comment">/* Привязываем сокет к имени сокета. */</span>
+    name.sun_family = AF_UNIX;
+    <span class="hljs-built_in">strncpy</span>(name.sun_path, SOCKET_NAME, <span class="hljs-keyword">sizeof</span>(name.sun_path) - <span class="hljs-number">1</span>);
+    ret = bind(connection_socket, (<span class="hljs-keyword">const</span> <span class="hljs-keyword">struct</span> sockaddr *) &amp;name,
+               <span class="hljs-keyword">sizeof</span>(<span class="hljs-keyword">struct</span> sockaddr_un));
+    <span class="hljs-keyword">if</span> (ret == -<span class="hljs-number">1</span>) {
+        perror(<span class="hljs-string">"bind"</span>);
+        <span class="hljs-built_in">exit</span>(EXIT_FAILURE);
+    }
+    <span class="hljs-comment">/*
+     * Готовимся принимать подключения. Размер очереди (backlog)
+     * устанавливаем равным 20. Пока один запрос обрабатывается, другие
+     * запросы смогут подождать.
+     */</span>
+    ret = listen(connection_socket, <span class="hljs-number">20</span>);
+    <span class="hljs-keyword">if</span> (ret == -<span class="hljs-number">1</span>) {
+        perror(<span class="hljs-string">"listen"</span>);
+        <span class="hljs-built_in">exit</span>(EXIT_FAILURE);
+    }
+    <span class="hljs-comment">/* Основной цикл обработки подключений. */</span>
+    <span class="hljs-keyword">for</span> (;;) {
+        <span class="hljs-comment">/* Ожидание входящих подключений. */</span>
+        data_socket = accept(connection_socket, NULL, NULL);
+        <span class="hljs-keyword">if</span> (ret == -<span class="hljs-number">1</span>) {
+            perror(<span class="hljs-string">"accept"</span>);
+            <span class="hljs-built_in">exit</span>(EXIT_FAILURE);
+        }
+        result = <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">for</span>(;;) {
+            <span class="hljs-comment">/* Ожидание следующего пакета с данными. */</span>
+            ret = read(data_socket, buffer, BUFFER_SIZE);
+            <span class="hljs-keyword">if</span> (ret == -<span class="hljs-number">1</span>) {
+                perror(<span class="hljs-string">"read"</span>);
+                <span class="hljs-built_in">exit</span>(EXIT_FAILURE);
+            }
+            <span class="hljs-comment">/* Проверяем, что буфер завершается 0. */</span>
+            buffer[BUFFER_SIZE - <span class="hljs-number">1</span>] = <span class="hljs-number">0</span>;
+            <span class="hljs-comment">/* Обработка команд. */</span>
+            <span class="hljs-keyword">if</span> (!<span class="hljs-built_in">strncmp</span>(buffer, <span class="hljs-string">"DOWN"</span>, BUFFER_SIZE)) {
+                down_flag = <span class="hljs-number">1</span>;
+                <span class="hljs-keyword">break</span>;
+            }
+            <span class="hljs-keyword">if</span> (!<span class="hljs-built_in">strncmp</span>(buffer, <span class="hljs-string">"END"</span>, BUFFER_SIZE)) {
+                <span class="hljs-keyword">break</span>;
+            }
+            <span class="hljs-comment">/* Добавляем полученную команду. */</span>
+            result += atoi(buffer);
+        }
+        <span class="hljs-comment">/* Отправка результата. */</span>
+        <span class="hljs-built_in">sprintf</span>(buffer, <span class="hljs-string">"%d"</span>, result);
+        ret = write(data_socket, buffer, BUFFER_SIZE);
+        <span class="hljs-keyword">if</span> (ret == -<span class="hljs-number">1</span>) {
+            perror(<span class="hljs-string">"write"</span>);
+            <span class="hljs-built_in">exit</span>(EXIT_FAILURE);
+        }
+        <span class="hljs-comment">/* Закрытие сокета. */</span>
+        close(data_socket);
+        <span class="hljs-comment">/* Завершаем работу по команде DOWN. */</span>
+        <span class="hljs-keyword">if</span> (down_flag) {
+            <span class="hljs-keyword">break</span>;
+        }
+    }
+    close(connection_socket);
+    <span class="hljs-comment">/* Удаляем сокет. */</span>
+    unlink(SOCKET_NAME);
+    <span class="hljs-built_in">exit</span>(EXIT_SUCCESS);
+}
+<span class="hljs-comment">/*
+ * Файл client.c
+ */</span>
+<span class="hljs-preprocessor">#<span class="hljs-keyword">include</span> &lt;errno.h&gt;</span>
+<span class="hljs-preprocessor">#<span class="hljs-keyword">include</span> &lt;stdio.h&gt;</span>
+<span class="hljs-preprocessor">#<span class="hljs-keyword">include</span> &lt;stdlib.h&gt;</span>
+<span class="hljs-preprocessor">#<span class="hljs-keyword">include</span> &lt;string.h&gt;</span>
+<span class="hljs-preprocessor">#<span class="hljs-keyword">include</span> &lt;sys/socket.h&gt;</span>
+<span class="hljs-preprocessor">#<span class="hljs-keyword">include</span> &lt;sys/un.h&gt;</span>
+<span class="hljs-preprocessor">#<span class="hljs-keyword">include</span> &lt;unistd.h&gt;</span>
+<span class="hljs-preprocessor">#<span class="hljs-keyword">include</span> "connection.h"</span>
+<span class="hljs-keyword">int</span>
+main(<span class="hljs-keyword">int</span> argc, <span class="hljs-keyword">char</span> *argv[])
+{
+    <span class="hljs-keyword">struct</span> sockaddr_un name;
+    <span class="hljs-keyword">int</span> i;
+    <span class="hljs-keyword">int</span> ret;
+    <span class="hljs-keyword">int</span> data_socket;
+    <span class="hljs-keyword">char</span> buffer[BUFFER_SIZE];
+    <span class="hljs-comment">/* Создание локального сокета. */</span>
+    data_socket = socket(AF_UNIX, SOCK_SEQPACKET, <span class="hljs-number">0</span>);
+    <span class="hljs-keyword">if</span> (data_socket == -<span class="hljs-number">1</span>) {
+        perror(<span class="hljs-string">"socket"</span>);
+        <span class="hljs-built_in">exit</span>(EXIT_FAILURE);
+    }
+    <span class="hljs-comment">/*
+     * Для переносимости очищаем всю структуру, так как в некоторых
+     * реализациях имеются дополнительные (нестандартные) поля.
+     */</span>
+    <span class="hljs-built_in">memset</span>(&amp;name, <span class="hljs-number">0</span>, <span class="hljs-keyword">sizeof</span>(<span class="hljs-keyword">struct</span> sockaddr_un));
+    <span class="hljs-comment">/* Соединяем сокет с именем сокета. */</span>
+    name.sun_family = AF_UNIX;
+    <span class="hljs-built_in">strncpy</span>(name.sun_path, SOCKET_NAME, <span class="hljs-keyword">sizeof</span>(name.sun_path) - <span class="hljs-number">1</span>);
+    ret = connect (data_socket, (<span class="hljs-keyword">const</span> <span class="hljs-keyword">struct</span> sockaddr *) &amp;name,
+                   <span class="hljs-keyword">sizeof</span>(<span class="hljs-keyword">struct</span> sockaddr_un));
+    <span class="hljs-keyword">if</span> (ret == -<span class="hljs-number">1</span>) {
+        <span class="hljs-built_in">fprintf</span>(stderr, <span class="hljs-string">"Сервер выключен.\n"</span>);
+        <span class="hljs-built_in">exit</span>(EXIT_FAILURE);
+    }
+    <span class="hljs-comment">/* Посылаем аргументы. */</span>
+    <span class="hljs-keyword">for</span> (i = <span class="hljs-number">1</span>; i &lt; argc; ++i) {
+        ret = write(data_socket, argv[i], <span class="hljs-built_in">strlen</span>(argv[i]) + <span class="hljs-number">1</span>);
+        <span class="hljs-keyword">if</span> (ret == -<span class="hljs-number">1</span>) {
+            perror(<span class="hljs-string">"write"</span>);
+            <span class="hljs-keyword">break</span>;
+        }
+    }
+    <span class="hljs-comment">/* Отправка результата. */</span>
+    <span class="hljs-built_in">strcpy</span> (buffer, <span class="hljs-string">"END"</span>);
+    ret = write(data_socket, buffer, <span class="hljs-built_in">strlen</span>(buffer) + <span class="hljs-number">1</span>);
+    <span class="hljs-keyword">if</span> (ret == -<span class="hljs-number">1</span>) {
+        perror(<span class="hljs-string">"write"</span>);
+        <span class="hljs-built_in">exit</span>(EXIT_FAILURE);
+    }
+    <span class="hljs-comment">/* Получение результата. */</span>
+    ret = read(data_socket, buffer, BUFFER_SIZE);
+    <span class="hljs-keyword">if</span> (ret == -<span class="hljs-number">1</span>) {
+        perror(<span class="hljs-string">"read"</span>);
+        <span class="hljs-built_in">exit</span>(EXIT_FAILURE);
+    }
+    <span class="hljs-comment">/* Проверяем, что буфер завершается 0. */</span>
+    buffer[BUFFER_SIZE - <span class="hljs-number">1</span>] = <span class="hljs-number">0</span>;
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"Result = %s\n"</span>, buffer);
+    <span class="hljs-comment">/* Закрытие сокета. */</span>
+    close(data_socket);
+    <span class="hljs-built_in">exit</span>(EXIT_SUCCESS);
+}
+</pre>
+
+<p>
+Пример использования <b>SCM_RIGHTS</b> приведён в <b><a class="man" category="3" href="https://ru.manpages.org/cmsg/3">cmsg</a></b>(3).
+</p></div>
+
+      </article>
+    </div>
+
+
+  </main>
+</div>
+<div class="nav-container">
+<div class="nav" style="height:526px">
+<div class="inner">
+  <nav class="box">
+    <h4>содержание</h4>
+    <ul>
+        <li class="ОБЗОР selected"><a title="" href="https://ru.manpages.org/unix/7#">ОБЗОР</a></li>
+        <li class="ОПИСАНИЕ"><a title="" href="https://ru.manpages.org/unix/7#">ОПИСАНИЕ</a></li>
+        <li class="ОШИБКИ"><a title="" href="https://ru.manpages.org/unix/7#">ОШИБКИ</a></li>
+        <li class="ДЕФЕКТЫ"><a title="" href="https://ru.manpages.org/unix/7#">ДЕФЕКТЫ</a></li>
+        <li class="ПРИМЕР"><a title="" href="https://ru.manpages.org/unix/7#">ПРИМЕР</a></li>
+    </ul>
+  </nav>
+
+  <div class="box lang">
+    <h4>ПЕРЕВОДЫ</h4>
+    <ul>
+        <li class="en"><a class="c7" href="https://manpages.org/unix/7"><i></i>АНГЛИЙСКИЙ</a></li>
+        <li class="fr"><a class="c7" href="https://fr.manpages.org/unix/7"><i></i>ФРАНЦУЗСКИЙ</a></li>
+        <li class="ja"><a class="c7" href="https://ja.manpages.org/unix/7"><i></i>ЯПОНСКИЙ</a></li>
+        <li class="en"><a class="c7" href="https://manpages.org/unix/7"><i></i>АНГЛИЙСКИЙ</a></li>
+        <li class="es"><a class="c7" href="https://es.manpages.org/unix/7"><i></i>ИСПАНСКИЙ</a></li>
+        <li class="pl"><a class="c7" href="https://pl.manpages.org/unix/7"><i></i>ПОЛЬСКИЙ</a></li>
+    </ul>
+  </div>
+  
+
+<!--
+    <div class="ads">
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <ins class="adsbygoogle"
+           style="display:inline-block;width:300px;height:250px"
+           data-ad-client="ca-pub-2811344342425918"
+           data-ad-slot="5277441578"></ins>
+      <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+-->
+    <div class="box see-also">
+      <h4>СМОТРИТЕ ТАКЖЕ</h4>
+      <ul class="clearfix">
+            <li><a href="https://ru.manpages.org/recvmsg/2" class="c2">recvmsg <span>(2)</span></a></li>
+            <li><a href="https://ru.manpages.org/sendmsg/2" class="c2">sendmsg <span>(2)</span></a></li>
+            <li><a href="https://ru.manpages.org/socket/2" class="c2">socket <span>(2)</span></a></li>
+            <li><a href="https://ru.manpages.org/socketpair/2" class="c2">socketpair <span>(2)</span></a></li>
+            <li><a href="https://ru.manpages.org/cmsg/3" class="c3">cmsg <span>(3)</span></a></li>
+            <li><a href="https://ru.manpages.org/capabilities/7" class="c7">capabilities <span>(7)</span></a></li>
+            <li><a href="https://ru.manpages.org/credentials/7" class="c7">credentials <span>(7)</span></a></li>
+            <li><a href="https://ru.manpages.org/socket/7" class="c7">socket <span>(7)</span></a></li>
+            <li><a href="https://ru.manpages.org/udp/7" class="c7">udp <span>(7)</span></a></li>
+      </ul>
+    </div>
+
+        <div class="box last-searched">
+          <h4>ПОСЛЕДНИЕ ЗАПРОСЫ</h4>
+          <ul class="clearfix">
+                <li><a href="https://manpages.org/ldbsearch" class="c1">ldbsearch <span>(1)</span></a></li>
+                <li><a href="https://manpages.org/sourceslist/5" class="c5">sources.list <span>(5)</span></a></li>
+                <li><a href="https://manpages.org/plcalc_world/3" class="c3">plcalc_world <span>(3)</span></a></li>
+                <li><a href="https://manpages.org/jsonxs/3" class="c3">JSON::XS <span>(3)</span></a></li>
+                <li><a href="https://manpages.org/shishi_encapreppart_to_file/3" class="c3">shishi_encapreppart_to_file <span>(3)</span></a></li>
+                <li><a href="https://manpages.org/notmuch-new" class="c1">notmuch-new <span>(1)</span></a></li>
+                <li><a href="https://ja.manpages.org/termcap/5" class="c5">termcap <span>(5)</span></a></li>
+                <li><a href="https://manpages.org/ipcsignal/3" class="c3">IPC::Signal <span>(3)</span></a></li>
+                <li><a href="https://manpages.org/functionsid/3" class="c3">function::sid <span>(3)</span></a></li>
+                <li><a href="https://ru.manpages.org/__fbufsize/3" class="c3">__fbufsize <span>(3)</span></a></li>
+                <li><a href="https://ja.manpages.org/uuid_generate_time/3" class="c3">uuid_generate_time <span>(3)</span></a></li>
+          </ul>
+        </div>
+</div>
+  </div>
+  </div>
+
+</div>
+<script>
+$(document).ready(function() {
+    $('pre, code').each(function(i, block) {
+    hljs.highlightBlock(block);
+    });
+});
+</script>
+
+    </div>
+  </div><ul class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content" id="ui-id-1" tabindex="0" style="display: none;"></ul><span role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></span>
+  <div class="overlay"></div>
+  <div class="overlay_"></div>
+
+
+<ul class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content" id="ui-id-2" tabindex="0" style="display: none;"></ul><span role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></span><ul class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content" id="ui-id-3" tabindex="0" style="display: none;"></ul><span role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></span><div class="overlay"></div></body><style id="stylus-1" type="text/css" class="stylus">body {
+    font-family: 'pragmata pro mono regular';
+}</style></html>

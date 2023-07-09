@@ -1,0 +1,2 @@
+# [.list] for [git] at [h]ome [s]tatic [c]omputer with [alt]linux
+

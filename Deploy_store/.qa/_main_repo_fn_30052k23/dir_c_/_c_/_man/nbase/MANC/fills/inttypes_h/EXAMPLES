@@ -1,0 +1,9 @@
+#include <inttypes.h>
+#include <wchar.h>
+int main(void)
+{
+    uintmax_t i = UINTMAX_MAX; // This type always exists.
+    wprintf(L"The largest integer value is %020"
+        PRIxMAX "\n", i);
+    return 0;
+}

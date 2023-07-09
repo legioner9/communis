@@ -1,0 +1,7 @@
+ int npt_lc_1_IntPt(int *pt)
+ int ndpt_lc_1_IntPt(int **pt)
+ int _tmpp(int t)
+ int prn_stat_lc_1_path(const char *path)
+ int prn_stat_lc_1_path_с(const char *path, const char *file, const int line, int st__mo, int st__if, int st__re)
+ int prn_dirent_lc_1_entry_с(struct dirent *entry, const char *file, const int line, int st__mo, int st__if, int st__re)
+ int prn_sockadr_bind_с(struct sockaddr * name, const char *file, const int line, int st__mo, int st__if, int st__re)

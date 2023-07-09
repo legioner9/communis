@@ -1,0 +1,6 @@
+## stack in after C()
+
+    C() (${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_c_/_c_/_man/site/tkh_c_0/v_26/functions_pjc/main.c:49)
+    B() (${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_c_/_c_/_man/site/tkh_c_0/v_26/functions_pjc/main.c:42)
+    A() (${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_c_/_c_/_man/site/tkh_c_0/v_26/functions_pjc/main.c:35)
+    main(int argc, char ** argv) (${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_c_/_c_/_man/site/tkh_c_0/v_26/functions_pjc/main.c:26)

@@ -1,0 +1,266 @@
+### UP
+[D_FMT](##D_FMT)
+[MAIN](##MAIN)
+[MAIN_ru](##MAIN_ru)
+[ANCORS](##ANCORS)
+[ISU](##ISU)
+[inet](##A_inet)
+[inet](##books_inet)
+[inet](##examples_inet)
+[inet](##classic_inet)
+[inet](##enters_inet)
+[inet](##issue_code_inet)
+[H_FILE](##H_FILE)
+[c_SYNOPSIS](##c_SYNOPSIS)
+[c_RETURN](##c_RETURN)
+[c_RETURN_ru](##c_RETURN_ru)
+[c_BUGS](##c_BUGS)
+[c_DESCRIPTION_ru](##c_DESCRIPTION_ru)
+[c_DESCRIPTION](##c_DESCRIPTION)
+[c_MIRRORS](##c_MIRRORS)
+[c_EXAMPLES](##c_EXAMPLES)
+[c_CODE_h](##c_CODE_h)
+[c_CODE_c](##c_CODE_c)
+[c_CODE_m](##c_CODE_m)
+[c_ERRORS](##c_ERRORS)
+[c_BOOKS](##c_BOOKS)
+[c_BOOKS_ru](##c_BOOKS_ru)
+[c_CONTENT](##c_CONTENT)
+
+[cat_hfiles](../../cat_hfiles.md)
+[cat_utils](../../cat_utils.md)
+[cat_structs](../../cat_structs.md)
+[cat_param](../../cat_params.md)
+[cat_macros](../../cat_macross.md)
+[cat_const](../../cat_consts.md)
+[cat_type](../../cat_types.md)
+[cat_any](../cat_anys.md)
+
+
+[UP](###UP)
+## MAIN
+:D_FMT:
+[next](##MAIN_ru)
+
+<<MAIN>>
+[MAIN](../../fills/D_FMT/MAIN)
+
+
+
+[UP](###UP)
+## MAIN_ru
+:D_FMT:
+[next](##ANCORS)
+
+<<MAIN_ru>>
+[MAIN_ru](../../fills/D_FMT/MAIN_ru)
+
+[UP](###UP)
+## ANCORS
+:D_FMT:
+[next](##ISU)
+
+<<ANCORS>>
+[ANCORS](../../fills/D_FMT/ANCORS)
+
+[UP](###UP)
+## ISU
+:D_FMT:
+[next](##H_FILE)
+
+<<ISU>>
+only read
+:D_FMT:
+[ISU](../../contents)
+[next](##inet)
+
+
+[UP](###UP)
+## inet
+:D_FMT:
+[next](##H_FILE)
+
+
+[UP](###UP)
+## A_inet
+[manpages.org](https://www.google.ru/search?q=D_FMT+site%3Ahttps%3A%2F%2Fmanpages.org)
+[reposcope.com_ru](https://www.google.ru/search?q=D_FMT+site%3Ahttps%3A%2F%2Freposcope.com%2Fmanpages%2Fru)
+[pubs.opengroup.org](https://www.google.com/search?q=D_FMT+https%3A%2F%2Fpubs.opengroup.org)
+[manpages.debian.org](https://yandex.ru/search/?text=D_FMT+site%3Ahttps%3A%2F%2Fmanpages.debian.org%2F)
+[www.opennet.ru](http://www.opennet.ru/man.shtml?category=2&topic=D_FMT)
+[man7.org](https://www.google.ru/search?q=D_FMT+site%3Ahttps%3A%2F%2Fman7.org%2Flinux%2Fman-pages)
+[en.cppreference.com](https://www.google.com/search?q=D_FMT+en.cppreference.com)
+[www.mankier.com](https://www.mankier.com/?q=D_FMT)
+[www.codecogs.com](https://www.google.ru/search?q=D_FMT+https%3A%2F%2Fwww.codecogs.com%2Flibrary%2Fcomputing%2F)
+[digitalmars.com](https://www.google.ru/search?q=D_FMT+https%3A%2F%2Fdigitalmars.com%2Frtl%2F)
+
+
+[UP](###UP)
+## books_inet
+[cpp.com.ru](https://yandex.ru/search/?text=D_FMT+site%3Ahttps%3A%2F%2Fcpp.com.ru)
+[linuxhint.com](https://www.google.ru/search?q=D_FMT+site%3Ahttps%3A%2F%2Flinuxhint.com)
+[gnu.org](https://www.google.ru/search?q=D_FMT+site%3Ahttps%3A%2F%2Fwww.gnu.org%2Fsoftware%2Flibc%2Fmanual)
+
+[UP](###UP)
+## examples_inet
+[yandex:examples](https://yandex.ru/search/?text=D_FMT+example+in+c)
+[docs.oracle.com](https://www.google.com/search?q=D_FMT+https%3A%2F%2Fdocs.oracle.com)
+[manpages.debian.org](https://yandex.ru/search/?text=D_FMT+site%3Ahttps%3A%2F%2Fmanpages.debian.org%2F)
+[osr507doc.xinuos.com](https://www.google.com/search?q=D_FMT+http%3A%2F%2Fosr507doc.xinuos.com%2Fen%2Fman)
+[cpp.hotexamples.com](https://cpp.hotexamples.com/examples/-/-/D_FMT/cpp-D_FMT-function-examples.html)
+[all-ht.ru](https://yandex.ru/search/?text=D_FMT+site%3Ahttp%3A%2F%2Fall-ht.ru%2Finf%2Fprog%2Fc%2F)
+[cppreference.com](https://yandex.ru/search/?text=D_FMT+site%3Ahttps%3A%2F%2Fen.cppreference.com%2Fw%2Fc%2F)
+
+[UP](###UP)
+## classic_inet
+[bogatyrev_c_unix](https://www.google.com/search?q=D_FMT+site%3Ahttps%3A%2F%2Fcpp.com.ru%2Fbogatyrev_c_unix)
+[kr_cbook](https://www.google.com/search?q=D_FMT+site%3Ahttps%3A%2F%2Fcpp.com.ru%2Fkr_cbook)
+
+[UP](###UP)
+## enters_inet
+[pubs.opengroup.org](https://pubs.opengroup.org/onlinepubs/9699919799/idx/head.html)
+
+[UP](###UP)
+## issue_code_inet
+[code.woboq.org](https://www.google.com/search?h=&sitesearch=https%3A%2F%2Fcode.woboq.org%2Fuserspace%2Fglibc%2F&q=D_FMT)
+
+
+[UP](###UP)
+## H_FILE 
+[langinfo_h.md](../../hfiles/langinfo_h.md)
+
+
+[UP](###UP)
+## c_SYNOPSIS
+:D_FMT:
+[next](##c_RETURN_ru)
+
+<<SYNOPSIS>>
+[SYNOPSIS](../../fills/D_FMT/SYNOPSIS)
+
+
+[UP](###UP)
+## c_RETURN_ru
+:D_FMT:
+[next](##c_RETURN)
+
+<<RETURN>>
+[RETURN_ru](../../fills/D_FMT/RETURN)
+
+
+[UP](###UP)
+## c_RETURN
+:D_FMT:
+[next](##c_DESCRIPTION_ru)
+
+<<RETURN_ru>>
+[RETURN](../../fills/D_FMT/RETURN_ru)
+
+
+[UP](###UP)
+## c_DESCRIPTION_ru
+:D_FMT:
+[next](##c_DESCRIPTION)
+
+<<DESCRIPTION_ru>>
+[DESCRIPTION_ru](../../fills/D_FMT/DESCRIPTION_ru)
+
+
+[UP](###UP)
+## c_DESCRIPTION
+:D_FMT:
+[next](##c_BUGS)
+
+<<DESCRIPTION>>
+[DESCRIPTION](../../fills/D_FMT/DESCRIPTION)
+
+
+[UP](###UP)
+## c_MIRRORS
+:D_FMT:
+[next](##c_BUGS)
+
+<<MIRRORS>>
+[MIRRORS](../../fills/D_FMT/MIRRORS)
+
+
+[UP](###UP)
+## c_BUGS
+:D_FMT:
+[next](##c_EXAMPLES)
+
+<<BUGS>>
+[BUGS](../../fills/D_FMT/BUGS)
+
+
+[UP](###UP)
+## c_EXAMPLES
+:D_FMT:
+[next](##c_CODE)
+
+<<EXAMPLES>>
+[EXAMPLES](../../fills/D_FMT/EXAMPLES)
+
+
+[UP](###UP)
+## c_CODE_h
+:D_FMT:
+[next](##c_CODE_c)
+
+<<CODE_h>>
+[CODE_h](../../fills/D_FMT/CODE_h)
+
+
+[UP](###UP)
+## c_CODE_c
+:D_FMT:
+[next](##c_CODE_m)
+
+<<CODE_c>>
+[CODE_c](../../fills/D_FMT/CODE_c)
+
+
+[UP](###UP)
+## c_CODE_m
+:D_FMT:
+[next](##c_ERRORS)
+
+<<CODE_m>>
+[CODE_m](../../fills/D_FMT/CODE_m)
+
+
+[UP](###UP)
+## c_ERRORS
+:D_FMT:
+[next](##c_BOOKS)
+
+<<ERRORS>>
+[ERRORS](../../fills/D_FMT/ERRORS)
+
+
+[UP](###UP)
+## c_BOOKS
+:D_FMT:
+[next](##c_BOOKS_ru)
+
+<<BOOKS>>
+[BOOKS](../../fills/D_FMT/BOOKS)
+
+
+[UP](###UP)
+## c_BOOKS_ru
+:D_FMT:
+[next](##c_CONTENT)
+
+
+<<BOOKS_ru>>
+[BOOKS_ru](../../fills/D_FMT/BOOKS_ru)
+
+
+[UP](###UP)
+## c_CONTENT
+:33333:
+[33333.cnt](../../contents/33333.cnt)
+[next](##UP)
+
+[UP](###UP)

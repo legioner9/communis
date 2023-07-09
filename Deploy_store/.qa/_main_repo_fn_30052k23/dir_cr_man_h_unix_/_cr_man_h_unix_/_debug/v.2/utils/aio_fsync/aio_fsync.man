@@ -1,0 +1,121 @@
+### UP
+[aio_fsync](##aio_fsync)
+[H_FILE](##H_FILE)
+[U_SYNOPSIS](##U_SYNOPSIS)
+[U_DESCRIPTION_ru](##U_DESCRIPTION)
+[U_DESCRIPTION](##U_DESCRIPTION_ru)
+[U_RETURN](##U_RETURN)
+[U_RETURN_ru](##U_RETURN_ru)
+[U_EXAMPLES](##U_EXAMPLES)
+[U_EXAMPLES_ru](##U_EXAMPLES_ru)
+[U_ERRORS](##U_ERRORS)
+[U_BOOKS](##U_BOOKS)
+[U_BOOKS_ru](##U_BOOKS_ru)
+[U_COMPIL_ARG](##U_COMPIL_ARG)
+
+[cat_hfiles](../../cat_hfiles.md)
+[cat_utils](../../cat_utils.md)
+[cat_structs](../../cat_structs.md)
+
+
+
+[UP](###UP)
+# aio_fsync
+MAIN :aio_fsync:
+[ru.manpages.org](https://www.google.ru/search?q=aio_fsync+site%3Ahttps%3A%2F%2Fru.manpages.org)
+
+
+
+[UP](###UP)
+## H_FILE [aio_h.md](../../hfiles/aio_h.md)
+## U_SYNOPSIS
+:aio_fsync:
+
+
+
+[UP](###UP)
+## U_DESCRIPTION_ru
+:aio_fsync:
+[ru.manpages.org](https://www.google.ru/search?q=aio_fsync+site%3Ahttps%3A%2F%2Fru.manpages.org)
+[man7.org](https://www.google.ru/search?q=aio_fsync+site%3Ahttps%3A%2F%2Fman7.org%2Flinux%2Fman-pages)
+[next](##U_DESCRIPTION)
+
+
+
+[UP](###UP)
+## U_DESCRIPTION
+:aio_fsync:
+[ru.manpages.org](https://www.google.ru/search?q=aio_fsync+site%3Ahttps%3A%2F%2Fru.manpages.org)
+[cplusplus.com](https://www.cplusplus.com/reference/)
+[next](##U_RETURN)
+
+
+
+[UP](###UP)
+## U_RETURN
+:aio_fsync:
+[man7.org](https://www.google.ru/search?q=aio_fsync+site%3Ahttps%3A%2F%2Fman7.org%2Flinux%2Fman-pages)
+[next](##U_RETURN_ru)
+
+
+
+[UP](###UP)
+## U_RETURN_ru
+:aio_fsync:
+[ru.manpages.org](https://www.google.ru/search?q=aio_fsync+site%3Ahttps%3A%2F%2Fru.manpages.org)
+[next](##U_EXAMPLES)
+
+
+
+[UP](###UP)
+## U_EXAMPLES
+:aio_fsync:
+[cpp.hotexamples.com](https://cpp.hotexamples.com/examples/-/-/aio_fsync/cpp-close-function-examples.html)
+[linuxhint.com](https://www.google.ru/search?q=aio_fsync+site%3Ahttps%3A%2F%2Flinuxhint.com)
+[next](##U_EXAMPLES_ru)
+
+
+
+[UP](###UP)
+## U_EXAMPLES_ru
+:aio_fsync:
+[next](##U_ERRORS)
+
+
+
+[UP](###UP)
+## U_ERRORS
+:aio_fsync:
+[man7.org](https://www.google.ru/search?q=aio_fsync+site%3Ahttps%3A%2F%2Fman7.org%2Flinux%2Fman-pages)
+[next](##U_ERRORS_ru)
+
+
+## U_ERRORS_ru
+:aio_fsync:
+[ru.manpages.org](https://www.google.ru/search?q=aio_fsync+site%3Ahttps%3A%2F%2Fru.manpages.org)
+[next](##U_BOOKS)
+
+
+
+[UP](###UP)
+## U_BOOKS
+:aio_fsync:
+[linuxhint.com](https://www.google.ru/search?q=aio_fsync+site%3Ahttps%3A%2F%2Flinuxhint.com)
+[gnu.org](https://www.google.ru/search?q=aio_fsync+site%3Ahttps%3A%2F%2Fwww.gnu.org%2Fsoftware%2Flibc%2Fmanual)
+[next](##U_BOOKS_ru)
+
+
+
+[UP](###UP)
+## U_BOOKS_ru
+:aio_fsync:
+[cpp.com.ru](https://www.google.ru/search?q=aio_fsync+site%3Ahttps%3A%2F%2Fcpp.com.ru)
+[next](##STRUCTS)
+
+
+
+[UP](###UP)
+## U_COMPIL_ARG [<^>]
+:aio_fsync:
+[ru.manpages.org](https://www.google.ru/search?q=aio_fsync+site%3Ahttps%3A%2F%2Fru.manpages.org)
+[UP](###UP)

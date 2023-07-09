@@ -1,0 +1,335 @@
+## Оценка фрагментированности файловой системы.
+
+Пример 28
+```cpp
+/* Оценка фрагментированности тома файловой системы
+ * (неупорядоченности блоков в файлах).
+ * Иллюстрация работы с файловой системой UNIX напрямую,
+ * в обход ядра системы. Для этого вы должны иметь права
+ * суперпользователя !!! Данная программа относится к классу
+ * "системных" (администраторских) программ.
+ * Эта программа предполагает каноническую файловую систему V7
+ * ("старую"), а не ту, которая используется начиная с BSD/4.2 и
+ * в которой все устроено несколько сложнее и эффективнее.
+ * Поэтому вы должны будете модифицировать эту программу для
+ * использования в современных UNIX-системах.
+ * По мотивам книги М.Дансмура и Г.Дейвиса.
+ */
+
+#include <stdio.h>
+#include <fcntl.h>
+#include <sys/types.h>
+#include <sys/param.h>
+#include <sys/ino.h>            /* struct dinode: disk inode */
+#include <sys/stat.h>           /* struct stat */
+#include <sys/dir.h>            /* struct direct */
+
+char blkflag;   /* печатать ли номера блоков файла */
+
+/* Отведение памяти в куче с выдачей ошибки, если нет памяти */
+char *MyAlloc( n ){
+	extern char *malloc();
+	char *ptr;
+
+	ptr = malloc( n );
+	if( ptr == NULL ){
+		fprintf( stderr, "Cannot allocate %d bytes\n", n );
+		exit(77);
+	}
+	return ptr;
+}
+char DEV[] = "/dev" ;   /* каталог, где лежат все файлы устройств */
+
+/* Определить имя устройства по его st_dev номеру.
+ * Поиск - по каталогу /dev
+ */
+char *whichdev( dev ) dev_t dev;
+{
+	struct stat s;
+	struct direct d;
+	long i;
+	int fd;         /* дескриптор чтения каталога */
+	long dsize;     /* число слотов каталога */
+	char *devname;
+
+	if( stat( DEV, &s ) < 0 ){
+		fprintf( stderr, "Cannot stat %s\n", DEV );
+		exit(1);
+	}
+
+	if((fd = open( DEV, O_RDONLY )) < 0 ){
+		fprintf( stderr, "Cannot read %s\n", DEV );
+		exit(2);
+	}
+	dsize = s.st_size / sizeof( struct direct );
+
+	/* читать каталог */
+	for( i = 0 ; i < dsize ; i++ ){
+		char leaf[ DIRSIZ + 1 ];
+
+		if( read( fd, &d, sizeof d ) != sizeof d ){
+			fprintf( stderr, "Cannot read %s\n", DEV );
+			exit(14);
+		}
+
+		if( ! d.d_ino ) continue;  /* пустой слот */
+
+		strncpy( leaf, d.d_name, DIRSIZ );
+		leaf[ DIRSIZ ] = '\0';
+
+		devname = MyAlloc( strlen( DEV ) + 1 + strlen( leaf ) + 1 );
+				/*        /dev     /      xxxx         \0  */
+		sprintf( devname, "%s/%s", DEV, leaf );
+		if( stat( devname, &s ) < 0 ){
+			fprintf( stderr, "Cannot stat %s\n", devname );
+			exit(3);
+		}
+		if( (s.st_mode & S_IFMT ) == S_IFBLK && s.st_rdev == dev ){
+			close(fd);
+			return devname;
+		} else  free( devname );
+	}
+	close( fd );
+	return NULL;
+}
+
+/* Файловая система UNIX: константы подстроены под ДЕМОС 2.2 */
+
+/* размер блока файловой системы */
+#define BLOCK 1024 /* либо станд. константа BSIZE из <sys/param.h> */
+
+/* число адресов блоков в косвенном блоке */
+#define NAPB        (BLOCK/sizeof(daddr_t))
+#define LNAPB        ((long) NAPB )
+
+/* число I-узлов в блоке I-файла */
+#ifndef INOPB
+# define INOPB (BLOCK/sizeof(struct dinode))
+#endif
+
+/* I-узлы - "паспорта" файлов. I-узлы расположены в начале диска,
+   в области, называемой I-файл. В I-узле файла содержатся:
+   размер файла, коды доступа, владелец файла, и.т.п.
+   В частности - адреса блоков файла хранятся в массиве di_addr:
+   0  :
+   ...  сначала   DIR0 адресов первых блоков
+   IX1: 1 адрес   косвенного блока, содержащего адреса еще NAPB блоков
+   IX2: 1 адрес   косв. блока, содержащего адреса NAPB косв. блоков
+   IX3: 1 адрес   косв. блока, содержащего адреса NAPB косв. блоков,
+			       содержащих адреса еще NAPB косв. блоков
+   Сисвызов stat() выдает как раз часть информации из I-узла.
+   Поле d_ino в каталоге хранит номер I-узла файла.
+*/
+
+/* число адресных полей по 3 байта в I-узле */
+#define NADDR 7
+
+/* число прямо адресуемых блоков */
+#define DIR0 ((long)(NADDR-3))
+
+/* число прямых и первых косвенных блоков */
+#define DIR1 (DIR0 + LNAPB)
+
+/* число прямых, первых и вторых косвенных блоков */
+#define DIR2 (DIR0 + LNAPB + LNAPB*LNAPB)
+
+/* число прямых, вторых и третьих косвенных блоков */
+#define DIR3 (DIR0 + LNAPB + LNAPB*LNAPB + LNAPB*LNAPB*LNAPB)
+
+/* индекс адреса первичного блока косвенности */
+#define IX1 (NADDR-3)
+
+/* индекс адреса вторичного блока косвенности */
+#define IX2 (NADDR-2)
+
+/* индекс адреса третичного блока косвенности */
+#define IX3 (NADDR-1)
+
+/* Выдать физический номер блока диска,
+ * соответствующий логическому блоку файла
+ */
+daddr_t bmap( fd, ip, lb )
+	int fd;                 /* raw диск */
+	daddr_t lb;             /* логический блок */
+	struct dinode *ip;      /* дисковый I-узел */
+{
+	long di_map[ NADDR ];
+	long dd_map[ NAPB ];
+
+	/* перевести 3х байтовые адреса в daddr_t */
+	l3tol( di_map, ip->di_addr, NADDR );
+
+	if( lb < DIR0 )
+		return di_map[ lb ];
+	if( lb < DIR1 ){
+		lb -= DIR0;
+
+		lseek( fd, di_map[ IX1 ] * BLOCK, 0 );
+		read( fd, dd_map, BLOCK );
+
+		return dd_map[ lb % LNAPB ];
+	}
+	if( lb < DIR2 ){
+		lb -= DIR1;
+
+		lseek( fd, di_map[ IX2 ] * BLOCK, 0 );
+		read(  fd, dd_map, BLOCK );
+
+		lseek( fd, dd_map[ lb / LNAPB ] * BLOCK, 0 );
+		read(  fd, dd_map, BLOCK );
+
+		return dd_map[ lb % LNAPB ];
+	}
+	if( lb < DIR2 ){
+		lb -= DIR2;
+
+		lseek( fd, di_map[ IX3 ] * BLOCK, 0 );
+		read(  fd, dd_map, BLOCK );
+
+		lseek( fd, dd_map[ lb / (LNAPB*LNAPB) ] * BLOCK, 0 );
+		read(  fd, dd_map, BLOCK );
+
+		lseek( fd, dd_map[ lb % (LNAPB*LNAPB) ] * BLOCK, 0 );
+		read(  fd, dd_map, BLOCK );
+
+		return dd_map[ lb % LNAPB ];
+	}
+	fprintf( stderr, "Strange block %ld\n", lb );
+	exit(4);
+}
+
+/* Рассчитать фрагментацию файла,
+   то есть среднее расстояние между блоками файла.
+   Норма равна фактору интерливинга для данного устройства.
+
+			  N
+		      SUM          | p(j) - p(j-1) |
+			  j = 2
+	       F =  ---------------------------------				N
+
+   p(j) - номер физ.блока диска, соответствующего
+	  логич. блоку j
+   Замечания:
+   1) I-узлы нумеруются с 1 (а не с 0), 0 - признак пустого
+      места в каталоге (d_ino == 0).
+   2) I-файл начинается со 2-ого блока диска (0-boot, 1-superblock)
+   3) если файл пуст - он не содержит блоков, N = 0, F = 0
+   4) если блок не отведен ("дырка"), то его адрес равен 0L
+*/
+
+double xabs( l ) daddr_t l;
+{
+	return ( l < (daddr_t) 0 ? -l : l );
+}
+
+double getfrag( dev, ino )
+	char *dev;      /* имя диска */
+	ino_t ino;      /* I-узел файла */
+{
+	struct dinode db;
+	int fd;         /* дескриптор диска */
+	daddr_t i;      /* лог. блок */
+	daddr_t op;     /* физ.блок */
+	daddr_t ip;
+	daddr_t nb;     /* длина файла (блоков) */
+	long ni = 0L;   /* число интервалов между блоками */
+	double ifrag = 0.0;
+
+	if((fd = open( dev, O_RDONLY )) < 0 ){
+		fprintf( stderr, "Cannot read %s\n", dev );
+		perror( "open" );
+		exit(5);
+	}
+
+	/* прочитать I-узел с номером ino.
+	 * Файл I-узлов размещен на диске начиная со 2 блока
+	 * по INOPB узлов в блоке.
+	 */
+	lseek( fd, (( 2 + ((ino-1)/INOPB)) * (long)BLOCK )  +
+		   ( sizeof(struct dinode) * ((ino-1) % INOPB)),   0 );
+	if( read( fd, &db, sizeof db ) != sizeof db ){
+		fprintf( stderr, "Cannot read %s\n", dev );
+		perror( "read" );
+		exit(6);
+	}
+
+	/* вычислить размер файла в блоках */
+	nb = ((long) db.di_size + BLOCK - 1) / BLOCK;
+	printf( "%4ld blk%s\t" , nb, nb > 1 ? "s" : " " );
+
+	/* игнорировать пустой файл */
+	if( nb == 0L ){
+		close(fd);
+		return 0.0;
+	}
+
+	/* вычислить фрагментацию */
+	op = bmap( fd, &db, 0L );       /* 0-block */
+	if( blkflag ) printf( "%ld ", op );
+
+	for( i = 1 ; i < nb ; i++ ){
+		ip = bmap( fd, &db, i );
+		if( blkflag ) printf( "%ld ", ip );
+		/* адреса, равные 0, следует игнорировать ("дырки") */
+		if( ip && op ){
+			ni++;
+			ifrag += xabs( ip - op );
+		}
+		if( ip ) op = ip;
+	}
+	close ( fd );
+	if( blkflag ) putchar( '\n' );
+	return ni ? (ifrag/ni) : 0.0 ;
+}
+
+double process( name ) char *name;
+{
+	struct stat ss;
+	char *dn;
+	double f;
+
+	/* определяем имя устройства, на котором расположен
+	 * файл name */
+	if( stat( name, &ss ) < 0 ){
+		fprintf( stderr, "Cannot stat %s\n", name );
+		exit(8);
+	}
+ /* printf( "major %d     minor %d", major(ss.st_dev), minor(ss.st_dev)); */
+	if((dn = whichdev( ss.st_dev )) == NULL){
+		fprintf( stderr, "Cannot determine device\n" );
+		exit(9);
+	}
+
+	printf( "%-14s on %-12s %12.3f\n",
+		name, dn, f = getfrag(dn, ss.st_ino ));
+	free( dn );
+	return f;
+}
+
+usage( name ) char *name; {
+	fprintf( stderr, "Usage: %s [-b] file ...\n" , name );
+	exit(7);
+}
+
+main(ac, av) char *av[];
+{
+	double fr = 0.0;
+	int n = 0;
+
+	if( ac < 2 )
+		usage( av[0] );
+
+	if( !strcmp( av[1], "-b" )){
+		blkflag = 1;
+		av++;
+		ac--;
+	}
+	while( av[1] ){
+		fr += process( av[1] );
+		n++;
+		av++;
+	}
+	if( n > 1 )
+		printf( "\nAverage %12.3f\n", fr / n );
+	exit(0);
+}

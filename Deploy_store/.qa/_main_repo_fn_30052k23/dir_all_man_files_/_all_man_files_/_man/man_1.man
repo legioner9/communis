@@ -1,0 +1,7 @@
+# my man all_man_files
+
+in: 
+ 
+flow: ls algoriphm
+
+out: in file _res.res

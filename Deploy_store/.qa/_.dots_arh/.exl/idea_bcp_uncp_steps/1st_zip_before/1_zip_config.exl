@@ -1,0 +1,3 @@
+# zip /home/st/.config/JetBrains/IntelliJIdea2022.2 -> home/st/.config/JetBrains/IntelliJIde_config.zip
+wrp_fifs1_ cd /home/st/.config/JetBrains/ -d1
+wrp_fifs2_ zip -r IntelliJIdea_config.zip IntelliJIdea2022.2 -qq_exit

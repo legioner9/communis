@@ -1,0 +1,29 @@
+## [Приведенная функция производит поиск заданной структуры, имеющей тип addr](https://cpp.com.ru/shildt_spr_po_c/13/fseek.html)
+
+```cpp
+struct addr {
+  char name[40];
+  char street[40];
+  char city[40];
+  char state[3];
+  char zip[10];
+} info;
+
+void find(long int client_num)
+{
+  FILE *fp;
+
+  if((fp=fopen("mail", "rb")) == NULL) {
+    printf("Не удается открыть файл.\n");
+    exit(1);
+  }
+
+  /* поиск подходящей структуры */
+  fseek(fp, client_num*sizeof(struct addr), SEEK_SET);
+
+  /* считывание данных в память */
+  fread(&info, sizeof(struct addr), 1, fp);
+
+  fclose(fp);
+}
+```

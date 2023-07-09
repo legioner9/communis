@@ -1,0 +1,1 @@
+## void *pthread_getspecific

@@ -1,0 +1,14 @@
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+[0;36m---qq_exit() $.1=irritum $1: "20" < $2: "10" fn: rnd3e_, with args: 20 10, filename: ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_rnd3e_/rnd3e_tst/_flow_tst.sh, line: 87 $.2= $.3=---[0m
+[0;31m---message: irritum $1: "20" < $2: "10" fn: rnd3e_, with args: 20 10, filename: ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_rnd3e_/rnd3e_tst/_flow_tst.sh, line: 87---[0m
+[0;31m---file: ---[0m
+[0;31m---line: ---[0m

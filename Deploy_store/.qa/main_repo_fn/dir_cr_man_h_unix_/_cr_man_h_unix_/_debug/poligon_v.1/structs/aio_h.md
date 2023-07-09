@@ -1,0 +1,3 @@
+str_aio_cancel
+str_aio_error
+str_aio_fsync

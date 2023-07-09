@@ -1,0 +1,436 @@
+## Просмотр файлов в окнах.
+
+Пример 16
+```cpp
+/*#!/bin/cc -DUSG wins.c -o wins -lncurses -lx
+	Просмотр двух файлов в перекрывающихся окнах.
+	Редактирование содержимого окон.
+*/
+/* _______________________ файл wcur.h __________________________ */
+#include "curses.h"
+
+	/* Макросы, зависимые от реализации curses */
+/* число колонок и строк в окне: */
+#  define wcols(w)  ((w)-> _maxx+1 )
+#  define wlines(w) ((w)-> _maxy+1 )
+/* верхний левый угол окна: */
+#  define wbegx(w)  ((w)-> _begx )
+#  define wbegy(w)  ((w)-> _begy )
+/* координаты курсора в окне: */
+#  define wcurx(w)  ((w)-> _curx )
+#  define wcury(w)  ((w)-> _cury )
+/* доступ к памяти строк окна: */
+#  define wtext(w)  ((w)-> _line)  /* chtype **_line; */
+/* в других реализациях: ((w)-> _y) */
+
+/* Псевдографика:    Для  curses   Для IBM PC MS DOS */
+#define HOR_LINE        '\200'     /* 196 */
+#define VER_LINE        '\201'     /* 179 */
+#define UPPER_LEFT      '\210'     /* 218 */
+#define LOWER_LEFT      '\202'     /* 192 */
+#define UPPER_RIGHT     '\212'     /* 191 */
+#define LOWER_RIGHT     '\204'     /* 217 */
+#define LEFT_JOIN       '\205'     /* 195 */
+#define RIGHT_JOIN      '\207'     /* 180 */
+#define TOP_JOIN        '\211'     /* 194 */
+#define BOTTOM_JOIN     '\203'     /* 193 */
+#define MIDDLE_CROSS    '\206'     /* 197 */
+#define BOX             '\272'     /* 219 */
+#define BOX_HATCHED     '\273'     /* 177 */
+#define LABEL           '\274'     /*   3 */
+#define RIGHT_TRIANG    '\234'     /*  16 */
+#define LEFT_TRIANG     '\235'     /*  17 */
+
+#define YES                 1
+#define NO                  0
+#define MIN(a,b)        (((a) < (b)) ? (a):(b))
+#define MAX(a,b)        (((a) > (b)) ? (a):(b))
+#define A_ITALICS  A_ALTCHARSET  /* в этой версии curses-а - курсив */
+#ifndef  ESC
+# define ESC '\033'     /* escape */
+#endif
+#define  ctrl(c)  (c & 037)
+
+/* перерисовка экрана */
+#define RedrawScreen() { vidattr(curscr->_attrs = A_NORMAL); \
+			 wrefresh(curscr); }
+/* curscr - служебное окно - копия текущего состояния экрана дисплея
+ * для сравнения со сформированным НОВЫМ образом  экрана - newscr.
+ * Поле _attrs в структуре окна содержит текущие атрибуты окна,
+ * именно это поле изменяется wattrset(), wattron(), wattroff();
+ */
+
+/* _______________________ файл wins.c __________________________ */
+#include "wcur.h"
+#include <signal.h>
+
+WINDOW *wbase1, *wbase2;        /* окна рамки (фоновые окна) */
+WINDOW *w1,     *w2;            /* окна для текста */
+
+/* Размеры и расположение окон */
+/* COLS - предопределенная переменная: число колонок */
+/* LINES     - // -                  : число строк на экране */
+#define W1ysize (LINES/2)       /* высота */
+#define W1xsize (COLS/3*2)      /* ширина */
+#define W1y     5               /* y верхнего левого угла на экране */
+#define W1x     20              /* x верхнего левого угла на экране */
+
+#define W2ysize (LINES/2)
+#define W2xsize (COLS/3*2)
+#define W2y     10
+#define W2x     5
+
+FILE *fp1, *fp2;         /* просматриваемые файлы */
+
+/* Завершить работу */
+void die(sig){                /* аргумент - номер сигнала */
+	/* Восстановление режимов терминала */
+	echo();         /* эхо-отображение вводимых букв */
+	nocbreak();     /* ввод с системным редактированием строки */
+
+	mvcur( -1, -1, LINES-1, 0 ); /* курсор в нижн. левый угол  */
+	endwin();       /* окончание  работы с curses-ом */
+	putchar('\n');
+	exit(sig);      /* завершение работы с кодом sig. 0 - успешно */
+}
+
+int run;
+void stop(nsig){ signal(SIGINT, SIG_IGN); run = 0; beep(); }
+char label[3][5] = {  /* Демонстрация псевдографики */
+ { UPPER_LEFT,  TOP_JOIN,     UPPER_RIGHT,    HOR_LINE, '\0' },
+ { LEFT_JOIN,   MIDDLE_CROSS, RIGHT_JOIN,     VER_LINE, '\0' },
+ { LOWER_LEFT,  BOTTOM_JOIN,  LOWER_RIGHT,    BOX,      '\0' }
+};
+/* Нарисовать рамку, название и фон окна */
+wborder( w, name ) WINDOW *w;  char *name;
+{       register i, j;
+
+	for(i=1; i < wlines(w)-1; i++ ){
+		/* поставить курсор и выдать символ */
+		mvwaddch(w, i, 0,          VER_LINE );
+		/* mvwaddch(w,y,x,c) = wmove(w,y,x); waddch(w,c); */
+		/* wmove(w,y,x) - логич. курсор в позицию (y,x)   */
+		/* waddch(w,c)  - выдать символ в позиции курсора,
+		   продвинуть курсор. Аналог putchar              */
+		mvwaddch(w, i, wcols(w)-1, VER_LINE );
+	}
+	for(j=1; j < wcols(w)-1; j++ ){
+		mvwaddch(w, 0,           j, HOR_LINE );
+		mvwaddch(w, wlines(w)-1, j, HOR_LINE );
+	}               /* Углы */
+	mvwaddch(w, 0,            0,          UPPER_LEFT);
+	mvwaddch(w, wlines(w)-1,  0,          LOWER_LEFT);
+	mvwaddch(w, wlines(w)-1,  wcols(w)-1, LOWER_RIGHT);
+	mvwaddch(w, 0,            wcols(w)-1, UPPER_RIGHT);
+
+	/* Рисуем заголовки вверху и внизу на рамке.
+	 * Заголовки выдаем в центре рамки.
+	 */
+	if( (j = (wcols(w) - strlen(name))/2 ) > 0 ){
+	     /* логический курсор - в 0 строку, позицию j */
+	     wmove(w, 0, j);
+	     /* задать режимы выделений */
+	     wattrset( w, A_BOLD | A_BLINK | A_REVERSE );
+	     waddstr( w, name );     /* выдать строку в окно */
+
+	     wmove( w, wlines(w)-1, j);
+	     wattrset( w, A_ITALICS | A_STANDOUT );
+	     waddstr ( w, name );
+	     wattrset( w, A_NORMAL ); /* нормальные атрибуты */
+	}
+}
+
+/* режим редактирования текста в окнах     */
+int mode = 0;   /* 0 - замена, 1 - вставка */
+
+main( ac, av ) char **av;
+{
+	char buffer[512];
+	int need1, need2;
+	int c; void (*save)();
+	WINDOW *w;  /* активное окно */
+
+	if( ac < 3 ){
+		fprintf( stderr, "Вызов: %s file1 file2\n", av[0] );
+		exit( 1 );
+	}
+
+	if((fp1 = fopen( av[1], "r" )) == NULL ){
+		fprintf( stderr, "Не могу читать %s\n", av[1] );
+		exit( 2 );
+	}
+	if((fp2 = fopen( av[2], "r" )) == NULL ){
+		fprintf( stderr, "Не могу читать %s\n", av[2] );
+		exit( 2 );
+	}
+	/* Инициализировать curses */
+	initscr();
+
+	signal( SIGINT, die );        /* по ctrl/C - умереть */
+	signal( SIGQUIT,die );
+
+	/* Создать окна                                            */
+	/*               высота   ширина   Y  и X верх.левого угла */
+	wbase1 = newwin( W1ysize, W1xsize, W1y, W1x);
+	if( wbase1 == NULL ){
+		fprintf( stderr, "Не могу создать wbase1\n" );
+		goto bad;
+	}
+	wbase2 = newwin( W2ysize, W2xsize, W2y, W2x);
+	if( wbase2 == NULL ){
+		fprintf( stderr, "Не могу создать wbase2\n" );
+		goto bad;
+	}
+
+	/* Создать подокна для текста                                */
+	/*           база    высота       ширина       Y угла X угла */
+	w1 = subwin( wbase1, W1ysize - 2, W1xsize - 2, W1y+1, W1x+1);
+	w2 = subwin( wbase2, W2ysize - 2, W2xsize - 2, W2y+1, W2x+1);
+
+	scrollok( w1, TRUE );   /* разрешить роллирование окон */
+	scrollok( w2, TRUE );
+
+	wattrset( w2, A_REVERSE  ); /*установить атрибуты текста в окнах*/
+	wattrset( stdscr, A_STANDOUT );
+
+	wborder( wbase1, av[1] );
+	wborder( wbase2, av[2] );   /* рамки */
+
+	werase( w1 ); werase( w2 );        /* очистить окна */
+
+	/* фон экрана */
+	werase( stdscr );
+	/* функции без буквы w... работают с окном stdscr (весь экран) */
+	for(c=0; c < 3; c++)
+	    mvwaddstr(stdscr, c, COLS-5, &label[c][0]);
+	move( 1, 10 ); addstr( "F1 - переключить окна" );
+	mvaddstr( 2, 10,       "F5 - переключить режим вставки/замены" );
+	move( 3, 10 ); printw( "F%d - удалить строку, F%c - вставить строку",
+				 7,                    '8'             );
+	mvwprintw(stdscr, 4,10, "ESC - выход, CTRL/C - прервать просмотр");
+	/* wprintw(w, fmt, ...) - аналог printf для окон */
+
+	   /* В нижний правый угол экрана ничего не выводить:
+	    * на некоторых терминалах это роллирует экран и тем самым
+	    * портит нам картинку.
+	    */
+	   wattrset( stdscr, A_NORMAL );
+	   wmove(    stdscr, LINES-1, COLS-1 );
+	   waddch(   stdscr, ' ' );
+
+	wnoutrefresh( stdscr );
+	/* виртуальное проявление окна. */
+
+	run = need1 = need2 = 1; /* оба файла не достигли конца */
+	/* прерывать просмотр по CTRL/C */
+	save = signal(SIGINT, stop);
+
+	while( run && (need1 || need2)){
+
+		if( need1 ){
+		    /* прочесть строку из первого файла */
+		    if( fgets( buffer, sizeof buffer, fp1 ) == NULL )
+			need1 = 0;      /* конец файла */
+		    else{
+			/* выдать строку в окно */
+			waddstr( w1, buffer );
+		    }
+		}
+		if( need2 ){
+		    /* прочесть строку из второго файла */
+		    if( fgets( buffer, sizeof buffer, fp2 ) == NULL )
+			need2 = 0;      /* конец файла */
+		    else{
+			waddstr( w2, buffer );
+			/* wnoutrefresh( w2 ); */
+		    }
+		}
+
+		/* Проявить w1 поверх w2 */
+		touchwin( wbase2 ); wnoutrefresh( wbase2 );
+		touchwin( w2 );     wnoutrefresh( w2 );
+
+		touchwin( wbase1 ); wnoutrefresh( wbase1 );
+		touchwin( w1 );     wnoutrefresh( w1 );
+		/* touchwin - пометить окно как целиком измененное.
+		 * wnoutrefresh - переписать изменения в новый образ
+		 * экрана в памяти. */
+
+		/* Проявить изображение на экране терминала
+		 * (вывести новый образ экрана). При этом выводятся
+		 * лишь ОТЛИЧИЯ от текущего содержимого экрана
+		 * (с целью оптимизации).
+		 */
+		doupdate();
+	}
+	fclose(fp1); fclose(fp2);
+	/* восстановить спасенную реакцию на сигнал */
+	signal(SIGINT, save);
+
+	/* Редактирование в окнах                */
+	noecho();       /* выкл. эхо-отображение */
+	cbreak();       /* немедленный ввод набранных клавиш
+			 * (без нажатия кнопки \n) */
+
+	keypad( w1, TRUE );     /* распознавать функц. кнопки */
+	keypad( w2, TRUE );
+
+	scrollok( w1, FALSE );  /* запретить роллирование окна */
+
+	w = w1;                 /* текущее активное окно */
+	for( ;; ){
+		int y, x;       /* координаты курсора в окне */
+
+		wrefresh( w ); /* обновить окно. Примерно соответствует
+				* wnoutrefresh(w);doupdate(); */
+		c = wgetch( w );  /* ввести символ с клавиатуры */
+		/* заметим, что в режиме noecho() символ не
+		 * отобразится в окне без нашей помощи !
+		 */
+		getyx( w, y, x );  /* узнать координаты курсора в окне */
+ /* не надо &y &x, т.к. это макрос, превращающийся в пару присваиваний */
+
+		switch( c ){
+		case KEY_LEFT:              /* шаг влево */
+			waddch( w, '\b' );
+			break;
+		case KEY_RIGHT:             /* шаг вправо */
+			wmove( w, y, x+1 );
+			break;
+		case KEY_UP:                /* шаг вверх */
+			wmove( w, y-1, x );
+			break;
+		case KEY_DOWN:              /* шаг вниз */
+		       wmove( w, y+1, x );
+			break;
+		case KEY_HOME:              /* в начало строки */
+		case KEY_LL:   /* KEY_END      в конец строки  */
+		{       int xbeg, xend;
+			wbegend(w, &xbeg, &xend);
+			wmove(w, y, c==KEY_HOME ? xbeg : xend);
+			break;
+		}
+		case '\t':                  /* табуляция */
+			x += 8 - (x % 8);
+			if( x >= wcols( w ))
+				x = wcols(w)-1;
+			wmove(w, y, x);
+			break;
+		case KEY_BACKTAB:           /* обратная табуляция */
+			x -= 8 - (x % 8);
+			if( x < 0 ) x = 0;
+			wmove( w, y, x );
+			break;
+
+		case '\b':                  /* забой */
+		case KEY_BACKSPACE:
+		case '\177':
+			if( !x ) break;     /* ничего */
+			wmove( w, y, x-1 );
+			/* and fall to ... (и провалиться в) */
+		case KEY_DC:                /* удаление над курсором */
+			wdelch( w );
+			break;
+		case KEY_IC:         /* вставка пробела над курсором */
+			winsch( w, ' ' );
+			break;
+		case KEY_IL:
+		case KEY_F(8):              /* вставка строки */
+			winsertln( w );
+			break;
+		case KEY_DL:                /* удаление строки */
+		case KEY_F(7):
+			wdeleteln( w );
+			break;
+
+		case ESC:                   /* ESC - выход */
+			goto out;
+
+		case KEY_F(1):       /* переключение активного окна */
+			if( w == w1 ){
+				touchwin( wbase2 ); wnoutrefresh( wbase2 );
+				touchwin( w2 );     wnoutrefresh( w2 );
+				w = w2;
+			} else {
+				touchwin( wbase1 ); wnoutrefresh( wbase1 );
+				touchwin( w1 );     wnoutrefresh( w1 );
+				w = w1;
+			}
+			break;
+
+		case KEY_F(5):    /* переключение режима редактирования */
+			mode = ! mode;
+			break;
+
+		case ctrl('A'):   /* перерисовка экрана */
+			RedrawScreen(); break;
+
+		case '\n': case '\r':
+			waddch( w, '\n' );
+			break;
+
+		default:          /* добавление символа в окно */
+			if( c >= 0400 ){
+				beep();     /* гудок */
+				break;      /* функц. кнопка - не буква */
+			}
+			if( mode ){
+				winsch( w, ' ' );  /* раздвинь строку */
+			}
+			waddch( w, c );     /* выдать символ в окно */
+			break;
+		}
+	}
+out:
+	wrefresh( w ); wsave(w);
+bad:
+	die(0); /* вызов без возврата */
+}
+
+/* Сохранить содержимое окна в файл, обрезая концевые пробелы */
+wsave(w) WINDOW *w;
+{
+	FILE *fp = fopen("win.out", "w");
+	register int x,y, lastnospace; int xs, ys;
+
+	getyx(w, ys, xs);
+	for( y=0; y < wlines(w); y++ ){
+		/* поиск последнего непробела */
+		for( lastnospace = (-1), x=0; x < wcols(w); x++ )
+			/* читаем символ из координат (x,y) окна */
+			if((mvwinch(w,y,x) & A_CHARTEXT) != ' ' )
+				    lastnospace = x;
+		/* запись в файл */
+		for( x=0 ; x <= lastnospace; x++ ){
+			wmove(w,y,x);
+			putc( winch(w) & A_CHARTEXT, fp );
+		}
+		putc( '\n', fp );
+	}
+	fclose(fp);
+	wmove(w, ys, xs ); /* вернуть курсор на прежнее место */
+}
+
+/* На самом деле
+ * winch(w) = wtext(w)[ wcury(w) ][ wcurx(w) ];
+ * Предложим еще один, более быстрый способ чтения памяти окна
+ * (для ЗАПИСИ в окно он непригоден, т.к.  curses еще
+ * специальным образом помечает ИЗМЕНЕННЫЕ области окон).
+ */
+/* Найти начало и конец строки */
+int wbegend(w, xbeg, xend) WINDOW *w; int *xbeg, *xend;
+{
+/* Тип chtype: 0xFF - код символа; 0xFF00 - атрибуты */
+	chtype ch, *thisline = wtext(w)[ wcury(w) ];
+	register x, notset = TRUE;
+
+	*xbeg = *xend = 0;
+	for(x=0; x < wcols(w); x++)
+		/* & A_CHARTEXT игнорирует атрибуты символа */
+		if(((ch=thisline[x]) & A_CHARTEXT) != ' '){
+			if((*xend = x+1) >= wcols(w))
+			    *xend = wcols(w) - 1;
+			if(notset){ notset = FALSE; *xbeg=x; }
+		}
+	return (*xend - *xbeg);
+}

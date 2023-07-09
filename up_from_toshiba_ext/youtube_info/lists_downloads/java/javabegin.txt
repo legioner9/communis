@@ -1,0 +1,58 @@
+
+## Основы работы с базой данных PostgreSQL (2021)
+https://www.youtube.com/playlist?list=PL8X2nqRlWfaZRM65hqNbm-HYUAK9J7uOi
+## Hibernate
+https://www.youtube.com/playlist?list=PL8X2nqRlWfabN7rXPD7KDfXd8jFhAmkTL
+## Веб сервисы в Java (SOAP, XML, WSDL) - архив
+https://www.youtube.com/playlist?list=PL8X2nqRlWfaYA4kptglUg72TFAzbn1ZJ0
+## Spring Boot, Spring Data - создание backend на Spring/Java
+https://www.youtube.com/playlist?list=PL8X2nqRlWfaYG3sbfnKlmG6sBWwNLNtBx
+## Spring MVC - веб проекты
+https://www.youtube.com/playlist?list=PL8X2nqRlWfaYbxWgX1OzcuD3Ewfq8EYrC
+## Spring Security - безопасность, авторизация
+https://www.youtube.com/playlist?list=PL8X2nqRlWfaYbAYJvmHP9luJOIdPTp9Lc
+## Spring Core - основы фреймворка, ядро
+https://www.youtube.com/playlist?list=PL8X2nqRlWfaYYP1-qXjdPKE7bXYkl6aL4
+## Веб сервисы в Java (SOAP, XML, WSDL) - архив
+https://www.youtube.com/playlist?list=PL8X2nqRlWfaYA4kptglUg72TFAzbn1ZJ0
+## JavaFX - создание графических приложений Java
+https://www.youtube.com/playlist?list=PL8X2nqRlWfaYInJtb9RQBSclyYvk67lsx
+## Паттерны проектирования
+https://www.youtube.com/playlist?list=PL8X2nqRlWfabIgbe5CF-h_bDDHc3CPH74
+## Коллекции в Java
+https://www.youtube.com/playlist?list=PL8X2nqRlWfab2fMfRCADxQfUUPyaAe842
+## Синтаксис Java
+https://www.youtube.com/playlist?list=PL8X2nqRlWfaYPXOltJATRT-MbGCKkiO1j
+## Java ООП, профессиональные основы (архив)
+https://www.youtube.com/playlist?list=PL8X2nqRlWfablTdl21xZtC-vGXC7I4xKH
+## Angular на практике - создание проекта Todo с нуля (+ Git)
+https://www.youtube.com/playlist?list=PL8X2nqRlWfaY09TihXp27wN7HayRB1rC9
+## Java и базы данных
+https://www.youtube.com/playlist?list=PL7C477ED876413783
+## Angular + Spring/Java (2022)
+https://www.youtube.com/playlist?list=PL8X2nqRlWfab3tBneu2qCvLgfTVqUqZhW
+## Получение Access Token из OAuth2 в Frontend (HTML/JS) + KeyCloak
+https://www.youtube.com/playlist?list=PL8X2nqRlWfaaL8LXo5HlwDwbhKRQVDiEI
+## Примеры OAuth2 и сервер KeyCloak (2022)
+https://www.youtube.com/playlist?list=PL8X2nqRlWfaZbGSfSCnNyQ7g5VW3irLjX
+## Микросервисы на Spring Cloud (2022)
+https://www.youtube.com/playlist?list=PL8X2nqRlWfaZcyrJrsrWmQ17vtagWKv3f
+## Spring направления (2021)
+https://www.youtube.com/playlist?list=PL8X2nqRlWfaYk6Q9VRRslA6B82_B9Cp6G
+## Создание и применение SSL в SpringBoot (2021)
+https://www.youtube.com/playlist?list=PL8X2nqRlWfaZLUwOoAI9iRlj3NqclE-X_
+## Основы Git для новичков (2021)
+https://www.youtube.com/playlist?list=PL8X2nqRlWfab4cebpPc3ENb5UBQDxcM0H
+## Основы Java с нуля + задачи (2021)
+https://www.youtube.com/playlist?list=PL8X2nqRlWfab435eNe6KwRomIbTW5W0Zl
+## Вебинары
+https://www.youtube.com/playlist?list=PL8X2nqRlWfabozZsTPhSXNoBajF5BbTaM
+## Angular+Java/SpringBoot
+https://www.youtube.com/playlist?list=PL8X2nqRlWfaZngkjmrwEMSTqE4wTB6z-t
+## Spring Boot, Spring Data - создание backend на Spring/Java
+https://www.youtube.com/playlist?list=PL8X2nqRlWfaYG3sbfnKlmG6sBWwNLNtBx
+## Создание веб проекта "Онлайн библиотека" на JavaEE/JSP/MySQL
+https://www.youtube.com/playlist?list=PL8X2nqRlWfaY39D1opJEw3Mir9FYnzxJW
+## Основы Hibernate + Java/MySQL (архив)
+https://www.youtube.com/playlist?list=PL8X2nqRlWfabWFN81Zi4vl30cZsdyxt6e
+## 

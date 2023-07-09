@@ -1,0 +1,7 @@
+## 
+
+$1 list dir for search
+$2 ext for search
+
+[f2e file_for_echo] echo line from file
+[drp2e dir_for_search ext_file] echo full path for each file

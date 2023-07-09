@@ -1,0 +1,378 @@
+### UP
+[stpcpy](##stpcpy)
+[MAIN](##MAIN)
+[MAIN_ru](##MAIN_ru)
+[ANCORS](##ANCORS)
+[ISU](##ISU)
+[inet](##A_inet)
+[inet](##books_inet)
+[inet](##examples_inet)
+[inet](##classic_inet)
+[inet](##enters_inet)
+[inet](##issue_code_inet)
+[H_FILE](##H_FILE)
+[p_SYNOPSIS](##p_SYNOPSIS)
+[p_RETURN](##p_RETURN)
+[p_RETURN_ru](##p_RETURN_ru)
+[p_BUGS](##p_BUGS)
+[p_DESCRIPTION_ru](##p_DESCRIPTION_ru)
+[p_DESCRIPTION](##p_DESCRIPTION)
+[p_MIRRORS](##p_MIRRORS)
+[p_EXAMPLES](##p_EXAMPLES)
+[p_CODE_h](##p_CODE_h)
+[p_CODE_c](##p_CODE_c)
+[p_CODE_m](##p_CODE_m)
+[p_ERRORS](##p_ERRORS)
+[p_BOOKS](##p_BOOKS)
+[p_BOOKS_ru](##p_BOOKS_ru)
+[p_CONTENT](##p_CONTENT)
+
+[cat_hfiles](../../cat_hfiles.md)
+[cat_utils](../../cat_utils.md)
+[cat_structs](../../cat_structs.md)
+[cat_param](../../cat_params.md)
+[cat_macros](../../cat_macross.md)
+[cat_const](../../cat_consts.md)
+[cat_type](../../cat_types.md)
+[cat_any](../cat_anys.md)
+
+
+[UP](###UP)
+## MAIN
+:stpcpy:
+[next](##MAIN_ru)
+
+<<MAIN>>
+[MAIN](../../fills/stpcpy/MAIN)
+
+
+
+[UP](###UP)
+## MAIN_ru
+:stpcpy:
+[next](##ANCORS)
+
+<<MAIN_ru>>
+[MAIN_ru](../../fills/stpcpy/MAIN_ru)
+
+[UP](###UP)
+## ANCORS
+:stpcpy:
+[next](##ISU)
+
+----------------------------------------------------- 
+-------------------------------------- 
+https://ru.manpages.org/stpcpy/3
+-------------------------------------- 
+----------------------------------------------------- 
+<<ANCORS>>
+[ANCORS](../../fills/stpcpy/ANCORS)
+
+[UP](###UP)
+## ISU
+:stpcpy:
+[next](##H_FILE)
+
+<<ISU>>
+only read
+:stpcpy:
+[ISU](../../contents)
+[next](##inet)
+
+
+[UP](###UP)
+## inet
+:stpcpy:
+[next](##H_FILE)
+
+
+[UP](###UP)
+## A_inet
+[manpages.org](https://www.google.ru/search?q=stpcpy+site%3Ahttps%3A%2F%2Fmanpages.org)
+[reposcope.com_ru](https://www.google.ru/search?q=stpcpy+site%3Ahttps%3A%2F%2Freposcope.com%2Fmanpages%2Fru)
+[pubs.opengroup.org](https://www.google.com/search?q=stpcpy+https%3A%2F%2Fpubs.opengroup.org)
+[manpages.debian.org](https://yandex.ru/search/?text=stpcpy+site%3Ahttps%3A%2F%2Fmanpages.debian.org%2F)
+[www.opennet.ru](http://www.opennet.ru/man.shtml?category=2&topic=stpcpy)
+[man7.org](https://www.google.ru/search?q=stpcpy+site%3Ahttps%3A%2F%2Fman7.org%2Flinux%2Fman-pages)
+[en.cppreference.com](https://www.google.com/search?q=stpcpy+en.cppreference.com)
+[www.mankier.com](https://www.mankier.com/?q=stpcpy)
+[www.codecogs.com](https://www.google.ru/search?q=stpcpy+https%3A%2F%2Fwww.codecogs.com%2Flibrary%2Fcomputing%2F)
+[digitalmars.com](https://www.google.ru/search?q=stpcpy+https%3A%2F%2Fdigitalmars.com%2Frtl%2F)
+
+
+[UP](###UP)
+## books_inet
+[cpp.com.ru](https://yandex.ru/search/?text=stpcpy+site%3Ahttps%3A%2F%2Fcpp.com.ru)
+[linuxhint.com](https://www.google.ru/search?q=stpcpy+site%3Ahttps%3A%2F%2Flinuxhint.com)
+[gnu.org](https://www.google.ru/search?q=stpcpy+site%3Ahttps%3A%2F%2Fwww.gnu.org%2Fsoftware%2Flibc%2Fmanual)
+
+[UP](###UP)
+## examples_inet
+[yandex:examples](https://yandex.ru/search/?text=stpcpy+example+in+c)
+[docs.oracle.com](https://www.google.com/search?q=stpcpy+https%3A%2F%2Fdocs.oracle.com)
+[manpages.debian.org](https://yandex.ru/search/?text=stpcpy+site%3Ahttps%3A%2F%2Fmanpages.debian.org%2F)
+[osr507doc.xinuos.com](https://www.google.com/search?q=stpcpy+http%3A%2F%2Fosr507doc.xinuos.com%2Fen%2Fman)
+[cpp.hotexamples.com](https://cpp.hotexamples.com/examples/-/-/stpcpy/cpp-stpcpy-function-examples.html)
+[all-ht.ru](https://yandex.ru/search/?text=stpcpy+site%3Ahttp%3A%2F%2Fall-ht.ru%2Finf%2Fprog%2Fc%2F)
+[cppreference.com](https://yandex.ru/search/?text=stpcpy+site%3Ahttps%3A%2F%2Fen.cppreference.com%2Fw%2Fc%2F)
+
+[UP](###UP)
+## classic_inet
+[bogatyrev_c_unix](https://www.google.com/search?q=stpcpy+site%3Ahttps%3A%2F%2Fcpp.com.ru%2Fbogatyrev_c_unix)
+[kr_cbook](https://www.google.com/search?q=stpcpy+site%3Ahttps%3A%2F%2Fcpp.com.ru%2Fkr_cbook)
+
+[UP](###UP)
+## enters_inet
+[pubs.opengroup.org](https://pubs.opengroup.org/onlinepubs/9699919799/idx/head.html)
+
+[UP](###UP)
+## issue_code_inet
+[code.woboq.org](https://www.google.com/search?h=&sitesearch=https%3A%2F%2Fcode.woboq.org%2Fuserspace%2Fglibc%2F&q=stpcpy)
+
+
+[UP](###UP)
+## H_FILE 
+[string_h.md](../../hfiles/string_h.md)
+
+
+[UP](###UP)
+## p_SYNOPSIS
+:stpcpy:
+[next](##p_RETURN_ru)
+
+----------------------------------------------------- 
+-------------------------------------- 
+#include <strings.h>
+int strcasecmp(const char *s1, const char *s2);
+Сравнение строк s1 и s2 без учета регистра.
+int strncasecmp(const char *s1, const char *s2, size_t n);
+Сравнивает первые n символов строк s1 и s2 без учета регистра.
+char *index(const char *s, int c);
+Возвращает указатель на местонахождение первого совпадения с символом c в строке s.
+char *rindex(const char *s, int c);
+Возвращает указатель на местонахождение последнего совпадения с символом c в строке s.
+#include <string.h>
+char *stpcpy(char *dest, const char *src);
+Копирует строку из src в dest, возвращая указатель на конец строки результата в dest.
+char *strcat(char *dest, const char *src);
+Добавляет строку src к строке dest, возвращая указатель на dest.
+char *strchr(const char *s, int c);
+Возвращает указатель на местонахождение первого совпадения с символом c в строке s.
+int strcmp(const char *s1, const char *s2);
+Сравнивает строки s1 и s2.
+int strcoll(const char *s1, const char *s2);
+Сравнивает строки s1 и s2, применяя правила текущей локали.
+char *strcpy(char *dest, const char *src);
+Копирует строку src в dest, возвращая указатель на начало строки в dest.
+size_t strcspn(const char *s, const char *reject);
+Вычисляет длину начального сегмента строки s, состоящего только из байт, не указанных в строке reject,
+char *strdup(const char *s);
+Возвращает копию строки s, память для которой выделяется с помощью malloc(3).
+char *strfry(char *string);
+Переставляет символы в string в произвольном порядке.
+size_t strlen(const char *s);
+Возвращает длину строки s.
+char *strncat(char *dest, const char *src, size_t n);
+Добавляет не более n символов из строки src в строку dest, возвращая указатель на dest.
+int strncmp(const char *s1, const char *s2, size_t n);
+Сравнивает не более n байт строк s1 и s2.
+char *strncpy(char *dest, const char *src, size_t n);
+Копирует не более n байт из строки src в строку dest, возвращая указатель на dest.
+char *strpbrk(const char *s, const char *accept);
+Возвращает первое появление в строке s любых байтов из строки accept.
+char *strrchr(const char *s, int c);
+Возвращает указатель на местонахождение последнего совпадения с символом c в строке s.
+char *strsep(char **stringp, const char *delim);
+Извлекает начальный токен из stringp, который отделён одним из байтов из delim.
+size_t strspn(const char *s, const char *accept);
+Вычисляет длину начального сегмента из строки s, состоящего только из байт, указанных в accept.
+char *strstr(const char *haystack, const char *needle);
+Ищет первое соответствие подстроки needle в строке haystack и возвращает указатель на найденную подстроку.
+char *strtok(char *s, const char *delim);
+Извлекает токены из строки s, которые отделены одним из байтов из delim.
+size_t strxfrm(char *dest, const char *src, size_t n);
+Преобразует src в текущую локаль и копирует первые n символов в dest.
+-------------------------------------- 
+----------------------------------------------------- 
+<<SYNOPSIS>>
+[SYNOPSIS](../../fills/stpcpy/SYNOPSIS)
+
+
+[UP](###UP)
+## p_RETURN_ru
+:stpcpy:
+[next](##p_RETURN)
+
+----------------------------------------------------- 
+-------------------------------------- 
+The stpcpy() function shall return a pointer to the terminating NUL character copied into the s1 buffer. [Option End]
+The strcpy() function shall return s1.
+No return values are reserved to indicate an error.
+-------------------------------------- 
+----------------------------------------------------- 
+<<RETURN>>
+[RETURN_ru](../../fills/stpcpy/RETURN)
+
+
+[UP](###UP)
+## p_RETURN
+:stpcpy:
+[next](##p_DESCRIPTION_ru)
+
+<<RETURN_ru>>
+[RETURN](../../fills/stpcpy/RETURN_ru)
+
+
+[UP](###UP)
+## p_DESCRIPTION_ru
+:stpcpy:
+[next](##p_DESCRIPTION)
+
+<<DESCRIPTION_ru>>
+[DESCRIPTION_ru](../../fills/stpcpy/DESCRIPTION_ru)
+
+
+[UP](###UP)
+## p_DESCRIPTION
+:stpcpy:
+[next](##p_BUGS)
+
+----------------------------------------------------- 
+-------------------------------------- 
+The [CX] [Option Start] stpcpy() [Option End]  and strcpy() functions shall copy the string pointed to by s2 (including the terminating NUL character) into the array pointed to by s1.
+If copying takes place between objects that overlap, the behavior is undefined.
+-------------------------------------- 
+----------------------------------------------------- 
+<<DESCRIPTION>>
+[DESCRIPTION](../../fills/stpcpy/DESCRIPTION)
+
+
+[UP](###UP)
+## p_MIRRORS
+:stpcpy:
+[next](##p_BUGS)
+
+<<MIRRORS>>
+[MIRRORS](../../fills/stpcpy/MIRRORS)
+
+
+[UP](###UP)
+## p_BUGS
+:stpcpy:
+[next](##p_EXAMPLES)
+
+<<BUGS>>
+[BUGS](../../fills/stpcpy/BUGS)
+
+
+[UP](###UP)
+## p_EXAMPLES
+:stpcpy:
+[next](##p_CODE)
+
+----------------------------------------------------- 
+-------------------------------------- 
+#include <string.h>
+#include <stdio.h>
+int
+main (void)
+{
+char buffer [10];
+char *name = buffer;
+name = stpcpy (stpcpy (stpcpy (name, "ice"),"-"), "cream");
+puts (buffer);
+return 0;
+}
+В следующем примере выделяется место для ключа с помощью malloc(), а затем используется strcpy() для размещения там ключа. Затем он выделяет пространство для данных с помощью malloc() и использует strcpy() для размещения там данных. (Определяемая пользователем функция dbfree() освобождает память, ранее выделенную для массива типа struct element *.)
+#include <string.h>
+#include <stdlib.h>
+#include <stdio.h>
+...
+/* Structure used to read data and store it. */
+struct element {
+char *key;
+char *data;
+};
+struct element *tbl, *curtbl;
+char *key, *data;
+int count;
+...
+void dbfree(struct element *, int);
+...
+if ((curtbl->key = malloc(strlen(key) + 1)) == NULL) {
+perror("malloc"); dbfree(tbl, count); return NULL;
+}
+strcpy(curtbl->key, key);
+if ((curtbl->data = malloc(strlen(data) + 1)) == NULL) {
+perror("malloc"); free(curtbl->key); dbfree(tbl, count); return NULL;
+}
+strcpy(curtbl->data, data);
+...
+-------------------------------------- 
+----------------------------------------------------- 
+<<EXAMPLES>>
+[EXAMPLES](../../fills/stpcpy/EXAMPLES)
+
+
+[UP](###UP)
+## p_CODE_h
+:stpcpy:
+[next](##p_CODE_c)
+
+<<CODE_h>>
+[CODE_h](../../fills/stpcpy/CODE_h)
+
+
+[UP](###UP)
+## p_CODE_c
+:stpcpy:
+[next](##p_CODE_m)
+
+<<CODE_c>>
+[CODE_c](../../fills/stpcpy/CODE_c)
+
+
+[UP](###UP)
+## p_CODE_m
+:stpcpy:
+[next](##p_ERRORS)
+
+<<CODE_m>>
+[CODE_m](../../fills/stpcpy/CODE_m)
+
+
+[UP](###UP)
+## p_ERRORS
+:stpcpy:
+[next](##p_BOOKS)
+
+<<ERRORS>>
+[ERRORS](../../fills/stpcpy/ERRORS)
+
+
+[UP](###UP)
+## p_BOOKS
+:stpcpy:
+[next](##p_BOOKS_ru)
+
+<<BOOKS>>
+[BOOKS](../../fills/stpcpy/BOOKS)
+
+
+[UP](###UP)
+## p_BOOKS_ru
+:stpcpy:
+[next](##p_CONTENT)
+
+
+<<BOOKS_ru>>
+[BOOKS_ru](../../fills/stpcpy/BOOKS_ru)
+
+
+[UP](###UP)
+## p_CONTENT
+:33333:
+[33333.cnt](../../contents/33333.cnt)
+[next](##UP)
+
+[UP](###UP)

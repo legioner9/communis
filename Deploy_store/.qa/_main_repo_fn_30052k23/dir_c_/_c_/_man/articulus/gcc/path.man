@@ -1,0 +1,17 @@
+по словам gcc-документация основная задача include <> is, на "нормальной системе Unix", следующим образом:
+
+ /usr/local/include
+ libdir/gcc/target/version/include
+ /usr/target/include
+ /usr/include
+
+ -I - где искать заголовочные файлы (большая "i")
+-L - где искать библиотеки
+-l - какие библиотеки линковать (маленькая "L")
+
+-I/usr/local/Trolltech/Qt-4.8.4/include -L/usr/local/Trolltech/Qt-4.8.4/lib -lQtCore -lQtGui
+
+If you want to compile an old C program that used UNIX `dbm' or
+`ndbm' and want to use `gdbm' files, execute the following `cc' command:
+
+     cc ... -L/usr/local/lib -lgdbm -lgdbm_compat

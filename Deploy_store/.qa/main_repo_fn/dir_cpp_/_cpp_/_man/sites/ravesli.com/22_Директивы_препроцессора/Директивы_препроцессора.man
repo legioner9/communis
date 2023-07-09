@@ -1,0 +1,4 @@
+## Директивы препроцессора
+
+## https://ravesli.com/urok-22-preprotsessor-direktivy/
+

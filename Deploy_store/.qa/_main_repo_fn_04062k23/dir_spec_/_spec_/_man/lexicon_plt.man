@@ -1,0 +1,5 @@
+# lexicon plt
+
+mane_fn - mane format create, docs, ... function CreateScript f_f_
+for_fn - format to use inside mane_fn function CreateScript point in magic_menu
+in_fn - free format for define in body mane_fn

@@ -1,0 +1,296 @@
+{
+  "workbench.startupEditor": "newUntitledFile",
+  "files.autoSave": "afterDelay",
+  "editor.fontFamily": "'Victor Mono','PT Sans+','FreeSans+','Pragmata Pro Mono Regular',Consolas,'Courier New'",
+  "editor.minimap.enabled": false,
+  // "editor.lineNumbers": "off",
+  "colorful-comments.tags": [
+    {
+      "tag": "!",
+      "color": "#FF2D00",
+      "strikethrough": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "?",
+      "color": "#0076FF",
+      "strikethrough": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "//",
+      "color": "#474747",
+      "strikethrough": true,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "^",
+      "color": "#EAF622",
+      "strikethrough": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "*",
+      "color": "#28FF00",
+      "strikethrough": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "&",
+      "color": "#FF06A0",
+      "strikethrough": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "~",
+      "color": "#BE00FF",
+      "strikethrough": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "todo",
+      "color": "#FF8C00",
+      "strikethrough": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    }
+  ],
+  "kite.showWelcomeNotificationOnStartup": false,
+  "terminal.external.windowsExec": "\"C:\\Program Files\\Git\\bin\\sh.exe\" --login -i",
+  "settingsSync.ignoredSettings": [],
+  "workbench.settings.useSplitJSON": true,
+  "breadcrumbs.enabled": true,
+  "projectManager.openInNewWindowWhenClickingInStatusBar": true,
+  "idl.dontAskForIdlDir": true,
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter.notebook.ipynb"
+  },
+  "files.eol": "\n",
+  "files.exclude": {
+    "!**/.git": false,
+    "**/.git": false,
+    "**/.classpath": false,
+    "**/.project": false,
+    "**/.settings": false,
+    "**/.factorypath": false
+  },
+  "workbench.editor.untitled.hint": "hidden",
+  "terminal.integrated.profiles.linux": {
+    "bash": {
+      "path": "bash",
+      "icon": "terminal-bash"
+    },
+    "zsh": {
+      "path": "zsh"
+    },
+    "fish": {
+      "path": "fish"
+    },
+    "tmux": {
+      "path": "tmux",
+      "icon": "terminal-tmux"
+    },
+    "pwsh": {
+      "path": "pwsh",
+      "icon": "terminal-powershell"
+    },
+    "sh": {
+      "path": "/bin/sh"
+    }
+  },
+  "terminal.integrated.defaultProfile.linux": "bash",
+  "[shellscript]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
+  "terminal.integrated.profiles.windows": {
+    "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe (migrated)": {
+      "path": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+      "args": []
+    }
+  },
+  "window.restoreWindows": "all",
+  "code-runner.executorMap": {
+    "sh": ". ./",
+    "javascript": "node",
+    "php": "C:\\php\\php.exe",
+    "python": "python",
+    "perl": "perl",
+    "ruby": "C:\\Ruby23-x64\\bin\\ruby.exe",
+    "go": "go run",
+    "html": "\"C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe\"",
+    "java": "cd $dir && javac $fileName && java $fileNameWithoutExt",
+    "c": "cd $dir && gcc $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt"
+  },
+  "code-runner.executorMapByGlob": {
+    "pom.xml": "cd $dir && mvn clean package",
+    "*.test.js": "tap",
+    "*.js": "node",
+    "*.sh": ". ./",
+  },
+  "workbench.iconTheme": "eq-material-theme-icons-palenight",
+  "files.associations": {
+    "*.man": "markdown",
+    "res": "plaintext",
+    "pre": "plaintext",
+    "*.word": "markdown",
+    "*._c": "c",
+    "*.anc": "markdown",
+    "*.lnf": "markdown",
+    "*._tst": "shellscript",
+    "*.tst": "shellscript",
+    "*.tsd": "shellscript",
+    "*.exl": "shellscript",
+    "*.list": "markdown",
+    "*.inserter": "shellscript",
+    "*.var": "shellscript",
+    "*.insert": "shellscript",
+    "res~": "plaintext",
+    "*.ish": "powershell",
+    "*.cir": "shellscript",
+    "*.pot": "shellscript",
+    "*.nid": "shellscript"
+  },
+  "C_Cpp.updateChannel": "Insiders",
+  "[cpp]": {
+    "editor.defaultFormatter": "ms-vscode.cpptools"
+  },
+  "security.workspace.trust.untrustedFiles": "open",
+  "hexeditor.columnWidth": 16,
+  "hexeditor.showDecodedText": true,
+  "hexeditor.defaultEndianness": "little",
+  "hexeditor.inspectorType": "aside",
+  // https://marketplace.visualstudio.com/items?itemName=wayou.vscode-todo-highlight
+  "todohighlight.isEnable": false,
+  "todohighlight.isCaseSensitive": true,
+  "todohighlight.keywords": [
+    "DEBUG:",
+    "REVIEW:",
+    {
+      "text": "NOTE:",
+      "color": "#ff0000",
+      "backgroundColor": "yellow",
+      "overviewRulerColor": "grey"
+    },
+    {
+      "text": "@@@:",
+      "color": "#000",
+      "isWholeLine": false,
+    },
+    {
+      "text": "HACK:",
+      "color": "#000",
+      "isWholeLine": false,
+    },
+    {
+      "text": "TODO:",
+      "color": "red",
+      "border": "1px solid red",
+      "borderRadius": "2px", //NOTE: using borderRadius along with `border` or you will see nothing change
+      // "backgroundColor": "rgba(0,0,0,.2)",
+      //other styling properties goes here ... 
+    }
+  ],
+  "todohighlight.keywordsPattern": "NOTE:|@@@:|HACK:|TODO:|FIXME:|TODO:|\\(([^)]+)\\)", //highlight `TODO:`,`FIXME:` or content between parentheses
+  // "todohighlight.defaultStyle": {
+  //     "color": "red",
+  //     // "backgroundColor": "#ffab00",
+  //     "overviewRulerColor": "#ffab00",
+  //     "cursor": "pointer",
+  //     // "border": "1px solid #eee",
+  //     "border": "1px solid #ffab00",
+  //     "borderRadius": "2px",
+  //     "isWholeLine": true,
+  //     //other styling properties goes here ... 
+  // },
+  "todohighlight.include": [
+    "**/*.md",
+    "**/*.man",
+    "**/*.c",
+    "**/*.cpp"
+  ],
+  "todohighlight.exclude": [
+    "**/node_modules/**",
+    "**/bower_components/**",
+    "**/dist/**",
+    "**/build/**",
+    "**/.vscode/**",
+    "**/.github/**",
+    "**/_output/**",
+    "**/*.min.*",
+    "**/*.map",
+    "**/.next/**"
+  ],
+  "todohighlight.maxFilesForSearch": 5120,
+  "todohighlight.toggleURI": false,
+  "markdown.styles": [
+    "a_styles.css"
+  ],
+  "C_Cpp.intelliSenseEngine": "Disabled",
+  "vscodeGoogleTranslate.preferredLanguage": "Russian",
+  "wrapSelection.patterns": {
+  
+  },
+"terminal.integrated.fontFamily": "'Victor Mono','PT Sans+','FreeSans+','M plus 1 code regular','M+ 1mn regular','Pragmata Pro Mono Regular',monospace",
+"window.zoomLevel": -1,
+"workbench.editor.revealIfOpen": true,
+"workbench.colorTheme": "bashling",
+"clangd.path": "/home/st/.config/VSCodium/User/globalStorage/llvm-vs-code-extensions.vscode-clangd/install/15.0.3/clangd_15.0.3/bin/clangd",
+"[java]": {
+  "editor.defaultFormatter": "redhat.java"
+},
+  // "C_Cpp.clang_format_style": {BasedOnStyle: Google, 
+  //   IndentWidth: 4, 
+  //   IndentCaseLabels: false, 
+  //   TabWidth: 4, UseTab: ForIndentation, 
+  //   ColumnLimit: 0
+  // },
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "all",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "git.openRepositoryInParentFolders": "never",
+  "[markdown]": {
+    "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  // "files.watcherExclude": {
+  //   "**/.git/objects/**": true,
+  //   "**/.git/subtree-cache/**": true,
+  //   "**/node_modules/*/**": true
+  // },
+  "files.watcherExclude": {
+    "**/**": true,
+  },
+  "editor.fontLigatures": "'ss01'",
+  "extensionsGallery": {
+    "serviceUrl": "https://marketplace.visualstudio.com/_apis/public/gallery ",
+    "cacheUrl": "https://vscode.blob.core.windows.net/gallery/index ",
+    "itemUrl": "https://marketplace.visualstudio.com/items ",
+    "controlUrl": "",
+    "recommendationsUrl": ""
+}
+}

@@ -1,0 +1,5 @@
+# plt nod_.var
+eval echo ${arg_arr[@]}
+eval ni="node inspect ${arg_arr[@]}"
+eval std="standard --fix ${arg_arr[@]}"
+eval std_ni="standard --fix ${arg_arr[@]}; node inspect ${arg_arr[@]}"

@@ -1,0 +1,8 @@
+[user]
+	email = legioner9@inbox.ru
+	name = [fed_92]legioner9
+[core]
+	editor = gvim -v
+[safe]
+	directory = ${COMMUNIS_PATH}
+	directory = ${COMMUNIS_PATH}

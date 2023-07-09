@@ -1,0 +1,26 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+[remote "origin"]
+	url = git@github.com:legioner9/communis.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "master"]
+	remote = origin
+	merge = refs/heads/master
+[remote "GITHUB_LEGIONER9_communis"]
+	url = git@github.com:legioner9/communis.git
+	fetch = +refs/heads/*:refs/remotes/GITHUB_LEGIONER9_communis/*
+[remote "MY_ONE_REPOBARE_BARE_communis"]
+	url = /run/media/st/MY_ONE/REPOBARE/_bare/communis
+	fetch = +refs/heads/*:refs/remotes/MY_ONE_REPOBARE_BARE_communis/*
+[remote "TOSHIBA_EXT_REPOBARE_BARE_communis"]
+	url = /run/media/st/TOSHIBA_EXT/REPOBARE/_bare/communis
+	fetch = +refs/heads/*:refs/remotes/TOSHIBA_EXT_REPOBARE_BARE_communis/*
+[remote "TOSH_REPOBARE_BARE_communis"]
+	url = /run/media/st/TOSH/REPOBARE/_bare/communis
+	fetch = +refs/heads/*:refs/remotes/TOSH_REPOBARE_BARE_communis/*
+[remote "HOME_REPOBARE_BARE_communis"]
+	url = /home/st/REPOBARE/_bare/communis
+	fetch = +refs/heads/*:refs/remotes/HOME_REPOBARE_BARE_communis/*

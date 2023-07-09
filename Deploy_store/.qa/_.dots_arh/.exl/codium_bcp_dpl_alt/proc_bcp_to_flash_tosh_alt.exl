@@ -1,0 +1,5 @@
+#>exl
+exl_pause "___ Full process bcp from sys alt to TOSH, do it? ___ CNTL-C to exit, ENTR to continue"
+
+eval exl_ --list "${PATH_EXL_DIR}/codium_bcp_dpl_alt/zip_inplace.exl"
+eval exl_ --list "${PATH_EXL_DIR}/codium_bcp_dpl_alt/cp_zip_to_tosh_alt.exl"

@@ -1,0 +1,202 @@
+[0;36m--- ret2e() wrp2_ file --_xxd /tmp --_xxd ^/etc ---[0m
+0
+[1mexec: file /tmp :end exec[0m
+/tmp: sticky, directory
+[0;36m--- ret2e() wrp2_ file --_xxd /tmp --_xxd ^/etcx ---[0m
+1
+[0;31m---  $arg_path: "/etcx" /etcx: /etcx :: not dir :: $errmes_est: fn: is_est_, with_args: /etcx -d , filename: ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_is_est_/is_est_.sh, line: 28 ---[0m
+fail: is_est_ /etcx -d
+[0;36m--- ret2e() wrp2_ file --_xxd /tmp --_xnd ^/etc ---[0m
+1
+fail: is_est_ /etc -d
+[0;36m--- ret2e() wrp2_ file --_xxd /tmp --_xnd ^/etcx ---[0m
+0
+[1mexec: file /tmp :end exec[0m
+/tmp: sticky, directory
+[0;36m--- ret2e() wrp2_ file --_xxd /tmp --_cxd ^/etc ---[0m
+0
+[1mexec: file /tmp :end exec[0m
+/tmp: sticky, directory
+[0;36m--- ret2e() wrp2_ file --_xxd /tmp --_cxd ^/etcx ---[0m
+0
+[0;36m--- ret2e() wrp2_ file --_xxd /tmp --_cnd ^/etc ---[0m
+0
+[0;36m--- ret2e() wrp2_ file --_xxd /tmp --_cnd ^/etcx ---[0m
+0
+[1mexec: file /tmp :end exec[0m
+/tmp: sticky, directory
+[0;36m--- ret2e() wrp2_ file --_xxd /tmpx --_xxd ^/etc ---[0m
+1
+[0;31m---  $arg_path: "/tmpx" /tmpx: /tmpx :: not dir :: $errmes_est: fn: is_est_, with_args: /tmpx -d , filename: ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_is_est_/is_est_.sh, line: 28 ---[0m
+fail: is_est_ /tmpx -d
+[0;36m--- ret2e() wrp2_ file --_xxd /tmpx --_xxd ^/etcx ---[0m
+1
+[0;31m---  $arg_path: "/tmpx" /tmpx: /tmpx :: not dir :: $errmes_est: fn: is_est_, with_args: /tmpx -d , filename: ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_is_est_/is_est_.sh, line: 28 ---[0m
+fail: is_est_ /tmpx -d
+[0;36m--- ret2e() wrp2_ file --_xxd /tmpx --_xnd ^/etc ---[0m
+1
+[0;31m---  $arg_path: "/tmpx" /tmpx: /tmpx :: not dir :: $errmes_est: fn: is_est_, with_args: /tmpx -d , filename: ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_is_est_/is_est_.sh, line: 28 ---[0m
+fail: is_est_ /tmpx -d
+[0;36m--- ret2e() wrp2_ file --_xxd /tmpx --_xnd ^/etcx ---[0m
+1
+[0;31m---  $arg_path: "/tmpx" /tmpx: /tmpx :: not dir :: $errmes_est: fn: is_est_, with_args: /tmpx -d , filename: ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_is_est_/is_est_.sh, line: 28 ---[0m
+fail: is_est_ /tmpx -d
+[0;36m--- ret2e() wrp2_ file --_xxd /tmpx --_cxd ^/etc ---[0m
+1
+[0;31m---  $arg_path: "/tmpx" /tmpx: /tmpx :: not dir :: $errmes_est: fn: is_est_, with_args: /tmpx -d , filename: ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_is_est_/is_est_.sh, line: 28 ---[0m
+fail: is_est_ /tmpx -d
+[0;36m--- ret2e() wrp2_ file --_xxd /tmpx --_cxd ^/etcx ---[0m
+1
+[0;31m---  $arg_path: "/tmpx" /tmpx: /tmpx :: not dir :: $errmes_est: fn: is_est_, with_args: /tmpx -d , filename: ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_is_est_/is_est_.sh, line: 28 ---[0m
+fail: is_est_ /tmpx -d
+[0;36m--- ret2e() wrp2_ file --_xxd /tmpx --_cnd ^/etc ---[0m
+1
+[0;31m---  $arg_path: "/tmpx" /tmpx: /tmpx :: not dir :: $errmes_est: fn: is_est_, with_args: /tmpx -d , filename: ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_is_est_/is_est_.sh, line: 28 ---[0m
+fail: is_est_ /tmpx -d
+[0;36m--- ret2e() wrp2_ file --_xxd /tmpx --_cnd ^/etcx ---[0m
+1
+[0;31m---  $arg_path: "/tmpx" /tmpx: /tmpx :: not dir :: $errmes_est: fn: is_est_, with_args: /tmpx -d , filename: ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_is_est_/is_est_.sh, line: 28 ---[0m
+fail: is_est_ /tmpx -d
+[0;36m--- ret2e() wrp2_ file --_xnd /tmp --_xxd ^/etc ---[0m
+1
+fail: is_est_ /tmp -d
+[0;36m--- ret2e() wrp2_ file --_xnd /tmp --_xxd ^/etcx ---[0m
+1
+fail: is_est_ /tmp -d
+[0;36m--- ret2e() wrp2_ file --_xnd /tmp --_xnd ^/etc ---[0m
+1
+fail: is_est_ /tmp -d
+[0;36m--- ret2e() wrp2_ file --_xnd /tmp --_xnd ^/etcx ---[0m
+1
+fail: is_est_ /tmp -d
+[0;36m--- ret2e() wrp2_ file --_xnd /tmp --_cxd ^/etc ---[0m
+1
+fail: is_est_ /tmp -d
+[0;36m--- ret2e() wrp2_ file --_xnd /tmp --_cxd ^/etcx ---[0m
+1
+fail: is_est_ /tmp -d
+[0;36m--- ret2e() wrp2_ file --_xnd /tmp --_cnd ^/etc ---[0m
+1
+fail: is_est_ /tmp -d
+[0;36m--- ret2e() wrp2_ file --_xnd /tmp --_cnd ^/etcx ---[0m
+1
+fail: is_est_ /tmp -d
+[0;36m--- ret2e() wrp2_ file --_xnd /tmpx --_xxd ^/etc ---[0m
+0
+[1mexec: file /tmpx :end exec[0m
+/tmpx: cannot open `/tmpx' (No such file or directory)
+[0;36m--- ret2e() wrp2_ file --_xnd /tmpx --_xxd ^/etcx ---[0m
+1
+[0;31m---  $arg_path: "/etcx" /etcx: /etcx :: not dir :: $errmes_est: fn: is_est_, with_args: /etcx -d , filename: ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_is_est_/is_est_.sh, line: 28 ---[0m
+fail: is_est_ /etcx -d
+[0;36m--- ret2e() wrp2_ file --_xnd /tmpx --_xnd ^/etc ---[0m
+1
+fail: is_est_ /etc -d
+[0;36m--- ret2e() wrp2_ file --_xnd /tmpx --_xnd ^/etcx ---[0m
+0
+[1mexec: file /tmpx :end exec[0m
+/tmpx: cannot open `/tmpx' (No such file or directory)
+[0;36m--- ret2e() wrp2_ file --_xnd /tmpx --_cxd ^/etc ---[0m
+0
+[1mexec: file /tmpx :end exec[0m
+/tmpx: cannot open `/tmpx' (No such file or directory)
+[0;36m--- ret2e() wrp2_ file --_xnd /tmpx --_cxd ^/etcx ---[0m
+0
+[0;36m--- ret2e() wrp2_ file --_xnd /tmpx --_cnd ^/etc ---[0m
+0
+[0;36m--- ret2e() wrp2_ file --_xnd /tmpx --_cnd ^/etcx ---[0m
+0
+[1mexec: file /tmpx :end exec[0m
+/tmpx: cannot open `/tmpx' (No such file or directory)
+[0;36m--- ret2e() wrp2_ file --_cxd /tmp --_xxd ^/etc ---[0m
+0
+[1mexec: file /tmp :end exec[0m
+/tmp: sticky, directory
+[0;36m--- ret2e() wrp2_ file --_cxd /tmp --_xxd ^/etcx ---[0m
+1
+[0;31m---  $arg_path: "/etcx" /etcx: /etcx :: not dir :: $errmes_est: fn: is_est_, with_args: /etcx -d , filename: ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_is_est_/is_est_.sh, line: 28 ---[0m
+fail: is_est_ /etcx -d
+[0;36m--- ret2e() wrp2_ file --_cxd /tmp --_xnd ^/etc ---[0m
+1
+fail: is_est_ /etc -d
+[0;36m--- ret2e() wrp2_ file --_cxd /tmp --_xnd ^/etcx ---[0m
+0
+[1mexec: file /tmp :end exec[0m
+/tmp: sticky, directory
+[0;36m--- ret2e() wrp2_ file --_cxd /tmp --_cxd ^/etc ---[0m
+0
+[1mexec: file /tmp :end exec[0m
+/tmp: sticky, directory
+[0;36m--- ret2e() wrp2_ file --_cxd /tmp --_cxd ^/etcx ---[0m
+0
+[0;36m--- ret2e() wrp2_ file --_cxd /tmp --_cnd ^/etc ---[0m
+0
+[0;36m--- ret2e() wrp2_ file --_cxd /tmp --_cnd ^/etcx ---[0m
+0
+[1mexec: file /tmp :end exec[0m
+/tmp: sticky, directory
+[0;36m--- ret2e() wrp2_ file --_cxd /tmpx --_xxd ^/etc ---[0m
+0
+[0;36m--- ret2e() wrp2_ file --_cxd /tmpx --_xxd ^/etcx ---[0m
+1
+[0;31m---  $arg_path: "/etcx" /etcx: /etcx :: not dir :: $errmes_est: fn: is_est_, with_args: /etcx -d , filename: ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_is_est_/is_est_.sh, line: 28 ---[0m
+fail: is_est_ /etcx -d
+[0;36m--- ret2e() wrp2_ file --_cxd /tmpx --_xnd ^/etc ---[0m
+1
+fail: is_est_ /etc -d
+[0;36m--- ret2e() wrp2_ file --_cxd /tmpx --_xnd ^/etcx ---[0m
+0
+[0;36m--- ret2e() wrp2_ file --_cxd /tmpx --_cxd ^/etc ---[0m
+0
+[0;36m--- ret2e() wrp2_ file --_cxd /tmpx --_cxd ^/etcx ---[0m
+0
+[0;36m--- ret2e() wrp2_ file --_cxd /tmpx --_cnd ^/etc ---[0m
+0
+[0;36m--- ret2e() wrp2_ file --_cxd /tmpx --_cnd ^/etcx ---[0m
+0
+[0;36m--- ret2e() wrp2_ file --_cnd /tmp --_xxd ^/etc ---[0m
+0
+[0;36m--- ret2e() wrp2_ file --_cnd /tmp --_xxd ^/etcx ---[0m
+1
+[0;31m---  $arg_path: "/etcx" /etcx: /etcx :: not dir :: $errmes_est: fn: is_est_, with_args: /etcx -d , filename: ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_is_est_/is_est_.sh, line: 28 ---[0m
+fail: is_est_ /etcx -d
+[0;36m--- ret2e() wrp2_ file --_cnd /tmp --_xnd ^/etc ---[0m
+1
+fail: is_est_ /etc -d
+[0;36m--- ret2e() wrp2_ file --_cnd /tmp --_xnd ^/etcx ---[0m
+0
+[0;36m--- ret2e() wrp2_ file --_cnd /tmp --_cxd ^/etc ---[0m
+0
+[0;36m--- ret2e() wrp2_ file --_cnd /tmp --_cxd ^/etcx ---[0m
+0
+[0;36m--- ret2e() wrp2_ file --_cnd /tmp --_cnd ^/etc ---[0m
+0
+[0;36m--- ret2e() wrp2_ file --_cnd /tmp --_cnd ^/etcx ---[0m
+0
+[0;36m--- ret2e() wrp2_ file --_cnd /tmpx --_xxd ^/etc ---[0m
+0
+[1mexec: file /tmpx :end exec[0m
+/tmpx: cannot open `/tmpx' (No such file or directory)
+[0;36m--- ret2e() wrp2_ file --_cnd /tmpx --_xxd ^/etcx ---[0m
+1
+[0;31m---  $arg_path: "/etcx" /etcx: /etcx :: not dir :: $errmes_est: fn: is_est_, with_args: /etcx -d , filename: ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_is_est_/is_est_.sh, line: 28 ---[0m
+fail: is_est_ /etcx -d
+[0;36m--- ret2e() wrp2_ file --_cnd /tmpx --_xnd ^/etc ---[0m
+1
+fail: is_est_ /etc -d
+[0;36m--- ret2e() wrp2_ file --_cnd /tmpx --_xnd ^/etcx ---[0m
+0
+[1mexec: file /tmpx :end exec[0m
+/tmpx: cannot open `/tmpx' (No such file or directory)
+[0;36m--- ret2e() wrp2_ file --_cnd /tmpx --_cxd ^/etc ---[0m
+0
+[1mexec: file /tmpx :end exec[0m
+/tmpx: cannot open `/tmpx' (No such file or directory)
+[0;36m--- ret2e() wrp2_ file --_cnd /tmpx --_cxd ^/etcx ---[0m
+0
+[0;36m--- ret2e() wrp2_ file --_cnd /tmpx --_cnd ^/etc ---[0m
+0
+[0;36m--- ret2e() wrp2_ file --_cnd /tmpx --_cnd ^/etcx ---[0m
+0
+[1mexec: file /tmpx :end exec[0m
+/tmpx: cannot open `/tmpx' (No such file or directory)

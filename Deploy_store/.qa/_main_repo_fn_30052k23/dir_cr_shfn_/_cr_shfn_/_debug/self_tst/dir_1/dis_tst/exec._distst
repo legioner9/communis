@@ -1,0 +1,35 @@
+#!/bin/bash
+
+#. "$HOME/.bashrc"
+
+filename="${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_cr_shfn_/_cr_shfn_/_debug/self_tst/dir_1/dis_tst/exec._distst" 
+
+# echo -e "${HLIGHT}---start file://$filename ---${NORMAL}" # start file
+
+idir=$(pwd)
+
+# cd "$(prs_f -d $filename)" || qq_exit "$(prs_f -d filename) not found"
+
+dir=$(prs_f -d "$filename")
+cd "$dir" || qq_exit
+. "$dir"/_flow_tst.sh &>/dev/null
+# . "$dir"/_flow_tst.sh &>res
+
+# cd "$dir"/use/ || qq_exit
+
+# ./main.bexe &>res
+
+flag=1
+if ! diff -q "$dir/pre" "$dir/res" >/dev/null; then
+    flag=0
+fi
+
+if [ 0 -eq "$flag" ]; then
+    echo "ANY in $dir fail" >&2
+else
+    echo "ALL in $dir true"
+fi
+
+cd "$idir"
+
+unset filename

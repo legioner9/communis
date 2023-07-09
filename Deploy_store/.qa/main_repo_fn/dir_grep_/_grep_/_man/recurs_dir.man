@@ -1,0 +1,35 @@
+# https://debian.pro/29
+
+# Рекурсивный поиск фразы по всем текстовым файлам в каталоге
+Если вкратце, то:
+grep -rn word /directory
+
+Теперь подробнее. Что такое grep, вы, скорее всего, уже знаете. Эта утилита используется как фильтр вывода текстовой информации в консоли.
+
+-r — grep обойдёт каталог рекурсивно
+
+-n — grep выведет номер строки в результатах
+
+word — указываем слово, которое ищем
+
+/directory — указываем директорию. Например /home/$user/docs
+
+Несколько примеров.
+
+inky@support68:~$ grep -rn word /home/inky/docs/
+/home/inky/docs/doc1.txt:11:some word here
+В 11й строке файла /home/inky/docs/doc1.txt содержится слово word (после 11: выводится сама строка)
+
+inky@support68:~$ grep -rn «few words» /home/inky/docs/
+/home/inky/docs/doc1.txt:19:few words here
+В 19й строке файла нашлось словосочетание few words.
+
+Ну и пример с egrep:
+inky@support68:~$ egrep -rn ‘(word1|word2|word3)’ /home/inky/docs/
+/home/inky/docs/doc1.txt:20:word1
+/home/inky/docs/doc1.txt:21:word2
+/home/inky/docs/doc1.txt:22:word3
+Мы искали word1 или word2 или word3. В 20й строчке нашлось word1, в 21й — word2, в 22й — word3.
+
+Использую я это в основном для поиска iframe на хостинг-серверах. Иногда полезно также найти что-либо в каталогах с большим количеством конфигурационных файлов.
+Enjoy =)

@@ -1,0 +1,235 @@
+[0;34m--- rr_ ---[0m
+[1m--- touch a ---[0m
+[1m--- touch b ---[0m
+[0;32m$exestr = cp__ a b -f1 -f2[0m
+f1_cp__=1
+f2_cp__=1
+[0;34m--- cp a b ---[0m
+a
+b
+d1
+d2
+dat
+exec.tst
+_flow_tst.sh
+pre
+res
+[0;32m$exestr = cp__ a b -e1 -e2[0m
+e1_cp__=1
+e2_cp__=1
+[0;34m--- cp a b ---[0m
+a
+b
+d1
+d2
+dat
+exec.tst
+_flow_tst.sh
+pre
+res
+[1m--- rm a ---[0m
+b
+d1
+d2
+dat
+exec.tst
+_flow_tst.sh
+pre
+res
+[0;32m$exestr = cp__ a b -nf1 -f2[0m
+nf1_cp__=1
+f2_cp__=1
+[0;34m--- cp a b ---[0m
+cp: не удалось выполнить stat для 'a': Нет такого файла или каталога
+b
+d1
+d2
+dat
+exec.tst
+_flow_tst.sh
+pre
+res
+[0;32m$exestr = cp__ a b -ne1 -e2[0m
+ne1_cp__=1
+e2_cp__=1
+[0;34m--- cp a b ---[0m
+cp: не удалось выполнить stat для 'a': Нет такого файла или каталога
+b
+d1
+d2
+dat
+exec.tst
+_flow_tst.sh
+pre
+res
+[1m--- touch a ---[0m
+[1m--- rm b ---[0m
+a
+d1
+d2
+dat
+exec.tst
+_flow_tst.sh
+pre
+res
+[0;32m$exestr = cp__ a b -f1 -nf2[0m
+f1_cp__=1
+nf2_cp__=1
+[0;34m--- cp a b ---[0m
+a
+b
+d1
+d2
+dat
+exec.tst
+_flow_tst.sh
+pre
+res
+[1m--- touch a ---[0m
+[1m--- rm b ---[0m
+a
+d1
+d2
+dat
+exec.tst
+_flow_tst.sh
+pre
+res
+[0;32m$exestr = cp__ a b -e1 -ne2[0m
+e1_cp__=1
+ne2_cp__=1
+[0;34m--- cp a b ---[0m
+a
+b
+d1
+d2
+dat
+exec.tst
+_flow_tst.sh
+pre
+res
+[1m--- mkdir d1 ---[0m
+[1m--- mkdir d2 ---[0m
+a
+b
+d1
+d2
+dat
+exec.tst
+_flow_tst.sh
+pre
+res
+[0;32m$exestr = cp__ -r d1/ d2/ -d1 -d2[0m
+r_cp__=1
+d1_cp__=1
+d2_cp__=1
+[0;34m--- cp -r d1/ d2/ ---[0m
+a
+b
+d1
+d2
+dat
+exec.tst
+_flow_tst.sh
+pre
+res
+[0;32m$exestr = cp__ -r d1/ d2/ -e1 -e2[0m
+r_cp__=1
+e1_cp__=1
+e2_cp__=1
+[0;34m--- cp -r d1/ d2/ ---[0m
+a
+b
+d1
+d2
+dat
+exec.tst
+_flow_tst.sh
+pre
+res
+[1m--- rm -r d1 ---[0m
+a
+b
+d2
+dat
+exec.tst
+_flow_tst.sh
+pre
+res
+[0;32m$exestr = cp__ -r d1/ d2/ -nd1 -d2[0m
+r_cp__=1
+nd1_cp__=1
+d2_cp__=1
+[0;34m--- cp -r d1/ d2/ ---[0m
+cp: не удалось выполнить stat для 'd1/': Нет такого файла или каталога
+a
+b
+d2
+dat
+exec.tst
+_flow_tst.sh
+pre
+res
+[0;32m$exestr = cp__ -r d1/ d2/ -ne1 -e2[0m
+r_cp__=1
+ne1_cp__=1
+e2_cp__=1
+[0;34m--- cp -r d1/ d2/ ---[0m
+cp: не удалось выполнить stat для 'd1/': Нет такого файла или каталога
+a
+b
+d2
+dat
+exec.tst
+_flow_tst.sh
+pre
+res
+[1m--- mkdir d1 ---[0m
+[1m--- rm -r d2 ---[0m
+a
+b
+d1
+dat
+exec.tst
+_flow_tst.sh
+pre
+res
+[0;32m$exestr = cp__ -r d1/ d2/ -d1 -nd2[0m
+r_cp__=1
+d1_cp__=1
+nd2_cp__=1
+[0;34m--- cp -r d1/ d2/ ---[0m
+a
+b
+d1
+d2
+dat
+exec.tst
+_flow_tst.sh
+pre
+res
+[1m--- mkdir d1 ---[0m
+[1m--- rm -r d2 ---[0m
+a
+b
+d1
+dat
+exec.tst
+_flow_tst.sh
+pre
+res
+bash: -f d1/ d2/ -e1 -ne2: Нет такого файла или каталога
+[0;32m$exestr = cp__ -r d1/ d2/ -d1 -nd2[0m
+r_cp__=1
+d1_cp__=1
+nd2_cp__=1
+[0;34m--- cp -r d1/ d2/ ---[0m
+a
+b
+d1
+d2
+dat
+exec.tst
+_flow_tst.sh
+pre
+res

@@ -1,0 +1,10 @@
+p@sched_get_priority_max
+p@sched_get_priority_min
+p@sched_getparam
+p@sched_getscheduler
+p@sched_rr_get_interval
+p@sched_setparam
+p@sched_setscheduler
+p@sched_yield
+s@sched_param
+d@-lc

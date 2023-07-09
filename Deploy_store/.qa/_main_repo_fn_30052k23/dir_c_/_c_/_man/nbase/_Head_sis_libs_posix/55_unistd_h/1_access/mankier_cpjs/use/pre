@@ -1,0 +1,10 @@
+failed in file main.c at line # 63
+from access_c pathname = pre,mode = 5 errno = 13
+exit(errno) with: Permission denied
+access = -1 to file = pre_ with mode = 0
+access = 0 to file = pre with mode = 0
+access = 0 to file = pre with mode = 4
+access = 0 to file = pre with mode = 2
+access = -1 to file = pre with mode = 1
+access = 0 to file = pre with mode = 6
+access = -1 to file = pre with mode = 5

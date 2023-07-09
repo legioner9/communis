@@ -1,0 +1,321 @@
+## Общение процессов через FIFO-файл.
+
+Пример 25
+```cpp
+/* Пример использования именованных "труб" (pipes) FIFO-файлов
+ * для коммуникации независимых процессов
+ * (FIFO - first in, first out : первым пришел - первым ушел).
+ * По мотивам книги М.Дансмура и Г.Дейвиса.
+ */
+
+/* файл P_packet.h --------------------------------------------*/
+#include <sys/types.h>
+#include <sys/stat.h>   /* S_IFIFO */
+
+/* структура пакета-запроса */
+struct packet {
+	int pk_pid;     /* идентификатор процесса-отправителя */
+	int pk_blk;     /* номер блока, который надо прочитать */
+	int pk_code;    /* код запроса */
+};
+
+/* request codes (коды запросов) */
+#define RQ_READ         0       /* запрос на чтение */
+#define CONNECT         1       /* запрос на соединение */
+#define SENDPID         2       /* ответ на запрос соединения */
+#define DISCONNECT      3       /* разрыв связи */
+#define BYE             4       /* завершить сервер */
+
+/* имена FIFO-каналов связи */
+#define DNAME           "datapipe"
+#define CNAME           "ctrlpipe"
+
+/* размер блока информации */
+#define PBUFSIZE 512
+
+/* P_client.c --------------------------------------------------------- */
+/*
+ *      Процесс-клиент, посылающий запросы к серверу.
+ */
+#include <stdio.h>
+#include <signal.h>
+#include <fcntl.h>
+#include "P_packet.h"
+
+int datapipe, ctrlpipe;
+int got_sig;
+int mypid;      /* идентификатор процесса-клиента */
+int spid;       /* идентификатор процесса-сервера */
+
+/* waiting for signal */
+#define WAITSIG   while( !got_sig )
+
+void handler(nsig){
+	signal( SIGUSR1, handler );
+	got_sig ++;
+}
+
+void init(){
+	extern void die();
+
+	/* Ожидать создания каналов связи */
+	while( (datapipe = open( DNAME, O_RDONLY | O_NDELAY )) < 0 );
+	while( (ctrlpipe = open( CNAME, O_WRONLY | O_NDELAY )) < 0 );
+	mypid = getpid();       /* my process identifier */
+	printf( "Client pid=%d started\n", mypid );
+
+	signal( SIGINT,  die);
+	signal( SIGQUIT, die);
+	signal( SIGTERM, die);
+
+	handler(0);
+}
+
+int canRun = 1;
+
+void die(nsig){
+	canRun = 0;
+}
+
+/* подключиться к серверу, запросив его pid */
+connect(){
+	struct packet pk;
+
+	pk.pk_pid = mypid;
+	pk.pk_code = CONNECT;
+	pk.pk_blk = (-1);
+
+	got_sig = 0;
+	write( ctrlpipe, &pk, sizeof pk ); /* послать запрос */
+
+	/* ожидать сигнала-"толчка" */
+	WAITSIG;
+
+	/* прочитать ответ из канала данных */
+	read( datapipe, &pk, sizeof pk );
+
+	/* послать сигнал-подтверждение */
+	kill( pk.pk_pid, SIGUSR1 );
+	return pk.pk_pid;
+}
+
+void disconnect(){
+	struct packet pk;
+
+	pk.pk_pid  = mypid;
+	pk.pk_code = DISCONNECT;
+	pk.pk_blk  = (-1);
+
+	got_sig = 0;
+	write( ctrlpipe, &pk, sizeof pk );      /* send request */
+
+	/* wait for reply */
+	WAITSIG;
+
+	/* receive reply */
+	read( datapipe, &pk, sizeof pk );
+
+	/* confirm */
+	kill( pk.pk_pid, SIGUSR1 );
+
+	printf( "Disconnected.\n" );
+}
+
+request( ptr, blk, spid )
+	char *ptr;
+	int blk;
+	int spid;
+{
+	struct packet pk;
+
+	pk.pk_pid = mypid;
+	pk.pk_blk = blk;
+	pk.pk_code = RQ_READ;
+
+	got_sig = 0;
+	write( ctrlpipe, &pk, sizeof pk );
+	WAITSIG;
+	read( datapipe, ptr, PBUFSIZE );
+	kill( spid, SIGUSR1 );
+}
+
+bye(){
+	struct packet pk;
+
+	pk.pk_pid = mypid;
+	pk.pk_code = BYE;
+	pk.pk_blk = (-1);
+
+	got_sig = 0;
+	write( ctrlpipe, &pk, sizeof pk );      /* send request */
+	exit(0);
+}
+
+/* client [номер_блока] */
+main(argc, argv) char *argv[];
+{
+	int blk;
+	char buffer[ PBUFSIZE ];
+
+	setbuf( stdout, NULL ); /* make unbuffered */
+	blk = (argv[1] ? atoi( argv[1] ) : 0);
+	init();
+	spid = connect();
+	printf( "Client pid=%d connected to server pid=%d\n",
+			mypid, spid );
+
+	/* запрос блока номер -33 соответствует запросу "завершить
+	 * работу сервера"
+	 */
+	if( blk == -33 )
+		bye();
+
+	/* в цикле посылать запросы на чтение блока blk */
+	while( canRun ){
+		request( buffer, blk, spid );
+		printf( "\nBEG-------------------------------------\n" );
+		fwrite( buffer, PBUFSIZE, 1, stdout );
+		printf( "\nEND-------------------------------------\n" );
+	}
+	disconnect();   /* отключиться от сервера */
+	exit(0);
+}
+
+/* P_server.c ---------------------------------------------------------*/
+/*
+ *      Процесс-сервер, принимающий запросы и выполняющий их.
+ */
+
+#include <stdio.h>
+#include <signal.h>
+#include <fcntl.h>
+#include "P_packet.h"
+
+int datapipe, ctrlpipe, datafile, got_sig;
+char *dataname = "/etc/passwd";
+
+/* waiting for signal */
+#define WAITSIG   while( !got_sig )
+
+void handler(nsig){
+	signal( SIGUSR1, handler );     /* reset trap */
+	got_sig++;
+}
+
+/* завершение работы сервера: уничтожить каналы связи */
+void die(nsig){
+	unlink( CNAME ); unlink( DNAME ); exit(0);
+	/* Если эти файлы были открыты клиентами,
+	 * то клиенты не умрут, хотя имена файлов и будут удалены!
+	 */
+}
+
+main(){
+	struct packet pk;
+	struct packet sendpk;
+
+	/* сделать стандартный вывод небуферизованным каналом */
+	setbuf( stdout, NULL );         /* make unbuffered */
+
+	/* создать каналы связи */
+	mknod( DNAME, S_IFIFO | 0666, 0 ); /* create FIFO */
+	mknod( CNAME, S_IFIFO | 0666, 0 ); /* create FIFO */
+
+	/* по этим сигналам будет вызываться функция die() */
+	signal( SIGINT, die );
+	signal( SIGQUIT, die );
+	signal( SIGTERM, die );
+
+	/* Открыть управляющий канал связи. O_NDELAY означает,
+	 * что файл открывается для "чтения без ожидания",
+	 * т.е. если канал пуст (нет заявок), то системный вызов
+	 * read() не будет "спать", дожидаясь появления информации,
+	 * а просто вернет 0 (прочитано 0 байт).
+	 * Этот флаг применим также к чтению с терминала.
+	 */
+	ctrlpipe = open( CNAME, O_RDONLY | O_NDELAY );
+	if( ctrlpipe < 0 ){
+		printf( "Can't open %s\n", CNAME );
+		die(0);
+	}
+	datafile = open( dataname, O_RDONLY );
+	if( datafile < 0 ){
+		printf( "Can't open %s\n", dataname );
+		die(0);
+	}
+
+	/* заранее формируем пакет для ответов */
+	sendpk.pk_code = SENDPID;
+	sendpk.pk_pid = getpid();       /* server's pid */
+	sendpk.pk_blk = (-1);
+
+	printf( "Server pid=%d\n", getpid());
+
+	handler(0);
+	for(;;){
+		int n;
+		static long i = 0L;
+
+		/* active spin loop */
+		printf( "%20ld\r", i++ );
+
+		/* опрашивать канал насчет поступления запросов */
+		while((n = read( ctrlpipe, &pk, sizeof(pk))) > 0 ){
+			putchar( '\n' );
+			if( n != sizeof pk ){
+				printf( "Wrong packet size\n" );
+				continue;
+			}
+			/* обработать прочитанный запрос */
+			process( &pk, &sendpk );
+		}
+	}
+	die(0);
+}
+
+process( pkp, spkp )
+	struct packet *pkp, *spkp;
+{
+	char pbuf[ PBUFSIZE ];
+	/* Запись в FIFO-файл будет произведена только если
+	 * он уже открыт для чтения
+	 */
+	datapipe = open( DNAME, O_WRONLY | O_NDELAY );
+
+	printf( "REQUEST TYPE_%d from pid=%d blk=%d\n",
+		pkp->pk_code, pkp->pk_pid, pkp->pk_blk );
+
+	switch( pkp -> pk_code ){
+	case CONNECT:   /* ответить своим идентификатором процесса */
+		write( datapipe, spkp, sizeof( struct packet ));
+		break;
+	case RQ_READ:   /* ответить блоком информации из файла */
+		/* read block # pk_blk */
+		lseek( datafile, pkp -> pk_blk * (long)PBUFSIZE, 0 );
+		read(  datafile, pbuf, PBUFSIZE );
+		write( datapipe, pbuf, PBUFSIZE );
+		break;
+	case DISCONNECT: /* подтвердить отключение */
+		printf( "Client pid=%d finished\n", pkp -> pk_pid );
+		write ( datapipe, spkp, sizeof( struct packet ));
+		break;
+	case BYE:       /* завершиться */
+		printf( "Server terminated.\n" );
+		kill( pkp-> pk_pid, SIGKILL );
+		die(0);
+	default:
+		printf( "Unknown packet type %d\n", pkp -> pk_code );
+		break;
+	}
+	close( datapipe );
+
+	/* "подтолкнуть" отправителя сигналом */
+	got_sig = 0;
+	kill( pkp -> pk_pid , SIGUSR1 );
+
+	printf( "Waiting for reply...  " );
+	/* ждать сигнала-подтверждения от клиента */
+	WAITSIG;
+
+	printf( "server continued\n" );
+}

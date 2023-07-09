@@ -1,0 +1,24 @@
+## Основы виртуализации
+https://www.youtube.com/playlist?list=PLcDkQ2Au8aVM6hSTeiBGTXNMNBwzQyuZG
+## Основы документирования сетей. Как рисовать понятные и красивые схемы
+https://www.youtube.com/playlist?list=PLcDkQ2Au8aVPmWZ2vXcby73Tl8SA7fp97
+## LifeSkills
+https://www.youtube.com/playlist?list=PLcDkQ2Au8aVMLod7sDrr95Eh43eJyO2Bn
+## Network traffic analysis and troubleshooting
+https://www.youtube.com/playlist?list=PLcDkQ2Au8aVNXuTxX18aw5uP4MrBeg16p
+## Cisco ASA Administrator
+https://www.youtube.com/playlist?list=PLcDkQ2Au8aVN4uRzgY04GRRqaWfYi05Qq
+## Linux для начинающих
+https://www.youtube.com/playlist?list=PLcDkQ2Au8aVNMLee8b3RN1QXX0ZBZOYJV
+## Основы GNS3
+https://www.youtube.com/playlist?list=PLcDkQ2Au8aVM3fmdIYcT6wGE2moiahurw
+## Курс молодого бойца
+https://www.youtube.com/playlist?list=PLcDkQ2Au8aVNYsqGsxRQxYyQijILa94T9
+## GNS3
+https://www.youtube.com/playlist?list=PLcDkQ2Au8aVMo5NPLrLxTbrJybWvKxMw0
+## Лабораторные работы ICND1
+https://www.youtube.com/playlist?list=PLcDkQ2Au8aVNreEQcp5zga6V-E3jJadhE
+## Видео уроки Zabbix
+https://www.youtube.com/playlist?list=PLcDkQ2Au8aVMbBQNjiQlhlL003xoJxM_L
+## Избранное
+https://www.youtube.com/playlist?list=FLKdRgZWgy42YxoFcTJ30LTA

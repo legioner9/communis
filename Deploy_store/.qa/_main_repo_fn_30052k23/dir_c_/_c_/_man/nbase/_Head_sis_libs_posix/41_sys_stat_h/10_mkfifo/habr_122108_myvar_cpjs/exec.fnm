@@ -1,0 +1,1 @@
+    if (mkfifo_с(NAMEDPIPE_NAME, 0777 ,__FILE__, __LINE__, STMO_PRN, STIF_ONE, STRE_EXI)) /*#*/ // examp FIFO

@@ -1,0 +1,27 @@
+#!/bin/bash
+
+#! debag
+# . "$HOME/.bashrc"
+#!
+
+filename="{dir_fns_}/dir_{name_fn_}/{name_fn_}.sh"
+
+echo -e "${HLIGHT}--- start file: $filename with args: $@ ---${NORMAL}" # start file
+
+#e_exer "Questions? See far!" "$filename" "$LINENO"
+
+#up_lib_git
+
+{name_fn_}() {
+
+    #{def_const_reciver}
+
+    #{ctrl_args_reciver}
+
+    #{init_body_reciver}
+
+}
+
+# {name_fn_} @
+
+unset filename

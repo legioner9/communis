@@ -1,0 +1,8 @@
+## c_to_h_ man
+
+take  : list AFTER_PATH_POSTFIX $PATH_FN of all inner .qa clang lib from all_c_lib.lst
+arg -u: update all clang lib in .qa
+arg "test" : start c_to_h_test
+arg "man"  : edit_ .man for THIS
+arg "lst"  : edit_ .lst for THIS
+

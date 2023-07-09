@@ -1,0 +1,2 @@
+## https://linux-faq.ru/page/komanda-gcc
+

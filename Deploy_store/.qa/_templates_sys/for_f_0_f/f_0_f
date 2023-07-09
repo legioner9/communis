@@ -1,0 +1,54 @@
+#!/bin/bash
+
+#! debag
+# . "$HOME/.bashrc"
+#!
+
+filename="$HOME/11111/00000.sh"
+
+echo -e "${HLIGHT}---start file: $filename---${NORMAL}" # start file
+
+#e_exer "Questions? See far!" "$filename" "$LINENO"
+
+#up_lib_git
+
+00000(){
+    echo -e "${CYAN}---${FUNCNAME[0]}()---${NORMAL}" #started functions
+    echo -e "${GREEN}\$PWD = $PWD${NORMAL}" #print variable
+    echo -e "${GREEN}file = $0${NORMAL}" #print variable
+    echo -e "${GREEN}args = $@${NORMAL}" #print variable
+    FNN=${FUNCNAME[0]}
+    ORIGO_DIR=$HOME/22222
+    PPWD=$PWD
+    FLN=$0
+    ARGS=$@
+    
+    
+    # pause_mode
+    # qq_pause "Start $FNN at this data set?"
+    
+    #! debag
+    # cd_h "/home/st/11111/gf.fn" "$filename" "$LINENO"
+    #!
+    
+    # vim_mode----------------------------------------------------
+    if [ "$1" = "vim" ]; then
+        if_d_s "$ORIGO_DIR"
+        gvim -v "$ORIGO_DIR"
+        elif [ "$1" = "man" ]; then
+        if_d_s "$ORIGO_DIR/_$FNN"/_man
+        man_is "$ORIGO_DIR/_$FNN"/_man
+    else
+        
+        #!function body start--------------------------------------------
+        
+        echo ""
+        #!function body end--------------------------------------------
+        
+    fi
+    
+}
+
+# 00000 @
+
+unset filename

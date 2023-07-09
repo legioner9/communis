@@ -1,0 +1,60 @@
+[[ 1 -eq ${verbose} ]] || echo -e "${HLIGHT}--- c_up "${FN_FN_DIR}" 1>/dev/null ---${NORMAL}" #start files
+c_up "${FN_FN_DIR}" 1>/dev/null
+
+if [ "_man" == "$1" ]; then
+[[ 1 -eq ${verbose} ]] || echo -e "${HLIGHT}--- edit_ ${FN_DIR}/"$FNN".man ---${NORMAL}" #start files
+    edit_ ${FN_DIR}/"$FNN".man
+    return 0
+fi
+
+if [ "_tst" == "$1" ]; then
+
+    local tst_file="${FN_DIR}"/"$FNN"tst/exec.tst
+    if [ -f ${tst_file} ]; then
+    [[ 1 -eq ${verbose} ]] || echo -e "${HLIGHT}--- . "${tst_file}" ---${NORMAL}" #start files
+        . "${tst_file}"
+        return $?
+    else
+        echo -e "${RED}--- not file: ${tst_file} ---${NORMAL}" #exit 1
+        return 1
+    fi
+
+fi
+
+if [ "_extst_1" == "$1" ]; then
+
+    local utst_file=${FN_DIR}/${FNN}extst/extst_1/start_exec.tst
+    if [ -f ${utst_file} ]; then
+    [[ 1 -eq ${verbose} ]] || echo -e "${HLIGHT}--- . "${utst_file}" ---${NORMAL}" #start files
+        . "${utst_file}"
+        return $?
+    else
+        echo -e "${RED}--- not file: ${utst_file} ---${NORMAL}" #exit 1
+        return 1
+    fi
+
+fi
+
+if [ "_lst" == "$1" ]; then
+[[ 1 -eq ${verbose} ]] || echo -e "${HLIGHT}--- edit_ ${FN_DIR}/${FNN}.lst ---${NORMAL}" #start files
+    edit_ ${FN_DIR}/${FNN}.lst
+    return 0
+fi
+
+if [ "_go" == "$1" ]; then
+[[ 1 -eq ${verbose} ]] || echo -e "${HLIGHT}--- edit_ ${FN_DIR}/ ---${NORMAL}" #start files
+    edit_ ${FN_DIR}/
+    return 0
+fi
+
+if [ "_deb" == "$1" ]; then
+[[ 1 -eq ${verbose} ]] || echo -e "${HLIGHT}--- . ${FN_CONT_DIR}/_default/default_deb.sh ---${NORMAL}" #start files
+    . ${FN_CONT_DIR}/_default/default_deb.sh
+    return 0
+fi
+
+if [ "_mdeb" == "$1" ]; then
+[[ 1 -eq ${verbose} ]] || echo -e "${HLIGHT}--- ${FNN}mdeb() ---${NORMAL}" #start files
+    ${FNN}mdeb
+    return 0
+fi

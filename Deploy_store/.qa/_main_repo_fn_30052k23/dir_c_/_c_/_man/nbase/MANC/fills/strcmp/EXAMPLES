@@ -1,0 +1,26 @@
+https://pubs.opengroup.org/onlinepubs/9699919799/functions/strcmp.html
+
+В следующем примере сравнивается информация, считанная из стандартного ввода, со значением имени записи пользователя. Если функция strcmp() возвращает 0 (указывает на совпадение), будет произведена дополнительная проверка, чтобы увидеть, ввел ли пользователь правильный старый пароль. Функция crypt() должна зашифровать старый пароль, введенный пользователем, используя значение зашифрованного пароля в структуре passwd в качестве соли. Если это значение совпадает со значением зашифрованного пароля в структуре, введенный пароль oldpasswd является правильным паролем пользователя. Наконец, программа шифрует новый пароль, чтобы сохранить информацию в структуре passwd.
+
+#include <string.h>
+#include <unistd.h>
+#include <stdio.h>
+...
+int valid_change;
+struct passwd *p;
+char user[100];
+char oldpasswd[100];
+char newpasswd[100];
+char savepasswd[100];
+...
+if (strcmp(p->pw_name, user) == 0) {
+    if (strcmp(p->pw_passwd, crypt(oldpasswd, p->pw_passwd)) == 0) {
+        strcpy(savepasswd, crypt(newpasswd, user));
+        p->pw_passwd = savepasswd;
+        valid_change = 1;
+    }
+    else {
+        fprintf(stderr, "Old password is not valid\n");
+    }
+}
+...

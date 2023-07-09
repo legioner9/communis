@@ -1,0 +1,1 @@
+ int fileno_c(FILE *stream, const char *file, const int line, int st__mo, int st__if, int st__re) /* --- */

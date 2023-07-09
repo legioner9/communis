@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<!-- saved from url=(0030)https://fr.manpages.org/bind/2 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com/">
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+  <link rel="dns-prefetch" href="https://www.google-analytics.com/">
+  <title>man bind (2): Fournir un nom à une socket</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="description" content="man bind (2): Quand une socket est créée avec l&#39;appel système socket(2), elle existe dans l&#39;espace des noms (famille d&#39;adresses) mais n&#39;a pas d&#39;adresse assignée. bind() affecte l&#39;adresse indiquée dans addr à la socket référencée par le descripteur de fichier sockfd. ad">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <link href="./man bind (2)_ Fournir un nom à une socket_files/css" rel="stylesheet" type="text/css">
+  <link href="./man bind (2)_ Fournir un nom à une socket_files/css(1)" rel="stylesheet" type="text/css">
+  <link href="./man bind (2)_ Fournir un nom à une socket_files/css(2)" rel="stylesheet" type="text/css">
+  <link data-turbolinks-track="true" href="./man bind (2)_ Fournir un nom à une socket_files/application-f7897fbdd67c6822d0a0ff57b3ffc02f.css" media="all" rel="stylesheet">
+  <script async="" src="./man bind (2)_ Fournir un nom à une socket_files/analytics.js"></script><script async="async" data-turbolinks-track="true" src="./man bind (2)_ Fournir un nom à une socket_files/application-b47bf462822a1e5557c375def5c1aa58.js"></script>
+
+  <!--[if IE]>
+        
+    <![endif]-->
+<script type="text/javascript">
+//<![CDATA[
+      var LANG = 'fr';
+//]]>
+</script>
+  
+  <meta content="authenticity_token" name="csrf-param">
+<meta content="v64oS0zs2dqk6dFGWvyUVKI4NifaVGFzcQ9frx9eygM=" name="csrf-token">
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-56225390-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<body>
+  <div class="header-container">
+    <header class="clearfix">
+      <div class="logo"><a href="https://fr.manpages.org/"><img src="./man bind (2)_ Fournir un nom à une socket_files/logo-01e8ca9d4868e2e64bed82dde5c62d60.png" alt="logo"></a></div>
+       <!--
+        <nav>
+    <ul>
+        <li class="synopsis selected"><a title="synopsis" href="#synopsis">SYNOPSIS</a></li>
+        <li class="description"><a title="description" href="#description">DESCRIPTION</a></li>
+        <li class="valeur renvoyÉe"><a title="valeur-renvoyee" href="#valeur-renvoyee">VALEUR RENVOYÉE</a></li>
+        <li class="erreurs"><a title="erreurs" href="#erreurs">ERREURS</a></li>
+        <li class="notes"><a title="notes" href="#notes">NOTES</a></li>
+        <li class="bogues"><a title="bogues" href="#bogues">BOGUES</a></li>
+        <li class="exemple"><a title="exemple" href="#exemple">EXEMPLE</a></li>
+    </ul>
+  </nav>
+  -->
+      <div class="search">
+        <form accept-charset="UTF-8" action="https://fr.manpages.org/pagenames/autocomplete_page_name_name" method="post"><div style="display:none"><input name="utf8" type="hidden" value="✓" class="ui-autocomplete-input" autocomplete="off"><input name="authenticity_token" type="hidden" value="v64oS0zs2dqk6dFGWvyUVKI4NifaVGFzcQ9frx9eygM=" class="ui-autocomplete-input" autocomplete="off"></div>
+            <input data-autocomplete="/pagenames/autocomplete_page_name_name" id="page_name_name" name="page_name[name]" placeholder="rechercher des fichiers homme..." type="text" class="ui-autocomplete-input" autocomplete="off">
+            <button type="submit" onclick="return false">
+              <img src="./man bind (2)_ Fournir un nom à une socket_files/search_-5f10690007ebc2fbfce6cf9b1f687474.svg">
+            </button>
+</form>      </div>
+      <a class="mcat"><img src="./man bind (2)_ Fournir un nom à une socket_files/menu-533ee2b7609b0e242c51d7f42ca18b7f.png"></a>
+    </header>
+  </div>
+  <div id="core">
+    <div class="main-wrapper">
+      <link rel="stylesheet" href="./man bind (2)_ Fournir un nom à une socket_files/default.min.css">
+<script src="./man bind (2)_ Fournir un nom à une socket_files/highlight.min.js"></script>
+
+<div class="manpages-show">
+
+
+<div class="main-container">
+  <main>
+
+    <div class="article-container">
+        <div class="article_table">
+            <span>bind<i>(2)</i></span>
+            <span>Fournir un nom à une socket</span>
+        </div>
+      <article>
+        <a name="synopsis"></a><div class="section">
+<h2>SYNOPSIS</h2>
+
+<p></p><p><b>#include &lt;sys/types.h&gt;</b>          /* Consultez NOTES */<br><b>#include &lt;sys/socket.h&gt;</b><br></p><hr><b>int bind(int </b><i>sockfd</i><b>, const struct sockaddr *</b><i>addr</i><b>,</b><br><b>         socklen_t </b><i>addrlen</i><b>);</b><p></p>
+
+
+</div>
+<a name="description"></a><div class="section">
+<h2>DESCRIPTION</h2>
+Quand une socket est créée avec l'appel système <b><a class="man" category="2" href="https://fr.manpages.org/socket/2">socket</a></b>(2), elle existe
+dans l'espace des noms (famille d'adresses) mais n'a pas d'adresse
+assignée. <b>bind</b>() affecte l'adresse indiquée dans <i>addr</i> à la socket
+référencée par le descripteur de fichier <i>sockfd</i>. <i>addrlen</i> indique la
+taille, en octets, de la structure d'adresse pointée par
+<i>addr</i>. Traditionnellement cette opération est appelée «&nbsp;affectation d'un
+nom à une socket&nbsp;».
+<p>
+Il est normalement nécessaire d'affecter une adresse locale avec <b>bind</b>()
+avant qu'une socket <b>SOCK_STREAM</b> puisse recevoir des connexions (consultez
+<b><a class="man" category="2" href="https://fr.manpages.org/accept/2">accept</a></b>(2)).
+</p><p>
+Les règles d'affectation de nom varient suivant le domaine de
+communication. Consultez les pages de manuel de la section 7 pour de plus
+amples informations. Pour <b>AF_INET</b> consultez <b><a class="man" category="7" href="https://fr.manpages.org/ip/7">ip</a></b>(7), pour <b>AF_INET6</b>
+consultez <b><a class="man" category="7" href="https://fr.manpages.org/ipv6/7">ipv6</a></b>(7), pour <b>AF_UNIX</b> consultez <b><a class="man" category="7" href="https://fr.manpages.org/unix/7">unix</a></b>(7), pour
+<b>AF_APPLETALK</b> consultez <b><a class="man" category="7" href="https://fr.manpages.org/ddp/7">ddp</a></b>(7), pour <b>AF_PACKET</b> consultez
+<b><a class="man" category="7" href="https://fr.manpages.org/packet/7">packet</a></b>(7), pour <b>AF_X25</b> consultez <b><a class="man" category="7" href="https://fr.manpages.org/x25/7">x25</a></b>(7) et pour <b>AF_NETLINK</b>
+consultez <b><a class="man" category="7" href="https://fr.manpages.org/netlink/7">netlink</a></b>(7).
+</p><p>
+La structure réellement passée dans le paramètre <i>addr</i> dépend du domaine
+de communication. La structure <i>sockaddr</i> est définie comme&nbsp;:
+</p><pre>struct sockaddr {
+    sa_family_t sa_family;
+    char        sa_data[14];
+}
+</pre>
+Le seul objet de cette structure est de transtyper le pointeur passé dans
+<i>addr</i> pour éviter les avertissements du compilateur. Voir l'exemple donné
+ci-dessous.
+</div>
+<a name="valeur-renvoyee"></a><div class="section">
+<h2>VALEUR RENVOYÉE</h2>
+S'il réussit, cet appel système renvoie 0. S'il échoue, il renvoie -1 et
+remplit <i>errno</i> en conséquence.
+</div>
+<a name="erreurs"></a><div class="section errors">
+<h2>ERREURS</h2>
+
+<dl compact="compact">
+<dt><b>EACCES</b></dt><dd>
+L'adresse est protégée et l'utilisateur n'est pas le superutilisateur.
+</dd><dt><b>EADDRINUSE</b></dt><dd>
+L'adresse est déjà utilisée.
+</dd><dt><b>EBADF</b></dt><dd>
+<i>sockfd</i> n'est pas un descripteur valable.
+</dd><dt><b>EINVAL</b></dt><dd>
+La socket est déjà connectée.
+</dd><dt><b>ENOTSOCK</b></dt><dd>
+<i>sockfd</i> est un descripteur de fichier, pas une socket.
+</dd></dl>
+<p>
+Les erreurs suivantes sont spécifiques aux sockets du domaine UNIX
+(<b>AF_UNIX</b>)&nbsp;:
+</p><dl compact="compact">
+<dt><b>EACCES</b></dt><dd>
+L'accès à un élément du chemin est interdit (consultez aussi
+<b><a class="man" category="7" href="https://fr.manpages.org/path_resolution/7">path_resolution</a></b>(7)).
+</dd><dt><b>EADDRNOTAVAIL</b></dt><dd>
+Une interface inexistante est demandée, ou bien l'adresse demandée n'est pas
+locale.
+</dd><dt><b>EFAULT</b></dt><dd>
+<i>addr</i> pointe en dehors de l'espace d'adresse accessible.
+</dd><dt><b>EINVAL</b></dt><dd>
+La longueur <i>addrlen</i> est fausse, ou la socket n'est pas de la famille
+<b>AF_UNIX</b>.
+</dd><dt><b>ELOOP</b></dt><dd>
+<i>addr</i> contient des références circulaires (à travers un lien symbolique).
+</dd><dt><b>ENAMETOOLONG</b></dt><dd>
+<i>addr</i> est trop long.
+</dd><dt><b>ENOENT</b></dt><dd>
+Le fichier n'existe pas.
+</dd><dt><b>ENOMEM</b></dt><dd>
+Pas assez de mémoire pour le noyau.
+</dd><dt><b>ENOTDIR</b></dt><dd>
+Un élément du chemin d'accès n'est pas un répertoire.
+</dd><dt><b>EROFS</b></dt><dd>
+L'inœud se trouverait dans un système de fichiers en lecture seule.
+</dd></dl>
+
+</div>
+<div class="section">
+<h2>CONFORMITÉ</h2>
+SVr4, BSD&nbsp;4.4, POSIX.1-2001 (<b>bind</b>() est apparue dans BSD&nbsp;4.2).
+</div>
+<a name="notes"></a><div class="section">
+<h2>NOTES</h2>
+POSIX.1-2001 ne requiert pas l'inclusion de <i>&lt;sys/types.h&gt;</i>, et cet
+en-tête n'est pas nécessaire sous Linux. Cependant, il doit être inclus
+sous certaines implémentations historiques (BSD), et les applications
+portables devraient probablement l'utiliser.
+<p>
+Le troisième argument de <b>bind</b>() est en fait un <i>int</i> (et c'est ce
+qu'utilisent BSD&nbsp;4.x, libc4 et libc5). Une certaine confusion POSIX a donné
+le <i>socklen_t</i> actuel, également utilisé dans la glibc. Consultez
+<b><a class="man" category="2" href="https://fr.manpages.org/accept/2">accept</a></b>(2).
+</p></div>
+<a name="bogues"></a><div class="section bugs">
+<h2>BOGUES</h2>
+Les options de proxy transparent ne sont pas décrites.
+</div>
+<a name="exemple"></a><div class="section">
+<h2>EXEMPLE</h2>
+Un exemple d'utilisation de <b>bind</b>() avec des sockets Internet se trouve
+dans <b><a class="man" category="3" href="https://fr.manpages.org/getaddrinfo/3">getaddrinfo</a></b>(3).
+<p>
+L'exemple suivant montre comment affecter un nom à une socket du domaine
+UNIX (<b>AF_UNIX</b>), et accepter les connexions&nbsp;:
+</p><p>
+</p><pre>#include &lt;sys/socket.h&gt;
+#include &lt;sys/un.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+#define MY_SOCK_PATH "/somepath"
+#define LISTEN_BACKLOG 50
+#define handle_error(msg) \
+    do { perror(msg); exit(EXIT_FAILURE); } while (0)
+int
+main(int argc, char *argv[])
+{
+    int sfd, cfd;
+    struct sockaddr_un my_addr, peer_addr;
+    socklen_t peer_addr_size;
+    sfd = socket(AF_UNIX, SOCK_STREAM, 0);
+    if (sfd == -1)
+        handle_error("socket");
+    memset(&amp;my_addr, 0, sizeof(struct sockaddr_un));
+                        /* Efface la structure */
+    my_addr.sun_family = AF_UNIX;
+    strncpy(my_addr.sun_path, MY_SOCK_PATH,
+            sizeof(my_addr.sun_path) - 1);
+    if (bind(sfd, (struct sockaddr *) &amp;my_addr,
+            sizeof(struct sockaddr_un)) == -1)
+        handle_error("bind");
+    if (listen(sfd, LISTEN_BACKLOG) == -1)
+        handle_error("listen");
+    /* Nous pouvons maintenant accepter une connexion
+       entrante à la fois grâce à <a class="man" category="2" href="https://fr.manpages.org/accept/2">accept</a>(2) */
+    peer_addr_size = sizeof(struct sockaddr_un);
+    cfd = accept(sfd, (struct sockaddr *) &amp;peer_addr,
+                 &amp;peer_addr_size);
+    if (cfd == -1)
+        handle_error("accept");
+    /* Code gérant les connexions entrantes... */
+    /* Lorsqu'il n'est plus nécessaire, le fichier de la socket,
+       MY_SOCK_PATH, doit être supprimé avec <a class="man" category="2" href="https://fr.manpages.org/unlink/2">unlink</a>(2) ou <a class="man" category="3" href="https://fr.manpages.org/remove/3">remove</a>(3) */
+</pre>
+
+
+</div>
+<div class="section">
+<h2>COLOPHON</h2>
+Cette page fait partie de la publication 3.65 du projet <i>man-pages</i>
+Linux. Une description du projet et des instructions pour signaler des
+anomalies peuvent être trouvées à l'adresse
+<a href="http://www.kernel.org/doc/man-pages/">http://www.kernel.org/doc/man-pages/.</a>
+
+</div>
+<div class="section">
+<h2>TRADUCTION</h2>
+Depuis 2010, cette traduction est maintenue à l'aide de l'outil
+po4a &lt;<a href="http://po4a.alioth.debian.org/">http://po4a.alioth.debian.org/</a>&gt; par l'équipe de
+traduction francophone au sein du projet perkamon
+&lt;<a href="http://perkamon.alioth.debian.org/">http://perkamon.alioth.debian.org/</a>&gt;.
+<p>
+Christophe Blaess &lt;<a href="http://www.blaess.fr/christophe/">http://www.blaess.fr/christophe/</a>&gt; (1996-2003),
+Alain Portal &lt;<a href="http://manpagesfr.free.fr/">http://manpagesfr.free.fr/</a>&gt; (2003-2006).
+Julien Cristau et l'équipe francophone de traduction de Debian&nbsp;(2006-2009).
+</p><p>
+Veuillez signaler toute erreur de traduction en écrivant à
+&lt;debian-l10n-french@lists.debian.org&gt; ou par un rapport de bogue sur
+le paquet <b>manpages-fr</b>.
+</p><p>
+Vous pouvez toujours avoir accès à la version anglaise de ce document en
+utilisant la commande
+«&nbsp;<b>man&nbsp;-L C</b> <i>&lt;section&gt;</i>&nbsp;<i>&lt;page_de_man&gt;</i>&nbsp;».
+</p><p>
+
+</p></div>
+
+      </article>
+    </div>
+
+
+  </main>
+</div>
+<div class="nav-container">
+<div class="nav" style="height:526px">
+<div class="inner">
+  <nav class="box">
+    <h4>CONTENU</h4>
+    <ul>
+        <li class="synopsis selected"><a title="synopsis" href="https://fr.manpages.org/bind/2#synopsis">SYNOPSIS</a></li>
+        <li class="description"><a title="description" href="https://fr.manpages.org/bind/2#description">DESCRIPTION</a></li>
+        <li class="valeur renvoyÉe"><a title="valeur-renvoyee" href="https://fr.manpages.org/bind/2#valeur-renvoyee">VALEUR RENVOYÉE</a></li>
+        <li class="erreurs"><a title="erreurs" href="https://fr.manpages.org/bind/2#erreurs">ERREURS</a></li>
+        <li class="notes"><a title="notes" href="https://fr.manpages.org/bind/2#notes">NOTES</a></li>
+        <li class="bogues"><a title="bogues" href="https://fr.manpages.org/bind/2#bogues">BOGUES</a></li>
+        <li class="exemple"><a title="exemple" href="https://fr.manpages.org/bind/2#exemple">EXEMPLE</a></li>
+    </ul>
+  </nav>
+
+  <div class="box lang">
+    <h4>TRADUCTIONS</h4>
+    <ul>
+        <li class="en"><a class="c2" href="https://manpages.org/bind/2"><i></i>ANGLAIS</a></li>
+        <li class="de"><a class="c2" href="https://de.manpages.org/bind/2"><i></i>DEUTSCH</a></li>
+        <li class="ja"><a class="c2" href="https://ja.manpages.org/bind/2"><i></i>JAPONAIS</a></li>
+        <li class="ru"><a class="c2" href="https://ru.manpages.org/bind/2"><i></i>RUSSIE</a></li>
+        <li class="es"><a class="c2" href="https://es.manpages.org/bind/2"><i></i>ESPANOL</a></li>
+        <li class="pl"><a class="c2" href="https://pl.manpages.org/bind/2"><i></i>POLONAIS</a></li>
+    </ul>
+  </div>
+  
+
+<!--
+    <div class="ads">
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <ins class="adsbygoogle"
+           style="display:inline-block;width:300px;height:250px"
+           data-ad-client="ca-pub-2811344342425918"
+           data-ad-slot="5277441578"></ins>
+      <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+-->
+    <div class="box see-also">
+      <h4>VOIR ÉGALEMENT</h4>
+      <ul class="clearfix">
+            <li><a href="https://fr.manpages.org/accept/2" class="c2">accept <span>(2)</span></a></li>
+            <li><a href="https://fr.manpages.org/connect/2" class="c2">connect <span>(2)</span></a></li>
+            <li><a href="https://fr.manpages.org/getsockname/2" class="c2">getsockname <span>(2)</span></a></li>
+            <li><a href="https://fr.manpages.org/listen/2" class="c2">listen <span>(2)</span></a></li>
+            <li><a href="https://fr.manpages.org/socket/2" class="c2">socket <span>(2)</span></a></li>
+            <li><a href="https://fr.manpages.org/getaddrinfo/3" class="c3">getaddrinfo <span>(3)</span></a></li>
+            <li><a href="https://fr.manpages.org/getifaddrs/3" class="c3">getifaddrs <span>(3)</span></a></li>
+            <li><a href="https://fr.manpages.org/ip/7" class="c7">ip <span>(7)</span></a></li>
+            <li><a href="https://fr.manpages.org/ipv6/7" class="c7">ipv6 <span>(7)</span></a></li>
+            <li><a href="https://fr.manpages.org/path_resolution/7" class="c7">path_resolution <span>(7)</span></a></li>
+            <li><a href="https://fr.manpages.org/socket/7" class="c7">socket <span>(7)</span></a></li>
+            <li><a href="https://fr.manpages.org/unix/7" class="c7">unix <span>(7)</span></a></li>
+      </ul>
+    </div>
+
+        <div class="box last-searched">
+          <h4>DERNIER RECHERCHÉ</h4>
+          <ul class="clearfix">
+                <li><a href="https://de.manpages.org/vswprintf/3" class="c3">vswprintf <span>(3)</span></a></li>
+                <li><a href="https://manpages.org/primadrawable/3" class="c3">Prima::Drawable <span>(3)</span></a></li>
+                <li><a href="https://tr.manpages.org/false" class="c1">false <span>(1)</span></a></li>
+                <li><a href="https://manpages.org/pchegst" class="c1">PCHEGST <span>(1)</span></a></li>
+                <li><a href="https://tr.manpages.org/pr" class="c1">pr <span>(1)</span></a></li>
+                <li><a href="https://tr.manpages.org/du" class="c1">du <span>(1)</span></a></li>
+                <li><a href="https://tr.manpages.org/patch" class="c1">patch <span>(1)</span></a></li>
+                <li><a href="https://tr.manpages.org/cut" class="c1">cut <span>(1)</span></a></li>
+                <li><a href="https://tr.manpages.org/ln" class="c1">ln <span>(1)</span></a></li>
+                <li><a href="https://manpages.org/stshell" class="c1">stshell <span>(1)</span></a></li>
+                <li><a href="https://tr.manpages.org/abort/7" class="c7">ABORT <span>(7)</span></a></li>
+          </ul>
+        </div>
+</div>
+  </div>
+  </div>
+
+</div>
+<script>
+$(document).ready(function() {
+    $('pre, code').each(function(i, block) {
+    hljs.highlightBlock(block);
+    });
+});
+</script>
+
+    </div>
+  </div>
+  <div class="overlay"></div>
+  <div class="overlay_"></div>
+
+
+<ul class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content" id="ui-id-1" tabindex="0" style="display: none;"></ul><span role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></span><ul class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content" id="ui-id-2" tabindex="0" style="display: none;"></ul><span role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></span><ul class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content" id="ui-id-3" tabindex="0" style="display: none;"></ul><span role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></span><div class="overlay"></div></body><style id="stylus-1" type="text/css" class="stylus">body {
+    font-family: 'pragmata pro mono regular';
+}</style></html>

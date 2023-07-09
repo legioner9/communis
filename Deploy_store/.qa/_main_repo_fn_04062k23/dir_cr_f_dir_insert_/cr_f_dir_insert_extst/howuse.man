@@ -1,0 +1,4 @@
+# create tst flow at ex1_tst and ex2_tst
+# rename exec._{ext} to exec.{ext}
+# . start_check_extst._utst for tst all files.{ext}
+TODO ifs up_err_ as ifs tst and will .utst->.tst for global tests

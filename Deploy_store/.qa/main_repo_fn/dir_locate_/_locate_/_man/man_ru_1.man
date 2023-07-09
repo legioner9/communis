@@ -1,0 +1,136 @@
+# https://zalinux.ru/?p=1184
+##  locate в Linux
+
+Новичкам в операционной системе Linux бывает непросто сориентироваться в файловой системе, быстро найти нужный файл. Между прочим, командная строка Linux предоставляет отличные инструменты, которые позволят быстро найти нужные файлы. Двумя самыми распространёнными утилитами являются find и locate.
+
+Каждая из этих программ имеет свою специфику. Особенностью locate является то, что она предназначена для поиска по имени файла и делает это ОЧЕНЬ быстро, поскольку имеет заранее подготовленный кэш. Поиск происходит не по всей файловой системе, а по кэшу, благодаря такой оптимизации нужный файл можно найти за доли секунды.
+
+В этой статье будет показано несколько примеров использования команды locate, которые помогут вам быть более продуктивным.
+
+##  Использование команды locate
+Простейшим случаем использования команды locate является указание имени файла (или части имени) файла, который вы хотите найти:
+
+    locate createProgXML
+    /home/mial/all/createProgXML.sh
+    /home/mial/all/createProgXMLfix.php
+
+
+##  Ограничение количества показываемых результатов
+Опцией -n вы можете ограничить количество возвращаемых результатов, чтобы избежать избыточного вывода:
+
+Например, вы хотите для вашего запроса вывод только 20 результатов, вы можете набрать следующую команду:
+
+    locate "*.html" -n 20
+    /home/mial/.config/chromium/Default/Extensions/nmmhkkegccagdldgiimedpiccmgmieda/1.0.0.1_0/html/craw_window.html
+    /home/mial/.config/chromium/Default/Extensions/nmmhkkegccagdldgiimedpiccmgmieda/1.0.0.2_0/html/craw_window.html
+    /home/mial/.gem/ruby/2.4.0/gems/erubis-2.7.0/benchmark/templates/_footer.html
+    /home/mial/.gem/ruby/2.4.0/gems/erubis-2.7.0/benchmark/templates/_header.html
+    /home/mial/.gem/ruby/2.4.0/gems/erubis-2.7.0/doc/users-guide.html
+    /home/mial/.gem/ruby/2.4.0/gems/erubis-2.7.0/doc-api/fr_class_index.html
+    /home/mial/.gem/ruby/2.4.0/gems/erubis-2.7.0/doc-api/fr_file_index.html
+    /home/mial/.gem/ruby/2.4.0/gems/erubis-2.7.0/doc-api/fr_method_index.html
+    /home/mial/.gem/ruby/2.4.0/gems/erubis-2.7.0/doc-api/index.html
+    /home/mial/.gem/ruby/2.4.0/gems/erubis-2.7.0/doc-api/classes/ActionView.html
+    /home/mial/.gem/ruby/2.4.0/gems/erubis-2.7.0/doc-api/classes/ERB.html
+    /home/mial/.gem/ruby/2.4.0/gems/erubis-2.7.0/doc-api/classes/Erubis.html
+    /home/mial/.gem/ruby/2.4.0/gems/erubis-2.7.0/doc-api/classes/Kernel.html
+    /home/mial/.gem/ruby/2.4.0/gems/erubis-2.7.0/doc-api/classes/ActionView/TemplateHandlers/ErubisHandler.html
+    /home/mial/.gem/ruby/2.4.0/gems/erubis-2.7.0/doc-api/classes/Erubis/ArrayBufferEnhancer.html
+    /home/mial/.gem/ruby/2.4.0/gems/erubis-2.7.0/doc-api/classes/Erubis/ArrayBufferEruby.html
+    /home/mial/.gem/ruby/2.4.0/gems/erubis-2.7.0/doc-api/classes/Erubis/ArrayEnhancer.html
+    /home/mial/.gem/ruby/2.4.0/gems/erubis-2.7.0/doc-api/classes/Erubis/ArrayEruby.html
+    /home/mial/.gem/ruby/2.4.0/gems/erubis-2.7.0/doc-api/classes/Erubis/Basic.html
+    /home/mial/.gem/ruby/2.4.0/gems/erubis-2.7.0/doc-api/classes/Erubis/BiPatternEnhancer.html
+    Результатом станет вывод первых 20 файлов, которые оканчиваются на .html.
+
+## Показ числа найденных файлов
+Если вы хотите отобразить количество всех найденных по вашему запросу файлов, то используйте ключ -c:
+
+    locate -c ".zip"
+    233
+## Поиск locate без учёта регистра
+По умолчанию locate настроена быть чувствительной к регистру при обработке запросов, это означает, что TEXT.TXT даст вам другие результаты чем дал бы запрос text.txt.
+
+Чтобы команда locate не обращала внимание на регистр букв и выводила результаты независимо от заглавных или маленьких букв, используйте опцию -i:
+    
+    locate -i *text.txt*
+    /home/mial/TEXT.TXT
+    /usr/share/otori/data/helptext.txt
+## Обновление базы данных mlocate
+Поскольку команда locate полагается на базу данных, называемую mlocate, эту базу данных нужно регулярно обновлять, чтобы утилита работала должным образом. На самом деле, система сама в фоне время от времени запускает этот процесс обновления, если вы хотите запустить процесс обновления базы данных прямо сейчас, то выполните команду (для неё требуются привилегии суперпользователя):
+
+    sudo updatedb
+##  Отображение только файлов, существующих в файловой системе
+Вы можете использовать ключ -e, который приведёт к тому, что программа locate перед выводом результатов будет каждый из них проверять – действительно ли он существует или это просто старая запись в базе данных. Если файл не существует, то он не будет показан.
+
+    rm TEXT.TXT
+    locate -i -e *text.txt*
+    /usr/share/otori/data/helptext.txt
+## Вывод записей без символа «новая строка»
+Команда locate в качестве разделителя результатов поиска использует символ «новая строка» (\\n). Но если вы предпочитаете использовать другой разделитель, такой как ASCII NUL, вы можете сделать это используя опцию -0.
+    
+    locate -i -0 *text.txt*
+    /home/mial/TEXT.TXT/usr/share/otori/data/helptext.txt
+##  Обзор вашей локальной базы данных Locate
+Если вы хотите узнать статус и некоторую статистику по вашей базе данных mlocate.db, то используйте опцию -S:
+
+    locate -S
+    База данных /var/lib/mlocate/mlocate.db:
+    »69 670 папок
+    »725 443 файла
+    »46 165 671 байт в названии файла
+    база данных заняла »18 093 242 байта
+##  Подавление сообщений об ошибках
+Иногда доступ к базе данных mlocate.db выводит сообщения об ошибках, говорящих, что вы обычный пользователь и у вас нет прав для доступа к некоторым данным. Чтобы полностью убрать эти сообщения используйте опцию -q:
+
+    locate -q "*.dat"
+## Выбор другого расположения mlocate
+Если вы хотите сделать запрос не к базе данных mlocate по умолчанию, а к другой mlocate.db размещённой в системе где-то в другом месте, вы можете указать locate на иное расположение базы данных mlocate с помощью опции -d:
+
+    locate -d <новый путь БД> <имя файла>
+## Поиск файлов с locate по всем пользователям
+По умолчанию команда locate показывает в результатах только те файлы, к которым текущий пользователь имеет права на доступ. Для того, чтобы были показаны файлы для всех пользователей системы, используйте sudo:
+
+    sudo locate -i *text.txt*
+    /root/root_text.txt
+    /usr/share/otori/data/helptext.txt
+## Поиск по нескольким именам файлов
+Программа locate умеет искать сразу по нескольким именам файлов, для этого достаточно одновременно указать имена или их части:
+
+    locate text txt
+##  Поиск по нескольким образцам, встречающимся в одном имени файла
+Вы можете делать поиск сразу по нескольким строкам, но если вы хотите, чтобы выводились результаты только для тех файлов, в которых есть все указанные строки, то используйте опцию -A:
+
+    locate -A text txt
+## Игнорирование пути до файла при поиске
+Вы, наверное, уже обратили внимание, что locate считает файл подходящим и показывает его в поиске, если искомая строка встречается не только в названии файла, но и в пути (в названии директорий, в которых размещён этот файл). Если вы хотите сделать поиск только по имени файла без поиска по путям, то используйте опцию -b:
+
+    locate -b zip
+## Поиск locate по регулярным выражениям
+Команда locate по умолчанию использует поиск по паттернам (образцам). Если вы хотите сделать поиск по регулярным выражениям, то для этого имеется две опции:
+
+    -r, --regexp REGEXP    поиск по базовым регулярным выражениям вместо паттернов
+        --regex            образцы – это расширенные регулярные выражения
+При использовании регулярных выражений вам, скорее всего, понадобятся кавычки.
+
+    locate -b --regex "^[a-z.]{1,3}[tx]{3}$"
+    /home/mial/t.txt
+    /opt/wine64/drive_c/Python27/Lib/test/cjkencodings/hz.txt
+    /usr/lib/go/src/compress/testdata/e.txt
+    /usr/lib/go/src/compress/testdata/pi.txt
+    /usr/lib/modules/4.10.11-1-ARCH/build/include/config/blk/dev/3w/xxxx
+    /usr/lib/node_modules/bluebox-ng/node_modules/require-dir/test/duplicates/c.txt
+    /usr/lib/node_modules/bluebox-ng/node_modules/require-dir/test/simple/d.txt
+    /usr/lib/python2.7/test/cjkencodings/hz.txt
+    /usr/lib/python3.5/site-packages/pbr/tests/testpackage/data_files/a.txt
+    /usr/lib/python3.5/site-packages/pbr/tests/testpackage/data_files/b.txt
+    /usr/lib/python3.6/test/cjkencodings/hz.txt
+    /usr/share/davtest/tests/pl.txt
+    /usr/share/iptv/languages/it.txt
+    /usr/share/pasv-agrsv/notes/db.txt
+    /usr/share/snoopy-ng/setup/sn.txt
+    /usr/share/uniscan/c.txt
+    
+В рассмотренном выше примере сделан поиск только по базовому имени файла, причём, ищутся файлы, начинающиеся с любого сочетания маленьких букв и точки, длиной от 1 до 3 символов, далее должны идти три символа, составленные из двух символов tx в любом сочетании.
+
+Как мы видим, команда locate делает поиск по именам файлов в Linux эффективным благодаря скорости работы и большому количеству опций. Эта программа будет полезна как для новичков, которые могут её использовать в простых случаях, когда достаточно найти файл по его имени, так и для более продвинутых пользователей, которые сочетая опции и регулярные выражения смогут решить задачи любой сложности по поиску файлов.

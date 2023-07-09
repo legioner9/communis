@@ -1,0 +1,337 @@
+### UP
+[isalnum](##isalnum)
+[MAIN](##MAIN)
+[MAIN_ru](##MAIN_ru)
+[ANCORS](##ANCORS)
+[ISU](##ISU)
+[inet](##A_inet)
+[inet](##books_inet)
+[inet](##examples_inet)
+[inet](##classic_inet)
+[inet](##enters_inet)
+[inet](##issue_code_inet)
+[H_FILE](##H_FILE)
+[p_SYNOPSIS](##p_SYNOPSIS)
+[p_RETURN](##p_RETURN)
+[p_RETURN_ru](##p_RETURN_ru)
+[p_BUGS](##p_BUGS)
+[p_DESCRIPTION_ru](##p_DESCRIPTION_ru)
+[p_DESCRIPTION](##p_DESCRIPTION)
+[p_MIRRORS](##p_MIRRORS)
+[p_EXAMPLES](##p_EXAMPLES)
+[p_CODE_h](##p_CODE_h)
+[p_CODE_c](##p_CODE_c)
+[p_CODE_m](##p_CODE_m)
+[p_ERRORS](##p_ERRORS)
+[p_BOOKS](##p_BOOKS)
+[p_BOOKS_ru](##p_BOOKS_ru)
+[p_CONTENT](##p_CONTENT)
+
+[cat_hfiles](../../cat_hfiles.md)
+[cat_utils](../../cat_utils.md)
+[cat_structs](../../cat_structs.md)
+[cat_param](../../cat_params.md)
+[cat_macros](../../cat_macross.md)
+[cat_const](../../cat_consts.md)
+[cat_type](../../cat_types.md)
+[cat_any](../cat_anys.md)
+
+
+[UP](###UP)
+## MAIN
+:isalnum:
+[next](##MAIN_ru)
+
+<<MAIN>>
+[MAIN](../../fills/isalnum/MAIN)
+
+
+
+[UP](###UP)
+## MAIN_ru
+:isalnum:
+[next](##ANCORS)
+
+<<MAIN_ru>>
+[MAIN_ru](../../fills/isalnum/MAIN_ru)
+
+[UP](###UP)
+## ANCORS
+:isalnum:
+[next](##ISU)
+
+<<ANCORS>>
+[ANCORS](../../fills/isalnum/ANCORS)
+
+[UP](###UP)
+## ISU
+:isalnum:
+[next](##H_FILE)
+
+<<ISU>>
+only read
+:isalnum:
+[ISU](../../contents)
+[next](##inet)
+
+
+[UP](###UP)
+## inet
+:isalnum:
+[next](##H_FILE)
+
+
+[UP](###UP)
+## A_inet
+[manpages.org](https://www.google.ru/search?q=isalnum+site%3Ahttps%3A%2F%2Fmanpages.org)
+[reposcope.com_ru](https://www.google.ru/search?q=isalnum+site%3Ahttps%3A%2F%2Freposcope.com%2Fmanpages%2Fru)
+[pubs.opengroup.org](https://www.google.com/search?q=isalnum+https%3A%2F%2Fpubs.opengroup.org)
+[manpages.debian.org](https://yandex.ru/search/?text=isalnum+site%3Ahttps%3A%2F%2Fmanpages.debian.org%2F)
+[www.opennet.ru](http://www.opennet.ru/man.shtml?category=2&topic=isalnum)
+[man7.org](https://www.google.ru/search?q=isalnum+site%3Ahttps%3A%2F%2Fman7.org%2Flinux%2Fman-pages)
+[en.cppreference.com](https://www.google.com/search?q=isalnum+en.cppreference.com)
+[www.mankier.com](https://www.mankier.com/?q=isalnum)
+[www.codecogs.com](https://www.google.ru/search?q=isalnum+https%3A%2F%2Fwww.codecogs.com%2Flibrary%2Fcomputing%2F)
+[digitalmars.com](https://www.google.ru/search?q=isalnum+https%3A%2F%2Fdigitalmars.com%2Frtl%2F)
+
+
+[UP](###UP)
+## books_inet
+[cpp.com.ru](https://yandex.ru/search/?text=isalnum+site%3Ahttps%3A%2F%2Fcpp.com.ru)
+[linuxhint.com](https://www.google.ru/search?q=isalnum+site%3Ahttps%3A%2F%2Flinuxhint.com)
+[gnu.org](https://www.google.ru/search?q=isalnum+site%3Ahttps%3A%2F%2Fwww.gnu.org%2Fsoftware%2Flibc%2Fmanual)
+
+[UP](###UP)
+## examples_inet
+[yandex:examples](https://yandex.ru/search/?text=isalnum+example+in+c)
+[docs.oracle.com](https://www.google.com/search?q=isalnum+https%3A%2F%2Fdocs.oracle.com)
+[manpages.debian.org](https://yandex.ru/search/?text=isalnum+site%3Ahttps%3A%2F%2Fmanpages.debian.org%2F)
+[osr507doc.xinuos.com](https://www.google.com/search?q=isalnum+http%3A%2F%2Fosr507doc.xinuos.com%2Fen%2Fman)
+[cpp.hotexamples.com](https://cpp.hotexamples.com/examples/-/-/isalnum/cpp-isalnum-function-examples.html)
+[all-ht.ru](https://yandex.ru/search/?text=isalnum+site%3Ahttp%3A%2F%2Fall-ht.ru%2Finf%2Fprog%2Fc%2F)
+[cppreference.com](https://yandex.ru/search/?text=isalnum+site%3Ahttps%3A%2F%2Fen.cppreference.com%2Fw%2Fc%2F)
+
+[UP](###UP)
+## classic_inet
+[bogatyrev_c_unix](https://www.google.com/search?q=isalnum+site%3Ahttps%3A%2F%2Fcpp.com.ru%2Fbogatyrev_c_unix)
+[kr_cbook](https://www.google.com/search?q=isalnum+site%3Ahttps%3A%2F%2Fcpp.com.ru%2Fkr_cbook)
+
+[UP](###UP)
+## enters_inet
+[pubs.opengroup.org](https://pubs.opengroup.org/onlinepubs/9699919799/idx/head.html)
+
+[UP](###UP)
+## issue_code_inet
+[code.woboq.org](https://www.google.com/search?h=&sitesearch=https%3A%2F%2Fcode.woboq.org%2Fuserspace%2Fglibc%2F&q=isalnum)
+
+
+[UP](###UP)
+## H_FILE 
+[ctype_h.md](../../hfiles/ctype_h.md)
+
+
+[UP](###UP)
+## p_SYNOPSIS
+:isalnum:
+[next](##p_RETURN_ru)
+
+----------------------------------------------------- 
+-------------------------------------- 
+#include <ctype.h>
+int isalnum(int c);
+int isalpha(int c);
+int iscntrl(int c);
+int isdigit(int c);
+int isgraph(int c);
+int islower(int c);
+int isprint(int c);
+int ispunct(int c);
+int isspace(int c);
+int isupper(int c);
+int isxdigit(int c);
+int isascii(int c);
+int isblank(int c);
+int isalnum_l(int c, locale_t locale);
+int isalpha_l(int c, locale_t locale);
+int isblank_l(int c, locale_t locale);
+int iscntrl_l(int c, locale_t locale);
+int isdigit_l(int c, locale_t locale);
+int isgraph_l(int c, locale_t locale);
+int islower_l(int c, locale_t locale);
+int isprint_l(int c, locale_t locale);
+int ispunct_l(int c, locale_t locale);
+int isspace_l(int c, locale_t locale);
+int isupper_l(int c, locale_t locale);
+int isxdigit_l(int c, locale_t locale);
+int isascii_l(int c, locale_t locale);
+-------------------------------------- 
+----------------------------------------------------- 
+<<SYNOPSIS>>
+[SYNOPSIS](../../fills/isalnum/SYNOPSIS)
+
+
+[UP](###UP)
+## p_RETURN_ru
+:isalnum:
+[next](##p_RETURN)
+
+<<RETURN>>
+[RETURN_ru](../../fills/isalnum/RETURN)
+
+
+[UP](###UP)
+## p_RETURN
+:isalnum:
+[next](##p_DESCRIPTION_ru)
+
+----------------------------------------------------- 
+-------------------------------------- 
+Функции возвращают ненулевые значения, если проверяемый символ c попадает в тестируемый класс символов, в противном случае возвращается 0.
+-------------------------------------- 
+----------------------------------------------------- 
+<<RETURN_ru>>
+[RETURN](../../fills/isalnum/RETURN_ru)
+
+
+[UP](###UP)
+## p_DESCRIPTION_ru
+:isalnum:
+[next](##p_DESCRIPTION)
+
+----------------------------------------------------- 
+-------------------------------------- 
+Данные функции проверяют, попадает ли символ c (который должен иметь значение unsigned char или EOF) в определённый класс символов согласно указанной локали. Функции без суффикса «_l» выполняют проверку на основе текущей локали.
+Функции с суффиксом «_l» выполняют проверку на основе указанного объекта локали locale. Поведение этих функций не определено, если значение locale равно специальному объекту локали LC_GLOBAL_LOCALE (смотрите duplocale(3)) или является некорректным описателем объекта локали.
+Далее в списке описаны действия функций без суффикса «_l»; функции с суффиксом «_l» отличаются только использовании объекта локали locale вместо текущей локали.
+isalnum()
+Проверяет символ на принадлежность к число-буквенным символам; вызов эквивалентен (isalpha(c) || isdigit(c)).
+isalpha()
+Проверяет символ на принадлежность к алфавитным символам; в стандартной локали «C» это эквивалентно (isupper(c) || islower(c)). В некоторых локалях могут существовать дополнительные символы, для которых isalpha() верно — буквы могут не находиться ни в верхнем, ни в нижнем регистре.
+isascii()
+Проверяет, является ли c 7-битным значением unsigned char, которое попадает в таблицу символов ASCII.
+isblank()
+Проверяет, является ли символ пробельным (blank); то есть пробелом или символом табуляции.
+iscntrl()
+Проверяет, является ли символ управляющим.
+isdigit()
+Проверяет, является ли символ цифрой (от 0 до 9).
+isgraph()
+Проверяет, является ли символ печатным (но не пробельным).
+islower()
+Проверяет, является ли символ символом нижнего регистра.
+isprint()
+Проверяет, является ли символ печатным (включая пробельный).
+ispunct()
+Проверяет, является ли символ печатным; он не должен быть пробельным или цифро-буквенным символом.
+isspace()
+Проверяет, являются ли символы не отображаемыми. В локалях «C» и «POSIX» таковыми являются: пробел, символ перевода страницы («»), символ новой строки («
+»), символ перевода каретки («»), символ горизонтальной табуляции («	») и символ вертикальной табуляции («»).
+isupper()
+Проверяет, является ли символ символом верхнего регистра.
+isxdigit()
+Проверяет, является ли символ шестнадцатеричной цифрой, т.е. одной из
+0 1 2 3 4 5 6 7 8 9 a b c d e f A B C D E F.
+-------------------------------------- 
+----------------------------------------------------- 
+<<DESCRIPTION_ru>>
+[DESCRIPTION_ru](../../fills/isalnum/DESCRIPTION_ru)
+
+
+[UP](###UP)
+## p_DESCRIPTION
+:isalnum:
+[next](##p_BUGS)
+
+<<DESCRIPTION>>
+[DESCRIPTION](../../fills/isalnum/DESCRIPTION)
+
+
+[UP](###UP)
+## p_MIRRORS
+:isalnum:
+[next](##p_BUGS)
+
+<<MIRRORS>>
+[MIRRORS](../../fills/isalnum/MIRRORS)
+
+
+[UP](###UP)
+## p_BUGS
+:isalnum:
+[next](##p_EXAMPLES)
+
+<<BUGS>>
+[BUGS](../../fills/isalnum/BUGS)
+
+
+[UP](###UP)
+## p_EXAMPLES
+:isalnum:
+[next](##p_CODE)
+
+<<EXAMPLES>>
+[EXAMPLES](../../fills/isalnum/EXAMPLES)
+
+
+[UP](###UP)
+## p_CODE_h
+:isalnum:
+[next](##p_CODE_c)
+
+<<CODE_h>>
+[CODE_h](../../fills/isalnum/CODE_h)
+
+
+[UP](###UP)
+## p_CODE_c
+:isalnum:
+[next](##p_CODE_m)
+
+<<CODE_c>>
+[CODE_c](../../fills/isalnum/CODE_c)
+
+
+[UP](###UP)
+## p_CODE_m
+:isalnum:
+[next](##p_ERRORS)
+
+<<CODE_m>>
+[CODE_m](../../fills/isalnum/CODE_m)
+
+
+[UP](###UP)
+## p_ERRORS
+:isalnum:
+[next](##p_BOOKS)
+
+<<ERRORS>>
+[ERRORS](../../fills/isalnum/ERRORS)
+
+
+[UP](###UP)
+## p_BOOKS
+:isalnum:
+[next](##p_BOOKS_ru)
+
+<<BOOKS>>
+[BOOKS](../../fills/isalnum/BOOKS)
+
+
+[UP](###UP)
+## p_BOOKS_ru
+:isalnum:
+[next](##p_CONTENT)
+
+
+<<BOOKS_ru>>
+[BOOKS_ru](../../fills/isalnum/BOOKS_ru)
+
+
+[UP](###UP)
+## p_CONTENT
+:33333:
+[33333.cnt](../../contents/33333.cnt)
+[next](##UP)
+
+[UP](###UP)

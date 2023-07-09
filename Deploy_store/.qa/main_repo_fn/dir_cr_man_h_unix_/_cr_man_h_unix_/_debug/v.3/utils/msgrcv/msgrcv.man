@@ -1,0 +1,121 @@
+### UP
+[msgrcv](##msgrcv)
+[H_FILE](##H_FILE)
+[U_SYNOPSIS](##U_SYNOPSIS)
+[U_DESCRIPTION_ru](##U_DESCRIPTION)
+[U_DESCRIPTION](##U_DESCRIPTION_ru)
+[U_RETURN](##U_RETURN)
+[U_RETURN_ru](##U_RETURN_ru)
+[U_EXAMPLES](##U_EXAMPLES)
+[U_EXAMPLES_ru](##U_EXAMPLES_ru)
+[U_ERRORS](##U_ERRORS)
+[U_BOOKS](##U_BOOKS)
+[U_BOOKS_ru](##U_BOOKS_ru)
+[U_COMPIL_ARG](##U_COMPIL_ARG)
+
+[cat_hfiles](../../cat_hfiles.md)
+[cat_utils](../../cat_utils.md)
+[cat_structs](../../cat_structs.md)
+
+
+
+[UP](###UP)
+# msgrcv
+MAIN :msgrcv:
+[ru.manpages.org](https://www.google.ru/search?q=msgrcv+site%3Ahttps%3A%2F%2Fru.manpages.org)
+
+
+
+[UP](###UP)
+## H_FILE [sys_msg_h.md](../../hfiles/sys_msg_h.md)
+## U_SYNOPSIS
+:msgrcv:
+
+
+
+[UP](###UP)
+## U_DESCRIPTION_ru
+:msgrcv:
+[ru.manpages.org](https://www.google.ru/search?q=msgrcv+site%3Ahttps%3A%2F%2Fru.manpages.org)
+[man7.org](https://www.google.ru/search?q=msgrcv+site%3Ahttps%3A%2F%2Fman7.org%2Flinux%2Fman-pages)
+[next](##U_DESCRIPTION)
+
+
+
+[UP](###UP)
+## U_DESCRIPTION
+:msgrcv:
+[ru.manpages.org](https://www.google.ru/search?q=msgrcv+site%3Ahttps%3A%2F%2Fru.manpages.org)
+[cplusplus.com](https://www.cplusplus.com/reference/)
+[next](##U_RETURN)
+
+
+
+[UP](###UP)
+## U_RETURN
+:msgrcv:
+[man7.org](https://www.google.ru/search?q=msgrcv+site%3Ahttps%3A%2F%2Fman7.org%2Flinux%2Fman-pages)
+[next](##U_RETURN_ru)
+
+
+
+[UP](###UP)
+## U_RETURN_ru
+:msgrcv:
+[ru.manpages.org](https://www.google.ru/search?q=msgrcv+site%3Ahttps%3A%2F%2Fru.manpages.org)
+[next](##U_EXAMPLES)
+
+
+
+[UP](###UP)
+## U_EXAMPLES
+:msgrcv:
+[cpp.hotexamples.com](https://cpp.hotexamples.com/examples/-/-/msgrcv/cpp-close-function-examples.html)
+[linuxhint.com](https://www.google.ru/search?q=msgrcv+site%3Ahttps%3A%2F%2Flinuxhint.com)
+[next](##U_EXAMPLES_ru)
+
+
+
+[UP](###UP)
+## U_EXAMPLES_ru
+:msgrcv:
+[next](##U_ERRORS)
+
+
+
+[UP](###UP)
+## U_ERRORS
+:msgrcv:
+[man7.org](https://www.google.ru/search?q=msgrcv+site%3Ahttps%3A%2F%2Fman7.org%2Flinux%2Fman-pages)
+[next](##U_ERRORS_ru)
+
+
+## U_ERRORS_ru
+:msgrcv:
+[ru.manpages.org](https://www.google.ru/search?q=msgrcv+site%3Ahttps%3A%2F%2Fru.manpages.org)
+[next](##U_BOOKS)
+
+
+
+[UP](###UP)
+## U_BOOKS
+:msgrcv:
+[linuxhint.com](https://www.google.ru/search?q=msgrcv+site%3Ahttps%3A%2F%2Flinuxhint.com)
+[gnu.org](https://www.google.ru/search?q=msgrcv+site%3Ahttps%3A%2F%2Fwww.gnu.org%2Fsoftware%2Flibc%2Fmanual)
+[next](##U_BOOKS_ru)
+
+
+
+[UP](###UP)
+## U_BOOKS_ru
+:msgrcv:
+[cpp.com.ru](https://www.google.ru/search?q=msgrcv+site%3Ahttps%3A%2F%2Fcpp.com.ru)
+[next](##STRUCTS)
+
+
+
+[UP](###UP)
+## U_COMPIL_ARG [<^>]
+:msgrcv:
+[ru.manpages.org](https://www.google.ru/search?q=msgrcv+site%3Ahttps%3A%2F%2Fru.manpages.org)
+[UP](###UP)

@@ -1,0 +1,290 @@
+## Работа с иерархией окон в curses. Часть проекта uxcom.
+
+Пример 17
+```cpp
+/* Window management: "стопка" окон
+ *      cc -DTEST -DUSG w.c -lncurses -lx
+ *
+ *____ Файл w.h для Пример 17, Пример 19, Пример 21, Пример 23 _____ */
+
+#include "wcur.h"      /* Тот же, что в Пример 16 */
+extern int botw, topw;
+extern struct WindowList {  /* Элемент списка окон */
+  WINDOW *w;  /* окно */
+  int next;   /* следующее окно в списке */
+  char busy;  /* 0:слот свободен, 1:окно видимо, -1:окно спрятано */
+} wins[];              /* значения поля busy:   */
+#define W_VISIBLE 1    /* окно видимо           */
+#define W_FREE    0    /* слот таблицы свободен */
+#define W_HIDDEN (-1)  /* окно спрятано         */
+
+#define EOW     (-1)
+#define WIN(n)  wins[n].w
+		/* если совсем нет видимых окон... */
+#define TOPW    (topw != EOW ? WIN(topw) : stdscr)
+#define BOTW    (botw == EOW ? stdscr : WIN(botw))
+#define MAXW    15
+#define iswindow(n) wins[n].busy
+
+int  RaiseWin  (WINDOW *w); void PopWin    ();
+void DestroyWin(WINDOW *w,  int destroy);
+int  HideWin   (WINDOW *w);
+#define KillWin(w) DestroyWin(w, TRUE)
+#define DropWin(w) DestroyWin(w, FALSE)
+#define PushWin(w) RaiseWin(w)
+
+#define BAR_HOR    01   /* окно имеет горизонтальный scroll bar */
+#define BAR_VER    02   /* окно имеет вертикальный   scroll bar */
+#define DX              2  /* отступ от краев окна       */
+#define BARWIDTH        2  /* ширина scroll bar-а        */
+#define BARHEIGHT       1  /* высота                     */
+/* Вычисление координат строки выбора в окне             */
+#define WY(title, y)     ((y) + (title ? 3 : 1))
+#define WX(x)            ((x) + 1 + DX)
+#define XEND(w,scrollok) (wcols(w)-((scrollok & BAR_VER) ? BARWIDTH+2 : 1))
+void whorline  (WINDOW *w, int y, int x1, int x2);
+void wverline  (WINDOW *w, int x, int y1, int y2);
+void wbox      (WINDOW *w, int x1, int y1, int x2, int y2);
+void wborder   (WINDOW *w);
+void wboxerase (WINDOW *w, int x1, int y1, int x2, int y2);
+void WinBorder (WINDOW *w, int bgattrib, int titleattrib, char *title,
+			   int scrollok, int clear);
+void WinScrollBar(WINDOW *w, int whichbar, int n, int among,
+		  char *title, int bgattrib);
+/* Спасение/восстановление позиции курсора */
+typedef struct { int x, y; } Point;
+#define SetPoint(p, yy, xx) { (p).x = (xx); (p).y = (yy);}
+#define GetBack(p, w)       wmove((w), (p).y, (p).x)
+
+/* _______________________ файл w.c _____________________________ */
+/*            УПРАВЛЕНИЕ ПОРЯДКОМ ОКОН НА ЭКРАНЕ                  */
+/* ______________________________________________________________ */
+#include "w.h"
+int botw = EOW, topw = EOW;   /* нижнее и верхнее окна   */
+struct WindowList wins[MAXW]; /* список управляемых окон */
+
+/* Прочесть символ из окна, проявив окно (если оно не спрятано) */
+int WinGetch (WINDOW *win) { register n, dorefr = YES;
+    if(botw != EOW) for(n=botw; n != EOW; n=wins[n].next)
+	if(wins[n].w == win){
+	   if(wins[n].busy == W_HIDDEN) dorefr = NO;  /* спрятано */
+	   break;
+	}
+    if( dorefr ) wrefresh (win);  /* проявка */
+    else         doupdate ();
+    for(;;){ n = wgetch (win);    /* собственно чтение */
+	 if( n == ctrl('A')){ RedrawScreen(); continue; }
+	 return n;
+    }
+}
+/* Вычислить новое верхнее окно */
+static void ComputeTopWin(){   register n;
+    if(botw == EOW) topw = EOW;  /* список стал пуст */
+    else{ /* ищем самое верхнее видимое окно */
+	  for(topw = EOW, n=botw; n != EOW; n=wins[n].next)
+		/* спрятанное окно не может быть верхним */
+		if( wins[n].busy == W_VISIBLE) topw = n;
+	  /* Может совсем не оказаться видимых окон; тогда
+	   * topw == EOW, хотя botw != EOW. Макрос TOPW предложит
+	   * в качестве верхнего окна окно stdscr */
+    }
+}
+/* Виртуально перерисовать окна в списке в порядке снизу вверх */
+static void WinRefresh(){      register nw;
+     /* чистый фон экрана */
+     touchwin(stdscr); wnoutrefresh(stdscr);
+     if(botw != EOW) for(nw=botw; nw != EOW; nw=wins[nw].next)
+	if(wins[nw].busy == W_VISIBLE){
+	    touchwin(wins[nw].w); wnoutrefresh(wins[nw].w);
+	}
+}
+/* Исключить окно из списка не уничтожая ячейку */
+static int WinDelList(WINDOW *w){  register nw, prev;
+    if(botw == EOW) return EOW; /* список пуст */
+    for(prev=EOW, nw=botw; nw != EOW; prev=nw, nw=wins[nw].next)
+	if(wins[nw].w == w){
+	   if(prev == EOW) botw = wins[nw].next; /* было дно стопки */
+	   else wins[prev].next = wins[nw].next;
+	   return nw;   /* номер ячейки в таблице окон */
+	}
+    return EOW; /* окна не было в списке */
+}
+/* Сделать окно верхним, если его еще не было в таблице - занести */
+int RaiseWin(WINDOW *w){  int nw, n;
+    if((nw = WinDelList(w)) == EOW){ /* не было в списке  */
+	for(nw=0; nw < MAXW; nw++)   /* занести в таблицу */
+	  if( !iswindow(nw)){ wins[nw].w = w; break; }
+	if(nw == MAXW){ beep(); return EOW; } /* слишком много окон */
+    }
+    /* поместить окно nw на вершину списка */
+    if(botw == EOW) botw = nw;
+    else{ for(n = botw; wins[n].next != EOW; n=wins[n].next);
+	  wins[n].next = nw;
+    }
+    wins[nw].busy = W_VISIBLE; /* окно видимо, слот занят */
+    wins[topw = nw].next = EOW; WinRefresh(); return nw;
+}
+/* Удалить окно из списка и (возможно) уничтожить */
+/* Окно при этом исчезнет с экрана                */
+void DestroyWin(WINDOW *w, int destroy){  int nw;
+    if((nw = WinDelList(w)) != EOW){ /* окно было в списке */
+	ComputeTopWin();
+	wins[nw].busy = W_FREE;  /* ячейка свободна */
+	wins[nw].w    = NULL;
+    }
+    if(destroy) delwin(w);       /* уничтожить curses-ное окно */
+    WinRefresh();
+}
+void PopWin(){ KillWin(TOPW); }
+/* Спрятать окно, и при этом сделать его самым нижним. */
+int HideWin(WINDOW *w){  register nw, prev;
+     if(botw == EOW) return EOW; /* список пуст */
+     for(prev = EOW, nw = botw; nw != EOW; prev = nw, nw = wins[nw].next )
+	 if(wins[nw].w == w){
+	    wnoutrefresh(w); /* вместо untouchwin(w); */
+	    wins[nw].busy = W_HIDDEN; /* спрятано */
+	    if( nw != botw ){
+		wins[prev].next = wins[nw].next; /* удалить из списка */
+		wins[nw].next = botw; botw = nw; /* на дно стопки     */
+	    }
+	    WinRefresh();
+	    ComputeTopWin();
+	    return nw;
+	 }
+      return EOW;  /* нет в списке */
+}
+/* _______________ ОФОРМИТЕЛЬСКИЕ РАБОТЫ _____________________ */
+/* Нарисовать горизонтальную линию */
+void whorline(WINDOW *w, int y, int x1, int x2){
+    for( ; x1 <= x2; x1++) mvwaddch(w, y, x1, HOR_LINE);
+}
+/* Нарисовать вертикальную линию */
+void wverline(WINDOW *w, int x, int y1, int y2){
+    for( ; y1 <= y2; y1++) mvwaddch(w, y1, x, VER_LINE);
+}
+/* Нарисовать прямоугольную рамку */
+void wbox(WINDOW *w, int x1, int y1, int x2, int y2){
+    whorline(w, y1, x1+1, x2-1);
+    whorline(w, y2, x1+1, x2-1);
+    wverline(w, x1, y1+1, y2-1);
+    wverline(w, x2, y1+1, y2-1);
+ /* Углы */
+    mvwaddch (w, y1, x1, UPPER_LEFT);
+    mvwaddch (w, y1, x2, UPPER_RIGHT);
+    mvwaddch (w, y2, x1, LOWER_LEFT);
+    /* Нижний правый угол нельзя занимать ! */
+    if(! (wbegx(w) + x2 == COLS-1 && wbegy(w) + y2 == LINES-1))
+     mvwaddch (w, y2, x2, LOWER_RIGHT);
+}
+/* Нарисовать рамку вокруг окна */
+void wborder(WINDOW *w){ wbox(w, 0, 0, wcols(w)-1, wlines(w)-1); }
+/* Очистить прямоугольную область в окне */
+void wboxerase(WINDOW *w, int x1, int y1, int x2, int y2){
+    int x, y; register i, j; getyx(w, y, x);
+    for(i=y1; i <= y2; ++i) for(j=x1; j <= x2; j++)
+	mvwaddch(w, i, j, ' ');
+    wmove(w, y, x);
+}
+/* Нарисовать рамку и заголовок у окна */
+void WinBorder (WINDOW *w, int bgattrib, int titleattrib, char *title,
+			   int scrollok, int clear){
+    register  x, y;
+
+    wattrset (w, bgattrib);     /* задать цвет окна */
+    if(clear) werase(w);        /* заполнить окно цветными пробелами */
+    wborder  (w);  /* нарисовать рамку вокруг окна      */
+    if (title) {   /* если есть заголовок ...        */
+	for (x = 1; x < wcols (w) - 1; x++){
+	     wattrset(w, bgattrib); mvwaddch (w, 2, x, HOR_LINE);
+	     /* очистка поля заголовка */
+	     wattrset(w, titleattrib); mvwaddch (w, 1, x, ' ');
+	}
+	wattrset(w, bgattrib);
+	mvwaddch (w, 2, 0,             LEFT_JOIN);
+	mvwaddch (w, 2, wcols (w) - 1, RIGHT_JOIN);
+	wattrset (w, A_BOLD | titleattrib);
+	mvwaddstr(w, 1, (wcols(w)-strlen(title))/2, title);
+	wattrset (w, bgattrib);
+    }
+    if (scrollok & BAR_VER) { /* выделить столбец под scroll bar. */
+	int  ystart = WY(title, 0), xend = XEND(w, scrollok);
+	for (y = ystart; y < wlines (w) - 1; y++)
+	    mvwaddch (w, y,        xend, VER_LINE);
+	mvwaddch (w, wlines (w)-1, xend, BOTTOM_JOIN);
+	mvwaddch (w, ystart-1,     xend, TOP_JOIN);
+    }
+/*  затычка */
+    if(wcols(w)==COLS && wlines(w)==LINES){ wattrset(w, A_NORMAL);
+       mvwaddch(w, LINES-1, COLS-1, ' ');
+    }
+    wattrset (w, bgattrib);
+}
+/* Нарисовать вертикальный scroll bar (горизонтальный не сделан) */
+/* Написано не очень аккуратно                                   */
+void WinScrollBar(WINDOW *w, int whichbar, int n, int among,
+		  char *title, int bgattrib){
+    register y, i;
+    int     starty = WY(title, 0);
+    int     endy   = wlines (w)         - 1;
+    int     x      = XEND(w, whichbar)  + 1;
+    int     height = endy - starty         ;
+
+    if(whichbar & BAR_VER){     /* вертикальный */
+       wattrset (w, A_NORMAL);
+       for (y = starty; y < endy; y++)
+	   for (i = 0;  i < BARWIDTH; i++)
+	       mvwaddch (w, y, x + i, ' ');
+       y = starty;
+       if(among > 1) y += ((long) (height - BARHEIGHT) * n / (among - 1));
+       wattron(w, A_BOLD);
+       for (i = 0; i < BARWIDTH; i++)
+	   mvwaddch (w, y, x + i, BOX);
+       wattrset(w, bgattrib | A_BOLD );
+       if( wcols(w) >= 10 )
+	   mvwprintw(w, 0, wcols(w)-9, "%03d/%03d", n+1, among);
+    }
+    wattrset (w, bgattrib);
+}
+#ifdef TEST
+main(){ WINDOW *w[5]; register i, y;
+     initscr();  /* запустить curses */
+     w[0] = newwin(16, 20, 4, 43);  /* создать 5 окон */
+     w[1] = newwin(12, 20, 7, 34);
+     w[2] = newwin(6, 30, 3, 40);
+     w[3] = newwin(7, 35, 12, 38);
+     w[4] = newwin(6, 20, 11, 54);
+     for(i=0; i < 5; i++){
+	keypad  (w[i],   TRUE);
+	wattrset(w[i],   A_REVERSE); werase(w[i]);
+	wborder (w[i]);  mvwprintw(w[i], 1, 2, "Window %d", i);
+	RaiseWin(w[i]);  /* сделать верхним окном */
+     }
+     noecho(); cbreak(); /* прозрачный ввод */
+     for(;botw != EOW;){ int c;
+     /* нарисовать порядок окон */
+	for(i=botw, y=0; y < 5; y++, i=(i==EOW ? EOW : wins[i].next))
+	    mvprintw(8 - y, 5, i==EOW ? "~": "%d%c", i,
+		wins[i].busy == W_HIDDEN ? 'h':' ');
+	mvprintw(9, 5, "topw=%3d botw=%3d", topw, botw);
+	wnoutrefresh(stdscr); /* вирт. проявка этих цифр */
+	c = WinGetch(TOPW);
+	/* здесь происходит doupdate();
+	 * и только в этот момент картинка проявляется */
+
+	switch(c){
+	case KEY_DC: PopWin(); break;
+	case KEY_IC: KillWin(BOTW); break;
+	case '0': case '1': case '2': case '3': case '4': case '5':
+	      c -= '0'; if( !iswindow(c)){ beep(); break; }
+	      RaiseWin(WIN(c)); break;
+	case 'D': KillWin(w[2]); break;
+	case 'h': HideWin(BOTW); break;
+	case 'H': HideWin(TOPW); break;
+	case ESC: goto out;
+	default:  waddch(TOPW, c & 0377); break;
+	}
+     }
+     mvaddstr(LINES-2, 0, "Больше нет окон"); refresh();
+out: echo(); nocbreak(); endwin();
+}
+#endif

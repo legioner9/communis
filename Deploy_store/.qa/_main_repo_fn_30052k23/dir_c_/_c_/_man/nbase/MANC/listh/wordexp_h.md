@@ -1,0 +1,2 @@
+p@wordexp
+p@wordfree

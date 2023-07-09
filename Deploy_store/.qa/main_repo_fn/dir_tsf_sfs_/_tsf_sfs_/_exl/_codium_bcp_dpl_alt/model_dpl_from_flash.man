@@ -1,0 +1,15 @@
+# proc_bcp_from_flash.exl
+- bcp_dir_exist_in_system_alt.exl
+- cp_zip_from_toshiba_ext_alt.exl
+- unzip_inplace.exl
+
+(bcp_dir_exist_in_system_alt.exl)
+# rm files~ SF, copy files SF -> files~ SF
+
+(cp_zip_from_toshiba_ext_alt.exl)
+# rm file.zip SF
+# cp file.zip FF -> file.zip SF
+
+(unzip_inplace.exl)
+# rm files SF
+# unzip file.zip SF

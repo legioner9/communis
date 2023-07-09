@@ -1,0 +1,3 @@
+The [CX] [Option Start] stpcpy() [Option End]  and strcpy() functions shall copy the string pointed to by s2 (including the terminating NUL character) into the array pointed to by s1.
+
+If copying takes place between objects that overlap, the behavior is undefined.

@@ -1,0 +1,4 @@
+from>  work flow udp_csdi {in,stream} https://gamedev.ru/code/articles/?id=4259&page=2   ->
+
+do> 
+^1^ bag recv_whilen_lc_2_с not close connection 

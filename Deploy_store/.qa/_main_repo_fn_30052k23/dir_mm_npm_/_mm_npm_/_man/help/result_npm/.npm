@@ -1,0 +1,14 @@
+# npm test in ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_mm_npm_/_mm_npm_/_man/help
+
+
+> help@1.0.0 test ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_mm_npm_/_mm_npm_/_man/help
+> echo "Error: no test specified" && exit 1
+
+Error: no test specified
+npm ERR! Test failed.  See above for more details.
+
+# npm test -h in ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_mm_npm_/_mm_npm_/_man/help
+
+npm test [-- <args>]
+
+aliases: tst, t

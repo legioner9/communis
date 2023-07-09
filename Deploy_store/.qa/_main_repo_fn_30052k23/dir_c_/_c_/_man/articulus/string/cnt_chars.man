@@ -1,0 +1,444 @@
+<table class="wikitable">
+
+<tbody><tr style="font-size: 80%">
+<th>Номер
+</th>
+<th>Английское название
+</th>
+<th>Русское название
+</th>
+<th>Соче­тание<br>кла­виш<sup id="cite_ref-1" class="reference"><a href="#cite_note-1">[1]</a></sup>
+</th>
+<th><a href="/wiki/Escape-%D0%BF%D0%BE%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D1%8C" class="mw-redirect" title="Escape-последовательность">Escape<br>после­дова­тель­ность</a>
+</th>
+<th>Назначение
+</th></tr>
+<tr>
+<td><b><style data-mw-deduplicate="TemplateStyles:r113275842">.mw-parser-output .ts-comment-commentedText{border-bottom:1px dotted;cursor:help}@media(hover:none){.mw-parser-output .ts-comment-commentedText:not(.rt-commentedText){border-bottom:0;cursor:auto}}</style><span class="ts-comment-commentedText" title="0"><code><a href="/wiki/%D0%A8%D0%B5%D1%81%D1%82%D0%BD%D0%B0%D0%B4%D1%86%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D1%87%D0%BD%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0_%D1%81%D1%87%D0%B8%D1%81%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F" title="Шестнадцатеричная система счисления">0x</a>00</code></span></b>
+</td>
+<td>NULL
+</td>
+<td>пустой символ
+</td>
+<td>^@
+</td>
+<td>\0
+</td>
+<td>Этот символ ничего не делает. Некоторые терминалы изображают его как пробел, но это неправильно. Часто NULL используют для обозначения конца цепочки символов (например, в <a href="/wiki/%D0%A1%D0%B8_(%D1%8F%D0%B7%D1%8B%D0%BA_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F)" title="Си (язык программирования)">языке C</a>).
+</td></tr>
+<tr>
+<td><b><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r113275842"><span class="ts-comment-commentedText" title="1"><code><a href="/wiki/%D0%A8%D0%B5%D1%81%D1%82%D0%BD%D0%B0%D0%B4%D1%86%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D1%87%D0%BD%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0_%D1%81%D1%87%D0%B8%D1%81%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F" title="Шестнадцатеричная система счисления">0x</a>01</code></span></b>
+</td>
+<td>START OF HEADING
+</td>
+<td>начало заголовка
+</td>
+<td>^A
+</td>
+<td>
+</td>
+<td>В настоящее время используется в консоли маршрутизаторов Cisco.
+</td></tr>
+<tr>
+<td><b><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r113275842"><span class="ts-comment-commentedText" title="2"><code><a href="/wiki/%D0%A8%D0%B5%D1%81%D1%82%D0%BD%D0%B0%D0%B4%D1%86%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D1%87%D0%BD%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0_%D1%81%D1%87%D0%B8%D1%81%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F" title="Шестнадцатеричная система счисления">0x</a>02</code></span></b>
+</td>
+<td>START OF TEXT
+</td>
+<td>начало текста
+</td>
+<td>^B
+</td>
+<td>
+</td>
+<td>В настоящее время используется в консоли маршрутизаторов Cisco.
+</td></tr>
+<tr>
+<td><b><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r113275842"><span class="ts-comment-commentedText" title="3"><code><a href="/wiki/%D0%A8%D0%B5%D1%81%D1%82%D0%BD%D0%B0%D0%B4%D1%86%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D1%87%D0%BD%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0_%D1%81%D1%87%D0%B8%D1%81%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F" title="Шестнадцатеричная система счисления">0x</a>03</code></span></b>
+</td>
+<td>END OF TEXT
+</td>
+<td>конец текста
+</td>
+<td>^C
+</td>
+<td>
+</td>
+<td>При вводе на терминале обычно интерпретируется как сигнал прерывания.
+</td></tr>
+<tr>
+<td><b><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r113275842"><span class="ts-comment-commentedText" title="4"><code><a href="/wiki/%D0%A8%D0%B5%D1%81%D1%82%D0%BD%D0%B0%D0%B4%D1%86%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D1%87%D0%BD%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0_%D1%81%D1%87%D0%B8%D1%81%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F" title="Шестнадцатеричная система счисления">0x</a>04</code></span></b>
+</td>
+<td>END OF TRANSMISSION
+</td>
+<td>конец передачи
+</td>
+<td>^D
+</td>
+<td>
+</td>
+<td>При вводе на терминале в <a href="/wiki/UNIX" class="mw-redirect" title="UNIX">UNIX</a>-системах интерпретируется как конец вводимых данных. Если текущая программа брала данные с терминала, то она завершается, как только обработает всё, что было до символа ^D.
+</td></tr>
+<tr>
+<td><b><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r113275842"><span class="ts-comment-commentedText" title="5"><code><a href="/wiki/%D0%A8%D0%B5%D1%81%D1%82%D0%BD%D0%B0%D0%B4%D1%86%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D1%87%D0%BD%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0_%D1%81%D1%87%D0%B8%D1%81%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F" title="Шестнадцатеричная система счисления">0x</a>05</code></span></b>
+</td>
+<td>ENQUIRY
+</td>
+<td>запрос
+</td>
+<td>^E
+</td>
+<td>
+</td>
+<td>Использовался в <a href="/wiki/%D0%A2%D0%B5%D0%BB%D0%B5%D1%82%D0%B0%D0%B9%D0%BF" title="Телетайп">телетайпной</a> связи. В ответ предполагалось получить идентификационную строку удалённого аппарата.
+</td></tr>
+<tr>
+<td><b><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r113275842"><span class="ts-comment-commentedText" title="6"><code><a href="/wiki/%D0%A8%D0%B5%D1%81%D1%82%D0%BD%D0%B0%D0%B4%D1%86%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D1%87%D0%BD%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0_%D1%81%D1%87%D0%B8%D1%81%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F" title="Шестнадцатеричная система счисления">0x</a>06</code></span></b>
+</td>
+<td>ACKNOWLEDGE
+</td>
+<td>подтверждение
+</td>
+<td>^F
+</td>
+<td>
+</td>
+<td>Использовался в <a href="/wiki/%D0%A2%D0%B5%D0%BB%D0%B5%D1%82%D0%B0%D0%B9%D0%BF" title="Телетайп">телетайпной</a> связи.
+</td></tr>
+<tr>
+<td><b><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r113275842"><span class="ts-comment-commentedText" title="7"><code><a href="/wiki/%D0%A8%D0%B5%D1%81%D1%82%D0%BD%D0%B0%D0%B4%D1%86%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D1%87%D0%BD%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0_%D1%81%D1%87%D0%B8%D1%81%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F" title="Шестнадцатеричная система счисления">0x</a>07</code></span></b>
+</td>
+<td>BELL
+</td>
+<td><a href="/wiki/%D0%94%D0%B8%D0%BD%D0%B0%D0%BC%D0%B8%D0%BA_%D0%9F%D0%9A" title="Динамик ПК">звуковой сигнал</a>
+</td>
+<td>^G
+</td>
+<td>\a
+</td>
+<td>Если этот символ послать на принтер или на терминал, то ничего не напечатается, но послышится звуковой сигнал.
+</td></tr>
+<tr>
+<td><b><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r113275842"><span class="ts-comment-commentedText" title="8"><code><a href="/wiki/%D0%A8%D0%B5%D1%81%D1%82%D0%BD%D0%B0%D0%B4%D1%86%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D1%87%D0%BD%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0_%D1%81%D1%87%D0%B8%D1%81%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F" title="Шестнадцатеричная система счисления">0x</a>08</code></span></b>
+</td>
+<td>BACKSPACE
+</td>
+<td>возврат на шаг
+</td>
+<td>^H
+</td>
+<td>\b
+</td>
+<td>Перемещает позицию печати на один символ назад. На принтерах может использоваться для наложения одного символа на другой, например <b>a</b> BS <b>^</b> = <b>â</b>. При вводе с терминала иногда используется для стирания предшествующего символа («забой»).
+</td></tr>
+<tr>
+<td><b><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r113275842"><span class="ts-comment-commentedText" title="9"><code><a href="/wiki/%D0%A8%D0%B5%D1%81%D1%82%D0%BD%D0%B0%D0%B4%D1%86%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D1%87%D0%BD%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0_%D1%81%D1%87%D0%B8%D1%81%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F" title="Шестнадцатеричная система счисления">0x</a>09</code></span></b>
+</td>
+<td>CHARACTER TABULATION (horizontal tabulation)
+</td>
+<td>горизонтальная <a href="/wiki/%D0%A2%D0%B0%D0%B1%D1%83%D0%BB%D1%8F%D1%86%D0%B8%D1%8F" title="Табуляция">табуляция</a>
+</td>
+<td>^I
+</td>
+<td>\t
+</td>
+<td>Перемещает позицию печати к следующей позиции горизонтальной табуляции.
+</td></tr>
+<tr>
+<td><b><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r113275842"><span class="ts-comment-commentedText" title="10"><code><a href="/wiki/%D0%A8%D0%B5%D1%81%D1%82%D0%BD%D0%B0%D0%B4%D1%86%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D1%87%D0%BD%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0_%D1%81%D1%87%D0%B8%D1%81%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F" title="Шестнадцатеричная система счисления">0x</a>0A</code></span></b>
+</td>
+<td>LINE FEED
+</td>
+<td><a href="/wiki/%D0%9F%D0%B5%D1%80%D0%B5%D0%B2%D0%BE%D0%B4_%D1%81%D1%82%D1%80%D0%BE%D0%BA%D0%B8" title="Перевод строки">перевод строки</a>
+</td>
+<td>^J
+</td>
+<td>\n
+</td>
+<td>Перемещает позицию печати на одну строку вниз (исходно&nbsp;— без <i>возврата каретки</i>) . Разделяет строки <a href="/wiki/%D0%A2%D0%B5%D0%BA%D1%81%D1%82%D0%BE%D0%B2%D1%8B%D0%B9_%D1%84%D0%B0%D0%B9%D0%BB" title="Текстовый файл">текстовых файлов</a> в <a href="/wiki/Unix" title="Unix">Unix</a>-системах.
+</td></tr>
+<tr>
+<td><b><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r113275842"><span class="ts-comment-commentedText" title="11"><code><a href="/wiki/%D0%A8%D0%B5%D1%81%D1%82%D0%BD%D0%B0%D0%B4%D1%86%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D1%87%D0%BD%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0_%D1%81%D1%87%D0%B8%D1%81%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F" title="Шестнадцатеричная система счисления">0x</a>0B</code></span></b>
+</td>
+<td>LINE TABULATION (vertical tabulation)
+</td>
+<td>вертикальная табуляция
+</td>
+<td>^K
+</td>
+<td>\v
+</td>
+<td>Перемещает позицию печати к следующей позиции вертикальной табуляции. На терминалах этот символ обычно эквивалентен переводу строки.
+</td></tr>
+<tr>
+<td><b><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r113275842"><span class="ts-comment-commentedText" title="12"><code><a href="/wiki/%D0%A8%D0%B5%D1%81%D1%82%D0%BD%D0%B0%D0%B4%D1%86%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D1%87%D0%BD%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0_%D1%81%D1%87%D0%B8%D1%81%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F" title="Шестнадцатеричная система счисления">0x</a>0C</code></span></b>
+</td>
+<td>FORM FEED
+</td>
+<td>прогон страницы, смена страницы
+</td>
+<td>^L
+</td>
+<td>\f
+</td>
+<td>Выбрасывает текущую страницу и начинает печать со следующей. При выводе на терминал этот символ обычно эквивалентен переводу строки, однако нажатие ^L на клавиатуре может осуществлять очистку экрана.
+</td></tr>
+<tr>
+<td><b><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r113275842"><span class="ts-comment-commentedText" title="13"><code><a href="/wiki/%D0%A8%D0%B5%D1%81%D1%82%D0%BD%D0%B0%D0%B4%D1%86%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D1%87%D0%BD%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0_%D1%81%D1%87%D0%B8%D1%81%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F" title="Шестнадцатеричная система счисления">0x</a>0D</code></span></b>
+</td>
+<td>CARRIAGE RETURN
+</td>
+<td><a href="/wiki/%D0%92%D0%BE%D0%B7%D0%B2%D1%80%D0%B0%D1%82_%D0%BA%D0%B0%D1%80%D0%B5%D1%82%D0%BA%D0%B8" title="Возврат каретки">Возврат каретки</a>
+</td>
+<td>^M
+</td>
+<td>\r
+</td>
+<td>Перемещает позицию печати в крайнее левое положение (исходно&nbsp;— без <i>перевода на следующую строку</i>). Разделяет строки <a href="/wiki/%D0%A2%D0%B5%D0%BA%D1%81%D1%82%D0%BE%D0%B2%D1%8B%D0%B9_%D1%84%D0%B0%D0%B9%D0%BB" title="Текстовый файл">текстовых файлов</a> в некоторых <a href="/wiki/%D0%9E%D0%BF%D0%B5%D1%80%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0" title="Операционная система">ОС</a> (например <a href="/wiki/Mac_OS" title="Mac OS">Mac OS</a>, но не в <a href="/wiki/Mac_OS_X" class="mw-redirect" title="Mac OS X">Mac OS X</a>). Во многих других ОС (<a href="/wiki/CP/M" title="CP/M">CP/M</a>, <a href="/wiki/MS-DOS" title="MS-DOS">MS-DOS</a> и <a href="/wiki/Microsoft_Windows" class="mw-redirect" title="Microsoft Windows">Microsoft Windows</a>), для разделения строк используется сочетание кодов возврата каретки (CARRIAGE RETURN) и перевода строки (LINE FEED)&nbsp;— 0D<sub>16</sub> + 0A<sub>16</sub>, то есть в том виде, в котором файл можно отправить непосредственно на принтер.
+</td></tr>
+<tr>
+<td><b><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r113275842"><span class="ts-comment-commentedText" title="14"><code><a href="/wiki/%D0%A8%D0%B5%D1%81%D1%82%D0%BD%D0%B0%D0%B4%D1%86%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D1%87%D0%BD%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0_%D1%81%D1%87%D0%B8%D1%81%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F" title="Шестнадцатеричная система счисления">0x</a>0E</code></span></b>
+</td>
+<td>SHIFT OUT (locking-shift one)
+</td>
+<td>режим национальных символов
+</td>
+<td>^N
+</td>
+<td>
+</td>
+<td>В <a href="/wiki/%D0%9A%D0%9E%D0%98-7" title="КОИ-7">КОИ-7</a> включает режим национальных символов. На некоторых принтерах включает режим символов двойной ширины.
+</td></tr>
+<tr>
+<td><b><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r113275842"><span class="ts-comment-commentedText" title="15"><code><a href="/wiki/%D0%A8%D0%B5%D1%81%D1%82%D0%BD%D0%B0%D0%B4%D1%86%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D1%87%D0%BD%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0_%D1%81%D1%87%D0%B8%D1%81%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F" title="Шестнадцатеричная система счисления">0x</a>0F</code></span></b>
+</td>
+<td>SHIFT IN (locking-shift zero)
+</td>
+<td>режим обычного ASCII
+</td>
+<td>^O
+</td>
+<td>
+</td>
+<td>В <a href="/wiki/%D0%9A%D0%9E%D0%98-7" title="КОИ-7">КОИ-7</a> включает латинский режим. На некоторых принтерах включает режим узких символов.
+</td></tr>
+<tr>
+<td><b><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r113275842"><span class="ts-comment-commentedText" title="16"><code><a href="/wiki/%D0%A8%D0%B5%D1%81%D1%82%D0%BD%D0%B0%D0%B4%D1%86%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D1%87%D0%BD%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0_%D1%81%D1%87%D0%B8%D1%81%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F" title="Шестнадцатеричная система счисления">0x</a>10</code></span></b>
+</td>
+<td>DATA LINK ESCAPE
+</td>
+<td>экранирование управляющих символов (в обычный текст)
+</td>
+<td>^P
+</td>
+<td>
+</td>
+<td>Означает, что следующий за ним управляющий символ должен восприниматься как данные, а не как управляющий символ.
+</td></tr>
+<tr>
+<td><b><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r113275842"><span class="ts-comment-commentedText" title="17"><code><a href="/wiki/%D0%A8%D0%B5%D1%81%D1%82%D0%BD%D0%B0%D0%B4%D1%86%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D1%87%D0%BD%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0_%D1%81%D1%87%D0%B8%D1%81%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F" title="Шестнадцатеричная система счисления">0x</a>11</code></span></b>
+</td>
+<td>DEVICE CONTROL ONE
+</td>
+<td>1-й код управления устройством
+</td>
+<td>^Q
+</td>
+<td>
+</td>
+<td>На терминалах разрешает продолжить вывод данных.
+</td></tr>
+<tr>
+<td><b><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r113275842"><span class="ts-comment-commentedText" title="18"><code><a href="/wiki/%D0%A8%D0%B5%D1%81%D1%82%D0%BD%D0%B0%D0%B4%D1%86%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D1%87%D0%BD%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0_%D1%81%D1%87%D0%B8%D1%81%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F" title="Шестнадцатеричная система счисления">0x</a>12</code></span></b>
+</td>
+<td>DEVICE CONTROL TWO
+</td>
+<td>2-й код управления устройством
+</td>
+<td>^R
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td><b><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r113275842"><span class="ts-comment-commentedText" title="19"><code><a href="/wiki/%D0%A8%D0%B5%D1%81%D1%82%D0%BD%D0%B0%D0%B4%D1%86%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D1%87%D0%BD%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0_%D1%81%D1%87%D0%B8%D1%81%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F" title="Шестнадцатеричная система счисления">0x</a>13</code></span></b>
+</td>
+<td>DEVICE CONTROL THREE
+</td>
+<td>3-й код управления устройством
+</td>
+<td>^S
+</td>
+<td>
+</td>
+<td>На терминалах временно прерывает (приостанавливает) вывод данных.
+</td></tr>
+<tr>
+<td><b><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r113275842"><span class="ts-comment-commentedText" title="20"><code><a href="/wiki/%D0%A8%D0%B5%D1%81%D1%82%D0%BD%D0%B0%D0%B4%D1%86%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D1%87%D0%BD%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0_%D1%81%D1%87%D0%B8%D1%81%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F" title="Шестнадцатеричная система счисления">0x</a>14</code></span></b>
+</td>
+<td>DEVICE CONTROL FOUR
+</td>
+<td>4-й код управления устройством
+</td>
+<td>^T
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td><b><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r113275842"><span class="ts-comment-commentedText" title="21"><code><a href="/wiki/%D0%A8%D0%B5%D1%81%D1%82%D0%BD%D0%B0%D0%B4%D1%86%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D1%87%D0%BD%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0_%D1%81%D1%87%D0%B8%D1%81%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F" title="Шестнадцатеричная система счисления">0x</a>15</code></span></b>
+</td>
+<td>NEGATIVE ACKNOWLEDGE
+</td>
+<td>отрицательное подтверждение
+</td>
+<td>^U
+</td>
+<td>
+</td>
+<td>Использовался в <a href="/wiki/%D0%A2%D0%B5%D0%BB%D0%B5%D1%82%D0%B0%D0%B9%D0%BF" title="Телетайп">телетайпной</a> связи.
+</td></tr>
+<tr>
+<td><b><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r113275842"><span class="ts-comment-commentedText" title="22"><code><a href="/wiki/%D0%A8%D0%B5%D1%81%D1%82%D0%BD%D0%B0%D0%B4%D1%86%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D1%87%D0%BD%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0_%D1%81%D1%87%D0%B8%D1%81%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F" title="Шестнадцатеричная система счисления">0x</a>16</code></span></b>
+</td>
+<td>SYNCHRONOUS IDLE
+</td>
+<td>пустой символ для синхронного режима передачи
+</td>
+<td>^V
+</td>
+<td>
+</td>
+<td>Некоторые линии связи устроены так, что требуют непрерывной передачи данных. Если передавать нечего, то передают этот символ.
+</td></tr>
+<tr>
+<td><b><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r113275842"><span class="ts-comment-commentedText" title="23"><code><a href="/wiki/%D0%A8%D0%B5%D1%81%D1%82%D0%BD%D0%B0%D0%B4%D1%86%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D1%87%D0%BD%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0_%D1%81%D1%87%D0%B8%D1%81%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F" title="Шестнадцатеричная система счисления">0x</a>17</code></span></b>
+</td>
+<td>END OF TRANSMISSION BLOCK
+</td>
+<td>конец блока передаваемых данных
+</td>
+<td>^W
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td><b><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r113275842"><span class="ts-comment-commentedText" title="24"><code><a href="/wiki/%D0%A8%D0%B5%D1%81%D1%82%D0%BD%D0%B0%D0%B4%D1%86%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D1%87%D0%BD%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0_%D1%81%D1%87%D0%B8%D1%81%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F" title="Шестнадцатеричная система счисления">0x</a>18</code></span></b>
+</td>
+<td>CANCEL
+</td>
+<td>отмена
+</td>
+<td>^X
+</td>
+<td>
+</td>
+<td>Данные, которые идут перед ним, некорректны. (Обычно речь идёт об одной строке.)
+</td></tr>
+<tr>
+<td><b><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r113275842"><span class="ts-comment-commentedText" title="25"><code><a href="/wiki/%D0%A8%D0%B5%D1%81%D1%82%D0%BD%D0%B0%D0%B4%D1%86%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D1%87%D0%BD%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0_%D1%81%D1%87%D0%B8%D1%81%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F" title="Шестнадцатеричная система счисления">0x</a>19</code></span></b>
+</td>
+<td>END OF MEDIUM
+</td>
+<td>конец носителя
+</td>
+<td>^Y
+</td>
+<td>
+</td>
+<td>Использовался, например, если закончилась <a href="/wiki/%D0%9F%D0%B5%D1%80%D1%84%D0%BE%D0%BB%D0%B5%D0%BD%D1%82%D0%B0" class="mw-redirect" title="Перфолента">перфолента</a> и&nbsp;т.&nbsp;п.
+</td></tr>
+<tr>
+<td><b><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r113275842"><span class="ts-comment-commentedText" title="26"><code><a href="/wiki/%D0%A8%D0%B5%D1%81%D1%82%D0%BD%D0%B0%D0%B4%D1%86%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D1%87%D0%BD%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0_%D1%81%D1%87%D0%B8%D1%81%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F" title="Шестнадцатеричная система счисления">0x</a>1A</code></span></b>
+</td>
+<td>SUBSTITUTE
+</td>
+<td>символ замены
+</td>
+<td>^Z
+</td>
+<td>
+</td>
+<td>Ставится на месте символов, значения которых были потеряны при передаче. В <a href="/wiki/CP/M" title="CP/M">CP/M</a> и <a href="/wiki/MS-DOS" title="MS-DOS">MS-DOS</a> использовался для обозначения конца текстовых файлов и конца вводимых с консоли данных (хотя для этого были предназначены символы ^C и ^D).
+</td></tr>
+<tr>
+<td><b><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r113275842"><span class="ts-comment-commentedText" title="27"><code><a href="/wiki/%D0%A8%D0%B5%D1%81%D1%82%D0%BD%D0%B0%D0%B4%D1%86%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D1%87%D0%BD%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0_%D1%81%D1%87%D0%B8%D1%81%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F" title="Шестнадцатеричная система счисления">0x</a>1B</code></span></b>
+</td>
+<td>ESCAPE
+</td>
+<td>Альтернативный регистр №&nbsp;2 (АР2)
+</td>
+<td>^[
+</td>
+<td>\e
+</td>
+<td>Означает, что следующие за ним символы имеют какое-то другое значение, отличное от того, которое определено в ASCII. Обычно начинает <a href="/wiki/%D0%A3%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D1%8F%D1%8E%D1%89%D0%B8%D0%B5_%D0%BF%D0%BE%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8_ANSI" title="Управляющие последовательности ANSI">управляющие последовательности</a>. См. также <a href="/wiki/ANSI.SYS" title="ANSI.SYS">ANSI.SYS</a>.
+</td></tr>
+<tr>
+<td><b><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r113275842"><span class="ts-comment-commentedText" title="28"><code><a href="/wiki/%D0%A8%D0%B5%D1%81%D1%82%D0%BD%D0%B0%D0%B4%D1%86%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D1%87%D0%BD%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0_%D1%81%D1%87%D0%B8%D1%81%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F" title="Шестнадцатеричная система счисления">0x</a>1C</code></span></b>
+</td>
+<td>INFORMATION SEPARATOR FOUR (file separator)
+</td>
+<td>разделитель данных №&nbsp;4 (разделитель файлов)
+</td>
+<td>^\
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td><b><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r113275842"><span class="ts-comment-commentedText" title="29"><code><a href="/wiki/%D0%A8%D0%B5%D1%81%D1%82%D0%BD%D0%B0%D0%B4%D1%86%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D1%87%D0%BD%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0_%D1%81%D1%87%D0%B8%D1%81%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F" title="Шестнадцатеричная система счисления">0x</a>1D</code></span></b>
+</td>
+<td>INFORMATION SEPARATOR THREE (group separator)
+</td>
+<td>разделитель данных №&nbsp;3 (разделитель групп)
+</td>
+<td>^]
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td><b><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r113275842"><span class="ts-comment-commentedText" title="30"><code><a href="/wiki/%D0%A8%D0%B5%D1%81%D1%82%D0%BD%D0%B0%D0%B4%D1%86%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D1%87%D0%BD%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0_%D1%81%D1%87%D0%B8%D1%81%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F" title="Шестнадцатеричная система счисления">0x</a>1E</code></span></b>
+</td>
+<td>INFORMATION SEPARATOR TWO (record separator)
+</td>
+<td>разделитель данных №&nbsp;2 (разделитель записей)
+</td>
+<td>^^
+</td>
+<td>
+</td>
+<td>Видимо, предназначался для разделения записей в <a href="/wiki/%D0%91%D0%B0%D0%B7%D0%B0_%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85" title="База данных">базах данных</a>, но практически никогда не используется для этого.
+</td></tr>
+<tr>
+<td><b><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r113275842"><span class="ts-comment-commentedText" title="31"><code><a href="/wiki/%D0%A8%D0%B5%D1%81%D1%82%D0%BD%D0%B0%D0%B4%D1%86%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D1%87%D0%BD%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0_%D1%81%D1%87%D0%B8%D1%81%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F" title="Шестнадцатеричная система счисления">0x</a>1F</code></span></b>
+</td>
+<td>INFORMATION SEPARATOR ONE (unit separator)
+</td>
+<td>разделитель данных №&nbsp;1 (разделитель полей)
+</td>
+<td>^_
+</td>
+<td>
+</td>
+<td>Видимо, предназначался для разделения полей в базах данных, но практически никогда не используется для этого.
+</td></tr>
+<tr>
+<td><b><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r113275842"><span class="ts-comment-commentedText" title="127"><code><a href="/wiki/%D0%A8%D0%B5%D1%81%D1%82%D0%BD%D0%B0%D0%B4%D1%86%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D1%87%D0%BD%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0_%D1%81%D1%87%D0%B8%D1%81%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F" title="Шестнадцатеричная система счисления">0x</a>7F</code></span></b>
+</td>
+<td>DELETE
+</td>
+<td>удаление
+</td>
+<td>^?
+</td>
+<td>
+</td>
+<td>Предназначен для забивания ошибочно пробитых символов на семидорожечных <a href="/wiki/%D0%9F%D0%B5%D1%80%D1%84%D0%BE%D0%BB%D0%B5%D0%BD%D1%82%D0%B0_(%D0%BD%D0%BE%D1%81%D0%B8%D1%82%D0%B5%D0%BB%D1%8C_%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D0%B8)" title="Перфолента (носитель информации)">перфолентах</a> (поскольку обозначается пробитием дырочек во всех дорожках), поэтому там он эквивалентен пустому символу (\0). На терминалах может генерироваться нажатием либо кнопки Backspace, либо кнопки Delete.
+</td></tr></tbody></table>

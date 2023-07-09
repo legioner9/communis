@@ -1,0 +1,13 @@
+"": {
+  "prefix": "",
+  "body": [
+    "    echo -e \"${CYAN}---${FUNCNAME[0]}() $* ---${NORMAL}\" #started functions",
+    "",
+    "if [ \"man\" == \"$1\" ]; then",
+    "    # echo -e \"${GREEN}\\$filename = $filename${NORMAL}\" #print variable",
+    "    edit_ \"${FUNCNAME[0]}\".man",
+    "    return 0",
+    "fi"
+  ],
+  "description": ""
+}

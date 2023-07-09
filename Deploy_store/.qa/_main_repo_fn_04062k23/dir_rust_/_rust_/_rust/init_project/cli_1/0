@@ -1,0 +1,1 @@
+rustc -W -g $(pwd)/main.rs -o $(pwd)/res_rust/main.bexe

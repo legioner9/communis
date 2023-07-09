@@ -1,0 +1,2 @@
++ lib_1::malloc_c
++ uni_1::getgroups_с

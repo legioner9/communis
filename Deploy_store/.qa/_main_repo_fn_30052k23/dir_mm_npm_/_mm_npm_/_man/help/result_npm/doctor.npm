@@ -1,0 +1,41 @@
+# npm doctor in ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_mm_npm_/_mm_npm_/_man/help
+
+npm notice PING https://registry.npmjs.org/
+npm WARN checkFilePermissions Error: EACCES: permission denied, scandir '/usr/lib/node_modules'
+npm WARN checkFilePermissions  Error building file list: [Error: EACCES: permission denied, scandir '/usr/lib/node_modules'] {
+npm WARN checkFilePermissions   errno: -13,
+npm WARN checkFilePermissions   code: 'EACCES',
+npm WARN checkFilePermissions   syscall: 'scandir',
+npm WARN checkFilePermissions   path: '/usr/lib/node_modules'
+npm WARN checkFilePermissions }
+npm ERR! code EACCES
+npm ERR! syscall scandir
+npm ERR! path /usr/lib/node_modules
+npm ERR! errno -13
+npm ERR! Error: EACCES: permission denied, scandir '/usr/lib/node_modules'
+npm ERR!  [Error: EACCES: permission denied, scandir '/usr/lib/node_modules'] {
+npm ERR!   errno: -13,
+npm ERR!   code: 'EACCES',
+npm ERR!   syscall: 'scandir',
+npm ERR!   path: '/usr/lib/node_modules'
+npm ERR! }
+npm ERR! 
+npm ERR! The operation was rejected by your operating system.
+npm ERR! It is likely you do not have the permissions to access this file as the current user
+npm ERR! 
+npm ERR! If you believe this might be a permissions issue, please double-check the
+npm ERR! permissions of the file and its containing directories, or try running
+npm ERR! the command again as root/Administrator.
+glob error [Error: EACCES: permission denied, scandir '/usr/lib/node_modules'] {
+  errno: -13,
+  code: 'EACCES',
+  syscall: 'scandir',
+  path: '/usr/lib/node_modules'
+}
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/st/.npm/_logs/2023-03-08T07_16_09_026Z-debug.log
+
+# npm doctor -h in ${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_mm_npm_/_mm_npm_/_man/help
+
+npm doctor

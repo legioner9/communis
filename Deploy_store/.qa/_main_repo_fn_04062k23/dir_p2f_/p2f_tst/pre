@@ -1,0 +1,13 @@
+[0;36m---qq_exit() $.1=--pwd arg necessary $.2=/home/st/REPOBARE/_repo/plt/actio/dir_p2f_/p2f_tst/_flow_tst.sh p2f_ $.3=92---[0m
+[0;31m---message: --pwd arg necessary---[0m
+[0;31m---file: /home/st/REPOBARE/_repo/plt/actio/dir_p2f_/p2f_tst/_flow_tst.sh p2f_---[0m
+[0;31m---line: 92---[0m
+[0;36m---qq_exit() $.1=$pwd_p2f_=vas is not root: impossible $.2=/home/st/REPOBARE/_repo/plt/actio/dir_p2f_/p2f_tst/_flow_tst.sh p2f_ $.3=96---[0m
+[0;31m---message: $pwd_p2f_=vas is not root: impossible---[0m
+[0;31m---file: /home/st/REPOBARE/_repo/plt/actio/dir_p2f_/p2f_tst/_flow_tst.sh p2f_---[0m
+[0;31m---line: 96---[0m
+[0;36m---qq_exit() $.1=$path_p2f_=/dut is root: you wrong $.2=/home/st/REPOBARE/_repo/plt/actio/dir_p2f_/p2f_tst/_flow_tst.sh p2f_ $.3=100---[0m
+[0;31m---message: $path_p2f_=/dut is root: you wrong---[0m
+[0;31m---file: /home/st/REPOBARE/_repo/plt/actio/dir_p2f_/p2f_tst/_flow_tst.sh p2f_---[0m
+[0;31m---line: 100---[0m
+/vas/dut

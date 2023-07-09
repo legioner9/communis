@@ -1,0 +1,130 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.0
+-- https://www.phpmyadmin.net/
+--
+-- Хост: 127.0.0.1:3306
+-- Время создания: Апр 30 2023 г., 18:07
+-- Версия сервера: 8.0.30
+-- Версия PHP: 7.2.34
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- База данных: `test_db`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `articles`
+--
+
+CREATE TABLE `articles` (
+  `id` int NOT NULL COMMENT 'unique',
+  `title` varchar(255) DEFAULT NULL COMMENT 'head articles',
+  `text` text,
+  `articles_categories_id` int DEFAULT NULL,
+  `pubdate` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `views` int NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='blog_haudi';
+
+--
+-- Дамп данных таблицы `articles`
+--
+
+INSERT INTO `articles` (`id`, `title`, `text`, `articles_categories_id`, `pubdate`, `views`) VALUES
+(1, 'soup', 'Высокий уровень вовлечения представителей целевой аудитории является четким доказательством простого факта: семантический разбор внешних противодействий способствует подготовке и реализации системы обучения кадров, соответствующей насущным потребностям. Не следует, однако, забывать, что реализация намеченных плановых заданий не даёт нам иного выбора, кроме определения приоретизации разума над эмоциями. Однозначно, представители современных социальных резервов объективно рассмотрены соответствующими инстанциями.', 2, '2023-04-30 16:30:59', 0),
+(2, 'plan', 'Наше дело не так однозначно, как может показаться: начало повседневной работы по формированию позиции говорит о возможностях направлений прогрессивного развития. Безусловно, курс на социально-ориентированный национальный проект напрямую зависит от как самодостаточных, так и внешне зависимых концептуальных решений. Безусловно, перспективное планирование выявляет срочную потребность глубокомысленных рассуждений.', 1, '2023-04-30 17:39:38', 0),
+(3, 'chto', 'Таким образом, повышение уровня гражданского сознания прекрасно подходит для реализации переосмысления внешнеэкономических политик. В своём стремлении улучшить пользовательский опыт мы упускаем, что активно развивающиеся страны третьего мира, вне зависимости от их уровня, должны быть описаны максимально подробно. Предварительные выводы неутешительны: консультация с широким активом прекрасно подходит для реализации стандартных подходов.', 4, '2023-04-30 17:54:52', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `articles_categories`
+--
+
+CREATE TABLE `articles_categories` (
+  `id` int NOT NULL,
+  `title` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Дамп данных таблицы `articles_categories`
+--
+
+INSERT INTO `articles_categories` (`id`, `title`) VALUES
+(1, 'sport'),
+(2, 'kulinar'),
+(3, 'sadovod'),
+(4, 'programm');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `comments`
+--
+
+CREATE TABLE `comments` (
+  `id` int NOT NULL,
+  `author` varchar(100) DEFAULT 'root',
+  `text` text,
+  `pubdate` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `articles_id` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Индексы сохранённых таблиц
+--
+
+--
+-- Индексы таблицы `articles`
+--
+ALTER TABLE `articles`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `articles_categories`
+--
+ALTER TABLE `articles_categories`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `comments`
+--
+ALTER TABLE `comments`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT для сохранённых таблиц
+--
+
+--
+-- AUTO_INCREMENT для таблицы `articles`
+--
+ALTER TABLE `articles`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT COMMENT 'unique', AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT для таблицы `articles_categories`
+--
+ALTER TABLE `articles_categories`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT для таблицы `comments`
+--
+ALTER TABLE `comments`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -1,0 +1,1 @@
+    wordexp("[a-c]*.z", &p, 0); /*#*/ // ??? examples as-ls and as-cli

@@ -1,0 +1,46 @@
+#include <string.h>
+#include <stdio.h>
+
+
+int
+main (void)
+{
+    char buffer [10];
+    char *name = buffer;
+
+
+    name = stpcpy (stpcpy (stpcpy (name, "ice"),"-"), "cream");
+    puts (buffer);
+    return 0;
+}
+
+В следующем примере выделяется место для ключа с помощью malloc(), а затем используется strcpy() для размещения там ключа. Затем он выделяет пространство для данных с помощью malloc() и использует strcpy() для размещения там данных. (Определяемая пользователем функция dbfree() освобождает память, ранее выделенную для массива типа struct element *.)
+
+#include <string.h>
+#include <stdlib.h>
+#include <stdio.h>
+...
+/* Structure used to read data and store it. */
+struct element {
+    char *key;
+    char *data;
+};
+
+
+struct element *tbl, *curtbl;
+char *key, *data;
+int count;
+...
+void dbfree(struct element *, int);
+...
+if ((curtbl->key = malloc(strlen(key) + 1)) == NULL) {
+    perror("malloc"); dbfree(tbl, count); return NULL;
+}
+strcpy(curtbl->key, key);
+
+
+if ((curtbl->data = malloc(strlen(data) + 1)) == NULL) {
+    perror("malloc"); free(curtbl->key); dbfree(tbl, count); return NULL;
+}
+strcpy(curtbl->data, data);
+...

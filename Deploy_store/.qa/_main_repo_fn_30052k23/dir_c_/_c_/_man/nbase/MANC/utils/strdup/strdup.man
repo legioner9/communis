@@ -1,0 +1,335 @@
+### UP
+[strdup](##strdup)
+[MAIN](##MAIN)
+[MAIN_ru](##MAIN_ru)
+[ANCORS](##ANCORS)
+[ISU](##ISU)
+[inet](##A_inet)
+[inet](##books_inet)
+[inet](##examples_inet)
+[inet](##classic_inet)
+[inet](##enters_inet)
+[inet](##issue_code_inet)
+[H_FILE](##H_FILE)
+[p_SYNOPSIS](##p_SYNOPSIS)
+[p_RETURN](##p_RETURN)
+[p_RETURN_ru](##p_RETURN_ru)
+[p_BUGS](##p_BUGS)
+[p_DESCRIPTION_ru](##p_DESCRIPTION_ru)
+[p_DESCRIPTION](##p_DESCRIPTION)
+[p_MIRRORS](##p_MIRRORS)
+[p_EXAMPLES](##p_EXAMPLES)
+[p_CODE_h](##p_CODE_h)
+[p_CODE_c](##p_CODE_c)
+[p_CODE_m](##p_CODE_m)
+[p_ERRORS](##p_ERRORS)
+[p_BOOKS](##p_BOOKS)
+[p_BOOKS_ru](##p_BOOKS_ru)
+[p_CONTENT](##p_CONTENT)
+
+[cat_hfiles](../../cat_hfiles.md)
+[cat_utils](../../cat_utils.md)
+[cat_structs](../../cat_structs.md)
+[cat_param](../../cat_params.md)
+[cat_macros](../../cat_macross.md)
+[cat_const](../../cat_consts.md)
+[cat_type](../../cat_types.md)
+[cat_any](../cat_anys.md)
+
+
+[UP](###UP)
+## MAIN
+:strdup:
+[next](##MAIN_ru)
+
+<<MAIN>>
+[MAIN](../../fills/strdup/MAIN)
+
+
+
+[UP](###UP)
+## MAIN_ru
+:strdup:
+[next](##ANCORS)
+
+----------------------------------------------------- 
+-------------------------------------- 
+дублирование строки в динамический массив
+-------------------------------------- 
+----------------------------------------------------- 
+<<MAIN_ru>>
+[MAIN_ru](../../fills/strdup/MAIN_ru)
+
+[UP](###UP)
+## ANCORS
+:strdup:
+[next](##ISU)
+
+----------------------------------------------------- 
+-------------------------------------- 
+https://ru.manpages.org/strdup/3
+https://en.cppreference.com/w/c/experimental/dynamic/strdup
+-------------------------------------- 
+----------------------------------------------------- 
+<<ANCORS>>
+[ANCORS](../../fills/strdup/ANCORS)
+
+[UP](###UP)
+## ISU
+:strdup:
+[next](##H_FILE)
+
+----------------------------------------------------- 
+-------------------------------------- 
+file://${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_c_/_c_/_man/nbase/_Head_sis_libs_posix/31_1_string_h/15_strdup/study_cpjs/strdup.isu
+-------------------------------------- 
+----------------------------------------------------- 
+<<ISU>>
+only read
+:strdup:
+[ISU](../../contents)
+[next](##inet)
+
+
+[UP](###UP)
+## inet
+:strdup:
+[next](##H_FILE)
+
+
+[UP](###UP)
+## A_inet
+[manpages.org](https://www.google.ru/search?q=strdup+site%3Ahttps%3A%2F%2Fmanpages.org)
+[reposcope.com_ru](https://www.google.ru/search?q=strdup+site%3Ahttps%3A%2F%2Freposcope.com%2Fmanpages%2Fru)
+[pubs.opengroup.org](https://www.google.com/search?q=strdup+https%3A%2F%2Fpubs.opengroup.org)
+[manpages.debian.org](https://yandex.ru/search/?text=strdup+site%3Ahttps%3A%2F%2Fmanpages.debian.org%2F)
+[www.opennet.ru](http://www.opennet.ru/man.shtml?category=2&topic=strdup)
+[man7.org](https://www.google.ru/search?q=strdup+site%3Ahttps%3A%2F%2Fman7.org%2Flinux%2Fman-pages)
+[en.cppreference.com](https://www.google.com/search?q=strdup+en.cppreference.com)
+[www.mankier.com](https://www.mankier.com/?q=strdup)
+[www.codecogs.com](https://www.google.ru/search?q=strdup+https%3A%2F%2Fwww.codecogs.com%2Flibrary%2Fcomputing%2F)
+[digitalmars.com](https://www.google.ru/search?q=strdup+https%3A%2F%2Fdigitalmars.com%2Frtl%2F)
+
+
+[UP](###UP)
+## books_inet
+[cpp.com.ru](https://yandex.ru/search/?text=strdup+site%3Ahttps%3A%2F%2Fcpp.com.ru)
+[linuxhint.com](https://www.google.ru/search?q=strdup+site%3Ahttps%3A%2F%2Flinuxhint.com)
+[gnu.org](https://www.google.ru/search?q=strdup+site%3Ahttps%3A%2F%2Fwww.gnu.org%2Fsoftware%2Flibc%2Fmanual)
+
+[UP](###UP)
+## examples_inet
+[yandex:examples](https://yandex.ru/search/?text=strdup+example+in+c)
+[docs.oracle.com](https://www.google.com/search?q=strdup+https%3A%2F%2Fdocs.oracle.com)
+[manpages.debian.org](https://yandex.ru/search/?text=strdup+site%3Ahttps%3A%2F%2Fmanpages.debian.org%2F)
+[osr507doc.xinuos.com](https://www.google.com/search?q=strdup+http%3A%2F%2Fosr507doc.xinuos.com%2Fen%2Fman)
+[cpp.hotexamples.com](https://cpp.hotexamples.com/examples/-/-/strdup/cpp-strdup-function-examples.html)
+[all-ht.ru](https://yandex.ru/search/?text=strdup+site%3Ahttp%3A%2F%2Fall-ht.ru%2Finf%2Fprog%2Fc%2F)
+[cppreference.com](https://yandex.ru/search/?text=strdup+site%3Ahttps%3A%2F%2Fen.cppreference.com%2Fw%2Fc%2F)
+
+[UP](###UP)
+## classic_inet
+[bogatyrev_c_unix](https://www.google.com/search?q=strdup+site%3Ahttps%3A%2F%2Fcpp.com.ru%2Fbogatyrev_c_unix)
+[kr_cbook](https://www.google.com/search?q=strdup+site%3Ahttps%3A%2F%2Fcpp.com.ru%2Fkr_cbook)
+
+[UP](###UP)
+## enters_inet
+[pubs.opengroup.org](https://pubs.opengroup.org/onlinepubs/9699919799/idx/head.html)
+
+[UP](###UP)
+## issue_code_inet
+[code.woboq.org](https://www.google.com/search?h=&sitesearch=https%3A%2F%2Fcode.woboq.org%2Fuserspace%2Fglibc%2F&q=strdup)
+
+
+[UP](###UP)
+## H_FILE 
+[string_h.md](../../hfiles/string_h.md)
+
+
+[UP](###UP)
+## p_SYNOPSIS
+:strdup:
+[next](##p_RETURN_ru)
+
+----------------------------------------------------- 
+-------------------------------------- 
+#include <string.h>
+char *strdup(const char *s);
+char *strndup(const char *s, size_t n);
+char *strdupa(const char *s);
+char *strndupa(const char *s, size_t n);
+-------------------------------------- 
+----------------------------------------------------- 
+<<SYNOPSIS>>
+[SYNOPSIS](../../fills/strdup/SYNOPSIS)
+
+
+[UP](###UP)
+## p_RETURN_ru
+:strdup:
+[next](##p_RETURN)
+
+<<RETURN>>
+[RETURN_ru](../../fills/strdup/RETURN)
+
+
+[UP](###UP)
+## p_RETURN
+:strdup:
+[next](##p_DESCRIPTION_ru)
+
+----------------------------------------------------- 
+-------------------------------------- 
+При успешном выполнении функция strdup() возвращает указатель на копию строки. Она возвращает NULL, если недостаточно памяти и записывает в errno номер ошибки.
+-------------------------------------- 
+----------------------------------------------------- 
+<<RETURN_ru>>
+[RETURN](../../fills/strdup/RETURN_ru)
+
+
+[UP](###UP)
+## p_DESCRIPTION_ru
+:strdup:
+[next](##p_DESCRIPTION)
+
+----------------------------------------------------- 
+-------------------------------------- 
+Функция strdup() возвращает указатель на новую строку, являющуюся дубликатом строки s. Память под новую строку выделятся с помощью malloc(3) и может быть высвобождены с помощью free(3).
+Функция strndup() похожа на предыдущую, но копирует не более n байт. Если s длиннее n, то копируется только n байт и добавляется конечный байт null ('0').
+Функции strdupa() и strndupa() подобны предыдущим, но для выделения буфера используют alloca(3). Эти функции доступны только при использовании GNU GCC и имеют ограничения, описанные в alloca(3)
+-------------------------------------- 
+----------------------------------------------------- 
+<<DESCRIPTION_ru>>
+[DESCRIPTION_ru](../../fills/strdup/DESCRIPTION_ru)
+
+
+[UP](###UP)
+## p_DESCRIPTION
+:strdup:
+[next](##p_BUGS)
+
+<<DESCRIPTION>>
+[DESCRIPTION](../../fills/strdup/DESCRIPTION)
+
+
+[UP](###UP)
+## p_MIRRORS
+:strdup:
+[next](##p_BUGS)
+
+----------------------------------------------------- 
+-------------------------------------- 
+strndup
+strdupa
+strndupa
+-------------------------------------- 
+----------------------------------------------------- 
+<<MIRRORS>>
+[MIRRORS](../../fills/strdup/MIRRORS)
+
+
+[UP](###UP)
+## p_BUGS
+:strdup:
+[next](##p_EXAMPLES)
+
+<<BUGS>>
+[BUGS](../../fills/strdup/BUGS)
+
+
+[UP](###UP)
+## p_EXAMPLES
+:strdup:
+[next](##p_CODE)
+
+----------------------------------------------------- 
+-------------------------------------- 
+#ifdef __STDC_ALLOC_LIB__
+#define __STDC_WANT_LIB_EXT2__ 1
+#else
+#define _POSIX_C_SOURCE 200809L
+#endif
+#include <string.h>
+#include <assert.h>
+#include <stdlib.h>
+int main(void)
+{
+const char *s1 = "String";
+char *s2 = strdup(s1);
+assert(strcmp(s1, s2) == 0);
+free(s2);
+}
+-------------------------------------- 
+----------------------------------------------------- 
+<<EXAMPLES>>
+[EXAMPLES](../../fills/strdup/EXAMPLES)
+
+
+[UP](###UP)
+## p_CODE_h
+:strdup:
+[next](##p_CODE_c)
+
+<<CODE_h>>
+[CODE_h](../../fills/strdup/CODE_h)
+
+
+[UP](###UP)
+## p_CODE_c
+:strdup:
+[next](##p_CODE_m)
+
+<<CODE_c>>
+[CODE_c](../../fills/strdup/CODE_c)
+
+
+[UP](###UP)
+## p_CODE_m
+:strdup:
+[next](##p_ERRORS)
+
+<<CODE_m>>
+[CODE_m](../../fills/strdup/CODE_m)
+
+
+[UP](###UP)
+## p_ERRORS
+:strdup:
+[next](##p_BOOKS)
+
+----------------------------------------------------- 
+-------------------------------------- 
+ENOMEM
+Недостаточно памяти для размещения копии строки.
+-------------------------------------- 
+----------------------------------------------------- 
+<<ERRORS>>
+[ERRORS](../../fills/strdup/ERRORS)
+
+
+[UP](###UP)
+## p_BOOKS
+:strdup:
+[next](##p_BOOKS_ru)
+
+<<BOOKS>>
+[BOOKS](../../fills/strdup/BOOKS)
+
+
+[UP](###UP)
+## p_BOOKS_ru
+:strdup:
+[next](##p_CONTENT)
+
+
+<<BOOKS_ru>>
+[BOOKS_ru](../../fills/strdup/BOOKS_ru)
+
+
+[UP](###UP)
+## p_CONTENT
+:strdup:
+[strdup.cnt](../../contents/strdup.cnt)
+[next](##UP)
+
+[UP](###UP)

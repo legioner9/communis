@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<!-- saved from url=(0031)https://ru.manpages.org/mknod/2 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com/">
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+  <link rel="dns-prefetch" href="https://www.google-analytics.com/">
+  <title>man mknod (2): создаёт специальный или обычный файл</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="description" content="man mknod (2): Системный вызов mknod() создаёт запись (node) в файловой системе (обычный файл, файл устройства или именованный канал) с именем pathname и атрибутами, заданными в mode и dev. В аргументе mode указывается используемый режим файла и тип создаваемого узла. В">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <link href="./man mknod (2)_ создаёт специальный или обычный файл_files/css" rel="stylesheet" type="text/css">
+  <link href="./man mknod (2)_ создаёт специальный или обычный файл_files/css(1)" rel="stylesheet" type="text/css">
+  <link href="./man mknod (2)_ создаёт специальный или обычный файл_files/css(2)" rel="stylesheet" type="text/css">
+  <link data-turbolinks-track="true" href="./man mknod (2)_ создаёт специальный или обычный файл_files/application-f7897fbdd67c6822d0a0ff57b3ffc02f.css" media="all" rel="stylesheet">
+  <script async="" src="./man mknod (2)_ создаёт специальный или обычный файл_files/analytics.js"></script><script async="async" data-turbolinks-track="true" src="./man mknod (2)_ создаёт специальный или обычный файл_files/application-b47bf462822a1e5557c375def5c1aa58.js"></script>
+
+  <!--[if IE]>
+        
+    <![endif]-->
+<script type="text/javascript">
+//<![CDATA[
+      var LANG = 'ru';
+//]]>
+</script>
+  
+  <meta content="authenticity_token" name="csrf-param">
+<meta content="eR+ecn3USp1Yn8F04UQ7cH2qmsxrQBr8A58efSt8hg8=" name="csrf-token">
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-56225390-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<body>
+  <div class="header-container">
+    <header class="clearfix">
+      <div class="logo"><a href="https://ru.manpages.org/"><img src="./man mknod (2)_ создаёт специальный или обычный файл_files/logo-01e8ca9d4868e2e64bed82dde5c62d60.png" alt="logo"></a></div>
+       <!--
+        <nav>
+    <ul>
+        <li class="ОБЗОР selected"><a title="" href="#">ОБЗОР</a></li>
+        <li class="ОПИСАНИЕ"><a title="" href="#">ОПИСАНИЕ</a></li>
+        <li class="ВОЗВРАЩАЕМОЕ ЗНАЧЕНИЕ"><a title="" href="#">ВОЗВРАЩАЕМОЕ ЗНАЧЕНИЕ</a></li>
+        <li class="ОШИБКИ"><a title="" href="#">ОШИБКИ</a></li>
+    </ul>
+  </nav>
+  -->
+      <div class="search">
+        <form accept-charset="UTF-8" action="https://ru.manpages.org/pagenames/autocomplete_page_name_name" method="post"><div style="display:none"><input name="utf8" type="hidden" value="✓" class="ui-autocomplete-input" autocomplete="off"><input name="authenticity_token" type="hidden" value="eR+ecn3USp1Yn8F04UQ7cH2qmsxrQBr8A58efSt8hg8=" class="ui-autocomplete-input" autocomplete="off"></div>
+            <input data-autocomplete="/pagenames/autocomplete_page_name_name" id="page_name_name" name="page_name[name]" placeholder="Поиск в MAN файлах..." type="text" class="ui-autocomplete-input" autocomplete="off">
+            <button type="submit" onclick="return false">
+              <img src="./man mknod (2)_ создаёт специальный или обычный файл_files/search_-5f10690007ebc2fbfce6cf9b1f687474.svg">
+            </button>
+</form>      </div>
+      <a class="mcat"><img src="./man mknod (2)_ создаёт специальный или обычный файл_files/menu-533ee2b7609b0e242c51d7f42ca18b7f.png"></a>
+    </header>
+  </div>
+  <div id="core">
+    <div class="main-wrapper">
+      <link rel="stylesheet" href="./man mknod (2)_ создаёт специальный или обычный файл_files/default.min.css">
+<script src="./man mknod (2)_ создаёт специальный или обычный файл_files/highlight.min.js"></script>
+
+<div class="manpages-show">
+
+
+<div class="main-container">
+  <main>
+
+    <div class="article-container">
+        <div class="article_table">
+            <span>mknod<i>(2)</i></span>
+            <span>создаёт специальный или обычный файл</span>
+        </div>
+      <article>
+        <div class="alias">
+          <p><span class="translation_missing" title="translation missing: ru.Other_Alias">Other Alias</span></p>
+          <span>mknodat</span>
+        </div>
+        <a name=""></a><div class="section">
+<h2>ОБЗОР</h2>
+
+<p></p><p><b>#include &lt;sys/types.h&gt;</b><br><b>#include &lt;sys/stat.h&gt;</b><br><b>#include &lt;fcntl.h&gt;</b><br><b>#include &lt;unistd.h&gt;</b><br></p><hr><b>int mknod(const char *</b><i>pathname</i><b>, mode_t </b><i>mode</i><b>, dev_t </b><i>dev</i><b>);</b><br><hr><b>#include &lt;fcntl.h&gt;           </b>/* определения констант AT_* */<br><b>#include &lt;sys/stat.h&gt;</b><br><hr><b>int mknodat(int </b><i>dirfd</i><b>, const char *</b><i>pathname</i><b>, mode_t </b><i>mode</i><b>, dev_t </b><i>dev</i><b>);</b><p></p>
+
+<p>
+Требования макроса тестирования свойств для glibc
+(см. <b><a class="man" category="7" href="https://ru.manpages.org/feature_test_macros/7">feature_test_macros</a></b>(7)):
+</p><p>
+<b>mknod</b>():
+</p><dl compact="compact"><dt></dt><dd>
+_BSD_SOURCE || _SVID_SOURCE || _XOPEN_SOURCE&nbsp;&gt;=&nbsp;500 || _XOPEN_SOURCE&nbsp;&amp;&amp;&nbsp;_XOPEN_SOURCE_EXTENDED
+</dd></dl>
+
+
+
+</div>
+<a name=""></a><div class="section">
+<h2>ОПИСАНИЕ</h2>
+Системный вызов <b>mknod</b>() создаёт запись (node) в файловой системе (обычный
+файл, файл устройства или именованный канал) с именем <i>pathname</i> и
+атрибутами, заданными в <i>mode</i> и <i>dev</i>.
+<p>
+В аргументе <i>mode</i> указывается используемый режим файла и тип создаваемого
+узла. В этом параметре должна быть битовая комбинация (используя побитовое
+логическое сложение ИЛИ) нуля или более режимов файла, перечисленных в
+<b><a class="man" category="2" href="https://ru.manpages.org/stat/2">stat</a></b>(2).
+</p><p>
+Режим файла изменяется согласно значению <i>umask</i> процесса: при отсутствии
+списка контроля доступа по умолчанию права на создаваемый узел становятся
+равны (<i>mode</i> &amp; ~<i>umask</i>).
+</p><p>
+Для указания обычного файла, специального символьного файла, специального
+блочного файла, FIFO (именованного канала) или доменного сокета UNIX типом
+должен быть один из <b>S_IFREG</b>, <b>S_IFCHR</b>, <b>S_IFBLK</b>, <b>S_IFIFO</b> или
+<b>S_IFSOCK</b>, соответственно (нулевой тип файла эквивалентен типу
+<b>S_IFREG</b>).
+</p><p>
+Если тип файла равен <b>S_IFCHR</b> или <b>S_IFBLK</b>, то в <i>dev</i> задаётся
+основной и вспомогательный номера создаваемого специального файла устройства
+(<b><a class="man" category="3" href="https://ru.manpages.org/makedev/3">makedev</a></b>(3) может оказаться полезной при создании значения для <i>dev</i>); в
+остальных случаях аргумент игнорируется.
+</p><p>
+Если <i>pathname</i> уже существует, или является символьной ссылкой, то вызов
+завершается с ошибкой <b>EEXIST</b>.
+</p><p>
+Созданный файл будет принадлежать ID эффективного владельца процесса. Если в
+правах доступа к каталогу, в котором находится файл, установлен бит
+set-group-ID, или если файловая система смонтирована с семантикой групп BSD,
+то новый файл унаследует группу-владельца от своего родительского каталога;
+в противном случае группой-владельцем станет ID эффективной группы процесса.
+</p></div>
+<div class="section">
+<h2>mknodat()</h2>
+Системный вызов <b>mknodat</b>() работает также как системный вызов <b>mknod</b>(),
+за исключением случаев, описанных здесь.
+<p>
+Если в <i>pathname</i> задан относительный путь, то он считается относительно
+каталога, на который ссылается файловый дескриптор <i>dirfd</i> (а не
+относительно текущего рабочего каталога вызывающего процесса, как это
+делается в <b><a class="man" category="2" href="https://ru.manpages.org/mknod/2">mknod</a></b>(2)).
+</p><p>
+Если в <i>pathname</i> задан относительный путь и <i>dirfd</i> равно специальному
+значению <b>AT_FDCWD</b>, то <i>pathname</i> рассматривается относительно текущего
+рабочего каталога вызывающего процесса (как <b><a class="man" category="2" href="https://ru.manpages.org/mknod/2">mknod</a></b>(2)).
+</p><p>
+Если в <i>pathname</i> задан абсолютный путь, то <i>dirfd</i> игнорируется.
+</p><p>
+Смотрите в <b><a class="man" category="2" href="https://ru.manpages.org/openat/2">openat</a></b>(2) объяснение необходимости <b>mknodat</b>().
+</p></div>
+<a name=""></a><div class="section">
+<h2>ВОЗВРАЩАЕМОЕ ЗНАЧЕНИЕ</h2>
+При успешном выполнении вызовов <b>mknod</b>() и <b>mknodat</b>() возвращается 0. В
+случае ошибки возвращается -1, а <i>errno</i> устанавливается в соответствующее
+значение.
+</div>
+<a name=""></a><div class="section errors">
+<h2>ОШИБКИ</h2>
+
+<dl compact="compact">
+<dt><b>EACCES</b></dt><dd>
+У процесса нет прав на запись в родительский каталог, или в одном из
+каталогов в <i>pathname</i> не разрешён поиск (см. также <b><a class="man" category="7" href="https://ru.manpages.org/path_resolution/7">path_resolution</a></b>(7)).
+</dd><dt><b>EDQUOT</b></dt><dd>
+Исчерпана пользовательская квота на дисковые блоки или иноды файловой
+системы.
+</dd><dt><b>EEXIST</b></dt><dd>
+<i>pathname</i> уже существует. В этом случае <i>pathname</i> может быть символьной
+ссылкой, повисшей или нет.
+</dd><dt><b>EFAULT</b></dt><dd>
+Аргумент <i>pathname</i> указывает за пределы доступного адресного пространства.
+</dd><dt><b>EINVAL</b></dt><dd>
+В аргументе <i>mode</i> указано значение, отличное от значения для обычного
+файла, специального файла устройства, FIFO или сокета.
+</dd><dt><b>ELOOP</b></dt><dd>
+Во время определения <i>pathname</i> встретилось слишком много символьных
+ссылок.
+</dd><dt><b>ENAMETOOLONG</b></dt><dd>
+<i>pathname</i> слишком длинен.
+</dd><dt><b>ENOENT</b></dt><dd>
+Один из каталогов в <i>pathname</i> не существует или является повисшей
+символьной ссылкой.
+</dd><dt><b>ENOMEM</b></dt><dd>
+Недостаточное количество памяти ядра.
+</dd><dt><b>ENOSPC</b></dt><dd>
+На устройстве, содержащем <i>pathname</i>, нет места для создания нового
+элемента.
+</dd><dt><b>ENOTDIR</b></dt><dd>
+Компонент пути, использованный как каталог в <i>pathname</i>, в действительности
+таковым не является.
+</dd><dt><b>EPERM</b></dt><dd>
+В аргументе <i>mode</i> запрошено создание чего-то, отличного от обычного файла,
+специального файла устройства, FIFO (именованного канала) или доменного
+сокета UNIX, и у вызвавшего процесса нет прав (Linux: не имеет мандата
+<b>CAP_MKNOD</b>); также завершается, если файловая система, содержащая
+<i>pathname</i>, не поддерживает тип запрашиваемой ноды.
+</dd><dt><b>EROFS</b></dt><dd>
+<i>pathname</i> указывает на файл в файловой системе, доступной только для
+чтения.
+</dd></dl>
+<p>
+В <b>mknodat</b>() дополнительно могут возникнуть следующие ошибки:
+</p><dl compact="compact">
+<dt><b>EBADF</b></dt><dd>
+<i>dirfd</i> не является правильным файловым дескриптором.
+</dd><dt><b>ENOTDIR</b></dt><dd>
+Значение <i>pathname</i> содержит относительный путь и <i>dirfd</i> содержит
+файловый дескриптор, указывающий на файл, а не на каталог.
+</dd></dl>
+
+</div>
+<div class="section">
+<h2>ВЕРСИИ</h2>
+Вызов <b>mknodat</b>() был добавлен в ядро Linux версии 2.6.16; поддержка в
+glibc доступна с версии 2.4.
+</div>
+<div class="section">
+<h2>СООТВЕТСТВИЕ СТАНДАРТАМ</h2>
+
+
+
+
+<b>mknod</b>(): SVr4, 4.4BSD, POSIX.1-2001 (но смотрите ниже), POSIX.1-2008.
+<p>
+<b>mknodat</b>(): POSIX.1-2008.
+</p></div>
+<div class="section">
+<h2>ЗАМЕЧАНИЯ</h2>
+В POSIX.1-2001 сказано: «Единственный способ, которым можно использовать
+<b>mknod</b>() в переносимых программах это создание специального файла
+FIFO. Если значение <i>mode</i> не равно <b>S_IFIFO</b> или <i>dev</i> не равно 0, то
+поведение <b>mknod</b>() не определено.» Однако, в настоящее время никогда не
+используйте <b>mknod</b>() для этой цели; вместо этого используйте функцию
+<b><a class="man" category="3" href="https://ru.manpages.org/mkfifo/3">mkfifo</a></b>(3), которая создана специально для этого.
+<p>
+В Linux вызов <b>mknod</b>() не может использоваться для создания каталогов. Для
+этого есть системный вызов <b><a class="man" category="2" href="https://ru.manpages.org/mkdir/2">mkdir</a></b>(2).
+</p><p>
+В протоколе, на котором работает NFS, есть множество недоработок. Некоторые
+из них влияют на <b>mknod</b>() и <b><a class="man" category="2" href="https://ru.manpages.org/mknodat/2">mknodat</a></b>(2).
+</p></div>
+
+      </article>
+    </div>
+
+
+  </main>
+</div>
+<div class="nav-container">
+<div class="nav" style="height:526px">
+<div class="inner">
+  <nav class="box">
+    <h4>содержание</h4>
+    <ul>
+        <li class="ОБЗОР selected"><a title="" href="https://ru.manpages.org/mknod/2#">ОБЗОР</a></li>
+        <li class="ОПИСАНИЕ"><a title="" href="https://ru.manpages.org/mknod/2#">ОПИСАНИЕ</a></li>
+        <li class="ВОЗВРАЩАЕМОЕ ЗНАЧЕНИЕ"><a title="" href="https://ru.manpages.org/mknod/2#">ВОЗВРАЩАЕМОЕ ЗНАЧЕНИЕ</a></li>
+        <li class="ОШИБКИ"><a title="" href="https://ru.manpages.org/mknod/2#">ОШИБКИ</a></li>
+    </ul>
+  </nav>
+
+  <div class="box lang">
+    <h4>ПЕРЕВОДЫ</h4>
+    <ul>
+        <li class="en"><a class="c2" href="https://manpages.org/mknod/2"><i></i>АНГЛИЙСКИЙ</a></li>
+        <li class="de"><a class="c2" href="https://de.manpages.org/mknod/2"><i></i>НЕМЕЦКИЙ</a></li>
+        <li class="fr"><a class="c2" href="https://fr.manpages.org/mknod/2"><i></i>ФРАНЦУЗСКИЙ</a></li>
+        <li class="ja"><a class="c2" href="https://ja.manpages.org/mknod/2"><i></i>ЯПОНСКИЙ</a></li>
+        <li class="es"><a class="c2" href="https://es.manpages.org/mknod/2"><i></i>ИСПАНСКИЙ</a></li>
+    </ul>
+  </div>
+  
+
+<!--
+    <div class="ads">
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <ins class="adsbygoogle"
+           style="display:inline-block;width:300px;height:250px"
+           data-ad-client="ca-pub-2811344342425918"
+           data-ad-slot="5277441578"></ins>
+      <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+-->
+    <div class="box see-also">
+      <h4>СМОТРИТЕ ТАКЖЕ</h4>
+      <ul class="clearfix">
+            <li><a href="https://ru.manpages.org/chmod/2" class="c2">chmod <span>(2)</span></a></li>
+            <li><a href="https://ru.manpages.org/chown/2" class="c2">chown <span>(2)</span></a></li>
+            <li><a href="https://ru.manpages.org/fcntl/2" class="c2">fcntl <span>(2)</span></a></li>
+            <li><a href="https://ru.manpages.org/mkdir/2" class="c2">mkdir <span>(2)</span></a></li>
+            <li><a href="https://ru.manpages.org/mount/2" class="c2">mount <span>(2)</span></a></li>
+            <li><a href="https://ru.manpages.org/socket/2" class="c2">socket <span>(2)</span></a></li>
+            <li><a href="https://ru.manpages.org/stat/2" class="c2">stat <span>(2)</span></a></li>
+            <li><a href="https://ru.manpages.org/umask/2" class="c2">umask <span>(2)</span></a></li>
+            <li><a href="https://ru.manpages.org/unlink/2" class="c2">unlink <span>(2)</span></a></li>
+            <li><a href="https://ru.manpages.org/makedev/3" class="c3">makedev <span>(3)</span></a></li>
+            <li><a href="https://ru.manpages.org/mkfifo/3" class="c3">mkfifo <span>(3)</span></a></li>
+            <li><a href="https://ru.manpages.org/acl/5" class="c5">acl <span>(5)</span></a></li>
+            <li><a href="https://ru.manpages.org/path_resolution/7" class="c7">path_resolution <span>(7)</span></a></li>
+      </ul>
+    </div>
+
+        <div class="box last-searched">
+          <h4>ПОСЛЕДНИЕ ЗАПРОСЫ</h4>
+          <ul class="clearfix">
+                <li><a href="https://manpages.org/templatepluginfilter/3" class="c3">Template::Plugin::Filter <span>(3)</span></a></li>
+                <li><a href="https://manpages.org/terminfo/5" class="c5">terminfo <span>(5)</span></a></li>
+                <li><a href="https://manpages.org/al_load_sample_f" class="c1">al_load_sample_f <span>(1)</span></a></li>
+                <li><a href="https://ja.manpages.org/tcsh" class="c1">tcsh <span>(1)</span></a></li>
+                <li><a href="https://manpages.org/rsysinfo" class="c1">rsysinfo <span>(1)</span></a></li>
+                <li><a href="https://ru.manpages.org/remove/3" class="c3">remove <span>(3)</span></a></li>
+                <li><a href="https://manpages.org/ggigetraypos/3" class="c3">ggiGetRayPos <span>(3)</span></a></li>
+                <li><a href="https://fr.manpages.org/mknod/2" class="c2">mknod <span>(2)</span></a></li>
+                <li><a href="https://manpages.org/tixdestroy/3" class="c3">tixDestroy <span>(3)</span></a></li>
+                <li><a href="https://manpages.org/flactag" class="c1">flactag <span>(1)</span></a></li>
+                <li><a href="https://manpages.org/datetimelocaletrv_tw/3" class="c3">DateTime::Locale::trv_TW <span>(3)</span></a></li>
+          </ul>
+        </div>
+</div>
+  </div>
+  </div>
+
+</div>
+<script>
+$(document).ready(function() {
+    $('pre, code').each(function(i, block) {
+    hljs.highlightBlock(block);
+    });
+});
+</script>
+
+    </div>
+  </div><ul class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content" id="ui-id-1" tabindex="0" style="display: none;"></ul><span role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></span>
+  <div class="overlay"></div>
+  <div class="overlay_"></div>
+
+
+<ul class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content" id="ui-id-2" tabindex="0" style="display: none;"></ul><span role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></span><ul class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content" id="ui-id-3" tabindex="0" style="display: none;"></ul><span role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></span><div class="overlay"></div></body><style id="stylus-1" type="text/css" class="stylus">body {
+    font-family: 'pragmata pro mono regular';
+}</style></html>

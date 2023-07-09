@@ -1,0 +1,4 @@
+#include <string.h>
+
+char *strsignal(int sig);
+extern const char * const sys_siglist[];

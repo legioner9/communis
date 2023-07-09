@@ -1,0 +1,6 @@
+$ sudo git push flash_one master
+
+    fatal: unsafe repository ('${COMMUNIS_PATH}' is owned by someone else)
+    To add an exception for this directory, call:
+
+    git config --global --add safe.directory ${COMMUNIS_PATH}

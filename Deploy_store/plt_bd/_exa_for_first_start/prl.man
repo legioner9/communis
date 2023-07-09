@@ -1,0 +1,92 @@
+9676047811
+
+yandex.st.ru@inbox.ru
+qwaszx1!Aqwaszx1!A
+
+legioner9inbox.ru@yandex.ru
+qwaszx1!Aqwaszx1!A
++79953115200
+
+legioner9999
+rosdistant.ru@mail.ru
+qwaszx11A
+
+
+github.com@inbox.ru
+124578a124578aA
+
+bitrix24.ru@mail.ru
+124578a124578aA
+
+altlinux.org@mail.ru
+qwaszx1!Aqwaszx1!A
+
+mail
+legioner9@inbox.ru
+qwaszx1qwaszx1
+
+go
+qwaszx1!A
+
+tig
+legioner9
+124578a124578aA
+
+
+вход на вайфай 
+241715747
+89233084953
+
+avemetaru
+avemeta.git@mail.ru
+azsxdc1!&
+
+mail
+avemeta.git@mail.ru
+azsxdc1!&
+
+kv
++7 995 311-52-00
+qwaszx1!@#A
+
+ko 
+legioner9@inbox.ru
+qwaszx1!
+
+fb11032k21
+qwaszx1!A
+
+drop
+mastersruba.ru@mail.ru
+qwaszx1!
+
+https://www.altlinux.org/Главная_страница
+Legioner9
+qwaszx1!A
+
+yadisk
+artd0200@yandex.ru
+029800zx
+
+glab
+https://gitlab.com/legioner9999/communis_bare
+
+download rpm
+
+https://browser.yandex.com/download?banerid=6500000000&_rdr=desktop&os=linux&package=rpm&x64=1
+
+rpm --import http://repo.yandex.ru/yandex-disk/YANDEX-DISK-KEY.GPG
+yum install yandex-disk
+
+yandex-disk token
+Откройте страницу 'https://ya.ru/device' и введите код ‘cxjwtrnl’ в течение 300 секунд. Убедитесь, что вы авторизованы в браузере с нужным аккаунтом.Токен сохранен в /home/st/.config/yandex-disk/passwd
+
+yandex-disk start -d ~/YA
+
+echo "# repo" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin git@github.com:legioner9/repo.git
+git push -u origin main

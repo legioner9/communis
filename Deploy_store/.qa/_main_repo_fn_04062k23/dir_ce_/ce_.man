@@ -1,0 +1,23 @@
+## man ce_
+
+ce_ -bs <command>   :: test, build copy to _sandbox => <command> [from _sandbox]
+ce_ -gbs            :: grep search and menu => <choice menu command> [from _sandbox]
+ce_ -r              :: grep search and menu => ce_ <choice menu command> 
+ce_ -bx <command>   :: copy from _qiddam to PATH dir => 
+
+b - tst_ 
+g - grep
+s - exec from sandbox
+x - exec from binc
+
+$#=1 menu of all
+$#=2 menu of grep
+
+grep flow:
+
+     for item in $(ls ../ | grep "$1")
+     do
+        echo -e "${GREEN}\$item = $item${NORMAL}" #print variable
+     done
+
+if "$1" not define => all 

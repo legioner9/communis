@@ -1,0 +1,3 @@
+from> [demo] spawn.h ->
+https://manpages.debian.org/bullseye/manpages-dev/posix_spawn.3.en.html
+build_3.sh , build_3.sh NOT work

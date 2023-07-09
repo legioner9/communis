@@ -1,0 +1,16 @@
+p@chmod
+p@fchmod
+p@fchmodat
+p@fstat
+p@fstatat
+p@futimens
+p@lstat
+p@mkdir
+p@mkdirat
+p@mkfifo
+p@mkfifoat
+p@mknod
+p@mknodat
+p@stat
+p@umask
+p@utimensat

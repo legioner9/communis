@@ -1,0 +1,10 @@
+p@hcreate
+p@hdestroy
+p@hsearch
+p@lfind
+p@lsearch
+p@remque
+p@tdelete
+p@tfind
+p@tsearch
+p@twalk

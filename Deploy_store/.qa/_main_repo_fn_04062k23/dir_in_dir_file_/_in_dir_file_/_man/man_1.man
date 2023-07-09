@@ -1,0 +1,7 @@
+# man in_dir_file_
+
+in: dir_fis exist - interactive steps in fs
+ 
+flow: create file or dir with step in to that dir
+
+out: be in dir 

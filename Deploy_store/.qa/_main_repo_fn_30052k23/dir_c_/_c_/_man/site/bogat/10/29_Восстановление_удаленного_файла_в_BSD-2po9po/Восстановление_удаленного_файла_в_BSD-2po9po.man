@@ -1,0 +1,156 @@
+## Восстановление удаленного файла в BSD-2.9.
+
+Пример 29
+```cpp
+/*
+ *      Программа восстановления блоков удаленного файла.
+ *      Работает на канонической файловой системе UNIX (ДЕМОС).
+ *      Просматривает список свободных блоков диска.
+ *
+ * Эта программа позволяет восстановить блоки ТОЛЬКО ЧТО удаленного файла.
+ * Как только вы удалили нужный файл, немедленно прекратите любую
+ * работу на машине и даже отмонтируйте диск с удаленным файлом.
+ *    Затем, находясь на ДРУГОМ диске, вызовите эту программу.
+ */
+
+#include <stdio.h>
+#include <sys/types.h>
+#include <sys/param.h>          /* BSIZE */
+#include <sys/filsys.h>         /* struct filsys */
+#include <sys/fblk.h>           /* struct fblk */
+#include <fcntl.h>
+#include <ctype.h>
+
+/*
+#define BSIZE 1024     размер блока файловой системы
+*/
+
+int fd;             /* raw disk */
+int fdout;          /* дескриптор для спасенных блоков на ДРУГОМ диске */
+char blk[ BSIZE ],      /* буфер для прочитанного блока */
+     sublk[ BSIZE ];    /* буфер для суперблока         */
+
+/* структура суперблока */
+struct filsys *super = (struct filsys *) sublk;
+/* счетчик */
+long n = 0L;
+
+main( ac, av ) char *av[];
+{
+	daddr_t bno;            /* номер блока из списка свободных */
+	extern daddr_t alloc();
+
+	if( ac < 2 ){
+		fprintf( stderr, "Usage: %s disk\n", av[0] );
+		exit(1);
+	}
+	if((fd = open( av[1], O_RDONLY )) < 0 ){
+		fprintf( stderr, "Can't read %s\n", av[1] );
+		exit(2);
+	}
+	sync();         /* syncronize */
+
+	printf( "Вы должны находиться на ДРУГОМ диске, нежели %s,\n", av[1] );
+	printf( "чтобы блоки файлов, в которые будут записаны спасаемые\n");
+	printf( "блоки, выделялись на другом устройстве и не портили\n" );
+	printf( "список свободных блоков на %s\n\n", av[1] );
+	fflush( stdout ); sleep(2);
+
+	/* прочесть суперблок */
+	lseek( fd, (long) BSIZE, 0 );
+	read(  fd, sublk, BSIZE );
+
+	fprintf( stderr, "%ld free blocks at %s (%6.6s)\n" ,
+		super->s_tfree, av[1],
+		super->s_fpack );
+
+	/* Просмотр свободных блоков. Список свободных блоков
+	 * имеет организацию LIFO (стек), поэтому блоки
+	 * в списке могут идти не в том порядке,
+	 * в котором они шли в файле. Учтите, что в файле
+	 * кроме блоков, содержащих текст файла,
+	 * бывают также косвенные адресные блоки !
+	 */
+	while((bno = alloc()) >= 0L ){
+		save( bno );
+	}
+	printf( "total %ld\n", n );
+	exit(0);
+}
+
+/* Извлечь очередной блок из списка свободных блоков */
+daddr_t alloc(){
+	daddr_t bno;
+
+	if( super -> s_nfree <= 0 )     /* число адресов своб. блоков,
+					 * хранимых в суперблоке */
+		goto nospace;
+	/* читаем номер блока из списка свободных */
+	bno = super -> s_free[ --super -> s_nfree ];
+	if( bno == (daddr_t) 0 )
+		goto nospace;
+
+	if( super -> s_nfree <= 0 ){
+	   /* Продолжение списка - не в суперблоке,
+	    * а в специальном дополнительном блоке файловой системы.
+	    */
+		printf( "Indirect block %ld\n", bno );
+		lseek( fd, (long) BSIZE * bno , 0 );
+		read ( fd, blk,   BSIZE );
+
+		super -> s_nfree = ((struct fblk *)blk) -> df_nfree ;
+		memcpy( (char *) (super -> s_free),
+			(char *) (((struct fblk *) blk) -> df_free ),
+			sizeof( super->s_free));
+	}
+	if( super -> s_nfree <= 0 ||
+	    super -> s_nfree > NICFREE ){
+		fprintf( stderr, "Bad free count %d\n", super->s_nfree );
+		goto nospace;
+	}
+	if( super -> s_tfree )  /* кол-во свободных блоков */
+	    super -> s_tfree --;
+	return bno;
+
+nospace:
+	super -> s_nfree = 0;
+	super -> s_tfree = 0;
+	return (-1L);   /* конец списка */
+}
+
+/* пересылка участка памяти длиной n байт */
+memcpy( to, from, n )
+	register char *to, *from;
+	register n;
+{
+	while( n > 0 ){
+		*to++ = *from++;
+		n--;
+	}
+}
+
+save( bno ) daddr_t bno;
+{
+	register i;
+	char answer[ 20 ];
+
+	printf( "block %ld-------------------\n", bno );
+	lseek( fd, bno * BSIZE , 0 );
+	read ( fd,  blk, BSIZE );
+	for( i=0; i < BSIZE; i++ )
+		putchar(isprint(blk[i]) || isspace(blk[i]) ? blk[i] : '.' );
+	printf( "\n\7===> save block %ld ? ", bno );
+	fflush( stdout );
+	gets( answer );
+	if( *answer == 'y' || *answer == 'Y' ){
+		sprintf( answer, "#%012ld", n );
+		fdout = creat( answer, 0644 );
+		if( fdout < 0 ){
+			fprintf( stderr, "Can't create %s\n", answer );
+			exit(3);
+		}
+		write( fdout, blk, BSIZE );
+		close( fdout );
+	}
+	n++;
+}

@@ -1,0 +1,5 @@
+_incl_lib_1
+    common
+        ->text_to_console
+
+_incl_lib_2

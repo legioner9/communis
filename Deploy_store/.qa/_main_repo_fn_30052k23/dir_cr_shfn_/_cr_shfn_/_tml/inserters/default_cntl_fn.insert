@@ -1,0 +1,19 @@
+if [ "_man" == "$1" ]; then
+    edit_ "${d_name}/${FNN}".man
+    return 0
+fi
+
+if [ "_go" == "$1" ]; then
+    edit_ "${d_name}/${FNN}".sh
+    return 0
+fi
+
+if [ "_lst" == "$1" ]; then
+    edit_ "${d_name}/${FNN}".lst
+    return 0
+fi
+
+if [ "_test" == "$1" ]; then
+    ${FNN}test
+    return 0
+fi

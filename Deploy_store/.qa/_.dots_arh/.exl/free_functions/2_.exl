@@ -1,0 +1,2 @@
+# in $(pwd) create
+eval PPWD="$(pwd)"

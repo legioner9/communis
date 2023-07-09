@@ -1,0 +1,266 @@
+### UP
+[EWOULDBLOCK](##EWOULDBLOCK)
+[MAIN](##MAIN)
+[MAIN_ru](##MAIN_ru)
+[ANCORS](##ANCORS)
+[ISU](##ISU)
+[inet](##A_inet)
+[inet](##books_inet)
+[inet](##examples_inet)
+[inet](##classic_inet)
+[inet](##enters_inet)
+[inet](##issue_code_inet)
+[H_FILE](##H_FILE)
+[c_SYNOPSIS](##c_SYNOPSIS)
+[c_RETURN](##c_RETURN)
+[c_RETURN_ru](##c_RETURN_ru)
+[c_BUGS](##c_BUGS)
+[c_DESCRIPTION_ru](##c_DESCRIPTION_ru)
+[c_DESCRIPTION](##c_DESCRIPTION)
+[c_MIRRORS](##c_MIRRORS)
+[c_EXAMPLES](##c_EXAMPLES)
+[c_CODE_h](##c_CODE_h)
+[c_CODE_c](##c_CODE_c)
+[c_CODE_m](##c_CODE_m)
+[c_ERRORS](##c_ERRORS)
+[c_BOOKS](##c_BOOKS)
+[c_BOOKS_ru](##c_BOOKS_ru)
+[c_CONTENT](##c_CONTENT)
+
+[cat_hfiles](../../cat_hfiles.md)
+[cat_utils](../../cat_utils.md)
+[cat_structs](../../cat_structs.md)
+[cat_param](../../cat_params.md)
+[cat_macros](../../cat_macross.md)
+[cat_const](../../cat_consts.md)
+[cat_type](../../cat_types.md)
+[cat_any](../cat_anys.md)
+
+
+[UP](###UP)
+## MAIN
+:EWOULDBLOCK:
+[next](##MAIN_ru)
+
+<<MAIN>>
+[MAIN](../../fills/EWOULDBLOCK/MAIN)
+
+
+
+[UP](###UP)
+## MAIN_ru
+:EWOULDBLOCK:
+[next](##ANCORS)
+
+<<MAIN_ru>>
+[MAIN_ru](../../fills/EWOULDBLOCK/MAIN_ru)
+
+[UP](###UP)
+## ANCORS
+:EWOULDBLOCK:
+[next](##ISU)
+
+<<ANCORS>>
+[ANCORS](../../fills/EWOULDBLOCK/ANCORS)
+
+[UP](###UP)
+## ISU
+:EWOULDBLOCK:
+[next](##H_FILE)
+
+<<ISU>>
+only read
+:EWOULDBLOCK:
+[ISU](../../contents)
+[next](##inet)
+
+
+[UP](###UP)
+## inet
+:EWOULDBLOCK:
+[next](##H_FILE)
+
+
+[UP](###UP)
+## A_inet
+[manpages.org](https://www.google.ru/search?q=EWOULDBLOCK+site%3Ahttps%3A%2F%2Fmanpages.org)
+[reposcope.com_ru](https://www.google.ru/search?q=EWOULDBLOCK+site%3Ahttps%3A%2F%2Freposcope.com%2Fmanpages%2Fru)
+[pubs.opengroup.org](https://www.google.com/search?q=EWOULDBLOCK+https%3A%2F%2Fpubs.opengroup.org)
+[manpages.debian.org](https://yandex.ru/search/?text=EWOULDBLOCK+site%3Ahttps%3A%2F%2Fmanpages.debian.org%2F)
+[www.opennet.ru](http://www.opennet.ru/man.shtml?category=2&topic=EWOULDBLOCK)
+[man7.org](https://www.google.ru/search?q=EWOULDBLOCK+site%3Ahttps%3A%2F%2Fman7.org%2Flinux%2Fman-pages)
+[en.cppreference.com](https://www.google.com/search?q=EWOULDBLOCK+en.cppreference.com)
+[www.mankier.com](https://www.mankier.com/?q=EWOULDBLOCK)
+[www.codecogs.com](https://www.google.ru/search?q=EWOULDBLOCK+https%3A%2F%2Fwww.codecogs.com%2Flibrary%2Fcomputing%2F)
+[digitalmars.com](https://www.google.ru/search?q=EWOULDBLOCK+https%3A%2F%2Fdigitalmars.com%2Frtl%2F)
+
+
+[UP](###UP)
+## books_inet
+[cpp.com.ru](https://yandex.ru/search/?text=EWOULDBLOCK+site%3Ahttps%3A%2F%2Fcpp.com.ru)
+[linuxhint.com](https://www.google.ru/search?q=EWOULDBLOCK+site%3Ahttps%3A%2F%2Flinuxhint.com)
+[gnu.org](https://www.google.ru/search?q=EWOULDBLOCK+site%3Ahttps%3A%2F%2Fwww.gnu.org%2Fsoftware%2Flibc%2Fmanual)
+
+[UP](###UP)
+## examples_inet
+[yandex:examples](https://yandex.ru/search/?text=EWOULDBLOCK+example+in+c)
+[docs.oracle.com](https://www.google.com/search?q=EWOULDBLOCK+https%3A%2F%2Fdocs.oracle.com)
+[manpages.debian.org](https://yandex.ru/search/?text=EWOULDBLOCK+site%3Ahttps%3A%2F%2Fmanpages.debian.org%2F)
+[osr507doc.xinuos.com](https://www.google.com/search?q=EWOULDBLOCK+http%3A%2F%2Fosr507doc.xinuos.com%2Fen%2Fman)
+[cpp.hotexamples.com](https://cpp.hotexamples.com/examples/-/-/EWOULDBLOCK/cpp-EWOULDBLOCK-function-examples.html)
+[all-ht.ru](https://yandex.ru/search/?text=EWOULDBLOCK+site%3Ahttp%3A%2F%2Fall-ht.ru%2Finf%2Fprog%2Fc%2F)
+[cppreference.com](https://yandex.ru/search/?text=EWOULDBLOCK+site%3Ahttps%3A%2F%2Fen.cppreference.com%2Fw%2Fc%2F)
+
+[UP](###UP)
+## classic_inet
+[bogatyrev_c_unix](https://www.google.com/search?q=EWOULDBLOCK+site%3Ahttps%3A%2F%2Fcpp.com.ru%2Fbogatyrev_c_unix)
+[kr_cbook](https://www.google.com/search?q=EWOULDBLOCK+site%3Ahttps%3A%2F%2Fcpp.com.ru%2Fkr_cbook)
+
+[UP](###UP)
+## enters_inet
+[pubs.opengroup.org](https://pubs.opengroup.org/onlinepubs/9699919799/idx/head.html)
+
+[UP](###UP)
+## issue_code_inet
+[code.woboq.org](https://www.google.com/search?h=&sitesearch=https%3A%2F%2Fcode.woboq.org%2Fuserspace%2Fglibc%2F&q=EWOULDBLOCK)
+
+
+[UP](###UP)
+## H_FILE 
+[errno_h.md](../../hfiles/errno_h.md)
+
+
+[UP](###UP)
+## c_SYNOPSIS
+:EWOULDBLOCK:
+[next](##c_RETURN_ru)
+
+<<SYNOPSIS>>
+[SYNOPSIS](../../fills/EWOULDBLOCK/SYNOPSIS)
+
+
+[UP](###UP)
+## c_RETURN_ru
+:EWOULDBLOCK:
+[next](##c_RETURN)
+
+<<RETURN>>
+[RETURN_ru](../../fills/EWOULDBLOCK/RETURN)
+
+
+[UP](###UP)
+## c_RETURN
+:EWOULDBLOCK:
+[next](##c_DESCRIPTION_ru)
+
+<<RETURN_ru>>
+[RETURN](../../fills/EWOULDBLOCK/RETURN_ru)
+
+
+[UP](###UP)
+## c_DESCRIPTION_ru
+:EWOULDBLOCK:
+[next](##c_DESCRIPTION)
+
+<<DESCRIPTION_ru>>
+[DESCRIPTION_ru](../../fills/EWOULDBLOCK/DESCRIPTION_ru)
+
+
+[UP](###UP)
+## c_DESCRIPTION
+:EWOULDBLOCK:
+[next](##c_BUGS)
+
+<<DESCRIPTION>>
+[DESCRIPTION](../../fills/EWOULDBLOCK/DESCRIPTION)
+
+
+[UP](###UP)
+## c_MIRRORS
+:EWOULDBLOCK:
+[next](##c_BUGS)
+
+<<MIRRORS>>
+[MIRRORS](../../fills/EWOULDBLOCK/MIRRORS)
+
+
+[UP](###UP)
+## c_BUGS
+:EWOULDBLOCK:
+[next](##c_EXAMPLES)
+
+<<BUGS>>
+[BUGS](../../fills/EWOULDBLOCK/BUGS)
+
+
+[UP](###UP)
+## c_EXAMPLES
+:EWOULDBLOCK:
+[next](##c_CODE)
+
+<<EXAMPLES>>
+[EXAMPLES](../../fills/EWOULDBLOCK/EXAMPLES)
+
+
+[UP](###UP)
+## c_CODE_h
+:EWOULDBLOCK:
+[next](##c_CODE_c)
+
+<<CODE_h>>
+[CODE_h](../../fills/EWOULDBLOCK/CODE_h)
+
+
+[UP](###UP)
+## c_CODE_c
+:EWOULDBLOCK:
+[next](##c_CODE_m)
+
+<<CODE_c>>
+[CODE_c](../../fills/EWOULDBLOCK/CODE_c)
+
+
+[UP](###UP)
+## c_CODE_m
+:EWOULDBLOCK:
+[next](##c_ERRORS)
+
+<<CODE_m>>
+[CODE_m](../../fills/EWOULDBLOCK/CODE_m)
+
+
+[UP](###UP)
+## c_ERRORS
+:EWOULDBLOCK:
+[next](##c_BOOKS)
+
+<<ERRORS>>
+[ERRORS](../../fills/EWOULDBLOCK/ERRORS)
+
+
+[UP](###UP)
+## c_BOOKS
+:EWOULDBLOCK:
+[next](##c_BOOKS_ru)
+
+<<BOOKS>>
+[BOOKS](../../fills/EWOULDBLOCK/BOOKS)
+
+
+[UP](###UP)
+## c_BOOKS_ru
+:EWOULDBLOCK:
+[next](##c_CONTENT)
+
+
+<<BOOKS_ru>>
+[BOOKS_ru](../../fills/EWOULDBLOCK/BOOKS_ru)
+
+
+[UP](###UP)
+## c_CONTENT
+:33333:
+[33333.cnt](../../contents/33333.cnt)
+[next](##UP)
+
+[UP](###UP)

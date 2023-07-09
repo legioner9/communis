@@ -1,0 +1,27 @@
+exit_err_00000() { #* $1 error message
+    local arg1="$1"
+    unset_autoargs_00000
+    plt_pause "$1: be return ${arg1} <- Fail: message in ${FNLOCK}"
+    echo "$1: be return ${arg1} <- Fail: message in ${FNLOCK}" 1>&2
+    if [ -z "${arg1}" ]; then
+        return 1
+    fi
+    if is_num "${arg1}" && [ "${arg1}" -lt 128 ] && [ "${arg1}" -ge 1 ]; then
+        return "${arg1}"
+    else
+        return 1
+    fi
+}
+
+exit_reg_00000() {
+    local arg1="$1"
+    unset_autoargs_00000
+    if [ -z "${arg1}" ]; then
+        return 0
+    fi
+    if is_num "${arg1}" && [ "${arg1}" -lt 128 ] && [ "${arg1}" -ge 0 ]; then
+        return "${arg1}"
+    else
+        return 0
+    fi
+}

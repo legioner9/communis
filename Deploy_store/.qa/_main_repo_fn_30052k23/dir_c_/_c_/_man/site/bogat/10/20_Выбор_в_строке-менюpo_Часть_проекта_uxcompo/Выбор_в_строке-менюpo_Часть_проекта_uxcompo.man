@@ -1,0 +1,280 @@
+## Выбор в строке-меню. Часть проекта uxcom.
+
+Пример 20
+```cpp
+/* ______________________________________________________________ */
+/*      PULL_DOWN меню (меню-строка)                              */
+/* _______________________ файл pull.h __________________________ */
+typedef struct {
+	Info info;      /* строка в меню */
+	Menu *menu;     /* связанное с ней вертикальное меню */
+	char *note;     /* подсказка     */
+} PullInfo;
+typedef struct _Pull {  /* Паспорт меню */
+	int nitems;     /* количество элементов в меню  */
+	PullInfo *items;/* элементы меню                */
+	int *hotkeys;   /* горячие ключи                */
+	int key;        /* клавиша, завершившая выбор   */
+	int current;    /* выбранный элемент            */
+	int space;      /* интервал между элементами меню */
+	int bg_attrib;  /* цвет фона строки             */
+	int sel_attrib; /* цвет выбранного элемента     */
+	Point  savep;
+ void  (*scrollBar) (struct _Pull *m, int n, int among);
+} PullMenu;
+#define PYBEG   0       /* строка, в которой размещается меню */
+
+#define PM_BOLD       I_DIR
+#define PM_NOSEL      I_NOSEL
+#define PM_LFT        M_LFT
+#define PM_RGT        M_RGT
+
+#define PM_SET(m, i, flg)          (m)->items[i].info.fl  |=  (flg)
+#define PM_CLR(m, i, flg)          (m)->items[i].info.fl  &= ~(flg)
+#define PM_TST(m, i, flg)         ((m)->items[i].info.fl  &   (flg))
+#define PM_ITEM(m, i)             ((m)->items[i].info.s)
+#define PM_MENU(m, i)             ((m)->items[i].menu)
+#define PM_NOTE(m, i)             ((m)->items[i].note)
+#define COORD(m, i)               ((m)->space * (i+1) + PullSum(m, i))
+
+int  PullInit(PullMenu *m);
+int  PullSum(PullMenu *m, int n);
+void PullDraw(PullMenu *m);
+int  PullShow(PullMenu *m);
+void PullHide(PullMenu *m);
+void PullDrawItem(PullMenu *m, int i, int reverse, int selection);
+void PullPointAt(PullMenu *m, int y);
+
+int  PullHot(PullMenu *m, unsigned c);
+int  PullPrev(PullMenu *m);
+int  PullNext(PullMenu *m);
+int  PullFirst(PullMenu *m);
+int  PullThis(PullMenu *m);
+int  PullUsualSelect(PullMenu *m);
+
+#define PullWin          stdscr
+#define PM_REFUSED(m)    ((m)->key < 0 || (m)->key == ESC )
+
+/* _______________________ файл pull.c __________________________ */
+#include "glob.h"
+#include "w.h"
+#include "menu.h"
+#include "pull.h"
+
+int PullSum(PullMenu *m, int n){
+    register i, total; int pos;
+    for(i=0, total = 0;  i < n; i++ )
+	total += strlen( MnuConvert(PM_ITEM(m, i), &pos ));
+    return total;
+}
+/* Разметка меню. На входе:
+	p->items       массив элементов с M_HOT-метками и связанных меню.
+	p->bg_attrib   цвет фона строки.
+	p->sel_attrib  цвет выбранного элемента.
+   Меню всегда размещается в окне stdscr (PullWin).
+*/
+int PullInit(PullMenu *m){
+/* подменю не должны быть инициализированы,
+ * т.к. все равно будут сдвинуты в другое место */
+	int total, pos; char *s; register i;
+	m->key = m->current = 0;
+	if(m->hotkeys){
+	   free((char *) m->hotkeys); m->hotkeys = (int *) NULL;
+	}
+	/* подсчитать элементы меню */
+	m->nitems = 0;
+	for( i=0, total = 0; PM_ITEM(m, i) != NULL; i++ ){
+	   total += strlen(s = MnuConvert(PM_ITEM(m, i), &pos));
+	   m->nitems++;
+	}
+	if( total > wcols(PullWin)){  /* меню слишком широкое */
+err:            beep(); return 0;
+	}
+	m->space = (wcols(PullWin) - total - 2) / (m->nitems + 1);
+	if( m->space <= 0 ) goto err;
+	/* разметить горячие клавиши */
+	if( m-> hotkeys = (int *) malloc( sizeof(int) * m->nitems )){
+		for(i=0; i < m->nitems; i++ )
+			m->hotkeys[i] = NOKEY;
+	}
+	for( i=0; i < m->nitems; i++ ){
+		if( PM_MENU(m,i)){
+		    PM_MENU(m,i)->left = COORD(m, i) - 1;
+		    PM_MENU(m,i)->top  = PYBEG + 1;
+		    PM_MENU(m,i)->bg_attrib  = m-> bg_attrib;
+		    PM_MENU(m,i)->sel_attrib = m-> sel_attrib;
+		    if( PM_MENU(m,i)->win )
+			MnuDeinit( PM_MENU(m,i));
+		    MnuInit( PM_MENU(m,i));
+		}
+		if( m->hotkeys ){
+		    s = MnuConvert(PM_ITEM(m, i), &pos);
+		    if( pos >= 0 )
+			m->hotkeys[i] =
+			  isupper(s[pos]) ? tolower(s[pos]) : s[pos];
+		}
+	}
+	keypad(PullWin, TRUE); return 1;
+}
+/* Проявить pull-down меню */
+int PullShow(PullMenu *m){
+	register i; int first, last;
+	first = last = (-1);
+	for(i=0; i < m->nitems; i++ ){
+		PM_SET(m, i, PM_LFT | PM_RGT );
+		if( !PM_TST(m, i, PM_NOSEL)){
+			if( first < 0 ) first = i;
+			last = i;
+		}
+	}
+	if( first < 0 ) return (TOTAL_NOSEL);
+	if(first == last ){
+		PM_CLR(m, first, PM_LFT | PM_RGT );
+	}else{
+		PM_CLR(m, first, PM_LFT);
+		PM_CLR(m, last,  PM_RGT);
+	}
+	wmove(PullWin, PYBEG, 0);
+	wattrset(PullWin, m->bg_attrib);
+	wclrtoeol(PullWin);
+	PullDraw(m); return 1;
+}
+void PullDraw(PullMenu *m){ register i;
+	for(i=0; i < m->nitems; i++ )
+		PullDrawItem(m, i, NO, NO);
+}
+/* Спрятать pull-down меню. Сама строка остается, подменю исчезают */
+void PullHide(PullMenu *m){
+	register i;
+	for(i=0; i < m->nitems; i++ )
+	    if( PM_MENU(m, i)) MnuHide( PM_MENU(m, i));
+	PullDraw(m);
+}
+/* Нарисовать элемент меню */
+void PullDrawItem(PullMenu *m, int i, int reverse, int selection){
+	int x, pos, hatch = PM_TST(m, i, PM_NOSEL );
+	char *s;
+
+	x = COORD(m, i); s = MnuConvert( PM_ITEM(m, i), &pos );
+	wattrset(PullWin,
+		(reverse ? m->sel_attrib : m->bg_attrib) |
+		(hatch   ? A_ITALICS     : 0           ));
+
+	/*mvwaddch(PullWin, PYBEG, x-1, reverse ? LEFT_TRIANG  : ' ');*/
+	mvwaddstr(PullWin, PYBEG, x, s);
+	/*waddch(PullWin,               reverse ? RIGHT_TRIANG : ' ');*/
+	if( pos >= 0 ){  /* Hot key letter */
+	    wattron(PullWin, A_BOLD);
+	    mvwaddch(PullWin, PYBEG, x + pos, s[pos]);
+	}
+	wmove   (PullWin,  PYBEG, x-1); SetPoint(m->savep, PYBEG, x-1);
+	wattrset(PullWin, m->bg_attrib);
+}
+int PullPrev(PullMenu *m){
+	register y;
+	for( y = m->current - 1; y >= 0; y-- )
+		if( !PM_TST(m, y, PM_NOSEL )) return y;
+	return (-1);
+}
+int PullNext(PullMenu *m){
+	register y;
+	for( y = m->current+1; y < m->nitems; y++ )
+		if( !PM_TST(m, y, PM_NOSEL)) return y;
+	return (-1);
+}
+int PullFirst(PullMenu *m){
+	register y;
+	for( y = 0; y < m->nitems; y++ )
+		if( !PM_TST(m, y, PM_NOSEL)) return y;
+	return (-1);
+}
+int PullThis(PullMenu *m){
+	register y;
+	if( m->current < 0 || m->current >= m->nitems )
+		return (-1);
+	if( PM_TST(m, m->current, PM_NOSEL))
+		return (-1);
+	return m->current;
+}
+int PullHot(PullMenu *m, unsigned c){
+	register y;
+	if( m-> hotkeys == (int *) NULL )
+		return (-1);
+	if( c < 0400 && isupper(c))
+		c = tolower(c);
+	for( y=0; y < m->nitems; y++ )
+		if( c == m->hotkeys[y] && !PM_TST(m, y, PM_NOSEL))
+			return y;
+	return (-1);
+}
+/* Указать на элемент n */
+void PullPointAt( PullMenu *m, int n){
+	if( n < 0 || n >= m->nitems ) return ; /* error */
+	if( n != m->current ){
+		if( PM_MENU(m, m->current))
+			MnuHide( PM_MENU(m, m->current));
+		PullDrawItem( m, m->current, NO, YES );
+	}
+	m -> current = n;
+	PullDrawItem( m, n, YES, YES );
+	if( m->scrollBar ){
+	    m->scrollBar( m, n, m->nitems );
+	    GetBack(m->savep, PullWin);
+	}
+}
+/* Выбор в меню */
+int PullUsualSelect(PullMenu *m){
+	int autogo = NO, c, code, done = 0, snew, sel, reply = (-1);
+
+	m->key = (-1);
+	if((sel = PullThis(m))  < 0 )
+	if((sel = PullFirst(m)) < 0 ) return TOTAL_NOSEL;
+	if( PullShow(m) < 0 )         return TOTAL_NOSEL;
+	PullPointAt(m, sel);  /* начальная позиция */
+	for(;;){
+	   if( autogo ){  /* Автоматическая проявка подменю */
+	       if( PM_MENU(m, m->current) == NULL)
+		      goto ask;
+	       code = MnuUsualSelect(PM_MENU(m, m->current),
+		      PM_TST(m, m->current, PM_LFT) |
+		      PM_TST(m, m->current, PM_RGT));
+	       MnuHide(PM_MENU(m, m->current));
+	       c = PM_MENU(m, m->current)->key;
+	       if(code == (-1)){
+		  reply = (-1); goto out;
+	       }
+	       /* в подменю ничего нельзя выбрать */
+	       if( code == TOTAL_NOSEL) goto ask;
+	       /* MnuUsualSelect выдает специальные коды для
+		* сдвигов влево и вправо */
+	       if( code == M_LEFT )     goto left;
+	       if( code == M_RIGHT )    goto right;
+	       reply = code; goto out;
+	   } else
+ask:           c = WinGetch(PullWin);
+	   switch(c){
+	   case KEY_LEFT:
+	   left:   if((snew = PullPrev(m)) < 0 ) goto ask;
+		   goto mv;
+	   case KEY_RIGHT:
+	   right:  if((snew = PullNext(m)) < 0 ) goto ask;
+		   goto mv;
+	   case ESC:
+	     reply = (-1); goto out;
+	   case '\r': case '\n':
+	     if( PM_MENU(m, m->current) == NULL){ reply = 0; goto out; }
+	     autogo = YES; break;
+	   default:
+	     if((snew = PullHot(m, c)) < 0 ) break;
+	     if( PM_MENU(m, snew) == NULL){ reply=0; done++; }
+	     autogo = YES; goto mv;
+	   }
+	   continue;
+mv:        PullPointAt(m, sel = snew);
+	   if( done ) break;
+	}
+out:    wnoutrefresh(PullWin); PullHide(m); m->key = c;
+	wattrset(PullWin, A_NORMAL); /* NOT bg_attrib */
+	return reply;   /* номер элемента, выбранного в меню
+			   PM_MENU(m, m->current) */
+}

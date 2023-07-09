@@ -1,0 +1,7 @@
+## for prepear alt to using
+
+- bd_bare_communis
+  - repo
+    
+- _init_flash.sh
+  - unzip .ssh

@@ -1,0 +1,42 @@
+ garg_ prf -a -b --af aff --bf bff 
+a_prf=1
+b_prf=1
+af_prf=aff
+bf_prf=bff
+ garg_ aa -rr -?werr --csa yeyt 
+rr_aa=1
+csa_aa=yeyt
+ garg_ aa -rr -?werr dfrer --csa yeyt 
+rr_aa=1
+werr_aa=dfrer
+csa_aa=yeyt
+ garg_ aa -?werr --cs 
+[0;36m---qq_exit() $.1=--cs flow_symbol withut value $.2= $.3=---[0m
+[0;31m---message: --cs flow_symbol withut value---[0m
+[0;31m---file: ---[0m
+[0;31m---line: ---[0m
+ garg_ aa -?werr rtger 
+werr_aa=rtgert
+ garg_ aa -?werr 
+  garg_ aa -rr --csa 
+rr_aa=1
+[0;36m---qq_exit() $.1=--csa flow_symbol withut value $.2= $.3=---[0m
+[0;31m---message: --csa flow_symbol withut value---[0m
+[0;31m---file: ---[0m
+[0;31m---line: ---[0m
+ garg_ aa -rr --csa --ergre 
+rr_aa=1
+[0;36m---qq_exit() $.1=_data.sh not value - that flow_symbol $.2= $.3=---[0m
+[0;31m---message: _data.sh not value - that flow_symbol---[0m
+[0;31m---file: ---[0m
+[0;31m---line: ---[0m
+ garg_ aa -rr -?werr --csa yeyt 
+rr_aa=1
+csa_aa=yeyt
+ garg_ aa -rr --csa yeyt -?werr 
+rr_aa=1
+csa_aa=yeyt
+ garg_ aa -rr --csa yeyt -?werr hyetrty 
+rr_aa=1
+csa_aa=yeyt
+werr_aa=hyetrty

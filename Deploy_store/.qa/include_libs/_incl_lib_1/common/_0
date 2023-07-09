@@ -1,0 +1,8 @@
+    PS3="eligendi actiones: "
+
+select item in "${arr[@]}";do
+    
+    dilectus=$item
+    break
+    
+done

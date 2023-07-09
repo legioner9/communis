@@ -1,0 +1,1 @@
+## Вектора 5 insert swap shrink_to_fit

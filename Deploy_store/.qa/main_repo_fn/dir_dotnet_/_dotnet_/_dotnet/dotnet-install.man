@@ -1,0 +1,16 @@
+## https://docs.microsoft.com/ru-ru/dotnet/core/install/linux-scripted-manual#scripted-install
+
+Этот скрипт по умолчанию устанавливает последнюю версию пакета SDK с долгосрочной поддержкой (LTS), которой сейчас является .NET 6. Чтобы установить текущий выпуск, который может не быть версией LTS, используйте параметр -c Current.
+
+    ./dotnet-install.sh -c Current
+
+Чтобы вместо пакета SDK установить среду выполнения .NET, используйте параметр --runtime.
+
+    ./dotnet-install.sh -c Current --runtime aspnetcore
+
+Вы можете установить определенную версию, указав ее в параметре -c. Следующая команда устанавливает пакет SDK для .NET 6.0.
+
+    ./dotnet-install.sh -c 6.0
+
+## https://docs.microsoft.com/ru-ru/dotnet/core/tools/dotnet-install-script
+

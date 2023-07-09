@@ -1,0 +1,15 @@
+# my man ques_arg_
+
+in: 
+$1 exec command (necessary)
+
+fliow:
+after answer "y"
+read -r arg arg2
+
+    $1 $arg $arg2
+
+out: exec result
+
+
+

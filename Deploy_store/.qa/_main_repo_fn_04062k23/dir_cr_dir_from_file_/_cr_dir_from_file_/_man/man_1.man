@@ -1,0 +1,7 @@
+# man cr_dir_from_file_ 
+
+in: inthisdir file _cr_dir_from_file_.md
+ 
+flow: arr from _cr_dir_from_file_.md -> touch item_arr_name_file
+
+out: set failes accoding exec file

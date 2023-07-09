@@ -1,0 +1,16 @@
+# npm profile in /home/st/REPOBARE/_repo/plt/actio/dir_mm_npm_/_mm_npm_/_man/help
+
+npm ERR! npm profile enable-2fa [auth-only|auth-and-writes]
+npm ERR! npm profile disable-2fa
+npm ERR! npm profile get [<key>]
+npm ERR! npm profile set <key> <value>
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/st/.npm/_logs/2023-03-08T07_16_46_291Z-debug.log
+
+# npm profile -h in /home/st/REPOBARE/_repo/plt/actio/dir_mm_npm_/_mm_npm_/_man/help
+
+npm profile enable-2fa [auth-only|auth-and-writes]
+npm profile disable-2fa
+npm profile get [<key>]
+npm profile set <key> <value>

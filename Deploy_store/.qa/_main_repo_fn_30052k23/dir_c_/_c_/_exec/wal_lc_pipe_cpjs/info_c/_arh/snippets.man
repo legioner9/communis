@@ -1,0 +1,22 @@
+## [/*#*/] {/*#*/-1}
+
+/*#*/ int ${1:fn}_с(char *FFFFF, const char *file, const int line, int st_mode, int st_itfs)
+{
+    DIR *a = ${1:fn}(dirname);
+    if (NULL == a)
+    {
+        if (st_mode & ST_PRN)
+        {
+            fprintf(stderr, "failed in file %s at line # %d\n with st_mode = %d", file, line, st_mode);
+            fprintf(stderr, "from ${1:fn}_с FFFFF = %s, errno = %d\n", FFFFF, errno);
+            perror("need exit(errno) with");
+            fflush(stdout);
+        }
+        if (!(st_mode & ST_DEB))
+        {
+            // printf("that not_debug section - exit \n\n");
+            exit(errno);
+        }
+    }
+    return a;
+}

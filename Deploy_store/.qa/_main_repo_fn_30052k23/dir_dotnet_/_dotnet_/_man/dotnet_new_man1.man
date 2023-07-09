@@ -1,0 +1,75 @@
+## dotnet_new_man1
+
+###    $ dotnet new
+
+    Вас приветствует .NET 6.0!
+    ---------------------
+    Версия пакета SDK: 6.0.101
+
+    ----------------
+    Установлен сертификат разработки HTTPS в ASP.NET Core.
+    Чтобы сделать сертификат доверенным, выполните команду "dotnet dev-certs https --trust" (только в Windows и macOS).
+    Дополнительные сведения об HTTPS: https://aka.ms/dotnet-https
+    ----------------
+    Как написать свое первое приложение: https://aka.ms/dotnet-hello-world
+    Узнать о новых возможностях: https://aka.ms/dotnet-whats-new
+    Просмотреть документацию: https://aka.ms/dotnet-docs
+    Сообщить о проблемах и найти исходный код на GitHub: https://github.com/dotnet/core
+    Для просмотра доступных команд введите команду "dotnet --help" или посетите следующую страницу: https://aka.ms/dotnet-cli.
+    --------------------------------------------------------------------------------------
+    Команда "dotnet new" создает проект .NET на основе шаблона.
+
+    Общие шаблоны:
+    Имя шаблона            Короткое имя  Язык        Теги               
+    ---------------------  ------------  ----------  -------------------
+    Библиотека классов     classlib      [C#],F#     Common/Library     
+                                        VB          Common/Library     
+    Консольное приложение  console       [C#],F#,VB  Common/Console     
+    ASP.NET Core Web App   webapp,razor  [C#]        Web/MVC/Razor Pages
+    Blazor Server App      blazorserver  [C#]        Web/Blazor         
+
+    Пример:
+    dotnet new console
+
+    Отобразить параметры шаблона с помощью:
+    dotnet new console -h
+    Отобразить все установленные шаблоны с помощью:
+    dotnet new --list
+    Отобразить шаблоны, доступные в NuGet.org с помощью:
+    dotnet new web --search
+
+###    $ dotnet new --list
+    Эти шаблоны соответствуют входным данным: .
+
+    Имя шаблона                                   Короткое имя    Язык        Теги                      
+    --------------------------------------------  --------------  ----------  --------------------------
+    Библиотека классов                            classlib        [C#],F#     Common/Library            
+                                                                VB          Common/Library            
+    Веб-конфигурация                              webconfig                   Config                    
+    Консольное приложение                         console         [C#],F#,VB  Common/Console            
+    Конфигурация NuGet                            nugetconfig                 Config                    
+    Файл манифеста локального инструмента dotnet  tool-manifest               Config                    
+    Файл решения                                  sln                         Solution                  
+    Файл EditorConfig                             editorconfig                Config                    
+    файл gitignore dotnet                         gitignore                   Config                    
+    Файл global.json                              globaljson                  Config                    
+    ASP.NET Core Empty                            web             [C#],F#     Web/Empty                 
+    ASP.NET Core gRPC Service                     grpc            [C#]        Web/gRPC                  
+    ASP.NET Core Web API                          webapi          [C#],F#     Web/WebAPI                
+    ASP.NET Core Web App                          webapp,razor    [C#]        Web/MVC/Razor Pages       
+    ASP.NET Core Web App (Model-View-Controller)  mvc             [C#],F#     Web/MVC                   
+    ASP.NET Core with Angular                     angular         [C#]        Web/MVC/SPA               
+    ASP.NET Core with React.js                    react           [C#]        Web/MVC/SPA               
+    Blazor Server App                             blazorserver    [C#]        Web/Blazor                
+    Blazor WebAssembly App                        blazorwasm      [C#]        Web/Blazor/WebAssembly/PWA
+    MSTest Test Project                           mstest          [C#],F#,VB  Test/MSTest               
+    MVC ViewImports                               viewimports     [C#]        Web/ASP.NET               
+    MVC ViewStart                                 viewstart       [C#]        Web/ASP.NET               
+    NUnit 3 Test Item                             nunit-test      [C#],F#,VB  Test/NUnit                
+    NUnit 3 Test Project                          nunit           [C#],F#,VB  Test/NUnit                
+    Protocol Buffer File                          proto                       Web/gRPC                  
+    Razor Class Library                           razorclasslib   [C#]        Web/Razor/Library         
+    Razor Component                               razorcomponent  [C#]        Web/ASP.NET               
+    Razor Page                                    page            [C#]        Web/ASP.NET               
+    Worker Service                                worker          [C#],F#     Common/Worker/Web         
+    xUnit Test Project                            xunit           [C#],F#,VB  Test/xUnit        

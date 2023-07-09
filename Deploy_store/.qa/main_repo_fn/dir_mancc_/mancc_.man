@@ -1,0 +1,1 @@
+mancc_.list SINGL tail path to MANC dir 

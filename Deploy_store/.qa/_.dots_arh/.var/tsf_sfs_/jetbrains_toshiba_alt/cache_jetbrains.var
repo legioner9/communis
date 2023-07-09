@@ -1,0 +1,5 @@
+#>var
+
+eval src="/home/st/.cache/JetBrains" 
+eval dest_d="/home/st/.cache" 
+eval bag="/run/media/st/TOSHIBA_EXT/jetbrains_tsf"

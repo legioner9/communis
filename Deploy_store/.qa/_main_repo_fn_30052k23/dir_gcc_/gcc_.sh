@@ -1,0 +1,377 @@
+#!/bin/bash
+
+#! debag
+# . "$HOME/.bashrc"
+#!
+
+filename="$PATH_FN/dir_gcc_/gcc_.sh"
+
+echo -e "${HLIGHT}---start file: $filename---${NORMAL}" # start file
+
+#e_exer "Questions? See far!" "$filename" "$LINENO"
+
+#up_lib_git
+
+gcc_() {
+
+    local FNN=${FUNCNAME[0]}
+    local ORIGO_DIR=$PATH_FN/dir_$FNN
+    local PPWD=$PWD
+    local FLN=$0
+    local ARGS=($@)
+
+    if [ "man" == "$1" ]; then
+        edit_ "$PATH_FN"/dir_"$FNN"/"$FNN".man
+        return 0
+    fi
+
+    if [ "test" == "$1" ]; then
+        "$FNN"test
+        return 0
+    fi
+
+    if [ "lst" == "$1" ]; then
+        edit_ "$PATH_FN"/dir_"$FNN"/"$FNN".lst
+        return 0
+    fi
+
+    if [ "_go" == "$1" ]; then
+        edit_ "$PATH_FN"/dir_"$FNN"/
+        return 0
+    fi
+
+    if [ "-h" == "$1" ]; then
+        echo -e "${CYAN} ${FUNCNAME[0]}() help: 
+            MAIN: 
+            NAME: ${FUNCNAME[0]}()
+            ARGS:
+            TAGS:
+            FLOW:${NORMAL}"
+        return 0
+    fi
+    echo -e "${CYAN}---${FUNCNAME[0]}() $* ---${NORMAL}" #started functions
+    echo -e "${GREEN}\$PWD = $PWD${NORMAL}"          #print variable
+    echo -e "${GREEN}file = $0${NORMAL}"             #print variable
+    echo -e "${GREEN}args = $*${NORMAL}"             #print variable
+
+    c_up "$ORIGO_DIR/_$FNN/_sh/"
+
+    arr=()
+    res=()
+    # arr+=("ls -a - отображать все файлы, включая скрытые")
+    # res+=("ls -a $*")
+    # arr+=("ls -a - отображать все файлы, включая скрытые")
+    # res+=("ls -a $*")
+    # arr+=("ls -a - отображать все файлы, включая скрытые")
+    # res+=("ls -a $*")
+    # arr+=("ls -a - отображать все файлы, включая скрытые")
+    # res+=("ls -a $*")
+
+    case $1 in
+
+    "_0")
+        echo -e "${CYAN}---vim mode---${NORMAL}" #started functions
+        magic_nm_ "$FNN"
+
+        ;;
+
+    # "${arr[3]}")
+    #     echo -e "${CYAN}---${res[3]}---${NORMAL}" #started functions
+    #     ${res[3]}
+    # ;;
+
+    *)
+        echo -e "${BLUE}---main mode---${NORMAL}" #sistem info mesage
+
+        echo -e "${GREEN}\$PPWD = $PPWD${NORMAL}" #print variable
+
+        #EXTEND+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        #EXTEND+++++++++++++++++++++++++++++++++++++++++++++++++++++
+        #EXTEND++++++++++++++++++++++++++++++++++++++
+        #EXTEND++++++++++++++++++++++
+
+        # # incude fn_libs------------------------------------------
+        # c_up "$ORIGO_DIR/_$FNN/_sh"
+
+        # # UP in_file_variables------------------------------------
+        # path_dir_in=$ORIGO_DIR/_$FNN/_in
+
+        # cd_h $path_dir_in
+
+        # unset _f2a_
+        # unset item
+        # args_arr_name=()
+        # for item in *; do
+        #     ext=${item##*.}
+        #     name=${item%.*}
+        #     cname=${name:1}
+        #     # echo -e "${GREEN}\$ext = $ext${NORMAL}" #print variable
+        #     # echo -e "${GREEN}\$cname = $cname${NORMAL}" #print variable
+        #     if [ $ext = "var" ]; then
+        #         args_arr_name+=($cname)
+        #         # echo -e "${GREEN}\$item = $item${NORMAL}" #print variable
+        #         # echo -e "${ULINE}f2a $path_dir_in/$item${NORMAL}" #repit commands
+        #         f2a $path_dir_in/$item
+        #         # echo -e "${GREEN}\${_f2a_[@]} = ${_f2a_[*]}${NORMAL}" #print variable
+
+        #         declare $cname="${_f2a_[*]}"
+
+        #         unset _f2a_
+        #         unset item
+        #     fi
+
+        # done
+
+        # echo -e "${GREEN}\${args_arr_name[@]} = ${args_arr_name[*]}${NORMAL}" #print variable
+
+        # #!function body start--------------------------------------------
+        # echo -e "${GREEN}\${res_[@]} = ${res_[*]}${NORMAL}" #print variable
+        # echo -e "${GREEN}\${arr_[@]} = ${arr_[*]}${NORMAL}" #print variable
+
+        # IFS=', ' read -r -a arr <<<"${arr_[0]}"
+        # IFS=', ' read -r -a res <<<"${res_[0]}"
+
+        # unset item
+        # echo "arr:"
+        # for item in ${arr[@]}; do
+        #     echo -e "${GREEN}\$item = $item${NORMAL}" #print variable
+        # done
+
+        # unset item
+        # echo "res:"
+        # for item in ${res[@]}; do
+        #     echo -e "${GREEN}\$item = $item${NORMAL}" #print variable
+        # done
+        # unset item
+
+        #EXTEND++++++++++++++++++++++
+        #EXTEND++++++++++++++++++++++++++++++++++++++
+        #EXTEND+++++++++++++++++++++++++++++++++++++++++++++++++++++
+        #EXTEND+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+        cd_h "$PPWD"
+
+        #!choiсe_arg_from_arr>>>>>>>>>>>>>>>>>
+
+        # PS3="eligendi actiones (var): "
+        # select item in "${var[@]}";do
+        #     var_=$item
+        #     break
+        # done
+
+        # PS3="eligendi actiones (tml): "
+        # select item in "${tml[@]}";do
+        #     tml_=$item
+        #     break
+        # done
+
+        #!end choiсe_arg_from_arr>>>>>>>>>>>>>
+
+        #!function body===================================================================
+        #!function body===============================================
+        #!function body======================
+
+        arr=()
+        res=()
+        arr+=("leave menu")
+        res+=("echo bye)))")
+        arr+=("gcc clang pathes: gcc -xc -E -v -")
+        res+=("gcc -xc -E -v -")
+        arr+=("gcc cpp pathes: gcc -xc++ -E -v -")
+        res+=("gcc -xc++ -E -v -")
+        #         arr+=("leave menu")
+        # res+=("echo bye)))")
+        #         arr+=("leave menu")
+        # res+=("echo bye)))")
+        # arr+=("22222 - отображать все файлы, включая скрытые, это те, перед именем которых стоит точка;")
+        # res+=("22222")
+
+        # arr+=("&&&&&&&&& enter arg - &&&&&&&&& snap package management")
+        # res+=("&&&&&&&&&")
+        # arr+=("&&&&&&&&& choice arg - &&&&&&&&& snap package management")
+        # res+=("&&&&&&&&&")
+
+        # arr+=("22222 arg - send echo_request to network hosts")
+        # res+=("22222 $arg")
+        # arr+=("dnf --enablerepo=ARG1 install ARG2 - dnf позволяет установить любой конкретный пакет (скажем, phpmyadmin) из определённого репозитория (к примеру, epel) ")
+        # res+=("---")
+
+        # echo -e "${BLUE}---enter ARG1---${NORMAL}" #sistem info mesage
+        # read -r ARG1
+        # echo -e "${BLUE}---enter ARG2---${NORMAL}" #sistem info mesage
+        # read -r ARG2
+        # echo -e "${BLUE}---dnf --enablerepo=ARG1 install ARG2---${NORMAL}" #sistem info mesage
+        # dnf --enablerepo=$ARG1 install $\ARG2
+
+        # echo -e "${BLUE}---enter arg---${NORMAL}" #sistem info mesage
+        # read -r arg
+        # echo -e "${BLUE}---${res[33333]} $arg---${NORMAL}" #sistem info mesage
+        # ${res[33333]} $arg
+
+        # arg=$(choice_44444)
+        # echo -e "${BLUE}---${res[33333]} $arg---${NORMAL}" #sistem info mesage
+        # ${res[33333]} $arg
+
+        PS3="eligendi actiones: "
+
+        select item in "${arr[@]}"; do
+
+            dilectus=$item
+            break
+
+        done
+
+        case $dilectus in
+
+        "${arr[0]}")
+            echo -e "${CYAN}---${res[0]}---${NORMAL}" #started functions
+            ${res[0]}
+
+            ;;
+        "${arr[1]}")
+            echo -e "${CYAN}---${res[1]}---${NORMAL}" #started functions
+            ${res[1]}
+            gcc_ "$@"
+            ;;
+
+        "${arr[2]}")
+            echo -e "${CYAN}---${res[2]}---${NORMAL}" #started functions
+            ${res[2]}
+            gcc_ "$@"
+            ;;
+
+        "${arr[3]}")
+            echo -e "${CYAN}---${res[3]}---${NORMAL}" #started functions
+            ${res[3]}
+            gcc_ "$@"
+            ;;
+
+        "${arr[4]}")
+            echo -e "${CYAN}---${res[4]}---${NORMAL}" #started functions
+            ${res[4]}
+            gcc_ "$@"
+            ;;
+
+        "${arr[5]}")
+            echo -e "${CYAN}---${res[5]}---${NORMAL}" #started functions
+            ${res[5]}
+            gcc_ "$@"
+            ;;
+
+        "${arr[6]}")
+            echo -e "${CYAN}---${res[6]}---${NORMAL}" #started functions
+            ${res[6]}
+            gcc_ "$@"
+            ;;
+
+        "${arr[7]}")
+            echo -e "${CYAN}---${res[7]}---${NORMAL}" #started functions
+            ${res[7]}
+            gcc_ "$@"
+            ;;
+
+        "${arr[8]}")
+            echo -e "${CYAN}---${res[8]}---${NORMAL}" #started functions
+            ${res[8]}
+            gcc_ "$@"
+            ;;
+
+        "${arr[9]}")
+            echo -e "${CYAN}---${res[9]}---${NORMAL}" #started functions
+            ${res[9]}
+            gcc_ "$@"
+            ;;
+
+        "${arr[10]}")
+            echo -e "${CYAN}---${res[10]}---${NORMAL}" #started functions
+            ${res[10]}
+            gcc_ "$@"
+
+            ;;
+        "${arr[11]}")
+            echo -e "${CYAN}---${res[11]}---${NORMAL}" #started functions
+            ${res[11]}
+            gcc_ "$@"
+            ;;
+
+        "${arr[12]}")
+            echo -e "${CYAN}---${res[12]}---${NORMAL}" #started functions
+            ${res[12]}
+            gcc_ "$@"
+            ;;
+
+        "${arr[13]}")
+            echo -e "${CYAN}---${res[13]}---${NORMAL}" #started functions
+            ${res[13]}
+            gcc_ "$@"
+            ;;
+
+        "${arr[14]}")
+            echo -e "${CYAN}---${res[14]}---${NORMAL}" #started functions
+            ${res[14]}
+            gcc_ "$@"
+            ;;
+
+        "${arr[15]}")
+            echo -e "${CYAN}---${res[15]}---${NORMAL}" #started functions
+            ${res[15]}
+            gcc_ "$@"
+            ;;
+
+        "${arr[16]}")
+            echo -e "${CYAN}---${res[16]}---${NORMAL}" #started functions
+            ${res[16]}
+            gcc_ "$@"
+            ;;
+
+        "${arr[17]}")
+            echo -e "${CYAN}---${res[17]}---${NORMAL}" #started functions
+            ${res[17]}
+            gcc_ "$@"
+            ;;
+
+        "${arr[18]}")
+            echo -e "${CYAN}---${res[18]}---${NORMAL}" #started functions
+            ${res[18]}
+            gcc_ "$@"
+            ;;
+
+        "${arr[19]}")
+            echo -e "${CYAN}---${res[19]}---${NORMAL}" #started functions
+            ${res[19]}
+            gcc_ "$@"
+            ;;
+
+        "${arr[20]}")
+            echo -e "${CYAN}---${res[20]}---${NORMAL}" #started functions
+            ${res[20]}
+            gcc_ "$@"
+
+            ;;
+
+        *)
+            echo -e "${BLUE}---error dilectus---${NORMAL}" #sistem info mesage
+            ;;
+        esac
+
+        #!function body======================
+        #!function body===============================================
+        #!function body===================================================================
+
+        #! Recurs exit after last args ($2)
+        # if [ -n "$2" ]; then
+        #     echo -e "${BLUE}---$2 start! exist ---${NORMAL}" #sistem info mesage
+        #     "$2"
+
+        # fi
+
+        #!function body end--------------------------------------------
+        ;;
+
+    esac
+
+}
+
+# gcc_ @
+
+unset filename

@@ -1,0 +1,15 @@
+f_f_
+s_s_
+choice_tag
+choice_tag_file
+magic_nm_
+tag_nm_
+add_tag_nm_
+menu_nm_
+man_is
+mmenu_
+fs_
+edit_
+ques_
+ques_arg_
+s_t_

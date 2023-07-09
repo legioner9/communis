@@ -1,0 +1,2 @@
+## [Описание функций языка Си](http://all-ht.ru/inf/prog/c/func/fseek.html)
+

@@ -1,0 +1,11 @@
+## [выводит отформатированные сообщения об ошибках](https://ru.manpages.org/fmtmsg/3)
+
+Вывод должен быть таким:
+
+    util-linux:mount: ОШИБКА: неизвестный параметр mount
+    TO FIX: Смотрите mount(8).  util-linux:mount:017
+а после
+    MSGVERB=text:action; export MSGVERB
+вывод станет:
+    неизвестный параметр mount
+    TO FIX: Смотрите mount(8).

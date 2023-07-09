@@ -1,0 +1,12 @@
+main: wrap for check arguments existing functions
+exec : 
+[standart bash function]...__ [ flow_chars ] [ arg1 ] [ arg2 ] [, (-f1|-d1|-nf1|-nd1)]
+
+cntl structure: -[,c - demand -> condition to ecec][, n - exist -> not exist](f|d|e|... - demand to txist)(1|2|... - value args for check )
+    f - file
+    d - dir
+    e - exist
+
+parsing params :
+arg : param is not first char equal [-]
+flow_chars : is $1 {single word!}

@@ -1,0 +1,2 @@
+eval wrp_fifs1_ ls ${PATH_MAIN_REPO_FN_DIR}/dir_exl_/_exl_/_debug/ancor_dir  -d1 -qq_exit
+eval wrp_fifs1_ ls ${PATH_MAIN_REPO_FN_DIR}/dir_exl_/_exl_/_debug/ancor_dirx -d1 -qq_exit 

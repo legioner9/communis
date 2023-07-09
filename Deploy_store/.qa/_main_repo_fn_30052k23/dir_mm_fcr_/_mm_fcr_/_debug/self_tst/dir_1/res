@@ -1,0 +1,110 @@
+'${COMMUNIS_PATH}/Deploy_store/.qa/.tml/cr_tst_dir_/fn_tst/./exec._tst' -> '${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_mm_fcr_/_mm_fcr_/_debug/self_tst/dir_1/./exec._tst'
+vi0_cr_f_=${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_mm_fcr_/_mm_fcr_/_debug/self_tst/dir_1//_flow_tst.sh
+vr0_cr_f_={file_path}
+[0;34m#! ${path_file} global path to file[0m
+[0;34m[0m
+[0;34meval cr_f_ ${path_file} --vi0 '\${PATH_TOSHIBA_EXT}' --vr0 "${PATH_TOSHIBA_EXT}"[0m
+vi0_cr_f_=\${PATH_TOSHIBA_EXT}
+vr0_cr_f_=/run/media/st/TOSHIBA_EXT
+[0;34meval cr_f_ ${path_file} --vi0 '\${PATH_MY_ONE}' --vr0 "${PATH_MY_ONE}"[0m
+vi0_cr_f_=\${PATH_MY_ONE}
+vr0_cr_f_=/run/media/st/MY_ONE
+[0;34meval cr_f_ ${path_file} --vi0 '\${FONSH_PATH}' --vr0 "${FONSH_PATH}"[0m
+vi0_cr_f_=\${FONSH_PATH}
+vr0_cr_f_=/home/st/REPOBARE/_repo/fonsh
+[0;34meval cr_f_ ${path_file} --vi0 '\${PATH_MAIN_REPO_FN_DIR}' --vr0 "${PATH_MAIN_REPO_FN_DIR}"[0m
+vi0_cr_f_=\${PATH_MAIN_REPO_FN_DIR}
+vr0_cr_f_=${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn
+[0;34meval cr_f_ ${path_file} --vi0 '\${PATH_COMMUNIS}' --vr0 "${PATH_COMMUNIS}"[0m
+vi0_cr_f_=\${PATH_COMMUNIS}
+vr0_cr_f_=${COMMUNIS_PATH}
+[0;34meval cr_f_ ${path_file} --vi0 '\${HOME}' --vr0 "${HOME}"[0m
+vi0_cr_f_=\${HOME}
+vr0_cr_f_=/home/st
+vi0_cr_f_=${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_mm_fcr_/_mm_fcr_/_debug/self_tst/dir_1//exec._
+vr0_cr_f_={file_path}
+[0;34m#! ${path_file} global path to file[0m
+[0;34m[0m
+[0;34meval cr_f_ ${path_file} --vi0 '\${PATH_TOSHIBA_EXT}' --vr0 "${PATH_TOSHIBA_EXT}"[0m
+vi0_cr_f_=\${PATH_TOSHIBA_EXT}
+vr0_cr_f_=/run/media/st/TOSHIBA_EXT
+[0;34meval cr_f_ ${path_file} --vi0 '\${PATH_MY_ONE}' --vr0 "${PATH_MY_ONE}"[0m
+vi0_cr_f_=\${PATH_MY_ONE}
+vr0_cr_f_=/run/media/st/MY_ONE
+[0;34meval cr_f_ ${path_file} --vi0 '\${FONSH_PATH}' --vr0 "${FONSH_PATH}"[0m
+vi0_cr_f_=\${FONSH_PATH}
+vr0_cr_f_=/home/st/REPOBARE/_repo/fonsh
+[0;34meval cr_f_ ${path_file} --vi0 '\${PATH_MAIN_REPO_FN_DIR}' --vr0 "${PATH_MAIN_REPO_FN_DIR}"[0m
+vi0_cr_f_=\${PATH_MAIN_REPO_FN_DIR}
+vr0_cr_f_=${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn
+[0;34meval cr_f_ ${path_file} --vi0 '\${PATH_COMMUNIS}' --vr0 "${PATH_COMMUNIS}"[0m
+vi0_cr_f_=\${PATH_COMMUNIS}
+vr0_cr_f_=${COMMUNIS_PATH}
+[0;34meval cr_f_ ${path_file} --vi0 '\${HOME}' --vr0 "${HOME}"[0m
+vi0_cr_f_=\${HOME}
+vr0_cr_f_=/home/st
+[0;34m#>exl[0m
+[0;34m[0m
+[0;34m# start/communis/Deploy_store/.qa/.exl/cr_tst_dir_/create_tst_dir.exl[0m
+[0;34m[0m
+[0;34meval tml_dir=${PATH_TML_DIR}/cr_tst_dir_/fn_tst[0m
+[0;34meval tst_dir=${PPWD}/${name_dir}[0m
+[0;34meval cp -rfuv ${tml_dir}/. ${tst_dir}[0m
+'${COMMUNIS_PATH}/Deploy_store/.qa/.tml/cr_tst_dir_/fn_tst/./exec._tst' -> '${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_mm_fcr_/_mm_fcr_/_debug/self_tst/dir_1/./exec._tst'
+[0;34m[0m
+[0;34m#? _flow_tst.sh[0m
+[0;34meval file_path=${tst_dir}/_flow_tst.sh[0m
+[0;34m[0m
+[0;34meval cr_f_ ${file_path} --vi0 ${file_path} --vr0 {file_path}[0m
+vi0_cr_f_=${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_mm_fcr_/_mm_fcr_/_debug/self_tst/dir_1//_flow_tst.sh
+vr0_cr_f_={file_path}
+[0;34meval upg_path_ ${file_path}[0m
+[0;34m#! ${path_file} global path to file[0m
+[0;34m[0m
+[0;34meval cr_f_ ${path_file} --vi0 '\${PATH_TOSHIBA_EXT}' --vr0 "${PATH_TOSHIBA_EXT}"[0m
+vi0_cr_f_=\${PATH_TOSHIBA_EXT}
+vr0_cr_f_=/run/media/st/TOSHIBA_EXT
+[0;34meval cr_f_ ${path_file} --vi0 '\${PATH_MY_ONE}' --vr0 "${PATH_MY_ONE}"[0m
+vi0_cr_f_=\${PATH_MY_ONE}
+vr0_cr_f_=/run/media/st/MY_ONE
+[0;34meval cr_f_ ${path_file} --vi0 '\${FONSH_PATH}' --vr0 "${FONSH_PATH}"[0m
+vi0_cr_f_=\${FONSH_PATH}
+vr0_cr_f_=/home/st/REPOBARE/_repo/fonsh
+[0;34meval cr_f_ ${path_file} --vi0 '\${PATH_MAIN_REPO_FN_DIR}' --vr0 "${PATH_MAIN_REPO_FN_DIR}"[0m
+vi0_cr_f_=\${PATH_MAIN_REPO_FN_DIR}
+vr0_cr_f_=${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn
+[0;34meval cr_f_ ${path_file} --vi0 '\${PATH_COMMUNIS}' --vr0 "${PATH_COMMUNIS}"[0m
+vi0_cr_f_=\${PATH_COMMUNIS}
+vr0_cr_f_=${COMMUNIS_PATH}
+[0;34meval cr_f_ ${path_file} --vi0 '\${HOME}' --vr0 "${HOME}"[0m
+vi0_cr_f_=\${HOME}
+vr0_cr_f_=/home/st
+[0;34m[0m
+[0;34m#? exec._tst[0m
+[0;34meval wrp_fifs2_ mv ${tst_dir}/exec._tst ${tst_dir}/exec._${ext}[0m
+[0;34meval file_path=${tst_dir}/exec._${ext}[0m
+[0;34m[0m
+[0;34meval cr_f_ ${file_path} --vi0 ${file_path} --vr0 {file_path}[0m
+vi0_cr_f_=${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_mm_fcr_/_mm_fcr_/_debug/self_tst/dir_1//exec._
+vr0_cr_f_={file_path}
+[0;34meval upg_path_ ${file_path}[0m
+[0;34m#! ${path_file} global path to file[0m
+[0;34m[0m
+[0;34meval cr_f_ ${path_file} --vi0 '\${PATH_TOSHIBA_EXT}' --vr0 "${PATH_TOSHIBA_EXT}"[0m
+vi0_cr_f_=\${PATH_TOSHIBA_EXT}
+vr0_cr_f_=/run/media/st/TOSHIBA_EXT
+[0;34meval cr_f_ ${path_file} --vi0 '\${PATH_MY_ONE}' --vr0 "${PATH_MY_ONE}"[0m
+vi0_cr_f_=\${PATH_MY_ONE}
+vr0_cr_f_=/run/media/st/MY_ONE
+[0;34meval cr_f_ ${path_file} --vi0 '\${FONSH_PATH}' --vr0 "${FONSH_PATH}"[0m
+vi0_cr_f_=\${FONSH_PATH}
+vr0_cr_f_=/home/st/REPOBARE/_repo/fonsh
+[0;34meval cr_f_ ${path_file} --vi0 '\${PATH_MAIN_REPO_FN_DIR}' --vr0 "${PATH_MAIN_REPO_FN_DIR}"[0m
+vi0_cr_f_=\${PATH_MAIN_REPO_FN_DIR}
+vr0_cr_f_=${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn
+[0;34meval cr_f_ ${path_file} --vi0 '\${PATH_COMMUNIS}' --vr0 "${PATH_COMMUNIS}"[0m
+vi0_cr_f_=\${PATH_COMMUNIS}
+vr0_cr_f_=${COMMUNIS_PATH}
+[0;34meval cr_f_ ${path_file} --vi0 '\${HOME}' --vr0 "${HOME}"[0m
+vi0_cr_f_=\${HOME}
+vr0_cr_f_=/home/st

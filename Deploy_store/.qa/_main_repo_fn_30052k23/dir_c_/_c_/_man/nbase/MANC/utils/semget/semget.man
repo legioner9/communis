@@ -1,0 +1,364 @@
+### UP
+[semget](##semget)
+[MAIN](##MAIN)
+[MAIN_ru](##MAIN_ru)
+[ANCORS](##ANCORS)
+[ISU](##ISU)
+[inet](##A_inet)
+[inet](##books_inet)
+[inet](##examples_inet)
+[inet](##classic_inet)
+[inet](##enters_inet)
+[inet](##issue_code_inet)
+[H_FILE](##H_FILE)
+[p_SYNOPSIS](##p_SYNOPSIS)
+[p_RETURN](##p_RETURN)
+[p_RETURN_ru](##p_RETURN_ru)
+[p_BUGS](##p_BUGS)
+[p_DESCRIPTION_ru](##p_DESCRIPTION_ru)
+[p_DESCRIPTION](##p_DESCRIPTION)
+[p_MIRRORS](##p_MIRRORS)
+[p_EXAMPLES](##p_EXAMPLES)
+[p_CODE_h](##p_CODE_h)
+[p_CODE_c](##p_CODE_c)
+[p_CODE_m](##p_CODE_m)
+[p_ERRORS](##p_ERRORS)
+[p_BOOKS](##p_BOOKS)
+[p_BOOKS_ru](##p_BOOKS_ru)
+[p_CONTENT](##p_CONTENT)
+
+[cat_hfiles](../../cat_hfiles.md)
+[cat_utils](../../cat_utils.md)
+[cat_structs](../../cat_structs.md)
+[cat_param](../../cat_params.md)
+[cat_macros](../../cat_macross.md)
+[cat_const](../../cat_consts.md)
+[cat_type](../../cat_types.md)
+[cat_any](../cat_anys.md)
+
+
+[UP](###UP)
+## MAIN
+:semget:
+[next](##MAIN_ru)
+
+<<MAIN>>
+[MAIN](../../fills/semget/MAIN)
+
+
+
+[UP](###UP)
+## MAIN_ru
+:semget:
+[next](##ANCORS)
+
+<<MAIN_ru>>
+[MAIN_ru](../../fills/semget/MAIN_ru)
+
+[UP](###UP)
+## ANCORS
+:semget:
+[next](##ISU)
+
+<<ANCORS>>
+[ANCORS](../../fills/semget/ANCORS)
+
+[UP](###UP)
+## ISU
+:semget:
+[next](##H_FILE)
+
+----------------------------------------------------- 
+-------------------------------------- 
+file://${COMMUNIS_PATH}/Deploy_store/.qa/main_repo_fn/dir_c_/_c_/_man/nbase/_Head_sis_libs_posix/38_sys_sem_h/2_semget/study_cpjs/semget.isu
+-------------------------------------- 
+----------------------------------------------------- 
+<<ISU>>
+only read
+:semget:
+[ISU](../../contents)
+[next](##inet)
+
+
+[UP](###UP)
+## inet
+:semget:
+[next](##H_FILE)
+
+
+[UP](###UP)
+## A_inet
+[manpages.org](https://www.google.ru/search?q=semget+site%3Ahttps%3A%2F%2Fmanpages.org)
+[reposcope.com_ru](https://www.google.ru/search?q=semget+site%3Ahttps%3A%2F%2Freposcope.com%2Fmanpages%2Fru)
+[pubs.opengroup.org](https://www.google.com/search?q=semget+https%3A%2F%2Fpubs.opengroup.org)
+[manpages.debian.org](https://yandex.ru/search/?text=semget+site%3Ahttps%3A%2F%2Fmanpages.debian.org%2F)
+[www.opennet.ru](http://www.opennet.ru/man.shtml?category=2&topic=semget)
+[man7.org](https://www.google.ru/search?q=semget+site%3Ahttps%3A%2F%2Fman7.org%2Flinux%2Fman-pages)
+[en.cppreference.com](https://www.google.com/search?q=semget+en.cppreference.com)
+[www.mankier.com](https://www.mankier.com/?q=semget)
+[www.codecogs.com](https://www.google.ru/search?q=semget+https%3A%2F%2Fwww.codecogs.com%2Flibrary%2Fcomputing%2F)
+[digitalmars.com](https://www.google.ru/search?q=semget+https%3A%2F%2Fdigitalmars.com%2Frtl%2F)
+
+
+[UP](###UP)
+## books_inet
+[cpp.com.ru](https://yandex.ru/search/?text=semget+site%3Ahttps%3A%2F%2Fcpp.com.ru)
+[linuxhint.com](https://www.google.ru/search?q=semget+site%3Ahttps%3A%2F%2Flinuxhint.com)
+[gnu.org](https://www.google.ru/search?q=semget+site%3Ahttps%3A%2F%2Fwww.gnu.org%2Fsoftware%2Flibc%2Fmanual)
+
+[UP](###UP)
+## examples_inet
+[yandex:examples](https://yandex.ru/search/?text=semget+example+in+c)
+[docs.oracle.com](https://www.google.com/search?q=semget+https%3A%2F%2Fdocs.oracle.com)
+[manpages.debian.org](https://yandex.ru/search/?text=semget+site%3Ahttps%3A%2F%2Fmanpages.debian.org%2F)
+[osr507doc.xinuos.com](https://www.google.com/search?q=semget+http%3A%2F%2Fosr507doc.xinuos.com%2Fen%2Fman)
+[cpp.hotexamples.com](https://cpp.hotexamples.com/examples/-/-/semget/cpp-semget-function-examples.html)
+[all-ht.ru](https://yandex.ru/search/?text=semget+site%3Ahttp%3A%2F%2Fall-ht.ru%2Finf%2Fprog%2Fc%2F)
+[cppreference.com](https://yandex.ru/search/?text=semget+site%3Ahttps%3A%2F%2Fen.cppreference.com%2Fw%2Fc%2F)
+
+[UP](###UP)
+## classic_inet
+[bogatyrev_c_unix](https://www.google.com/search?q=semget+site%3Ahttps%3A%2F%2Fcpp.com.ru%2Fbogatyrev_c_unix)
+[kr_cbook](https://www.google.com/search?q=semget+site%3Ahttps%3A%2F%2Fcpp.com.ru%2Fkr_cbook)
+
+[UP](###UP)
+## enters_inet
+[pubs.opengroup.org](https://pubs.opengroup.org/onlinepubs/9699919799/idx/head.html)
+
+[UP](###UP)
+## issue_code_inet
+[code.woboq.org](https://www.google.com/search?h=&sitesearch=https%3A%2F%2Fcode.woboq.org%2Fuserspace%2Fglibc%2F&q=semget)
+
+
+[UP](###UP)
+## H_FILE 
+[sys_sem_h.md](../../hfiles/sys_sem_h.md)
+
+
+[UP](###UP)
+## p_SYNOPSIS
+:semget:
+[next](##p_RETURN_ru)
+
+<<SYNOPSIS>>
+[SYNOPSIS](../../fills/semget/SYNOPSIS)
+
+
+[UP](###UP)
+## p_RETURN_ru
+:semget:
+[next](##p_RETURN)
+
+<<RETURN>>
+[RETURN_ru](../../fills/semget/RETURN)
+
+
+[UP](###UP)
+## p_RETURN
+:semget:
+[next](##p_DESCRIPTION_ru)
+
+<<RETURN_ru>>
+[RETURN](../../fills/semget/RETURN_ru)
+
+
+[UP](###UP)
+## p_DESCRIPTION_ru
+:semget:
+[next](##p_DESCRIPTION)
+
+<<DESCRIPTION_ru>>
+[DESCRIPTION_ru](../../fills/semget/DESCRIPTION_ru)
+
+
+[UP](###UP)
+## p_DESCRIPTION
+:semget:
+[next](##p_BUGS)
+
+<<DESCRIPTION>>
+[DESCRIPTION](../../fills/semget/DESCRIPTION)
+
+
+[UP](###UP)
+## p_MIRRORS
+:semget:
+[next](##p_BUGS)
+
+<<MIRRORS>>
+[MIRRORS](../../fills/semget/MIRRORS)
+
+
+[UP](###UP)
+## p_BUGS
+:semget:
+[next](##p_EXAMPLES)
+
+<<BUGS>>
+[BUGS](../../fills/semget/BUGS)
+
+
+[UP](###UP)
+## p_EXAMPLES
+:semget:
+[next](##p_CODE)
+
+----------------------------------------------------- 
+-------------------------------------- 
+https://man7.org/linux/man-pages/man2/semget.2.html
+Программа, показанная ниже, использует semget() для создания нового
+набора семафоров или получения идентификатора существующего набора. Он генерирует ключ
+для semget() с помощью ftok(3). Первые два аргумента командной строки
+используются в качестве аргументов pathname и proj_id для ftok(3). 
+Третий аргумент командной строки - это целое число, которое задает аргумент
+nsems для semget(). Параметры командной строки можно использовать для
+указания флагов IPC_CREAT (-c) и IPC_EXCL (-x) для вызова
+semget(). Использование этой программы продемонстрировано ниже.
+Сначала мы создаем два файла, которые будут использоваться для генерации ключей
+с помощью ftok(3), создаем два набора семафоров с использованием этих файлов, а
+затем перечисляем наборы с помощью ipcs(1):
+$ touch mykey mykey2
+$ ./t_semget -c mykey p 1
+ID = 9
+$ ./t_semget -c mykey2 p 2
+ID = 10
+$ ipcs -s
+------ Semaphore Arrays --------
+key        semid      owner      perms      nsems
+0x7004136d 9          mtk        600        1
+0x70041368 10         mtk        600        2
+Далее мы продемонстрируем, что когда semctl(2) присваивается тот же ключ
+(сгенерированный теми же аргументами, что и ftok(3)), он возвращает
+идентификатор уже существующего набора семафоров:
+$ ./t_semget -c mykey p 1
+ID = 9
+Наконец, мы демонстрируем тип коллизии, которая может возникнуть, когда
+ftok(3) присваивается другое имя пути аргументы, имеющие одинаковый
+номер индекса:
+$ ln mykey link
+$ ls -i1 link mykey
+2233197 link
+2233197 mykey
+$ ./t_semget link p 1       # Generates same key as 'mykey'
+ID = 9
+Исходный код программы
+/* t_semget.c
+Licensed under GNU General Public License v2 or later.
+*/
+#include <sys/types.h>
+#include <sys/ipc.h>
+#include <sys/sem.h>
+#include <sys/stat.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+static void
+usage(const char *pname)
+{
+fprintf(stderr, "Usage: %s [-cx] pathname proj-id num-sems
+",
+pname);
+fprintf(stderr, "    -c           Use IPC_CREAT flag
+");
+fprintf(stderr, "    -x           Use IPC_EXCL flag
+");
+exit(EXIT_FAILURE);
+}
+int
+main(int argc, char *argv[])
+{
+int semid, nsems, flags, opt;
+key_t key;
+flags = 0;
+while ((opt = getopt(argc, argv, "cx")) != -1) {
+switch (opt) {
+case 'c': flags |= IPC_CREAT;   break;
+case 'x': flags |= IPC_EXCL;    break;
+default:  usage(argv[0]);
+}
+}
+if (argc != optind + 3)
+usage(argv[0]);
+key = ftok(argv[optind], argv[optind + 1][0]);
+if (key == -1) {
+perror("ftok");
+exit(EXIT_FAILURE);
+}
+nsems = atoi(argv[optind + 2]);
+semid = semget(key, nsems, flags | 0600);
+if (semid == -1) {
+perror("semget");
+exit(EXIT_FAILURE);
+}
+printf("ID = %d
+", semid);
+exit(EXIT_SUCCESS);
+}
+-------------------------------------- 
+----------------------------------------------------- 
+<<EXAMPLES>>
+[EXAMPLES](../../fills/semget/EXAMPLES)
+
+
+[UP](###UP)
+## p_CODE_h
+:semget:
+[next](##p_CODE_c)
+
+<<CODE_h>>
+[CODE_h](../../fills/semget/CODE_h)
+
+
+[UP](###UP)
+## p_CODE_c
+:semget:
+[next](##p_CODE_m)
+
+<<CODE_c>>
+[CODE_c](../../fills/semget/CODE_c)
+
+
+[UP](###UP)
+## p_CODE_m
+:semget:
+[next](##p_ERRORS)
+
+<<CODE_m>>
+[CODE_m](../../fills/semget/CODE_m)
+
+
+[UP](###UP)
+## p_ERRORS
+:semget:
+[next](##p_BOOKS)
+
+<<ERRORS>>
+[ERRORS](../../fills/semget/ERRORS)
+
+
+[UP](###UP)
+## p_BOOKS
+:semget:
+[next](##p_BOOKS_ru)
+
+<<BOOKS>>
+[BOOKS](../../fills/semget/BOOKS)
+
+
+[UP](###UP)
+## p_BOOKS_ru
+:semget:
+[next](##p_CONTENT)
+
+
+<<BOOKS_ru>>
+[BOOKS_ru](../../fills/semget/BOOKS_ru)
+
+
+[UP](###UP)
+## p_CONTENT
+:semget:
+[semget.cnt](../../contents/semget.cnt)
+[next](##UP)
+
+[UP](###UP)

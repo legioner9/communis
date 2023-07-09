@@ -1,0 +1,2 @@
+ int fileno_c(FILE *stream, const char *file, const int line)
+ int fileno_cb(int cb(void), FILE *stream)

@@ -1,0 +1,7 @@
+endpwent
+getpwent
+getpwnam
+getpwnam_r
+getpwuid
+getpwuid_r
+setpwent

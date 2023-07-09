@@ -1,0 +1,162 @@
+#!function body===================================================================
+#!function body===============================================
+#!function body======================
+#? amount_arg $# min_args max_args "in $FNN :: $*"
+#? USE 00000() -echo -deb
+local echo_00000
+local debug_00000
+local verbose_00000
+local develop1_00000
+local errmes_00000
+local outmes_00000
+local ptr_if_00000
+local ptr_sem_00000
+
+unset_autoargs_00000() {
+    echo_00000=0
+    debug_00000=0
+    verbose_00000=0
+    develop1_00000=0
+
+    unset errmes_00000
+    unset outmes_00000
+    unset ptr_if_00000
+    unset ptr_sem_00000
+
+    # any1_00000=0
+    # unset any2_00000
+}
+
+unset_autoargs_00000
+
+[[ 1 -eq ${verbose} ]] || {
+    garg_ ${FNN} $@
+} && {
+    garg_ ${FNN} $@ 1>/dev/null
+}
+
+#
+#? cd "$1" || {
+#?    read -p "\$1: $1 not dir - enter for exit 1, ^C for interrapt in ${FNLOCK}"
+#?    exit 1
+#?}
+
+# start ---------------------------- if ptr block-------------------------------------------
+
+ptr_value=${ptr_if_00000}
+
+if [[ -n ${ptr_value} ]] && [[ ${ptr_value} -ne 1 ]]; then
+    if [ -n ${develop1_00000} ] && [ ${develop1_00000} -eq 1 ]; then
+        echo -e "${RED}--- $FNN() $* be ignored ---${NORMAL}" #started functions
+    fi
+    return 0
+fi
+
+# end ---------------------------- if ptr block-------------------------------------------
+#
+echo_deb_ ${echo_00000} "cntl echo_deb_ mode in ${FNLOCK}"
+if [ -n ${debug_00000} ] && [ ${debug_00000} -eq 1 ]; then
+    echo "DEBUG MODE in ${FNLOCK}"
+    echo "\\\${errmes_00000}: ${errmes_00000}"
+    echo "\\\${outmes_00000}: ${outmes_00000}"
+fi
+
+if [ -n ${develop1_00000} ] && [ ${develop1_00000} -eq 1 ]; then
+    echo "develop1 MODE in ${FNLOCK}"
+fi
+
+if [ -n ${verbose_00000} ] && [ ${verbose_00000} -eq 1 ]; then
+    echo "verbose MODE in ${FNLOCK}"
+fi
+
+exit_err_00000() { #* $1 error message
+    local arg1="$1"
+    unset_autoargs_00000
+    plt_pause "$1: be return ${arg1} <- Fail: message in ${FNLOCK}"
+    echo "$1: be return ${arg1} <- Fail: message in ${FNLOCK}" 1>&2
+    if [ -z "${arg1}" ]; then
+        return 1
+    fi
+    if is_num "${arg1}" && [ "${arg1}" -lt 128 ] && [ "${arg1}" -ge 1 ]; then
+        return "${arg1}"
+    else
+        return 1
+    fi
+}
+
+exit_reg_00000() {
+    local arg1="$1"
+    unset_autoargs_00000
+    if [ -z "${arg1}" ]; then
+        return 0
+    fi
+    if is_num "${arg1}" && [ "${arg1}" -lt 128 ] && [ "${arg1}" -ge 0 ]; then
+        return "${arg1}"
+    else
+        return 0
+    fi
+}
+
+#! strongly return 1 -> exit_err_00000 \$1
+#! strongly return 0 -> exit_reg_00000
+
+#! treat error for inner functions
+
+# >${FN_OUT_DIR}/com_00000.res
+# COMMAND &>>${FN_OUT_DIR}/com_00000.res
+# if [ $? -ne 0 ]; then
+#     if [ 1 -eq ${verbose} ]; then
+#         cat ${FN_OUT_DIR}/com_00000.res
+#     fi
+#     #? runtime error allowed locally
+#     error_allowed_locall_string="STRING"
+
+#     if cat ${FN_OUT_DIR}/COMMAND_00000.res | is_rl_siev_and ${error_allowed_locall_string}; then
+#         continue
+#     else
+#         exit_err_00000 "runtime error:: COMMAND ${addr}"
+#     fi
+# fi
+
+#! amount args
+
+# is_amount_arg ${NARGS} min_equ max_equ
+
+# if [ $? -ne 0 ]; then
+#     plt_pause "is_amount_arg:: be return 1 <- Fail: ${FNLOCK}"
+#     return 1
+# fi
+
+#! normalize ptr_path -> absolut path
+# ptr_path=$1
+# ptr_path=$(abs_path $PPWD "ptr_path") #ptr args
+#! variables for cr_f_dir_insert_
+# fn_name=$(prs_f -n ${arg_path})
+# root_path=$(prs_f -d ${arg_path})
+
+# -----------------------------------------------------------------------------------------
+# ------------------------------------------
+# ------------------------------------------
+# -----------------------------------------------------------------------------------------
+
+# altlinux_00000() {
+#     :
+# }
+
+# fedora_00000() {
+#     :
+# }
+
+# if [ $PLT_COGOS == "altlinux" ]; then
+#     altlinux_00000
+# fi
+
+# if [ $PLT_COGOS == "fedora" ]; then
+#     fedora_00000
+# fi
+
+unset_autoargs_00000
+
+#!function body======================
+#!function body===============================================
+#!function body===================================================================

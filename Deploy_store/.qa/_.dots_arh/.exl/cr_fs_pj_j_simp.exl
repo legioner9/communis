@@ -1,0 +1,18 @@
+
+eval wrp_fifs1_ mkdir -v ${DDD} -nd1 -qq_exit
+
+eval wrp_fifs2_ cp -rfv ${TML_DIR}/. ${DDD} -d1 -d2 -qq_exit
+
+eval FN_JAVA=${DDD}/src/${fn_name}.java
+
+eval wrp_fifs2_ cp -rfv ${TML}/fn_name.java ${FN_JAVA} -f1 -qq_exit
+
+eval cr_f_ ${FN_JAVA} --vi0 ${fn_name} --vr0 {fn_name}
+
+eval wrp_fifs2_ mv -v ${DDD}/fn_name.iml ${DDD}/${fn_name}_jpjs.iml -f1 -nf2 -qq_exit
+
+eval wrp_fifs2_ mv -v ${DDD}/out/production/fn_name ${DDD}/out/production/${fn_name} -qq_exit
+
+eval rm -fv ${DDD}/out/production/${fn_name}/0
+eval rm -fv ${DDD}/src/0
+eval rm -fv ${DDD}/0

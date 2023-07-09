@@ -1,0 +1,4 @@
+Examples:
+
+1) Remove with path
+    f_tag=$(echo "$full_path/$adds" | sed 's|'$PATH_TAG'||')
