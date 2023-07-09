@@ -1,5 +1,6 @@
-fatal: '/run/media/st/TOSH/REPOBARE/_bare/communis' does not appear to be a git repository
-fatal: Could not read from remote repository.
-
-Please make sure you have the correct access rights
-and the repository exists.
+remote: fatal: write error: Read-only file system        
+remote: fatal: not a git repository: '.'        
+error: remote unpack failed: index-pack abnormal exit
+To /run/media/st/TOSH/REPOBARE/_bare/communis
+ ! [remote rejected]   master -> master (unpacker error)
+error: failed to push some refs to '/run/media/st/TOSH/REPOBARE/_bare/communis'
