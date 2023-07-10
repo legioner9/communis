@@ -1,1 +1,1 @@
-error: remote TOSH_REPOBARE_BARE_communis already exists.
+error: remote TOSH_REPOBARE_BARE_Nota already exists.
