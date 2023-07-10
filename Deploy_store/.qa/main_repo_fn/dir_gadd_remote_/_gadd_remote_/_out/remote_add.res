@@ -1,1 +1,1 @@
-error: remote TOSH_REPOBARE_BARE_communis already exists.
+error: remote TOSH_REPOBARE_BARE_NBash already exists.
