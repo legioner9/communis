@@ -222,11 +222,20 @@ EXAMP:${NORMAL}"
     arr+=("dpl codium TOSH alt wrap prf-name-flow")
     res+=("mm_tsf_fsf_prf_flow_name_alt --prf codium --name_flash TOSH --flow dpl")
 
-
     arr+=("bcp codium MY_ONE alt wrap prf-name-flow")
     res+=("mm_tsf_fsf_prf_flow_name_alt --prf codium --name_flash MY_ONE --flow bcp")
     arr+=("dpl codium MY_ONE alt wrap prf-name-flow")
     res+=("mm_tsf_fsf_prf_flow_name_alt --prf codium --name_flash MY_ONE --flow dpl")
+
+    arr+=("bcp pycharm TOSHIBA_EXT alt wrap prf-name-flow")
+    res+=("mm_tsf_fsf_prf_flow_name_alt --prf pycharm --name_flash TOSHIBA_EXT --flow bcp")
+    arr+=("dpl pycharm TOSHIBA_EXT alt wrap prf-name-flow")
+    res+=("mm_tsf_fsf_prf_flow_name_alt --prf pycharm --name_flash TOSHIBA_EXT --flow dpl")
+
+    arr+=("bcp pycharm MY_ONE alt wrap prf-name-flow")
+    res+=("mm_tsf_fsf_prf_flow_name_alt --prf pycharm --name_flash MY_ONE --flow bcp")
+    arr+=("dpl pycharm MY_ONE alt wrap prf-name-flow")
+    res+=("mm_tsf_fsf_prf_flow_name_alt --prf pycharm --name_flash MY_ONE --flow dpl")
 
     arr+=("bcp jetbrains toshiba_ext alt")
     res+=("mm_tsf_fsf_jetbrains_bcp_toshiba_ext_alt")
