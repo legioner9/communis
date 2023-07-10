@@ -180,7 +180,8 @@ apt_alt_() {
         prog_apt+=("telnet")
         prog_apt+=("links2")
         prog_apt+=("composer")
-        # prog_apt+=("telegram")
+        # pyton
+        prog_apt+=("python3-module-pip python3-tools")
         # prog_apt+=("telegram")
         # prog_apt+=("telegram")
         # prog_apt+=("telegram")
@@ -242,6 +243,13 @@ apt_alt_() {
             for item in "${prog_epm[@]}"; do
                 sudo epm play "$item" -y
             done
+        }
+
+        inst_flatpak_apt_alt_(){
+            sudo apt-get install flatpak -y
+            sudo gpasswd -a st fuse
+            flatpak remote-add flathub https://flathub.org/repo/flathub.flatpakrepo
+            flatpak install flathub PyCharm-Community
         }
 
         # inst_snap_apt_alt_() {
