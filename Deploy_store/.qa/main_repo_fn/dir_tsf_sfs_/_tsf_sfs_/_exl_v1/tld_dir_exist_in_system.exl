@@ -1,5 +1,5 @@
 #>exl
-eval [ ${develop1_tsf_sfs_} -eq 1 ] || exl_pause "___ TLD file to file~ in system alt src= $src notam= $notam dest_d= $dest_d ?___ CNTL-C to exit, ENTR to continue"
+eval [ ${develop1_tsf_sfs_} -eq 1 ] || exl_pause "___ TLD file to file~ in system alt ?___ CNTL-C to exit, ENTR to continue"
 
 eval echo "${name_flash}"
 eval echo "${src_d}"

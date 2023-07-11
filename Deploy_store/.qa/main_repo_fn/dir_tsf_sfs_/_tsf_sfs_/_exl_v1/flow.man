@@ -1,0 +1,19 @@
+# mm_codium_ bcp
+
+- /home/st/.vscode-oss -> /run/media/st/TOSHIBA_EXT/Codium_zip/alt/.vscode-oss.zip
+
+    - /home/st/.vscode-oss -> /home/st/.vscode-oss.zip
+    - /home/st/.vscode-oss.zip -> /run/media/st/TOSHIBA_EXT/Codium_zip/alt/.vscode-oss.zip
+
+# mm_codium_ dpl
+
+- /run/media/st/TOSHIBA_EXT/Codium_zip/alt/.vscode-oss.zip -> /home/st/.vscode-oss
+
+    - /run/media/st/TOSHIBA_EXT/Codium_zip/alt/.vscode-oss.zip -> /home/st/.vscode-oss.zip
+    - /home/st/.vscode-oss -> /home/st/.vscode-oss~
+    - /home/st/.vscode-oss.zip -> /home/st/.vscode-oss
+
+## src=/home/st/.vscode-oss 
+## dest=/home/st/.vscode-oss 
+## bag=/run/media/st/TOSHIBA_EXT/Codium_zip/alt/
+

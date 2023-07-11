@@ -1,5 +1,5 @@
 #>exl
-eval [ ${develop1_tsf_sfs_} -eq 1 ] || exl_pause "___ Create (unzip) files inplace FS src= $src notam= $notam dest_d= $dest_d ? ___ CNTL-C to exit, ENTR to continue"
+eval [ ${develop1_tsf_sfs_} -eq 1 ] || exl_pause "___ Create (unzip) files inplace FS? ___ CNTL-C to exit, ENTR to continue"
 
 eval echo "${name_flash}"
 eval echo "${src_d}"
@@ -15,11 +15,11 @@ eval wrp_fifs1_ cd "${dest_d}" -d1
 eval wrp_fifs1_ rm -rf "${dest_ne}" -cd1
 eval wrp_fifs1_ file "${dest_ne}" -nd1
 
-echo wrp_fifs2_ unzip "${dest_ne}_${notam}".zip -f1
+echo wrp_fifs2_ unzip "${dest_ne}".zip -f1
 
 eval exec 6>&1
 eval exec >/dev/null
-eval wrp_fifs1_ unzip "${dest_ne}_${notam}".zip -f1 1>/dev/null 
+eval wrp_fifs1_ unzip "${dest_ne}".zip -f1 1>/dev/null 
 eval exec 1>&6 6>&-
 
 eval wrp_fifs1_ file "${dest_ne}" -e1

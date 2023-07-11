@@ -1,5 +1,5 @@
 #>exl
-eval [ ${develop1_tsf_sfs_} -eq 1 ] || exl_pause "___ Copy zip files from bag=${bag} name_flash=${name_flash} alt to sys? ___ CNTL-C to exit, ENTR to continue"
+eval [ ${develop1_tsf_sfs_} -eq 1 ] || exl_pause "___ Copy zip files from bag=${bag} name_flash=${name_flash} src= $src notam= $notam dest_d= $dest_d alt to sys? ___ CNTL-C to exit, ENTR to continue"
 
 eval echo "${name_flash}"
 eval echo "${src_d}"
@@ -12,10 +12,10 @@ eval wrp_fifs1_ file "${bag}" -d1
 
 # .vscode-oss.zip
 eval wrp_fifs1_ mkdir -p "${dest_d}" -nd1
-eval wrp_fifs1_ rm "${dest_d}/${dest_ne}".zip -cf1
-eval wrp_fifs1_ file "${dest_d}/${dest_ne}".zip -nf1
+eval wrp_fifs1_ rm "${dest_d}/${dest_ne}_${notam}".zip -cf1
+eval wrp_fifs1_ file "${dest_d}/${dest_ne}_${notam}".zip -nf1
 
 eval wrp_fifs1_ mkdir -p "${dest_d}" -cnd1
 
-eval wrp_fifs2_ cp "${bag}/${dest_ne}".zip "${dest_d}" -f1 -d2
-eval wrp_fifs1_ file "${bag}/${dest_ne}".zip -f1
+eval wrp_fifs2_ cp "${bag}/${dest_ne}_${notam}".zip "${dest_d}" -f1 -d2
+eval wrp_fifs1_ file "${bag}/${dest_ne}_${notam}".zip -f1
