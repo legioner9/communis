@@ -182,7 +182,7 @@ apt_alt_() {
         prog_apt+=("composer")
         # pyton
         prog_apt+=("python3-module-pip python3-tools")
-        # prog_apt+=("telegram")
+        prog_apt+=("scribus")
         # prog_apt+=("telegram")
         # prog_apt+=("telegram")
         # prog_apt+=("telegram")
