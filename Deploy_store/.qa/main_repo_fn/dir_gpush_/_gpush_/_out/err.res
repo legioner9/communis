@@ -1,2 +1,1 @@
-To /home/st/REPOBARE/_bare/communis
- * [new branch]        master -> master
+Everything up-to-date
