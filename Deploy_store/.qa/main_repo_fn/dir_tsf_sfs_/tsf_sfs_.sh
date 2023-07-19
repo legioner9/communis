@@ -271,8 +271,11 @@ ${NORMAL}"
 
     if [[ ${dpl_tsf_sfs_} -eq 1 ]]; then
 
+        echo -e "${HLIGHT}--- exl_ --list ${FN_EXL_DIR}/cp_zip_from_flash.exl ---${NORMAL}" #start files
         exl_ --list ${FN_EXL_DIR}/cp_zip_from_flash.exl
+        echo -e "${HLIGHT}--- exl_ --list ${FN_EXL_DIR}/tld_dir_exist_in_system.exl ---${NORMAL}" #start files
         exl_ --list ${FN_EXL_DIR}/tld_dir_exist_in_system.exl
+        echo -e "${HLIGHT}--- exl_ --list ${FN_EXL_DIR}/unzip_inplace.exl ---${NORMAL}" #start files
         exl_ --list ${FN_EXL_DIR}/unzip_inplace.exl
         unset_autoargs_tsf_sfs_
         return 0

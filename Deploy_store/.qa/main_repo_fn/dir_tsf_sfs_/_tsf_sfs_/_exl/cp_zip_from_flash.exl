@@ -11,7 +11,7 @@ eval echo "${bag}"
 eval wrp_fifs1_ file "${bag}" -d1
 
 # .vscode-oss.zip
-eval wrp_fifs1_ mkdir -p "${dest_d}" -nd1
+eval wrp_fifs1_ mkdir -p "${dest_d}" -cnd1
 eval wrp_fifs1_ rm "${dest_d}/${dest_ne}_${notam}".zip -cf1
 eval wrp_fifs1_ file "${dest_d}/${dest_ne}_${notam}".zip -nf1
 

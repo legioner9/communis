@@ -9,7 +9,7 @@ eval echo "${dest_ne}"
 eval echo "${bag}"
 
 # /home/st/.vscode-oss
-eval wrp_fifs1_ mkdir -p "${dest_d}" -nd1
+eval wrp_fifs1_ mkdir -p "${dest_d}" -cnd1
 eval wrp_fifs1_ cd "${dest_d}" -d1
 
 eval wrp_fifs1_ rm -rf "${dest_ne}" -cd1
