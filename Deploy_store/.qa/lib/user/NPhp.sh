@@ -1,13 +1,13 @@
 #!/bin/bash
 #. "${HOME}/.bashrc"
-filename="${PATH_COMMUNIS}/Deploy_store/.qa/lib/user/NPyton.sh"
+filename="${PATH_COMMUNIS}/Deploy_store/.qa/lib/user/NPhp.sh"
 echo -e "${HLIGHT}---start file://$filename ---${NORMAL}" # start file
 idir=$(pwd)
 # cd "$(prs_f -d $filename)" || qq_exit "$(prs_f -d $filename) not found"
 # garg_ $(prs_f -n $filename) $@ 1>/dev/null
 #{pre_fn}
 
-NPyton() {
+NVBA() {
     local FNN=${FUNCNAME[0]}
     local PPWD=$PWD
     local ARGS=($@)
@@ -15,7 +15,7 @@ NPyton() {
     local verbose=0
     [[ " ${ARGS[*]} " =~ " -verbose " ]] || verbose=1
     [[ 1 -eq ${verbose} ]] || echo -e "${CYAN}---$FNN() $* ---${NORMAL}" #started functions
-    local d_name=$(dirname ${PATH_COMMUNIS}/Deploy_store/.qa/lib/user/NPyton.sh)
+    local d_name=$(dirname ${PATH_COMMUNIS}/Deploy_store/.qa/lib/user/NPhp.sh)
     # wrp_fifs1_ cd ${d_name} -d
     #{intro_fn}
     if [ "-h" == "$1" ]; then
@@ -69,7 +69,7 @@ ${NORMAL}"
     #{default_cntl_fn}
     # amount_arg $# 1 1
     #{body_fn}
-    edit_ "${PATH_CURR_REPO}/NPyton"
+    edit_ "${PATH_CURR_REPO}/NPhp"
 }
 
 cd "${idir}"
