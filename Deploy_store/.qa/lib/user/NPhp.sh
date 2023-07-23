@@ -7,7 +7,7 @@ idir=$(pwd)
 # garg_ $(prs_f -n $filename) $@ 1>/dev/null
 #{pre_fn}
 
-NVBA() {
+NPhp() {
     local FNN=${FUNCNAME[0]}
     local PPWD=$PWD
     local ARGS=($@)
