@@ -180,11 +180,15 @@ apt_alt_() {
         prog_apt+=("telnet")
         prog_apt+=("links2")
         prog_apt+=("composer")
+
         # pyton
         prog_apt+=("python3-module-pip python3-tools")
         prog_apt+=("scribus")
-        # prog_apt+=("telegram")
-        # prog_apt+=("telegram")
+
+        #ntfs
+        # prog_apt+=("ntfsprogs")
+        # prog_apt+=("ntfs-3g")
+
         # prog_apt+=("telegram")
         # prog_apt+=("telegram")
         # prog_apt+=("telegram")
