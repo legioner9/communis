@@ -273,21 +273,19 @@ ${NORMAL}"
     # -----------------------------------------------------------------------------------------
     # ------------------------------------------
 
+    PS3_OLD=PS3                     # This preserves whatever the value of the bash builtin environment variable PS3 was.
+    PS3="be exl_ --list dilectus: " # ← enter a prompt that asks the user to select from a list of items. If you're feeling helpful, explain what will happen with the item that the user selects.
 
-PS3_OLD=PS3 # This preserves whatever the value of the bash builtin environment variable PS3 was.
-PS3="be exl_ --list dilectus: "    # ← enter a prompt that asks the user to select from a list of items. If you're feeling helpful, explain what will happen with the item that the user selects.
+    dir_ff="${PATH_EXL_DIR}/free_functions"
 
-dir_ff="${PATH_EXL_DIR}/free_functions"
+    echo "free exl_ dir: file://$dir_ff"
 
-echo "free exl_ dir: file://$dir_ff"
-
-select delectus  in $(d2e "${dir_ff}");    # ← the first argument should be a variable name for an item, and the second argument should be an array of items
-do
-    exl_ --list ${dir_ff}/${delectus} # ← do something with the selected item.
-    break    # ← uncomment this line if the select statement keeps looping. If this is a nested select statement, you might need to use "break 2", "break 3", or "break n" to get out of it.
-done
-PS3=$PS3_OLD
-unset PS3_OLD
+    select delectus in $(d2e "${dir_ff}"); do # ← the first argument should be a variable name for an item, and the second argument should be an array of items
+        exl_ --list ${dir_ff}/${delectus}     # ← do something with the selected item.
+        break                                 # ← uncomment this line if the select statement keeps looping. If this is a nested select statement, you might need to use "break 2", "break 3", or "break n" to get out of it.
+    done
+    PS3=$PS3_OLD
+    unset PS3_OLD
 
     # ------------------------------------------
     # -----------------------------------------------------------------------------------------
