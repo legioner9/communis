@@ -69,7 +69,7 @@ ${NORMAL}"
     #{default_cntl_fn}
     # amount_arg $# 1 1
     #{body_fn}
-    echo -e "${BLUE}--------plt_is_ques y/<any> ? \n :: ${ARGS[@]} \n :: only y - return 0 \n :: enter or any - return 1 --------${NORMAL}" >&2 #sistem info mesage
+    echo -e "${BLUE}--------plt_is_ques y/<any> ? \n question is :: ${ARGS[@]} \n :: only y - return 0 \n :: enter or any - return 1 --------${NORMAL}" >&2 #sistem info mesage
     local yn
     read yn
 
