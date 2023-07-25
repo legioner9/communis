@@ -222,8 +222,8 @@ EXAMP:${NORMAL}"
 
     plt_pause "do it? create ${name} in ${PPWD} tml: ${tml} dir_insert: ${dir_insert}"
 
-    fn_name_=$(prs_f -n ${path_file})
-    root_path_=$(prs_f -d ${path_file})
+    fn_name=$(prs_f -n ${path_file})
+    root_path=$(prs_f -d ${path_file})
 
     if [ -n ${tml} ]; then
         wrp_fifs2_ cp ${tml} ${path_file} -f1 -nf2
@@ -241,8 +241,8 @@ EXAMP:${NORMAL}"
 
     #? default insert
 
-    "${_ehh}" cr_f_ ${path_file} --vi0 ${fn_name_} --vr0 {fn_name_}
-    "${_ehh}" cr_f_ ${path_file} --vi0 ${root_path_} --vr0 {root_path_}
+    "${_ehh}" cr_f_ ${path_file} --vi0 ${fn_name} --vr0 {fn_name}
+    "${_ehh}" cr_f_ ${path_file} --vi0 ${root_path} --vr0 {root_path}
     #HOME
     # cr_f_ ${path_file} --vi0 '\/home/st' --vr0 "/home/st"
     # exl_ --list ${PATH_EXL_DIR}/upg_path.exl

@@ -2,7 +2,7 @@
 
 #. "/home/st/.bashrc"
 
-filename="${PATH_MAIN_REPO_FN_DIR}/dir_cr_shfn_/cr_shfn_tst/_flow_tst.sh" 
+filename="${PATH_MAIN_REPO_FN_DIR}/dir_cr_shfn_/cr_shfn_tst/_flow_tst_without_echo.sh" 
 
 # echo -e "${HLIGHT}---start file://$filename ---${NORMAL}" # start file
 
@@ -14,8 +14,8 @@ cd "$(prs_f -d $filename)" || qq_exit "$(prs_f -d filename) not found"
 
 wrp_fifs1_ rm _e.sh -cf1
 
-echo | cr_shfn_ _e.sh
-echo | cr_shfn_ _e.sh
+cr_shfn_ _e.sh
+
 
 . _e.sh
 
