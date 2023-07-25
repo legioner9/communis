@@ -127,9 +127,9 @@ f2f_() {
 
                     sed -i '/'"$3"'/i '"$str"'' "$2"
 
-                else
+                # else
 
-                    plt_info "$3 not contane in $2"
+                #     plt_info "$3 not contane in $2"
 
                 fi
 

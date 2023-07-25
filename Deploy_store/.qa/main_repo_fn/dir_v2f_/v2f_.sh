@@ -117,8 +117,8 @@ v2f_() {
 
         if grep "$pre_placer" "$path_file_preplace"; then
             sed -i 's|'"$pre_placer"'|'"$inserter"'|g' "$path_file_preplace"
-        else
-            plt_info "$pre_placer not contane in $path_file_preplace"
+        # else
+        #     plt_info "$pre_placer not contane in $path_file_preplace"
         fi
 
         #!function body======================
