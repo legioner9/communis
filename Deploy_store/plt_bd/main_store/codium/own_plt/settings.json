@@ -166,7 +166,8 @@
     "*.ish": "powershell",
     "*.cir": "shellscript",
     "*.pot": "shellscript",
-    "*.nid": "shellscript"
+    "*.nid": "shellscript",
+    "*.cnf": "properties"
   },
   "C_Cpp.updateChannel": "Insiders",
   "[cpp]": {
@@ -285,12 +286,17 @@
   "files.watcherExclude": {
     "**/**": true,
   },
-  "editor.fontLigatures": "'ss01'",
+  // "editor.fontLigatures": "'ss01'",
   "extensionsGallery": {
     "serviceUrl": "https://marketplace.visualstudio.com/_apis/public/gallery ",
     "cacheUrl": "https://vscode.blob.core.windows.net/gallery/index ",
     "itemUrl": "https://marketplace.visualstudio.com/items ",
     "controlUrl": "",
     "recommendationsUrl": ""
-}
+},
+"[php]": {
+  "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+},
+"php.debug.executablePath": "",
+"diffEditor.diffAlgorithm": "experimental"
 }

@@ -222,6 +222,9 @@ wrp_fifs2_ cp -rf ${COMMUNIS_PATH}/Deploy_store/plt_bd/main_store/sys_stores /ru
 add_PATH_
 # ce_
 
+# sudo service nginx start
+# sudo service php7-fpm start
+
 cd_s "$PPWD" "$filename" "$LINENO"
 
 #######
