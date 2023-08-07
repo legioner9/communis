@@ -52,8 +52,8 @@ mm_dogit_set_5() {
 
     # amount_arg $# 1 1
 
-    echo -e "${GREEN}--- pull_bck_push_ -b ---${NORMAL}" #sistem info mesage
-    pull_bck_push_ -b
+    echo -e "${GREEN}--- "${_pull_bck_push_}" -b ---${NORMAL}" #sistem info mesage
+    "${_pull_bck_push_}" -b
 
     echo -e "${GREEN}--- mm_dogit_ 4 ---${NORMAL}" #sistem info mesage
     mm_dogit_ 5

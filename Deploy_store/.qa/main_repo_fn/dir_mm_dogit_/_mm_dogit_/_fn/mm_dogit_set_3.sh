@@ -52,7 +52,7 @@ mm_dogit_set_3() {
 
     # amount_arg $# 1 1
     
-    pull_bck_push_ -o
+    "${_pull_bck_push_}" -o
     mm_dogit_ 5
     mm_dogit_ 6
 

@@ -196,13 +196,13 @@ EXAMP:${NORMAL}"
     arr+=("mm_dogit_ 5 + 6")
     res+=("mm_dogit_set_1")
 
-    arr+=("mm_dogit_ pull_bcp_push_ -b + 5")
+    arr+=("mm_dogit_ "${_pull_bck_push_}" -b + 5")
     res+=("mm_dogit_set_5")
 
-    arr+=("mm_dogit_ pull_bcp_push_ -b + 5 + 6")
+    arr+=("mm_dogit_ "${_pull_bck_push_}" -b + 5 + 6")
     res+=("mm_dogit_set_2")
 
-    arr+=("mm_dogit_ pull_bcp_push_ -o + 5 + 6")
+    arr+=("mm_dogit_ "${_pull_bck_push_}" -o + 5 + 6")
     res+=("mm_dogit_set_3")
 
     arr+=("mm_dogit_ 11 + 12 (before 5 + 6)")
