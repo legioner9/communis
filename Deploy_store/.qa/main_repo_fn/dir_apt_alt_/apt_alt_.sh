@@ -189,6 +189,14 @@ apt_alt_() {
         # prog_apt+=("ntfsprogs")
         # prog_apt+=("ntfs-3g")
 
+        prog_apt+=("postgresql15-server")
+        # prog_apt+=("telegram")
+        # prog_apt+=("telegram")
+        # prog_apt+=("telegram")
+        # prog_apt+=("telegram")
+        # prog_apt+=("telegram")
+        # prog_apt+=("telegram")
+        # prog_apt+=("telegram")
         # prog_apt+=("telegram")
         # prog_apt+=("telegram")
         # prog_apt+=("telegram")
@@ -249,7 +257,7 @@ apt_alt_() {
             done
         }
 
-        inst_flatpak_apt_alt_(){
+        inst_flatpak_apt_alt_() {
             sudo apt-get install flatpak -y
             sudo gpasswd -a st fuse
             flatpak remote-add flathub https://flathub.org/repo/flathub.flatpakrepo

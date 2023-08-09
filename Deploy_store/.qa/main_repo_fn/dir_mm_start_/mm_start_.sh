@@ -121,6 +121,18 @@ EXAMP:${NORMAL}"
     # res+=("bbbbb")
     # arr+=("aaaa")
     # res+=("bbbbb")
+    # arr+=("aaaa")
+    # res+=("bbbbb")
+    # arr+=("aaaa")
+    # res+=("bbbbb")
+    # arr+=("aaaa")
+    # res+=("bbbbb")
+    # arr+=("aaaa")
+    # res+=("bbbbb")
+    # arr+=("aaaa")
+    # res+=("bbbbb")
+    # arr+=("aaaa")
+    # res+=("bbbbb")
     if [ $(num_01 $1) -eq 1 ] && [ $1 -le ${#arr[@]} ]; then
         num_res=$(($1 - 1))
         ${res[${num_res}]}
