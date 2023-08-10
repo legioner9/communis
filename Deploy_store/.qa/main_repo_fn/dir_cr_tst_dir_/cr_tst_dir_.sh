@@ -239,24 +239,28 @@ ${NORMAL}"
 
     tml_dir=${PATH_TML_DIR}/cr_tst_dir_/fn_tst
     tst_dir=${PPWD}/${name_dir}
-    cp -rfuv ${tml_dir}/. ${tst_dir}
+    "${_ehh}" cp -rfuv ${tml_dir}/. ${tst_dir}
 
     echo -e "${GREEN}\$tst_dir = $tst_dir${NORMAL}" #print variable
 
     #? _flow_tst.sh
     file_path=${tst_dir}/_flow_tst.sh
 
-    cr_f_ ${file_path} --vi0 ${file_path} --vr0 {file_path}
-    upg_path_ ${file_path}
+    "${_ehh}" ${_cr_f_} ${file_path} --vi0 ${file_path} --vr0 {file_path}
+
+    echo -e "${HLIGHT}--- ${_upg_path_} ${file_path} 1>/dev/null ---${NORMAL}" #start files
+    ${_upg_path_} ${file_path} 1>/dev/null
 
     #? exec._tst
     wrp_fifs2_ mv ${tst_dir}/exec._tst ${tst_dir}/exec._${ext}
     file_path=${tst_dir}/exec._${ext}
 
-    cr_f_ ${file_path} --vi0 ${file_path} --vr0 {file_path}
-    upg_path_ ${file_path}
+    "${_ehh}" ${_cr_f_}  ${file_path} --vi0 ${file_path} --vr0 {file_path}
 
-    exl_ --list ${PATH_EXL_DIR}/cr_tst_dir_/create_tst_dir.exl
+    echo -e "${HLIGHT}--- ${_upg_path_} ${file_path} 1>/dev/null ---${NORMAL}" #start files
+    ${_upg_path_} ${file_path} 1>/dev/null
+
+    "${_ehh}" ${_exl_} --_exl_list ${PATH_EXL_DIR}/cr_tst_dir_/create_tst_dir.exl
 
     # ------------------------------------------
     # -----------------------------------------------------------------------------------------
