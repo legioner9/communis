@@ -58,7 +58,7 @@ f2f_() {
         return 0
     fi
 
-    # echo -e "${CYAN}---$FNN() $* ---${NORMAL}" #started functions
+    echo -e "${CYAN}---$FNN() $* ---${NORMAL}" #started functions
     # echo -e "${GREEN}\$PWD = $PWD${NORMAL}"          #print variable
     # echo -e "${GREEN}file = $0${NORMAL}"             #print variable
     # echo -e "${GREEN}args = $*${NORMAL}"             #print variable
@@ -67,7 +67,7 @@ f2f_() {
     # echo -e "${GREEN}\${ARGS[0]} = ${ARGS[0]}${NORMAL}" #print variable
     # echo -e "${GREEN}\${ARGS[1]} = ${ARGS[1]}${NORMAL}" #print variable
 
-    c_up "$ORIGO_DIR/_$FNN/_sh/" 1>/dev/null
+    # c_up "$ORIGO_DIR/_$FNN/_sh/" 1>/dev/null
 
     arr=()
     res=()
@@ -113,7 +113,8 @@ f2f_() {
         if [ -f "$1" ]; then
             IFS='
 '
-
+            echo -e "${GREEN}\$file_for_insert = $file_for_insert${NORMAL}" #print variable
+            echo -e "${GREEN}\$pre_placer = $pre_placer${NORMAL}"           #print variable
             for str in $(cat "$1"); do
                 # echo_deb_ $echo_f2f_ "\$str = $str" #print variable
                 # echo -e $str
@@ -123,8 +124,9 @@ f2f_() {
 
                 echo_deb_ $echo_f2f_ "sed -i '/'$3'/i '$str'' $2"
 
-                if grep "$3" "$2"; then
+                if grep "$3" "$2" 1>/dev/null; then
 
+                    echo -e "${GREEN}\$str = $str${NORMAL}" #print variable
                     sed -i '/'"$3"'/i '"$str"'' "$2"
 
                 # else

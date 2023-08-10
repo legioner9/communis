@@ -61,7 +61,7 @@ v2f_() {
         return 0
     fi
 
-    # echo -e "${CYAN}---$FNN() $@ ---${NORMAL}" #started functions
+    echo -e "${CYAN}---$FNN() $@ ---${NORMAL}" #started functions
     # echo -e "${GREEN}\$PWD = $PWD${NORMAL}"          #print variable
     # echo -e "${GREEN}file = $0${NORMAL}"             #print variable
     # echo -e "${GREEN}args = $*${NORMAL}"             #print variable
@@ -113,9 +113,13 @@ v2f_() {
         path_file_preplace="$2"
         pre_placer="$3"
 
+        echo -e "${GREEN}\$inserter = $inserter${NORMAL}"                     #print variable
+        echo -e "${GREEN}\$path_file_preplace = $path_file_preplace${NORMAL}" #print variable
+        echo -e "${GREEN}\$pre_placer = $pre_placer${NORMAL}"                 #print variable
+
         echo_deb_ $echo_v2f_ "--- sed -i 's|'$pre_placer'|'$inserter'|g' $path_file_preplace ---}" #sistem info mesage
 
-        if grep "$pre_placer" "$path_file_preplace"; then
+        if grep "$pre_placer" "$path_file_preplace" 1>/dev/null ; then
             sed -i 's|'"$pre_placer"'|'"$inserter"'|g' "$path_file_preplace"
         # else
         #     plt_info "$pre_placer not contane in $path_file_preplace"
