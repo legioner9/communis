@@ -70,7 +70,7 @@ v2f_() {
     # echo -e "${GREEN}\${ARGS[0]} = ${ARGS[0]}${NORMAL}" #print variable
     # echo -e "${GREEN}\${ARGS[1]} = ${ARGS[1]}${NORMAL}" #print variable
 
-    c_up "$ORIGO_DIR/_$FNN/_sh/" 1>/dev/null
+    # c_up "$ORIGO_DIR/_$FNN/_sh/" 1>/dev/null/
 
     arr=()
     res=()

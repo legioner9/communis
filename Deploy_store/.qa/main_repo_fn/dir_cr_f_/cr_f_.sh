@@ -68,7 +68,8 @@ cr_f_() {
         return 0
     fi
 
-    echo -e "${CYAN}---$FNN() $* ---${NORMAL}" #started functions
+    # echo -e "${CYAN}---$FNN() $* ---${NORMAL}" #started functions
+    
     # echo -e "${GREEN}\$PWD = $PWD${NORMAL}"          #print variable
     # echo -e "${GREEN}file = $0${NORMAL}"             #print variable
     # echo -e "${GREEN}args = $*${NORMAL}"             #print variable
@@ -77,7 +78,7 @@ cr_f_() {
     # echo -e "${GREEN}\${ARGS[0]} = ${ARGS[0]}${NORMAL}" #print variable
     # echo -e "${GREEN}\${ARGS[1]} = ${ARGS[1]}${NORMAL}" #print variable
 
-    c_up "$ORIGO_DIR/_$FNN/_sh/" 1>/dev/null
+    # c_up "$ORIGO_DIR/_$FNN/_sh/" 1>/dev/null
 
     arr=()
     res=()

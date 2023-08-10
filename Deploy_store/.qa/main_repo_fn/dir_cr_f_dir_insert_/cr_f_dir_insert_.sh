@@ -246,7 +246,9 @@ EXAMP:${NORMAL}"
     #HOME
     # cr_f_ ${path_file} --vi0 '\/home/st' --vr0 "/home/st"
     # exl_ --list ${PATH_EXL_DIR}/upg_path.exl
-    "${_ehh}" upg_path_ ${path_file}
+
+    echo -e "${HLIGHT}--- ${_upg_path_} ${path_file}>/dev/null  ---${NORMAL}" #start files
+    ${_upg_path_} ${path_file} 1>/dev/null
 
     # ------------------------------------------
     # -----------------------------------------------------------------------------------------
