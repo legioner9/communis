@@ -282,7 +282,7 @@ ${NORMAL}"
     echo -e "
 ${_ehh} ${_cr_sh_} ${name_file}
 
-${_ehh} \${_cr_f_dir_insert_} --name ${name_file} --dir_insert ${PATH_INSERT_DIR}/cr_shgnr_/${number_flow}
+${_ehh} ${_cr_f_dir_insert_} --name ${name_file} --dir_insert ${PATH_INSERT_DIR}/cr_shgnr_/${number_flow}
 " >${tmp_file}
 
     cat ${tmp_file}
