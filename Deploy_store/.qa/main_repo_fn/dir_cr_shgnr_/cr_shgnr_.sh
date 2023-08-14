@@ -280,13 +280,15 @@ ${NORMAL}"
     local tmp_file=_gnr_${ARGS[0]}.tmp.exl
 
     echo -e "
-${_ehh_} ${_cr_sh_} ${name_file}
+${_ehh} ${_cr_sh_} ${name_file}
 
-${_ehh_} ${_cr_f_dir_insert_} --name ${name_file} --dir_insert ${PATH_INSERT_DIR}/cr_shgnr_/${number_flow}
+${_ehh} \${_cr_f_dir_insert_} --name ${name_file} --dir_insert ${PATH_INSERT_DIR}/cr_shgnr_/${number_flow}
 " >${tmp_file}
 
-    ${_ehh_}_ ${_exl2_} --_exl_list ${tmp_file}
-    ${_ehh_} rm -v ${tmp_file}
+    cat ${tmp_file}
+
+    ${_ehh} ${_exl_} --_exl_list ${tmp_file}
+    ${_ehh} rm -v ${tmp_file}
 
     # ------------------------------------------
     # -----------------------------------------------------------------------------------------
