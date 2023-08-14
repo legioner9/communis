@@ -167,7 +167,8 @@
     "*.cir": "shellscript",
     "*.pot": "shellscript",
     "*.nid": "shellscript",
-    "*.cnf": "properties"
+    "*.cnf": "properties",
+    "*.const": "shellscript"
   },
   "C_Cpp.updateChannel": "Insiders",
   "[cpp]": {
@@ -298,5 +299,6 @@
   "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
 },
 "php.debug.executablePath": "",
-"diffEditor.diffAlgorithm": "experimental"
+"diffEditor.diffAlgorithm": "experimental",
+"terminal.integrated.fontSize": 13
 }

@@ -280,13 +280,13 @@ ${NORMAL}"
     local tmp_file=_gnr_${ARGS[0]}.tmp.exl
 
     echo -e "
-wrp2_ cr_sh_ --_xnf ${name_file}
+${_ehh_} ${_cr_sh_} ${name_file}
 
-wrp2_ cr_f_dir_insert_ --name --_xxf ${name_file} --dir_insert --_xxd ${PATH_INSERT_DIR}/cr_shgnr_/${number_flow}
+${_ehh_} ${_cr_f_dir_insert_} --name ${name_file} --dir_insert ${PATH_INSERT_DIR}/cr_shgnr_/${number_flow}
 " >${tmp_file}
 
-    wrp2_ exl_ --list --_xxf ${tmp_file}
-    wrp2_ rm --_cxf ${tmp_file}
+    ${_ehh_}_ ${_exl2_} --_exl_list ${tmp_file}
+    ${_ehh_} rm -v ${tmp_file}
 
     # ------------------------------------------
     # -----------------------------------------------------------------------------------------

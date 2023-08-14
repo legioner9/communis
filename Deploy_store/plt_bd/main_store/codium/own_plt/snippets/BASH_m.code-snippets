@@ -83,7 +83,7 @@
 		],
 		"description": "echo -e HLIGHT hint"
 	},
-	"echo -e exec: HLIGHT hint": {
+	 "echo -e exec: HLIGHT hint": {
 		"prefix": "ehh",
 		"body": [
 			"echo -e \"\\${HLIGHT}--- exec: ${1:hint message} ---\\${NORMAL}\" #start files"
