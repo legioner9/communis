@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #! debag
-# . "/home/st/.bashrc"
+# . "${HOME}/.bashrc"
 #!
 
 filename="${PATH_MAIN_REPO_FN_DIR}/dir_do_from_local_list_/do_from_local_list_.sh"
@@ -105,6 +105,7 @@ ARGS:
     NOARGS
     \$1 
     [ ,\$2 num_menu ]
+    _args - edit_ ${PLT_PATH}/.d/.args/l2exl_/do_from_local_list_
 CNTLS:
 required
     --_quod \${PPWD}/do_from_local_list_.list
@@ -257,6 +258,11 @@ ${NORMAL}"
     #{hints}
     # -----------------------------------------------------------------------------------------
     # ------------------------------------------
+
+    if [ "${ARGS1}" == "_args" ]; then
+        "${_edit_}" "${PLT_PATH}/.d/.args/l2exl_/${FNN}"
+    fi
+
     echo -e "${BLUE}--- exec ${FNN} (num_menu) ---${NORMAL}" #started functions
     # arr=()
     # res=()
@@ -272,7 +278,7 @@ ${NORMAL}"
     # arr+=("aaaaaaaaa")
     # res+=("bbbbbbbbb")
 
-    arr=($(ls ${PATH_ARGS_DIR}/l2exl_/do_from_local_list))
+    arr=($(ls ${PATH_ARGS_DIR}/l2exl_/do_from_local_list_))
 
     local dilectus
     local flag=1
