@@ -260,7 +260,7 @@ ${NORMAL}"
     # ------------------------------------------
 
     if [ "${ARGS1}" == "_args" ]; then
-        "${_edit_}" "${PLT_PATH}/.d/.args/l2exl_/${FNN}"
+        "${_edit_}" "${PLT_PATH}/.d/.args/${_l2exl_}/${FNN}"
     fi
 
     echo -e "${BLUE}--- exec ${FNN} (num_menu) ---${NORMAL}" #started functions
@@ -278,7 +278,7 @@ ${NORMAL}"
     # arr+=("aaaaaaaaa")
     # res+=("bbbbbbbbb")
 
-    arr=($(ls ${PATH_ARGS_DIR}/l2exl_/do_from_local_list_))
+    arr=($(ls ${PATH_ARGS_DIR}/l2exl_/${FNN}))
 
     local dilectus
     local flag=1
@@ -298,7 +298,7 @@ ${NORMAL}"
         done
 
     fi
-    list=${PPWD}/do_from_local_list_.list
+    local list=${PPWD}/do_from_local_list_.list
 
     echo -e "${GREEN}\$dilectus = $dilectus${NORMAL}" #print variable
 
@@ -312,11 +312,11 @@ ${NORMAL}"
         return 1
     fi
 
-    plt_pause "Do that?: l2exl_ --_quod ${list} --_exl ${dilectus} \n   in ${PPWD}"
+    plt_pause "Do that?: ${_l2exl_} --_quod ${list} --_exl ${dilectus} \n   in ${PPWD}"
 
     local root_dir=${PPWD}
 
-    l2exl_ --_quod ${list} --_exl ${PATH_ARGS_DIR}/l2exl_/do_from_local_list/${dilectus}
+    "${_l2exl_}" --_quod ${list} --_exl ${PATH_ARGS_DIR}/${_l2exl_}/do_from_local_list/${dilectus}
 
     # if wrp2_
     # ------------------------------------------
