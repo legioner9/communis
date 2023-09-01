@@ -1,2 +1,2 @@
-To /home/st/REPOBARE/_bare/communis
-   060c0b20..6227a9f7  master -> master
+To /run/media/st/TOSH/REPOBARE/_bare/communis
+   060c0b20..76e813c0  master -> master
