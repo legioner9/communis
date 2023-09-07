@@ -194,7 +194,7 @@ apt_alt_() {
         prog_apt+=("docker-engine-rootless")
         prog_apt+=("podman")
         prog_apt+=("docker-compose")
-        # prog_apt+=("telegram")
+        prog_apt+=("hardinfo")
         # prog_apt+=("telegram")
         # prog_apt+=("telegram")
         # prog_apt+=("telegram")
