@@ -184,6 +184,8 @@ apt_alt_() {
         # pyton
         prog_apt+=("python3-module-pip python3-tools")
         prog_apt+=("scribus")
+        prog_apt+=("pip zlib-devel libssl-devel libsqlite3-devel libffi-devel")
+
 
         #ntfs
         # prog_apt+=("ntfsprogs")
@@ -195,6 +197,10 @@ apt_alt_() {
         prog_apt+=("podman")
         prog_apt+=("docker-compose")
         prog_apt+=("hardinfo")
+
+        # prog_apt+=("telegram")
+        # prog_apt+=("telegram")
+        # prog_apt+=("telegram")
         # prog_apt+=("telegram")
         # prog_apt+=("telegram")
         # prog_apt+=("telegram")
