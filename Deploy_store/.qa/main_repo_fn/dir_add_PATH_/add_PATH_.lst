@@ -1,6 +1,7 @@
 ${COMMUNIS_PATH}/Deploy_store/.qa/binc
-/home/st/soft/android-studio/bin
-/home/st/soft/idea-IU-222.3345.118/bin
-/home/st/.jdks/openjdk-19.0.1/bin
-/home/st/TMP/ANT/apache-ant-1.10.12/bin
-/home/st/IDEA/PY/pycharm-2022.2.2/bin
+${HOME}/soft/android-studio/bin
+${HOME}/soft/idea-IU-222.3345.118/bin
+${HOME}/.jdks/openjdk-19.0.1/bin
+${HOME}/TMP/ANT/apache-ant-1.10.12/bin
+${HOME}/IDEA/PY/pycharm-2022.2.2/bin
+${HOME}/Soft/PyCharm/pycharm-community-2023.2.1/bin

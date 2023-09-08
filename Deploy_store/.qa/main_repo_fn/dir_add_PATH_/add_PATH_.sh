@@ -48,7 +48,7 @@ add_PATH_() {
     
     if [ "-h" == "$1" ]; then
         echo -e "${CYAN} ${FUNCNAME[0]}() help: 
-            MAIN: 
+            MAIN: add PATH once from add_PATH_.lst
             NAME: ${FUNCNAME[0]}()
             ARGS: 
             TAGS:
