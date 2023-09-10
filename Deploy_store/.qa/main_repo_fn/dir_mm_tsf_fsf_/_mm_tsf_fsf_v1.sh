@@ -194,62 +194,43 @@ EXAMP:${NORMAL}"
     # ------------------------------------------
 
     echo -e "${BLUE}--- exec ${FNN} (num_menu - 1) ---${NORMAL}" #started functions
-    arr=()
-    res=()
+    local arr=()
+    local res=()
     arr+=("leave menu")
     res+=("echo bye)))")
 
     arr+=("define files, dir")
     res+=("mm_tsf_fsf_define_files_dirs")
 
-    local arr_name_flash=(TOSHIBA_EXT TOSH MY_ONE)
-    local arr_name_flow=(codium code pycharm_depricated)
+    #? codium TOSHIBA_EXT
+    arr+=("bcp codium TOSHIBA_EXT alt wrap prf-name-flow")
+    res+=("mm_tsf_fsf_prf_flow_name_alt --prf codium --name_flash TOSHIBA_EXT --flow bcp")
+    arr+=("dpl codium TOSHIBA_EXT alt wrap prf-name-flow")
+    res+=("mm_tsf_fsf_prf_flow_name_alt --prf codium --name_flash TOSHIBA_EXT --flow dpl")
 
-    mm_tsf_fsf_add_arrs() {
-        for flow_item in "${arr_name_flow[@]}"; do
-            for flash_item in "${arr_name_flash[@]}"; do
+    #? codium TOSH
+    arr+=("bcp codium TOSH alt wrap prf-name-flow")
+    res+=("mm_tsf_fsf_prf_flow_name_alt --prf codium --name_flash TOSH --flow bcp")
+    arr+=("dpl codium TOSH alt wrap prf-name-flow")
+    res+=("mm_tsf_fsf_prf_flow_name_alt --prf codium --name_flash TOSH --flow dpl")
 
-                # echo -e "${GREEN}\$flow_item = $flow_item${NORMAL}"   #print variable
-                # echo -e "${GREEN}\$flash_item = $flash_item${NORMAL}" #print variable
-                
-                arr+=("bcp $flow_item $flash_item")
-                res+=("mm_tsf_fsf_prf_flow_name_alt --prf $flow_item --name_flash $flash_item --flow bcp")
-                arr+=("dpl $flow_item $flash_item")
-                res+=("mm_tsf_fsf_prf_flow_name_alt --prf $flow_item --name_flash $flash_item --flow dpl")
+    #? codium MY_ONE
+    arr+=("bcp codium MY_ONE alt wrap prf-name-flow")
+    res+=("mm_tsf_fsf_prf_flow_name_alt --prf codium --name_flash MY_ONE --flow bcp")
+    arr+=("dpl codium MY_ONE alt wrap prf-name-flow")
+    res+=("mm_tsf_fsf_prf_flow_name_alt --prf codium --name_flash MY_ONE --flow dpl")
 
-            done
-        done
-    }
+    #? pycharm TOSHIBA_EXT
+    arr+=("bcp pycharm TOSHIBA_EXT alt wrap prf-name-flow")
+    res+=("mm_tsf_fsf_prf_flow_name_alt --prf pycharm --name_flash TOSHIBA_EXT --flow bcp")
+    arr+=("dpl pycharm TOSHIBA_EXT alt wrap prf-name-flow")
+    res+=("mm_tsf_fsf_prf_flow_name_alt --prf pycharm --name_flash TOSHIBA_EXT --flow dpl")
 
-    mm_tsf_fsf_add_arrs
-
-    # #? codium TOSHIBA_EXT
-    # arr+=("bcp codium TOSHIBA_EXT alt wrap prf-name-flow")
-    # res+=("mm_tsf_fsf_prf_flow_name_alt --prf codium --name_flash TOSHIBA_EXT --flow bcp")
-    # arr+=("dpl codium TOSHIBA_EXT alt wrap prf-name-flow")
-    # res+=("mm_tsf_fsf_prf_flow_name_alt --prf codium --name_flash TOSHIBA_EXT --flow dpl")
-
-    # #? codium TOSH
-    # arr+=("bcp codium TOSH alt wrap prf-name-flow")
-    # res+=("mm_tsf_fsf_prf_flow_name_alt --prf codium --name_flash TOSH --flow bcp")
-    # arr+=("dpl codium TOSH alt wrap prf-name-flow")
-    # res+=("mm_tsf_fsf_prf_flow_name_alt --prf codium --name_flash TOSH --flow dpl")
-
-    # #? codium MY_ONE
-    # arr+=("bcp codium MY_ONE alt wrap prf-name-flow")
-    # res+=("mm_tsf_fsf_prf_flow_name_alt --prf codium --name_flash MY_ONE --flow bcp")
-    # arr+=("dpl codium MY_ONE alt wrap prf-name-flow")
-    # res+=("mm_tsf_fsf_prf_flow_name_alt --prf codium --name_flash MY_ONE --flow dpl")
-
-    # arr+=("bcp pycharm TOSHIBA_EXT alt wrap prf-name-flow")
-    # res+=("mm_tsf_fsf_prf_flow_name_alt --prf pycharm --name_flash TOSHIBA_EXT --flow bcp")
-    # arr+=("dpl pycharm TOSHIBA_EXT alt wrap prf-name-flow")
-    # res+=("mm_tsf_fsf_prf_flow_name_alt --prf pycharm --name_flash TOSHIBA_EXT --flow dpl")
-
-    # arr+=("bcp pycharm MY_ONE alt wrap prf-name-flow")
-    # res+=("mm_tsf_fsf_prf_flow_name_alt --prf pycharm --name_flash MY_ONE --flow bcp")
-    # arr+=("dpl pycharm MY_ONE alt wrap prf-name-flow")
-    # res+=("mm_tsf_fsf_prf_flow_name_alt --prf pycharm --name_flash MY_ONE --flow dpl")
+    #? pycharm MY_ONE
+    arr+=("bcp pycharm MY_ONE alt wrap prf-name-flow")
+    res+=("mm_tsf_fsf_prf_flow_name_alt --prf pycharm --name_flash MY_ONE --flow bcp")
+    arr+=("dpl pycharm MY_ONE alt wrap prf-name-flow")
+    res+=("mm_tsf_fsf_prf_flow_name_alt --prf pycharm --name_flash MY_ONE --flow dpl")
 
     arr+=("bcp jetbrains toshiba_ext alt")
     res+=("mm_tsf_fsf_jetbrains_bcp_toshiba_ext_alt")
