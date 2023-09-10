@@ -218,7 +218,7 @@ apt_alt_() {
 
         #? npm global packets
 
-        npm_glob_packet+=()
+        npm_glob_packet=()
         npm_glob_packet+=("npm-completion")
         npm_glob_packet+=("standard")
         npm_glob_packet+=("prettier")
@@ -233,15 +233,38 @@ apt_alt_() {
         # npm_glob_packet+=("ndb")
         # npm_glob_packet+=("ndb")
 
+        pip_glob_packet=()
+        pip_glob_packet+=("pep8")
+        pip_glob_packet+=("autopep8")
+        pip_glob_packet+=("pycodestyle")
+        # pip_glob_packet+=("pep8")
+        # pip_glob_packet+=("pep8")
+        # pip_glob_packet+=("pep8")
+        # pip_glob_packet+=("pep8")
+        # pip_glob_packet+=("pep8")
+        # pip_glob_packet+=("pep8")
+        # pip_glob_packet+=("pep8")
+
+
+
+
         inst_all_apt_alt_() {
             inst_apt_apt_alt_
             inst_epm_apt_alt_
             inst_npm_apt_alt_
+            inst_pip_apt_alt_
         }
 
         inst_npm_apt_alt_() {
             for item in "${npm_glob_packet[@]}"; do
                 sudo npm install -g "$item"
+            done
+            # chromium --flag-switches-begin --enable-features=PasswordImport --flag-switches-end
+        }
+
+        inst_pip_apt_alt_() {
+            for item in "${pip_glob_packet[@]}"; do
+                pip install "$item"
             done
             # chromium --flag-switches-begin --enable-features=PasswordImport --flag-switches-end
         }

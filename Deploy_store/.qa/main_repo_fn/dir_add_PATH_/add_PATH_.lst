@@ -5,3 +5,4 @@ ${HOME}/.jdks/openjdk-19.0.1/bin
 ${HOME}/TMP/ANT/apache-ant-1.10.12/bin
 ${HOME}/IDEA/PY/pycharm-2022.2.2/bin
 ${HOME}/Soft/PyCharm/pycharm-community-2023.2.1/bin
+${HOME}/.local/bin
