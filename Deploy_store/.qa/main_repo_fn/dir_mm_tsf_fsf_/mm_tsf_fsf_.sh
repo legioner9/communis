@@ -203,7 +203,7 @@ EXAMP:${NORMAL}"
     res+=("mm_tsf_fsf_define_files_dirs")
 
     local arr_name_flash=(TOSHIBA_EXT TOSH MY_ONE)
-    local arr_name_flow=(codium code pycharm_depricated)
+    local arr_name_flow=(codium code pycharm)
 
     mm_tsf_fsf_add_arrs() {
         for flow_item in "${arr_name_flow[@]}"; do
