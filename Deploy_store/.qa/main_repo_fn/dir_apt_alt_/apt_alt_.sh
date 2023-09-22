@@ -141,7 +141,7 @@ apt_alt_() {
         #? apt utils
 
         prog_apt=()
-        prog_apt+=("telegram-desktop")
+        # prog_apt+=("telegram-desktop")
         prog_apt+=("node")
         prog_apt+=("python")
         prog_apt+=("codium")
@@ -268,7 +268,7 @@ apt_alt_() {
         pip_glob_packet+=("jango3")
         pip_glob_packet+=("pyTelegramBotApi")
         pip_glob_packet+=("requests")
-        # pip_glob_packet+=("pep8")
+        pip_glob_packet+=("jupyterlab")
         # pip_glob_packet+=("pep8")
         # pip_glob_packet+=("pep8")
         # pip_glob_packet+=("pep8")
@@ -294,7 +294,7 @@ apt_alt_() {
 
         inst_pip_apt_alt_() {
             for item in "${pip_glob_packet[@]}"; do
-                pip install "$item"
+                sudo pip install "$item"
             done
             # chromium --flag-switches-begin --enable-features=PasswordImport --flag-switches-end
         }
