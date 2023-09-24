@@ -183,7 +183,7 @@ apt_alt_() {
         prog_apt+=("mutt")
         prog_apt+=("eepm")
         prog_apt+=("appinstall")
-        # prog_apt+=("edbrowse")
+        prog_apt+=("moin")
         # prog_apt+=("w3m")
         # prog_apt+=("composer")
         # prog_apt+=("composer")
