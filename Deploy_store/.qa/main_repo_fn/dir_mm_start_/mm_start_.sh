@@ -92,10 +92,14 @@ EXAMP:${NORMAL}"
     # ------------------------------------------
 
     mm_start_web_start_() {
+
+        echo -e "${HLIGHT}--- sudo start moin ---${NORMAL}" #start files
+        sudo start moin
         echo -e "${HLIGHT}--- sudo service nginx start ---${NORMAL}" #start files
         sudo service nginx start
         echo -e "${HLIGHT}--- sudo service php7-fpm start ---${NORMAL}" #start files
         sudo service php7-fpm start
+
     }
 
     echo -e "${BLUE}--- exec ${FNN} (num_menu) ---${NORMAL}" #started functions
