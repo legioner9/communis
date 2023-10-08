@@ -202,7 +202,6 @@ apt_alt_() {
         prog_apt+=("scribus")
         prog_apt+=("pip zlib-devel libssl-devel libsqlite3-devel libffi-devel")
 
-
         #ntfs
         # prog_apt+=("ntfsprogs")
         # prog_apt+=("ntfs-3g")
@@ -213,8 +212,8 @@ apt_alt_() {
         prog_apt+=("podman")
         prog_apt+=("docker-compose")
         prog_apt+=("hardinfo")
+        prog_apt+=("ncdu")
 
-        # prog_apt+=("telegram")
         # prog_apt+=("telegram")
         # prog_apt+=("telegram")
         # prog_apt+=("telegram")
@@ -279,9 +278,6 @@ apt_alt_() {
         # pip_glob_packet+=("pep8")
         # pip_glob_packet+=("pep8")
         # pip_glob_packet+=("pep8")
-
-
-
 
         inst_all_apt_alt_() {
             inst_apt_apt_alt_
