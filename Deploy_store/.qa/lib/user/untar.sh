@@ -63,7 +63,7 @@ untar() { #$1 string $2 delimer $3 num of sequence
 
         plt_pause "do in ${PW} ? : tar czpvf - ${ar2}/ | split -d -b 25M - ${ar2}"
         cd "${PW}" || plt_exit "NOT DIR :: ${PW}"
-        tar czpvf - django.fun/ | split -d -b 25M - django.fun
+        tar czpvf - ${ar2}/ | split -d -b 25M - ${ar2}
         return 0
     elif [ "${ar1}" == "-u" ]; then
 

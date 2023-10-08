@@ -57,9 +57,10 @@ site2d() { #$1 string $2 delimer $3 num of sequence
         return 1
     fi
     plt_pause "download? : ${ar1} to dir ${PW}"
+    plt_pause "do? : wget -r -l3 -k -p -E -nc ${ar1}"
     # amount_arg $# min_args max_args
     wget -r -l3 -k -p -E -nc "${ar1}"
-    
+
 }
 
 unset filename
