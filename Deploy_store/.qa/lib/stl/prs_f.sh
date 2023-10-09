@@ -58,8 +58,8 @@ path=/the/path/_foo.txt
             echo "${name_ext:1}"
 
         else
-            qq_exit "$1: parameter mayby: -d -ne -n -e -pr -po"
-
+            plt_exit "$1: parameter mayby: -d -ne -n -e -pr -po"
+            return 0
         fi
 
     fi
@@ -71,22 +71,22 @@ prs_f_test() {
     path="/the/path/_foo.txt"
     # echo -e "${GREEN}\$path = $path${NORMAL}" #print variable
 
-    dir="$(prs_f -d "$path")"               # -d # /the/path
+    dir="$(prs_f -d "$path")" # -d # /the/path
     # echo -e "${GREEN}\$dir = $dir${NORMAL}" #print variable
 
-    name_ext="$(prs_f -ne "$path")"                   # -ne # # _foo.txt
+    name_ext="$(prs_f -ne "$path")" # -ne # # _foo.txt
     # echo -e "${GREEN}\$name_ext = $name_ext${NORMAL}" #print variable
 
-    name="$(prs_f -n "$path")"                # -n ## _foo
+    name="$(prs_f -n "$path")" # -n ## _foo
     # echo -e "${GREEN}\$name = $name${NORMAL}" #print variable
 
-    ext="$(prs_f -e "$path")"               # -e ## txt
+    ext="$(prs_f -e "$path")" # -e ## txt
     # echo -e "${GREEN}\$ext = $ext${NORMAL}" #print variable
 
-    pre="$(prs_f -pr "$path")"              # -pr ## _
+    pre="$(prs_f -pr "$path")" # -pr ## _
     # echo -e "${GREEN}\$pre = $pre${NORMAL}" #print variable
 
-    post="$(prs_f -po "$path")"               # -po ## foo.txt
+    post="$(prs_f -po "$path")" # -po ## foo.txt
     # echo -e "${GREEN}\$post = $post${NORMAL}" #print variable
 
     if [ "$dir" != "/the/path" ] || [ "$name_ext" != "_foo.txt" ] || [ "$name" != "_foo" ] || [ "$ext" != "txt" ] || [ "$pre" != "_" ] || [ "$post" != "foo.txt" ]; then
