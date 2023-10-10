@@ -168,7 +168,9 @@
     "*.pot": "shellscript",
     "*.nid": "shellscript",
     "*.cnf": "properties",
-    "*.const": "shellscript"
+    "*.const": "shellscript",
+    "*.wsgi": "python",
+    "*.bull": "shellscript"
   },
   "C_Cpp.updateChannel": "Insiders",
   "[cpp]": {
@@ -247,17 +249,15 @@
   ],
   "C_Cpp.intelliSenseEngine": "Disabled",
   "vscodeGoogleTranslate.preferredLanguage": "Russian",
-  "wrapSelection.patterns": {
-  
+  "wrapSelection.patterns": {},
+  "terminal.integrated.fontFamily": "'Victor Mono','PT Sans+','FreeSans+','M plus 1 code regular','M+ 1mn regular','Pragmata Pro Mono Regular',monospace",
+  "window.zoomLevel": -1,
+  "workbench.editor.revealIfOpen": true,
+  "workbench.colorTheme": "bashling",
+  "clangd.path": "/home/st/.config/VSCodium/User/globalStorage/llvm-vs-code-extensions.vscode-clangd/install/15.0.3/clangd_15.0.3/bin/clangd",
+  "[java]": {
+    "editor.defaultFormatter": "redhat.java"
   },
-"terminal.integrated.fontFamily": "'Victor Mono','PT Sans+','FreeSans+','M plus 1 code regular','M+ 1mn regular','Pragmata Pro Mono Regular',monospace",
-"window.zoomLevel": -1,
-"workbench.editor.revealIfOpen": true,
-"workbench.colorTheme": "bashling",
-"clangd.path": "/home/st/.config/VSCodium/User/globalStorage/llvm-vs-code-extensions.vscode-clangd/install/15.0.3/clangd_15.0.3/bin/clangd",
-"[java]": {
-  "editor.defaultFormatter": "redhat.java"
-},
   // "C_Cpp.clang_format_style": {BasedOnStyle: Google, 
   //   IndentWidth: 4, 
   //   IndentCaseLabels: false, 
@@ -270,6 +270,9 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[python]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "git.openRepositoryInParentFolders": "never",
@@ -294,11 +297,15 @@
     "itemUrl": "https://marketplace.visualstudio.com/items ",
     "controlUrl": "",
     "recommendationsUrl": ""
-},
-"[php]": {
-  "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
-},
-"php.debug.executablePath": "",
-"diffEditor.diffAlgorithm": "experimental",
-"terminal.integrated.fontSize": 13
+  },
+  "[php]": {
+    "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+  },
+  "php.debug.executablePath": "",
+  "diffEditor.diffAlgorithm": "experimental",
+  "terminal.integrated.fontSize": 13,
+
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  }
 }
