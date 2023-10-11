@@ -184,7 +184,7 @@ apt_alt_() {
         prog_apt+=("eepm")
         prog_apt+=("appinstall")
         prog_apt+=("moin")
-        # prog_apt+=("w3m")
+        prog_apt+=("htop")
         # prog_apt+=("composer")
         # prog_apt+=("composer")
         # prog_apt+=("composer")
