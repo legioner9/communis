@@ -185,7 +185,7 @@ apt_alt_() {
         prog_apt+=("appinstall")
         prog_apt+=("moin")
         prog_apt+=("htop")
-        # prog_apt+=("composer")
+        prog_apt+=("java-11-openjdk")
         # prog_apt+=("composer")
         # prog_apt+=("composer")
         # prog_apt+=("composer")
