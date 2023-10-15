@@ -51,11 +51,20 @@ mm_dogit_set_3() {
     fi
 
     # amount_arg $# 1 1
-    
-    "${_pull_bck_push_}" -o
+
+    echo -e "${GREEN}--- dpl_after_pull_plt file ---${NORMAL}" #sistem info mesage
+
+    dpl_after_pull_plt="${PLT_PATH}/.d/.exec.d/mm_dogit_/2_dpl_after_pull_plt.sh"
+
+    if [ -f "${dpl_after_pull_plt}" ]; then
+        echo -e "${BLUE}--- . ${dpl_after_pull_plt} ---${NORMAL}" #sistem info mesage
+        . "${dpl_after_pull_plt}"
+    else
+        plt_info "NOTFILE : ${dpl_after_pull_plt} :: return 1"
+        return 1
+    fi
     mm_dogit_ 5
     mm_dogit_ 6
-
 
 }
 

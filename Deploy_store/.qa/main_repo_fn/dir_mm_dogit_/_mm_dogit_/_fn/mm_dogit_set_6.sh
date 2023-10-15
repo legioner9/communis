@@ -2,7 +2,7 @@
 
 #. "${HOME}/.bashrc"
 
-filename="${PATH_MAIN_REPO_FN_DIR}/dir_mm_dogit_/_mm_dogit_/_fn/mm_dogit_set_5.sh"
+filename="${PATH_MAIN_REPO_FN_DIR}/dir_mm_dogit_/_mm_dogit_/_fn/mm_dogit_set_6.sh"
 
 echo -e "${HLIGHT}---start file://$filename ---${NORMAL}" # start file
 
@@ -12,12 +12,12 @@ idir=$(pwd)
 
 # garg_ $(prs_f -n $filename) $@ 1>/dev/null
 
-mm_dogit_set_5() {
+mm_dogit_set_6() {
     echo -e "${CYAN}--- ${FUNCNAME[0]}() $* ---${NORMAL}" #started functions
 
     garg_ ${FUNCNAME[0]} $@ 1>/dev/null
 
-    d_name=$(dirname "${PATH_MAIN_REPO_FN_DIR}/dir_mm_dogit_/_mm_dogit_/_fn/mm_dogit_set_5.sh")
+    d_name=$(dirname "${PATH_MAIN_REPO_FN_DIR}/dir_mm_dogit_/_mm_dogit_/_fn/mm_dogit_set_6.sh")
 
     if [ "-h" == "$1" ]; then
         echo -e "${CYAN} ${FUNCNAME[0]}() help: 
@@ -64,8 +64,6 @@ mm_dogit_set_5() {
         return 1
     fi
 
-    echo -e "${GREEN}--- mm_dogit_ 4 ---${NORMAL}" #sistem info mesage
-    mm_dogit_ 5
 
 }
 

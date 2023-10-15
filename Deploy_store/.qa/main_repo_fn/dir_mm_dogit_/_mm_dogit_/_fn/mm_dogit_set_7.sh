@@ -1,8 +1,8 @@
 #!/bin/bash
 
-#. "${HOME}/.bashrc"
+#. "/home/st/.bashrc"
 
-filename="${PATH_MAIN_REPO_FN_DIR}/dir_mm_dogit_/_mm_dogit_/_fn/mm_dogit_set_5.sh"
+filename="${PATH_MAIN_REPO_FN_DIR}/dir_mm_dogit_/_mm_dogit_/_fn/mm_dogit_set_3.sh"
 
 echo -e "${HLIGHT}---start file://$filename ---${NORMAL}" # start file
 
@@ -12,12 +12,12 @@ idir=$(pwd)
 
 # garg_ $(prs_f -n $filename) $@ 1>/dev/null
 
-mm_dogit_set_5() {
+mm_dogit_set_3() {
     echo -e "${CYAN}--- ${FUNCNAME[0]}() $* ---${NORMAL}" #started functions
 
     garg_ ${FUNCNAME[0]} $@ 1>/dev/null
 
-    d_name=$(dirname "${PATH_MAIN_REPO_FN_DIR}/dir_mm_dogit_/_mm_dogit_/_fn/mm_dogit_set_5.sh")
+    d_name=$(dirname "/home/st"/${PATH_MAIN_REPO_FN_DIR}/dir_mm_dogit_/_mm_dogit_/_fn/mm_dogit_set_3.sh)
 
     if [ "-h" == "$1" ]; then
         echo -e "${CYAN} ${FUNCNAME[0]}() help: 
@@ -52,20 +52,17 @@ mm_dogit_set_5() {
 
     # amount_arg $# 1 1
 
-    echo -e "${GREEN}--- bcp_before_gitpush_plt file ---${NORMAL}" #sistem info mesage
+    echo -e "${GREEN}--- dpl_after_pull_plt file ---${NORMAL}" #sistem info mesage
 
-    bcp_before_gitpush_plt="${PLT_PATH}/.d/.exec.d/mm_dogit_/1_bcp_before_gitpush_plt.sh"
+    dpl_after_pull_plt="${PLT_PATH}/.d/.exec.d/mm_dogit_/2_dpl_after_pull_plt.sh"
 
-    if [ -f "${bcp_before_gitpush_plt}" ]; then
-    echo -e "${BLUE}--- . ${bcp_before_gitpush_plt} ---${NORMAL}" #sistem info mesage
-        . "${bcp_before_gitpush_plt}"
+    if [ -f "${dpl_after_pull_plt}" ]; then
+        echo -e "${BLUE}--- . ${dpl_after_pull_plt} ---${NORMAL}" #sistem info mesage
+        . "${dpl_after_pull_plt}"
     else
-        plt_info "NOTFILE : ${bcp_before_gitpush_plt} :: return 1"
+        plt_info "NOTFILE : ${dpl_after_pull_plt} :: return 1"
         return 1
     fi
-
-    echo -e "${GREEN}--- mm_dogit_ 4 ---${NORMAL}" #sistem info mesage
-    mm_dogit_ 5
 
 }
 

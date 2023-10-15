@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#. "/home/st/.bashrc"
+#. "${HOME}/.bashrc"
 
 filename="${PATH_MAIN_REPO_FN_DIR}/dir_mm_dogit_/_mm_dogit_/_fn/mm_dogit_set_2.sh"
 
@@ -51,17 +51,24 @@ mm_dogit_set_2() {
     fi
 
     # amount_arg $# 1 1
-    
-    echo -e "${GREEN}--- "${_pull_bck_push_}" -b ---${NORMAL}" #sistem info mesage
-    "${_pull_bck_push_}" -b
+
+    echo -e "${GREEN}--- bcp_before_gitpush_plt file ---${NORMAL}" #sistem info mesage
+
+    bcp_before_gitpush_plt="${PLT_PATH}/.d/.exec.d/mm_dogit_/1_bcp_before_gitpush_plt.sh"
+
+    if [ -f "${bcp_before_gitpush_plt}" ]; then
+    echo -e "${BLUE}--- . ${bcp_before_gitpush_plt} ---${NORMAL}" #sistem info mesage
+        . "${bcp_before_gitpush_plt}"
+    else
+        plt_info "NOTFILE : ${bcp_before_gitpush_plt} :: return 1"
+        return 1
+    fi
 
     echo -e "${GREEN}--- mm_dogit_ 4 ---${NORMAL}" #sistem info mesage
     mm_dogit_ 5
 
     echo -e "${GREEN}--- mm_dogit_ 5 ---${NORMAL}" #sistem info mesage
     mm_dogit_ 6
-
-
 
 }
 

@@ -196,13 +196,19 @@ EXAMP:${NORMAL}"
     arr+=("mm_dogit_ 5 + 6")
     res+=("mm_dogit_set_1")
 
-    arr+=("mm_dogit_ ${_pull_bck_push_} -b + 5")
+    arr+=("bcp_before_gitpush_plt file + mm_dogit_ 5")
     res+=("mm_dogit_set_5")
 
-    arr+=("mm_dogit_ ${_pull_bck_push_} -b + 5 + 6")
+    arr+=("bcp_before_gitpush_plt file")
+    res+=("mm_dogit_set_6")
+
+    arr+=("dpl_after_pull_plt file")
+    res+=("mm_dogit_set_7")
+
+    arr+=("bcp_before_gitpush_plt file + mm_dogit_ 5 + 6")
     res+=("mm_dogit_set_2")
 
-    arr+=("mm_dogit_ ${_pull_bck_push_} -o + 5 + 6")
+    arr+=("dpl_after_pull_plt file + mm_dogit_ 5 + 6")
     res+=("mm_dogit_set_3")
 
     arr+=("mm_dogit_ 11 + 12 (before 5 + 6)")
