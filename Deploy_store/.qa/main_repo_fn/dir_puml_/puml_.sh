@@ -107,7 +107,7 @@ ARGS:
 CNTLS:
 required
 optional 
-    -_drawing open .png in drawing editor
+    -_d open .png in drawing editor
     -verbose (not garg parsed, for echo main param function) 
 CNTL inspect : -h, _man, _tst, _extst_1 [,_extst_2 ...], _go, _deb, _mdeb, _list
 CNTL defaut: -_echo, -_debug, --_ptr_if {ptr_from_if: if true fn be work, else be ignored}, --ptr_sem {ptr_with_semapore for arg wate_sem, free_sem usnig insidefunction} --errmes {if_error_case}, --outmes {free_message}, ...
@@ -264,15 +264,17 @@ ${NORMAL}"
 
     is_est_ ${ptr_path} -f
 
-    name_png=$(prs_f -n ${ptr_path})
-    dir_png=$(prs_f -d ${ptr_path})
-    path_png=${dir_png}/${name_png}.png
+    # name_png=$(prs_f -n ${ptr_path})
+    # dir_png=$(prs_f -d ${ptr_path})
+    path_png=${ptr_path}.png
 
     [[ 1 -eq ${verbose} ]] || echo -e "${HLIGHT}--- java -jar ${COMMUNIS_PATH}/Store/PlantUml/plant_jar/plantuml.jar ${ptr_path} ---${NORMAL}" #start files
 
+    # java -jar ${REPO_PATH}/Repono/PlantUml/plant_jar/plantuml.jar ${ptr_path} >${path_png}
+
     java -jar ${REPO_PATH}/Repono/PlantUml/plant_jar/plantuml.jar ${ptr_path} >${path_png}
 
-    if [[ ${drawing_} -eq 1 ]]; then
+    if [[ "${d_}" -eq 1 ]]; then
         drawing ${path_png}
     fi
 
