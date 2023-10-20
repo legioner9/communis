@@ -59,7 +59,7 @@ is_yes() {
     read -p "only y is yes. QUESTION: $1"
     read yes
 
-    if [ ${yes} == "y" ]; then
+    if [ ${yes:-0} == "y" ]; then
         return 0
     else
         return 1
