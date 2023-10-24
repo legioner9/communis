@@ -55,7 +55,7 @@ s2e() { # $1 string $2 delimer
 
     # done
 
-    IFS=$IIFS
+    IFS=$' \t\n'
 
 }
 

@@ -70,7 +70,7 @@ d2e() { # $1 root dir $2 extend files for filter
 
     fi
 
-    # IFS=$IIFS
+    IFS=$' \t\n'
 
 }
 

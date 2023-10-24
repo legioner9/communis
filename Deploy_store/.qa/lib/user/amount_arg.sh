@@ -52,7 +52,7 @@ amount_arg() { # $1=$# $2 corrent min amount args $3 corrent max amount args $4 
     # fi
 
     if [ ! "$1" -ge "$2" ] || [ ! "$1" -le "$3" ]; then
-        qq_exit "$4: EXIT amount args = $1: not >= $2 or <= $3"
+        plt_exit "message\$4: $4: EXIT amount args = $1: not >= $2 or <= $3"
     fi
 
 }

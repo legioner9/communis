@@ -79,7 +79,7 @@ fnend2e() {
 
     fi
 
-    IFS=$IIFS
+    IFS=$' \t\n'
 
 }
 

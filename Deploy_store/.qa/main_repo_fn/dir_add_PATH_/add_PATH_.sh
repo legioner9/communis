@@ -45,7 +45,7 @@ add_PATH_() {
         edit_ "${PATH_MAIN_REPO_FN_DIR}"/dir_"$FNN"/
         return 0
     fi
-    
+
     if [ "-h" == "$1" ]; then
         echo -e "${CYAN} ${FUNCNAME[0]}() help: 
             MAIN: add PATH once from add_PATH_.lst
@@ -65,7 +65,7 @@ add_PATH_() {
     # echo -e "${GREEN}\${ARGS[0]} = ${ARGS[0]}${NORMAL}" #print variable
     # echo -e "${GREEN}\${ARGS[1]} = ${ARGS[1]}${NORMAL}" #print variable
 
-    c_up "$ORIGO_DIR/_$FNN/_sh/" 1>/dev/null
+    # c_up "$ORIGO_DIR/_$FNN/_sh/" 1>/dev/null
 
     arr=()
     res=()
@@ -160,7 +160,7 @@ add_PATH_() {
         #EXTEND+++++++++++++++++++++++++++++++++++++++++++++++++++++
         #EXTEND+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-        cd_h "$PPWD" 1>/dev/null
+        # cd_h "$PPWD" 1>/dev/null
 
         #!choiсe_arg_from_arr>>>>>>>>>>>>>>>>>
 
@@ -183,12 +183,20 @@ add_PATH_() {
         #!function body======================
         # amount_arg $# 1 1
 
+        # echo -e "${BLUE}--- f2e ${PATH_MAIN_REPO_FN_DIR}/dir_$FNN/$FNN.lst ---${NORMAL}" #sistem info mesage
+        # f2e "${PATH_MAIN_REPO_FN_DIR}"/dir_"$FNN"/"$FNN".lst
+
         for path_for_PATH in $(f2e "${PATH_MAIN_REPO_FN_DIR}"/dir_"$FNN"/"$FNN".lst); do
             # echo -e "${GREEN}\$path_for_PATH = $path_for_PATH${NORMAL}" #print variable
 
             flag=1
-            for item in $(s2e $PATH ":"); do
-                if [ $item == $path_for_PATH ]; then
+            # echo -e "${HLIGHT}--- s2e $PATH : ---${NORMAL}" #start files
+            
+            for item in $(s2e "$PATH" ":"); do
+                
+
+                # echo -e "${GREEN}[$item == $path_for_PATH]${NORMAL}" #print variable
+                if [ "$item" == "$path_for_PATH" ]; then
                     flag=0
                     break
                 fi

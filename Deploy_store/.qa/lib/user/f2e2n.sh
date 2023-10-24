@@ -62,6 +62,9 @@ f2e2n() {
         done
 
     fi
+
+    IFS=$' \t\n'
+    
 }
 
 unset filename

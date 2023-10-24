@@ -70,7 +70,7 @@ dr2e() {
             fi
         done
 
-        IFS=$IIFS
+        IFS=$' \t\n'
 
     elif [ -z "$2" ]; then
 
@@ -98,7 +98,7 @@ dr2e() {
             fi
         done
 
-        IFS=$IIFS
+        IFS=$' \t\n'
 
     fi
 

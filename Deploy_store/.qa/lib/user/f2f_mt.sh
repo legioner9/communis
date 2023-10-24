@@ -87,7 +87,7 @@ f2f_mt() {
         delta=$(($t_orig - $t_copy))
         echo -e "${GREEN}\$delta = $delta${NORMAL}" #print variable
 
-        IFS=$IIFS
+        IFS=$' \t\n'
     fi
 }
 

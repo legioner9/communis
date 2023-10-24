@@ -58,7 +58,7 @@ f2f() {
             sed -i '/'"$3"'/i '"$str"'' "$2"
         done
 
-        IFS=$IIFS
+        IFS=$' \t\n'
     fi
 }
 

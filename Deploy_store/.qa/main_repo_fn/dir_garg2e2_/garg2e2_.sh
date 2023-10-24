@@ -46,7 +46,9 @@ garg2e2_() {
     #{def_const_reciver}
 
     # [[ 1 -eq ${verbose} ]] || echo -e "${HLIGHT}--- c_up "${FN_FN_DIR}" 1>/dev/null ---${NORMAL}" #start files
+
     c_up "${FN_FN_DIR}" 1>/dev/null
+
     if [ "_man" == "$1" ]; then
         [[ 1 -eq ${verbose} ]] || echo -e "${HLIGHT}--- edit_ ${FN_DIR}/"$FNN".man ---${NORMAL}" #start files
         edit_ ${FN_DIR}/"$FNN".man
@@ -124,6 +126,9 @@ ${NORMAL}"
     #{ctrl_args_reciver}
 
     # [[ 1 -eq ${verbose} ]] || echo -e "${HLIGHT}--- wrp_fifs1_ cd $PPWD -d1 1>/dev/null ---${NORMAL}" #start files
+
+    ifs2pause "garg2e2_: A1"
+
     wrp_fifs1_ cd "$PPWD" -d1 1>/dev/null
     #!function body===================================================================
     #!function body===============================================

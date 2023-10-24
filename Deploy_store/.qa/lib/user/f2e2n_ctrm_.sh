@@ -63,6 +63,8 @@ f2e2n_ctrm_() {
 
     fi
 
+    IFS=$' \t\n'
+
 }
 
 unset filename
