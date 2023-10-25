@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #! debag
-# . "/home/st/.bashrc"
+# . "${HOME}/.bashrc"
 #!
 
 filename="${PATH_MAIN_REPO_FN_DIR}/dir_correct_/correct_.sh"
@@ -180,9 +180,9 @@ correct_() {
         arr=()
         res=()
         arr+=("vscode instant-markdow css")
-        res+=("echo file:///home/st/.vscode/extensions/dbankier.vscode-instant-markdown-1.4.7/node_modules/github-markdown-css/github-markdown.css")
+        res+=("echo file://${HOME}/.vscode/extensions/dbankier.vscode-instant-markdown-1.4.7/node_modules/github-markdown-css/github-markdown.css")
         arr+=("vscode settings.json")
-        res+=("echo file:///home/st/.vscode/settings.json")
+        res+=("echo file://${HOME}/.vscode/settings.json")
         arr+=("english PHRASE")
         res+=("echo file://${COMMUNIS_PATH}/Store/English_info/dictionary_phrase.man")
         arr+=(".tst PATH")
@@ -237,7 +237,7 @@ correct_() {
         arr+=("files.dirs for mm_rbl_cat_ext")
         res+=("echo file://${PATH_MAIN_REPO_FN_DIR}/dir_rbl_cat_ext_/_rbl_cat_ext_/_file_with_dirs_for_cat")
         arr+=("repo Lexicon")
-        res+=("echo file:///home/st/ProjectRepo_2/_repo/Lexicon")
+        res+=("echo file://${HOME}/ProjectRepo_2/_repo/Lexicon")
         arr+=("flumen tempus .flu dir")
         res+=("echo file://${PATH_FLUMEN_TEMPUS_DIR}")
         arr+=("vim tutorial")
@@ -267,6 +267,17 @@ correct_() {
         res+=("echo file://${PATH_LISTS_DIR}/git/hsc_alt/once_bcp_local_OBL.list")
         arr+=("free function exl_")
         res+=("echo file://${PATH_EXL_DIR}/free_functions")
+        arr+=("error standart string")
+        res+=("echo file:/${PLT_PATH}/.d/.lego/9_error_standart_str.man")
+        arr+=("RCM recommendation")
+        res+=("echo file:/${PLT_PATH}/.d/.lego/2_recommendation.man")
+
+        # arr+=("aaaaaaaaaa")
+        # res+=("echo bbbbbbbbbb")
+        # arr+=("aaaaaaaaaa")
+        # res+=("echo bbbbbbbbbb")
+        # arr+=("aaaaaaaaaa")
+        # res+=("echo bbbbbbbbbb")
         # arr+=("aaaaaaaaaa")
         # res+=("echo bbbbbbbbbb")
         # arr+=("aaaaaaaaaa")
