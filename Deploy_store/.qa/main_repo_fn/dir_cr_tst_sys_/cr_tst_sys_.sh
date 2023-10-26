@@ -254,9 +254,10 @@ TODO ifs up_err_ as ifs tst and will .utst->.tst for global tests" >howuse.man
 
     #? create dir_1/start_exec.list, dir_1/start_exec._tst
     # exl_ --list ${PATH_EXL_DIR}/cr_tst_sys_/create_start_exec.exl
+
     echo "exl_ --list ${PATH_EXL_DIR}/cr_tst_sys_/create_start_exec_1_sh.exl"
     exl_ --list ${PATH_EXL_DIR}/cr_tst_sys_/create_start_exec_1_sh.exl
-    echo exl_ --list ${PATH_EXL_DIR}/cr_tst_sys_/create_start_exec_2_list.exl
+    echo "exl_ --list ${PATH_EXL_DIR}/cr_tst_sys_/create_start_exec_2_list.exl"
     exl_ --list ${PATH_EXL_DIR}/cr_tst_sys_/create_start_exec_2_list.exl
 
     echo "cr_tst_dir_ --name_dir ex1 --ext exts"t

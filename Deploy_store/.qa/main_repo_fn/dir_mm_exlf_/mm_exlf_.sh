@@ -283,7 +283,7 @@ ${NORMAL}"
     select delectus in $(d2e "${dir_ff}"); do # ← the first argument should be a variable name for an item, and the second argument should be an array of items
         exl_ --list ${dir_ff}/${delectus}     # ← do something with the selected item.
         break                                 # ← uncomment this line if the select statement keeps looping. If this is a nested select statement, you might need to use "break 2", "break 3", or "break n" to get out of it.
-    done
+    done 
     PS3=$PS3_OLD
     unset PS3_OLD
 
