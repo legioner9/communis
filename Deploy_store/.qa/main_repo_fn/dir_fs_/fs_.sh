@@ -12,7 +12,7 @@ echo -e "${HLIGHT}--- start file: $filename with args: $@ ---${NORMAL}" # start 
 
 #up_lib_git
 
-fs_() {
+fs_(){
 
     local FNN=${FUNCNAME[0]}
     # local ORIGO_DIR=${PATH_MAIN_REPO_FN_DIR}/dir_$FNN === ${FN_DIR}
@@ -284,6 +284,11 @@ ${NORMAL}"
     # res+=("jjj")
     arr+=("<cd>")
     # res+=("jjj")
+
+
+
+
+
     if [ $(num_01 $1) -eq 1 ] && [ $1 -le ${#arr[@]} ]; then
         num_res=$(($1 - 1))
         ${res[${num_res}]}
