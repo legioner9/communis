@@ -2,7 +2,7 @@
 
 #. "$HOME/.bashrc"
 
-filename="${COMMUNIS_PATH}/Deploy_store/.qa/lib/user/abs_path.sh"
+filename="${COMMUNIS_PATH}/Deploy_store/.qa/lib/user/abs_path_v2.sh"
 
 echo -e "${HLIGHT}---start file://$filename ---${NORMAL}" # start file
 
@@ -12,7 +12,7 @@ idir=$(pwd)
 
 # garg_ $(prs_f -n $filename) $@ 1>/dev/null
 
-abs_path() {
+abs_path_v2() {
     # echo -e "${CYAN}--- ${FUNCNAME[0]}() $* ---${NORMAL}" #started functions
 
     local FNN=${FUNCNAME[0]}
@@ -21,7 +21,7 @@ abs_path() {
 
     garg_ ${FNN} $@ 1>/dev/null
 
-    d_name=$(dirname ${COMMUNIS_PATH}/Deploy_store/.qa/lib/user/abs_path.sh)
+    d_name=$(dirname ${COMMUNIS_PATH}/Deploy_store/.qa/lib/user/abs_path_v2.sh)
 
     if [ "-h" == "$1" ]; then
         echo -e "${CYAN} ${FNN}() help: 
@@ -56,16 +56,21 @@ abs_path() {
         return 0
     fi
 
-    is_amount_arg ${NARGS} 2 2
+    
 
-    if [ "$?" -ne 0 ]; then
-       qq_pause "is_amount_arg:: be return 1 <- Fail: ${FNN}"
-       return 1
+    if is_amount_arg ${NARGS} 1 2; then
+        plt_exit "is_amount_arg:: be return 1 <- Fail: ${FNN}"
+        return 1
     fi
 
     #------------------------------------------------------------------
     #-----------------------------------
-    dpwd="$1"
+    local dpwd="$1"
+
+    if [ -z "$2" ]; then
+        echo "${dpwd}"
+    fi
+
     eval arg2=\${$2}
 
     if is_root "${dpwd}"; then
@@ -77,7 +82,7 @@ abs_path() {
         fi
 
     else
-        plt_exit "return 1; runtime error \$dpwd = ${dpwd} not root in ${FNN}"
+        plt_exit "in abs_path_v2 : NOT_ROOT_DIR : '${dpwd}' return 1"
         return 1
     fi
 
