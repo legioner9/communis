@@ -51,7 +51,8 @@ mm_dogit_set_1() {
     fi
 
     # amount_arg $# 1 1
-
+    tst_ -echo
+    plt_pause "continue? mm_dogit_ 5 + 6"
     mm_dogit_ 5
     mm_dogit_ 6
 

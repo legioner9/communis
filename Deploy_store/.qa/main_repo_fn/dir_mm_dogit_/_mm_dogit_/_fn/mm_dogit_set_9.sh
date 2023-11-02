@@ -2,7 +2,7 @@
 
 #. "/home/st/.bashrc"
 
-filename="${PATH_MAIN_REPO_FN_DIR}/dir_mm_dogit_/_mm_dogit_/_fn/mm_dogit_set_7.sh"
+filename="${PATH_MAIN_REPO_FN_DIR}/dir_mm_dogit_/_mm_dogit_/_fn/mm_dogit_set_9.sh"
 
 echo -e "${HLIGHT}---start file://$filename ---${NORMAL}" # start file
 
@@ -12,12 +12,12 @@ idir=$(pwd)
 
 # garg_ $(prs_f -n $filename) $@ 1>/dev/null
 
-mm_dogit_set_7() {
+mm_dogit_set_9() {
     echo -e "${CYAN}--- ${FUNCNAME[0]}() $* ---${NORMAL}" #started functions
 
     garg_ ${FUNCNAME[0]} $@ 1>/dev/null
 
-    d_name=$(dirname "/home/st"/${PATH_MAIN_REPO_FN_DIR}/dir_mm_dogit_/_mm_dogit_/_fn/mm_dogit_set_7.sh)
+    d_name=$(dirname "/home/st"/${PATH_MAIN_REPO_FN_DIR}/dir_mm_dogit_/_mm_dogit_/_fn/mm_dogit_set_9.sh)
 
     if [ "-h" == "$1" ]; then
         echo -e "${CYAN} ${FUNCNAME[0]}() help: 
@@ -54,19 +54,13 @@ mm_dogit_set_7() {
 
     tst_ -echo
 
-    plt_pause "continue? dpl_after_pull_plt"
+    plt_pause "continue?: ltst_"
 
-    echo -e "${GREEN}--- dpl_after_pull_plt file ---${NORMAL}" #sistem info mesage
+    ltst_
 
-    dpl_after_pull_plt="${PLT_PATH}/.d/.exec.d/mm_dogit_/2_dpl_after_pull_plt.sh"
+    plt_pause "continue?: mm_dogit_ 5"
 
-    if [ -f "${dpl_after_pull_plt}" ]; then
-        echo -e "${BLUE}--- . ${dpl_after_pull_plt} ---${NORMAL}" #sistem info mesage
-        . "${dpl_after_pull_plt}"
-    else
-        plt_info "NOTFILE : ${dpl_after_pull_plt} :: return 1"
-        return 1
-    fi
+    mm_dogit_ 5
 
 }
 

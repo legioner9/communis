@@ -52,6 +52,10 @@ mm_dogit_set_2() {
 
     # amount_arg $# 1 1
 
+    tst_ -echo
+
+    plt_pause "continue? bcp_before_gitpush_plt + mm_dogit_ 5 + 6"
+
     echo -e "${GREEN}--- bcp_before_gitpush_plt file ---${NORMAL}" #sistem info mesage
 
     bcp_before_gitpush_plt="${PLT_PATH}/.d/.exec.d/mm_dogit_/1_bcp_before_gitpush_plt.sh"
@@ -64,10 +68,10 @@ mm_dogit_set_2() {
         return 1
     fi
 
-    echo -e "${GREEN}--- mm_dogit_ 4 ---${NORMAL}" #sistem info mesage
+    echo -e "${GREEN}--- mm_dogit_ 5 ---${NORMAL}" #sistem info mesage
     mm_dogit_ 5
 
-    echo -e "${GREEN}--- mm_dogit_ 5 ---${NORMAL}" #sistem info mesage
+    echo -e "${GREEN}--- mm_dogit_ 6 ---${NORMAL}" #sistem info mesage
     mm_dogit_ 6
 
 }

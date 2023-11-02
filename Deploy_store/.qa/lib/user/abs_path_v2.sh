@@ -56,9 +56,9 @@ abs_path_v2() {
         return 0
     fi
 
-    
+    # echo -e "${BLUE}--- is_amount_arg ${NARGS} 1 2 ---${NORMAL}" #sistem info mesage
 
-    if is_amount_arg ${NARGS} 1 2; then
+    if ! is_amount_arg ${NARGS} 1 2; then
         plt_exit "is_amount_arg:: be return 1 <- Fail: ${FNN}"
         return 1
     fi
@@ -69,6 +69,7 @@ abs_path_v2() {
 
     if [ -z "$2" ]; then
         echo "${dpwd}"
+        return 0
     fi
 
     eval arg2=\${$2}
@@ -76,9 +77,9 @@ abs_path_v2() {
     if is_root "${dpwd}"; then
 
         if is_root "${arg2}"; then
-            echo ${arg1}
+            echo ${arg2}
         else
-            echo ${dpwd}/${arg1}
+            echo ${dpwd}/${arg2}
         fi
 
     else

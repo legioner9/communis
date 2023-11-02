@@ -41,7 +41,8 @@ ${NORMAL}"
         return 0
     fi
     #{default_cntl_fn}
-
+    tst_ -echo
+    plt_pause "continue?  mm_dogit_ 11 + 12"
     mm_dogit_ 11
     mm_dogit_ 12
 

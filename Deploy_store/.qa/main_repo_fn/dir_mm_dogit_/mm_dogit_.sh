@@ -193,6 +193,13 @@ EXAMP:${NORMAL}"
     res+=("mm_dogit_dlb_list dlb.list main.var")
 
     #? set
+
+    arr+=("tst_-echo + mm_dogit_ 5")
+    res+=("mm_dogit_set_8")
+
+    arr+=("ltst_ + tst_-echo + mm_dogit_ 5")
+    res+=("mm_dogit_set_9")
+
     arr+=("mm_dogit_ 5 + 6")
     res+=("mm_dogit_set_1")
 
@@ -226,6 +233,31 @@ EXAMP:${NORMAL}"
     arr+=("edit_ ${PLT_PATH}/.d/.config/.tst")
     res+=("edit_ ${PLT_PATH}/.d/.config/.tst")
 
+    arr+=("edit_ /home/st/REPOBARE/_repo/plt/.d/.lst/ltst_")
+    res+=("edit_ /home/st/REPOBARE/_repo/plt/.d/.lst/ltst_")
+
+    arr+=("tst_ -echo")
+    res+=("tst_ -echo")
+
+    arr+=("ltst_")
+    res+=("ltst_")
+
+    # arr+=("aaaaaaaaa")
+    # res+=("bbbbbbbbb")
+    # arr+=("aaaaaaaaa")
+    # res+=("bbbbbbbbb")
+    # arr+=("aaaaaaaaa")
+    # res+=("bbbbbbbbb")
+    # arr+=("aaaaaaaaa")
+    # res+=("bbbbbbbbb")
+    # arr+=("aaaaaaaaa")
+    # res+=("bbbbbbbbb")
+    # arr+=("aaaaaaaaa")
+    # res+=("bbbbbbbbb")
+    # arr+=("aaaaaaaaa")
+    # res+=("bbbbbbbbb")
+    # arr+=("aaaaaaaaa")
+    # res+=("bbbbbbbbb")
     # arr+=("aaaaaaaaa")
     # res+=("bbbbbbbbb")
     # arr+=("aaaaaaaaa")

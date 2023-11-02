@@ -52,6 +52,9 @@ mm_dogit_set_3() {
 
     # amount_arg $# 1 1
 
+    tst_ -echo
+    plt_pause "continue? mm_dogit_ 5 + 6"
+
     echo -e "${GREEN}--- dpl_after_pull_plt file ---${NORMAL}" #sistem info mesage
 
     dpl_after_pull_plt="${PLT_PATH}/.d/.exec.d/mm_dogit_/2_dpl_after_pull_plt.sh"

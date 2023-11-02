@@ -52,18 +52,21 @@ mm_dogit_set_6() {
 
     # amount_arg $# 1 1
 
+    tst_ -echo
+
+    plt_pause "continue?: bcp_before_gitpush_plt"
+
     echo -e "${GREEN}--- bcp_before_gitpush_plt file ---${NORMAL}" #sistem info mesage
 
     bcp_before_gitpush_plt="${PLT_PATH}/.d/.exec.d/mm_dogit_/1_bcp_before_gitpush_plt.sh"
 
     if [ -f "${bcp_before_gitpush_plt}" ]; then
-    echo -e "${BLUE}--- . ${bcp_before_gitpush_plt} ---${NORMAL}" #sistem info mesage
+        echo -e "${BLUE}--- . ${bcp_before_gitpush_plt} ---${NORMAL}" #sistem info mesage
         . "${bcp_before_gitpush_plt}"
     else
         plt_info "NOTFILE : ${bcp_before_gitpush_plt} :: return 1"
         return 1
     fi
-
 
 }
 
