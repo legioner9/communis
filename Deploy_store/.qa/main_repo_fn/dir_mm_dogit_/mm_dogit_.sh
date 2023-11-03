@@ -192,12 +192,12 @@ EXAMP:${NORMAL}"
     arr+=("del local bare - DLB dlb.list main.var")
     res+=("mm_dogit_dlb_list dlb.list main.var")
 
-    #? set
+    #? set    
 
     arr+=("tst_-echo + mm_dogit_ 5")
     res+=("mm_dogit_set_8")
 
-    arr+=("ltst_ + tst_-echo + mm_dogit_ 5")
+    arr+=("tst_-echo + ltst_ + mm_dogit_ 5")
     res+=("mm_dogit_set_9")
 
     arr+=("mm_dogit_ 5 + 6")
