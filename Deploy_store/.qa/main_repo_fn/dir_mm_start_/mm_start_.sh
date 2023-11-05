@@ -102,6 +102,10 @@ EXAMP:${NORMAL}"
 
     }
 
+    mm_start_reset_lic_getbrane() {
+        rm -rf ~/.java/.userPrefs
+    }
+
     echo -e "${BLUE}--- exec ${FNN} (num_menu) ---${NORMAL}" #started functions
     arr=()
     res=()
@@ -125,8 +129,8 @@ EXAMP:${NORMAL}"
     res+=("jupyter lab")
     arr+=("start rubymine")
     res+=("start_rubymine_")
-    # arr+=("aaaa")
-    # res+=("bbbbb")
+    arr+=("reset lic getbrane")
+    res+=("mm_start_reset_lic_getbrane")
     # arr+=("aaaa")
     # res+=("bbbbb")
     # arr+=("aaaa")
