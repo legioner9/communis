@@ -129,6 +129,8 @@ EXAMP:${NORMAL}"
     res+=("jupyter lab")
     arr+=("start rubymine")
     res+=("start_rubymine_")
+    arr+=("start pycharm")
+    res+=("start_pycharm_")
     arr+=("reset lic getbrane")
     res+=("mm_start_reset_lic_getbrane")
     # arr+=("aaaa")
