@@ -214,6 +214,12 @@ apt_alt_() {
         prog_apt+=("hardinfo")
         prog_apt+=("ncdu")
 
+        prog_apt+=("pip")
+        # prog_apt+=("telegram")
+        # prog_apt+=("telegram")
+        # prog_apt+=("telegram")
+        # prog_apt+=("telegram")
+        # prog_apt+=("telegram")
         # prog_apt+=("telegram")
         # prog_apt+=("telegram")
         # prog_apt+=("telegram")
