@@ -242,8 +242,9 @@ EXAMP:${NORMAL}"
     arr+=("ltst_")
     res+=("ltst_")
 
-    # arr+=("aaaaaaaaa")
-    # res+=("bbbbbbbbb")
+    arr+=("gig_mall_v2_ _mdeb 6")
+    res+=("gig_mall_v2_ _mdeb 6")
+    
     # arr+=("aaaaaaaaa")
     # res+=("bbbbbbbbb")
     # arr+=("aaaaaaaaa")
