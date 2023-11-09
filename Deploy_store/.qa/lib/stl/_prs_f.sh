@@ -33,7 +33,7 @@ path=/the/path/_foo.txt
     else
 
         if [ $# -ne 2 ]; then
-            qq_exit "mast be 2 parameters : illegal number of parameters"
+            plt_pause "mast be 2 parameters : illegal number of parameters"
 
         fi
 
@@ -59,7 +59,7 @@ path=/the/path/_foo.txt
 
         else
             plt_exit "$1: parameter mayby: -d -ne -n -e -pr -po"
-            return 0
+            return 1
         fi
 
     fi
