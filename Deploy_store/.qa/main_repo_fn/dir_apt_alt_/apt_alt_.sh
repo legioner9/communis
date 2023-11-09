@@ -143,7 +143,7 @@ apt_alt_() {
         prog_apt=()
         # prog_apt+=("telegram-desktop")
         # prog_apt+=("telegram-desktop")
-        # prog_apt+=("telegram-desktop")
+        prog_apt+=("tree")
         prog_apt+=("eepm")
         prog_apt+=("node")
         prog_apt+=("python")
