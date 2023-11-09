@@ -2,7 +2,7 @@
 
 #. "/home/st/.bashrc"
 
-filename="${PATH_MAIN_REPO_FN_DIR}/dir_mm_dogit_/_mm_dogit_/_fn/mm_dogit_set_9.sh"
+filename="${PATH_MAIN_REPO_FN_DIR}/dir_mm_dogit_/_mm_dogit_/_fn/mm_dogit_ltst_.sh"
 
 echo -e "${HLIGHT}---start file://$filename ---${NORMAL}" # start file
 
@@ -12,12 +12,12 @@ idir=$(pwd)
 
 # garg_ $(prs_f -n $filename) $@ 1>/dev/null
 
-mm_dogit_set_9() {
+mm_dogit_ltst_() {
     echo -e "${CYAN}--- ${FUNCNAME[0]}() $* ---${NORMAL}" #started functions
 
     garg_ ${FUNCNAME[0]} $@ 1>/dev/null
 
-    d_name=$(dirname "/home/st"/${PATH_MAIN_REPO_FN_DIR}/dir_mm_dogit_/_mm_dogit_/_fn/mm_dogit_set_9.sh)
+    d_name=$(dirname "/home/st"/${PATH_MAIN_REPO_FN_DIR}/dir_mm_dogit_/_mm_dogit_/_fn/mm_dogit_ltst_.sh)
 
     if [ "-h" == "$1" ]; then
         echo -e "${CYAN} ${FUNCNAME[0]}() help: 
@@ -54,13 +54,9 @@ mm_dogit_set_9() {
 
     tst_ -echo
 
-    plt_pause "continue?: mm_dogit_ltst_"
+    plt_pause "continue (enter in process)?: gig_mall_v2_ _dis"
 
-    mm_dogit_ltst_
-
-    plt_pause "continue?: mm_dogit_ 5"
-
-    mm_dogit_ 5
+    gig_mall_v2_ _dis
 
 }
 

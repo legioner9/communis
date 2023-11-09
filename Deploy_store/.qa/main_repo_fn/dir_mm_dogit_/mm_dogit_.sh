@@ -239,8 +239,8 @@ EXAMP:${NORMAL}"
     arr+=("tst_ -echo")
     res+=("tst_ -echo")
 
-    arr+=("ltst_")
-    res+=("ltst_")
+    arr+=("tst_ -echo + gig_mall_v2_ _dis")
+    res+=("mm_dogit_ltst_")
 
     arr+=("gig_mall_v2_ _mdeb 6")
     res+=("gig_mall_v2_ _mdeb 6")
