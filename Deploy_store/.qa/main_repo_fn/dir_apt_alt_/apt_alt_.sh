@@ -128,6 +128,7 @@ apt_alt_() {
             sudo epm full-upgrade --auto -y
             sudo epm autoremove -y
             sudo epm autoremove --direct
+            sudi epm dedup --direct
 
         }
 
@@ -324,6 +325,7 @@ apt_alt_() {
             for item in "${prog_epm[@]}"; do
                 sudo epm play "$item" -y
             done
+            epm dedup --direct
         }
 
         inst_flatpak_apt_alt_() {
