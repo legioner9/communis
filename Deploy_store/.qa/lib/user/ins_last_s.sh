@@ -71,6 +71,7 @@ ins_last_s() {
     arg1_54366243="$2"
     if [ -z "${arg1_54366243}" ]; then
         plt_info "in ins_last_s(): EMPTY : \$2"
+        return 1
     fi
     if [ -f "${arg0_73568}" ]; then
         {
@@ -80,7 +81,7 @@ ins_last_s() {
         cp "$arg0_73568"~ "$arg0_73568"
         rm "$arg0_73568"~
     else
-        plt_err "in ins_last_s(): NOT_FILE : '"${arg0_73568}"' return 1"
+        plt_err "in ins_last_s(): NOT_FILE : file://"${arg0_73568}" return 1"
         return 1
     fi
 

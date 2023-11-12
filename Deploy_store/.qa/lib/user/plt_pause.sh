@@ -21,7 +21,7 @@ plt_pause() {
 
     echo -e "${CYAN}--- ${FUNCNAME[0]}() ${ARGS[@]} ---${NORMAL}" #started functions
 
-    garg_ ${FNN} $@ 1>/dev/null
+    # garg_ ${FNN} $@ 1>/dev/null
 
     d_name=$(dirname ${COMMUNIS_PATH}/Deploy_store/.qa/lib/user/plt_pause.sh)
 
