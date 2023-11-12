@@ -69,13 +69,13 @@ ${NORMAL}"
     #{default_cntl_fn}
     # amount_arg $# 1 1
     #{body_fn}
-    echo -e "${BLUE}-------- only enter char \"y\" exec that  :: ${ARGS[*]}  --------${NORMAL}" >&2 #sistem info mesage
+    echo -e "${RED}-------- only enter char \"y\" exec that  :: ${ARGS[*]}  --------${NORMAL}" >&2 #sistem info mesage
     local yn
     read yn
 
     if [ -z "${yn}" ]; then
 
-        echo -e "${BLUE}--- you enter NULL reject: exec that :: ${ARGS[*]} ---${NORMAL}" #sistem info mesage
+        echo -e "${RED}--- you enter NULL reject: exec that :: ${ARGS[*]} ---${NORMAL}" #sistem info mesage
         return 1
     fi
 
@@ -84,7 +84,7 @@ ${NORMAL}"
         "${ARGS[@]}"
         return 0
     else
-        echo -e "${BLUE}--- you enter ${yn} reject: exec that :: ${ARGS[*]} ---${NORMAL}" #sistem info mesage
+        echo -e "${RED}--- you enter ${yn} reject: exec that :: ${ARGS[*]} ---${NORMAL}" #sistem info mesage
         return 1
     fi
 }
