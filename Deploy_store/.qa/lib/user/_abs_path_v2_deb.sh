@@ -2,7 +2,7 @@
 
 #. "$HOME/.bashrc"
 
-filename="${COMMUNIS_PATH}/Deploy_store/.qa/lib/user/abs_path_v2.sh"
+filename="${COMMUNIS_PATH}/Deploy_store/.qa/lib/user/_abs_path_v2_deb.sh"
 
 echo -e "${HLIGHT}---start file://$filename ---${NORMAL}" # start file
 
@@ -12,7 +12,7 @@ idir=$(pwd)
 
 # garg_ $(prs_f -n $filename) $@ 1>/dev/null
 
-abs_path_v2() {
+_abs_path_v2_deb() {
     # echo -e "${CYAN}--- ${FUNCNAME[0]}() $* ---${NORMAL}" #started functions
 
     local FNN=${FUNCNAME[0]}
@@ -21,7 +21,7 @@ abs_path_v2() {
 
     garg_ ${FNN} $@ 1>/dev/null
 
-    d_name=$(dirname ${COMMUNIS_PATH}/Deploy_store/.qa/lib/user/abs_path_v2.sh)
+    d_name=$(dirname ${COMMUNIS_PATH}/Deploy_store/.qa/lib/user/_abs_path_v2_deb.sh)
 
     if [ "-h" == "$1" ]; then
         echo -e "${CYAN} ${FNN}() help: 
@@ -66,12 +66,17 @@ abs_path_v2() {
     #------------------------------------------------------------------
     #-----------------------------------
     local dpwd="$1"
-    eval local arg2=\$$2
 
-    if [ -z "$2" ] || [ -z "${arg2}" ]; then
+    echo -e "${GREEN}\$2 = $2${NORMAL}" #print variable
+    eval local p_2=\$$2
+    echo -e "${GREEN}\$p_2 = $p_2${NORMAL}" #print variable
+
+    if [ -z "$2" ] || [ -z "${p_2}" ]; then
         echo "${dpwd}"
         return 0
     fi
+
+    eval arg2=\${$2}
 
     if is_root "${dpwd}"; then
 
