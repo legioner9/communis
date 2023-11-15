@@ -13,9 +13,12 @@ echo -e "${HLIGHT}---start file://$filename ---${NORMAL}" # start file
 f2e() {
     # echo -e "${CYAN}--- ${FUNCNAME[0]}() $* ---${NORMAL}" #started functions
 
-    if_v_h "$1"
+    if ! [ -f "$1" ]; then
+        plt_exit "in f2e() : NOT_FILE : file://$1 return 1"
+        return 1
+    fi
 
-    d_name=$(dirname ${COMMUNIS_PATH}/Deploy_store/.qa/lib/user/f2a_arg.sh)
+    d_name=$(dirname ${COMMUNIS_PATH}/Deploy_store/.qa/lib/user/f2e.sh)
 
     if [ "-h" == "$1" ]; then
         echo -e "${CYAN} ${FUNCNAME[0]}() help: 
