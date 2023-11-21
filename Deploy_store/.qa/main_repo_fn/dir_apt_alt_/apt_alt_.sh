@@ -192,7 +192,14 @@ apt_alt_() {
         prog_apt+=("java-11-openjdk")
         prog_apt+=("graphviz")
         prog_apt+=("nautilus")
-        prog_apt+=("ruby")
+        prog_apt+=("gcc")
+        prog_apt+=("nodejs")
+        # prog_apt+=("composer")
+        # prog_apt+=("composer")
+        # prog_apt+=("composer")
+        # prog_apt+=("composer")
+        # prog_apt+=("composer")
+        # prog_apt+=("composer")
         # prog_apt+=("composer")
         # prog_apt+=("composer")
         # prog_apt+=("composer")
@@ -219,9 +226,10 @@ apt_alt_() {
         prog_apt+=("ncdu")
 
         prog_apt+=("pip")
-        # prog_apt+=("telegram")
-        # prog_apt+=("telegram")
-        # prog_apt+=("telegram")
+        # ruby
+        prog_apt+=("ruby")
+        prog_apt+=("libruby-devel")
+        prog_apt+=("rails")
         # prog_apt+=("telegram")
         # prog_apt+=("telegram")
         # prog_apt+=("telegram")
@@ -289,11 +297,25 @@ apt_alt_() {
         # pip_glob_packet+=("pep8")
         # pip_glob_packet+=("pep8")
 
+        gem_glob_packet=()
+        gem_glob_packet+=(ruby-lsp)
+        gem_glob_packet+=(debug)
+        gem_glob_packet+=(awesome_print)
+        gem_glob_packet+=(webpacker)
+        gem_glob_packet+=(development)
+        # gem_glob_packet+=(debug)
+        # gem_glob_packet+=(debug)
+        # gem_glob_packet+=(debug)
+        # gem_glob_packet+=(debug)
+        # gem_glob_packet+=(debug)
+
+
         inst_all_apt_alt_() {
             inst_apt_apt_alt_
             inst_epm_apt_alt_
             inst_npm_apt_alt_
             inst_pip_apt_alt_
+            inst_gem_apt_alt_
         }
 
         inst_npm_apt_alt_() {
@@ -306,6 +328,14 @@ apt_alt_() {
         inst_pip_apt_alt_() {
             for item in "${pip_glob_packet[@]}"; do
                 sudo pip install "$item"
+            done
+            # chromium --flag-switches-begin --enable-features=PasswordImport --flag-switches-end
+        }
+
+
+        inst_gem_apt_alt_() {
+            for item in "${gem_glob_packet[@]}"; do
+                sudo gem install "$item"
             done
             # chromium --flag-switches-begin --enable-features=PasswordImport --flag-switches-end
         }
