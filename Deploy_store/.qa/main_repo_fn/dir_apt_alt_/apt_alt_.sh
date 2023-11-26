@@ -129,6 +129,7 @@ apt_alt_() {
             sudo epm autoremove -y
             sudo epm autoremove --direct
             sudi epm dedup --direct
+            sudo apt-get --fix-broken install
 
         }
 
@@ -342,9 +343,11 @@ apt_alt_() {
 
         inst_apt_apt_alt_() {
             sudo epm full-upgrade --auto -y
+            sudo apt-get --fix-broken install
             for item in "${prog_apt[@]}"; do
                 sudo apt-get install "$item" -y
             done
+            
             # chromium --flag-switches-begin --enable-features=PasswordImport --flag-switches-end
         }
 

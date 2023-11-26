@@ -63,7 +63,7 @@ ${NORMAL}"
 
     cd ${HOME}/RubyMine-2023.2.4/bin || plt_exit "EXEC_FAIL: cd ${HOME}/RubyMine-2023.2.4/bin"
 
-    ./rubymine.sh
+    sudo ./rubymine.sh
 
     #{default_cntl_fn}
     # amount_arg $# 1 1
