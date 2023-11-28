@@ -239,7 +239,6 @@ apt_alt_() {
         # prog_apt+=("telegram")
         # prog_apt+=("telegram")
         # prog_apt+=("telegram")
-        # prog_apt+=("telegram")
 
         #? epm utils
 
@@ -304,8 +303,8 @@ apt_alt_() {
         gem_glob_packet+=(awesome_print)
         gem_glob_packet+=(webpacker)
         gem_glob_packet+=(development)
-        # gem_glob_packet+=(debug)
-        # gem_glob_packet+=(debug)
+        gem_glob_packet+=(ruby-graphviz)
+        gem_glob_packet+=(bundler)
         # gem_glob_packet+=(debug)
         # gem_glob_packet+=(debug)
         # gem_glob_packet+=(debug)
