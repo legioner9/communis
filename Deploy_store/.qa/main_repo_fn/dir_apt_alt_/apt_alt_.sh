@@ -231,7 +231,7 @@ apt_alt_() {
         prog_apt+=("ruby")
         prog_apt+=("libruby-devel")
         prog_apt+=("rails")
-        # prog_apt+=("telegram")
+        prog_apt+=("evince")
         # prog_apt+=("telegram")
         # prog_apt+=("telegram")
         # prog_apt+=("telegram")
