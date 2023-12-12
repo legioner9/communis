@@ -194,10 +194,10 @@ EXAMP:${NORMAL}"
 
     #? set    
 
-    arr+=("tst_-echo + mm_dogit_ 5")
+    arr+=("nit_ + mm_dogit_ 5")
     res+=("mm_dogit_set_8")
 
-    arr+=("tst_-echo + ltst_ + mm_dogit_ 5")
+    arr+=("nit_ + ltst_ + mm_dogit_ 5")
     res+=("mm_dogit_set_9")
 
     arr+=("mm_dogit_ 5 + 6")

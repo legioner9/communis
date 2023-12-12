@@ -52,7 +52,9 @@ mm_dogit_set_9() {
 
     # amount_arg $# 1 1
 
-    tst_ -echo
+    # tst_ -echo
+
+    nit_
 
     plt_pause "continue?: mm_dogit_ltst_"
 
