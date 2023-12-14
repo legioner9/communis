@@ -56,7 +56,7 @@ is_yes() {
 
     local yes
 
-    read -p "only y is yes. QUESTION: $1"
+    read -p "only 'y' is yes. QUESTION: $1"
     read yes
 
     if [ ${yes:-0} == "y" ]; then
