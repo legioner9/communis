@@ -131,6 +131,8 @@ EXAMP:${NORMAL}"
     res+=("start_rubymine_")
     arr+=("start pycharm")
     res+=("start_pycharm_")
+    arr+=("start webstorm")
+    res+=("start_webstorm_")
     arr+=("reset lic getbrane")
     res+=("mm_start_reset_lic_getbrane")
     arr+=("upgrade rvm")
