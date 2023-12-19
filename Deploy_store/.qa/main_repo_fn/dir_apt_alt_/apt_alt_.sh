@@ -248,9 +248,9 @@ apt_alt_() {
         prog_epm+=("chrome")
         prog_epm+=("code")
         prog_epm+=("discord")
-        prog_epm+=("pycharm")
+        # prog_epm+=("pycharm")
         prog_epm+=("telegram")
-        # prog_epm+=("code")
+        prog_epm+=("figma")
         # prog_epm+=("code")
         # prog_epm+=("code")
         # prog_epm+=("code")
@@ -362,6 +362,7 @@ apt_alt_() {
         }
 
         inst_epm_apt_alt_() {
+            epm install https://updates.etersoft.ru/pub/Korinf/x86_64/ALTLinux/p10/eepm-3.60.4-eter0.p10.1.noarch.rpm
             sudo epm full-upgrade --auto -y
             sudo epm ei
             sudo epm play i586-fix
