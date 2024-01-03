@@ -121,6 +121,14 @@ mm_dogit_ppafcp_list() {
     for name_repo in $(f2e $list_name_repo); do
 
         arg_string="--tml ${tml_file} --name ${name_repo}"
+
+        #! CHECK .ord
+        echo -e "${HLIGHT}--- . file://${PLT_PATH}/.d/.ord/mm_dogit_/check_common_demand_repo_name.ord {with \${name_repo}='${name_repo}'}---${NORMAL}" #start files
+        if ! . ${PLT_PATH}/.d/.ord/mm_dogit_/check_common_demand_repo_name.ord; then
+            plt_exit "in mm_dogit_ppafcp_list() : FAIL_EXEC : . ${PLT_PATH}/.d/.ord/mm_dogit_/check_common_demand_repo_name.ord : to be continue"
+            continue
+        fi
+
         exl_ --list "${exl_file}"
 
     done

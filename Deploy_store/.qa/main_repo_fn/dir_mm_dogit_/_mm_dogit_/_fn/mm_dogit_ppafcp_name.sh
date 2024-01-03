@@ -58,8 +58,6 @@ mm_dogit_ppafcp_name() {
         return 1
     fi
 
-    
-
     name_repo=$1
 
     if [[ "main.var" == $2 ]]; then
@@ -70,6 +68,12 @@ mm_dogit_ppafcp_name() {
 
     # arg_string="--tml ${tml_file} --name ${name_repo} -verbose -echo -debug -develop1"
     arg_string="--tml ${tml_file} --name ${name_repo}"
+
+    #! CHECK .ord    
+    if ! . ${PLT_PATH}/.d/.ord/mm_dogit_/check_common_demand_repo_name.ord; then
+        plt_exit "in mm_dogit_ppafcp_name() : FAIL_EXEC : . ${PLT_PATH}/.d/.ord/mm_dogit_/check_common_demand_repo_name.ord : reurn 1"
+        return 1
+    fi
 
     exl_ --list "${exl_file}"
 
