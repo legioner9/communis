@@ -196,7 +196,7 @@ apt_alt_() {
         prog_apt+=("gcc")
         prog_apt+=("nodejs")
         prog_apt+=("nnn")
-        # prog_apt+=("composer")
+        # prog_apt+=("ccat")
         # prog_apt+=("composer")
         # prog_apt+=("composer")
         # prog_apt+=("composer")
