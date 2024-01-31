@@ -52,7 +52,7 @@ ret2e() {
 
     # amount_arg $# 1 1
 
-    "$@" &>/dev/null
+    $@ &>/dev/null
     echo $?
 
 }
