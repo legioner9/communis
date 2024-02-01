@@ -18,7 +18,7 @@ garg2e2_() {
     # local ORIGO_DIR=${PATH_MAIN_REPO_FN_DIR}/dir_$FNN === ${FN_DIR}
     local FN_DIR=${PATH_MAIN_REPO_FN_DIR} #? contane dir of function
     local FLN=$0
-    local ARGS=("$@")
+    local ARGS=($@)
     local NARGS=$#
     local ARGS1=$1
     local ARGS2=$2
