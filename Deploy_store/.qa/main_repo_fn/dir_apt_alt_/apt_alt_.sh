@@ -197,7 +197,7 @@ apt_alt_() {
         prog_apt+=("nodejs")
         prog_apt+=("nnn")
         prog_apt+=("ccat")
-        # prog_apt+=("composer")
+        prog_apt+=("xterm")
         # prog_apt+=("composer")
         # prog_apt+=("composer")
         # prog_apt+=("composer")
@@ -227,7 +227,7 @@ apt_alt_() {
         prog_apt+=("ncdu")
 
         prog_apt+=("pip")
-        # ruby
+        #! ruby
         prog_apt+=("ruby")
         prog_apt+=("libruby-devel")
         prog_apt+=("rails")
@@ -237,6 +237,19 @@ apt_alt_() {
         prog_apt+=("ltrace")
         prog_apt+=("mdadm")
         prog_apt+=("m4")
+        prog_apt+=("mlocate")
+        prog_apt+=("ctags")
+        #! perl
+        prog_apt+=("cpan2rpm")
+        prog_apt+=("perl-App-cpanminus")
+        prog_apt+=("perl-ExtUtils-MakeMaker-CPANfile")
+        prog_apt+=("perl-Module-CPANfile")
+        prog_apt+=("perl-Test-Reporter")
+        prog_apt+=("perl-URI-cpan")
+        prog_apt+=("perl-Padre")
+        prog_apt+=("perl-Debug-Client")
+        # prog_apt+=("telegram")
+        # prog_apt+=("telegram")
         # prog_apt+=("telegram")
         # prog_apt+=("telegram")
         # prog_apt+=("telegram")
