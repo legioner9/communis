@@ -272,7 +272,7 @@ ${NORMAL}"
 
     # java -jar ${REPO_PATH}/Repono/PlantUml/plant_jar/plantuml.jar ${ptr_path} >${path_png}
 
-    java -jar ${REPO_PATH}/Repono/PlantUml/plant_jar/plantuml.jar ${ptr_path} >${path_png}
+    java -jar ${REPO_PATH}/Repono/PlantUml.ax/plant_jar.ax/plantuml.jar ${ptr_path} >${path_png}
 
     if [[ "${d_}" -eq 1 ]]; then
         drawing ${path_png}
