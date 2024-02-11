@@ -5,4 +5,125 @@ not_delete fix_ax_1
 #{{fix_ax_0}}
 #{{fix_ax_1}}#{{fix_ax_0}}
 not_delete fix_ax_1
-#{{fix_ax_1}}
+#{{fix_ax_1}}[0;36m--- tree /home/st/REPOBARE/_repo/plt/actio/mall/dir_bdpl_pzip_/bdpl_pzip_extst/extst_1/ex1/for_mdeb_2/dir_4 ---[0m
+/home/st/REPOBARE/_repo/plt/actio/mall/dir_bdpl_pzip_/bdpl_pzip_extst/extst_1/ex1/for_mdeb_2/dir_4
+├── dist.d
+│   ├── 0
+│   └── src.file.zip
+├── dist.d.bck
+│   ├── 0
+│   └── src.file
+└── src.d
+    ├── src.d
+    │   └── in_src_d.file
+    └── src.file
+
+4 directories, 6 files
+[0;36m--- cat /home/st/REPOBARE/_repo/plt/actio/mall/dir_bdpl_pzip_/bdpl_pzip_extst/extst_1/ex1/for_mdeb_2/dir_4/dist.d.bck/src.file ---[0m
+2 this src.file[0;36m--- tree /home/st/REPOBARE/_repo/plt/actio/mall/dir_bdpl_pzip_/bdpl_pzip_extst/extst_1/ex1/for_mdeb_2/dir_4 ---[0m
+/home/st/REPOBARE/_repo/plt/actio/mall/dir_bdpl_pzip_/bdpl_pzip_extst/extst_1/ex1/for_mdeb_2/dir_4
+├── dist.d
+│   ├── 0
+│   └── src.file.zip
+├── dist.d.bck
+│   ├── 0
+│   └── src.file
+└── src.d
+    ├── src.d
+    │   └── in_src_d.file
+    └── src.file
+
+4 directories, 6 files
+[0;36m--- cat /home/st/REPOBARE/_repo/plt/actio/mall/dir_bdpl_pzip_/bdpl_pzip_extst/extst_1/ex1/for_mdeb_2/dir_4/dist.d.bck/src.file ---[0m
+2 this src.file[0;36m--- tree /home/st/REPOBARE/_repo/plt/actio/mall/dir_bdpl_pzip_/bdpl_pzip_extst/extst_1/ex1/for_mdeb_2/dir_4 ---[0m
+/home/st/REPOBARE/_repo/plt/actio/mall/dir_bdpl_pzip_/bdpl_pzip_extst/extst_1/ex1/for_mdeb_2/dir_4
+├── dist.d
+│   ├── 0
+│   └── src.file.zip
+├── dist.d.bck
+│   ├── 0
+│   └── src.file
+└── src.d
+    ├── src.d
+    │   └── in_src_d.file
+    └── src.file
+
+4 directories, 6 files
+[0;36m--- cat /home/st/REPOBARE/_repo/plt/actio/mall/dir_bdpl_pzip_/bdpl_pzip_extst/extst_1/ex1/for_mdeb_2/dir_4/dist.d.bck/src.file ---[0m
+2 this src.file[0;36m--- tree /home/st/REPOBARE/_repo/plt/actio/mall/dir_bdpl_pzip_/bdpl_pzip_extst/extst_1/ex1/for_mdeb_2/dir_4 ---[0m
+/home/st/REPOBARE/_repo/plt/actio/mall/dir_bdpl_pzip_/bdpl_pzip_extst/extst_1/ex1/for_mdeb_2/dir_4
+├── dist.d
+│   ├── 0
+│   └── src.file.zip
+├── dist.d.bck
+│   ├── 0
+│   └── src.file
+└── src.d
+    ├── src.d
+    │   └── in_src_d.file
+    └── src.file
+
+4 directories, 6 files
+[0;36m--- cat /home/st/REPOBARE/_repo/plt/actio/mall/dir_bdpl_pzip_/bdpl_pzip_extst/extst_1/ex1/for_mdeb_2/dir_4/dist.d.bck/src.file ---[0m
+2 this src.file[0;36m--- tree file:///home/st/REPOBARE/_repo/plt/actio/mall/dir_bdpl_pzip_/bdpl_pzip_extst/extst_1/ex1/for_mdeb_2/dir_4 ---[0m
+/home/st/REPOBARE/_repo/plt/actio/mall/dir_bdpl_pzip_/bdpl_pzip_extst/extst_1/ex1/for_mdeb_2/dir_4
+├── dist.d
+│   ├── 0
+│   └── src.file.zip
+├── dist.d.bck
+│   ├── 0
+│   └── src.file
+└── src.d
+    ├── src.d
+    │   └── in_src_d.file
+    └── src.file
+
+4 directories, 6 files
+[0;36m--- cat file:///home/st/REPOBARE/_repo/plt/actio/mall/dir_bdpl_pzip_/bdpl_pzip_extst/extst_1/ex1/for_mdeb_2/dir_4/dist.d.bck/src.file ---[0m
+2 this src.file[0;36m--- tree file:///home/st/REPOBARE/_repo/plt/actio/mall/dir_bdpl_pzip_/bdpl_pzip_extst/extst_1/ex1/for_mdeb_2/dir_4 ---[0m
+/home/st/REPOBARE/_repo/plt/actio/mall/dir_bdpl_pzip_/bdpl_pzip_extst/extst_1/ex1/for_mdeb_2/dir_4
+├── dist.d
+│   ├── 0
+│   └── src.file.zip
+├── dist.d.bck
+│   ├── 0
+│   └── src.file
+└── src.d
+    ├── src.d
+    │   └── in_src_d.file
+    └── src.file
+
+4 directories, 6 files
+[0;36m--- cat file:///home/st/REPOBARE/_repo/plt/actio/mall/dir_bdpl_pzip_/bdpl_pzip_extst/extst_1/ex1/for_mdeb_2/dir_4/dist.d.bck/src.file ---[0m
+2 this src.file[0;36m--- tree file:///home/st/REPOBARE/_repo/plt/actio/mall/dir_bdpl_pzip_/bdpl_pzip_extst/extst_1/ex1/for_mdeb_2/dir_4 ---[0m
+/home/st/REPOBARE/_repo/plt/actio/mall/dir_bdpl_pzip_/bdpl_pzip_extst/extst_1/ex1/for_mdeb_2/dir_4
+├── dist.d
+│   ├── 0
+│   └── src.file.zip
+├── dist.d.bck
+│   ├── 0
+│   └── src.file
+└── src.d
+    ├── src.d
+    │   └── in_src_d.file
+    └── src.file
+
+4 directories, 6 files
+[0;36m--- cat file:///home/st/REPOBARE/_repo/plt/actio/mall/dir_bdpl_pzip_/bdpl_pzip_extst/extst_1/ex1/for_mdeb_2/dir_4/dist.d.bck/src.file ---[0m
+2 this src.file6
+[0;36m--- tree file:///home/st/REPOBARE/_repo/plt/actio/mall/dir_bdpl_pzip_/bdpl_pzip_extst/extst_1/ex1/for_mdeb_2/dir_4 ---[0m
+/home/st/REPOBARE/_repo/plt/actio/mall/dir_bdpl_pzip_/bdpl_pzip_extst/extst_1/ex1/for_mdeb_2/dir_4
+├── dist.d
+│   ├── 0
+│   └── src.file.zip
+├── dist.d.bck
+│   ├── 0
+│   └── src.file
+└── src.d
+    ├── src.d
+    │   └── in_src_d.file
+    └── src.file
+
+4 directories, 6 files
+[0;36m--- cat file:///home/st/REPOBARE/_repo/plt/actio/mall/dir_bdpl_pzip_/bdpl_pzip_extst/extst_1/ex1/for_mdeb_2/dir_4/dist.d.bck/src.file ---[0m
+2 this src.file
