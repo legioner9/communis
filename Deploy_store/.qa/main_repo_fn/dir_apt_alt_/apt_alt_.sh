@@ -240,7 +240,7 @@ apt_alt_() {
         prog_apt+=("mlocate")
         prog_apt+=("ctags")
         #! perl
-        # prog_apt+=("cpan2rpm")
+        prog_apt+=("cpan2rpm")
         # prog_apt+=("perl-App-cpanminus")
         # prog_apt+=("perl-ExtUtils-MakeMaker-CPANfile")
         # prog_apt+=("perl-Module-CPANfile")
