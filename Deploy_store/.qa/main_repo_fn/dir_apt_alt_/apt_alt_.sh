@@ -198,7 +198,7 @@ apt_alt_() {
         prog_apt+=("nnn")
         prog_apt+=("ccat")
         prog_apt+=("xterm")
-        # prog_apt+=("wine-full")
+        prog_apt+=("tmux")
         # prog_apt+=("composer")
         # prog_apt+=("composer")
         # prog_apt+=("composer")
