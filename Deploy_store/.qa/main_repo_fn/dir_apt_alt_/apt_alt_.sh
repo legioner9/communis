@@ -238,7 +238,7 @@ apt_alt_() {
         prog_apt+=("mdadm")
         prog_apt+=("m4")
         prog_apt+=("mlocate")
-        prog_apt+=("ctags")
+        prog_apt+=("ctags") 
         #! perl
         prog_apt+=("cpan2rpm")
         # prog_apt+=("perl-App-cpanminus")
