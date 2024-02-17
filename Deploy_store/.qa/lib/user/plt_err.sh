@@ -67,7 +67,7 @@ plt_err() {
     #------------------------------------------------------------------
     #-----------------------------------
 
-    echo -e "${RED}--------plt_err: $@ --------${NORMAL}" >&2 #sistem info mesage
+    echo -e "${RED}--------plt_err (>stderr): ${ARGS[@]} --------${NORMAL}" >&2 #sistem info mesage
 
     # read </dev/tty
     return 1
