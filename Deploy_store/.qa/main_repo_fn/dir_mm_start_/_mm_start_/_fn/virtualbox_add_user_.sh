@@ -61,8 +61,11 @@ ${NORMAL}"
         return 0
     fi
 
-    gpasswd -a "$USER" vboxusers
-
+    if cat /proc/cpuinfo | grep "vmx|svm"; then
+        gpasswd -a "$USER" vboxusers
+    else
+        plt_err "vmx|svm NOT_DEFINE in processor"
+    fi
     #{default_cntl_fn}
     # amount_arg $# 1 1
     #{body_fn}
