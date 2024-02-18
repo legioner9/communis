@@ -56,16 +56,16 @@ ${NORMAL}"
         edit_ "${d_name}/${FNN}".lst
         return 0
     fi
-    if ! garg2e_ "${ARGS[@]}" 1>/dev/null; then
-        plt_exit " ${FNN} return 1: ${FNLOCK}"
-        return 1
-    fi
-    g_args=($(garg2e_ "${ARGS[@]}"))
-    [[ 1 -eq ${verbose} ]] || echo -e "${GREEN}\${g_args[@]}: ${g_args[*]}${NORMAL}" #print variable
-    for strex in $(garg2e_ "${ARGS[@]}"); do
-        [[ 1 -eq ${verbose} ]] || echo "local $strex"
-        eval local $strex
-    done
+    # if ! garg2e_ "${ARGS[@]}" 1>/dev/null; then
+    #     plt_exit " ${FNN} return 1: ${FNLOCK}"
+    #     return 1
+    # fi
+    # g_args=($(garg2e_ "${ARGS[@]}"))
+    # [[ 1 -eq ${verbose} ]] || echo -e "${GREEN}\${g_args[@]}: ${g_args[*]}${NORMAL}" #print variable
+    # for strex in $(garg2e_ "${ARGS[@]}"); do
+    #     [[ 1 -eq ${verbose} ]] || echo "local $strex"
+    #     eval local $strex
+    # done
     #{default_cntl_fn}
     if [ "${NARGS}" -lt 2 ]; then
         plt_exit "fail :: d3rpl ${NARGS} < 2"
