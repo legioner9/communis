@@ -5,7 +5,7 @@ af=aff
 bf=bff
 garg2e_ -rr --csa
 rr=1
-[0;31m--------plt_err: garg2e_: return 1 --csa flow_symbol withut value --------[0m
+[0;31m--------plt_err (>stderr): garg2e_: return 1 --csa flow_symbol withut value --------[0m
 garg2e_ -rr --csa --ergre
 rr=1
-[0;31m--------plt_err: garg2e_: return 1 --ergre not value - that flow_symbol --------[0m
+[0;31m--------plt_err (>stderr): garg2e_: return 1 --ergre not value - that flow_symbol --------[0m
