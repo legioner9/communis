@@ -133,6 +133,8 @@ EXAMP:${NORMAL}"
     res+=("start_pycharm_")
     arr+=("start webstorm")
     res+=("start_webstorm_")
+    arr+=("start phpstorm")
+    res+=("start_phpstorm_")
     arr+=("reset lic getbrane")
     res+=("mm_start_reset_lic_getbrane")
     arr+=("upgrade rvm")
