@@ -203,11 +203,11 @@ EXAMP:${NORMAL}"
     res+=("mm_tsf_fsf_define_files_dirs")
 
     local arr_name_flash=(TOSHIBA_EXT TOSH MY_ONE)
-    local arr_name_flow=(codium code phpstorm pycharm rubymine webstorm sitelocal sitelocal2 sysopt dothome figma)
+    local arr_name_flow=(codium code phpstorm pycharm rubymine webstorm sitelocal sitelocal2 sitelocal3 sysopt dothome figma)
 
     mm_tsf_fsf_add_arrs() {
         for flow_item in "${arr_name_flow[@]}"; do
-            for flash_item in "${arr_name_flash[@]}"; do
+            for flash_item in "${arr_name_flash[@]}"; do 
 
                 # echo -e "${GREEN}\$flow_item = $flow_item${NORMAL}"   #print variable
                 # echo -e "${GREEN}\$flash_item = $flash_item${NORMAL}" #print variable
