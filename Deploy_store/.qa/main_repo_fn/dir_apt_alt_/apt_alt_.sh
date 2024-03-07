@@ -203,7 +203,7 @@ apt_alt_() {
         prog_apt+=("bleachbit")
         prog_apt+=("mytop")
         prog_apt+=("asterisk")
-        # prog_apt+=("composer")
+        prog_apt+=("php8.2-fpm-fcgi php8.2-mysqlnd php8.2-mysqlnd-mysqli")
         # prog_apt+=("composer")
         # prog_apt+=("composer")
         # prog_apt+=("composer")
