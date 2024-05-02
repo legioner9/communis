@@ -205,6 +205,18 @@ apt_alt_() {
         prog_apt+=("asterisk")
         prog_apt+=("php8.2-fpm-fcgi php8.2-mysqlnd php8.2-mysqlnd-mysqli")
         prog_apt+=("php7-xdebug")
+        prog_apt+=("doxygen")
+        prog_apt+=("doxygen-wizard")
+        # prog_apt+=("kf5-kapidox")
+        prog_apt+=("doxygen2man")
+        prog_apt+=("doxygen-doc")
+        # prog_apt+=("composer")
+        # prog_apt+=("composer")
+        # prog_apt+=("composer")
+        # prog_apt+=("composer")
+        # prog_apt+=("composer")
+        # prog_apt+=("composer")
+        # prog_apt+=("composer")
         # prog_apt+=("composer")
         # prog_apt+=("composer")
         # prog_apt+=("composer")
@@ -238,7 +250,7 @@ apt_alt_() {
         prog_apt+=("mdadm")
         prog_apt+=("m4")
         prog_apt+=("mlocate")
-        prog_apt+=("ctags") 
+        prog_apt+=("ctags")
         #! perl
         prog_apt+=("cpan2rpm")
         # prog_apt+=("perl-App-cpanminus")
@@ -277,7 +289,7 @@ apt_alt_() {
         # prog_epm+=("pycharm")
         prog_epm+=("telegram")
         prog_epm+=("figma")
-        prog_epm+=("wine") 
+        prog_epm+=("wine")
         # prog_epm+=("code")
         # prog_epm+=("code")
         # prog_epm+=("code")
@@ -330,7 +342,7 @@ apt_alt_() {
         gem_glob_packet+=(webpacker)
         gem_glob_packet+=(development)
         gem_glob_packet+=(ruby-graphviz)
-        gem_glob_packet+=(bundler)red_stderr__
+        gem_glob_packet+=(bundler)
         gem_glob_packet+=(pry)
         gem_glob_packet+=(pry-byebug)
         # gem_glob_packet+=(debug)
@@ -345,7 +357,6 @@ apt_alt_() {
         # gem_glob_packet+=(debug)
         # gem_glob_packet+=(debug)
         # gem_glob_packet+=(debug)
-
 
         inst_all_apt_alt_() {
             inst_apt_apt_alt_
@@ -369,7 +380,6 @@ apt_alt_() {
             # chromium --flag-switches-begin --enable-features=PasswordImport --flag-switches-end
         }
 
-
         inst_gem_apt_alt_() {
             for item in "${gem_glob_packet[@]}"; do
                 sudo gem install "$item"
@@ -383,7 +393,7 @@ apt_alt_() {
             for item in "${prog_apt[@]}"; do
                 sudo apt-get install "$item" -y
             done
-            
+
             # chromium --flag-switches-begin --enable-features=PasswordImport --flag-switches-end
         }
 
@@ -689,9 +699,7 @@ sudo chmod +x /etc/profile.d/packettracer.sh
 
             ;;
 
-        \
-            \
-            *)
+        *)
             echo -e "${BLUE}---error dilectus---${NORMAL}" #sistem info mesage
             ;;
         esac
