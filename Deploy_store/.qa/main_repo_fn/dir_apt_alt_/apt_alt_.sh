@@ -210,7 +210,7 @@ apt_alt_() {
         # prog_apt+=("kf5-kapidox")
         prog_apt+=("doxygen2man")
         prog_apt+=("doxygen-doc")
-        # prog_apt+=("composer")
+        prog_apt+=("eget")
         # prog_apt+=("composer")
         # prog_apt+=("composer")
         # prog_apt+=("composer")
@@ -290,7 +290,7 @@ apt_alt_() {
         prog_epm+=("telegram")
         prog_epm+=("figma")
         prog_epm+=("wine")
-        # prog_epm+=("code")
+        prog_epm+=("bitrix24")
         # prog_epm+=("code")
         # prog_epm+=("code")
 
