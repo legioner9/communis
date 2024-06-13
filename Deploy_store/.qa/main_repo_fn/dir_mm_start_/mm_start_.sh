@@ -106,6 +106,10 @@ EXAMP:${NORMAL}"
         rm -rf ~/.java/.userPrefs
     }
 
+    mm_start_flameshot_() {
+        flameshot &
+    }
+
     echo -e "${BLUE}--- exec ${FNN} (num_menu) ---${NORMAL}" #started functions
     arr=()
     res=()
@@ -146,7 +150,7 @@ EXAMP:${NORMAL}"
     arr+=("start docker")
     res+=("start_docker_")
     arr+=("start flameshot")
-    res+=("flameshot")
+    res+=("mm_start_flameshot_")
     # arr+=("aaaa")
     # res+=("bbbbb")
     # arr+=("aaaa")
