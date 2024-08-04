@@ -157,6 +157,8 @@ EXAMP:${NORMAL}"
     res+=(". ${REPO_PATH}/NBash/.arb/util/yt-dlp.ram/.grot/v.d/exa_1.d/v_1_fn.sh &")
     arr+=("start youtube v_2")
     res+=(". ${REPO_PATH}/NBash/.arb/util/yt-dlp.ram/.grot/v.d/exa_1.d/v_2_fn.sh &")
+    arr+=("start youtube tp_2_pl")
+    res+=(". ${REPO_PATH}/NBash/.arb/util/yt-dlp.ram/.grot/v.d/exa_1.d/tp_2_pl_fn.sh &")
     # arr+=("aaaa")
     # res+=("bbbbb")
     # arr+=("aaaa")
