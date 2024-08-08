@@ -218,7 +218,7 @@ apt_alt_() {
         prog_apt+=("jpegoptim")
         prog_apt+=("ImageMagick-tools")
         prog_apt+=("kde5-umbrello")
-        # prog_apt+=("composer")
+        prog_apt+=("parallel")
         # prog_apt+=("composer")
         # prog_apt+=("composer")
         # prog_apt+=("composer")
