@@ -228,7 +228,7 @@ apt_alt_() {
         prog_apt+=("emacs26-nox")
         prog_apt+=("kdevelop5")
         prog_apt+=("kde5-kate")
-        # prog_apt+=("composer")
+        prog_apt+=("lsof")
         # prog_apt+=("composer")
         # prog_apt+=("composer")
         # prog_apt+=("composer")
