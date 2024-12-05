@@ -301,7 +301,7 @@ apt_alt_() {
         prog_epm+=("yandex-disk")
         prog_epm+=("chrome")
         prog_epm+=("code")
-        prog_epm+=("discord")
+        # prog_epm+=("discord")
         # prog_epm+=("pycharm")
         prog_epm+=("telegram")
         prog_epm+=("figma")
