@@ -180,6 +180,7 @@ apt_alt_() {
         prog_apt+=("php7 php7-bz2 php7-curl php7-exif php7-mbstring php7-fileinfo php7-fpm-fcgi php7-gd php7-imagick php7-intl php7-mcrypt php7-openssl php7-pcntl php7-pdo php7-pdo_mysql php7-readline php7-ssh2 php7-xmlreader php7-xsl php7-yaml php7-zip php7-mysqli php7-apcu php7-fpm-fcgi")
         prog_apt+=("packagekit")
         prog_apt+=("kde5-kmplot")
+        prog_apt+=("kde5-filelight")
         prog_apt+=("gnuplot")
         prog_apt+=("altmediawriter")
         prog_apt+=("telnet")
