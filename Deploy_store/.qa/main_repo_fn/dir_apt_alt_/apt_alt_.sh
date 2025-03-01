@@ -578,6 +578,7 @@ sudo chmod +x /etc/profile.d/packettracer.sh
         # res+=("echo")
         # arr+=("control")
         # res+=("echo")
+        
 
         arr+=("control")
         res+=("echo control)))")
