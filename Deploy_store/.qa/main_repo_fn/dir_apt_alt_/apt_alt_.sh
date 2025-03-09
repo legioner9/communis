@@ -230,7 +230,7 @@ apt_alt_() {
         prog_apt+=("kdevelop5")
         prog_apt+=("kde5-kate")
         prog_apt+=("lsof")
-        # prog_apt+=("composer")
+        prog_apt+=("synaptic-kde")
         # prog_apt+=("composer")
         # prog_apt+=("composer")
         # prog_apt+=("composer")
