@@ -237,6 +237,11 @@ apt_alt_() {
         # prog_apt+=("composer")
         # prog_apt+=("composer")
         # prog_apt+=("composer")
+        # prog_apt+=("composer")
+        prog_apt+=("nasm nasm-doc nasm-rdoff libasm libasm-devel libasm-devel-static")
+        prog_apt+=("sasm")
+        # prog_apt+=("composer")
+        # prog_apt+=("composer")
 
         # pyton
         prog_apt+=("python3-module-pip python3-tools")
@@ -578,7 +583,6 @@ sudo chmod +x /etc/profile.d/packettracer.sh
         # res+=("echo")
         # arr+=("control")
         # res+=("echo")
-        
 
         arr+=("control")
         res+=("echo control)))")
