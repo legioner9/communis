@@ -283,14 +283,14 @@ apt_alt_() {
         # prog_apt+=("perl-Padre")
         # prog_apt+=("perl-Debug-Client")
 
-        # prog_apt+=("telegram")
-        # prog_apt+=("telegram")
-        # prog_apt+=("telegram")
-        # prog_apt+=("telegram")
-        # prog_apt+=("telegram")
-        # prog_apt+=("telegram")
-        # prog_apt+=("telegram")
-        # prog_apt+=("telegram")
+        prog_apt+=("esvn") # GUI
+        prog_apt+=("kdesvn") 
+        prog_apt+=("mithraen-utils") # Utilites for SVN
+        prog_apt+=("subversion")
+        prog_apt+=("git-svn")
+        prog_apt+=("svn2cl")
+        prog_apt+=("vim-plugin-vcscommand") # CVS/SVN/SVK/git/bzr/hg integration plugin
+        prog_apt+=("ydiff") # View colored, incremental diff
         # prog_apt+=("telegram")
         # prog_apt+=("telegram")
         # prog_apt+=("telegram")
